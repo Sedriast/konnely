@@ -1,8 +1,10 @@
+import React from "react";
+import { Letter } from "./components/curriculumsView/letter/Letter";
 
-function App() {
+function App(){
   return (
     <div>
-      
+      <Letter/>
     </div>
   );
 }
