@@ -3,7 +3,7 @@ import { Letter } from "./components/curriculumsView/letter/Letter";
 
 function App(){
   return (
-    <div>
+    <div className="App" >
       <Letter/>
     </div>
   );
