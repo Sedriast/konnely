@@ -1,0 +1,48 @@
+.inputsPanel{
+	position: absolute;
+	width: 1000px;
+	height: 95vh;
+	left: calc(50% - 1000px/2);
+	top: calc(50% - 95vh/2 - 0.5px);
+	
+	background: linear-gradient(359.31deg, rgba(0, 0, 0, 0) 0.59%, rgba(0, 0, 0, 0.159235) 6.77%, rgba(0, 0, 0, 0.34501) 13.97%, rgba(0, 0, 0, 0.578125) 32.5%, #000000 99.41%);
+	border-radius: 20px;
+
+	animation-duration: 1s;
+	animation-name: slideout;
+
+}
+
+@media (max-width: 1000px){
+	.inputsPanel{
+		width: 500px;
+		left: calc(50% - 500px/2);
+
+		animation-duration: 1s;
+		animation-name: slidein;
+	}
+}
+
+@keyframes slidein {
+	from {
+		width: 1000px;
+		left: calc(50% - 1000px/2);
+	}
+  
+	to {
+		width: 500px;
+		left: calc(50% - 500px/2);
+	}
+  }
+  
+  @keyframes slideout {
+	from {
+		width: 500px;
+		left: calc(50% - 500px/2);
+	}
+  
+	to {
+		width: 1000px;
+		left: calc(50% - 1000px/2);
+	}
+  }
