@@ -7,6 +7,7 @@ export function Form(){
         <div className={style.inputsPanel}>
             <BasicData />
             <InputImage />
+            <hr />
         </div>
     );
 }

@@ -10,7 +10,14 @@ input::placeholder{
     color: black;
     font-family:Arial, Helvetica, sans-serif;
 }
-
+select{
+    background: rgba(255, 255, 255, 0.6);
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 4px;
+    margin: 4px;
+    border: none;
+    border-radius: 10px;
+}
 .basicDataPanel{
     position: absolute;
     width: 700px;
@@ -26,21 +33,27 @@ input::placeholder{
 }
 .name{
     width: 330px;
-    height: 23px;
+    height: 2rem;
 }
 .dateBirth{
     width: 330px;
+    height: 2rem;
 }
 .dateDestete{
     width: 330px;
+    height: 2rem;
 }
 .weight{
     width: 330px;
-    height: 23px;
+    height: 2rem;
 } 
 .dataR{
     width: 330;
     height: 23px;
+}
+.listTypes{
+    width: 330;
+    height: 2.5rem;
 }
 @media (max-width: 1000px){
     .basicDataPanel{
@@ -50,13 +63,9 @@ input::placeholder{
         margin-top: 45%;
 
         grid-template-columns: repeat(auto-fill, 450px);
-
-        animation-duration: 1s;
-        animation-name: basicDataOut;
     }
     .name{
         width: 100%;
-        height: 23px;
     }
     .dateBirth{
         width: 100%;
@@ -66,21 +75,11 @@ input::placeholder{
     }
     .weight{
         width: 100%;
-        height: 23px;
     } 
+    .listTypes{
+        width: 102%;
+    }
 }
-
-@keyframes basicDataOut {
-	from {
-        margin-left: 23%;
-		margin-top: 2%;
-	}
-  
-	to {
-        margin-left: 0%;
-		margin-top: 45%;
-	}
-  }
 
 @keyframes basicDataIn {
 	from {
