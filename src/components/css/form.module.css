@@ -9,8 +9,7 @@
 	border-radius: 20px;
 
 	animation-duration: 1s;
-	animation-name: slideout;
-
+	animation-name: panelOut;
 }
 
 @media (max-width: 1000px){
@@ -19,11 +18,11 @@
 		left: calc(50% - 500px/2);
 
 		animation-duration: 1s;
-		animation-name: slidein;
+		animation-name: panelIn;
 	}
 }
 
-@keyframes slidein {
+@keyframes panelIn {
 	from {
 		width: 1000px;
 		left: calc(50% - 1000px/2);
@@ -34,8 +33,8 @@
 		left: calc(50% - 500px/2);
 	}
   }
-  
-  @keyframes slideout {
+
+  @keyframes panelOut {
 	from {
 		width: 500px;
 		left: calc(50% - 500px/2);
@@ -46,3 +45,4 @@
 		left: calc(50% - 1000px/2);
 	}
   }
+

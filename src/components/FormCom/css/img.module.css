@@ -1,0 +1,45 @@
+.temp{
+	background: rgba(255, 255, 255, 0.6);
+	width: 200px;
+	height: 200px;
+	margin-left: 2%;
+	margin-top: 2%;
+
+	border-radius: 10px;
+	animation-duration: 1s;
+	animation-name: imgOut;
+}
+
+@media (max-width: 1000px){
+	.temp{
+		margin-top: 4%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+		
+		animation-duration: 1s;
+		animation-name: imgIn;
+	}
+}
+
+@keyframes imgIn {
+	from {
+		margin-left: 2%;
+		margin-top: 2%;
+	}
+  
+	to {
+		margin-top: 4%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+	}
+  }
+
+  @keyframes imgOut {
+	from {
+		margin-top: 4%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+	}
+  
+	to {
+		margin-left: 2%;
+		margin-top: 2%;
+	}
+  }
