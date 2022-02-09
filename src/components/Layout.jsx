@@ -1,3 +1,9 @@
+
+/*
+ npm install
+ Para instalar Firebase
+*/
+
 import style from './css/base.module.css';
 import { Form } from './FormCom/Form';
 

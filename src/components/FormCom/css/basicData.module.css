@@ -55,6 +55,16 @@ select{
     width: 330;
     height: 2.5rem;
 }
+.enviar {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
 @media (max-width: 1000px){
     .basicDataPanel{
         width: 100%;
