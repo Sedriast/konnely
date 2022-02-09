@@ -7,8 +7,6 @@ import style from './css/img.module.css';
 
 export function InputImage(){
     return(
-        <div className={style.temp}>
-
-        </div>
+        <input className={style.temp} type="file" name="src-file1" aria-label="Archivo"/>
     );
 }

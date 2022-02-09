@@ -1,4 +1,6 @@
 .temp{
+	position: relative;
+	display: inline-block;
 	background: rgba(255, 255, 255, 0.6);
 	width: 200px;
 	height: 200px;
@@ -9,7 +11,24 @@
 	animation-duration: 1s;
 	animation-name: imgOut;
 }
-
+  
+.temp::before {
+	background-color: transparent;
+	color: rgb(0, 0, 0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	content: '+';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+#src-file1::before {
+	content: ' ';
+  }
 @media (max-width: 1000px){
 	.temp{
 		margin-top: 4%;
