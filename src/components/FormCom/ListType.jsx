@@ -8,19 +8,20 @@ import style from './css/basicData.module.css';
 
 export function ListType( props ){
 
-	const s = props.key_s;
+	const init = {
+        value:""
+    }
+
+	const s = props.k;
+
+	const [values, setValues] = useState(init);
 
 	//Este vector maneja las opciones
 	const [op] = useState([s,"2","3"]);
-
-	function constructor( props ){
-
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	  }
 	  
-	function handleChange(event) {
-		this.setState({value: event.target.value})
+	const handleChange = e => {
+		const {name, value} = e.target;
+        setValues({...values, [name]:value})
 	};
 	
 //Esta funcion se usa para enviar los datos seleccionados a donde te plasca
@@ -32,7 +33,7 @@ export function ListType( props ){
 */
 
 	return (
-		<select className={style.listTypes} value={constructor} onChange={handleChange} >
+		<select className={style.listTypes} value={init} onChange={handleChange} >
 			{op.map(a=><option value={a}>{a}</option>)}
 		</select>
 	);

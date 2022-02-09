@@ -17,6 +17,48 @@ hr{
 
 	animation-duration: 1s;
 	animation-name: panelOut;
+
+	overflow-y: none;
+	overflow-x: none;
+}
+.inputsPanel::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.inputsPanel::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.inputsPanel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.inputsPanel::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.inputsPanel::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.inputsPanel::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.submit{
+	background: rgba(255, 0, 0, 0.8);
+	border-radius: 100px;
+	border: none;
+	width: 100px;
+	height: 100px;
+
+	margin-top: 18rem;
+	margin-left: 55rem;
+
+	animation-duration: 1s;
+	animation-name: buttonOut;
 }
 
 @media (max-width: 1000px){
@@ -26,6 +68,18 @@ hr{
 
 		animation-duration: 1s;
 		animation-name: panelIn;
+
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.submit{
+		width: 100px;
+		height: 100px;
+		margin-top: 4px;
+		margin-left: 12rem;
+
+		animation-duration: 1s;
+		animation-name: buttonIn;
 	}
 	hr{
 		width: 1px;
@@ -67,3 +121,23 @@ hr{
 		visibility: visible;
 	}
   }
+  @keyframes buttonOut {
+	from {
+		margin-top: 4px;
+		margin-left: 12rem;
+	}
+	to {
+		margin-top: 18rem;
+		margin-left: 55rem;
+	}
+  }
+  @keyframes buttonIn {
+	from {
+		margin-top: 18rem;
+		margin-left: 55rem;
+	}
+	to {
+		margin-top: 4px;
+		margin-left: 12rem;
+	}
+}

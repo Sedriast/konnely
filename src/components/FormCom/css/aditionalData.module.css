@@ -9,3 +9,16 @@ input{
     grid-template-columns: repeat(auto-fill, 470px);
 
 }
+@media (max-width: 1000px){
+    .addDataPanel{
+        width: 100%;
+        padding: 4%;
+        margin-left: 0%;
+        margin-top: 55%;
+
+    
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 450px);
+    
+    }
+}
