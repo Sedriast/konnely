@@ -23,8 +23,10 @@ select{
 }
 .subPanel{
 	position: absolute;
-	width: 1000px;
+	width: 1001px;
 	height: 95vh;
+	padding: 5px;
+
 	left: calc(50% - 1000px/2);
 	top: calc(50% - 95vh/2 - 0.5px);
 	
@@ -35,7 +37,7 @@ select{
 	overflow-y: scroll;
 
 	display: grid;
-    grid-template-columns: repeat(auto-fill, 350px);
+    grid-template-columns: repeat(auto-fill, 250px);
 
 	animation-duration: 1s;
 	animation-name: panelOut;
@@ -44,7 +46,7 @@ select{
     -webkit-appearance: none;
 }
 .subPanel::-webkit-scrollbar:vertical {
-    width:10px;
+    width:1px;
 }
 .subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
     display: none;
@@ -62,7 +64,7 @@ select{
 }
 @media (max-width: 1000px){
 	.subPanel{
-		width: 500px;
+		width: 510px;
 		left: calc(50% - 500px/2);
 
         overflow-y: scroll;
@@ -70,6 +72,9 @@ select{
 
 		animation-duration: 1s;
 		animation-name: panelIn;
+	}
+	.subPanel::-webkit-scrollbar:vertical {
+		width:10px;
 	}
 }
 @keyframes panelIn {

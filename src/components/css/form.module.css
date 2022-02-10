@@ -40,7 +40,7 @@ select{
     -webkit-appearance: none;
 }
 .subPanel::-webkit-scrollbar:vertical {
-    width:10px;
+    width:1px;
 }
 .subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
     display: none;
@@ -123,6 +123,9 @@ select{
 
 		overflow-y: scroll;
 		overflow-x: hidden;
+	}
+	.subPanel::-webkit-scrollbar:vertical {
+		width:10px;
 	}
 	.submit{
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0) 100%);
