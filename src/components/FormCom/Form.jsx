@@ -1,18 +1,18 @@
 //import db from '../firebase/credenciales';
 import db from '../firebase/credenciales';
-import style3 from './css/aditionalData.module.css';
-import style2 from './css/basicData.module.css';
 import style from '../css/form.module.css';
 import { InputImage } from './InputImage';
 import {  useState } from 'react';
 import { ListType } from './ListType';
 import { InputCheck } from './InputCheck';
+import { collection, addDoc } from "firebase/firestore";
 
-export function Form(props){
+export function Form(){
 
 	const init = {
         nombre:"",
-        peso:""
+        peso:"",
+		raza:""
     }
 
 	const [values, setValues] = useState(init);
@@ -25,10 +25,9 @@ export function Form(props){
 
 	const handleSubmit = e => {
         e.preventDefault();
-        props.AddOrEdit(values);
+        addInfo(values);
     }
 
-	/**
 	 const addInfo = async (Objeto) => {
 		try {
 			const docRef = await addDoc(collection(db, "conejos"), {Objeto});
@@ -38,32 +37,30 @@ export function Form(props){
 			console.error("Error adding document: ", e);
 		  }
 	}
-	 
-	*/
 
 	return(
 		<div className={style.subPanel}>
-			<form className={style2.basicDataPanel} onSubmit={handleSubmit}>
-				<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
-				<input type='date' className={style.dateBirth} /> 
-				<input type='date' className={style.dateDestete} />
-				<ListType collection='raza'/>
-				<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
-				<ListType collection='grupo'/>
+			<form  onSubmit={handleSubmit}>
+				<div className={style.basicDataPanel}>
+					<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
+					<input type='date' className={style.dateBirth} /> 
+					<input type='date' className={style.dateDestete} />
+					<ListType name="raza" collection='raza' onChange={handleChanche}/>
+					<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
+					<ListType collection='grupo'/>
+				</div>
+					<InputImage ty="date" pl="Nombre" />
+				<div className={style.addDataPanel}>
+					<ListType collection='motivo'/>
+					<ListType collection='donde'/>
+					<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
+					<input name="id" placeholder='ID'onChange={handleChanche}></input>
+				</div>
+
+				<InputCheck />
+
+				<button className={style.submit}>→</button>
 			</form>
-				<InputImage ty="date" pl="Nombre" />
-			<hr />
-			<form className={style3.addDataPanel} onSubmit={handleSubmit}>
-				<ListType collection='motivo'/>
-				<ListType collection='donde'/>
-				<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
-				<input name="id" placeholder='ID'onChange={handleChanche}></input>
-			</form>
-
-			<InputCheck />
-
-			<button className={style.submit}>→</button>
-
 		</div>
 	);
 }

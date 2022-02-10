@@ -1,11 +1,7 @@
 import db from '../firebase/credenciales';
-import style3 from './css/aditionalData.module.css';
-import style2 from './css/basicData.module.css';
-import { InputImage } from './InputImage';
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from 'react';
-
-import style from './css/basicData.module.css';
+import style from '../css/form.module.css';
 
 export function ListType(props){
 
@@ -35,6 +31,7 @@ export function ListType(props){
 	const handleChange = e => {
 		const {name, value} = e.target;
         setValues({[name]:value})
+		
 	};
 	
 //Esta funcion se usa para enviar los datos seleccionados a donde te plasca
