@@ -63,11 +63,22 @@ select{
     border-radius: 10px;  
 }
 .cardPanel{
-	background: black;
+	background: linear-gradient(180deg, #FFFFFF 43.08%, rgba(255, 255, 255, 0) 93.23%);
 	width: 240px;
 	height: 290px;
 	margin: 5px;
+
 	border-radius: 10px;
+	border-top: 2px black solid;
+}
+.imgView{
+	width: 100px;
+	height: 100px;
+
+	margin-top: 1rem;
+	margin-left: calc(50% - 100px/2);
+
+	border-radius: 100px;
 }
 
 @media (max-width: 1000px){
