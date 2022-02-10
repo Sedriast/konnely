@@ -40,7 +40,7 @@ export function Form(props){
 	 */
 	
 	return(
-		<div className={style.inputsPanel}>
+		<div className={style.subPanel}>
 			<form className={style2.basicDataPanel} onSubmit={handleSubmit}>
 				<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
 				<input type='date' className={style.dateBirth} /> 

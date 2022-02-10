@@ -1,17 +1,12 @@
 
-/*
- npm install
- Para instalar Firebase
-*/
-
 import style from './css/base.module.css';
-//import { Form } from './FormCom/Form';
-import { ListViews } from './ListView.jsx/ListViews';
+import { Form } from './FormCom/Form';
+//import { ListViews } from './ListView.jsx/ListViews';
 
 export function Layout(){
     return(
         <div className={style.principalPanel} >
-            <ListViews />
+            <Form />
         </div>
     );
 }

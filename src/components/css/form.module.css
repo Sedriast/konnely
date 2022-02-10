@@ -1,4 +1,13 @@
-.inputsPanel{
+.submit{
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(255, 255, 255, 0.1) 100%);
+	border-radius: 100px 0px 0px 100px;
+	border: none;
+	width: 70px;
+	height: 70px;
+
+	margin-left: 58rem;
+}
+.subPanel{
 	position: absolute;
 	width: 1000px;
 	height: 95vh;
@@ -14,44 +23,28 @@
 	overflow-y: scroll;
 	overflow-x: scroll;
 }
-.inputsPanel::-webkit-scrollbar {
+.subPanel::-webkit-scrollbar {
     -webkit-appearance: none;
 }
-
-.inputsPanel::-webkit-scrollbar:vertical {
+.subPanel::-webkit-scrollbar:vertical {
     width:10px;
 }
-
-.inputsPanel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+.subPanel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
     display: none;
 } 
-
-.inputsPanel::-webkit-scrollbar:horizontal {
+.subPanel::-webkit-scrollbar:horizontal {
     height: 5px;
 }
-
-.inputsPanel::-webkit-scrollbar-thumb {
+.subPanel::-webkit-scrollbar-thumb {
     background-color: rgba(255, 0, 0, 0.1);;
     border-radius: 20px;
     border: none;
 }
-
-.inputsPanel::-webkit-scrollbar-track {
+.subPanel::-webkit-scrollbar-track {
     border-radius: 10px;  
 }
-
-.submit{
-	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(255, 255, 255, 0.1) 100%);
-	border-radius: 100px 0px 0px 100px;
-	border: none;
-	width: 70px;
-	height: 70px;
-
-	margin-left: 58rem;
-}
-
 @media (max-width: 1000px){
-	.inputsPanel{
+	.subPanel{
 		width: 500px;
 		left: calc(50% - 500px/2);
 
