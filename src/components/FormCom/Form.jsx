@@ -1,3 +1,4 @@
+//import db from '../firebase/credenciales';
 import db from '../firebase/credenciales';
 import style3 from './css/aditionalData.module.css';
 import style2 from './css/basicData.module.css';
@@ -5,6 +6,7 @@ import style from '../css/form.module.css';
 import { InputImage } from './InputImage';
 import {  useState } from 'react';
 import { ListType } from './ListType';
+import { InputCheck } from './InputCheck';
 
 export function Form(props){
 
@@ -40,7 +42,7 @@ export function Form(props){
 	*/
 
 	return(
-		<div className={style.inputsPanel}>
+		<div className={style.subPanel}>
 			<form className={style2.basicDataPanel} onSubmit={handleSubmit}>
 				<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
 				<input type='date' className={style.dateBirth} /> 
@@ -57,8 +59,11 @@ export function Form(props){
 				<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
 				<input name="id" placeholder='ID'onChange={handleChanche}></input>
 			</form>
-			
-			<button className={style.submit} ></button>
+
+			<InputCheck />
+
+			<button className={style.submit}>→</button>
+
 		</div>
 	);
 }

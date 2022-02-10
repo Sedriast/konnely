@@ -1,11 +1,27 @@
-hr{
-	width: 900px;
-	margin-top: 1rem;
+input{
+    background: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	border: none;
+	padding: 4px;
 
-	animation-duration: 3s;
-	animation-name: lineOut;
+	height: 2rem;
+    margin: 4px;
+
+	font-family:Arial, Helvetica, sans-serif;
 }
-.inputsPanel{
+input::placeholder{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+select{
+    background: rgba(255, 255, 255, 0.6);
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 4px;
+    margin: 4px;
+    border: none;
+    border-radius: 10px;
+}
+.subPanel{
 	position: absolute;
 	width: 1000px;
 	height: 95vh;
@@ -18,51 +34,87 @@ hr{
 	animation-duration: 1s;
 	animation-name: panelOut;
 
-	overflow-y: none;
-	overflow-x: none;
+	overflow-y: scroll;
 }
-.inputsPanel::-webkit-scrollbar {
+.subPanel::-webkit-scrollbar {
     -webkit-appearance: none;
 }
-
-.inputsPanel::-webkit-scrollbar:vertical {
-    width:10px;
+.subPanel::-webkit-scrollbar:vertical {
+    width:1px;
 }
-
-.inputsPanel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
     display: none;
 } 
-
-.inputsPanel::-webkit-scrollbar:horizontal {
-    height: 10px;
+.subPanel::-webkit-scrollbar:horizontal {
+    height: 5px;
 }
-
-.inputsPanel::-webkit-scrollbar-thumb {
-    background-color: #797979;
+.subPanel::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.1);;
     border-radius: 20px;
-    border: 2px solid #f1f2f3;
+    border: none;
 }
-
-.inputsPanel::-webkit-scrollbar-track {
+.subPanel::-webkit-scrollbar-track {
     border-radius: 10px;  
 }
-
 .submit{
-	background: rgba(255, 0, 0, 0.8);
-	border-radius: 100px;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(255, 255, 255, 0.1) 100%);
+	border-radius: 100px 0px 0px 100px;
 	border: none;
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 
-	margin-top: 18rem;
-	margin-left: 55rem;
-
-	animation-duration: 1s;
-	animation-name: buttonOut;
+	margin-left: 58rem;
 }
+.basicDataPanel{
+    position: absolute;
+    width: 700px;
+    padding: 2%;
+    margin-left: 23%;
+    margin-top: 2%;
 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+}
+.addDataPanel{
+    width: 940px;
+    margin: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 470px);
+}
+.listTypes{
+    height: 2.5rem;
+}
+.imgInput{
+	position: relative;
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.6);
+
+	width: 160px;
+	height: 160px;
+	margin-left: 7%;
+	margin-top: 3%;
+	border-radius: 10px;
+	
+	animation-duration: 0.5s;
+	animation-name: imgOut;
+}
+.imgInput::before {
+	background:#9C9D9A;
+	color: rgb(0, 0, 0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	content: '+';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
 @media (max-width: 1000px){
-	.inputsPanel{
+	.subPanel{
 		width: 500px;
 		left: calc(50% - 500px/2);
 
@@ -72,72 +124,106 @@ hr{
 		overflow-y: scroll;
 		overflow-x: hidden;
 	}
+	.subPanel::-webkit-scrollbar:vertical {
+		width:10px;
+	}
 	.submit{
-		width: 100px;
-		height: 100px;
-		margin-top: 4px;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0) 100%);
+		border-radius: 100px 100px 0px 0px;
+
+		width: 70px;
+		height: 70px;
+		
 		margin-left: 12rem;
 
-		animation-duration: 1s;
+		animation-duration: 2s;
 		animation-name: buttonIn;
 	}
-	hr{
-		width: 1px;
-		visibility: hidden;
+	.basicDataPanel{
+        width: 450px;
+        padding: 4%;
+        margin-left: 0%;
+        margin-top: 45%;
+
+        grid-template-columns: repeat(auto-fill, 450px);
+    }
+	.addDataPanel{
+        width: 450px;
+        padding: 4%;
+        margin-left: 0%;
+        margin-top: 61%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 450px);
+    }
+    .listTypes{
+        width: 98%;
+    }
+	.imgInput{
+		margin-top: 8%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+		
+		animation-duration: 1s;
+		animation-name: imgIn;
 	}
 }
-
 @keyframes panelIn {
 	from {
 		width: 1000px;
 		left: calc(50% - 1000px/2);
 	}
-  
 	to {
 		width: 500px;
 		left: calc(50% - 500px/2);
 	}
-  }
-
-  @keyframes panelOut {
+}
+@keyframes panelOut {
 	from {
 		width: 500px;
 		left: calc(50% - 500px/2);
 	}
-  
 	to {
 		width: 1000px;
 		left: calc(50% - 1000px/2);
 	}
-  }
-
-  @keyframes lineOut {
+}
+@keyframes buttonOut {
 	from {
-		width: 1px;
-		visibility: hidden;
-	}
-	to {
-		width: 900px;
-		visibility: visible;
-	}
-  }
-  @keyframes buttonOut {
-	from {
-		margin-top: 4px;
 		margin-left: 12rem;
+		border-radius: 100px 100px 0px 0px;
 	}
 	to {
-		margin-top: 18rem;
-		margin-left: 55rem;
+		margin-left: 58rem;
+		border-radius: 100px 0px 0px 100px;
 	}
-  }
-  @keyframes buttonIn {
+}
+@keyframes buttonIn {
 	from {
-		margin-top: 18rem;
-		margin-left: 55rem;
+		margin-left: 58rem;
+		border-radius: 100px 0px 0px 100px;
 	}
 	to {
-		margin-top: 4px;
 		margin-left: 12rem;
+		border-radius: 100px 100px 0px 0px;
+	}
+}
+@keyframes imgIn {
+	from {
+		margin-left: 7%;
+		margin-top: 3%;
+	}
+	to {
+		margin-top: 8%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+	}
+}
+@keyframes imgOut {
+	from {
+		margin-top: 8%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+	}
+	to {
+		margin-left: 7%;
+		margin-top: 3%;
 	}
 }
