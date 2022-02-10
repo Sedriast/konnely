@@ -1,5 +1,5 @@
 
-import style from './css/base.module.css';
+import style from './css/layout.module.css';
 import { Form } from './FormCom/Form';
 //import { ListViews } from './ListView.jsx/ListViews';
 

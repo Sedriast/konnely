@@ -1,0 +1,11 @@
+.principalPanel{
+    background: url(https://drive.google.com/uc?export=download&id=1x0hPfrMmSxAlq3esLERmlf8UumGaUdKP);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100vw;
+    height: 100vh;
+
+    mix-blend-mode: normal;
+    position: absolute;
+}

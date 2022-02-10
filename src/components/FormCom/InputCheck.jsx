@@ -1,4 +1,4 @@
-import style from './css/input.module.css';
+import style from '../css/form.module.css';
 
 export function InputCheck(props){
 

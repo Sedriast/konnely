@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import style from './css/basicData.module.css';
+import style from '../css/form.module.css';
 
 export function ListType( props ){
 

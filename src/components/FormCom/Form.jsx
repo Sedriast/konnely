@@ -1,6 +1,4 @@
 //import db from '../firebase/credenciales';
-import style3 from './css/aditionalData.module.css';
-import style2 from './css/basicData.module.css';
 import style from '../css/form.module.css';
 import { InputImage } from './InputImage';
 //import { collection, addDoc } from "firebase/firestore";
@@ -41,22 +39,27 @@ export function Form(props){
 	
 	return(
 		<div className={style.subPanel}>
-			<form className={style2.basicDataPanel} onSubmit={handleSubmit}>
-				<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
-				<input type='date' className={style.dateBirth} /> 
-				<input type='date' className={style.dateDestete} />
+
+			<form className={style.basicDataPanel} onSubmit={handleSubmit}>
+				<input type='text' name= 'nombre' placeholder='Nombre' onChange={handleChanche}/>
+				<input type='date' /> 
+				<input type='date' />
 				<ListType k="Raza"/>
-				<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
+				<input type='text' name= 'peso' placeholder='Peso' onChange={handleChanche}/>
 				<ListType k="Grupo asignado"/>
 			</form>
-			<InputImage ty="date" pl="Nombre" />
-			<form className={style3.addDataPanel} onSubmit={handleSubmit}>
+
+			<InputImage />
+
+			<form className={style.addDataPanel} onSubmit={handleSubmit}>
 				<ListType k="Motivo del ingreso"/>
 				<ListType k="¿Donde?"/>
-				<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
-				<input name="id" placeholder='ID'onChange={handleChanche}></input>
+				<input type="text" name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
+				<input type="text" name="id" placeholder='ID'onChange={handleChanche}></input>
 			</form>
+
 			<InputCheck />
+
 			<button className={style.submit}>→</button>
 		</div>
 	);

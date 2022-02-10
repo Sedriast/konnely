@@ -8,9 +8,29 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
+html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
+}
+html::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+html::-webkit-scrollbar:vertical {
+  width:10px;
+}
+html::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+  display: none;
+} 
+html::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.1);;
+  border-radius: 20px;
+  border: none;
+}
+html::-webkit-scrollbar-track {
+  border-radius: 10px;  
 }
 
 /* Sections

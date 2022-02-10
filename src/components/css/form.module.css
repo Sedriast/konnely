@@ -1,11 +1,25 @@
-.submit{
-	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(255, 255, 255, 0.1) 100%);
-	border-radius: 100px 0px 0px 100px;
+input{
+    background: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
 	border: none;
-	width: 70px;
-	height: 70px;
+	padding: 4px;
 
-	margin-left: 58rem;
+	height: 2rem;
+    margin: 4px;
+
+	font-family:Arial, Helvetica, sans-serif;
+}
+input::placeholder{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+select{
+    background: rgba(255, 255, 255, 0.6);
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 4px;
+    margin: 4px;
+    border: none;
+    border-radius: 10px;
 }
 .subPanel{
 	position: absolute;
@@ -43,6 +57,67 @@
 .subPanel::-webkit-scrollbar-track {
     border-radius: 10px;  
 }
+.submit{
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(255, 255, 255, 0.1) 100%);
+	border-radius: 100px 0px 0px 100px;
+	border: none;
+	width: 70px;
+	height: 70px;
+
+	margin-left: 58rem;
+}
+.basicDataPanel{
+    position: absolute;
+    width: 700px;
+    padding: 2%;
+    margin-left: 23%;
+    margin-top: 2%;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+
+    animation-duration: 1s;
+    animation-name: basicDataIn;
+}
+.addDataPanel{
+    width: 940px;
+    margin: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 470px);
+
+}
+.listTypes{
+    height: 2.5rem;
+}
+.imgInput{
+	position: relative;
+	display: inline-block;
+	background: rgba(255, 255, 255, 0.6);
+
+	width: 160px;
+	height: 160px;
+	margin-left: 7%;
+	margin-top: 3%;
+	border-radius: 10px;
+	
+	animation-duration: 0.5s;
+	animation-name: imgOut;
+}
+.imgInput::before {
+	background:#9C9D9A;
+	color: rgb(0, 0, 0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	content: '+';
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
 @media (max-width: 1000px){
 	.subPanel{
 		width: 500px;
@@ -66,6 +141,34 @@
 		animation-duration: 2s;
 		animation-name: buttonIn;
 	}
+	.basicDataPanel{
+        width: 100%;
+        padding: 4%;
+        margin-left: 0%;
+        margin-top: 45%;
+
+        grid-template-columns: repeat(auto-fill, 450px);
+    }
+	.addDataPanel{
+        width: 100%;
+        padding: 4%;
+        margin-left: 0%;
+        margin-top: 64.5%;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 450px);
+    
+    }
+    .listTypes{
+        width: 98%;
+    }
+	.imgInput{
+		margin-top: 4%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+		
+		animation-duration: 1s;
+		animation-name: imgIn;
+	}
 }
 
 @keyframes panelIn {
@@ -73,26 +176,23 @@
 		width: 1000px;
 		left: calc(50% - 1000px/2);
 	}
-  
 	to {
 		width: 500px;
 		left: calc(50% - 500px/2);
 	}
-  }
+}
 
-  @keyframes panelOut {
+@keyframes panelOut {
 	from {
 		width: 500px;
 		left: calc(50% - 500px/2);
 	}
-  
 	to {
 		width: 1000px;
 		left: calc(50% - 1000px/2);
 	}
-  }
-
-  @keyframes buttonOut {
+}
+@keyframes buttonOut {
 	from {
 		margin-left: 12rem;
 		border-radius: 100px 100px 0px 0px;
@@ -101,8 +201,8 @@
 		margin-left: 58rem;
 		border-radius: 100px 0px 0px 100px;
 	}
-  }
-  @keyframes buttonIn {
+}
+@keyframes buttonIn {
 	from {
 		margin-left: 58rem;
 		border-radius: 100px 0px 0px 100px;
@@ -110,5 +210,35 @@
 	to {
 		margin-left: 12rem;
 		border-radius: 100px 100px 0px 0px;
+	}
+}
+@keyframes basicDataIn {
+	from {
+		margin-left: 0%;
+		margin-top: 45%;
+	}
+	to {
+		margin-left: 23%;
+		margin-top: 2%;
+	}
+}
+@keyframes imgIn {
+	from {
+		margin-left: 7%;
+		margin-top: 3%;
+	}
+	to {
+		margin-top: 4%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+	}
+}
+@keyframes imgOut {
+	from {
+		margin-top: 4%;
+		margin-left: calc(50% - 200px/2 - 0.5px);
+	}
+	to {
+		margin-left: 7%;
+		margin-top: 3%;
 	}
 }
