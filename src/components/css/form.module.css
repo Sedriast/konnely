@@ -35,7 +35,6 @@ select{
 	animation-name: panelOut;
 
 	overflow-y: scroll;
-	overflow-x: scroll;
 }
 .subPanel::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -43,7 +42,7 @@ select{
 .subPanel::-webkit-scrollbar:vertical {
     width:10px;
 }
-.subPanel::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
     display: none;
 } 
 .subPanel::-webkit-scrollbar:horizontal {

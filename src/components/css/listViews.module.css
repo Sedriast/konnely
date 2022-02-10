@@ -1,0 +1,94 @@
+input{
+    background: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	border: none;
+	padding: 4px;
+
+	height: 2rem;
+    margin: 4px;
+
+	font-family:Arial, Helvetica, sans-serif;
+}
+input::placeholder{
+    color: black;
+    font-family:Arial, Helvetica, sans-serif;
+}
+select{
+    background: rgba(255, 255, 255, 0.6);
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 4px;
+    margin: 4px;
+    border: none;
+    border-radius: 10px;
+}
+.subPanel{
+	position: absolute;
+	width: 1000px;
+	height: 95vh;
+	left: calc(50% - 1000px/2);
+	top: calc(50% - 95vh/2 - 0.5px);
+	
+	background: rgba(255, 255, 255, 0.4);
+	border: 2px solid #FFFFFF;
+	border-radius: 20px;
+
+	overflow-y: scroll;
+
+	display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+
+	animation-duration: 1s;
+	animation-name: panelOut;
+}
+.subPanel::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.subPanel::-webkit-scrollbar:vertical {
+    width:10px;
+}
+.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
+    display: none;
+} 
+.subPanel::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+.subPanel::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.1);;
+    border-radius: 20px;
+    border: none;
+}
+.subPanel::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+@media (max-width: 1000px){
+	.subPanel{
+		width: 500px;
+		left: calc(50% - 500px/2);
+
+        overflow-y: scroll;
+		overflow-x: hidden;
+
+		animation-duration: 1s;
+		animation-name: panelIn;
+	}
+}
+@keyframes panelIn {
+	from {
+		width: 1000px;
+		left: calc(50% - 1000px/2);
+	}
+	to {
+		width: 500px;
+		left: calc(50% - 500px/2);
+	}
+}
+@keyframes panelOut {
+	from {
+		width: 500px;
+		left: calc(50% - 500px/2);
+	}
+	to {
+		width: 1000px;
+		left: calc(50% - 1000px/2);
+	}
+}
