@@ -2,13 +2,14 @@
 	position: relative;
 	display: inline-block;
 	background: rgba(255, 255, 255, 0.6);
-	width: 200px;
-	height: 200px;
-	margin-left: 2%;
-	margin-top: 2%;
 
+	width: 160px;
+	height: 160px;
+	margin-left: 7%;
+	margin-top: 3%;
 	border-radius: 10px;
-	animation-duration: 1s;
+	
+	animation-duration: 0.5s;
 	animation-name: imgOut;
 }
   
@@ -41,8 +42,8 @@
 
 @keyframes imgIn {
 	from {
-		margin-left: 2%;
-		margin-top: 2%;
+		margin-left: 7%;
+		margin-top: 3%;
 	}
   
 	to {
@@ -58,7 +59,7 @@
 	}
   
 	to {
-		margin-left: 2%;
-		margin-top: 2%;
+		margin-left: 7%;
+		margin-top: 3%;
 	}
   }

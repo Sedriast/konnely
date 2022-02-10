@@ -6,6 +6,7 @@ import { InputImage } from './InputImage';
 //import { collection, addDoc } from "firebase/firestore";
 import { useState } from 'react';
 import { ListType } from './ListType';
+import { InputCheck } from './InputCheck';
 
 export function Form(props){
 
@@ -55,8 +56,8 @@ export function Form(props){
 				<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
 				<input name="id" placeholder='ID'onChange={handleChanche}></input>
 			</form>
-			
-			<button className={style.submit}>>></button>
+			<InputCheck />
+			<button className={style.submit}>→</button>
 		</div>
 	);
 }

@@ -1,14 +1,12 @@
-import style from './css/views.module.css';
+import style from './css/input.module.css';
 
-export function ListView(){
+export function InputCheck(props){
 
-    const init = {
-        value:"Macho"
-    }
+    const init = props.init;
 
     return(
-        <div className={style.viewPanel}>
-            <input type="submit" name='check' value={init}/>
+        <div className={style.chaeckPanel}>
+            <input type="checkbox" name='check' value={init}/>
         </div>
     );
 }

@@ -11,8 +11,8 @@
 	animation-duration: 1s;
 	animation-name: panelOut;
 
-	overflow-y: none;
-	overflow-x: none;
+	overflow-y: scroll;
+	overflow-x: scroll;
 }
 .inputsPanel::-webkit-scrollbar {
     -webkit-appearance: none;
@@ -41,17 +41,13 @@
 }
 
 .submit{
-	background: rgba(255, 0, 0, 0.8);
-	border-radius: 100px;
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(255, 255, 255, 0.1) 100%);
+	border-radius: 100px 0px 0px 100px;
 	border: none;
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 
-	margin-top: 18rem;
-	margin-left: 55rem;
-
-	animation-duration: 1s;
-	animation-name: buttonOut;
+	margin-left: 58rem;
 }
 
 @media (max-width: 1000px){
@@ -66,12 +62,15 @@
 		overflow-x: hidden;
 	}
 	.submit{
-		width: 100px;
-		height: 100px;
-		margin-top: 4px;
+		background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0) 100%);
+		border-radius: 100px 100px 0px 0px;
+
+		width: 70px;
+		height: 70px;
+		
 		margin-left: 12rem;
 
-		animation-duration: 1s;
+		animation-duration: 2s;
 		animation-name: buttonIn;
 	}
 }
@@ -100,33 +99,23 @@
 	}
   }
 
-  @keyframes lineOut {
-	from {
-		width: 1px;
-		visibility: hidden;
-	}
-	to {
-		width: 900px;
-		visibility: visible;
-	}
-  }
   @keyframes buttonOut {
 	from {
-		margin-top: 4px;
 		margin-left: 12rem;
+		border-radius: 100px 100px 0px 0px;
 	}
 	to {
-		margin-top: 18rem;
-		margin-left: 55rem;
+		margin-left: 58rem;
+		border-radius: 100px 0px 0px 100px;
 	}
   }
   @keyframes buttonIn {
 	from {
-		margin-top: 18rem;
-		margin-left: 55rem;
+		margin-left: 58rem;
+		border-radius: 100px 0px 0px 100px;
 	}
 	to {
-		margin-top: 4px;
 		margin-left: 12rem;
+		border-radius: 100px 100px 0px 0px;
 	}
 }
