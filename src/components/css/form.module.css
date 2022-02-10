@@ -1,10 +1,3 @@
-hr{
-	width: 900px;
-	margin-top: 1rem;
-
-	animation-duration: 3s;
-	animation-name: lineOut;
-}
 .inputsPanel{
 	position: absolute;
 	width: 1000px;
@@ -34,13 +27,13 @@ hr{
 } 
 
 .inputsPanel::-webkit-scrollbar:horizontal {
-    height: 10px;
+    height: 5px;
 }
 
 .inputsPanel::-webkit-scrollbar-thumb {
-    background-color: #797979;
+    background-color: rgba(255, 0, 0, 0.1);;
     border-radius: 20px;
-    border: 2px solid #f1f2f3;
+    border: none;
 }
 
 .inputsPanel::-webkit-scrollbar-track {
@@ -80,10 +73,6 @@ hr{
 
 		animation-duration: 1s;
 		animation-name: buttonIn;
-	}
-	hr{
-		width: 1px;
-		visibility: hidden;
 	}
 }
 

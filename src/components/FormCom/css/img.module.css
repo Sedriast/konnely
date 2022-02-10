@@ -13,7 +13,7 @@
 }
   
 .temp::before {
-	background-color: rgba(255, 255, 255);
+	background:#9C9D9A;
 	color: rgb(0, 0, 0);
 	display: flex;
 	justify-content: center;

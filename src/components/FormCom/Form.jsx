@@ -49,7 +49,6 @@ export function Form(props){
 				<ListType k="Grupo asignado"/>
 			</form>
 			<InputImage ty="date" pl="Nombre" />
-			<hr />
 			<form className={style3.addDataPanel} onSubmit={handleSubmit}>
 				<ListType k="Motivo del ingreso"/>
 				<ListType k="¿Donde?"/>
