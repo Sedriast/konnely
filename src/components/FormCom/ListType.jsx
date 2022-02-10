@@ -17,7 +17,7 @@ export function ListType( props ){
 	const [values, setValues] = useState(init);
 
 	//Este vector maneja las opciones
-	const [op] = useState([s,"2","3"]);
+	const [op] = useState([props.k]);
 	  
 	const handleChange = e => {
 		const {name, value} = e.target;
@@ -31,10 +31,19 @@ export function ListType( props ){
 		alert('selected is: ' + this.state);
 	}
 */
+function lista () {
+	const lo = [];
+	op.map((color) => (
+		lo.push(color.name)
+		))
+	return lo
+}
+
+console.log(lista())
 
 	return (
 		<select className={style.listTypes} value={init} onChange={handleChange} >
-			{op.map(a=><option value={a}>{a}</option>)}
+			{ op.map(a=><option key={a.id} value={a.name}>{a.name}</option>)}
 		</select>
 	);
 }
