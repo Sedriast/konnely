@@ -5,6 +5,11 @@ export function ListViews(){
     return(
         <div className={style.subPanel}>
             <CardMin />
+            <CardMin />
+            <CardMin />
+            <CardMin />            
+            <CardMin />
+            <CardMin />
 		</div>
     );
 }

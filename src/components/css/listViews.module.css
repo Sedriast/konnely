@@ -23,11 +23,11 @@ select{
 }
 .subPanel{
 	position: absolute;
-	width: 1001px;
+	width: 1002px;
 	height: 95vh;
 	padding: 5px;
 
-	left: calc(50% - 1000px/2);
+	left: calc(50% - 1002px/2);
 	top: calc(50% - 95vh/2 - 0.5px);
 	
 	background: rgba(255, 255, 255, 0.4);
@@ -62,10 +62,18 @@ select{
 .subPanel::-webkit-scrollbar-track {
     border-radius: 10px;  
 }
+.cardPanel{
+	background: black;
+	width: 240px;
+	height: 290px;
+	margin: 5px;
+	border-radius: 10px;
+}
+
 @media (max-width: 1000px){
 	.subPanel{
 		width: 510px;
-		left: calc(50% - 500px/2);
+		left: calc(50% - 510px/2);
 
         overflow-y: scroll;
 		overflow-x: hidden;
@@ -74,26 +82,26 @@ select{
 		animation-name: panelIn;
 	}
 	.subPanel::-webkit-scrollbar:vertical {
-		width:10px;
+		width:5px;
 	}
 }
 @keyframes panelIn {
 	from {
-		width: 1000px;
-		left: calc(50% - 1000px/2);
+		width: 1002px;
+		left: calc(50% - 1002px/2);
 	}
 	to {
-		width: 500px;
-		left: calc(50% - 500px/2);
+		width: 510px;
+		left: calc(50% - 510px/2);
 	}
 }
 @keyframes panelOut {
 	from {
-		width: 500px;
-		left: calc(50% - 500px/2);
+		width: 510px;
+		left: calc(50% - 510px/2);
 	}
 	to {
-		width: 1000px;
-		left: calc(50% - 1000px/2);
+		width: 1002px;
+		left: calc(50% - 1002px/2);
 	}
 }
