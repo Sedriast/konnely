@@ -75,9 +75,6 @@ select{
 
     display: grid;
     grid-template-columns: repeat(auto-fill, 350px);
-
-    animation-duration: 1s;
-    animation-name: basicDataIn;
 }
 .addDataPanel{
     width: 940px;
@@ -85,7 +82,6 @@ select{
 
     display: grid;
     grid-template-columns: repeat(auto-fill, 470px);
-
 }
 .listTypes{
     height: 2.5rem;
@@ -142,7 +138,7 @@ select{
 		animation-name: buttonIn;
 	}
 	.basicDataPanel{
-        width: 100%;
+        width: 450px;
         padding: 4%;
         margin-left: 0%;
         margin-top: 45%;
@@ -150,27 +146,25 @@ select{
         grid-template-columns: repeat(auto-fill, 450px);
     }
 	.addDataPanel{
-        width: 100%;
+        width: 450px;
         padding: 4%;
         margin-left: 0%;
-        margin-top: 64.5%;
+        margin-top: 61%;
 
         display: grid;
         grid-template-columns: repeat(auto-fill, 450px);
-    
     }
     .listTypes{
         width: 98%;
     }
 	.imgInput{
-		margin-top: 4%;
+		margin-top: 8%;
 		margin-left: calc(50% - 200px/2 - 0.5px);
 		
 		animation-duration: 1s;
 		animation-name: imgIn;
 	}
 }
-
 @keyframes panelIn {
 	from {
 		width: 1000px;
@@ -181,7 +175,6 @@ select{
 		left: calc(50% - 500px/2);
 	}
 }
-
 @keyframes panelOut {
 	from {
 		width: 500px;
@@ -212,29 +205,19 @@ select{
 		border-radius: 100px 100px 0px 0px;
 	}
 }
-@keyframes basicDataIn {
-	from {
-		margin-left: 0%;
-		margin-top: 45%;
-	}
-	to {
-		margin-left: 23%;
-		margin-top: 2%;
-	}
-}
 @keyframes imgIn {
 	from {
 		margin-left: 7%;
 		margin-top: 3%;
 	}
 	to {
-		margin-top: 4%;
+		margin-top: 8%;
 		margin-left: calc(50% - 200px/2 - 0.5px);
 	}
 }
 @keyframes imgOut {
 	from {
-		margin-top: 4%;
+		margin-top: 8%;
 		margin-left: calc(50% - 200px/2 - 0.5px);
 	}
 	to {
