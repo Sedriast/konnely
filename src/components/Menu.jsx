@@ -2,8 +2,16 @@ import style from './css/Menu.module.css';
 
 export function Menu(){
     return(
-        <div className={style.menu}>
+        <>
+            <input type="checkbox" id="btnMenu" />
+            <div className="container-menu">
+                <div className="cont-menu">
+                    <nav>
 
-        </div>
+                    </nav>
+                    <label for="btn-menu">✖️</label>
+                </div>
+            </div>
+        </>
     );
 }
