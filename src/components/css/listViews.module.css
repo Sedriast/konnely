@@ -1,3 +1,7 @@
+p{
+	padding: 0;
+	margin: 0;
+}
 input{
     background: rgba(255, 255, 255, 0.6);
 	border-radius: 10px;
@@ -31,15 +35,13 @@ button{
 .subPanel{
 	position: absolute;
 	width: 1002px;
-	height: 95vh;
+	height: 80vh;
 	padding: 5px;
 
 	left: calc(50% - 1002px/2);
-	top: calc(50% - 95vh/2 - 0.5px);
+	top: calc(50% - 80vh/2 - 0.5px);
 	
-	background: rgba(255, 255, 255, 0.4);
-	border: 2px solid #FFFFFF;
-	border-radius: 20px;
+	border-radius: 10px;
 
 	overflow-y: scroll;
 
@@ -70,25 +72,28 @@ button{
     border-radius: 10px;  
 }
 .cardPanel{
-	background: linear-gradient(180deg, #FFFFFF 43.08%, rgba(255, 255, 255, 0) 93.23%);
+	background: linear-gradient(180deg, #5A5AFF 0%, #FFFFFF 93.75%);
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 20px;
+
 	width: 230px;
 	height: 150px;
 	margin: 8px;
 
-	border-radius: 10px;
-	border-top: 2px black solid;
+	border-radius: 20px;
+	border-top: 1px black solid;
 }
 .cardPanel:hover{
 	opacity: 0.3;
 }
 .imgView{
-
 	background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);
 
 	width: 100px;
 	height: 100px;
 
-	margin-top: 1rem;
+	margin-top: 10px;
 
 	border: none;
 	border-radius: 100px;

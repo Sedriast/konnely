@@ -17,6 +17,16 @@ export function ListViews(props){
                 <CardMin />
                 <CardMin />
                 <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
+                <CardMin />
             </div>
         </>
     );
