@@ -1,0 +1,15 @@
+.navMenu {
+	background: linear-gradient(90deg, #000000 22.59%, rgba(0, 0, 0, 0) 93.67%);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: -100%;
+	transition: 850ms;
+}
+.navMenu.active {
+	left: 0;
+	transition: 350ms;
+}

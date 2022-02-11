@@ -29,7 +29,7 @@ export function ListType(props){
 
 	const handleChange = e => {
 		const {name, value} = e.target;
-        setValues({[name]:value})
+		setValues({[name]:value})
 	};
 	
 //Esta funcion se usa para enviar los datos seleccionados a donde te plasca

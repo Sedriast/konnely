@@ -6,7 +6,7 @@
 import style from '../css/Form.module.css';
 
 export function InputImage(){
-    return(
-        <input className={style.imgInput} type="file" name="src-file1" aria-label="Archivo"/>
-    );
+	return(
+		<input className={style.imgInput} type="file" name="src-file1" aria-label="Archivo"/>
+	);
 }

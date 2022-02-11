@@ -39,28 +39,30 @@ export function Form(){
 	}
 
 	return(
-		<div className={style.subPanel}>
-			<form  onSubmit={handleSubmit}>
-				<div className={style.basicDataPanel}>
-					<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
-					<InputDate iden="inputdate1" place="Fecha de nacimiento" />
-					<InputDate iden="inputdate2" place="Fecha de destete" />
-					<ListType name="raza" collection='raza'/>
-					<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
-					<ListType collection='grupo'/>
-				</div>
+		<>
+			<div className={style.subPanel}>
+				<form  onSubmit={handleSubmit}>
+					<div className={style.basicDataPanel}>
+						<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
+						<InputDate iden="inputdate1" place="Fecha de nacimiento" />
+						<InputDate iden="inputdate2" place="Fecha de destete" />
+						<ListType name="raza" collection='raza'/>
+						<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
+						<ListType collection='grupo'/>
+					</div>
 					<InputImage ty="date" pl="Nombre" />
-				<div className={style.addDataPanel}>
-					<ListType collection='motivo'/>
-					<ListType collection='donde'/>
-					<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
-					<input name="id" placeholder='ID'onChange={handleChanche}></input>
-				</div>
+					<div className={style.addDataPanel}>
+						<ListType collection='motivo'/>
+						<ListType collection='donde'/>
+						<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
+						<input name="id" placeholder='ID'onChange={handleChanche}></input>
+					</div>
 
-				<InputCheck />
+					<InputCheck />
 
-				<button className={style.submit}>→</button>
-			</form>
-		</div>
+					<button className={style.submit}>→</button>
+				</form>
+			</div>
+		</>
 	);
 }

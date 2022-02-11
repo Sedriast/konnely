@@ -1,0 +1,52 @@
+.navbarMenu {
+	background: transparent;
+	height: 80px;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+}
+.bars {
+	margin-left: 2rem;
+	font-size: 2rem;
+	background: none;
+
+	margin: 0;
+}
+.navMenuItems {
+	width: 100vw;
+	padding: 0;
+	margin: 0;
+}
+.navbarToggle {
+	background: radial-gradient(76.15% 79.02% at 0% 0%, #ffffff 37.76%, rgba(0, 0, 0, 0) 95.29%);
+	width: 100px;
+	height: 100px;
+	display: flex;
+}
+.iconMenu{
+	background: radial-gradient(76.15% 79.02% at 0% 0%, #000000 37.76%, rgba(0, 0, 0, 0) 95.29%);
+	width: 100px;
+	height: 100px;
+}
+.navText {
+	font-family: Arial, Helvetica, sans-serif;
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	padding: 10;
+	margin-left: 50px;
+	list-style: none;
+	height: 60px;
+}
+
+.navText a {
+	text-decoration: none;
+	color: #f5f5f5;
+	font-size: 20px;
+	width: 95%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0 16px;
+	border-radius: 4px;
+}
