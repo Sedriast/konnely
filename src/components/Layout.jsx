@@ -10,8 +10,8 @@ export function Layout(){
             <Router>
                 <Navbar />
                 <Routes >
-                  <Route exact path='/form' element={<Form/>}> </Route>
-                    <Route exact path='/listView' element={<ListViews />}> </Route>
+					<Route exact path='/form' element={<Form/>}> </Route>
+					<Route exact path='/listView' element={<ListViews idImage='10dKfWHgApJ5ElbXCaOyrdguN8sac2jpA'/>}> </Route>
                 </Routes>
             </Router>
         </div>

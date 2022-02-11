@@ -9,4 +9,5 @@ export const SidebarData = [
 		path: '/listView',
 		icon: '',
 	}
+	
 ]
