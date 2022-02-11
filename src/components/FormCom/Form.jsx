@@ -43,7 +43,7 @@ export function Form(){
 					<ListType collection='raza' handleChanche={handleChange}/>
 					<ListType collection='grupo' handleChanche={handleChange}/>
 				</div>
-					<InputImage ty="date" pl="Nombre" />
+				<InputImage ty="date" pl="Nombre" />
 				<div className={style.addDataPanel}>
 					<input name= 'peso' type='text' className={style.weight} placeholder='Peso' onChange={handleChange}/>
 					<ListType collection='motivo' handleChanche={handleChange}/>
@@ -51,10 +51,10 @@ export function Form(){
 					<input type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange}></input>
 				</div>
 
-				<InputCheck />
+					<InputCheck />
 
-				<button className={style.submit}>→</button>
-			</form>
-		</div>
+					<button className={style.submit}>→</button>
+				</form>
+			</div>
 	);
 }

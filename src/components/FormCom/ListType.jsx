@@ -24,7 +24,6 @@ export function ListType(props){
 			))
 		return lo
 	}
-
 	return (
 		<select name={coleccion} className={style.listTypes} onChange={handleChanche} >
 			{ lista().map(a=><option key={a} value={a}>{a}</option>)}
