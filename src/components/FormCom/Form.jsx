@@ -10,15 +10,11 @@ import { InputDate } from './InputDate';
 
 export function Form(){
 
-	const init = {
-        nombre:"",
-        peso:"",
-		raza:""
-    }
+	const init = {}
 
 	const [values, setValues] = useState(init);
 
-	const handleChanche = e => {
+	const handleChange = e => {
         const {name, value} = e.target;
         setValues({...values, [name]:value})
     }
@@ -30,33 +26,30 @@ export function Form(){
 
 	 const addInfo = async (Objeto) => {
 		try {
-			const docRef = await addDoc(collection(db, "conejos"), {Objeto});
-			console.log("Document written with ID: ", docRef.id);
-			console.log(Objeto)
+			await addDoc(collection(db, "conejos"), {Objeto});
 		  } catch (e) {
 			console.error("Error adding document: ", e);
 		  }
 	}
 
 	return(
-		<>
-			<div className={style.subPanel}>
-				<form  onSubmit={handleSubmit}>
-					<div className={style.basicDataPanel}>
-						<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
-						<InputDate iden="inputdate1" place="Fecha de nacimiento" />
-						<InputDate iden="inputdate2" place="Fecha de destete" />
-						<ListType name="raza" collection='raza'/>
-						<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
-						<ListType collection='grupo'/>
-					</div>
-					<InputImage ty="date" pl="Nombre" />
-					<div className={style.addDataPanel}>
-						<ListType collection='motivo'/>
-						<ListType collection='donde'/>
-						<input name="Calificacion" placeholder='Calificacion' onChange={handleChanche}></input>
-						<input name="id" placeholder='ID'onChange={handleChanche}></input>
-					</div>
+		<div className={style.subPanel}>
+			<form  onSubmit={handleSubmit}>
+				<div className={style.basicDataPanel}>
+					<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChange}/>
+					<input name="id" placeholder='ID'onChange={handleChange}></input>
+					<InputDate iden="inputdate1" place="Fecha de nacimiento" handleChanche={handleChange}/>
+					<InputDate iden="inputdate2" place="Fecha de destete" handleChanche={handleChange}	/>
+					<ListType collection='raza' handleChanche={handleChange}/>
+					<ListType collection='grupo' handleChanche={handleChange}/>
+				</div>
+				<InputImage ty="date" pl="Nombre" />
+				<div className={style.addDataPanel}>
+					<input name= 'peso' type='text' className={style.weight} placeholder='Peso' onChange={handleChange}/>
+					<ListType collection='motivo' handleChanche={handleChange}/>
+					<ListType collection='donde'handleChanche={handleChange}/>
+					<input type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange}></input>
+				</div>
 
 					<InputCheck />
 

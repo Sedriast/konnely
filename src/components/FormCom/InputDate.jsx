@@ -4,6 +4,7 @@ export function InputDate(props){
 
 	const place = props.place;
 	const iden = props.iden;
+    const {handleChanche} = props;
 
 	window.addEventListener(
 		'load',function(){ 
@@ -13,7 +14,7 @@ export function InputDate(props){
 																});
 			document.getElementById(iden).addEventListener('focus',function(){document.getElementById(iden).type= 'date';});});
 
-	return(
-		<input type='text' id={iden} className={style.dateDestete} placeholder={place} />
-	);
+    return(
+        <input name={place} type='text' id={iden} className={style.dateDestete} placeholder={place} onChange={handleChanche} />
+    );
 }
