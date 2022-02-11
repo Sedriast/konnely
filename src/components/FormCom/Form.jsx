@@ -1,12 +1,13 @@
-//import db from '../firebase/credenciales';
-import db from '../firebase/credenciales';
+import app from '../firebase/credenciales';
 import style from '../css/Form.module.css';
+import { getFirestore } from "firebase/firestore";
 import { InputImage } from './InputImage';
-import {  useState } from 'react';
+import { useState } from 'react';
 import { ListType } from './ListType';
 import { InputCheck } from './InputCheck';
 import { collection, addDoc } from "firebase/firestore";
 import { InputDate } from './InputDate';
+const db = getFirestore(app);
 
 export function Form(){
 

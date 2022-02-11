@@ -1,7 +1,9 @@
-import db from '../firebase/credenciales';
+import app from '../firebase/credenciales';
+import style from '../css/Form.module.css';
+import { getFirestore } from "firebase/firestore";
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from 'react';
-import style from '../css/Form.module.css';
+const db = getFirestore(app);
 
 export function ListType(props){
 

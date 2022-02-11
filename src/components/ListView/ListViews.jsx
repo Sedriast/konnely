@@ -1,8 +1,10 @@
-import db from '../firebase/credenciales';
+import app from '../firebase/credenciales';
+import style from '../css/ListViews.module.css';
+import { getFirestore } from "firebase/firestore";
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from 'react';
-import style from '../css/ListViews.module.css';
 import { CardMin } from './CardMin';
+const db = getFirestore(app);
 
 export function ListViews(props){
 
