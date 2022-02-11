@@ -30,7 +30,6 @@ export function ListType(props){
 	const handleChange = e => {
 		const {name, value} = e.target;
         setValues({[name]:value})
-		
 	};
 	
 //Esta funcion se usa para enviar los datos seleccionados a donde te plasca
@@ -40,6 +39,7 @@ export function ListType(props){
 		alert('selected is: ' + this.state);
 	}
 */
+	
 
 	return (
 		<select name="name" className={style.listTypes} onChange={handleChange} >

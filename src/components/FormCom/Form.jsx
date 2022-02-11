@@ -43,9 +43,9 @@ export function Form(){
 			<form  onSubmit={handleSubmit}>
 				<div className={style.basicDataPanel}>
 					<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
-					<InputDate iden='date1' place="Fecha de nacimiento" />
-					<InputDate iden='date2' place="Fecha de destete" />
-					<ListType name="raza" collection='raza' onChange={handleChanche}/>
+					<InputDate place="Fecha de nacimiento" />
+					<InputDate place="Fecha de destete" />
+					<ListType name="raza" collection='raza'/>
 					<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
 					<ListType collection='grupo'/>
 				</div>
