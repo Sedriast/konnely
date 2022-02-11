@@ -7,7 +7,7 @@ import { CardMin } from './CardMin';
 export function ListViews(props){
 
     const imagenurl = 'https://drive.google.com/uc?export=download&id='+props.idImage
-	const [data, setData] = useState([{}]);
+	const [data, setData] = useState([{Objeto:{}}]);
 
 	useEffect(
 		() =>
