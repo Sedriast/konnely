@@ -6,8 +6,8 @@ import style from '../css/Form.module.css';
 export function ListType(props){
 
 	const coleccion = props.collection;
+	const {handleChanche} = props;
 
-	const [values, setValues] = useState([{ name: "Loading..."}]);
 	const [list, setList] = useState([{ name: "Loading...", id: "initial" }]);
 
 	useEffect(
@@ -17,7 +17,6 @@ export function ListType(props){
 		  ),
 		[]);
 
-
 	function lista () {
 		const lo = [ ];
 		list.map((color) => (
@@ -26,23 +25,8 @@ export function ListType(props){
 		return lo
 	}
 
-
-	const handleChange = e => {
-		const {name, value} = e.target;
-        setValues({[name]:value})
-	};
-	
-//Esta funcion se usa para enviar los datos seleccionados a donde te plasca
-	
-/** 
- 	function handleSubmit (event) {
-		alert('selected is: ' + this.state);
-	}
-*/
-	
-
 	return (
-		<select name="name" className={style.listTypes} onChange={handleChange} >
+		<select name={coleccion} className={style.listTypes} onChange={handleChanche} >
 			{ lista().map(a=><option key={a} value={a}>{a}</option>)}
 		</select>
 	);
