@@ -2,27 +2,18 @@ import style from '../css/form.module.css';
 
 export function InputDate(props){
 
-    window.addEventListener('load',function(){
-
-		document.getElementById('dateT').type= 'text';
-		
-		document.getElementById('dateT').addEventListener('blur',function(){
-		
-		document.getElementById('dateT').type= 'text';
-		
-		});
-		
-		document.getElementById('dateT').addEventListener('focus',function(){
-		
-		document.getElementById('dateT').type= 'date';
-		
-		});
-		
-	});
-
     const place = props.place;
+	const iden = props.iden;
+
+    window.addEventListener(
+        'load',function(){ 
+            document.getElementById(iden).type= 'text';
+            document.getElementById(iden).addEventListener('blur', function(){
+                                                                    document.getElementById(iden).type= 'text';
+                                                                });
+			document.getElementById(iden).addEventListener('focus',function(){document.getElementById(iden).type= 'date';});});
 
     return(
-        <input type='date' id='dateT' className={style.dateDestete} placeholder={place}/>
+        <input type='text' id={iden} className={style.dateDestete} placeholder={place} />
     );
 }
