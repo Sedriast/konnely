@@ -1,6 +1,6 @@
 //import db from '../firebase/credenciales';
 import db from '../firebase/credenciales';
-import style from '../css/form.module.css';
+import style from '../css/Form.module.css';
 import { InputImage } from './InputImage';
 import {  useState } from 'react';
 import { ListType } from './ListType';

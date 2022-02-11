@@ -1,4 +1,4 @@
-import style from '../css/form.module.css';
+import style from '../css/Form.module.css';
 
 export function InputDate(props){
 

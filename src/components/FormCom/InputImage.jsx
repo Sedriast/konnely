@@ -3,7 +3,7 @@
  * (que parece ser mas complicado de lo que imaginaba)
  */
 
-import style from '../css/form.module.css';
+import style from '../css/Form.module.css';
 
 export function InputImage(){
     return(

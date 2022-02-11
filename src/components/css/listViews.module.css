@@ -78,6 +78,9 @@ button{
 	border-radius: 10px;
 	border-top: 2px black solid;
 }
+.cardPanel:hover{
+	opacity: 0.5;
+}
 .imgView{
 	width: 100px;
 	height: 100px;
