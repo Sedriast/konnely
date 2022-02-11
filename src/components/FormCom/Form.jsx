@@ -6,6 +6,7 @@ import {  useState } from 'react';
 import { ListType } from './ListType';
 import { InputCheck } from './InputCheck';
 import { collection, addDoc } from "firebase/firestore";
+import { InputDate } from './InputDate';
 
 export function Form(){
 
@@ -16,7 +17,6 @@ export function Form(){
     }
 
 	const [values, setValues] = useState(init);
-
 
 	const handleChanche = e => {
         const {name, value} = e.target;
@@ -43,8 +43,8 @@ export function Form(){
 			<form  onSubmit={handleSubmit}>
 				<div className={style.basicDataPanel}>
 					<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChanche}/>
-					<input type='date' className={style.dateBirth} /> 
-					<input type='date' className={style.dateDestete} />
+					<InputDate place="Fecha de nacimiento" />
+					<InputDate place="Fecha de destete" />
 					<ListType name="raza" collection='raza' onChange={handleChanche}/>
 					<input name= 'peso' type='text' className={style.weight} placeholder='Peso'onChange={handleChanche}/>
 					<ListType collection='grupo'/>

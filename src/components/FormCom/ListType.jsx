@@ -7,7 +7,6 @@ export function ListType(props){
 
 	const coleccion = props.collection;
 
-
 	const [values, setValues] = useState([{ name: "Loading..."}]);
 	const [list, setList] = useState([{ name: "Loading...", id: "initial" }]);
 

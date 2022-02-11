@@ -12,7 +12,7 @@ export function CardMin(props){
     return(
         <button onClick={test}>
             <div className={style.cardPanel} >
-                <img className={style.imgView} src={url} />
+                <img className={style.imgView} src={url} alt=""/>
                 <p>{rabitData}</p>
             </div>
         </button>
