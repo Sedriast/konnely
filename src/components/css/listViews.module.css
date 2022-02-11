@@ -71,23 +71,26 @@ button{
 }
 .cardPanel{
 	background: linear-gradient(180deg, #FFFFFF 43.08%, rgba(255, 255, 255, 0) 93.23%);
-	width: 240px;
-	height: 290px;
-	margin: 5px;
+	width: 230px;
+	height: 150px;
+	margin: 8px;
 
 	border-radius: 10px;
 	border-top: 2px black solid;
 }
 .cardPanel:hover{
-	opacity: 0.5;
+	opacity: 0.3;
 }
 .imgView{
+
+	background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);
+
 	width: 100px;
 	height: 100px;
 
 	margin-top: 1rem;
 
-
+	border: none;
 	border-radius: 100px;
 }
 
