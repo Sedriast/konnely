@@ -56,6 +56,5 @@ export function Form(){
 					<button className={style.submit}>→</button>
 				</form>
 			</div>
-		</>
 	);
 }
