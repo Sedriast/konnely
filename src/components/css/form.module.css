@@ -1,229 +1,341 @@
-input{
-    background: rgba(255, 255, 255, 0.6);
-	border-radius: 10px;
-	border: none;
-	padding: 4px;
+/*
+El webkit se configuró, para que las barras de desplazamiento no estroben al espacio visual del componente
 
-	height: 2rem;
-    margin: 4px;
+1- Variables and constants
+2- Containers 		
+3- Components 		
+4- Resizing 		
+5- Animations 		
 
-	font-family:Arial, Helvetica, sans-serif;
-}
-input::placeholder{
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-}
-select{
-    background: rgba(255, 255, 255, 0.6);
-    font-family:Arial, Helvetica, sans-serif;
-    padding: 4px;
-    margin: 4px;
-    border: none;
-    border-radius: 10px;
-}
-.subPanel{
-	position: absolute;
-	width: 1000px;
-	height: 95vh;
-	left: calc(50% - 1000px/2);
-	top: calc(50% - 95vh/2 - 0.5px);
-	
-	background: linear-gradient(359.31deg, rgba(0, 0, 0, 0) 0.59%, rgba(0, 0, 0, 0.159235) 6.77%, rgba(0, 0, 0, 0.34501) 13.97%, rgba(0, 0, 0, 0.578125) 32.5%, #000000 99.41%);
-	border-radius: 20px;
 
-	animation-duration: 1s;
-	animation-name: panelOut;
 
-	overflow-y: scroll;
-}
-.subPanel::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-.subPanel::-webkit-scrollbar:vertical {
-    width:1px;
-}
-.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
-    display: none;
-} 
-.subPanel::-webkit-scrollbar:horizontal {
-    height: 5px;
-}
-.subPanel::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 0, 0, 0.1);;
-    border-radius: 20px;
-    border: none;
-}
-.subPanel::-webkit-scrollbar-track {
-    border-radius: 10px;  
-}
-.submit{
-	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(255, 255, 255, 0.1) 100%);
-	border-radius: 100px 0px 0px 100px;
-	border: none;
-	width: 70px;
-	height: 70px;
 
-	margin-left: 58rem;
-}
-.basicDataPanel{
-    position: absolute;
-    width: 700px;
-    padding: 2%;
-    margin-left: 23%;
-    margin-top: 2%;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 350px);
-}
-.addDataPanel{
-    width: 940px;
-    margin: 2rem;
 
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 470px);
-}
-.listTypes{
-    height: 2.5rem;
-}
-.imgInput{
-	position: relative;
-	display: inline-block;
-	background: rgba(255, 255, 255, 0.6);
 
-	width: 160px;
-	height: 160px;
-	margin-left: 7%;
-	margin-top: 3%;
-	border-radius: 10px;
-	
-	animation-duration: 0.5s;
-	animation-name: imgOut;
-}
-.imgInput::before {
-	background:#9C9D9A;
-	color: rgb(0, 0, 0);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 3px;
-	content: '+';
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-}
-@media (max-width: 1000px){
+
+
+
+
+*/
+/*Variables and constants*/
+	:root{
+		--back-general-inputs: white;
+		--font-family-general: arial;
+		--font-color: black;
+	}
+/*Variables and constants*/
+/*Containers*/
+/*Component´s container*/
 	.subPanel{
-		width: 500px;
-		left: calc(50% - 500px/2);
+		position: absolute;
+		display: flex;
+
+		width: 900px;
+		height: 740px;
+		left: calc(50% - 900px/2);
+		top: calc(50% - 740px/2);
+
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(227, 227, 227, 0.5) 47.92%, rgba(0, 0, 0, 0.5) 100%);		border-radius: 20px;
 
 		animation-duration: 1s;
-		animation-name: panelIn;
+		animation-name: panelOut;
 
 		overflow-y: scroll;
 		overflow-x: hidden;
 	}
+	.subPanel input{
+		background: var(--back-general-inputs);
+
+		border: 2px solid #000000;
+		box-sizing: border-box;
+		border-radius: 20px;
+
+		font-family: Arial;
+	}
+	.subPanel input::placeholder{
+		color: var(--font-color);
+	}
+	.subPanel select{
+		background: var(--back-general-inputs);
+		border: 2px solid #000000;
+		box-sizing: border-box;
+		border-radius: 20px;
+
+		font-family: Arial;
+	}
+	.subPanel::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
 	.subPanel::-webkit-scrollbar:vertical {
-		width:10px;
+		width: 1px;
+	}
+	.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
+		display: none;
+	} 
+	.subPanel::-webkit-scrollbar:horizontal {
+		height: 5px;
+	}
+	.subPanel::-webkit-scrollbar-thumb {
+		background-color: rgba(255, 0, 0, 0.1);;
+		border-radius: 20px;
+		border: none;
+	}
+	.subPanel::-webkit-scrollbar-track {
+		border-radius: 10px;  
+	}
+/*Component´s container*/
+
+/*Input´s container*/
+	.basicDataPanel{
+		position: absolute;
+		width: 800px;
+		height: 234px;
+		left: 50px;
+		top: 17px;
+	}
+	.addDataPanel{
+		position: absolute;
+		width: 856px;
+		height: 427px;
+		left: 22px;
+		top: 251px;
+	}
+/*Input´s container*/
+/*Containers*/
+/*Components*/
+/*Buttons and inputs*/
+	.imgInput{
+		position: absolute;
+		width: 209px;
+		height: 200px;
+		left: 2px;
+		top: 17px;
+		
+		border: 2px solid #000000;
+		box-sizing: border-box;
+		border-radius: 20px;
+		
+		animation-duration: 0.5s;
+		animation-name: imgOut;
+	}
+	.imgInput::before {
+		background: var(--back-general-inputs);
+		color: rgb(0, 0, 0);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		content: '+';
+		font-size: 50px;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+	.name{
+		position: absolute;
+		width: 275px;
+		height: 50px;
+		left: calc(50% - 275px/2 - 31.5px);
+		top: calc(50% - 50px/2 - 63px);
+	}
+	.birtDate{
+		position: absolute;
+		width: 275px;
+		height: 50px;
+		left: calc(50% - 275px/2 + 260.5px);
+		top: calc(50% - 50px/2 - 63px);
+	}
+	.desteteDate{
+		position: absolute;
+		width: 275px;
+		height: 50px;
+		left: calc(50% - 275px/2 - 31.5px);
+		top: calc(50% - 50px/2 - 3px);
+	}
+	.race{
+		position: absolute;
+		width: 275px;
+		height: 50px;
+		left: calc(50% - 275px/2 + 260.5px);
+		top: calc(50% - 50px/2 - 3px);
+	}
+	.weight{
+		position: absolute;
+		width: 275px;
+		height: 50px;
+		left: calc(50% - 275px/2 - 31.5px);
+		top: calc(50% - 50px/2 + 58px);
+	}
+	.grupe{
+		position: absolute;
+		width: 275px;
+		height: 50px;
+		left: calc(50% - 275px/2 + 260.5px);
+		top: calc(50% - 50px/2 + 57px);
+	}
+	.motive{
+		position: absolute;
+		width: 400px;
+		height: 60px;
+		left: 23px;
+		top: 15px;
+	}
+	.where{
+		position: absolute;
+		width: 400px;
+		height: 60px;
+		left: 445px;
+		top: 15px;
+	}
+	.qualification{
+		position: absolute;
+		width: 400px;
+		height: 60px;
+		left: 23px;
+		top: 99px;
+	}
+	.id{
+		position: absolute;
+		width: 400px;
+		height: 60px;
+		left: 445px;
+		top: 99px;
 	}
 	.submit{
-		background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0) 100%);
-		border-radius: 100px 100px 0px 0px;
-
-		width: 70px;
-		height: 70px;
+		position: absolute;
+		width: 150px;
+		height: 100px;
+		left: 750px;
+		top: 625px;
 		
-		margin-left: 12rem;
+		font-size: 50px;
 
-		animation-duration: 2s;
-		animation-name: buttonIn;
-	}
-	.basicDataPanel{
-        width: 450px;
-        padding: 4%;
-        margin-left: 0%;
-        margin-top: 45%;
-
-        grid-template-columns: repeat(auto-fill, 450px);
-    }
-	.addDataPanel{
-        width: 450px;
-        padding: 4%;
-        margin-left: 0%;
-        margin-top: 61%;
-
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 450px);
-    }
-    .listTypes{
-        width: 98%;
-    }
-	.imgInput{
-		margin-top: 8%;
-		margin-left: calc(50% - 200px/2 - 0.5px);
-		
-		animation-duration: 1s;
-		animation-name: imgIn;
-	}
-}
-@keyframes panelIn {
-	from {
-		width: 1000px;
-		left: calc(50% - 1000px/2);
-	}
-	to {
-		width: 500px;
-		left: calc(50% - 500px/2);
-	}
-}
-@keyframes panelOut {
-	from {
-		width: 500px;
-		left: calc(50% - 500px/2);
-	}
-	to {
-		width: 1000px;
-		left: calc(50% - 1000px/2);
-	}
-}
-@keyframes buttonOut {
-	from {
-		margin-left: 12rem;
-		border-radius: 100px 100px 0px 0px;
-	}
-	to {
-		margin-left: 58rem;
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0.2) 100%);
 		border-radius: 100px 0px 0px 100px;
 	}
-}
-@keyframes buttonIn {
-	from {
-		margin-left: 58rem;
-		border-radius: 100px 0px 0px 100px;
+/*Buttons and inputs*/
+/*Components*/
+/*Resizing */
+	@media (max-width: 900px){
+		/*Containers*/
+		.subPanel{
+			width: 500px;
+			left: calc(50% - 500px/2);
+
+			animation-duration: 1s;
+			animation-name: panelIn;
+
+			overflow-y: scroll;
+			overflow-x: hidden;
+		}
+		.subPanel::-webkit-scrollbar:vertical {
+			width:10px;
+		}
+		.basicDataPanel{
+			width: 450px;
+			padding: 4%;
+			margin-left: 0%;
+			margin-top: 45%;
+
+			grid-template-columns: repeat(auto-fill, 450px);
+		}
+		.addDataPanel{
+			width: 450px;
+			padding: 4%;
+			margin-left: 0%;
+			margin-top: 61%;
+
+			display: grid;
+			grid-template-columns: repeat(auto-fill, 450px);
+		}
+		/*Containers*/
+		/*Components*/
+		.imgInput{
+			margin-top: 8%;
+			margin-left: calc(50% - 200px/2 - 0.5px);
+			
+			animation-duration: 1s;
+			animation-name: imgIn;
+		}
+		.submit{
+			background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0) 100%);
+			border-radius: 100px 100px 0px 0px;
+
+			width: 70px;
+			height: 70px;
+			
+			margin-left: 12rem;
+
+			animation-duration: 2s;
+			animation-name: buttonIn;
+		}
+		.listTypes{
+			width: 98%;
+		}
+		/*Components*/
 	}
-	to {
-		margin-left: 12rem;
-		border-radius: 100px 100px 0px 0px;
+/*Resizing */
+/*Animations*/
+	@keyframes panelIn {
+		from {
+			width: 1000px;
+			left: calc(50% - 1000px/2);
+		}
+		to {
+			width: 500px;
+			left: calc(50% - 500px/2);
+		}
 	}
-}
-@keyframes imgIn {
-	from {
-		margin-left: 7%;
-		margin-top: 3%;
+	@keyframes panelOut {
+		from {
+			width: 500px;
+			left: calc(50% - 500px/2);
+		}
+		to {
+			width: 1000px;
+			left: calc(50% - 1000px/2);
+		}
 	}
-	to {
-		margin-top: 8%;
-		margin-left: calc(50% - 200px/2 - 0.5px);
+	@keyframes buttonOut {
+		from {
+			margin-left: 12rem;
+			border-radius: 100px 100px 0px 0px;
+		}
+		to {
+			margin-left: 58rem;
+			border-radius: 100px 0px 0px 100px;
+		}
 	}
-}
-@keyframes imgOut {
-	from {
-		margin-top: 8%;
-		margin-left: calc(50% - 200px/2 - 0.5px);
+	@keyframes buttonIn {
+		from {
+			margin-left: 58rem;
+			border-radius: 100px 0px 0px 100px;
+		}
+		to {
+			margin-left: 12rem;
+			border-radius: 100px 100px 0px 0px;
+		}
 	}
-	to {
-		margin-left: 7%;
-		margin-top: 3%;
+	@keyframes imgIn {
+		from {
+			margin-left: 7%;
+			margin-top: 3%;
+		}
+		to {
+			margin-top: 8%;
+			margin-left: calc(50% - 200px/2 - 0.5px);
+		}
 	}
-}
+	@keyframes imgOut {
+		from {
+			margin-top: 8%;
+			margin-left: calc(50% - 200px/2 - 0.5px);
+		}
+		to {
+			margin-left: 7%;
+			margin-top: 3%;
+		}
+	}
+/*Animations*/

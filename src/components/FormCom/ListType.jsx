@@ -1,5 +1,4 @@
 import app from '../firebase/credenciales';
-import style from '../css/Form.module.css';
 import { getFirestore } from "firebase/firestore";
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from 'react';
@@ -9,6 +8,7 @@ export function ListType(props){
 
 	const coleccion = props.collection;
 	const {handleChanche} = props;
+	const clName = props.clName;
 
 	const [list, setList] = useState([{ name: "Loading...", id: "initial" }]);
 
@@ -27,7 +27,7 @@ export function ListType(props){
 		return lo
 	}
 	return (
-		<select name={coleccion} className={style.listTypes} onChange={handleChanche} >
+		<select className={clName} name={coleccion} onChange={handleChanche} >
 			{ lista().map(a=><option key={a} value={a}>{a}</option>)}
 		</select>
 	);

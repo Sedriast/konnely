@@ -37,19 +37,19 @@ export function Form(){
 		<div className={style.subPanel}>
 			<form  onSubmit={handleSubmit}>
 				<div className={style.basicDataPanel}>
-					<input name= 'nombre' type='text' className={style.name} placeholder='Nombre' onChange={handleChange}/>
-					<input name="id" placeholder='ID'onChange={handleChange}></input>
-					<InputDate iden="inputdate1" place="Fecha de nacimiento" handleChanche={handleChange}/>
-					<InputDate iden="inputdate2" place="Fecha de destete" handleChanche={handleChange}	/>
-					<ListType collection='raza' handleChanche={handleChange}/>
-					<ListType collection='grupo' handleChanche={handleChange}/>
+					<InputImage ty="date" pl="Nombre" />
+					<input className={style.name} type='text' name='nombre' placeholder='Nombre' onChange={handleChange} />
+					<InputDate clName={style.birtDate} iden="birtDate" place="Fecha de nacimiento" handleChanche={handleChange} />
+					<InputDate clName={style.desteteDate} iden="desteteDate" place="Fecha de destete" handleChanche={handleChange} />
+					<ListType clName={style.race} collection='raza' handleChanche={handleChange} />
+					<input className={style.weight} name= 'peso' type='text' placeholder='Peso' onChange={handleChange} />
+					<ListType clName={style.grupe} collection='grupo' handleChanche={handleChange} />
 				</div>
-				<InputImage ty="date" pl="Nombre" />
 				<div className={style.addDataPanel}>
-					<input name= 'peso' type='text' className={style.weight} placeholder='Peso' onChange={handleChange}/>
-					<ListType collection='motivo' handleChanche={handleChange}/>
-					<ListType collection='donde'handleChanche={handleChange}/>
-					<input type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange}></input>
+					<ListType clName={style.motive} collection='motivo' handleChanche={handleChange}/>
+					<ListType clName={style.where} collection='donde'handleChanche={handleChange}/>
+					<input className={style.qualification} type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange} />
+					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
 				</div>
 
 					<InputCheck />

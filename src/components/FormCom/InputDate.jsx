@@ -1,9 +1,8 @@
-import style from '../css/Form.module.css';
-
 export function InputDate(props){
 
 	const place = props.place;
 	const iden = props.iden;
+	const clName = props.clName;
     const {handleChanche} = props;
 
 	window.addEventListener(
@@ -15,6 +14,6 @@ export function InputDate(props){
 			document.getElementById(iden).addEventListener('focus',function(){document.getElementById(iden).type= 'date';});});
 
     return(
-        <input name={place} type='text' id={iden} className={style.dateDestete} placeholder={place} onChange={handleChanche} />
-    );
+        <input className={clName} name={place} type='text' id={iden} placeholder={place} onChange={handleChanche} />
+    ); 
 }
