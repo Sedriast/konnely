@@ -360,26 +360,6 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 			left: calc(50% - 900px/2);
 		}
 	}
-	@keyframes buttonOut {
-		from {
-			margin-left: 12rem;
-			border-radius: 100px 100px 0px 0px;
-		}
-		to {
-			margin-left: 58rem;
-			border-radius: 100px 0px 0px 100px;
-		}
-	}
-	@keyframes buttonIn {
-		from {
-			margin-left: 58rem;
-			border-radius: 100px 0px 0px 100px;
-		}
-		to {
-			margin-left: 12rem;
-			border-radius: 100px 100px 0px 0px;
-		}
-	}
 	@keyframes imageIn {
 		from {
 			top: 18px;
