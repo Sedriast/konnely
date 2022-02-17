@@ -1,11 +1,41 @@
-.principalPanel{
-    background: url(https://drive.google.com/uc?export=download&id=1x0hPfrMmSxAlq3esLERmlf8UumGaUdKP);
-    background-repeat: no-repeat;
-    background-size: cover;
+/*
+El webkit se configuró, para que las barras de desplazamiento no estroben al espacio visual del componente
 
-    width: 100vw;
-    height: 100vh;
+1- Variables and constants
+2- Containers
+	
 
-    mix-blend-mode: normal;
-    position: absolute;
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+/*Variables and constants*/
+:root{
+    --sd-fas: 25px;
 }
+/*Variables and constants*/
+/*Containers*/
+/*Component´s container*/
+    .principalPanel{
+        background: url(https://drive.google.com/uc?export=download&id=1x0hPfrMmSxAlq3esLERmlf8UumGaUdKP);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        width: 100vw;
+        height: 100vh;
+
+        mix-blend-mode: normal;
+        position: absolute;
+    }
+/*Component´s container*/
+/*Containers*/
