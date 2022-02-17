@@ -23,6 +23,7 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		--back-general-inputs: white;
 		--font-family-general: arial;
 		--font-color: black;
+		--font-size: 25px;
 	}
 /*Variables and constants*/
 /*Containers*/
@@ -47,6 +48,7 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 	.subPanel input{
 		background: var(--back-general-inputs);
 
+		font-size: var(--font-size);
 		border: 2px solid #000000;
 		box-sizing: border-box;
 		border-radius: 20px;
@@ -62,6 +64,7 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		box-sizing: border-box;
 		border-radius: 20px;
 
+		padding: 0;
 		font-family: Arial;
 	}
 	.subPanel::-webkit-scrollbar {
@@ -96,9 +99,9 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 	}
 	.addDataPanel{
 		position: absolute;
-		width: 856px;
-		height: 427px;
-		left: 22px;
+		width: 900px;
+		height: 489px;
+		left: 0px;
 		top: 251px;
 	}
 /*Input´s container*/
@@ -107,17 +110,13 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 /*Buttons and inputs*/
 	.imgInput{
 		position: absolute;
-		width: 209px;
+		width: 200px;
 		height: 200px;
 		left: 2px;
-		top: 17px;
-		
-		border: 2px solid #000000;
-		box-sizing: border-box;
-		border-radius: 20px;
-		
-		animation-duration: 0.5s;
-		animation-name: imgOut;
+		top: 18px;
+
+		animation-duration: 1s;
+		animation-name: imageOut;
 	}
 	.imgInput::before {
 		background: var(--back-general-inputs);
@@ -160,6 +159,8 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		height: 50px;
 		left: calc(50% - 275px/2 + 260.5px);
 		top: calc(50% - 50px/2 - 3px);
+
+		font-size: var(--font-size);
 	}
 	.weight{
 		position: absolute;
@@ -167,6 +168,8 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		height: 50px;
 		left: calc(50% - 275px/2 - 31.5px);
 		top: calc(50% - 50px/2 + 58px);
+
+		font-size: var(--font-size);
 	}
 	.grupe{
 		position: absolute;
@@ -174,41 +177,51 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		height: 50px;
 		left: calc(50% - 275px/2 + 260.5px);
 		top: calc(50% - 50px/2 + 57px);
+
+		font-size: var(--font-size);
 	}
 	.motive{
 		position: absolute;
-		width: 400px;
+		width: 388px;
 		height: 60px;
-		left: 23px;
+		left: 63px;
 		top: 15px;
+
+		font-size: var(--font-size);
 	}
 	.where{
 		position: absolute;
-		width: 400px;
+		width: 380px;
 		height: 60px;
-		left: 445px;
+		left: 461px;
 		top: 15px;
+
+		font-size: var(--font-size);
 	}
 	.qualification{
 		position: absolute;
-		width: 400px;
+		width: 388px;
 		height: 60px;
-		left: 23px;
-		top: 99px;
+		left: 63px;
+		top: 85px;
+
+		font-size: var(--font-size);
 	}
 	.id{
 		position: absolute;
-		width: 400px;
+		width: 380px;
 		height: 60px;
-		left: 445px;
-		top: 99px;
+		left: 461px;
+		top: 85px;
+
+		font-size: var(--font-size);
 	}
 	.submit{
 		position: absolute;
 		width: 150px;
 		height: 100px;
 		left: 750px;
-		top: 625px;
+		top: 358px;
 		
 		font-size: 50px;
 
@@ -218,84 +231,133 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 /*Buttons and inputs*/
 /*Components*/
 /*Resizing */
-	@media (max-width: 900px){
+@media (max-width: 900px){
 		/*Containers*/
 		.subPanel{
-			width: 500px;
-			left: calc(50% - 500px/2);
+			width: 600px;
+			height: 740px;
+
+			left: calc(50% - 600px/2);
+			top: calc(50% - 740px/2);
 
 			animation-duration: 1s;
 			animation-name: panelIn;
-
-			overflow-y: scroll;
-			overflow-x: hidden;
-		}
-		.subPanel::-webkit-scrollbar:vertical {
-			width:10px;
-		}
-		.basicDataPanel{
-			width: 450px;
-			padding: 4%;
-			margin-left: 0%;
-			margin-top: 45%;
-
-			grid-template-columns: repeat(auto-fill, 450px);
-		}
-		.addDataPanel{
-			width: 450px;
-			padding: 4%;
-			margin-left: 0%;
-			margin-top: 61%;
-
-			display: grid;
-			grid-template-columns: repeat(auto-fill, 450px);
 		}
 		/*Containers*/
-		/*Components*/
+		/*Input´s container*/
+		.basicDataPanel{
+			width: 600px;
+			height: 560px;
+
+			left: calc(50% - 600px/2);
+			top: calc(50% - 560px/2 - 72px);
+		}
+		.addDataPanel{
+			width: 600px;
+			height: 520px;
+			left: 0px;
+			top: 578px;
+		}
+		/*Input´s container*/
+		/*Inputs & ...*/
 		.imgInput{
-			margin-top: 8%;
-			margin-left: calc(50% - 200px/2 - 0.5px);
-			
+			width: 209px;
+			height: 200px;
+			left: calc(50% - 200px/2);
+			top: 0;
+
 			animation-duration: 1s;
-			animation-name: imgIn;
+			animation-name: imageIn;
+		}
+		.name{
+			width: 530px;
+			height: 50px;
+			left: calc(50% - 530px/2);
+			top: calc(50% - 50px/2 - 45px);
+		}
+		.desteteDate{
+			width: 530px;
+			height: 50px;
+			left: calc(50% - 530px/2);
+			top: calc(50% - 50px/2 + 15px);
+		}
+		.weight{
+			width: 530px;
+			height: 50px;
+			left: calc(50% - 530px/2);
+			top: calc(50% - 50px/2 + 75px);
+		}
+		.birtDate{
+			width: 530px;
+			height: 50px;
+			left: calc(50% - 530px/2);
+			top: calc(50% - 50px/2 + 135px);
+		}
+		.race{
+			width: 530px;
+			height: 50px;
+			left: calc(50% - 530px/2);
+			top: calc(50% - 50px/2 + 195px);
+		}
+		.grupe{
+			width: 530px;
+			height: 50px;
+			left: calc(50% - 530px/2);
+			top: calc(50% - 50px/2 + 255px);
+		}
+		.motive{
+			width: 530px;
+			height: 50px;
+			left: 32px;
+			top: 10px;
+		}
+		.qualification{
+			width: 530px;
+			height: 50px;
+			left: 32px;
+			top: 70px;
+		}
+		.where{
+			width: 530px;
+			height: 50px;
+			left: 32px;
+			top: 130px;
+		}
+		.id{
+			width: 530px;
+			height: 50px;
+			left: 32px;
+			top: 190px;
 		}
 		.submit{
-			background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0) 100%);
-			border-radius: 100px 100px 0px 0px;
-
-			width: 70px;
-			height: 70px;
-			
-			margin-left: 12rem;
-
-			animation-duration: 2s;
-			animation-name: buttonIn;
+			width: 150px;
+			height: 100px;
+			left: 450px;
+			top: 415px;
 		}
-		.listTypes{
-			width: 98%;
-		}
-		/*Components*/
+		/*Inputs & ...*/
+		
 	}
 /*Resizing */
 /*Animations*/
 	@keyframes panelIn {
 		from {
-			width: 1000px;
-			left: calc(50% - 1000px/2);
+			width: 900px;
+			left: calc(50% - 900px/2);
 		}
 		to {
-			width: 500px;
-			left: calc(50% - 500px/2);
+			width: 600px;
+			left: calc(50% - 600px/2);
 		}
 	}
 	@keyframes panelOut {
 		from {
-			width: 500px;
-			left: calc(50% - 500px/2);
+			width: 600px;
+			left: calc(50% - 600px/2);
 		}
 		to {
-			width: 1000px;
-			left: calc(50% - 1000px/2);
+			width: 900px;
+			left: calc(50% - 900px/2);
 		}
 	}
 	@keyframes buttonOut {
@@ -318,24 +380,24 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 			border-radius: 100px 100px 0px 0px;
 		}
 	}
-	@keyframes imgIn {
+	@keyframes imageIn {
 		from {
-			margin-left: 7%;
-			margin-top: 3%;
+			top: 18px;
+			left: 2px;
 		}
 		to {
-			margin-top: 8%;
-			margin-left: calc(50% - 200px/2 - 0.5px);
+			top: 0;
+			left: calc(50% - 200px/2);
 		}
 	}
-	@keyframes imgOut {
+	@keyframes imageOut {
 		from {
-			margin-top: 8%;
-			margin-left: calc(50% - 200px/2 - 0.5px);
+			top: 0;
+			left: calc(50% - 200px/2);
 		}
 		to {
-			margin-left: 7%;
-			margin-top: 3%;
+			top: 18px;
+			left: 2px;
 		}
 	}
 /*Animations*/
