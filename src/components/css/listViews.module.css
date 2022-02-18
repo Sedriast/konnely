@@ -28,9 +28,9 @@
 	.subPanelLV{
 		position: absolute;
 		width: 80%;
-		height: 80%;
+		height: 70%;
 		left: 20%;
-		top: 15%;
+		top: 20%;
 		overflow-y: scroll;
 		
 		padding: 1rem;
