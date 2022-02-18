@@ -1,137 +1,176 @@
-p{
-	padding: 0;
-	margin: 0;
-}
-input{
-    background: rgba(255, 255, 255, 0.6);
-	border-radius: 10px;
-	border: none;
-	padding: 4px;
+/*
 
-	height: 2rem;
-    margin: 4px;
 
-	font-family:Arial, Helvetica, sans-serif;
-}
-input::placeholder{
-    color: black;
-    font-family:Arial, Helvetica, sans-serif;
-}
-select{
-    background: rgba(255, 255, 255, 0.6);
-    font-family:Arial, Helvetica, sans-serif;
-    padding: 4px;
-    margin: 4px;
-    border: none;
-    border-radius: 10px;
-}
-button{
-	background: transparent;
-	border: none;
-	border-radius: 10px;
-	padding: 0;
-	border-radius: 10px;
-}
-.subPanel{
-	position: absolute;
-	width: 1002px;
-	height: 80vh;
-	padding: 5px;
+1- Variables and constants
+2- Containers 		
+3- Components 		
+4- Resizing 		
+5- Animations 		
 
-	left: calc(50% - 1002px/2);
-	top: calc(50% - 80vh/2 - 0.5px);
-	
-	border-radius: 10px;
 
-	overflow-y: scroll;
 
-	display: grid;
-    grid-template-columns: repeat(auto-fill, 250px);
-	grid-template-rows: repeat(auto-fill, 175px);
 
-	animation-duration: 1s;
-	animation-name: panelOut;
-}
-.subPanel::-webkit-scrollbar {
-    -webkit-appearance: none;
-}
-.subPanel::-webkit-scrollbar:vertical {
-    width:1px;
-}
-.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
-    display: none;
-} 
-.subPanel::-webkit-scrollbar:horizontal {
-    height: 5px;
-}
-.subPanel::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 0, 0, 0.1);;
-    border-radius: 20px;
-    border: none;
-}
-.subPanel::-webkit-scrollbar-track {
-    border-radius: 10px;  
-}
-.cardPanel{
-	background: linear-gradient(180deg, #5A5AFF 0%, #FFFFFF 93.75%);
-	border: 1px solid #000000;
-	box-sizing: border-box;
-	border-radius: 20px;
 
-	width: 230px;
-	height: 150px;
-	margin: 8px;
 
-	border-radius: 20px;
-	border-top: 1px black solid;
+
+
+
+
+
+*/
+/*Variables and constants*/
+:root{
+	--back-general-inputs: white;
 }
-.cardPanel:hover{
-	opacity: 0.3;
-}
-.imgView{
-	background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);
-
-	width: 100px;
-	height: 100px;
-
-	margin-top: 10px;
-
-	border: none;
-	border-radius: 100px;
-}
-
-@media (max-width: 1000px){
+/*Variables and constants*/
+/*Containers*/
+	/*Component´s container*/
 	.subPanel{
-		width: 510px;
-		left: calc(50% - 510px/2);
-
-        overflow-y: scroll;
-		overflow-x: hidden;
-
+		position: absolute;
+		width: 1002px;
+		height: 80vh;
+		padding: 5px;
+	
+		left: calc(50% - 1002px/2);
+		top: calc(50% - 80vh/2 - 0.5px);
+		
+		border-radius: 10px;
+	
+		overflow-y: scroll;
+	
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 250px);
+		grid-template-rows: repeat(auto-fill, 175px);
+	
 		animation-duration: 1s;
-		animation-name: panelIn;
+		animation-name: panelOut;
+	}
+	.subPanel::-webkit-scrollbar {
+		-webkit-appearance: none;
 	}
 	.subPanel::-webkit-scrollbar:vertical {
-		width:5px;
+		width:1px;
 	}
-}
-@keyframes panelIn {
-	from {
-		width: 1002px;
-		left: calc(50% - 1002px/2);
+	.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
+		display: none;
+	} 
+	.subPanel::-webkit-scrollbar:horizontal {
+		height: 5px;
 	}
-	to {
-		width: 510px;
-		left: calc(50% - 510px/2);
+	.subPanel::-webkit-scrollbar-thumb {
+		background-color: rgba(255, 0, 0, 0.1);;
+		border-radius: 20px;
+		border: none;
 	}
-}
-@keyframes panelOut {
-	from {
-		width: 510px;
-		left: calc(50% - 510px/2);
+	.subPanel::-webkit-scrollbar-track {
+		border-radius: 10px;  
 	}
-	to {
-		width: 1002px;
-		left: calc(50% - 1002px/2);
+	.subPanel p{
+		padding: 0;
+		margin: 0;
 	}
-}
+	.subPanel input{
+		background: rgba(255, 255, 255, 0.6);
+		border-radius: 10px;
+		border: none;
+		padding: 4px;
+	
+		height: 2rem;
+		margin: 4px;
+	
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	.subPanel input::placeholder{
+		color: black;
+		font-family:Arial, Helvetica, sans-serif;
+	}
+	.subPanel select{
+		background: rgba(255, 255, 255, 0.6);
+		font-family:Arial, Helvetica, sans-serif;
+		padding: 4px;
+		margin: 4px;
+		border: none;
+		border-radius: 10px;
+	}
+	.subPanel button{
+		background: transparent;
+		border: none;
+		border-radius: 10px;
+		padding: 0;
+		border-radius: 10px;
+	}
+	/*Component´s container*/
+/*Containers*/
+/*Input´s container*/
+	.cardPanel{
+		background: linear-gradient(180deg, #5A5AFF 0%, #FFFFFF 93.75%);
+		border: 1px solid #000000;
+		box-sizing: border-box;
+		border-radius: 20px;
+
+		width: 230px;
+		height: 150px;
+		margin: 8px;
+
+		border-radius: 20px;
+		border-top: 1px black solid;
+	}
+	.cardPanel:hover{
+		opacity: 0.3;
+	}
+	.imgView{
+		background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);
+
+		width: 100px;
+		height: 100px;
+
+		margin-top: 10px;
+
+		border: none;
+		border-radius: 100px;
+	}
+/*Input´s container*/
+/*Components*/
+	/*Buttons and inputs*/
+
+	/*Buttons and inputs*/
+/*Components*/
+/*Resizing */
+	@media (max-width: 1000px){
+		.subPanel{
+			width: 510px;
+			left: calc(50% - 510px/2);
+
+			overflow-y: scroll;
+			overflow-x: hidden;
+
+			animation-duration: 1s;
+			animation-name: panelIn;
+		}
+		.subPanel::-webkit-scrollbar:vertical {
+			width:5px;
+		}
+	}
+/*Resizing */
+/*Animations */
+	@keyframes panelIn {
+		from {
+			width: 1000px; 
+			left: calc(50% - 1000px/2);
+		}
+		to {
+			width: 510px;
+			left: calc(50% - 510px/2);
+		}
+	}
+	@keyframes panelOut {
+		from {
+			width: 510px;
+			left: calc(50% - 510px/2);
+		}
+		to {
+			width: 1002px;
+			left: calc(50% - 1002px/2);
+		}
+	}
+/*Animations */
