@@ -24,6 +24,7 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		--font-family-general: arial;
 		--font-color: black;
 		--font-size: 25px;
+		--focus-back:#fff;
 	}
 /*Variables and constants*/
 /*Containers*/
@@ -66,6 +67,12 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 
 		padding: 0;
 		font-family: Arial;
+	}
+	.subPanel button{
+		border: 2px solid #000000;
+		background:var(--focus-back);
+		box-sizing: border-box;
+		border-radius: 40px 0px 0px 40px;
 	}
 	.subPanel::-webkit-scrollbar {
 		-webkit-appearance: none;
@@ -217,6 +224,7 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		font-size: var(--font-size);
 	}
 	.submit{
+		background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0.2) 100%);
 		position: absolute;
 		width: 150px;
 		height: 100px;
@@ -225,8 +233,34 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		
 		font-size: 50px;
 
-		background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0.2) 100%);
 		border-radius: 100px 0px 0px 100px;
+	}
+	.female{
+		position: absolute;
+		width: 388px;
+		height: 60px;
+		left: 63px;
+		top: 155px;
+
+		font-size: var(--font-size);
+	}
+	.masle{
+		position: absolute;
+		width: 380px;
+		height: 60px;
+		left: 461px;
+		top: 155px;
+
+		font-size: var(--font-size);	
+	}
+	.buttonHembra{
+		position: absolute;
+		width: 200px;
+		height: 60px;
+		left: calc(50% - 200px/2 + 105px);
+		top: calc(50% - 60px/2 - 59.5px);
+		
+		transform: matrix(-1, 0, 0, 1, 0, 0);
 	}
 /*Buttons and inputs*/
 /*Components*/
