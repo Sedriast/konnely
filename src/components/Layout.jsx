@@ -6,16 +6,16 @@ import { ListViews} from './ListView/ListViews';
 import { Login } from './Login/Login';
 
 export function Layout(){
-    return(
-        <div className={style.principalPanel} >
-            <Router>
-                <Navbar />
-                <Routes >
+	return(
+		<div className={style.principalPanel} >
+			<Router>
+				<Navbar />
+				<Routes >
 					<Route exact path='/form' element={<Form/>}> </Route>
 					<Route exact path='/listView' element={<ListViews idImage='10dKfWHgApJ5ElbXCaOyrdguN8sac2jpA'/>}> </Route>
-                    <Route exact path='/login' element={<Login/>}> </Route>
-                </Routes>
-            </Router>
-        </div>
-    );
+					<Route exact path='/login' element={<Login/>}> </Route>
+				</Routes>
+			</Router>
+		</div>
+	);
 }
