@@ -1,12 +1,12 @@
 import style from '../css/SearchBar.module.css';
 
-export function SearchBar(){
+export function SearchBar(props){
+
+	const clName = props.clName;
 	return(
-	<div className={style.subPanelSe}>
-		<input className={style.inputSe} type='text' />
-		<div className={style.iconSe}>
-			<image src='' href=''></image>    
+		<div className={clName}>
+			<div><input className={style.inputSe} type='text' placeholder='Buscar'/></div>
+			<div className={style.iconSePanel}><image className={style.iconSe} src='' href='' /></div>
 		</div>
-	</div>
 	); 
 }

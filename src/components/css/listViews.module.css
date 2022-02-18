@@ -6,7 +6,7 @@
 3- Components
 4- Resizing
 5- Animations
-
+6- From Oter´s components
 
 
 
@@ -25,51 +25,51 @@
 /*Variables and constants*/
 /*Containers*/
 	/*Component´s container*/
-	.subPanel{
+	.subPanelLV{
 		position: absolute;
-		width: 1002px;
-		height: 80vh;
-		padding: 5px;
-	
-		left: calc(50% - 1002px/2);
-		top: calc(50% - 80vh/2 - 0.5px);
-		
-		border-radius: 10px;
-	
+		width: 80%;
+		height: 80%;
+		left: 20%;
+		top: 15%;
 		overflow-y: scroll;
+		
+		padding: 1rem;
+		
+		background: rgba(0, 0, 0, 0.2);
+		border-radius: 40px 0px 0px 40px;
 	
 		display: grid;
-		grid-template-columns: repeat(auto-fill, 250px);
-		grid-template-rows: repeat(auto-fill, 175px);
+		grid-template-columns: repeat(auto-fill, 255px);
+		grid-template-rows: repeat(auto-fill, 155px);
 	
 		animation-duration: 1s;
 		animation-name: panelOut;
 	}
-	.subPanel::-webkit-scrollbar {
+	.subPanelLV::-webkit-scrollbar {
 		-webkit-appearance: none;
 	}
-	.subPanel::-webkit-scrollbar:vertical {
+	.subPanelLV::-webkit-scrollbar:vertical {
 		width:1px;
 	}
-	.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
+	.subPanelLV::-webkit-scrollbar-button:increment,.subPanelLV::-webkit-scrollbar-button {
 		display: none;
 	} 
-	.subPanel::-webkit-scrollbar:horizontal {
+	.subPanelLV::-webkit-scrollbar:horizontal {
 		height: 5px;
 	}
-	.subPanel::-webkit-scrollbar-thumb {
+	.subPanelLV::-webkit-scrollbar-thumb {
 		background-color: rgba(255, 0, 0, 0.1);;
 		border-radius: 20px;
 		border: none;
 	}
-	.subPanel::-webkit-scrollbar-track {
+	.subPanelLV::-webkit-scrollbar-track {
 		border-radius: 10px;  
 	}
-	.subPanel p{
+	.subPanelLV p{
 		padding: 0;
 		margin: 0;
 	}
-	.subPanel input{
+	.subPanelLV input{
 		background: rgba(255, 255, 255, 0.6);
 		border-radius: 10px;
 		border: none;
@@ -80,11 +80,11 @@
 	
 		font-family:Arial, Helvetica, sans-serif;
 	}
-	.subPanel input::placeholder{
+	.subPanelLV input::placeholder{
 		color: black;
 		font-family:Arial, Helvetica, sans-serif;
 	}
-	.subPanel select{
+	.subPanelLV select{
 		background: rgba(255, 255, 255, 0.6);
 		font-family:Arial, Helvetica, sans-serif;
 		padding: 4px;
@@ -92,7 +92,7 @@
 		border: none;
 		border-radius: 10px;
 	}
-	.subPanel button{
+	.subPanelLV button{
 		background: transparent;
 		border: none;
 		border-radius: 10px;
@@ -103,17 +103,14 @@
 /*Containers*/
 /*Input´s container*/
 	.cardPanel{
-		background: linear-gradient(180deg, #5A5AFF 0%, #FFFFFF 93.75%);
-		border: 1px solid #000000;
+		position: relative;
+		width: 250px;
+		height: 150px;
+
+		background: linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%), rgba(255, 255, 255, 0.5);
+		border: 2px solid #000000;
 		box-sizing: border-box;
 		border-radius: 20px;
-
-		width: 230px;
-		height: 150px;
-		margin: 8px;
-
-		border-radius: 20px;
-		border-top: 1px black solid;
 	}
 	.cardPanel:hover{
 		opacity: 0.3;
@@ -174,3 +171,17 @@
 		}
 	}
 /*Animations */
+/*From Oter´s components*/
+.containerSe{
+	position: absolute;
+	width: 700px;
+	height: 60px;
+	left: calc(100% - 700px);
+	top: 43px;
+	
+	background: var(--back-general-inputs);
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 50px 0px 0px 50px;
+}
+/*From Oter´s components*/

@@ -33,11 +33,9 @@ export function ListViews(props){
 
     return(
         <>
-			<SearchBar></SearchBar>
-            <div className={style.subPanel}>
-				<div className={style.panelCards}>
-					{ Informacion().map(a=> <CardMin url={imagenurl} rabitData={a}/>)}
-				</div>
+			<SearchBar clName={style.containerSe}></SearchBar>
+            <div className={style.subPanelLV}>
+				{ Informacion().map(a=> <CardMin url={imagenurl} rabitData={a}/>)}
             </div>
         </>
     );
