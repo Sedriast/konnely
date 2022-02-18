@@ -50,6 +50,8 @@ export function Form(){
 					<ListType clName={style.where} collection='donde'handleChanche={handleChange}/>
 					<input className={style.qualification} type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange} />
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
+					<ListType clName={style.female} collection='hembra' handleChanche={handleChange} />
+					<ListType clName={style.masle} collection='macho' handleChanche={handleChange} />
 					<InputCheck />
 					<button className={style.submit}>→</button>
 				</div>
