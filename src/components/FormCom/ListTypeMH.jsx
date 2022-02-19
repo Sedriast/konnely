@@ -8,10 +8,13 @@ export function ListTypeMH(props){
 
 	const coleccion = props.collection;
 	const {handleChanche} = props;
+	const {summitState} = props;
+	const {summitStateLeave} =props
 	const clName = props.clName;
+	const desabilitar = props.desabilitar;
 
 	const [list, setList] = useState([{ name: "Loading...", id: "initial" }]);
-    const [enable, setEnable] = useState({estado:true});
+	const [stateS, setStateS] = useState(true);
 
 	useEffect(
 		() =>
@@ -28,13 +31,9 @@ export function ListTypeMH(props){
 		return lo
 	}
 
-	const Estado = e =>{
-        setEnable({estado:false});
-		console.log('Hola');
-    }
-
 	return (
-		<select className={clName} name={coleccion} onChange={handleChanche}  disabled={enable.estado} onMouseEnter={Estado}>{ lista().map(a=><option key={a} value={a}>{a}</option>)}
-		</select>
+			<select className={clName} name={coleccion} onChange={handleChanche} disabled={desabilitar} onMouseEnter={summitState} onMouseLeave={summitStateLeave}>
+				{ lista().map(a=><option key={a} value={a}>{a}</option>)}
+			</select>
 	);
 }
