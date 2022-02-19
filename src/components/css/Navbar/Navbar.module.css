@@ -26,9 +26,13 @@
 	display: flex;
 }
 .iconMenu{
-	background: radial-gradient(76.15% 79.02% at 0% 0%, #000000 37.76%, rgba(0, 0, 0, 0) 95.29%);
-	width: 100px;
-	height: 100px;
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	left: 0px;
+	top: 0px;
+	
+	background: radial-gradient(71.75% 72.99% at 0% 0%, #000000 0%, rgba(0, 0, 0, 0) 100%);
 }
 .navText {
 	font-family: Arial, Helvetica, sans-serif;
@@ -51,4 +55,14 @@
 	align-items: center;
 	padding: 0 16px;
 	border-radius: 4px;
+}
+.decor{
+	position: absolute;
+	width: 89px;
+	height: 89px;
+	left: 30px;
+	top: 31px;
+
+	background: radial-gradient(71.35% 71.35% at 16.29% 19.1%, rgba(196, 196, 196, 0) 44.58%, #FFFFFF 100%);
+	border-radius: 100%;
 }

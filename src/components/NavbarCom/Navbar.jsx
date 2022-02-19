@@ -13,7 +13,9 @@ export function Navbar(){
 		<>
 			<div className={style.navbarMenu}>
 				<Link className={style.bars} to="#">
-					<div className={style.iconMenu} onClick={showSidebar} />
+					<div className={style.iconMenu} onClick={showSidebar} >
+						<div className={style.decor}></div>
+					</div>
 				</Link>
 			</div>
 			<nav className={sidebar ? "navMenu active" : "navMenu"}>
