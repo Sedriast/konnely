@@ -8,6 +8,10 @@ export const SidebarData = [
 		title: 'ListView',
 		path: '/listView',
 		icon: '',
+	},
+	{
+		title: 'Test',
+		path: '/test',
+		icon: ''
 	}
-	
 ]

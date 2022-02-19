@@ -38,7 +38,6 @@ export function Form(){
 		const estado='True';
 		console.log(estado)
 		return estado;
-
 	}
 
 	// const Estado = e =>{
@@ -47,12 +46,12 @@ export function Form(){
 
 	const summitState = e => {
 		console.log(e.target.value)
-	if (e.target.value === 'Hembra') {
-			setStateM(true)
-	}else{
-		if (e.target.value === 'Macho') {
-			setStateH(true)
-	}
+		if (e.target.value === 'Hembra') {
+				setStateM(true)
+		}else{
+			if (e.target.value === 'Macho') {
+				setStateH(true)
+		}
  	}
 }
 
@@ -82,9 +81,9 @@ export function Form(){
 					<ListType clName={style.where} collection='donde'handleChanche={handleChange}/>
 					<input className={style.qualification} type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange} />
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
-					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave}/>
-					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave}/>
-					<button className={style.submit}>→</button>
+					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave} />
+					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave} />
+					<button className={style.submit}> → </button>
 				</div>
 			</form>
 		</div>

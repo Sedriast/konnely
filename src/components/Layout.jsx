@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Form } from './FormCom/Form';
 import { ListViews} from './ListView/ListViews';
 import { Login } from './Login/Login';
+import { UserView } from './UserView_/UserView';
 
 export function Layout(){
 	return(
@@ -13,7 +14,8 @@ export function Layout(){
 				<Routes >
 					<Route exact path='/form' element={<Form/>}> </Route>
 					<Route exact path='/listView' element={<ListViews idImage='10dKfWHgApJ5ElbXCaOyrdguN8sac2jpA'/>}> </Route>
-					<Route exact path='/login' element={<Login/>}> </Route>
+					<Route exact path='/login' element={<Login />}> </Route>
+					<Route exact path='/test' element={<UserView />}></Route>
 				</Routes>
 			</Router>
 		</div>
