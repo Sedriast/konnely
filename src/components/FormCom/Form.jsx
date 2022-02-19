@@ -5,7 +5,7 @@ import { InputImage } from './InputImage';
 import { useState } from 'react';
 import { ListType } from './ListType';
 import { ListTypeMH } from './ListTypeMH';
-import { InputCheck } from './InputCheck';
+//import { InputCheck } from './InputCheck';
 import { collection, addDoc } from "firebase/firestore";
 import { InputDate } from './InputDate';
 const db = getFirestore(app);
@@ -15,6 +15,8 @@ export function Form(){
 	const init = {}
 
 	const [values, setValues] = useState(init);
+	const [stateH, setStateH] = useState(false);
+	const [stateM, setStateM] = useState(false);
 
 	const handleChange = e => {
         const {name, value} = e.target;
@@ -40,6 +42,30 @@ export function Form(){
 
 	}
 
+	// const Estado = e =>{
+    //     setEnable(false);
+    // }
+
+	const summitState = e => {
+		console.log(e.target.value)
+	if (e.target.value === 'Hembra') {
+			setStateM(true)
+	}else{
+		if (e.target.value === 'Macho') {
+			setStateH(true)
+	}
+ 	}
+}
+
+	const summitStateLeave = e => {
+		
+	if (e.target.value === 'Hembra' | e.target.value === 'Macho') {
+		setStateH(false)
+		setStateM(false)
+ 	}
+}
+
+
 	return(
 		<div className={style.subPanel}>
 			<form  onSubmit={handleSubmit}>
@@ -57,9 +83,8 @@ export function Form(){
 					<ListType clName={style.where} collection='donde'handleChanche={handleChange}/>
 					<input className={style.qualification} type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange} />
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
-					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange}  />
-					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} />
-					<InputCheck />
+					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave}/>
+					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave}/>
 					<button className={style.submit}>→</button>
 				</div>
 			</form>
