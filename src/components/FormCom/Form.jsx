@@ -5,10 +5,6 @@ import { InputImage } from './InputImage';
 import { useState } from 'react';
 import { ListType } from './ListType';
 import { ListTypeMH } from './ListTypeMH';
-<<<<<<< HEAD
-=======
-//import { InputCheck } from './InputCheck';
->>>>>>> c0f8a64c2d95164cb38a3e8b1172981b9bc013ed
 import { collection, addDoc } from "firebase/firestore";
 import { InputDate } from './InputDate';
 const db = getFirestore(app);
