@@ -5,7 +5,6 @@ import { InputImage } from './InputImage';
 import { useState } from 'react';
 import { ListType } from './ListType';
 import { ListTypeMH } from './ListTypeMH';
-import { InputCheck } from './InputCheck';
 import { collection, addDoc } from "firebase/firestore";
 import { InputDate } from './InputDate';
 const db = getFirestore(app);
@@ -59,7 +58,6 @@ export function Form(){
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
 					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange}  />
 					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} />
-					<InputCheck />
 					<button className={style.submit}>→</button>
 				</div>
 			</form>
