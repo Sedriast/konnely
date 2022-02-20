@@ -159,7 +159,7 @@
 	box-sizing: border-box;
 	border-radius: 50px 0px 0px 50px;
 }
-.submit{
+.submitLV {
 	position: relative;
 	width: 150px;
 	height: 100px;
@@ -170,13 +170,6 @@
 	border: none;
 	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 	border-radius: 0px 40px 40px 0px;
-}
-.submit image{
-	width: 0;
-	height: 0;
-}
-.submit h1{
-	font-size: 30px;
 }
 .cardPanel{
 	position: relative;
