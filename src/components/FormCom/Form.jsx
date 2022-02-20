@@ -26,6 +26,7 @@ export function Form(){
 	const handleSubmit = e => {
         e.preventDefault();
         addInfo(values);
+		console.log(e)
     }
 
 	 const addInfo = async (Objeto) => {

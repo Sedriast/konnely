@@ -4,10 +4,7 @@ export function Btn(props){
 
 
     /*Contastes de eventos del botton*/
-    const clNameB = props.clNameB;
     const oClickB = props.oClickB;
-    const oChangeB = props.oChangeB;
-    const name_B = props.name_B;
     /*Contastes de eventos del botton*/
 
     /*Contastes de eventos del div*/
@@ -16,8 +13,6 @@ export function Btn(props){
     const oChange = props.oChange;
     const oMouseEnter = props.oMouseEnter;
     const oMouseLeave = props.oMouseLeave;
-    const name_ = props.name_;
-    /*Contastes de eventos del div*/
 
     /*Contantes de uso*/
     const itemPath = props.itemPath;
