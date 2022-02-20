@@ -13,5 +13,10 @@ export const SidebarData = [
 		title: 'Test',
 		path: '/test',
 		icon: ''
+	},
+	{
+		title: 'Login',
+		path: '/login',
+		icon: ''
 	}
 ]

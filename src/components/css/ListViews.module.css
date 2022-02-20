@@ -43,8 +43,10 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, 255px);
 		grid-template-rows: repeat(auto-fill, 155px);
+		grid-column-gap: 0.5rem;
+		grid-row-gap: 0.5em;
 	
-		animation-duration: 1s;
+		animation-duration: 2.5s;
 		animation-name: panelOut;
 	}
 	.subPanelLV::-webkit-scrollbar {
@@ -104,30 +106,7 @@
 	/*Component´s container*/
 /*Containers*/
 /*Input´s container*/
-	.cardPanel{
-		position: relative;
-		width: 250px;
-		height: 150px;
 
-		background: linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%), rgba(255, 255, 255, 0.5);
-		border: 2px solid #000000;
-		box-sizing: border-box;
-		border-radius: 20px;
-	}
-	.cardPanel:hover{
-		opacity: 0.3;
-	}
-	.imgView{
-		background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);
-
-		width: 100px;
-		height: 100px;
-
-		margin-top: 10px;
-
-		border: none;
-		border-radius: 100px;
-	}
 /*Input´s container*/
 /*Components*/
 	/*Buttons and inputs*/
@@ -141,7 +120,7 @@
 			overflow-y: scroll;
 			overflow-x: hidden;
 
-			animation-duration: 1s;
+			animation-duration: 2.5s;
 			animation-name: panelIn;
 		}
 		.subPanel::-webkit-scrollbar:vertical {
@@ -152,22 +131,18 @@
 /*Animations */
 	@keyframes panelIn {
 		from {
-			width: 1000px; 
-			left: calc(50% - 1000px/2);
+			width: 80%; 
 		}
 		to {
-			width: 510px;
-			left: calc(50% - 510px/2);
+			width: 0%;
 		}
 	}
 	@keyframes panelOut {
 		from {
-			width: 510px;
-			left: calc(50% - 510px/2);
+			width: 0%;
 		}
 		to {
-			width: 1002px;
-			left: calc(50% - 1002px/2);
+			width: 80%px;
 		}
 	}
 /*Animations */
@@ -183,5 +158,48 @@
 	border: 1px solid #000000;
 	box-sizing: border-box;
 	border-radius: 50px 0px 0px 50px;
+}
+.submit{
+	position: relative;
+	width: 150px;
+	height: 100px;
+
+	left: 0;
+	top: 70%;
+
+	border: none;
+	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	border-radius: 0px 40px 40px 0px;
+}
+.submit image{
+	width: 0;
+	height: 0;
+}
+.submit h1{
+	font-size: 30px;
+}
+.cardPanel{
+	position: relative;
+	width: 250px;
+	height: 150px;
+
+	background: linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%), rgba(255, 255, 255, 0.5);
+	border: 2px solid #000000;
+	box-sizing: border-box;
+	border-radius: 20px;
+}
+.cardPanel:hover{
+	opacity: 0.3;
+}
+.imgView{
+	background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);
+
+	width: 100px;
+	height: 100px;
+
+	margin-top: 10px;
+
+	border: none;
+	border-radius: 100px;
 }
 /*From Oter´s components*/

@@ -5,6 +5,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from 'react';
 import { CardMin } from './CardMin';
 import { SearchBar } from '../Searchbar/SearchBar';
+import { Btn } from '../Buttons/Btn';
 const db = getFirestore(app);
 
 export function ListViews(props){
@@ -37,6 +38,7 @@ export function ListViews(props){
             <div className={style.subPanelLV}>
 				{ Informacion().map(a=> <CardMin url={imagenurl} rabitData={a}/>)}
             </div>
+			<Btn clName={style.submit} itemPath='/test'></Btn>
         </>
     );
 }
