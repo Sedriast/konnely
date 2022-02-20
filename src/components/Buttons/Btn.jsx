@@ -34,7 +34,6 @@ export function Btn(props){
                     {text_}
                 </button>
             </div>
-            
         </Link>
     </>);
     }
