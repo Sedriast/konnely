@@ -35,7 +35,7 @@
 		align-items: center;
 		justify-content: center;
 		overflow-y: scroll;
-		padding: 1rem;
+		padding: 2rem;
 		
 		background: rgba(0, 0, 0, 0.2);
 		border-radius: 40px 0px 0px 40px;
@@ -189,7 +189,25 @@
 	border-radius: 20px;
 }
 .cardPanel:hover{
-	opacity: 0.3;
+	z-index: 0;
+
+	background: linear-gradient(125.11deg, rgba(255, 255, 255, 0.25) 0%, #000000 15.61%, #FFFFFF 35.67%), rgba(255, 255, 255, 0.5);
+
+	left: -18%;
+
+	width: 350px;
+	height: 225px;
+
+	
+}
+.cardPanel:hover .imgView{
+
+	position: absolute;
+	width: 125px;
+	height: 125px;
+
+	left: calc(50% - 125px/2 - 99.5px);
+	top: calc(50% - 125px/2 - 50px);
 }
 .imgView{
 	background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);

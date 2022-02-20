@@ -17,7 +17,7 @@ export function Btn(props){
         <Link to={itemPath}>
             <button className={clName} name={name_} onClick={oClick} onChange={oChange} disabled={disab_} onMouseEnter={oMouseEnter} onMouseLeave={oMouseLeave}>
                 <h1 >{text_}</h1>
-                <image src={src_} href=''></image>
+                <img src={src_} href=''/>
             </button>
         </Link>
     </>);

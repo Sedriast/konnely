@@ -4,6 +4,7 @@ export function CardMin(props){
 
 	const url = props.url;
 	const rabitData = props.rabitData;
+	const clName_P = props.clName_P;
 
 	const test = () => {
 		window.alert("Good");
@@ -14,7 +15,7 @@ export function CardMin(props){
 		<button onClick={test}>
 			<div className={style.cardPanel} >
 				<img className={style.imgView} src={url} alt=""/>
-				<p>{rabitData}</p>
+				<p className={clName_P}>{rabitData}</p>
 			</div>
 		</button>
 		</>
