@@ -14,6 +14,6 @@ export function InputDate(props){
 			document.getElementById(iden).addEventListener('focus',function(){document.getElementById(iden).type= 'date';});});
 
     return(
-        <input className={clName} name={place} type='text' id={iden} placeholder={place} onChange={handleChanche} />
+        <input className={clName} name={place} type='date' id={iden} placeholder={place} onChange={handleChanche} />
     ); 
 }

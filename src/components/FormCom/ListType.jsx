@@ -31,7 +31,7 @@ export function ListType(props){
 
 	return (
 		<select className={clName} name={coleccion} onChange={handleChanche} >
-			{ lista().map(a=><option key={a} value={a}>{a}</option>)}
+			{ lista().map(a=><option key={a} value={a}>{a}</option>) }
 		</select>
 	);
 }
