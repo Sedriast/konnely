@@ -30,7 +30,7 @@ export function Btn(props){
     return(<>
         <Link to={itemPath}>
             <div  className={clName} name={name_} onClick={oClick} onChange={oChange} disabled={disab_} onMouseEnter={oMouseEnter} onMouseLeave={oMouseLeave}>
-                <button className={clNameB} name={name_B} onClick={oClickB} onChange={oChangeB} disabled={disab_B} onMouseEnter={oMouseEnterB} onMouseLeave={oMouseLeaveBS}>
+                <button className={clNameB} name={name_B} onClick={oClickB} onChange={oChangeB} disabled={disab_B} onMouseEnter={oMouseEnterB} onMouseLeave={oMouseLeaveB}>
                     {text_}
                 </button>
             </div>
