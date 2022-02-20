@@ -7,6 +7,7 @@ import { ListType } from './ListType';
 import { ListTypeMH } from './ListTypeMH';
 import { collection, addDoc } from "firebase/firestore";
 import { InputDate } from './InputDate';
+import { Btn } from '../Buttons/Btn';
 const db = getFirestore(app);
 
 export function Form(){
@@ -83,7 +84,7 @@ export function Form(){
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
 					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave} />
 					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave} />
-					<button className={style.submit}> → </button>
+					<Btn clName={style.submit} text_='→' itemPath='/listView'/>
 				</div>
 			</form>
 		</div>
