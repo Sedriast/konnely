@@ -2,6 +2,7 @@ import app from '../firebase/credenciales';
 import style from '../css/Form.module.css';
 import { getFirestore } from "firebase/firestore";
 import { InputImage } from './InputImage';
+import { InputImage_2 } from './InputImage_2';
 import { useState } from 'react';
 import { ListType } from './ListType';
 import { ListTypeMH } from './ListTypeMH';
@@ -69,7 +70,7 @@ export function Form(){
 		<div className={style.subPanel}>
 			<form  onSubmit={handleSubmit}>
 				<div className={style.basicDataPanel}>
-					<InputImage ty="date" pl="Nombre" />
+					<InputImage_2 ty="date" pl="Nombre" />
 					<input className={style.name} type='text' name='nombre' placeholder='Nombre' onChange={handleChange}  onMouseEnter={Estado}/>
 					<InputDate clName={style.birtDate} iden="birtDate" place="Fecha de nacimiento" handleChanche={handleChange} />
 					<InputDate clName={style.desteteDate} iden="desteteDate" place="Fecha de destete" handleChanche={handleChange} />
