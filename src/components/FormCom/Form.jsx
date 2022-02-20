@@ -2,7 +2,6 @@ import app from '../firebase/credenciales';
 import style from '../css/Form.module.css';
 import { getFirestore } from "firebase/firestore";
 import { InputImage } from './InputImage';
-import { InputImage_2 } from './InputImage_2';
 import { useState } from 'react';
 import { ListType } from './ListType';
 import { ListTypeMH } from './ListTypeMH';
@@ -68,9 +67,9 @@ export function Form(){
 
 	return(
 		<div className={style.subPanel}>
-			<form  onSubmit={handleSubmit}>
+			<form>
 				<div className={style.basicDataPanel}>
-					<InputImage_2 ty="date" pl="Nombre" />
+					<InputImage ty="date" pl="Nombre" />
 					<input className={style.name} type='text' name='nombre' placeholder='Nombre' onChange={handleChange}  onMouseEnter={Estado}/>
 					<InputDate clName={style.birtDate} iden="birtDate" place="Fecha de nacimiento" handleChanche={handleChange} />
 					<InputDate clName={style.desteteDate} iden="desteteDate" place="Fecha de destete" handleChanche={handleChange} />
@@ -85,7 +84,7 @@ export function Form(){
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
 					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave} />
 					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave} />
-					<Btn clName={style.submit} text_='→' itemPath='/listView'/>
+					<Btn clName={style.submit} text_='→' itemPath='/listView' oClick={handleSubmit} />
 				</div>
 			</form>
 		</div>
