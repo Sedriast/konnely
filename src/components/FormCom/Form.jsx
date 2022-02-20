@@ -85,7 +85,7 @@ export function Form(){
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
 					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave} />
 					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave} />
-					<Btn clName={style.submit} text_='→' itemPath='/listView' oClick={handleSubmit} />
+					<Btn clName={style.submit} text_='→' itemPath='/listView' oChange={handleSubmit} />
 				</div>
 			</form>
 		</div>

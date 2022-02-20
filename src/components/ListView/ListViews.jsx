@@ -36,7 +36,7 @@ export function ListViews(props){
         <>
 			<SearchBar clName={style.containerSe}></SearchBar>
             <div className={style.subPanelLV}>
-				{ Informacion().map(a=> <CardMin url={imagenurl} rabitData={a}/>)}
+				{ Informacion().map(a=> <CardMin url={imagenurl} rabitDataName={a} rabitData={a} />)}
             </div>
 			<Btn clName={style.submit} itemPath='/form'></Btn>
 

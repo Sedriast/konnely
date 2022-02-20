@@ -209,6 +209,22 @@
 	left: calc(50% - 125px/2 - 99.5px);
 	top: calc(50% - 125px/2 - 50px);
 }
+.cardPanel:hover p{
+	position: absolute;
+	width: 171px;
+	height: 181px;
+
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 30px;
+	text-align: center;
+
+	color: #FFFFFF;
+
+	border: 2px solid #000000;
+}
 .imgView{
 	background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);
 

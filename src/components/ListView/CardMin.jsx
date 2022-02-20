@@ -3,8 +3,8 @@ import style from '../css/ListViews.module.css';
 export function CardMin(props){
 
 	const url = props.url;
+	const rabitDataName = props.rabitDataName;
 	const rabitData = props.rabitData;
-	const clName_P = props.clName_P;
 
 	const test = () => {
 		window.alert("Good");
@@ -15,7 +15,8 @@ export function CardMin(props){
 		<button onClick={test}>
 			<div className={style.cardPanel} >
 				<img className={style.imgView} src={url} alt=""/>
-				<p className={clName_P}>{rabitData}</p>
+				<h1 >{rabitDataName}</h1>
+				<p >{rabitData}</p>
 			</div>
 		</button>
 		</>
