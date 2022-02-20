@@ -39,11 +39,14 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 /*inputs*/
 .inputSe{
 	position: absolute;
-	width: 600px;
+	width: 80%;
 	height: 55px;
 
 	margin: 0;
-	padding: 0;
+	padding-left: 1rem;
+
+	left: 0;
+
 	border: none;
 	border-right: 1px black solid;
 	border-radius: 50px 0px 0px 50px;
@@ -57,7 +60,7 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 /*styles*/
 .iconSePanel{
 	position: absolute;
-	width: 100px;
+	width: 20%;
 	height: 55px;
 }
 /*styles*/

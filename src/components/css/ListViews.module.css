@@ -27,9 +27,9 @@
 	/*Component´s container*/
 	.subPanelLV{
 		position: absolute;
-		width: 80vw;
-		height: 70vh;
-		left: calc(100vw - 80%);
+		width: 80%;
+		height: 70%;
+		right: 0;
 		top: 20%;
 
 		align-items: center;
@@ -137,8 +137,6 @@
 /*Resizing */
 	@media (max-width: 1000px){
 		.subPanel{
-			width: 510px;
-			left: calc(50% - 510px/2);
 
 			overflow-y: scroll;
 			overflow-x: hidden;
@@ -176,9 +174,9 @@
 /*From Oter´s components*/
 .containerSe{
 	position: absolute;
-	width: 700px;
+	width: 50%;
 	height: 60px;
-	left: calc(100% - 700px);
+	right: 0;
 	top: 43px;
 	
 	background: var(--back-general-inputs);
