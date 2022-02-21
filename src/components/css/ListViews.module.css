@@ -159,18 +159,28 @@
 	box-sizing: border-box;
 	border-radius: 50px 0px 0px 50px;
 }
-.submitLV {
-	position: relative;
+.submitL{
+	position: absolute;
 	width: 150px;
 	height: 100px;
 
-	left: 0;
-	top: 70%;
+	left: 0%;
+	top: 80%;
+
+	text-decoration: none;
+	font-size: 1.25rem;
+	color: white;
+	text-align-last: center;
+	
+	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	border-radius: 0px 40px 40px 0px;
 }
 .cardPanel{
 	position: relative;
 	width: 250px;
 	height: 150px;
+
+	color: var(--font-color);
 
 	z-index: 0;
 
@@ -210,6 +220,8 @@
 	margin: 0;
 }
 .cardPanel:hover{
+
+	color: var(--font-color);
 	z-index: 0;
 
 	background: linear-gradient(125.11deg, rgba(255, 255, 255, 0.25) 0%, #000000 15.61%, #FFFFFF 35.67%), rgba(255, 255, 255, 0.5);

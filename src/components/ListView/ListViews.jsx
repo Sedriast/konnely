@@ -38,7 +38,7 @@ export function ListViews(props){
             <div className={style.subPanelLV}>
 				{ Informacion().map(a=> <CardMin url={imagenurl} rabitDataName={a} rabitData={a} />)}
             </div>
-			<Btn clName={style.submitLV} itemPath='/form'></Btn>
+			<Btn clName={style.submitL} itemPath='/form' text_='✎' />
         </>
     );
 }
