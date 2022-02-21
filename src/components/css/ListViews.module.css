@@ -198,7 +198,7 @@
 	border-radius: 100%;
 }
 .cardPanel p{
-	position: absolute;
+	position: relative;
 	width: 180px;
 	height: 180px;
 
@@ -239,17 +239,22 @@
 	left: 15px;
 	top: 0px;
 }
-.cardPanel:hover p{
-	position: absolute;
-	width: 180px;
-	height: 180px;
-	left: 150px;
-	top: 20px;	
 
-	visibility: visible;
-}
 .cardPanel:hover .nameH1{
 	left: 15px;
 	top: 150px;
 }
+
+.cardPanel:hover .ps{
+	color: #000000;
+	font-size: 2rem;
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	left: 150px;
+	top: 20px;
+	padding: 0;
+	border: 1px solid black;
+}
+
 /*From Oter´s components*/

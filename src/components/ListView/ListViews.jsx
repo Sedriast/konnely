@@ -20,23 +20,20 @@ export function ListViews(props){
 		  ),
 		[]);
 
-		function Informacion () {
-			const lo = [ ];
-			data.map((color) => (
-				lo.push(color.Objeto.nombre)
-				))
-			return lo
-		}
-
-
-		console.log(data);
-
-
     return(
         <>
 			<SearchBar clName={style.containerSe}></SearchBar>
             <div className={style.subPanelLV}>
-				{ Informacion().map(a=> <CardMin url={imagenurl} rabitDataName={a} rabitData={a} />)}
+				{data.map(a => <CardMin url={imagenurl} rabitDataName={a.Objeto.nombre} rabitData={
+					<>
+					<p>Raza:</p>
+					<br/> 
+					<p>{ a.Objeto.raza}</p> 
+					<br/> 
+					<p> { a.Objeto.peso}</p>
+					</>
+} />)
+				}
             </div>
 			<Btn clName={style.submitL} itemPath='/form' text_='✎' />
         </>
