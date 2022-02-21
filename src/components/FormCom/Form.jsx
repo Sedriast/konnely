@@ -26,7 +26,8 @@ export function Form(){
 	const handleSubmit = e => {
         e.preventDefault();
         addInfo(values);
-		console.log(e)
+
+		
     }
 
 	 const addInfo = async (Objeto) => {
@@ -36,18 +37,8 @@ export function Form(){
 			console.error("Error adding document: ", e);
 		  }
 	}
-	function Estado (){
-		const estado='True';
-		console.log(estado)
-		return estado;
-	}
-
-	// const Estado = e =>{
-    //     setEnable(false);
-    // }
 
 	const summitState = e => {
-		console.log(e.target.value)
 		if (e.target.value === 'Hembra') {
 				setStateM(true)
 		}else{
@@ -65,13 +56,12 @@ export function Form(){
  	}
 }
 
-
 	return(
 		<div className={style.subPanel}>
 			<form>
 				<div className={style.basicDataPanel}>
 					<InputImage ty="date" pl="Nombre" />
-					<input className={style.name} type='text' name='nombre' placeholder='Nombre' onChange={handleChange}  onMouseEnter={Estado}/>
+					<input className={style.name} type='text' name='nombre' placeholder='Nombre' onChange={handleChange}/>
 					<InputDate clName={style.birtDate} iden="birtDate" place="Fecha de nacimiento" handleChanche={handleChange} />
 					<InputDate clName={style.desteteDate} iden="desteteDate" place="Fecha de destete" handleChanche={handleChange} />
 					<ListType clName={style.race} collection='raza' handleChanche={handleChange}/>
