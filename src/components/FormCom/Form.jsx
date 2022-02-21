@@ -8,6 +8,7 @@ import { ListTypeMH } from './ListTypeMH';
 import { collection, addDoc } from "firebase/firestore";
 import { InputDate } from './InputDate';
 import { Btn } from '../Buttons/Btn';
+import { Link } from 'react-router-dom';
 const db = getFirestore(app);
 
 export function Form(){
@@ -85,7 +86,9 @@ export function Form(){
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
 					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave} />
 					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave} />
-					<Btn clName={style.submit} text_='→' itemPath='/listView' oClick={handleSubmit} />
+					<Link to='/listView'>
+						<Btn clName={style.subPanelB} text_='→' itemPath='/listView' oClick_B={handleSubmit} />
+					</Link> 
 				</div>
 			</form>
 		</div>

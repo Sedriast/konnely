@@ -1,16 +1,17 @@
 import { Link } from 'react-router-dom';
+import style from '../css/Btn.module.css';
 
 export function Btn(props){
 
 
     /*Contastes de eventos del botton*/
-    const oClickB = props.oClickB;
+    const name_B = props.name_B;
+    const oClick_B = props.oClick_B;
+    const oChangeB = props.oChangeB;
     /*Contastes de eventos del botton*/
 
     /*Contastes de eventos del div*/
     const clName = props.clName;
-    const oClick = props.oClick;
-    const oChange = props.oChange;
     const oMouseEnter = props.oMouseEnter;
     const oMouseLeave = props.oMouseLeave;
 
@@ -19,13 +20,12 @@ export function Btn(props){
     const src_ = props.src_;
     const text_ = props.text_;
 
-    return(<>
-        <Link to={itemPath}>
-            <div  className={clName} onClick={oClick} onChange={oChange} onMouseEnter={oMouseEnter} onMouseLeave={oMouseLeave}>
-                <button className={clNameB} name={name_B} onClick={oClickB} onChange={oChangeB}>
+    return(
+    <>
+        <div className={clName} onMouseEnter={oMouseEnter} onMouseLeave={oMouseLeave}>
+                <button  name={name_B} onClick={oClick_B} onChange={oChangeB}>
                     {text_}
                 </button>
-            </div>
-        </Link>
+        </div>
     </>);
     }

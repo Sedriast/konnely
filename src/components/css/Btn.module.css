@@ -1,0 +1,34 @@
+/*
+El webkit se configuró, para que las barras de desplazamiento no estroben al espacio visual del componente
+
+1- Variables and constants
+	
+
+
+
+
+
+
+
+
+
+
+
+*/
+/*Variables and constants*/
+:root{
+    --back-general: white;
+}
+/*Variables and constants*/
+
+/* Containers */
+button{
+	width: 100%;
+	height: 100%;
+	
+    background: transparent;
+
+	border: none;
+	border-radius: 0px 40px 40px 0px;
+}
+/* Containers */

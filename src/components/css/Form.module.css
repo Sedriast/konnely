@@ -425,4 +425,14 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 	font-size: 50px;
 	margin: 0;
 }
+.subPanelB{
+	position: absolute;
+	width: 150px;
+	height: 100px;
+	left: 750px;
+	top: 303px;
+
+	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0.2) 100%);
+	border-radius: 100px 0px 0px 100px;
+}
 /*Other´s Components*/
