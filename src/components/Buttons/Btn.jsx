@@ -22,10 +22,12 @@ export function Btn(props){
 
     return(
     <>
-        <div className={clName} onMouseEnter={oMouseEnter} onMouseLeave={oMouseLeave}>
-                <button  name={name_B} onClick={oClick_B} onChange={oChangeB}>
-                    {text_}
-                </button>
-        </div>
+        <Link to='/login'>
+            <div className={clName} onMouseEnter={oMouseEnter} onMouseLeave={oMouseLeave}>
+                    <button  name={name_B} onClick={oClick_B} onChange={oChangeB}>
+                        {text_}
+                    </button>
+            </div>
+        </Link>
     </>);
     }
