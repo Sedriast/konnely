@@ -176,10 +176,28 @@
 	width: 250px;
 	height: 150px;
 
+	z-index: 0;
+
 	background: linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%), rgba(255, 255, 255, 0.5);
 	border: 2px solid #000000;
 	box-sizing: border-box;
 	border-radius: 20px;
+}
+.cardPanel p{
+	position: absolute;
+	width: 180px;
+	height: 180px;
+	left: 150px;
+	top: 20px;	
+
+	visibility: hidden;
+}
+.cardPanel h1{
+	position: absolute;
+	width: 125px;
+	height: 65px;
+	left: 90px;
+	top: 100px;
 }
 .cardPanel:hover{
 	z-index: 0;
@@ -190,33 +208,30 @@
 
 	width: 350px;
 	height: 225px;
-
 	
 }
 .cardPanel:hover .imgView{
-
 	position: absolute;
 	width: 125px;
 	height: 125px;
-
-	left: calc(50% - 125px/2 - 99.5px);
-	top: calc(50% - 125px/2 - 50px);
+	left: 15px;
+	top: 0px;
 }
 .cardPanel:hover p{
 	position: absolute;
-	width: 171px;
-	height: 181px;
+	width: 180px;
+	height: 180px;
+	left: 150px;
+	top: 20px;	
 
-	font-family: Arial;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 25px;
-	line-height: 30px;
-	text-align: center;
-
-	color: #FFFFFF;
-
-	border: 2px solid #000000;
+	visibility: visible;
+}
+.cardPanel:hover h1{
+	position: absolute;
+	width: 125px;
+	height: 65px;
+	left: 15px;
+	top: 125px;
 }
 .imgView{
 	background: radial-gradient(50% 50% at 50% 50%, #000000 50%, rgba(0, 0, 0, 0) 100%);

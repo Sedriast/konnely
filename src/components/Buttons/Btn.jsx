@@ -5,8 +5,6 @@ export function Btn(props){
 
     /*Contastes de eventos del botton*/
     const oClickB = props.oClickB;
-    const oChangeB = props.oChangeB;
-    const name_B = props.name_B;
     /*Contastes de eventos del botton*/
 
     /*Contastes de eventos del div*/
@@ -24,7 +22,7 @@ export function Btn(props){
     return(<>
         <Link to={itemPath}>
             <div  className={clName} onClick={oClick} onChange={oChange} onMouseEnter={oMouseEnter} onMouseLeave={oMouseLeave}>
-                <button className={clName} name={name_B} onClick={oClickB} onChange={oChangeB}>
+                <button className={clNameB} name={name_B} onClick={oClickB} onChange={oChangeB}>
                     {text_}
                 </button>
             </div>
