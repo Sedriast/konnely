@@ -1,18 +1,13 @@
-/**
- * el div es temporal, este se ba a reemplesar con el imput de imagen 
- * (que parece ser mas complicado de lo que imaginaba)
- */
-
  import style from '../css/Form.module.css';
-
  import { useRef, useState, useEffect } from "react";
  
  export function InputImage() {
+
    const [image, setImage] = useState();
    const [preview, setPreview] = useState();
    const fileInputRef = useRef();
  
-   useEffect(() => {
+   useEffect( () => {
      if (image) {
        const reader = new FileReader();
        reader.onloadend = () => {
@@ -23,34 +18,30 @@
        setPreview(null);
      }
    }, [image]);
- 
+
+   const handleImage = (e) => {
+
+	const file = e.target.files[0];
+
+    if (file && file.type.substr(0, 5) === "image") {
+      setImage(file);
+    } else {
+      setImage(null);
+    }
+  }
+
+  const changeImage = () => {
+    setImage(null);
+  }
+
    return (
-     <div >
+     <div>
          {preview ? (
-           <img className={style.imgInput}
-             src={preview}
-             style={{ objectFit: "cover" }}
-             onClick={() => {
-               setImage(null);
-             }}
-           />
+			<img className={style.imgInput} src={preview} style={{objectFit: "cover"}} onClick={changeImage}/>
          ) : (
-            <input
-            className={style.imgInput} 
-            type="file" name="src-file1" 
-            aria-label="Archivo"
-            ref={fileInputRef}
-            accept="image/*"
-            onChange={(event) => {
-              const file = event.target.files[0];
-              if (file && file.type.substr(0, 5) === "image") {
-                setImage(file);
-              } else {
-                setImage(null);
-              }
-            }}
-          />
-         )}
+			<input className={style.imgInput} type="file" name="src-file1" aria-label="Archivo" ref={fileInputRef} accept="image/*" onChange={handleImage}/>
+         	)
+		 }
      </div>
    );
  }
