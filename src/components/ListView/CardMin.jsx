@@ -17,10 +17,9 @@ export function CardMin(props){
 				<div className={style.cardPanel} >
 					<img className={style.imgView} src={url} alt=""/>
 					<h1 className={style.nameH1} >{rabitDataName}</h1>
-					<div className={style.ps}>
+					<p className={style.ps}>
 					{rabitData}
-					</div>
-	
+					</p>
 				</div>
 			</Link>
 		</>

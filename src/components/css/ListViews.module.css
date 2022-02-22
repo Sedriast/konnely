@@ -70,6 +70,8 @@
 		border-radius: 10px;  
 	}
 	.subPanelLV p{
+		text-decoration: none;
+
 		padding: 0;
 		margin: 0;
 	}
@@ -176,11 +178,13 @@
 	border-radius: 0px 40px 40px 0px;
 }
 .cardPanel{
-	position: relative;
+	position:sticky ;
 	width: 250px;
 	height: 150px;
 
 	color: var(--font-color);
+
+	font-family: Arial;
 
 	z-index: 0;
 
@@ -197,19 +201,6 @@
 	top: calc(50% - 125px/2 + 0.5px);
 	border-radius: 100%;
 }
-.cardPanel p{
-	position: relative;
-	width: 180px;
-	height: 180px;
-
-	left: calc(50% - 125px/2);
-    top: 100px;
-    font-size: 25px;
-
-	margin: 0;
-
-	visibility: hidden;
-}
 .nameH1{
 	position: absolute;
 	width: 125px;
@@ -219,18 +210,16 @@
 
 	margin: 0;
 }
+.ps{
+	visibility: hidden;
+}
 .cardPanel:hover{
-
-	color: var(--font-color);
-	z-index: 0;
-
 	background: linear-gradient(125.11deg, rgba(255, 255, 255, 0.25) 0%, #000000 15.61%, #FFFFFF 35.67%), rgba(255, 255, 255, 0.5);
 
 	left: -18%;
 
 	width: 350px;
 	height: 225px;
-	
 }
 .cardPanel:hover .imgView{
 	position: absolute;
@@ -245,15 +234,12 @@
 	top: 150px;
 }
 .cardPanel:hover .ps{
-	color: #000000;
-	font-size: 2rem;
 	position: absolute;
 	width: 180px;
-	height: 180px;
+	height: 190px;
 	left: 150px;
 	top: 20px;
-	padding: 0;
-	border: 1px solid black;
+	visibility: visible;
 }
 
 /*From Oter´s components*/
