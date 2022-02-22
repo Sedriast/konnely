@@ -8,6 +8,24 @@
 	background: rgba(0, 0, 0, 0.8);
 	border-radius: 20px;
 }
-.submitLO{
+.submitLo{
+	position: absolute;
+	width: 163px;
+	height: 52px;
+	left: 168px;
+	top: 408px;
+
+	text-decoration: none;
+	font-family: Arial;
+	font-size: 0.8rem;
+	color: black;
+
+	background: rgba(255, 255, 0, 0.4);
+	border-radius: 50px;
+}
+.userIn{
 	
+}
+.passIn{
+
 }
