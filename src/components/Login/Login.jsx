@@ -9,7 +9,7 @@ export function Login() {
 		<div className={style.subPanelL}> 
 			<input className={style.userIn} type='text' />
 			<input className={style.passIn} type='text' />
-			<Btn clName={style.submitLo}/>
+			<Btn clName={style.submitLo} itemPath='/test' text_='Ingresar'/>
 		</div>
 	</>
 	);
