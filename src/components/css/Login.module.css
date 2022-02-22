@@ -1,0 +1,13 @@
+.subPanelL{
+	position: relative;
+	width: 500px;
+	height: 640px;
+
+	left: calc(50% - 500px/2);
+
+	background: rgba(0, 0, 0, 0.8);
+	border-radius: 20px;
+}
+.submitLO{
+	
+}
