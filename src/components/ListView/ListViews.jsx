@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { CardMin } from './CardMin';
 import { SearchBar } from '../Searchbar/SearchBar';
 import { Btn } from '../Buttons/Btn';
+import { Paragraphs } from '../helpers/Paragraphs';
 const db = getFirestore(app);
 
 export function ListViews(props){
@@ -25,14 +26,8 @@ export function ListViews(props){
 			<SearchBar clName={style.containerSe}></SearchBar>
             <div className={style.subPanelLV}>
 				{data.map(a => <CardMin url={imagenurl} rabitDataName={a.Objeto.nombre} rabitData={
-					<>
-					<p>Raza:</p>
-					<br/> 
-					<p>{ a.Objeto.raza}</p> 
-					<br/> 
-					<p> { a.Objeto.peso}</p>
-					</>
-} />)
+					<Paragraphs race={a.Objeto.raza} weigth={a.Objeto.peso}/>
+																						} />)
 				}
             </div>
 			<Btn clName={style.submitL} itemPath='/form' text_='✎' />
