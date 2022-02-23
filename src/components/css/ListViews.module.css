@@ -26,16 +26,17 @@
 /*Containers*/
 	/*Component´s container*/
 	.subPanelLV{
-		position: absolute;
+		position: fixed;
 		width: 80%;
 		height: 70%;
 		right: 0;
 		top: 20%;
 
+		text-overflow: ellipsis;
 		align-items: center;
 		justify-content: center;
 		overflow-y: scroll;
-		padding: 2rem;
+		padding: 3rem;
 		
 		background: rgba(0, 0, 0, 0.2);
 		border-radius: 40px 0px 0px 40px;
@@ -71,9 +72,24 @@
 	}
 	.subPanelLV p{
 		text-decoration: none;
+		text-overflow: ellipsis;
+		font-size: 15px;
 
 		padding: 0;
 		margin: 0;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.subPanel h1{
+		width: 250px;
+		height: 50px;
+		
+		padding: 0;
+		margin: 0;
+
+		font-size: 20px;
+		text-overflow: ellipsis;
+		overflow: hidden;
 	}
 	.subPanelLV input{
 		background: rgba(255, 255, 255, 0.6);
@@ -178,20 +194,28 @@
 	border-radius: 0px 40px 40px 0px;
 }
 .cardPanel{
-	position:sticky ;
+	position: relative;
 	width: 250px;
 	height: 150px;
 
-	color: var(--font-color);
-
+	text-overflow: ellipsis;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 25px;
+	line-height: 31px;
+	
+	color: black;
+	
 	font-family: Arial;
 
 	z-index: 0;
 
-	background: linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%), rgba(255, 255, 255, 0.5);
-	border: 2px solid #000000;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%);	border: 2px solid #000000;
 	box-sizing: border-box;
 	border-radius: 20px;
+
+	overflow: hidden;
 }
 .imgView{
 	position: absolute;
@@ -208,9 +232,11 @@
 	left: calc(50% - 125px/2);
 	top: 100px;
 
+	text-align: center;
 	margin: 0;
 }
 .ps{
+	text-align: left;
 	visibility: hidden;
 }
 .cardPanel:hover{
