@@ -1,7 +1,7 @@
  import style from '../css/Form.module.css';
  import { useRef, useState, useEffect } from "react";
  
- export function InputImage() {
+ export function InputImage(props) {
 
    const [image, setImage] = useState();
    const [preview, setPreview] = useState();
@@ -19,16 +19,18 @@
      }
    }, [image]);
 
-   const handleImage = (e) => {
+   
+	 const handleImage = e => {
 
-	const file = e.target.files[0];
-
-    if (file && file.type.substr(0, 5) === "image") {
-      setImage(file);
-    } else {
-      setImage(null);
-    }
-  }
+		const file = e.target.files[0];
+	
+		if (file && file.type.substr(0, 5) === "image") {
+		  setImage(file);
+      props.HaveImage(e.target.files[0]);
+		} else {
+		  setImage(null);
+		}
+	  }
 
   const changeImage = () => {
     setImage(null);

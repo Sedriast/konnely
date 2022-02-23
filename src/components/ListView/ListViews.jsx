@@ -8,9 +8,8 @@ import { SearchBar } from '../Searchbar/SearchBar';
 import { Btn } from '../Buttons/Btn';
 const db = getFirestore(app);
 
-export function ListViews(props){
+export function ListViews(){
 
-    const imagenurl = 'https://drive.google.com/uc?export=download&id='+props.idImage
 	const [data, setData] = useState([{Objeto:{}}]);
 
 	useEffect(
@@ -20,17 +19,20 @@ export function ListViews(props){
 		  ),
 		[]);
 
+
     return(
         <>
 			<SearchBar clName={style.containerSe}></SearchBar>
             <div className={style.subPanelLV}>
-				{data.map(a => <CardMin url={imagenurl} rabitDataName={a.Objeto.nombre} rabitData={
+				{data.map(a => <CardMin url={a.Objeto.url} rabitDataName={a.Objeto.nombre} rabitData={
 					<>
-					<p>Raza:</p>
+					<p>ID: { a.Objeto.id}</p>
+					<br/>
+					<p>Raza: { a.Objeto.raza}</p>
 					<br/> 
-					<p>{ a.Objeto.raza}</p> 
+					<p></p> 
 					<br/> 
-					<p> { a.Objeto.peso}</p>
+					<p>Clasificación:{ a.Objeto.macho}{ a.Objeto.hembra}</p>
 					</>
 } />)
 				}

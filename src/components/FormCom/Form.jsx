@@ -8,7 +8,9 @@ import { ListTypeMH } from './ListTypeMH';
 import { collection, addDoc } from "firebase/firestore";
 import { InputDate } from './InputDate';
 import { Btn } from '../Buttons/Btn';
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 const db = getFirestore(app);
+const storage = getStorage(app);
 
 export function Form(){
 
@@ -17,6 +19,7 @@ export function Form(){
 	const [values, setValues] = useState(init);
 	const [stateH, setStateH] = useState(false);
 	const [stateM, setStateM] = useState(false);
+	const [image, setImage] = useState();
 
 	const handleChange = e => {
         const {name, value} = e.target;
@@ -26,52 +29,48 @@ export function Form(){
 	const handleSubmit = e => {
         e.preventDefault();
         addInfo(values);
-		console.log(e)
     }
 
 	 const addInfo = async (Objeto) => {
 		try {
+			const storageRef = ref(storage, image.name);
+			await uploadBytes(storageRef, image);
+			const urlDescarga = await getDownloadURL(storageRef);
+			Objeto.url =urlDescarga;
 			await addDoc(collection(db, "conejos"), {Objeto});
 		  } catch (e) {
 			console.error("Error adding document: ", e);
 		  }
 	}
-	function Estado (){
-		const estado='True';
-		console.log(estado)
-		return estado;
-	}
-
-	// const Estado = e =>{
-    //     setEnable(false);
-    // }
 
 	const summitState = e => {
-		console.log(e.target.value)
 		if (e.target.value === 'Hembra') {
 				setStateM(true)
 		}else{
 			if (e.target.value === 'Macho') {
 				setStateH(true)
+			}
 		}
- 	}
-}
+
+	}
 
 	const summitStateLeave = e => {
-		
-	if (e.target.value === 'Hembra' | e.target.value === 'Macho') {
-		setStateH(false)
-		setStateM(false)
- 	}
-}
+		if (e.target.value === 'Hembra' | e.target.value === 'Macho') {
+			setStateH(false)
+			setStateM(false)
+		}
+	}
 
+	function HaveImage (e) {
+		setImage(e);
+	}
 
 	return(
 		<div className={style.subPanel}>
 			<form>
-				<div className={style.basicDataPanel}>
-					<InputImage ty="date" pl="Nombre" />
-					<input className={style.name} type='text' name='nombre' placeholder='Nombre' onChange={handleChange}  onMouseEnter={Estado}/>
+				<div className={style.basicDataPanel} >
+					<InputImage ty="date" pl="Nombre" HaveImage={HaveImage} />
+					<input className={style.name} type='text' name='nombre' placeholder='Nombre' onChange={handleChange} />
 					<InputDate clName={style.birtDate} iden="birtDate" place="Fecha de nacimiento" handleChanche={handleChange} />
 					<InputDate clName={style.desteteDate} iden="desteteDate" place="Fecha de destete" handleChanche={handleChange} />
 					<ListType clName={style.race} collection='raza' handleChanche={handleChange}/>

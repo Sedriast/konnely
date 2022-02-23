@@ -7,31 +7,20 @@ const db = getFirestore(app);
 export function ListType(props){
 
 	const coleccion = props.collection;
-	const {handleChanche} = props;
+	const { handleChanche } = props;
 	const clName = props.clName;
-	const estado = props.estado
 
-	const [list, setList] = useState([{ name: "Loading...", id: "initial" }]);
+	const [list, setList] = useState([{ name: "Loading..."}]);
 
-	useEffect(
-		() =>
+	useEffect( () =>
 		  onSnapshot(collection(db, coleccion), (snapshot) =>
-			setList(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id})))
+			setList(snapshot.docs.map((doc) => ({ ...doc.data()})))
 		  ),
 		[]);
 
-	function lista () {
-		const lo = [ ];
-		list.map((color) => (
-			lo.push(color.name)
-			))
-		return lo
-	}
-
-
 	return (
 		<select className={clName} name={coleccion} onChange={handleChanche} >
-			{ lista().map(a=><option key={a} value={a}>{a}</option>) }
+			{ list.map(a=><option key={a.name} value={a.name}>{a.name}</option>) }
 		</select>
 	);
 }
