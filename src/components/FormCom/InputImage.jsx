@@ -39,7 +39,7 @@
    return (
      <div>
          {preview ? (
-			<img className={style.imgInput} src={preview} style={{objectFit: "cover"}} onClick={changeImage}/>
+			<img className={style.imgInput} src={preview} style={{objectFit: "cover"}} onClick={changeImage} alt=""/>
          ) : (
 			<input className={style.imgInput} type="file" name="src-file1" aria-label="Archivo" ref={fileInputRef} accept="image/*" onChange={handleImage}/>
          	)

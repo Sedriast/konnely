@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import style from '../css/Btn.module.css';
 
 export function Btn(props){
 
@@ -9,7 +8,6 @@ export function Btn(props){
     const oChange = props.oChangeB;
 
     const itemPath = props.itemPath;
-    const src_ = props.src_;
     const text_ = props.text_;
 
     return(
