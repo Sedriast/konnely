@@ -42,6 +42,7 @@ html::-webkit-scrollbar-track {
 
 body {
   margin: 0;
+  zoom: 0.9;
 }
 
 /**
@@ -182,7 +183,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
+  font-family: Arial; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
