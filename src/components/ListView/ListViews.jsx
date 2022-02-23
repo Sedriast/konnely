@@ -25,7 +25,7 @@ export function ListViews(){
         <>
 			<SearchBar clName={style.containerSe}></SearchBar>
             <div className={style.subPanelLV}>
-				{data.map(a => <CardMin url={imagenurl} rabitDataName={a.Objeto.nombre} rabitData={
+				{data.map(a => <CardMin url={a.Objeto.url} rabitDataName={a.Objeto.nombre} rabitData={
 					<Paragraphs race={a.Objeto.raza} weigth={a.Objeto.peso}/>
 																						} />)
 				}
