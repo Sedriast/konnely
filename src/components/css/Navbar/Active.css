@@ -1,21 +1,22 @@
 .navMenu {
 	z-index: 100;
-	width: 100%;
-	height: 100%;
+	width: 0%;
+	height: 0%;
 	display: flex;
 	justify-content: center;
 	position: absolute;
 	top: 0;
-	left: -100%;
 
-	animation-duration: 3s;
-	animation: menuIn;
+	overflow: hidden;
+
+	border-radius: 0px 0px 1000px 0px;
+	transition: 1s;
 }
 .navMenu.active {
-	left: 0;
+	width: 100%;
+	height: 100%;
 
-	animation-duration: 3s;
-	animation: menuOut;
+	transition: 2s;
 }
 
 @keyframes menuIn{

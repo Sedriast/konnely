@@ -63,10 +63,10 @@
 }
 .decor{
 	position: absolute;
-	width: 89px;
-	height: 89px;
-	left: 30px;
-	top: 31px;
+	width: 50px;
+	height: 50px;
+	left: 20px;
+	top: 20px;
 
 	background: radial-gradient(71.35% 71.35% at 16.29% 19.1%, rgba(196, 196, 196, 0) 44.58%, #FFFFFF 100%);
 	border-radius: 100%;
