@@ -1,0 +1,70 @@
+.subPanelGradient{
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(237.38deg, #000000 25.32%, rgba(0, 0, 0, 0.5) 60.71%, rgba(255, 255, 255, 0) 100%);
+}
+.data{
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    right: 0%;
+    top: 0%;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.data::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+.data::-webkit-scrollbar:vertical {
+    width: 1px;
+}
+.data::-webkit-scrollbar-button:increment,.data::-webkit-scrollbar-button {
+    display: none;
+} 
+.data::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+.data::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 0, 0, 0.1);;
+    border-radius: 20px;
+    border: none;
+}
+.data::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+.data img{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: calc(50% - 150px/2);
+    top: 10%;
+
+    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 81.77%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 100px;
+}
+.pD{
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    left: 25px;
+    top: 400px;
+}
+.panelPar{
+    position: absolute;
+    width: 500px;
+    height: 450px;
+    left: 26px;
+    top: 394px;
+
+    font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 31px;
+	-webkit-text-stroke: 2px black;
+	text-align: left;
+	
+	color: white;
+}

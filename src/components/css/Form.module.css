@@ -338,11 +338,9 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 			left: 32px;
 			top: 190px;
 		}
-		.submit{
-			width: 150px;
-			height: 100px;
+		.subPanelB{
 			left: 450px;
-			top: 395px;
+			top: 390px;
 		}
 		.female{
 			width: 530px;
@@ -408,7 +406,7 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 	width: 150px;
 	height: 100px;
 	left: 750px;
-	top: 303px;
+	top: 300px;
 
 	text-decoration: none;
 	font-size: 4.5rem;
