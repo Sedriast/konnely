@@ -5,6 +5,8 @@
 	display: absolute;
 	justify-content: start;
 	align-items: center;
+
+	-webkit-text-stroke: 2px black;
 }
 .bars {
 	margin-left: 2rem;

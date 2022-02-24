@@ -68,7 +68,6 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 		padding: 0;
 		font-family: Arial;
 	}
-
 	.subPanel::-webkit-scrollbar {
 		-webkit-appearance: none;
 	}

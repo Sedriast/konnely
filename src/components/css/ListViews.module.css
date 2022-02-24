@@ -72,11 +72,10 @@
 	}
 	.subPanelLV p{
 		text-decoration: none;
-		text-overflow: ellipsis;
-		font-size: 15px;
 
 		padding: 0;
 		margin: 0;
+
 		white-space: nowrap;
 		overflow: hidden;
 	}
@@ -198,18 +197,19 @@
 	width: 250px;
 	height: 150px;
 
-	text-overflow: ellipsis;
 	font-family: Arial;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 25px;
+	font-size: 15px;
 	line-height: 31px;
+	-webkit-text-stroke: 2px black;
+	text-align: left;
 	
-	color: black;
+	color: white;
 	
 	font-family: Arial;
 
-	z-index: 0;
+	z-index: 100;
 
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%);	border: 2px solid #000000;
 	box-sizing: border-box;
@@ -227,17 +227,33 @@
 }
 .nameH1{
 	position: absolute;
-	width: 125px;
+	width: 80%;
 	height: 65px;
-	left: calc(50% - 125px/2);
+	left: calc(50% - 80%/2);
 	top: 100px;
 
+	padding: 5px;
 	text-align: center;
 	margin: 0;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
 }
 .ps{
+
+	color: white;
 	text-align: left;
 	visibility: hidden;
+
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 5px;
+}
+.ps h1{
+	margin: 0;
 }
 .cardPanel:hover{
 	background: linear-gradient(125.11deg, rgba(255, 255, 255, 0.25) 0%, #000000 15.61%, #FFFFFF 35.67%), rgba(255, 255, 255, 0.5);
@@ -252,20 +268,31 @@
 	width: 125px;
 	height: 125px;
 	left: 15px;
-	top: 0px;
+	top: 10px;
+	
 }
 
 .cardPanel:hover .nameH1{
 	left: 15px;
 	top: 150px;
+	width: 40%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
 }
 .cardPanel:hover .ps{
+	color: white;
 	position: absolute;
 	width: 180px;
 	height: 190px;
 	left: 150px;
 	top: 20px;
 	visibility: visible;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
 }
 
 /*From Oter´s components*/
