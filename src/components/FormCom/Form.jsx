@@ -15,15 +15,18 @@ const storage = getStorage(app);
 export function Form(){
 
 	const init = {}
-
-	const [values, setValues] = useState(init);
-	const [stateH, setStateH] = useState(false);
-	const [stateM, setStateM] = useState(false);
 	const [image, setImage] = useState();
+	const [values, setValues] = useState(init);
+	const [stateM, setStateM] = useState(false);
+	const [stateH, setStateH] = useState(false);
+
+	function HaveImage (e) {
+		setImage(e);
+	}
 
 	const handleChange = e => {
         const {name, value} = e.target;
-        setValues({...values, [name]:value})
+        setValues({...values, [name]:value});
     }
 
 	const handleSubmit = e => {
@@ -45,24 +48,20 @@ export function Form(){
 
 	const summitState = e => {
 		console.log(e.target.value);
-		if (e.target.value === "Hembra") {
+		if (e.target.className === style.female) {
+			if(e.target.value != "Hembra"){
 				setStateM(true);
-		}else if (e.target.value === "Macho") {
+			}else{
+				setStateM(false);
+			}
+		}else if (e.target.className === style.masle) {
+			if(e.target.value != "Macho"){
 				setStateH(true);
+			}else{
+				setStateH(false);
+			}
 		}
 
-	}
-
-	const summitStateLeave = e => {
-		console.log(e.target.value);
-		if (e.target.value === "Hembra" | e.target.value === "Macho") {
-			setStateH(false);
-			setStateM(false);
-	}
-	}
-
-	function HaveImage (e) {
-		setImage(e);
 	}
 
 	return(
@@ -82,8 +81,8 @@ export function Form(){
 					<ListType clName={style.where} collection='donde'handleChanche={handleChange}/>
 					<input className={style.qualification} type="number" name="Calificacion" placeholder='Calificacion' onChange={handleChange} />
 					<input className={style.id} type='text' name="id" placeholder='ID'onChange={handleChange} />
-					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} summitStateLeave={summitStateLeave} />
-					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} summitStateLeave={summitStateLeave} />
+					<ListTypeMH clName={style.female} collection='hembra' handleChanche={handleChange} desabilitar={stateH} summitState={summitState} />
+					<ListTypeMH clName={style.masle} collection='macho' handleChanche={handleChange} desabilitar={stateM} summitState={summitState} />
 					<Btn clName={style.subPanelB} text_='→' itemPath='/listView' oClick_B={handleSubmit} />
 				</div>
 			</form>

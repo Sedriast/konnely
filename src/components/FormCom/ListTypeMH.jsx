@@ -24,7 +24,7 @@ export function ListTypeMH(props){
 		[]);
 
 	return (
-			<select onMouseLeave={summitStateLeave} className={clName} name={coleccion} onChange={handleChanche} disabled={desabilitar} onClick={summitState}>
+			<select className={clName} name={coleccion} onChange={handleChanche} disabled={desabilitar} onClick={summitState}>
 				{ list.map(a=><option key={a.id} value={a.name}>{a.name}</option>)}
 			</select>
 	);
