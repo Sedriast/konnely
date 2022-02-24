@@ -7,14 +7,10 @@ export function CardMin(props){
 	const rabitDataName = props.rabitDataName;
 	const rabitData = props.rabitData;
 
-	const test = () => {
-		window.alert("Good");
-	} 
-
 	return(
 		<>
-			<Link to= '/test'>
-				<div className={style.cardPanel} >
+			<Link to='/test'>
+				<div className={style.cardPanel}  >
 					<img className={style.imgView} src={url} alt=""/>
 					<h1 className={style.nameH1} >{rabitDataName}</h1>
 					<p className={style.ps}>

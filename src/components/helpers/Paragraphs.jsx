@@ -4,10 +4,14 @@ export function Paragraphs(props){
     const w = props.weigth;
     
     return(<>
+            <p>
             <h1>Raza:</h1>
-            <p>{r}</p> 
-            <br/> 
+            {r}
+            </p> 
+            <br/>
+            <p> 
             <h1>Peso:</h1>
-            <p>{w}</p>
+            {w}
+            </p>
     </>);
 }
