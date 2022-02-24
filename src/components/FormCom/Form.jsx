@@ -44,21 +44,21 @@ export function Form(){
 	}
 
 	const summitState = e => {
-		if (e.target.value === 'Hembra') {
-				setStateM(true)
-		}else{
-			if (e.target.value === 'Macho') {
-				setStateH(true)
-			}
+		console.log(e.target.value);
+		if (e.target.value === "Hembra") {
+				setStateM(true);
+		}else if (e.target.value === "Macho") {
+				setStateH(true);
 		}
 
 	}
 
 	const summitStateLeave = e => {
-		if (e.target.value === 'Hembra' | e.target.value === 'Macho') {
-			setStateH(false)
-			setStateM(false)
-		}
+		console.log(e.target.value);
+		if (e.target.value === "Hembra" | e.target.value === "Macho") {
+			setStateH(false);
+			setStateM(false);
+	}
 	}
 
 	function HaveImage (e) {

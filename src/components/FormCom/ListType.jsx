@@ -6,13 +6,13 @@ const db = getFirestore(app);
 
 export function ListType(props){
 
+	const [ list, setList ] = useState([{ name: "Loading..."}]);
 	const coleccion = props.collection;
 	const { handleChanche } = props;
 	const clName = props.clName;
 
-	const [list, setList] = useState([{ name: "Loading..."}]);
-
-	useEffect( () =>
+	useEffect(
+		() =>
 		  onSnapshot(collection(db, coleccion), (snapshot) =>
 			setList(snapshot.docs.map((doc) => ({ ...doc.data()})))
 		  ),

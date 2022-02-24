@@ -6,15 +6,15 @@ const db = getFirestore(app);
 
 export function ListTypeMH(props){
 
+	const [list, setList] = useState([{ name: "Loading...", id: "initial" }]);
+	const desabilitar = props.desabilitar;
 	const coleccion = props.collection;
+	const {summitStateLeave} =props
 	const {handleChanche} = props;
 	const {summitState} = props;
-	const {summitStateLeave} =props
 	const clName = props.clName;
-	const desabilitar = props.desabilitar;
-
-	const [list, setList] = useState([{ name: "Loading...", id: "initial" }]);
-	const [stateS, setStateS] = useState(true);
+	const tC ="";
+	const oC="";
 
 	useEffect(
 		() =>
@@ -23,17 +23,9 @@ export function ListTypeMH(props){
 		  ),
 		[]);
 
-	function lista () {
-		const lo = [ ];
-		list.map((color) => (
-			lo.push(color.name)
-			))
-		return lo
-	}
-
 	return (
-			<select className={clName} name={coleccion} onChange={handleChanche} disabled={desabilitar} onMouseEnter={summitState} onMouseLeave={summitStateLeave}>
-				{ lista().map(a=><option key={a} value={a}>{a}</option>)}
+			<select onMouseLeave={summitStateLeave} className={clName} name={coleccion} onChange={handleChanche} disabled={desabilitar} onClick={summitState}>
+				{ list.map(a=><option key={a.id} value={a.name}>{a.name}</option>)}
 			</select>
 	);
 }
