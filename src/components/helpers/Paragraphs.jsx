@@ -12,7 +12,7 @@ export function Paragraphs(props){
             </p> 
             <br/>
             <p> 
-            <h1>Peso:</h1>
+            <h1>Estado:</h1>
             {w}
             </p>
         </div>    

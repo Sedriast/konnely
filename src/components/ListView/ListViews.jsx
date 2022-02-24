@@ -20,14 +20,13 @@ export function ListViews(){
 		  ),
 		[]);
 
-
     return(
         <>
 			<SearchBar clName={style.containerSe}></SearchBar>
             <div className={style.subPanelLV}>
 				{data.map(a => <CardMin url={a.Objeto.url} rabitDataName={a.Objeto.nombre} rabitData={
-					<Paragraphs race={a.Objeto.raza} weigth={a.Objeto.peso}/>
-																						} />)
+					<Paragraphs race={a.Objeto.raza} weigth={a.Objeto.estado}/>
+					} />)
 				}
             </div>
 			<Btn clName={style.submitL} itemPath='/form' text_='✎' />
