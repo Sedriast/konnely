@@ -251,10 +251,11 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	padding: 5px;
-	font-size: 18px;
+	font-size: 22px;
 }
 .ps h1{
 	margin: 0;
+	font-size: 28px;
 }
 .cardPanel:hover{
 	background: linear-gradient(125.11deg, rgba(255, 255, 255, 0.25) 0%, #000000 15.61%, #FFFFFF 35.67%), rgba(255, 255, 255, 0.5);

@@ -48,11 +48,68 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
     height: 60px;
     left: calc(50% - 550px/2);
     top: calc(50% - 60px/2);
+    position: absolute;
+;
+    left: calc(50% - 542px/2);
+    top: calc(50% - 250px/2 + 153px);
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 59px;
+    text-align: center;
+
+    color: #FFFFFF;
 }
 .userInfo{
     width: 550px;
-    height: 60px;
-    left: calc(50% - 550px/2);
-    top: calc(50% - 60px/2 );
+    height: 160px;
+    position: absolute;
+
+    left: calc(50% - 542px/2);
+    top: calc(50% - -30px/2 + 153px);
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 59px;
+    text-align: center;
+
+    color: #FFFFFF;
+
+
 }
+
+.userId {
+    width: 550px;
+    height: 160px;
+    position: absolute;
+
+    left: calc(50% - 542px/2);
+    top: calc(50% - 150px/2 + 153px);
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 59px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.userViewPanel img{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: calc(50% - 300px/2);
+    top: calc(50% - 300px/2 - 199px);
+    border-radius: 150px;
+}
+.img{
+    background: url(https://drive.google.com/file/d/1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi/view?usp=sharing);
+}
+
 /* views */
