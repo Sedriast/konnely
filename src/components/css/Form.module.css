@@ -2,10 +2,10 @@
 El webkit se configuró, para que las barras de desplazamiento no estroben al espacio visual del componente
 
 1- Variables and constants
-2- Containers 		
-3- Components 		
-4- Resizing 		
-5- Animations 		
+2- Containers
+3- Components
+4- Resizing
+5- Animations
 
 
 
@@ -19,405 +19,415 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 
 */
 /*Variables and constants*/
-	:root{
-		--back-general-inputs: white;
-		--font-family-general: arial;
-		--font-color: black;
-		--font-size: 25px;
-		--focus-back:#fff;
-	}
+:root {
+  --back-general-inputs: white;
+  --font-family-general: arial;
+  --font-color: black;
+  --font-size: 25px;
+  --focus-back: #fff;
+}
 /*Variables and constants*/
 /*Containers*/
 /*Component´s container*/
-	.subPanel{
-		position: absolute;
-		display: flex;
+.subPanel {
+  position: absolute;
+  display: flex;
 
-		width: 900px;
-		height: 740px;
-		left: calc(50% - 900px/2);
-		top: calc(50% - 740px/2);
+  width: 900px;
+  height: 740px;
+  left: calc(50% - 900px / 2);
+  top: calc(50% - 740px / 2);
 
-		background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(227, 227, 227, 0.5) 47.92%, rgba(0, 0, 0, 0.5) 100%);		border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(227, 227, 227, 0.5) 47.92%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  border-radius: 20px;
 
-		animation-duration: 1s;
-		animation-name: panelOut;
+  animation-duration: 1s;
+  animation-name: panelOut;
 
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-	.subPanel input{
-		background: var(--back-general-inputs);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.subPanel input {
+  background: var(--back-general-inputs);
 
-		font-size: var(--font-size);
-		border: 2px solid #000000;
-		box-sizing: border-box;
-		border-radius: 20px;
+  font-size: var(--font-size);
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
 
-		font-family: Arial;
-	}
-	.subPanel input::placeholder{
-		color: var(--font-color);
-	}
-	.subPanel select{
-		background: var(--back-general-inputs);
-		border: 2px solid #000000;
-		box-sizing: border-box;
-		border-radius: 20px;
+  font-family: Arial;
+}
+.subPanel input::placeholder {
+  color: var(--font-color);
+}
+.subPanel select {
+  background: var(--back-general-inputs);
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 20px;
 
-		padding: 0;
-		font-family: Arial;
-	}
-	.subPanel::-webkit-scrollbar {
-		-webkit-appearance: none;
-	}
-	.subPanel::-webkit-scrollbar:vertical {
-		width: 1px;
-	}
-	.subPanel::-webkit-scrollbar-button:increment,.subPanel::-webkit-scrollbar-button {
-		display: none;
-	} 
-	.subPanel::-webkit-scrollbar:horizontal {
-		height: 5px;
-	}
-	.subPanel::-webkit-scrollbar-thumb {
-		background-color: rgba(255, 0, 0, 0.1);;
-		border-radius: 20px;
-		border: none;
-	}
-	.subPanel::-webkit-scrollbar-track {
-		border-radius: 10px;  
-	}
+  padding: 0;
+  font-family: Arial;
+}
+.subPanel::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+.subPanel::-webkit-scrollbar:vertical {
+  width: 1px;
+}
+.subPanel::-webkit-scrollbar-button:increment,
+.subPanel::-webkit-scrollbar-button {
+  display: none;
+}
+.subPanel::-webkit-scrollbar:horizontal {
+  height: 5px;
+}
+.subPanel::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 0, 0, 0.1);
+  border-radius: 20px;
+  border: none;
+}
+.subPanel::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
 /*Component´s container*/
 
 /*Input´s container*/
-	.basicDataPanel{
-		position: absolute;
-		width: 800px;
-		height: 234px;
-		left: 50px;
-		top: 17px;
-	}
-	.addDataPanel{
-		position: absolute;
-		width: 900px;
-		height: 489px;
-		left: 0px;
-		top: 251px;
-	}
+.basicDataPanel {
+  position: absolute;
+  width: 800px;
+  height: 234px;
+  left: 50px;
+  top: 17px;
+}
+.addDataPanel {
+  position: absolute;
+  width: 900px;
+  height: 489px;
+  left: 0px;
+  top: 251px;
+}
 /*Input´s container*/
 /*Containers*/
 /*Components*/
 /*Buttons and inputs*/
-	.imgInput{
-		position: absolute;
-		width: 200px;
-		height: 200px;
-		left: 2px;
-		top: 18px;
+.imgInput {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 2px;
+  top: 18px;
 
-		animation-duration: 1s;
-		animation-name: imageOut;
-	}
-	.imgInput::before {
-		background: var(--back-general-inputs);
-		color: rgb(0, 0, 0);
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		content: '+';
-		font-size: 50px;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-	}
-	.name{
-		position: absolute;
-		width: 275px;
-		height: 50px;
-		left: calc(50% - 275px/2 - 31.5px);
-		top: calc(50% - 50px/2 - 63px);
-	}
+  animation-duration: 1s;
+  animation-name: imageOut;
+}
+.imgInput::before {
+  background: var(--back-general-inputs);
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  content: "+";
+  font-size: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.name {
+  position: absolute;
+  width: 275px;
+  height: 50px;
+  left: calc(50% - 275px / 2 - 31.5px);
+  top: calc(50% - 50px / 2 - 63px);
+}
 
-	.birtDate{
-		position: absolute;
-		width: 275px;
-		height: 50px;
-		left: calc(50% - 275px/2 + 260.5px);
-		top: calc(50% - 50px/2 - 63px);
-	}
-	.desteteDate{
-		position: absolute;
-		width: 275px;
-		height: 50px;
-		left: calc(50% - 275px/2 - 31.5px);
-		top: calc(50% - 50px/2 - 3px);
-	}
-	.race{
-		position: absolute;
-		width: 275px;
-		height: 50px;
-		left: calc(50% - 275px/2 + 260.5px);
-		top: calc(50% - 50px/2 - 3px);
+.birtDate {
+  position: absolute;
+  width: 275px;
+  height: 50px;
+  left: calc(50% - 275px / 2 + 260.5px);
+  top: calc(50% - 50px / 2 - 63px);
+}
+.desteteDate {
+  position: absolute;
+  width: 275px;
+  height: 50px;
+  left: calc(50% - 275px / 2 - 31.5px);
+  top: calc(50% - 50px / 2 - 3px);
+}
+.race {
+  position: absolute;
+  width: 275px;
+  height: 50px;
+  left: calc(50% - 275px / 2 + 260.5px);
+  top: calc(50% - 50px / 2 - 3px);
 
-		font-size: var(--font-size);
-	}
-	.weight{
-		position: absolute;
-		width: 275px;
-		height: 50px;
-		left: calc(50% - 275px/2 - 31.5px);
-		top: calc(50% - 50px/2 + 58px);
+  font-size: var(--font-size);
+}
+.weight {
+  position: absolute;
+  width: 275px;
+  height: 50px;
+  left: calc(50% - 275px / 2 - 31.5px);
+  top: calc(50% - 50px / 2 + 58px);
 
-		font-size: var(--font-size);
-	}
-	.grupe{
-		position: absolute;
-		width: 275px;
-		height: 50px;
-		left: calc(50% - 275px/2 + 260.5px);
-		top: calc(50% - 50px/2 + 57px);
+  font-size: var(--font-size);
+}
+.grupe {
+  position: absolute;
+  width: 275px;
+  height: 50px;
+  left: calc(50% - 275px / 2 + 260.5px);
+  top: calc(50% - 50px / 2 + 57px);
 
-		font-size: var(--font-size);
-	}
-	.motive{
-		position: absolute;
-		width: 388px;
-		height: 60px;
-		left: 63px;
-		top: 15px;
+  font-size: var(--font-size);
+}
+.motive {
+  position: absolute;
+  width: 388px;
+  height: 60px;
+  left: 63px;
+  top: 15px;
 
-		font-size: var(--font-size);
-	}
-	.where{
-		position: absolute;
-		width: 380px;
-		height: 60px;
-		left: 461px;
-		top: 15px;
+  font-size: var(--font-size);
+}
+.where {
+  position: absolute;
+  width: 380px;
+  height: 60px;
+  left: 461px;
+  top: 15px;
 
-		font-size: var(--font-size);
-	}
-	.qualification{
-		position: absolute;
-		width: 388px;
-		height: 60px;
-		left: 63px;
-		top: 85px;
+  font-size: var(--font-size);
+}
+.qualification {
+  position: absolute;
+  width: 388px;
+  height: 60px;
+  left: 63px;
+  top: 85px;
 
-		font-size: var(--font-size);
-	}
-	.id{
-		position: absolute;
-		width: 380px;
-		height: 60px; 
-		left: 461px;
-		top: 85px;
+  font-size: var(--font-size);
+}
+.id {
+  position: absolute;
+  width: 380px;
+  height: 60px;
+  left: 461px;
+  top: 85px;
 
-		font-size: var(--font-size);
-	}
-	.female{
-		position: absolute;
-		width: 388px;
-		height: 60px;
-		left: 63px;
-		top: 155px;
+  font-size: var(--font-size);
+}
+.female {
+  position: absolute;
+  width: 388px;
+  height: 60px;
+  left: 63px;
+  top: 155px;
 
-		font-size: var(--font-size);
-	}
-	.masle{
-		position: absolute;
-		width: 380px;
-		height: 60px;
-		left: 461px;
-		top: 155px;
+  font-size: var(--font-size);
+}
+.masle {
+  position: absolute;
+  width: 380px;
+  height: 60px;
+  left: 461px;
+  top: 155px;
 
-		font-size: var(--font-size);	
-	}
+  font-size: var(--font-size);
+}
 
 /*Buttons and inputs*/
 /*Components*/
 /*Resizing */
-@media (max-width: 900px){
-		/*Containers*/
-		.subPanel{
-			width: 600px;
-			height: 740px;
+@media (max-width: 900px) {
+  /*Containers*/
+  .subPanel {
+    width: 600px;
+    height: 740px;
 
-			left: calc(50% - 600px/2);
-			top: calc(50% - 740px/2);
+    left: calc(50% - 600px / 2);
+    top: calc(50% - 740px / 2);
 
-			animation-duration: 1s;
-			animation-name: panelIn;
-		}
-		/*Containers*/
-		/*Input´s container*/
-		.basicDataPanel{
-			width: 600px;
-			height: 560px;
+    animation-duration: 1s;
+    animation-name: panelIn;
+  }
+  /*Containers*/
+  /*Input´s container*/
+  .basicDataPanel {
+    width: 600px;
+    height: 560px;
 
-			left: calc(50% - 600px/2);
-			top: calc(50% - 560px/2 - 72px);
-		}
-		.addDataPanel{
-			width: 600px;
-			height: 520px;
-			left: 0px;
-			top: 578px;
-		}
-		/*Input´s container*/
-		/*Inputs & ...*/
-		.imgInput{
-			width: 209px;
-			height: 200px;
-			left: calc(50% - 200px/2);
-			top: 0;
+    left: calc(50% - 600px / 2);
+    top: calc(50% - 560px / 2 - 72px);
+  }
+  .addDataPanel {
+    width: 600px;
+    height: 520px;
+    left: 0px;
+    top: 578px;
+  }
+  /*Input´s container*/
+  /*Inputs & ...*/
+  .imgInput {
+    width: 209px;
+    height: 200px;
+    left: calc(50% - 200px / 2);
+    top: 0;
 
-			animation-duration: 1s;
-			animation-name: imageIn;
-		}
-		.name{
-			width: 530px;
-			height: 50px;
-			left: calc(50% - 530px/2);
-			top: calc(50% - 50px/2 - 45px);
-		}
-		.desteteDate{
-			width: 530px;
-			height: 50px;
-			left: calc(50% - 530px/2);
-			top: calc(50% - 50px/2 + 15px);
-		}
-		.weight{
-			width: 530px;
-			height: 50px;
-			left: calc(50% - 530px/2);
-			top: calc(50% - 50px/2 + 75px);
-		}
-		.birtDate{
-			width: 530px;
-			height: 50px;
-			left: calc(50% - 530px/2);
-			top: calc(50% - 50px/2 + 135px);
-		}
-		.race{
-			width: 530px;
-			height: 50px;
-			left: calc(50% - 530px/2);
-			top: calc(50% - 50px/2 + 195px);
-		}
-		.grupe{
-			width: 530px;
-			height: 50px;
-			left: calc(50% - 530px/2);
-			top: calc(50% - 50px/2 + 255px);
-		}
-		.motive{
-			width: 530px;
-			height: 50px;
-			left: 32px;
-			top: 10px;
-		}
-		.qualification{
-			width: 530px;
-			height: 50px;
-			left: 32px;
-			top: 70px;
-		}
-		.where{
-			width: 530px;
-			height: 50px;
-			left: 32px;
-			top: 130px;
-		}
-		.id{
-			width: 530px;
-			height: 50px;
-			left: 32px;
-			top: 190px;
-		}
-		.subPanelB{
-			left: 450px;
-			top: 390px;
-		}
-		.female{
-			width: 530px;
-			height: 50px;
-			left: 32px;
-			top: 250px;
-		}
-		.masle{
-			width: 530px;
-			height: 50px;
-			left: 32px;
-			top: 310px;
-		}
-		/*Inputs & ...*/
-		
-	}
+    animation-duration: 1s;
+    animation-name: imageIn;
+  }
+  .name {
+    width: 530px;
+    height: 50px;
+    left: calc(50% - 530px / 2);
+    top: calc(50% - 50px / 2 - 45px);
+  }
+  .desteteDate {
+    width: 530px;
+    height: 50px;
+    left: calc(50% - 530px / 2);
+    top: calc(50% - 50px / 2 + 15px);
+  }
+  .weight {
+    width: 530px;
+    height: 50px;
+    left: calc(50% - 530px / 2);
+    top: calc(50% - 50px / 2 + 75px);
+  }
+  .birtDate {
+    width: 530px;
+    height: 50px;
+    left: calc(50% - 530px / 2);
+    top: calc(50% - 50px / 2 + 135px);
+  }
+  .race {
+    width: 530px;
+    height: 50px;
+    left: calc(50% - 530px / 2);
+    top: calc(50% - 50px / 2 + 195px);
+  }
+  .grupe {
+    width: 530px;
+    height: 50px;
+    left: calc(50% - 530px / 2);
+    top: calc(50% - 50px / 2 + 255px);
+  }
+  .motive {
+    width: 530px;
+    height: 50px;
+    left: 32px;
+    top: 10px;
+  }
+  .qualification {
+    width: 530px;
+    height: 50px;
+    left: 32px;
+    top: 70px;
+  }
+  .where {
+    width: 530px;
+    height: 50px;
+    left: 32px;
+    top: 130px;
+  }
+  .id {
+    width: 530px;
+    height: 50px;
+    left: 32px;
+    top: 190px;
+  }
+  .subPanelB {
+    left: 450px;
+    top: 390px;
+  }
+  .female {
+    width: 530px;
+    height: 50px;
+    left: 32px;
+    top: 250px;
+  }
+  .masle {
+    width: 530px;
+    height: 50px;
+    left: 32px;
+    top: 310px;
+  }
+  /*Inputs & ...*/
+}
 /*Resizing */
 /*Animations*/
-	@keyframes panelIn {
-		from {
-			width: 900px;
-			left: calc(50% - 900px/2);
-		}
-		to {
-			width: 600px;
-			left: calc(50% - 600px/2);
-		}
-	}
-	@keyframes panelOut {
-		from {
-			width: 600px;
-			left: calc(50% - 600px/2);
-		}
-		to {
-			width: 900px;
-			left: calc(50% - 900px/2);
-		}
-	}
-	@keyframes imageIn {
-		from {
-			top: 18px;
-			left: 2px;
-		}
-		to {
-			top: 0;
-			left: calc(50% - 200px/2);
-		}
-	}
-	@keyframes imageOut {
-		from {
-			top: 0;
-			left: calc(50% - 200px/2);
-		}
-		to {
-			top: 18px;
-			left: 2px;
-		}
-	}
+@keyframes panelIn {
+  from {
+    width: 900px;
+    left: calc(50% - 900px / 2);
+  }
+  to {
+    width: 600px;
+    left: calc(50% - 600px / 2);
+  }
+}
+@keyframes panelOut {
+  from {
+    width: 600px;
+    left: calc(50% - 600px / 2);
+  }
+  to {
+    width: 900px;
+    left: calc(50% - 900px / 2);
+  }
+}
+@keyframes imageIn {
+  from {
+    top: 18px;
+    left: 2px;
+  }
+  to {
+    top: 0;
+    left: calc(50% - 200px / 2);
+  }
+}
+@keyframes imageOut {
+  from {
+    top: 0;
+    left: calc(50% - 200px / 2);
+  }
+  to {
+    top: 18px;
+    left: 2px;
+  }
+}
 /*Animations*/
 /*Other´s Components*/
-.subPanelB{
-	position: absolute;
-	width: 150px;
-	height: 100px;
-	left: 750px;
-	top: 300px;
+.subPanelB {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  left: 750px;
+  top: 300px;
 
-	text-decoration: none;
-	font-size: 4.5rem;
-	color: var(--font-color);
+  text-decoration: none;
+  font-size: 4.5rem;
+  color: var(--font-color);
 
-	background: linear-gradient(90deg, rgba(255, 255, 255, 0.8) 5.73%, rgba(0, 0, 0, 0.2) 100%);
-	border-radius: 100px 0px 0px 100px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.8) 5.73%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  border-radius: 100px 0px 0px 100px;
 }
-.subPanelB h1{
-	text-decoration: none;
-	font-size: 2.5rem;
-	color: var(--font-color);
+.subPanelB h1 {
+  text-decoration: none;
+  font-size: 2.5rem;
+  color: var(--font-color);
 }
 /*Other´s Components*/

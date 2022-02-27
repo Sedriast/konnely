@@ -1,80 +1,80 @@
-.subPanelL{
-	position: relative;
-	width: 500px;
-	height: 640px;
+.subPanelL {
+  position: relative;
+  width: 500px;
+  height: 640px;
 
-	top: calc(50% - 640px/2);
-	left: calc(50% - 500px/2);
+  top: calc(50% - 640px / 2);
+  left: calc(50% - 500px / 2);
 
-	background: rgba(0, 0, 0, 0.8);
-	border-radius: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
 }
-.submitLo{
-	position: absolute;
-	width: 163px;
-	height: 52px;
-	left: 168px;
-	top: 408px;
+.submitLo {
+  position: absolute;
+  width: 163px;
+  height: 52px;
+  left: 168px;
+  top: 408px;
 
-	text-decoration: none;
-	font-family: Arial;
-	font-size: 0.8rem;
-	color: black;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 0.8rem;
+  color: black;
 
-	background: rgba(255, 255, 0, 0.4);
-	border-radius: 50px;
+  background: rgba(255, 255, 0, 0.4);
+  border-radius: 50px;
 }
-.userIn{
-	position: absolute;
-	width: 400px;
-	height: 49px;
-	left: 50px;
-	top: 222px;
+.userIn {
+  position: absolute;
+  width: 400px;
+  height: 49px;
+  left: 50px;
+  top: 222px;
 
-	font-family: Arial;
+  font-family: Arial;
 
-	background: #FFFFFF;
-	border-radius: 20px;
+  background: #ffffff;
+  border-radius: 20px;
 }
-.passIn{
-	position: absolute;
-	width: 400px;
-	height: 49px;
-	left: 50px;
-	top: 315px;
-	
-	font-family: Arial;
+.passIn {
+  position: absolute;
+  width: 400px;
+  height: 49px;
+  left: 50px;
+  top: 315px;
 
-	background: #FFFFFF;
-	border-radius: 20px;
+  font-family: Arial;
+
+  background: #ffffff;
+  border-radius: 20px;
 }
-.laU{
-	position: absolute;
-	width: 143px;
-	height: 37px;
-	left: calc(50% - 143px/2 - 118px);
-	top: calc(50% - 37px/2 - 135px);
-	
-	font-family: Arial;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 30px;
-	line-height: 37px;
-	
-	color: #FFFFFF;	
+.laU {
+  position: absolute;
+  width: 143px;
+  height: 37px;
+  left: calc(50% - 143px / 2 - 118px);
+  top: calc(50% - 37px / 2 - 135px);
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 37px;
+
+  color: #ffffff;
 }
-.laC{
-	position: absolute;
-	width: 156px;
-	height: 37px;
-	left: calc(50% - 156px/2 - 112px);
-	top: calc(50% - 37px/2 - 42px);
+.laC {
+  position: absolute;
+  width: 156px;
+  height: 37px;
+  left: calc(50% - 156px / 2 - 112px);
+  top: calc(50% - 37px / 2 - 42px);
 
-	font-family: Arial;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 30px;
-	line-height: 37px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 37px;
 
-	color: #FFFFFF;
+  color: #ffffff;
 }
