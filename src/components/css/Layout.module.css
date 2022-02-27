@@ -20,21 +20,21 @@
 */
 /*Variables and constants*/
 :root {
-  --sd-fas: 25px;
+	--sd-fas: 25px;
 }
 /*Variables and constants*/
 /*Containers*/
 /*Component´s container*/
 .principalPanel {
-  background: url(https://drive.google.com/uc?export=download&id=1x0hPfrMmSxAlq3esLERmlf8UumGaUdKP);
-  background-repeat: no-repeat;
-  background-size: cover;
+	background: url(https://drive.google.com/uc?export=download&id=1x0hPfrMmSxAlq3esLERmlf8UumGaUdKP);
+	background-repeat: no-repeat;
+	background-size: cover;
 
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 
-  mix-blend-mode: normal;
-  position: absolute;
+	mix-blend-mode: normal;
+	position: absolute;
 }
 /*Component´s container*/
 /*Containers*/

@@ -8,28 +8,30 @@ import { UserView } from "./UserView_/UserView";
 import { DataView } from "./DataView/DataView";
 
 export function Layout() {
-  return (
-    <div className={style.principalPanel}>
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route exact path="/form" element={<Form />}>
-            {" "}
-          </Route>
-          <Route
-            exact
-            path="/listView"
-            element={<ListViews idImage="10dKfWHgApJ5ElbXCaOyrdguN8sac2jpA" />}
-          >
-            {" "}
-          </Route>
-          <Route exact path="/login" element={<Login />}>
-            {" "}
-          </Route>
-          <Route exact path="/user" element={<UserView />}></Route>
-          <Route exact path="/data" element={<DataView />}></Route>
-        </Routes>
-      </Router>
-    </div>
-  );
+	return (
+		<div className={style.principalPanel}>
+			<Router>
+				<Navbar />
+				<Routes>
+					<Route exact path="/form" element={<Form />}>
+						{" "}
+					</Route>
+					<Route
+						exact
+						path="/listView"
+						element={
+							<ListViews idImage="10dKfWHgApJ5ElbXCaOyrdguN8sac2jpA" />
+						}
+					>
+						{" "}
+					</Route>
+					<Route exact path="/login" element={<Login />}>
+						{" "}
+					</Route>
+					<Route exact path="/user" element={<UserView />}></Route>
+					<Route exact path="/data" element={<DataView />}></Route>
+				</Routes>
+			</Router>
+		</div>
+	);
 }

@@ -20,106 +20,106 @@
 */
 /*Variables and constants*/
 :root {
-  --back-general-inputs: white;
+	--back-general-inputs: white;
 }
 /*Variables and constants*/
 /*Containers*/
 /*Component´s container*/
 .subPanelLV {
-  position: fixed;
-  width: 80%;
-  height: 70%;
-  right: 0;
-  top: 15%;
+	position: fixed;
+	width: 80%;
+	height: 70%;
+	right: 0;
+	top: 15%;
 
-  text-overflow: ellipsis;
-  align-items: center;
-  justify-content: center;
-  overflow-y: scroll;
-  padding: 3rem;
+	text-overflow: ellipsis;
+	align-items: center;
+	justify-content: center;
+	overflow-y: scroll;
+	padding: 3rem;
 
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 40px 0px 0px 40px;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 40px 0px 0px 40px;
 
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 260px);
-  grid-template-rows: repeat(auto-fill, 160px);
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.5em;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 260px);
+	grid-template-rows: repeat(auto-fill, 160px);
+	grid-column-gap: 0.5rem;
+	grid-row-gap: 0.5em;
 
-  animation-duration: 2.5s;
-  animation-name: panelOut;
+	animation-duration: 2.5s;
+	animation-name: panelOut;
 }
 .subPanelLV::-webkit-scrollbar {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 .subPanelLV::-webkit-scrollbar:vertical {
-  width: 1px;
+	width: 1px;
 }
 .subPanelLV::-webkit-scrollbar-button:increment,
 .subPanelLV::-webkit-scrollbar-button {
-  display: none;
+	display: none;
 }
 .subPanelLV::-webkit-scrollbar:horizontal {
-  height: 5px;
+	height: 5px;
 }
 .subPanelLV::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 0, 0, 0.1);
-  border-radius: 20px;
-  border: none;
+	background-color: rgba(255, 0, 0, 0.1);
+	border-radius: 20px;
+	border: none;
 }
 .subPanelLV::-webkit-scrollbar-track {
-  border-radius: 10px;
+	border-radius: 10px;
 }
 .subPanelLV p {
-  text-decoration: none;
+	text-decoration: none;
 
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 
-  white-space: nowrap;
-  overflow: hidden;
+	white-space: nowrap;
+	overflow: hidden;
 }
 .subPanel h1 {
-  width: 250px;
-  height: 50px;
+	width: 250px;
+	height: 50px;
 
-  padding: 0;
-  margin: 0;
+	padding: 0;
+	margin: 0;
 
-  font-size: 20px;
-  text-overflow: ellipsis;
-  overflow: hidden;
+	font-size: 20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 .subPanelLV input {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 10px;
-  border: none;
-  padding: 4px;
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	border: none;
+	padding: 4px;
 
-  height: 2rem;
-  margin: 4px;
+	height: 2rem;
+	margin: 4px;
 
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .subPanelLV input::placeholder {
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
 }
 .subPanelLV select {
-  background: rgba(255, 255, 255, 0.6);
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 4px;
-  margin: 4px;
-  border: none;
-  border-radius: 10px;
+	background: rgba(255, 255, 255, 0.6);
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 4px;
+	margin: 4px;
+	border: none;
+	border-radius: 10px;
 }
 .subPanelLV button {
-  background: transparent;
-  border: none;
-  border-radius: 10px;
-  padding: 0;
-  border-radius: 10px;
+	background: transparent;
+	border: none;
+	border-radius: 10px;
+	padding: 0;
+	border-radius: 10px;
 }
 /*Component´s container*/
 /*Containers*/
@@ -133,179 +133,179 @@
 /*Components*/
 /*Resizing */
 @media (max-width: 1000px) {
-  .subPanel {
-    overflow-y: scroll;
-    overflow-x: hidden;
+	.subPanel {
+		overflow-y: scroll;
+		overflow-x: hidden;
 
-    animation-duration: 2.5s;
-    animation-name: panelIn;
-  }
-  .subPanel::-webkit-scrollbar:vertical {
-    width: 5px;
-  }
+		animation-duration: 2.5s;
+		animation-name: panelIn;
+	}
+	.subPanel::-webkit-scrollbar:vertical {
+		width: 5px;
+	}
 }
 /*Resizing */
 /*Animations */
 @keyframes panelIn {
-  from {
-    width: 80%;
-  }
-  to {
-    width: 0%;
-  }
+	from {
+		width: 80%;
+	}
+	to {
+		width: 0%;
+	}
 }
 @keyframes panelOut {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 80%px;
-  }
+	from {
+		width: 0%;
+	}
+	to {
+		width: 80%px;
+	}
 }
 /*Animations */
 /*From Oter´s components*/
 .containerSe {
-  position: absolute;
-  width: 50%;
-  height: 60px;
-  right: 0;
-  top: 43px;
+	position: absolute;
+	width: 50%;
+	height: 60px;
+	right: 0;
+	top: 43px;
 
-  background: var(--back-general-inputs);
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 50px 0px 0px 50px;
+	background: var(--back-general-inputs);
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 50px 0px 0px 50px;
 }
 .submitL {
-  position: absolute;
-  width: 150px;
-  height: 100px;
+	position: absolute;
+	width: 150px;
+	height: 100px;
 
-  left: 0%;
-  top: 80%;
+	left: 0%;
+	top: 80%;
 
-  text-decoration: none;
-  font-size: 1.25rem;
-  color: white;
-  text-align-last: center;
+	text-decoration: none;
+	font-size: 1.25rem;
+	color: white;
+	text-align-last: center;
 
-  background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-  border-radius: 0px 40px 40px 0px;
+	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	border-radius: 0px 40px 40px 0px;
 }
 .cardPanel {
-  position: relative;
-  width: 250px;
-  height: 150px;
+	position: relative;
+	width: 250px;
+	height: 150px;
 
-  font-family: Arial;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 31px;
-  -webkit-text-stroke: 2px black;
-  text-align: left;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 15px;
+	line-height: 31px;
+	-webkit-text-stroke: 2px black;
+	text-align: left;
 
-  color: white;
+	color: white;
 
-  font-family: Arial;
+	font-family: Arial;
 
-  z-index: 100;
+	z-index: 100;
 
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    linear-gradient(
-      125.11deg,
-      rgba(0, 0, 0, 0.25) 0%,
-      #000000 17.47%,
-      rgba(0, 0, 0, 0.25) 35.67%
-    );
-  border: 2px solid #000000;
-  box-sizing: border-box;
-  border-radius: 20px;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		linear-gradient(
+			125.11deg,
+			rgba(0, 0, 0, 0.25) 0%,
+			#000000 17.47%,
+			rgba(0, 0, 0, 0.25) 35.67%
+		);
+	border: 2px solid #000000;
+	box-sizing: border-box;
+	border-radius: 20px;
 
-  overflow: hidden;
+	overflow: hidden;
 }
 .imgView {
-  position: absolute;
-  width: 125px;
-  height: 125px;
-  left: calc(50% - 125px / 2 - 0.5px);
-  top: calc(50% - 125px / 2 + 0.5px);
-  border-radius: 100%;
+	position: absolute;
+	width: 125px;
+	height: 125px;
+	left: calc(50% - 125px / 2 - 0.5px);
+	top: calc(50% - 125px / 2 + 0.5px);
+	border-radius: 100%;
 }
 .nameH1 {
-  position: absolute;
-  width: 80%;
-  height: 65px;
-  left: calc(50% - 80% / 2);
-  top: 100px;
+	position: absolute;
+	width: 80%;
+	height: 65px;
+	left: calc(50% - 80% / 2);
+	top: 100px;
 
-  padding: 5px;
-  text-align: center;
-  margin: 0;
+	padding: 5px;
+	text-align: center;
+	margin: 0;
 
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: center;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
 }
 .ps {
-  color: white;
-  text-align: left;
-  visibility: hidden;
+	color: white;
+	text-align: left;
+	visibility: hidden;
 
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  padding: 5px;
-  font-size: 22px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 5px;
+	font-size: 22px;
 }
 .ps h1 {
-  margin: 0;
-  font-size: 28px;
+	margin: 0;
+	font-size: 28px;
 }
 .cardPanel:hover {
-  background: linear-gradient(
-      125.11deg,
-      rgba(255, 255, 255, 0.25) 0%,
-      #000000 15.61%,
-      #ffffff 35.67%
-    ),
-    rgba(255, 255, 255, 0.5);
+	background: linear-gradient(
+			125.11deg,
+			rgba(255, 255, 255, 0.25) 0%,
+			#000000 15.61%,
+			#ffffff 35.67%
+		),
+		rgba(255, 255, 255, 0.5);
 
-  left: -18%;
+	left: -18%;
 
-  width: 350px;
-  height: 225px;
+	width: 350px;
+	height: 225px;
 }
 .cardPanel:hover .imgView {
-  position: absolute;
-  width: 125px;
-  height: 125px;
-  left: 15px;
-  top: 10px;
+	position: absolute;
+	width: 125px;
+	height: 125px;
+	left: 15px;
+	top: 10px;
 }
 
 .cardPanel:hover .nameH1 {
-  left: 15px;
-  top: 150px;
-  width: 40%;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: center;
+	left: 15px;
+	top: 150px;
+	width: 40%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: center;
 }
 .cardPanel:hover .ps {
-  color: white;
-  position: absolute;
-  width: 180px;
-  height: 190px;
-  left: 150px;
-  top: 20px;
-  visibility: visible;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  text-align: left;
+	color: white;
+	position: absolute;
+	width: 180px;
+	height: 190px;
+	left: 150px;
+	top: 20px;
+	visibility: visible;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-align: left;
 }
 
 /*From Oter´s components*/
