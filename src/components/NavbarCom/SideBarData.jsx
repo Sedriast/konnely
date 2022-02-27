@@ -18,10 +18,5 @@ export const SidebarData = [
 		title: 'User',
 		path: '/user',
 		icon: ''
-	},	
-	{
-		title: 'Data',
-		path: '/data',
-		icon: ''
 	}
 ]

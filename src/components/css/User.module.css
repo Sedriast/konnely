@@ -108,8 +108,5 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
     top: calc(50% - 300px/2 - 199px);
     border-radius: 150px;
 }
-.img{
-    background: url(https://drive.google.com/file/d/1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi/view?usp=sharing);
-}
 
 /* views */
