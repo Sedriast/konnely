@@ -8,9 +8,9 @@ import { UserView } from './UserView_/UserView';
 import { DataView } from './DataView/DataView';
 import { CardMin } from './ListView/CardMin';
 
-export function Layout(){
-	return(
-		<div className={style.principalPanel} >
+export function Layout() {
+	return (
+		<div className={style.principalPanel}>
 			<Router>
 				<Navbar />
 				<Routes >

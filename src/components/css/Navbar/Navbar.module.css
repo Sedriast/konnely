@@ -16,7 +16,12 @@
 	margin: 0;
 }
 .navMenuItems {
-	background: radial-gradient(72.16% 75.19% at 0.81% 0.99%, #000000 25.5%, rgba(0, 0, 0, 0.5) 74.18%, rgba(0, 0, 0, 0) 100%);
+	background: radial-gradient(
+		72.16% 75.19% at 0.81% 0.99%,
+		#000000 25.5%,
+		rgba(0, 0, 0, 0.5) 74.18%,
+		rgba(0, 0, 0, 0) 100%
+	);
 
 	z-index: 100;
 	width: 100%;
@@ -25,12 +30,16 @@
 	margin: 0;
 }
 .navbarToggle {
-	background: radial-gradient(76.15% 79.02% at 0% 0%, #ffffff 37.76%, rgba(0, 0, 0, 0) 95.29%);
+	background: radial-gradient(
+		76.15% 79.02% at 0% 0%,
+		#ffffff 37.76%,
+		rgba(0, 0, 0, 0) 95.29%
+	);
 	width: 100px;
 	height: 100px;
 	display: flex;
 }
-.iconMenu{
+.iconMenu {
 	position: absolute;
 	width: 150px;
 	height: 150px;
@@ -38,8 +47,12 @@
 	top: 0px;
 
 	z-index: 100px;
-	
-	background: radial-gradient(71.75% 72.99% at 0% 0%, #000000 0%, rgba(0, 0, 0, 0) 100%);
+
+	background: radial-gradient(
+		71.75% 72.99% at 0% 0%,
+		#000000 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
 }
 .navText {
 	font-family: Arial, Helvetica, sans-serif;
@@ -63,13 +76,17 @@
 	padding: 0 16px;
 	border-radius: 4px;
 }
-.decor{
+.decor {
 	position: absolute;
 	width: 50px;
 	height: 50px;
 	left: 20px;
 	top: 20px;
 
-	background: radial-gradient(71.35% 71.35% at 16.29% 19.1%, rgba(196, 196, 196, 0) 44.58%, #FFFFFF 100%);
+	background: radial-gradient(
+		71.35% 71.35% at 16.29% 19.1%,
+		rgba(196, 196, 196, 0) 44.58%,
+		#ffffff 100%
+	);
 	border-radius: 100%;
 }

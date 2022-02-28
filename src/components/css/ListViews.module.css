@@ -19,164 +19,164 @@
 
 */
 /*Variables and constants*/
-:root{
+:root {
 	--back-general-inputs: white;
 }
 /*Variables and constants*/
 /*Containers*/
-	/*Component´s container*/
-	.subPanelLV{
-		position: fixed;
-		width: 80%;
-		height: 70%;
-		right: 0;
-		top: 15%;
+/*Component´s container*/
+.subPanelLV {
+	position: fixed;
+	width: 80%;
+	height: 70%;
+	right: 0;
+	top: 15%;
 
-		text-overflow: ellipsis;
-		align-items: center;
-		justify-content: center;
-		overflow-y: scroll;
-		padding: 3rem;
-		
-		background: rgba(0, 0, 0, 0.2);
-		border-radius: 40px 0px 0px 40px;
-	
-		display: grid;
-		grid-template-columns: repeat(auto-fill, 260px);
-		grid-template-rows: repeat(auto-fill, 160px);
-		grid-column-gap: 0.5rem;
-		grid-row-gap: 0.5em;
-	
-		animation-duration: 2.5s;
-		animation-name: panelOut;
-	}
-	.subPanelLV::-webkit-scrollbar {
-		-webkit-appearance: none;
-	}
-	.subPanelLV::-webkit-scrollbar:vertical {
-		width:1px;
-	}
-	.subPanelLV::-webkit-scrollbar-button:increment,.subPanelLV::-webkit-scrollbar-button {
-		display: none;
-	} 
-	.subPanelLV::-webkit-scrollbar:horizontal {
-		height: 5px;
-	}
-	.subPanelLV::-webkit-scrollbar-thumb {
-		background-color: rgba(255, 0, 0, 0.1);;
-		border-radius: 20px;
-		border: none;
-	}
-	.subPanelLV::-webkit-scrollbar-track {
-		border-radius: 10px;  
-	}
-	.subPanelLV p{
-		text-decoration: none;
+	text-overflow: ellipsis;
+	align-items: center;
+	justify-content: center;
+	overflow-y: scroll;
+	padding: 3rem;
 
-		padding: 0;
-		margin: 0;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 40px 0px 0px 40px;
 
-		white-space: nowrap;
-		overflow: hidden;
-	}
-	.subPanel h1{
-		width: 250px;
-		height: 50px;
-		
-		padding: 0;
-		margin: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, 260px);
+	grid-template-rows: repeat(auto-fill, 160px);
+	grid-column-gap: 0.5rem;
+	grid-row-gap: 0.5em;
 
-		font-size: 20px;
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
-	.subPanelLV input{
-		background: rgba(255, 255, 255, 0.6);
-		border-radius: 10px;
-		border: none;
-		padding: 4px;
-	
-		height: 2rem;
-		margin: 4px;
-	
-		font-family:Arial, Helvetica, sans-serif;
-	}
-	.subPanelLV input::placeholder{
-		color: black;
-		font-family:Arial, Helvetica, sans-serif;
-	}
-	.subPanelLV select{
-		background: rgba(255, 255, 255, 0.6);
-		font-family:Arial, Helvetica, sans-serif;
-		padding: 4px;
-		margin: 4px;
-		border: none;
-		border-radius: 10px;
-	}
-	.subPanelLV button{
-		background: transparent;
-		border: none;
-		border-radius: 10px;
-		padding: 0;
-		border-radius: 10px;
-	}
-	/*Component´s container*/
+	animation-duration: 2.5s;
+	animation-name: panelOut;
+}
+.subPanelLV::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+.subPanelLV::-webkit-scrollbar:vertical {
+	width: 1px;
+}
+.subPanelLV::-webkit-scrollbar-button:increment,
+.subPanelLV::-webkit-scrollbar-button {
+	display: none;
+}
+.subPanelLV::-webkit-scrollbar:horizontal {
+	height: 5px;
+}
+.subPanelLV::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 0, 0, 0.1);
+	border-radius: 20px;
+	border: none;
+}
+.subPanelLV::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+.subPanelLV p {
+	text-decoration: none;
+
+	padding: 0;
+	margin: 0;
+
+	white-space: nowrap;
+	overflow: hidden;
+}
+.subPanel h1 {
+	width: 250px;
+	height: 50px;
+
+	padding: 0;
+	margin: 0;
+
+	font-size: 20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.subPanelLV input {
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 10px;
+	border: none;
+	padding: 4px;
+
+	height: 2rem;
+	margin: 4px;
+
+	font-family: Arial, Helvetica, sans-serif;
+}
+.subPanelLV input::placeholder {
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.subPanelLV select {
+	background: rgba(255, 255, 255, 0.6);
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 4px;
+	margin: 4px;
+	border: none;
+	border-radius: 10px;
+}
+.subPanelLV button {
+	background: transparent;
+	border: none;
+	border-radius: 10px;
+	padding: 0;
+	border-radius: 10px;
+}
+/*Component´s container*/
 /*Containers*/
 /*Input´s container*/
 
 /*Input´s container*/
 /*Components*/
-	/*Buttons and inputs*/
+/*Buttons and inputs*/
 
-	/*Buttons and inputs*/
+/*Buttons and inputs*/
 /*Components*/
 /*Resizing */
-	@media (max-width: 1000px){
-		.subPanel{
+@media (max-width: 1000px) {
+	.subPanel {
+		overflow-y: scroll;
+		overflow-x: hidden;
 
-			overflow-y: scroll;
-			overflow-x: hidden;
-
-			animation-duration: 2.5s;
-			animation-name: panelIn;
-		}
-		.subPanel::-webkit-scrollbar:vertical {
-			width:5px;
-		}
+		animation-duration: 2.5s;
+		animation-name: panelIn;
 	}
+	.subPanel::-webkit-scrollbar:vertical {
+		width: 5px;
+	}
+}
 /*Resizing */
 /*Animations */
-	@keyframes panelIn {
-		from {
-			width: 80%; 
-		}
-		to {
-			width: 0%;
-		}
+@keyframes panelIn {
+	from {
+		width: 80%;
 	}
-	@keyframes panelOut {
-		from {
-			width: 0%;
-		}
-		to {
-			width: 80%px;
-		}
+	to {
+		width: 0%;
 	}
+}
+@keyframes panelOut {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 80%px;
+	}
+}
 /*Animations */
 /*From Oter´s components*/
-.containerSe{
+.containerSe {
 	position: absolute;
 	width: 50%;
 	height: 60px;
 	right: 0;
 	top: 43px;
-	
+
 	background: var(--back-general-inputs);
 	border: 1px solid #000000;
 	box-sizing: border-box;
 	border-radius: 50px 0px 0px 50px;
 }
-.submitL{
+.submitL {
 	position: absolute;
 	width: 150px;
 	height: 100px;
@@ -188,11 +188,11 @@
 	font-size: 1.25rem;
 	color: white;
 	text-align-last: center;
-	
+
 	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 	border-radius: 0px 40px 40px 0px;
 }
-.cardPanel{
+.cardPanel {
 	position: relative;
 	width: 250px;
 	height: 150px;
@@ -204,32 +204,39 @@
 	line-height: 31px;
 	-webkit-text-stroke: 2px black;
 	text-align: left;
-	
+
 	color: white;
-	
+
 	font-family: Arial;
 
 	z-index: 100;
 
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), linear-gradient(125.11deg, rgba(0, 0, 0, 0.25) 0%, #000000 17.47%, rgba(0, 0, 0, 0.25) 35.67%);	border: 2px solid #000000;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		linear-gradient(
+			125.11deg,
+			rgba(0, 0, 0, 0.25) 0%,
+			#000000 17.47%,
+			rgba(0, 0, 0, 0.25) 35.67%
+		);
+	border: 2px solid #000000;
 	box-sizing: border-box;
 	border-radius: 20px;
 
 	overflow: hidden;
 }
-.imgView{
+.imgView {
 	position: absolute;
 	width: 125px;
 	height: 125px;
-	left: calc(50% - 125px/2 - 0.5px);
-	top: calc(50% - 125px/2 + 0.5px);
+	left: calc(50% - 125px / 2 - 0.5px);
+	top: calc(50% - 125px / 2 + 0.5px);
 	border-radius: 100%;
 }
-.nameH1{
+.nameH1 {
 	position: absolute;
 	width: 80%;
 	height: 65px;
-	left: calc(50% - 80%/2);
+	left: calc(50% - 80% / 2);
 	top: 100px;
 
 	padding: 5px;
@@ -241,8 +248,7 @@
 	text-overflow: ellipsis;
 	text-align: center;
 }
-.ps{
-
+.ps {
 	color: white;
 	text-align: left;
 	visibility: hidden;
@@ -251,28 +257,35 @@
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	padding: 5px;
+	font-size: 22px;
 }
-.ps h1{
+.ps h1 {
 	margin: 0;
+	font-size: 28px;
 }
-.cardPanel:hover{
-	background: linear-gradient(125.11deg, rgba(255, 255, 255, 0.25) 0%, #000000 15.61%, #FFFFFF 35.67%), rgba(255, 255, 255, 0.5);
+.cardPanel:hover {
+	background: linear-gradient(
+			125.11deg,
+			rgba(255, 255, 255, 0.25) 0%,
+			#000000 15.61%,
+			#ffffff 35.67%
+		),
+		rgba(255, 255, 255, 0.5);
 
 	left: -18%;
 
 	width: 350px;
 	height: 225px;
 }
-.cardPanel:hover .imgView{
+.cardPanel:hover .imgView {
 	position: absolute;
 	width: 125px;
 	height: 125px;
 	left: 15px;
 	top: 10px;
-	
 }
 
-.cardPanel:hover .nameH1{
+.cardPanel:hover .nameH1 {
 	left: 15px;
 	top: 150px;
 	width: 40%;
@@ -281,7 +294,7 @@
 	text-overflow: ellipsis;
 	text-align: center;
 }
-.cardPanel:hover .ps{
+.cardPanel:hover .ps {
 	color: white;
 	position: absolute;
 	width: 180px;

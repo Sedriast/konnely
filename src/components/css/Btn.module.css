@@ -2,7 +2,6 @@
 El webkit se configuró, para que las barras de desplazamiento no estroben al espacio visual del componente
 
 1- Variables and constants
-	
 
 
 
@@ -16,24 +15,24 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 
 */
 /*Variables and constants*/
-:root{
-    --back-general: white;
+:root {
+	--back-general: white;
 }
 /*Variables and constants*/
 
 /* Containers */
-button{
-    background: transparent;
-    width: 0%;
-    height: 0%;
-    padding: 0;
-    left: 0;
-    top: 0;
+button {
+	background: transparent;
+	width: 0%;
+	height: 0%;
+	padding: 0;
+	left: 0;
+	top: 0;
 
 	border: none;
 	border-radius: 0px 40px 40px 0px;
 }
-.pa{
-    top:calc(50% - 60px/2);
+.pa {
+	top: calc(50% - 60px / 2);
 }
 /* Containers */

@@ -1,4 +1,7 @@
-export function Paragraphs(props){
+export function Paragraphs(props) {
+	const r = props.race;
+	const w = props.weigth;
+	const panel = props.panel;
 
     const r = props.race;
     const w = props.weigth;
@@ -7,13 +10,13 @@ export function Paragraphs(props){
     return(<>
         <div className={paragPanel} >
             <p>
-            <h1>Raza:</h1>
-            {r}
+                <h1>Raza:</h1>
+                {r}
             </p> 
             <br/>
             <p> 
-            <h1>Peso:</h1>
-            {w}
+                <h1>Estado:</h1>
+                {w}
             </p>
         </div>    
     </>);

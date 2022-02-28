@@ -1,9 +1,12 @@
 import { Layout } from "./components/Layout";
+import React from "react";
 
-export function App(){
+export function App() {
 	return (
-	<>
-		<Layout />
-	</>
+		<>
+			<React.StrictMode>
+				<Layout />
+			</React.StrictMode>
+		</>
 	);
 }

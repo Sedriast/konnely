@@ -19,20 +19,22 @@
 	transition: 2s;
 }
 
-@keyframes menuIn{
-	from{
+@keyframes menuIn {
+	from {
 		width: 0%;
 		height: 0%;
-	}to{
+	}
+	to {
 		width: 100%;
 		height: 100%;
 	}
 }
-@keyframes menuOut{
-	from{
+@keyframes menuOut {
+	from {
 		width: 100%;
 		height: 100%;
-	}to{
+	}
+	to {
 		width: 0%;
 		height: 0%;
 	}

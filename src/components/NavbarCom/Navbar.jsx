@@ -1,19 +1,18 @@
-import '../css/Navbar/Active.css'
-import { useState } from 'react';
-import style from '../css/Navbar/Navbar.module.css'
-import { Link } from 'react-router-dom';
-import { SidebarData } from './SideBarData';
+import "../css/Navbar/Active.css";
+import { useState } from "react";
+import style from "../css/Navbar/Navbar.module.css";
+import { Link } from "react-router-dom";
+import { SidebarData } from "./SideBarData";
 
-export function Navbar(){
-	
-	const [sidebar, setSidebar] = useState(false); 
+export function Navbar() {
+	const [sidebar, setSidebar] = useState(false);
 	const showSidebar = () => setSidebar(!sidebar);
 
-	return(
+	return (
 		<>
 			<div className={style.navbarMenu}>
 				<Link className={style.bars} to="#">
-					<div className={style.iconMenu} onClick={showSidebar} >
+					<div className={style.iconMenu} onClick={showSidebar}>
 						<div className={style.decor}></div>
 					</div>
 				</Link>
@@ -21,7 +20,7 @@ export function Navbar(){
 			<nav className={sidebar ? "navMenu active" : "navMenu"}>
 				<ul className={style.navMenuItems} onClick={showSidebar}>
 					<li>
-						<Link className={style.bars} to='#'>
+						<Link className={style.bars} to="#">
 							<div className={style.navbarToggle} />
 						</Link>
 					</li>
@@ -33,7 +32,7 @@ export function Navbar(){
 									<span>{item.title}</span>
 								</Link>
 							</li>
-						)
+						);
 					})}
 				</ul>
 			</nav>

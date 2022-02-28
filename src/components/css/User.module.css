@@ -2,10 +2,10 @@
 El webkit se configuró, para que las barras de desplazamiento no estroben al espacio visual del componente
 
 1- Variables and constants
-2- Containers 		
-3- Components 		
-4- Resizing 		
-5- Animations 		
+2- Containers
+3- Components
+4- Resizing
+5- Animations
 
 
 
@@ -19,40 +19,95 @@ El webkit se configuró, para que las barras de desplazamiento no estroben al es
 
 */
 /*Variables and constants*/
-:root{
-    --back-general-inputs: white;
+:root {
+	--back-general-inputs: white;
 }
 /*Variables and constants*/
 /*Containers*/
-.userViewPanel{
-    position: absolute;
-    width: 800px;
-    height: 800px;
-    left: calc(50% - 800px/2);
-    top: calc(50% - 800px/2);
+.userViewPanel {
+	position: absolute;
+	width: 800px;
+	height: 800px;
+	left: calc(50% - 800px / 2);
+	top: calc(50% - 800px / 2);
 
-    background: radial-gradient(40.44% 40.44% at 50% 87.44%, #000000 0%, rgba(0, 0, 0, 0) 100%);
-    border-radius: 1000px;
+	background: radial-gradient(
+		40.44% 40.44% at 50% 87.44%,
+		#000000 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	border-radius: 1000px;
 }
 /*Containers*/
 /* views */
-.userImageProfile{
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    left: calc(50% - 300px/2);
-    top: calc(50% - 300px/2 - 199px);    
+.userImageProfile {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	left: calc(50% - 300px / 2);
+	top: calc(50% - 300px / 2 - 199px);
 }
-.userName{
-    width: 550px;
-    height: 60px;
-    left: calc(50% - 550px/2);
-    top: calc(50% - 60px/2);
+.userName {
+	width: 550px;
+	height: 60px;
+	left: calc(50% - 550px / 2);
+	top: calc(50% - 60px / 2);
+	position: absolute;
+	left: calc(50% - 542px / 2);
+	top: calc(50% - 250px / 2 + 153px);
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	line-height: 59px;
+	text-align: center;
+
+	color: #ffffff;
 }
-.userInfo{
-    width: 550px;
-    height: 60px;
-    left: calc(50% - 550px/2);
-    top: calc(50% - 60px/2 );
+.userInfo {
+	width: 550px;
+	height: 160px;
+	position: absolute;
+
+	left: calc(50% - 542px / 2);
+	top: calc(50% - -30px / 2 + 153px);
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	line-height: 59px;
+	text-align: center;
+
+	color: #ffffff;
 }
+
+.userId {
+	width: 550px;
+	height: 160px;
+	position: absolute;
+
+	left: calc(50% - 542px / 2);
+	top: calc(50% - 150px / 2 + 153px);
+
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 50px;
+	line-height: 59px;
+	text-align: center;
+
+	color: #ffffff;
+}
+
+.userViewPanel img {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	left: calc(50% - 300px / 2);
+	top: calc(50% - 300px / 2 - 199px);
+	border-radius: 150px;
+}
+
 /* views */
