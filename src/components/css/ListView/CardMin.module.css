@@ -116,6 +116,16 @@
 
 /*Other´s Components*/
 	/*Master*/
+	.expParagPanel {
+		width: 70%;
+		height: 100%;
 
+		margin-left: 80px;
+
+		font-size: 1rem;
+		color: #000000;
+	
+		visibility: hidden;
+	}
 	/*Master*/   
 /*Other´s Components */

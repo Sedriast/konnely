@@ -25,19 +25,8 @@ export function ListViews() {
 			<SearchBar clName={style.containerSe}></SearchBar>
 			<div className={style.subPanelLV}>
 				{data.map((a) => (
-					<CardMin
-						url={a.Objeto.url}
-						rabitDataName={a.Objeto.nombre}
-						rabitData={
-							<Paragraphs
-								clName={style.exportParagPanel}
-								body_I={a.Objeto.raza}
-								body_II={a.Objeto.estado}
-								title_I='Raza'
-								title_II='Estado'/>
-						}
-						data={a}
-					/>
+					<CardMin url={a.Objeto.url} rabitDataName={a.Objeto.nombre} 
+							data={a} data1={a.Objeto.raza} data2 ={a.Objeto.estado}/>
 				))}
 			</div>
 			<Btn clName={style.submitL} itemPath="/form" text_="✎" />
