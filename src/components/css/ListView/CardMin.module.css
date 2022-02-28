@@ -1,0 +1,121 @@
+/*
+1) Const
+2) Containers
+	2.1) Master
+	2.2) Button
+	2.3) Input
+3)Use
+	3.1)Buttons
+	3.2)Inputs
+4)Rezising
+5)Animations
+6)Otre´s components
+	6.1)Master
+	6.2)...
+
+
+
+
+
+*/
+
+
+/*Const*/
+:root {
+	--back-general: white;
+}
+/*Const*/
+
+
+/*Containers*/
+	/*Master*/
+	.Container_{
+		width: 100%;
+		height: 100%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	/*Master*/    
+	/*Sub*/
+	.Panel_{
+		position: relative;
+		width: 300px;
+		height: 100px;
+
+		background: radial-gradient(100% 223.3% at 0% 50%, #000000 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5);
+		border: 2px solid #000000;
+		box-sizing: border-box;
+		border-radius: 100px;
+	}
+	/*Sub*/
+	/*Button´s container*/
+
+	/*Button´s container*/
+	/*Input´s container*/
+
+	/*Input´s container*/
+	/*Oters*/
+		.Image_{
+			position: absolute;
+			width: 75px;
+			height: 75px;
+			left: 10px;
+			top: calc(50% - 75px/2);
+			
+			background: rgba(255, 255, 255, 0.5);
+			border: 1px solid #000000;
+			box-sizing: border-box;
+			border-radius: 100px;
+		}
+		.Name_{
+			text-overflow: ellipsis;
+			overflow-x: hidden;
+
+			position: absolute;
+			width: 175px;
+			height: 25px;
+			right: 25px;
+			top: calc(50% - 22px/2);
+			margin: 0;
+
+			font-family: Arial;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 20px;
+
+			color: #FFFFFF;
+		}
+		.ParagPanel{
+			visibility: hidden;
+		}
+	/*Oters*/
+/*Containers*/
+
+
+/*Use*/
+	/*Button */
+
+	/*Button */
+	/*Input */
+
+	/*Input */
+/*Use*/
+
+
+/*Resizing */
+
+/*Resizing */
+
+
+/*Animations*/
+
+/*Animations*/
+
+
+/*Other´s Components*/
+	/*Master*/
+
+	/*Master*/   
+/*Other´s Components */
