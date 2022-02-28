@@ -27,25 +27,26 @@
 /*Component´s container*/
 .subPanelLV {
 	position: fixed;
-	width: 80%;
+	width: 92%;
 	height: 70%;
 	right: 0;
-	top: 15%;
+	bottom: 5%;
 
-	text-overflow: ellipsis;
 	align-items: center;
 	justify-content: center;
 	overflow-y: scroll;
-	padding: 3rem;
+	padding-top: 2%;
+	padding-bottom: 2%;
+
+	border-radius: 75px 0px 0px 75px;
 
 	background: rgba(0, 0, 0, 0.2);
-	border-radius: 40px 0px 0px 40px;
 
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 260px);
-	grid-template-rows: repeat(auto-fill, 160px);
-	grid-column-gap: 0.5rem;
-	grid-row-gap: 0.5em;
+	grid-template-columns: repeat(auto-fill, 300px);
+	grid-template-rows: repeat(auto-fill, 100px);
+	grid-column-gap: 5px;
+	grid-row-gap: 5px;
 
 	animation-duration: 2.5s;
 	animation-name: panelOut;
@@ -192,120 +193,16 @@
 	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 	border-radius: 0px 40px 40px 0px;
 }
-.cardPanel {
-	position: relative;
-	width: 250px;
-	height: 150px;
+.exportParagPanel{
+	width: 70%;
+	height: 100%;
 
-	font-family: Arial;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 15px;
-	line-height: 31px;
-	-webkit-text-stroke: 2px black;
-	text-align: left;
+	top: 0;
+	right: 0;
 
-	color: white;
-
-	font-family: Arial;
-
-	z-index: 100;
-
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		linear-gradient(
-			125.11deg,
-			rgba(0, 0, 0, 0.25) 0%,
-			#000000 17.47%,
-			rgba(0, 0, 0, 0.25) 35.67%
-		);
-	border: 2px solid #000000;
-	box-sizing: border-box;
-	border-radius: 20px;
-
-	overflow: hidden;
-}
-.imgView {
-	position: absolute;
-	width: 125px;
-	height: 125px;
-	left: calc(50% - 125px / 2 - 0.5px);
-	top: calc(50% - 125px / 2 + 0.5px);
-	border-radius: 100%;
-}
-.nameH1 {
-	position: absolute;
-	width: 80%;
-	height: 65px;
-	left: calc(50% - 80% / 2);
-	top: 100px;
-
-	padding: 5px;
-	text-align: center;
 	margin: 0;
+	padding: 0;
 
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	text-align: center;
-}
-.ps {
-	color: white;
-	text-align: left;
 	visibility: hidden;
-
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	padding: 5px;
-	font-size: 22px;
 }
-.ps h1 {
-	margin: 0;
-	font-size: 28px;
-}
-.cardPanel:hover {
-	background: linear-gradient(
-			125.11deg,
-			rgba(255, 255, 255, 0.25) 0%,
-			#000000 15.61%,
-			#ffffff 35.67%
-		),
-		rgba(255, 255, 255, 0.5);
-
-	left: -18%;
-
-	width: 350px;
-	height: 225px;
-}
-.cardPanel:hover .imgView {
-	position: absolute;
-	width: 125px;
-	height: 125px;
-	left: 15px;
-	top: 10px;
-}
-
-.cardPanel:hover .nameH1 {
-	left: 15px;
-	top: 150px;
-	width: 40%;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	text-align: center;
-}
-.cardPanel:hover .ps {
-	color: white;
-	position: absolute;
-	width: 180px;
-	height: 190px;
-	left: 150px;
-	top: 20px;
-	visibility: visible;
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	text-align: left;
-}
-
 /*From Oter´s components*/

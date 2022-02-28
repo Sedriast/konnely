@@ -30,9 +30,11 @@ export function ListViews() {
 						rabitDataName={a.Objeto.nombre}
 						rabitData={
 							<Paragraphs
-								race={a.Objeto.raza}
-								weigth={a.Objeto.estado}
-							/>
+								clName={style.exportParagPanel}
+								body_I={a.Objeto.raza}
+								body_II={a.Objeto.estado}
+								title_I='Raza'
+								title_II='Estado'/>
 						}
 						data={a}
 					/>

@@ -29,17 +29,13 @@
 
 /*Containers*/
 	/*Master*/
-	.principalPanel {
-		background: url(https://drive.google.com/uc?export=download&id=1x0hPfrMmSxAlq3esLERmlf8UumGaUdKP);
-		background-repeat: no-repeat;
-		background-size: cover;
-	
-		width: 100%;
-		height: 100%;
-	
-		mix-blend-mode: normal;
-		position: absolute;
-	}
+        .Container_{
+            width: 100%;
+            height: 100%;
+
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
 	/*Master*/    
 	/*Sub*/
 
@@ -51,7 +47,29 @@
 
 	/*Input´s container*/
 	/*Oters*/
+        .Container_ h2{
+            width: auto;
+            height: auto;
 
+            left: 1.5rem;
+
+            margin: 0;
+            padding: 0;
+        }
+        .Container_ p{
+            text-align: right;
+
+            text-overflow: ellipsis;
+			overflow: hidden;
+
+            width: auto;
+            height: auto;
+
+            right: 1rem;
+
+            margin: 0;
+            padding: 0;
+        }
 	/*Oters*/
 /*Containers*/
 
@@ -77,10 +95,7 @@
 
 
 /*Other´s Components*/
-	/*Masters*/
-	.exportStyleParag{
-		width: 500px;
-		height: 500px;
-	}
+	/*Master*/
+
 	/*Master*/   
 /*Other´s Components */

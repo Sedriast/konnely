@@ -6,7 +6,7 @@ import { ListViews} from './ListView/ListViews';
 import { Login } from './Login/Login';
 import { UserView } from './UserView_/UserView';
 import { DataView } from './DataView/DataView';
-import { CardMin } from './ListView/CardMin';
+import { Paragraphs } from './helpers/Paragraphs';
 
 export function Layout() {
 	return (
@@ -19,7 +19,7 @@ export function Layout() {
 					<Route exact path='/login' element={<Login />}> </Route>
 					<Route exact path='/user' element={<UserView />}></Route>
 					<Route exact path='/data' element={<DataView />}></Route>
-					<Route exact path='/test' element={<CardMin />}></Route>
+					<Route exact path='/test' element={<Paragraphs clName={style.exportStyleParag} />}></Route>
 				</Routes>
 			</Router>
 		</div>
