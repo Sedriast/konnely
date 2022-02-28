@@ -1,7 +1,4 @@
 export function Paragraphs(props) {
-	const r = props.race;
-	const w = props.weigth;
-	const panel = props.panel;
 
     const r = props.race;
     const w = props.weigth;
