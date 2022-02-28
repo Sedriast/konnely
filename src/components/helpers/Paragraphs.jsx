@@ -2,10 +2,10 @@ export function Paragraphs(props){
 
     const r = props.race;
     const w = props.weigth;
-    const panel = props.panel
+    const paragPanel = props.panel
     
     return(<>
-        <div className={panel} >
+        <div className={paragPanel} >
             <p>
             <h1>Raza:</h1>
             {r}
