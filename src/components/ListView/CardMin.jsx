@@ -3,8 +3,6 @@ import style from '../css/ListViews.module.css';
 import { Paragraphs } from '../helpers/Paragraphs';
 import { useState } from "react";
 
-export function CardMin(props){
-
 export function CardMin(props) {
 	const url = props.url;
 	const rabitDataName = props.rabitDataName;
