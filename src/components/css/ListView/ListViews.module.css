@@ -47,9 +47,6 @@
 	grid-template-rows: repeat(auto-fill, 100px);
 	grid-column-gap: 5px;
 	grid-row-gap: 5px;
-
-	animation-duration: 2.5s;
-	animation-name: panelOut;
 }
 .subPanelLV::-webkit-scrollbar {
 	-webkit-appearance: none;
@@ -137,9 +134,6 @@
 	.subPanel {
 		overflow-y: scroll;
 		overflow-x: hidden;
-
-		animation-duration: 2.5s;
-		animation-name: panelIn;
 	}
 	.subPanel::-webkit-scrollbar:vertical {
 		width: 5px;
@@ -147,22 +141,7 @@
 }
 /*Resizing */
 /*Animations */
-@keyframes panelIn {
-	from {
-		width: 80%;
-	}
-	to {
-		width: 0%;
-	}
-}
-@keyframes panelOut {
-	from {
-		width: 0%;
-	}
-	to {
-		width: 80%px;
-	}
-}
+
 /*Animations */
 /*From Oter´s components*/
 .containerSe {
