@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { CardMin } from "./CardMin";
 import { SearchBar } from "../Searchbar/SearchBar";
 import { Btn } from "../Buttons/Btn";
-import { Paragraphs } from "../helpers/Paragraphs";
 const db = getFirestore(app);
 
 export function ListViews() {
