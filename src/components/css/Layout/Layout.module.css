@@ -23,16 +23,25 @@
 /*Const*/
 :root {
 	--back-general: white;
+	width: 100%;
+    height: 100%;
+
 }
 /*Const*/
 
 
 /*Containers*/
 	/*Master*/
-		.root_1{
-			width: 100%;
-			height: 100%;
-		}
+	.principalPanel {
+		position: absolute;
+		mix-blend-mode: normal;
+
+		background-repeat: no-repeat;
+		background-size: cover;
+	
+		width: 100%;
+		height: 100%;
+	}
 	/*Master*/    
 	/*Sub*/
 
