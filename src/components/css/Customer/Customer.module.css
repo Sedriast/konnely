@@ -1,0 +1,97 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+
+/*Const*/
+:root {
+	--back-general: white;
+}
+/*Const*/
+
+
+/*Containers*/
+	/*Master*/
+	.customer{
+		font-family: Arial;
+	}
+	/*Master*/    
+	/*Sub*/
+	.customerPanel{
+		position: fixed;
+		background: rgba(255, 255, 255, 0.5);
+		border-radius: 20px;
+
+		   
+
+		width: 1100px;
+		height: 800px;
+		left: calc(50% - 1100px/2);
+		top: calc(50% - 800px/2);
+	}
+	/*Sub*/
+	/*Button´s container*/
+
+	/*Button´s container*/
+	/*Input´s container*/
+
+	/*Input´s container*/
+	/*Oters*/
+
+	/*Oters*/
+/*Containers*/
+
+
+/*Use*/
+	/*Button */
+
+	/*Button */
+	/*Input */
+
+	/*Input */
+/*Use*/
+
+
+/*Resizing */
+
+/*Resizing */
+
+
+/*Animations*/
+
+/*Animations*/
+
+
+/*Other´s Components*/
+	/*Master*/
+	.text_{
+		width: 300px;
+		height: 45px;
+	}
+	.date_{
+		width: 300px;
+		height: 45px;
+	}
+	.file_{
+		width: 300px;
+		height: 45px;
+	}
+	/*Master*/   
+/*Other´s Components */

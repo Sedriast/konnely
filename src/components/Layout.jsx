@@ -10,10 +10,10 @@ export function Layout() {
 	<>
 		<div className={style_L.principalPanel}>
 			<Router>
-				<Navbar />
 				<Routes >
 					<Route exact path='/customer' element={<Customer />}> </Route>
 				</Routes>
+				<Navbar />
 			</Router>
 		</div>
 	</>

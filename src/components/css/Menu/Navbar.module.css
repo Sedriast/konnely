@@ -39,10 +39,7 @@
 		right: 0px;
 		top: 0px;
 
-		z-index: 100;
-
-		justify-content: start;
-		align-items: center;
+		z-index: 0;
 	}
 	/*Master*/    
 	/*Sub*/
