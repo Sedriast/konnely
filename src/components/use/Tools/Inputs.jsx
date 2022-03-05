@@ -7,8 +7,6 @@ export function Inputs(props){
 	const [preview, setPreview] = useState();
 	const fileInputRef = useRef();
 	const { handleChange } = props;
-	// const [list, setList] = useState([{ name: "Loading..." }]);
-	// const coleccion = props.collection;
 
 	useEffect(() => {
 		if (image) {
@@ -37,23 +35,14 @@ export function Inputs(props){
 		setImage(null);
 	};
 
-	// window.addEventListener("load", function () {
-	// 		document.getElementById(props.idD_).type = "text";
-	// 		document.getElementById(props.idD_).addEventListener("blur", function () {
-	// 			document.getElementById(props.idD_).type = "text";
-	// 		});
-	// 		document.getElementById(props.idD_).addEventListener("focus", function () {
-	// 			document.getElementById(props.idD_).type = "date";
-	// 		});
-	// 	});
-
 	return(
 		<>
-			<div className={props.clsName}>            
-				<h1 className={style_I.label} ></h1>
+			<div className={props.clsName}>
+
+				<h1 className={style_I.label} >{props.leyend}</h1>
+
 				{preview ? (
 					<img
-						className={style_I.imgInp}
 						src={preview}
 						style={{ objectFit: "cover" }}
 						onClick={changeImage}

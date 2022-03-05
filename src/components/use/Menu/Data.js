@@ -6,6 +6,5 @@ export const Data = [
 	{
 		title: "Personalizar",
 		path: "/customer",
-		icon: "",
 	},
 ];

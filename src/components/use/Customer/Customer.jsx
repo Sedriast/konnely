@@ -9,9 +9,9 @@ export function Customer(props){
 		<>
 			<div className={style_C.customer}>
 				<div className={style_C.customerPanel}>
-					<div><Inputs clsName={style_C.text_} type_="text"/></div>
-					<div><Inputs clsName={style_C.date_} type_="date"/></div>
-					<div><Inputs clsName={style_C.file_} type_="file"/></div>
+					<Inputs clsName={style_C.text_1} leyend="input 1" placeholder_="Eso" type_="text"/>
+					<Inputs clsName={style_C.date_1} leyend="input 2" type_="date"/>
+					<Inputs clsName={style_C.file_1} leyend="input 3" type_="file"/>
 				</div>
 			</div>
 		</>
