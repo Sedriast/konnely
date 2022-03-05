@@ -49,20 +49,20 @@ export function Inputs(props){
 
 				<h1 className={style_I.label} >{props.leyend}</h1>
 
+				<div className={style_I.br_}/>
+
 				{preview ? (
 					<img
 						className={style_I.inp}
 						src={preview}
 						style={{ objectFit: "cover" }}
 						onClick={changeImage}
-						alt=""
 					/>
 				) : (
 					<input
 						className={style_I.inp}
 						type={props.type_}
 						name={props.name_}
-						aria-label={props.aLabel}
 						ref={ fileInputRef }
 						placeholder={props.placeholder_}
 						accept="image/*"

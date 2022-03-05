@@ -45,8 +45,17 @@ export function Form (props){
     <>
         <div className={props.clsName}>
             <div className={style_F.panel}>
-			    <Inputs clsName={style_F.file_1} type_="file"/>
-
+			    <Inputs clsName={style_F.image1} type_="file"/>
+                {/**botones */}
+                <div className={style_F.grid}>
+                    <Inputs clsName={style_F.data1} leyend="Identificador" placeholder_="Ingrese el identificador" type_="text"/>
+					<select classname={style_F.genero}>
+					<option value="Hembra">Hembra</option>
+ 					<option value="Macho"><Macho></Macho></option>
+					</select>
+                    <Inputs clsName={style_F.data2} leyend="Peso" placeholder_="Ingrese el peso" type_="text"/>
+                    <Inputs clsName={style_F.data3} type_="test"/>
+                </div>
             </div>
         </div>
     </>
