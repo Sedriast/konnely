@@ -7,4 +7,8 @@ export const Data = [
 		title: "Personalizar",
 		path: "/customer",
 	},
+	{
+		title: "Form",
+		path: "/form",
+	},
 ];

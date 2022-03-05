@@ -1,9 +1,9 @@
-import style_L from './css/Layout/Layout.module.css';
-
+import style_L from '../components/css/Layout/Layout.module.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Navbar } from './use/Menu/Navbar';
 import { Customer } from './use/Customer/Customer';
+import { Form } from './use/Form/Form';
 
 export function Layout() {
 	return (
@@ -12,6 +12,7 @@ export function Layout() {
 			<Router>
 				<Routes >
 					<Route exact path='/customer' element={<Customer />}> </Route>
+					<Route exact path='/form' element={<Form clsName={style_L.panelF} />}> </Route>
 				</Routes>
 				<Navbar />
 			</Router>

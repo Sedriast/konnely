@@ -3,32 +3,30 @@ import { useRef, useState, useEffect } from "react";
 
 export function Inputs(props){
 
+	const init = {};
 	const [image, setImage] = useState();
 	const [preview, setPreview] = useState();
 	const fileInputRef = useRef();
-	const { handleChange } = props;
+	//const { handleChange } = props;
+	const [values, setValues] = useState(init);
 
-	function action () {
+	const action= (e) => {
+
 		if (props.type_ === "file"){
-			const handleImage = (e) => {
-				const file = e.target.files[0];
-				if (file && file.type.substr(0, 5) === "image") {
-					setImage(file);
-					//props.HaveImage(e.target.files[0]);
-				} else {
-					setImage(null);
-				}
+			const file = e.target.files[0];
+			if (file && file.type.substr(0, 5) === "image") {
+				setImage(file);
+				//props.HaveImage(e.target.files[0]);
+			} else {
+				setImage(null);
 			};
-		}else if(props.type_ === "date"){
-			const handleChange = (e) => {
+		}else if(props.type_ === "date" | props.type_ === "text"){
 				const { name, value } = e.target;
 				setValues({ ...values, [name]: value });
-			};
 		}
 	}
 
 	// Configuracion para input tipo imagen
-
 	useEffect(() => {
 		if (image) {
 			const reader = new FileReader();
@@ -53,6 +51,7 @@ export function Inputs(props){
 
 				{preview ? (
 					<img
+						className={style_I.inp}
 						src={preview}
 						style={{ objectFit: "cover" }}
 						onClick={changeImage}
