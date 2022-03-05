@@ -8,6 +8,27 @@ export function Inputs(props){
 	const fileInputRef = useRef();
 	const { handleChange } = props;
 
+	function action () {
+		if (props.type_ === "file"){
+			const handleImage = (e) => {
+				const file = e.target.files[0];
+				if (file && file.type.substr(0, 5) === "image") {
+					setImage(file);
+					//props.HaveImage(e.target.files[0]);
+				} else {
+					setImage(null);
+				}
+			};
+		}else if(props.type_ === "date"){
+			const handleChange = (e) => {
+				const { name, value } = e.target;
+				setValues({ ...values, [name]: value });
+			};
+		}
+	}
+
+	// Configuracion para input tipo imagen
+
 	useEffect(() => {
 		if (image) {
 			const reader = new FileReader();
@@ -19,17 +40,6 @@ export function Inputs(props){
 			setPreview(null);
 		}
 	}, [image]);
-
-	const handleImage = (e) => {
-		const file = e.target.files[0];
-
-		if (file && file.type.substr(0, 5) === "image") {
-			setImage(file);
-			//props.HaveImage(e.target.files[0]);
-		} else {
-			setImage(null);
-		}
-	};
 
 	const changeImage = () => {
 		setImage(null);
@@ -57,8 +67,7 @@ export function Inputs(props){
 						ref={ fileInputRef }
 						placeholder={props.placeholder_}
 						accept="image/*"
-						onChange={ handleChange }
-						onClick={ handleImage }
+						onChange={action}
 					/>
 				)}
 			</div>
