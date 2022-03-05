@@ -9,10 +9,7 @@
  */
 
 html {
-	line-height: 1.15; /* 1 */
-	-webkit-text-size-adjust: 100%; /* 2 */
-	
-	text-decoration: none;
+	line-height: 1.15; 
 }
 html::-webkit-scrollbar {
 	-webkit-appearance: none;
@@ -45,7 +42,6 @@ html::-webkit-scrollbar-track {
 
 body {
 	margin: 0;
-	zoom: 0.9;
 }
 
 /**
