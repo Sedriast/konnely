@@ -25,7 +25,7 @@ export function Inputs(props){
 
 		if (file && file.type.substr(0, 5) === "image") {
 			setImage(file);
-			props.HaveImage(e.target.files[0]);
+			//props.HaveImage(e.target.files[0]);
 		} else {
 			setImage(null);
 		}
