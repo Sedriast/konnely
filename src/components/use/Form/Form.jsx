@@ -1,18 +1,14 @@
-import style_F from '../../css/Form/Form.module.css';
+import style_F from "../../css/Form/Form.module.css";
 import app from "../../firebase/credentials";
-import { Inputs } from '../Tools/Inputs';
-import { Lists } from '../Tools/Lists';
+import { Inputs } from "../Tools/Inputs";
+import { Lists } from "../Tools/Lists";
 import { useEffect, useState } from "react";
-import { effect } from '../../firebase/effect';
-
+import { Search } from "../../firebase/Search";
 
 // const db = getFirestore(app);
 // const storage = getStorage(app);
 
-export function Form (props){
-
-	console.log(effect);
-
+export function Form(props) {
 	const init = {};
 	const [values, setValues] = useState(init);
 	// const [stateM, setStateM] = useState(false);
@@ -33,26 +29,33 @@ export function Form (props){
 	// 	addInfo(values);
 	// };
 
-		const gef = [
-			{
-				name:"Hembra",
-			},
-			{
-				name:"Macho",
-			},
-		];
+	const gef = [
+		{
+			name: "Hembra",
+		},
+		{
+			name: "Macho",
+		},
+	];
 
-    return(
-    <>
-        <div className={props.clsName}>
-            <div className={style_F.panel}>
-			    <Inputs clsName={style_F.image1} type_="file"/>
-                {/**botones */}
-                <div className={style_F.grid}>
-                    <Inputs clsName={style_F.data1} leyend="Identificador" placeholder_="Ingrese el identificador" type_="text"/>
-					{
+	const mostrar = (e) => {
+		console.log(e);
+	};
 
-					/* <div>
+	return (
+		<>
+			<div className={props.clsName}>
+				<div className={style_F.panel}>
+					<Inputs clsName={style_F.image1} type_="file" />
+					{/**botones */}
+					<div className={style_F.grid}>
+						<Inputs
+							clsName={style_F.data1}
+							leyend="Identificador"
+							placeholder_="Ingrese el identificador"
+							type_="text"
+						/>
+						{/* <div>
 						<h1 className={style_F.label} >Genero</h1>
 						<div className={style_F.br_}/>
 						<select className={style_F.genero}>
@@ -60,12 +63,18 @@ export function Form (props){
 							<option value="Macho">Macho</option>
 						</select>
 					</div> */}
-					<Lists clsName={style_F.race} name_="Prueba" />
-                    <Inputs clsName={style_F.data2} leyend="Peso" placeholder_="Ingrese el peso" type_="text"/>
-                    <Inputs clsName={style_F.data3} type_="text"/>
-                </div>
-            </div>
-        </div>
-    </>
-    );
+						<Search coleccion="raza" mostrar={mostrar} />
+						{/* <Lists clsName={style_F.race} name_="Prueba" /> */}
+						<Inputs
+							clsName={style_F.data2}
+							leyend="Peso"
+							placeholder_="Ingrese el peso"
+							type_="text"
+						/>
+						<Inputs clsName={style_F.data3} type_="text" />
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }

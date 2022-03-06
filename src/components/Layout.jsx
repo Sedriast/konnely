@@ -1,9 +1,9 @@
-import style_L from '../components/css/Layout/Layout.module.css'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import style_L from "../components/css/Layout/Layout.module.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { Navbar } from './use/Menu/Navbar';
-import { Customer } from './use/Customer/Customer';
-// import { Form } from './use/Form/Form';
+import { Navbar } from "./use/Menu/Navbar";
+import { Customer } from "./use/Customer/Customer";
+import { Form } from "./use/Form/Form";
 
 export function Layout(props) {
 	return (
@@ -18,7 +18,6 @@ export function Layout(props) {
 					<Navbar clsName={style_L.menu}/>
 				</Router>
 			</div>
-		</div>
-	</>
+		</>
 	);
 }
