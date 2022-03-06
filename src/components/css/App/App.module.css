@@ -21,43 +21,15 @@
 
 
 /*Const*/
-
+:root {
+	--back-general: white;
+}
 /*Const*/
 
 
 /*Containers*/
 	/*Master*/
-	.panel_{
-		width: 100%;
-		height: 100%;
 
-		background: rgba(255, 255, 255, 0.5);
-		border-radius: 20px;
-
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-	.panel_::-webkit-scrollbar {
-		-webkit-appearance: none;
-	}
-	.panel_::-webkit-scrollbar:vertical {
-		width: 1px;
-	}
-	.panel_::-webkit-scrollbar-button:increment,
-	.panel_::-webkit-scrollbar-button {
-		display: none;
-	}
-	.panel_::-webkit-scrollbar:horizontal {
-		height: 5px;
-	}
-	.panel_::-webkit-scrollbar-thumb {
-		background-color: rgba(255, 0, 0, 0.1);
-		border-radius: 20px;
-		border: none;
-	}
-	.panel_::-webkit-scrollbar-track {
-		border-radius: 10px;
-	}
 	/*Master*/    
 	/*Sub*/
 
@@ -96,6 +68,11 @@
 
 /*Other´s Components*/
 	/*Master*/
-		
+    .Layout {
+		position: absolute;
+
+		width: 100%;
+		height: 100%;
+	}
 	/*Master*/   
 /*Other´s Components */

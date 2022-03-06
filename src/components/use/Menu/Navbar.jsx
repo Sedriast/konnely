@@ -5,38 +5,40 @@ import style_M from '../../css/Menu/Navbar.module.css';
 import { Link } from "react-router-dom";
 
 
-export function Navbar() {
+export function Navbar(props) {
 	const [sidebar, setSidebar] = useState(false);
 	const showSidebar = () => setSidebar(!sidebar);
 
 	return (
 		<>
-			<div className={style_M.navbarMenu}>
-				<Link className={style_M.bars} to="#">
-					<div className={style_M.iconMenu} onClick={showSidebar}>
-						<div className={style_M.decor}></div>
-					</div>
-				</Link>
+			<div className={props.clsName}>
+				<div className={style_M.panel_}>
+					<Link className={style_M.link_} to="#">
+						<div className={style_M.gradient_} onClick={showSidebar}>
+							<div className={style_M.moon_} />
+						</div>
+					</Link>
+				</div>
+				<nav className={sidebar ? "menu_ active" : "menu_"}>
+					<ul className={style_M.items_} onClick={showSidebar}>
+						<li>
+							<Link className={style_M.link_} to="#">
+								<div className={style_M.toggle_} />
+							</Link>
+						</li>
+						{Data.map((item, index) => {
+							return (
+								<li key={index} className={style_M.text_}>
+									<Link to={item.path}>
+										{item.icon}
+										<span>{item.title}</span>
+									</Link>
+								</li>
+							);
+						})}
+					</ul>
+				</nav>
 			</div>
-			<nav className={sidebar ? "navMenu active" : "navMenu"}>
-				<ul className={style_M.navMenuItems} onClick={showSidebar}>
-					<li>
-						<Link className={style_M.bars} to="#">
-							<div className={style_M.navbarToggle} />
-						</Link>
-					</li>
-					{Data.map((item, index) => {
-						return (
-							<li key={index} className={style_M.navText}>
-								<Link to={item.path}>
-									{item.icon}
-									<span>{item.title}</span>
-								</Link>
-							</li>
-						);
-					})}
-				</ul>
-			</nav>
 		</>
 	);
 }
