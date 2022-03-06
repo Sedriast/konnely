@@ -8,7 +8,7 @@ import { Customer } from './use/Customer/Customer';
 export function Layout(props) {
 	return (
 	<>
-		<div className={props.clsName}>
+		<div className={props.clsName} id="Layout">
 			<div className={style_L.panel_}>
 				<Router>
 					<Routes >

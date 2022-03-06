@@ -76,7 +76,16 @@
 
 /*Use*/
 	/*Button */
+	.cha{
+		position: absolute;
+		width: 400px;
+		height: 90px;
+		left: 38px;
+		top: 510px;
 
+		background: rgba(96, 134, 96, 0.25);
+		border-radius: 100px;
+	}
 	/*Button */
 	/*Input */
 

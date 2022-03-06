@@ -32,9 +32,8 @@
 	.panel_{
 		width: 100%;
 		height: 100%;
-		mix-blend-mode: normal;
 
-		background: gray;
+		background: rgba(128, 128, 128, 0.65);
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
@@ -98,10 +97,6 @@
 		position: fixed;
 	}
 	.menu{
-		position: absolute;
-
-		z-index: 100;
-
 		overflow: hidden;
 
 		width: 100%;
