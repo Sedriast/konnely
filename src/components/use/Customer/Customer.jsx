@@ -11,7 +11,7 @@ export function Customer(props){
 		<>
 			<div className={style_C.customer}>
 				<div className={style_C.customerPanel}>
-					<Cards ></Cards>
+					<Cards  ></Cards>
 				</div>
 			</div>
 		</>

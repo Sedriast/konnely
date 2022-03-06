@@ -12,11 +12,6 @@
 	6)Otre´s components
 		6.1)Master
 		6.2)...
-
-
-
-
-
 */
 
 
@@ -29,10 +24,29 @@
 
 /*Containers*/
 	/*Master*/
+	.Container_{
+		width: 100%;
+		height: 100%;
 
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	/*Master*/    
 	/*Sub*/
+	.Panel_{
+		position: relative;
+		height: 100px;
+		width: 300px;
 
+		background: radial-gradient(100% 223.3% at 0% 50%, #000000 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5);
+		border: 2px solid #000000;
+		box-sizing: border-box;
+		border-radius: 100px;
+		
+		animation-duration: 4s;
+		animation-name: cardIn;
+	}
 	/*Sub*/
 	/*Button´s container*/
 
@@ -41,7 +55,39 @@
 
 	/*Input´s container*/
 	/*Oters*/
+		.Image_{
+			position: absolute;
+			width: 75px;
+			height: 75px;
+			left: 10px;
+			top: calc(50% - 75px/2);
+			
+			background: rgba(255, 255, 255, 0.5);
+			border: 1px solid #000000;
+			box-sizing: border-box;
+			border-radius: 100px;
+		}
+		.Name_{
+			text-overflow: ellipsis;
+			overflow: hidden;
 
+			position: absolute;
+			width: 175px;
+			height: auto;
+			right: 25px;
+			top: calc(50% - 22px/2);
+			margin: 0;
+
+			font-family: Arial;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 20px;
+
+			color: #FFFFFF;
+		}
+		.ParagPanel{
+			visibility: hidden;
+		}
 	/*Oters*/
 /*Containers*/
 
@@ -62,12 +108,29 @@
 
 
 /*Animations*/
-
+@keyframes cardIn {
+	from{
+		width: 90px;
+	}
+	to{
+		width: 300px;
+	}
+}
 /*Animations*/
 
 
 /*Other´s Components*/
 	/*Master*/
+	.expParagPanel {
+		width: 70%;
+		height: 100%;
 
+		margin-left: 80px;
+
+		font-size: 1rem;
+		color: #000000;
+	
+		visibility: hidden;
+	}
 	/*Master*/   
 /*Other´s Components */

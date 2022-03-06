@@ -22,7 +22,10 @@
 
 /*Const*/
 :root {
-	--back-general: white;
+	--back-general: rgba(255, 255, 255, 0.75);
+	--font-family-general: arial;
+	--font-color: rgba(0, 0, 0, 0.50);
+	--font-size: 40px;
 }
 /*Const*/
 
@@ -30,7 +33,7 @@
 /*Containers*/
 	/*Master*/
 
-	/*Master*/    
+	/*Master*/
 	/*Sub*/
 	.label{
 		width: 100%;
@@ -39,13 +42,22 @@
 
 		font-size: 25px;
 	}
+	.br_{
+		height: 10px;
+	}
 	.list_{
 		background: var(--back-general);
 
 		width: 100%;
 		height: 100%;
 
-		font-size: 40px;
+		font-size: var(--font-size);
+		font-size: 30px;
+		color: var(--font-color);
+		padding-left: 1rem;
+
+		border-radius: 20px;
+		border: none;
 	}
 	/*Sub*/
 	/*Button´s container*/
@@ -67,6 +79,10 @@
 	/*Input */
 
 	/*Input */
+	/*Select*/
+	
+	/*Select*/
+
 /*Use*/
 
 
@@ -82,6 +98,6 @@
 
 /*Other´s Components*/
 	/*Master*/
-
-	/*Master*/   
+	
+	/*Master*/
 /*Other´s Components */
