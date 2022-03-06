@@ -3,11 +3,15 @@ import app from "../../firebase/credentials";
 import { Inputs } from '../Tools/Inputs';
 import { Lists } from '../Tools/Lists';
 import { useEffect, useState } from "react";
+import { effect } from '../../firebase/effect';
+
 
 // const db = getFirestore(app);
 // const storage = getStorage(app);
 
 export function Form (props){
+
+	console.log(effect);
 
 	const init = {};
 	const [values, setValues] = useState(init);

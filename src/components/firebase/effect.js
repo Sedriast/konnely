@@ -1,25 +1,19 @@
-import { getFirestore, collection, addDoc, onSnapshot } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import app from "../firebase/credentials";
+import { collection, onSnapshot, getFirestore } from "firebase/firestore";
+import { useEffect, useState } from "react";
+const db = getFirestore(app);
 
-export function firestore ({ col }){
-	
-	const addInfo = async (Objeto) => {
-		try {
-			const storageRef = ref(storage, image.name);
-			await uploadBytes(storageRef, image);
-			const urlDescarga = await getDownloadURL(storageRef);
-			Objeto.url = urlDescarga;
-			await addDoc(collection(db, col), { Objeto });
-		} catch (e) {
-			console.error("Error adding document: ", e);
-		}
-	};
+export function effect({ col }) {
+	const [data_, setData_] = useState();
 
 	useEffect(
 		() =>
 			onSnapshot(collection(db, col), (snapshot) =>
-				setList(snapshot.docs.map((doc) => ({ ...doc.data() })))
+				setData_(snapshot.docs.map((doc) => ({ ...doc.data() })))
 			),
 		[]
 	);
+
+	return data_;
+	return <></>;
 }
