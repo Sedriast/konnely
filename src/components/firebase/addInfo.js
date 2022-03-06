@@ -1,13 +1,17 @@
 import { getFirestore, collection, addDoc, onSnapshot } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-export function effect ({ col }){
+export function addInfo ({ col }){
 
-	useEffect(
-		() =>
-			onSnapshot(collection(db, col), (snapshot) =>
-				setList(snapshot.docs.map((doc) => ({ ...doc.data() })))
-			),
-		[]
-	);
+	const addImageAndInfo = async (Objeto) => {
+		try {
+			const storageRef = ref(storage, image.name);
+			await uploadBytes(storageRef, image);
+			const urlDescarga = await getDownloadURL(storageRef);
+			Objeto.url = urlDescarga;
+			await addDoc(collection(db, "conejos"), { Objeto });
+		} catch (e) {
+			console.error("Error adding document: ", e);
+		}
+	};
 }
