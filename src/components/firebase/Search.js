@@ -5,7 +5,6 @@ const db = getFirestore(app);
 
 export function Search(props) {
 	const coleccion = props.coleccion;
-	const { mostrar } = props;
 	const [data_, setData_] = useState();
 
 	useEffect(
@@ -15,11 +14,12 @@ export function Search(props) {
 			),
 		[]
 	);
-	console.log(mostrar);
 
 	return (
 		<>
-			<button value={data_} onClick={mostrar}></button>
+			{data_?.map((Object) => {
+				return Object.name;
+			})}
 		</>
 	);
 }
