@@ -103,5 +103,12 @@
 		height: 100%;
 
 	}
+	.panelButtons{
+		position: absolute;
+		width: 650px;
+		height: 100px;
+		left: calc(50% - 650px/2);
+		top: 0px;
+	}
 	/*Master*/
 /*Other´s Components */

@@ -69,7 +69,16 @@
 
 	/*Input´s container*/
 	/*Oters*/
+	.preview_{
+		position: absolute;
+		width: 437px;
+		height: 282px;
+		left: 53px;
+		top: 38px;
 
+		background: #FFFFFF;
+		border-radius: 20px;
+	}
 	/*Oters*/
 /*Containers*/
 
@@ -105,6 +114,6 @@
 
 /*Other´s Components*/
 	/*Master*/
-		
+
 	/*Master*/   
 /*Other´s Components */

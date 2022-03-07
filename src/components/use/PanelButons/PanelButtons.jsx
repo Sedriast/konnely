@@ -1,4 +1,4 @@
-import style_PB from '../../css/PanelButtons/PsnelButtons.module.css';
+import style_PB from '../../css/PanelButtons/PanelButtons.module.css';
 import { Buttons } from '../Tools/Buttons';
 
 export function PanelButtons(props){

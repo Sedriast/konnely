@@ -29,7 +29,33 @@
 
 /*Containers*/
 	/*Master*/
+.panel_{
+	position: absolute;
+	width: 100%;
+	height: 100%;
 
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	border-radius: 0px 0px 40px 40px;
+
+	border: none;
+}
+.panel_ button{
+	position: absolute;
+	background: transparent;
+
+	border: none;
+
+	width: 100%;
+	height: 100%;
+}
+.panel_ img {
+	border: none;
+
+	list-style: none;
+
+	width: 100%;
+	height: 100%;
+}
 	/*Master*/    
 	/*Sub*/
 
