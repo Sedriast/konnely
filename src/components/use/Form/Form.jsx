@@ -38,9 +38,11 @@ export function Form(props) {
 		},
 	];
 
-	const mostrar = (e) => {
-		console.log(e);
+	const mostrar = () => {
+		console.log(<Search coleccion="raza" story={props} />);
 	};
+
+	mostrar();
 
 	return (
 		<>
@@ -63,8 +65,12 @@ export function Form(props) {
 							<option value="Macho">Macho</option>
 						</select>
 					</div> */}
-						<Search coleccion="raza" mostrar={mostrar} />
-						{/* <Lists clsName={style_F.race} name_="Prueba" /> */}
+
+						{/* <Lists
+							clsName={style_F.race}
+							name_="Prueba"
+							mostrar= {<Search coleccion="raza" />}
+						/> */}
 						<Inputs
 							clsName={style_F.data2}
 							leyend="Peso"
