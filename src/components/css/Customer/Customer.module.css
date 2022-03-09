@@ -114,6 +114,15 @@
 
 /*Other´s Components*/
 	/*Master*/
+.ch{
+	position: absolute;
+	width: 30%;
+	height: 74px;
+	left: 550px;
+	top: 38px;
 
+	background: rgba(255, 255, 255, 0.75);
+	border-radius: 20px;
+}
 	/*Master*/   
 /*Other´s Components */

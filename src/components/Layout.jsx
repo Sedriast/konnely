@@ -6,10 +6,11 @@ import { Customer } from "./use/Customer/Customer";
 import { Form } from "./use/Form/Form";
 import { PanelButtons } from "./use/PanelButons/PanelButtons";
 
+
 export function Layout(props) {
 	return (
 		<>
-			<div className={props.clsName} id="Layout">
+			<div className={props.clsName}>
 				<div className={style_L.panel_}>
 					<Router>
 						<Routes>
@@ -17,7 +18,7 @@ export function Layout(props) {
 								exact
 								path="/customer"
 								element={
-									<Customer clsName={style_L.customer} />
+									<Customer clsName={style_L.customer} cl_={props.cl_} />
 								}
 							/>
 							<Route
@@ -27,9 +28,15 @@ export function Layout(props) {
 											<PanelButtons clsName={style_L.panelButtons} />
 											<Form clsName={style_L.panelF} />
 										</>}
-							>
-								{" "}
-							</Route>
+							/>
+			<Route
+								exact
+								path="/list"
+								element={<>
+											<PanelButtons clsName={style_L.panelButtons} />
+											
+										</>}
+							/>
 						</Routes>
 						<Navbar clsName={style_L.menu} />
 					</Router>
