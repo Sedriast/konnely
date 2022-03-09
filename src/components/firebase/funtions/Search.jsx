@@ -1,11 +1,11 @@
-import app from "./credentials";
+import app from "../credentials";
 import { collection, onSnapshot, getFirestore } from "firebase/firestore";
 import { useEffect, useState } from "react";
 const db = getFirestore(app);
 
-export function Search(props) {
-	const coleccion = props.coleccion;
-	const [data_, setData_] = useState();
+export const Search = (props) => {
+	const coleccion = props;
+	const [data_, setData_] = useState([{ name: "Loading..." }]);
 
 	useEffect(
 		() =>
@@ -22,4 +22,4 @@ export function Search(props) {
 			})}
 		</>
 	);
-}
+};
