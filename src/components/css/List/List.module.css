@@ -42,7 +42,18 @@
 	}
 	/*Master*/    
 	/*Sub*/
+	.grid{
+		display: grid;
+		grid-template-columns: repeat(auto-fill, 300px);
+		grid-template-rows: repeat(auto-fill, 100px);
+		grid-column-gap: 1rem;
+		grid-row-gap: 1rem;
 
+		justify-content: center;
+    	align-items: center;
+
+		margin-top: 1rem ;
+	}
 	/*Sub*/
 	/*Button´s container*/
 
@@ -78,6 +89,14 @@
 
 /*Other´s Components*/
 	/*Master*/
+	.searchBar{
+		position: relative;
+		width: 873px;
+		height: 100px;
+		left: calc(50% - 873px/2);
+		top: 14px;
 
+		overflow: hidden;
+	}
 	/*Master*/   
 /*Other´s Components */
