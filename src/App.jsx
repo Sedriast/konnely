@@ -5,11 +5,11 @@ import React from "react";
 
 const back = () => {
 
-	const v ='black';
+	const v ='url(https://drive.google.com/uc?export=download&id=1rOlGY6t5QqpGusJE_TW4Z3HgOO2islVl)';
 
 	window.setInterval(function(){
 	document.getElementById('root').style.setProperty('background', v);
-	}, 100);
+	}, 1);
 
 	console.log(v+"		v");
 }

@@ -69,16 +69,16 @@
 	/*Master*/
 	/*Sub*/
 	.grid{
-		justify-content: center;
-    	align-items: center;
-
-		margin-top: 1rem ;
-
 		display: grid;
 		grid-template-columns: repeat(auto-fill, 450px);
 		grid-template-rows: repeat(auto-fill, 100px);
 		grid-column-gap: 1rem;
 		grid-row-gap: 1rem;
+
+		justify-content: center;
+    	align-items: center;
+
+		margin-top: 1rem ;
 	}
 	.label{
 		width: 100%;
