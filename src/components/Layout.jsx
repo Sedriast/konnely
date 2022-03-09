@@ -6,6 +6,7 @@ import { Customer } from "./use/Customer/Customer";
 import { Form } from "./use/Form/Form";
 import { PanelButtons } from "./use/PanelButons/PanelButtons";
 import { Login } from "./use/Login/Login";
+import { List } from "./use/List/List";
 
 
 export function Layout(props) {
@@ -42,7 +43,7 @@ export function Layout(props) {
 								path="/list"
 								element={<>
 											<PanelButtons clsName={style_L.panelButtons} />
-											
+											<List clsName={style_L.list}/>
 										</>}
 							/>
 						</Routes>

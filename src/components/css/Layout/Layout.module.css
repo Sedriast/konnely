@@ -122,5 +122,18 @@
 
 		overflow: hidden;
 	}
+	.list{
+		position: absolute;
+
+		width: 80%;
+		height: 85%;
+
+		left: calc(50% - 80%/2);
+		top: calc(50% - 85%/2 + 66px);
+
+		overflow: hidden;
+
+		border-radius: 20px;
+	}
 	/*Master*/
 /*Other´s Components */
