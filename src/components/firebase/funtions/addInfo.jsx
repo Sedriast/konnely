@@ -1,8 +1,8 @@
-import { getFirestore, collection, addDoc, onSnapshot } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { collection, addDoc } from "firebase/firestore";
 
-export function addInfo ({ col }){
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
+export function addInfo({ col }) {
 	const addImageAndInfo = async (Objeto) => {
 		try {
 			const storageRef = ref(storage, image.name);

@@ -2,14 +2,16 @@ import style_F from "../../css/Form/Form.module.css";
 import app from "../../firebase/credentials";
 import { Inputs } from "../Tools/Inputs";
 import { Lists } from "../Tools/Lists";
-import { useEffect, useState } from "react";
-import { Search } from "../../firebase/Search";
+import { useState } from "react";
+import { Search } from "../../firebase/funtions/Search";
 
 // const db = getFirestore(app);
 // const storage = getStorage(app);
 
 export function Form(props) {
 	const init = {};
+	const genero = ["Hembra", "Macho"];
+	const Enjendramiento = ["Monta natural", "Inseminación artificial"];
 	const [values, setValues] = useState(init);
 	// const [stateM, setStateM] = useState(false);
 	// const [stateH, setStateH] = useState(false);
@@ -19,30 +21,15 @@ export function Form(props) {
 	// 	setImage(e);
 	// }
 
-	// const handleChange = (e) => {
-	// 	const { name, value } = e.target;
-	// 	setValues({ ...values, [name]: value });
-	// };
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setValues({ ...values, [name]: value });
+	};
 
 	// const handleSubmit = (e) => {
 	// 	e.preventDefault();
 	// 	addInfo(values);
 	// };
-
-	const gef = [
-		{
-			name: "Hembra",
-		},
-		{
-			name: "Macho",
-		},
-	];
-
-	const mostrar = () => {
-		console.log(<Search coleccion="raza" story={props} />);
-	};
-
-	mostrar();
 
 	return (
 		<>
@@ -57,26 +44,35 @@ export function Form(props) {
 							placeholder_="Ingrese el identificador"
 							type_="text"
 						/>
-						{/* <div>
-						<h1 className={style_F.label} >Genero</h1>
-						<div className={style_F.br_}/>
-						<select className={style_F.genero}>
-							<option value="Hembra">Hembra</option>
-							<option value="Macho">Macho</option>
-						</select>
-					</div> */}
 
-						{/* <Lists
+						<Lists
+							clsName={style_F.genere}
+							leyend="Genero"
+							name_="genero"
+							listar={genero}
+						/>
+
+						<Lists
 							clsName={style_F.race}
-							name_="Prueba"
-							mostrar= {<Search coleccion="raza" />}
-						/> */}
+							leyend="Raza"
+							name_="Razas"
+							listar={Search("raza").props.children}
+						/>
+
+						<Lists
+							clsName={style_F.race}
+							leyend="Enjendramiento"
+							name_="Enjendramiento"
+							listar={Enjendramiento}
+						/>
+
 						<Inputs
 							clsName={style_F.data2}
 							leyend="Peso"
 							placeholder_="Ingrese el peso"
 							type_="text"
 						/>
+
 						<Inputs clsName={style_F.data3} type_="text" />
 					</div>
 				</div>
