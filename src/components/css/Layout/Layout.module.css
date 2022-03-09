@@ -75,12 +75,13 @@
 
 /*Other´s Components*/
 	/*Master*/
-	.panelF{
-		position: fixed;
-		width: 1100px;
-		height: 814px;
-		left: calc(50% - 1100px/2);
-		top: calc(50% - 814px/2 + 66px);
+	.form_	{
+		position: absolute;
+
+		width: 90%;
+		height: 85%;
+		left: calc(50% - 90%/2);
+		top: calc(50% - 85%/2 + 66px);
 
 		background: linear-gradient(180deg, rgba(255, 255, 255, 0) 4.69%, rgba(255, 255, 255, 0.450521) 13.02%, rgba(255, 255, 255, 0.5) 100%);
 		border-radius: 20px;

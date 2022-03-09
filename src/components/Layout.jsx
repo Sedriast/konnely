@@ -26,7 +26,7 @@ export function Layout(props) {
 								path="/form"
 								element={<>
 											<PanelButtons clsName={style_L.panelButtons} />
-											<Form clsName={style_L.panelF} />
+											<Form clsName={style_L.form_} />
 										</>}
 							/>
 			<Route
