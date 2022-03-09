@@ -5,6 +5,7 @@ import { Navbar } from "./use/Menu/Navbar";
 import { Customer } from "./use/Customer/Customer";
 import { Form } from "./use/Form/Form";
 import { PanelButtons } from "./use/PanelButons/PanelButtons";
+import { Login } from "./use/Login/Login";
 
 
 export function Layout(props) {
@@ -14,6 +15,13 @@ export function Layout(props) {
 				<div className={style_L.panel_}>
 					<Router>
 						<Routes>
+							<Route
+								exact
+								path="/"
+								element={
+									<Login clsName={style_L.login}/>
+								}
+							/>
 							<Route
 								exact
 								path="/customer"
