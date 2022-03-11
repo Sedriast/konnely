@@ -4,7 +4,7 @@ import { Data } from "./Data";
 
 export function Customer(props) {
 
-	const d =  'linear-gradient(0deg, rgba(24, 3, 1, 0.75), rgba(24, 3, 1, 0.75)), url(https://drive.google.com/uc?export=download&id=1IL4f26sVM1ODsaNa4fW9rWm-Ueue8iLm)'
+	const d =  'linear-gradient(0deg, rgba(24, 3, 1, 0.75), rgba(24, 3, 1, 0.75)), url(https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW)'
 
 	const back = () => {
 
