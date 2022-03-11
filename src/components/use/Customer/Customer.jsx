@@ -4,9 +4,7 @@ import { Data } from "./Data";
 
 export function Customer(props) {
 
-	const d =  Data.map((items) => {
-		return(items.backgroud6)
-	});
+	const d =  'linear-gradient(0deg, rgba(24, 3, 1, 0.75), rgba(24, 3, 1, 0.75)), url(https://drive.google.com/uc?export=download&id=1IL4f26sVM1ODsaNa4fW9rWm-Ueue8iLm)'
 
 	const back = () => {
 
@@ -22,7 +20,6 @@ export function Customer(props) {
 				<div className={style_C.panel_}>
 					<img className={style_C.preview_} href="" alt="" />
 					<button className={style_C.ch} onClick={back}></button>
-					<button className={style_C.ch} onClick={props.cl2_}></button>
 				</div>
 			</div>
 		</>
