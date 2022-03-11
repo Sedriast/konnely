@@ -50,6 +50,7 @@ export function Inputs(props) {
 						src={preview}
 						style={{ objectFit: "cover" }}
 						onClick={changeImage}
+						alt=""
 					/>
 				) : (
 					<input
