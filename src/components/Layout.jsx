@@ -13,7 +13,7 @@ export function Layout(props) {
 	return (
 		<>
 			<div className={props.clsName}>
-				<div className={style_L.panel_}>
+				<div className={style_L.panel_} id='lay'>
 					<Router>
 						<Routes>
 							<Route
