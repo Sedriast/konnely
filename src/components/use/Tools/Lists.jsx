@@ -1,7 +1,9 @@
 import style_Li from "../../css/Tools/Lists.module.css";
 
 export function Lists(props) {
-	const { handleChanche } = props;
+	const action = (e) => {
+		props.handleChange(e);
+	};
 
 	return (
 		<>
@@ -13,7 +15,7 @@ export function Lists(props) {
 				<select
 					className={style_Li.list_}
 					name={props.name_}
-					onChange={handleChanche}
+					onChange={action}
 				>
 					{props.listar?.map((a) => (
 						<option key={a} value={a}>

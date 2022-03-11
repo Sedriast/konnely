@@ -2,25 +2,21 @@ import style_I from "../../css/Tools/Inputs.module.css";
 import { useRef, useState, useEffect } from "react";
 
 export function Inputs(props) {
-	const init = {};
 	const [image, setImage] = useState();
 	const [preview, setPreview] = useState();
 	const fileInputRef = useRef();
-	//const { handleChange } = props;
-	const [values, setValues] = useState(init);
 
 	const action = (e) => {
 		if (props.type_ === "file") {
 			const file = e.target.files[0];
 			if (file && file.type.substr(0, 5) === "image") {
 				setImage(file);
-				//props.HaveImage(e.target.files[0]);
+				props.HaveImage(file);
 			} else {
 				setImage(null);
 			}
 		} else if ((props.type_ === "date") | (props.type_ === "text")) {
-			const { name, value } = e.target;
-			setValues({ ...values, [name]: value });
+			props.handleChange(e);
 		}
 	};
 
