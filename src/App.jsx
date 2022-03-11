@@ -1,5 +1,5 @@
 import { Layout } from "./components/Layout";
-import style_A from './components/css/App/App.module.css';
+import style_A from "./components/css/App/App.module.css";
 import React from "react";
 
 const bk = "";

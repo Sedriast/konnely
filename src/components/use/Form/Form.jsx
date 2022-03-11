@@ -1,48 +1,49 @@
 import style_F from "../../css/Form/Form.module.css";
-import app from "../../firebase/credentials";
 import { Inputs } from "../Tools/Inputs";
 import { Lists } from "../Tools/Lists";
 import { useState } from "react";
 import { Search } from "../../firebase/funtions/Search";
-
-// const db = getFirestore(app);
-// const storage = getStorage(app);
+import { Add } from "../../firebase/funtions/Add";
 
 export function Form(props) {
 	const init = {};
 	const genero = ["Hembra", "Macho"];
 	const Enjendramiento = ["Monta natural", "Inseminación artificial"];
 	const [values, setValues] = useState(init);
-	// const [stateM, setStateM] = useState(false);
-	// const [stateH, setStateH] = useState(false);
-	// const [image, setImage] = useState();
+	const [image, setImage] = useState();
 
-	// function HaveImage(e) {
-	// 	setImage(e);
-	// }
-
-	const handleChange = (e) => {
+	function handleChange(e) {
 		const { name, value } = e.target;
 		setValues({ ...values, [name]: value });
+	}
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		Add({ ...values, image: image });
 	};
 
-	// const handleSubmit = (e) => {
-	// 	e.preventDefault();
-	// 	addInfo(values);
-	// };
+	function HaveImage(e) {
+		setImage(e);
+	}
 
 	return (
 		<>
 			<div className={props.clsName}>
 				<div className={style_F.panel}>
-					<Inputs clsName={style_F.image1} type_="file" />
+					<Inputs
+						clsName={style_F.image1}
+						type_="file"
+						HaveImage={HaveImage}
+					/>
 					{/**botones */}
 					<div className={style_F.grid}>
 						<Inputs
 							clsName={style_F.data1}
 							leyend="Identificador"
+							name_="ID"
 							placeholder_="Ingrese el identificador"
 							type_="text"
+							handleChange={handleChange}
 						/>
 
 						<Lists
@@ -50,6 +51,16 @@ export function Form(props) {
 							leyend="Genero"
 							name_="genero"
 							listar={genero}
+							handleChange={handleChange}
+						/>
+
+						<Inputs
+							clsName={style_F.data2}
+							leyend="Peso"
+							name_="peso"
+							placeholder_="Ingrese el peso"
+							type_="text"
+							handleChange={handleChange}
 						/>
 
 						<Lists
@@ -57,6 +68,7 @@ export function Form(props) {
 							leyend="Raza"
 							name_="Razas"
 							listar={Search("raza").props.children}
+							handleChange={handleChange}
 						/>
 
 						<Lists
@@ -64,16 +76,41 @@ export function Form(props) {
 							leyend="Enjendramiento"
 							name_="Enjendramiento"
 							listar={Enjendramiento}
+							handleChange={handleChange}
+						/>
+
+						<Lists
+							clsName={style_F.race}
+							leyend="Grupo Asociado"
+							name_="grupo"
+							listar={Search("grupo").props.children}
+							handleChange={handleChange}
 						/>
 
 						<Inputs
 							clsName={style_F.data2}
-							leyend="Peso"
-							placeholder_="Ingrese el peso"
-							type_="text"
+							leyend="Fecha de nacimiento"
+							name_="Fecha de nacimiento"
+							type_="date"
+							handleChange={handleChange}
 						/>
 
-						<Inputs clsName={style_F.data3} type_="text" />
+						<Inputs
+							clsName={style_F.data2}
+							leyend="Fecha de de destete"
+							name_="Fecha de de destete"
+							type_="date"
+							handleChange={handleChange}
+						/>
+
+						<Lists
+							clsName={style_F.race}
+							leyend="Motivo de ingreso"
+							name_="motivo"
+							listar={Search("motivo").props.children}
+							handleChange={handleChange}
+						/>
+						<button onClick={handleSubmit}>Eviar</button>
 					</div>
 				</div>
 			</div>
