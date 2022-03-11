@@ -14,7 +14,7 @@ export function Customer(props) {
 		document.getElementById('root').style.setProperty('background', d);
 		}, 1);
 
-		console.log("\n\n"+d);
+		console.log("\n\n "+d);
 	}
 	return (
 		<>

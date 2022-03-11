@@ -8,7 +8,7 @@ export function App() {
 	return (
 		<>
 			<React.StrictMode>
-				<Layout clsName={style_A.Layout} cl_={bk} cl2_={back}/>
+				<Layout clsName={style_A.Layout} cl_={bk} />
 			</React.StrictMode>
 		</>
 	);
