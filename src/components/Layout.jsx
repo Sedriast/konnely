@@ -27,7 +27,7 @@ export function Layout(props) {
 								exact
 								path="/customer"
 								element={
-									<Customer clsName={style_L.customer} cl_={props.cl_} />
+									<Customer clsName={style_L.customer} cl_={props.cl_} cl2_={props.cl2_} />
 								}
 							/>
 							<Route
@@ -38,7 +38,7 @@ export function Layout(props) {
 											<Form clsName={style_L.form_} />
 										</>}
 							/>
-			<Route
+							<Route
 								exact
 								path="/list"
 								element={<>
