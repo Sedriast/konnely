@@ -132,5 +132,14 @@
 
 		border-radius: 20px;
 	}
+	.users{
+		position: absolute;
+		width: 70%;
+		height: 90%;
+		left: calc(50% - 70%/2);
+		top: calc(50% - 90%/2);
+
+		overflow: hidden;
+	}
 	/*Master*/
 /*Other´s Components */

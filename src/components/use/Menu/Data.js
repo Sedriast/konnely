@@ -4,6 +4,10 @@ export const Data = [
 		path: "/",
 	},
 	{
+		title: "Mi cuenta",
+		path: "/users",
+	},
+	{
 		title: "Personalizar",
 		path: "/customer",
 	},

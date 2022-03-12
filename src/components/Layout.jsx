@@ -7,6 +7,7 @@ import { Form } from "./use/Form/Form";
 import { PanelButtons } from "./use/PanelButons/PanelButtons";
 import { Login } from "./use/Login/Login";
 import { List } from "./use/List/List";
+import { Users } from "./use/Users/Users";
 
 
 export function Layout(props) {
@@ -27,7 +28,20 @@ export function Layout(props) {
 								exact
 								path="/customer"
 								element={
-									<Customer clsName={style_L.customer} cl_={props.cl_} cl2_={props.cl2_} />
+									<Customer clsName={style_L.customer} />
+								}
+							/>
+							<Route
+								exact
+								path="/users"
+								element={
+									<Users 
+											clsName={style_L.users} 
+											src_='https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW'
+											title="Nombre"
+											label="y demas cosas"
+									/>
+											
 								}
 							/>
 							<Route

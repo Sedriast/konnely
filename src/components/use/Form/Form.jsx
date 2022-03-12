@@ -4,6 +4,7 @@ import { Lists } from "../Tools/Lists";
 import { useState } from "react";
 import { Search } from "../../firebase/funtions/Search";
 import { Add } from "../../firebase/funtions/Add";
+import { Buttons } from "../Tools/Buttons";
 
 export function Form(props) {
 	const init = {};
@@ -110,7 +111,11 @@ export function Form(props) {
 							listar={Search("motivo").props.children}
 							handleChange={handleChange}
 						/>
-						<button onClick={handleSubmit}>Eviar</button>
+						<Buttons 
+								clsName={style_F.submit_} 
+								click_={handleSubmit} link_='./list' 
+								icon_='https://drive.google.com/uc?export=download&id=1Du8Dqva3ACRixsy8WnGdnCbQ6CagPq3n' 
+						/>
 					</div>
 				</div>
 			</div>

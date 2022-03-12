@@ -4,7 +4,7 @@ export function Paragraphs(props) {
     
     return(<>
         <div className={props.clsName}>
-            <div className={style_Pa.container_}>
+            <div className={style_Pa.panel_}>
                 <h2 >{props.t1}</h2>
                 <p >{props.b1}</p>
                 <h2 >{props.t2}</h2>
