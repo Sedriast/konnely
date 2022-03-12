@@ -31,9 +31,11 @@
 
 /*Containers*/
 /*Master*/
-img {
+.panel_{
 	width: 100%;
-	height: calc(100% - 25px);
+	height: 100%;
+
+	overflow: hidden;
 }
 /*Master*/
 /*Sub*/
@@ -67,7 +69,7 @@ img {
 	font-size: 30px;
 	color: var(--font-color);
 }
-/* .inp::before {
+/* .inp:before {
 	background-color: rgb(255, 255, 255);
 	color: rgb(0, 0, 0);
 	display: flex;

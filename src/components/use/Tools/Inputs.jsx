@@ -40,7 +40,8 @@ export function Inputs(props) {
 	return (
 		<>
 			<div className={props.clsName}>
-				<h1 className={style_I.label}>{props.leyend}</h1>
+				<div className={style_I.panel_}>
+					<h1 className={style_I.label}>{props.leyend}</h1>
 
 				<div className={style_I.br_} />
 
@@ -63,6 +64,7 @@ export function Inputs(props) {
 						onChange={action}
 					/>
 				)}
+				</div>
 			</div>
 		</>
 	);
