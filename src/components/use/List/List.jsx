@@ -1,5 +1,5 @@
 import  style_Li from '../../css/List/List.module.css'
-import { Cards } from '../Tools/Cards';
+// import { Cards } from '../Tools/Cards';
 import { Inputs } from '../Tools/Inputs';
 
 export function List(props){

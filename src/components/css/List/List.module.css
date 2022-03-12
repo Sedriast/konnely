@@ -92,11 +92,19 @@
 	.searchBar{
 		position: relative;
 		width: 873px;
-		height: 100px;
+		height: 70px;
 		left: calc(50% - 873px/2);
 		top: 14px;
 
+		border-radius: 100px;
 		overflow: hidden;
+	}
+	.searchBar input{
+		position: absolute;
+		
+
+		height: 100%;
+		top: 0;
 	}
 	/*Master*/   
 /*Other´s Components */

@@ -60,8 +60,8 @@
 
 	font-size: var(--font-size);
 	box-sizing: border-box;
-	border-radius: 20px;
 	border: none;
+	border-radius: 20px;
 
 	font-family: Arial;
 }

@@ -1,6 +1,4 @@
 import style_C from "../../css/Customer/Customer.module.css";
-import { Buttons } from "../Tools/Buttons";
-import { Data } from "./Data";
 
 export function Customer(props) {
 
@@ -14,8 +12,6 @@ export function Customer(props) {
 		document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
 		document.getElementById('lay').style.setProperty('background-size', 'cover');
 		}, 1);
-
-		console.log("\n\n "+d);
 	}
 	return (
 		<>
