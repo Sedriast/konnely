@@ -11,4 +11,8 @@ export const Data = [
 		title: "Personalizar",
 		path: "/customer",
 	},
+	{
+		title: "Test",
+		path: "/test",
+	},
 ];
