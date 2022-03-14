@@ -8,15 +8,41 @@ import { PanelButtons } from "./use/PanelButons/PanelButtons";
 import { Login } from "./use/Login/Login";
 import { List } from "./use/List/List";
 import { Users } from "./use/Users/Users";
-
+import { Loading } from "./use/Tools/Loading";
+import { useState } from "react/cjs/react.production.min";
 
 export function Layout(props) {
+
+	//const loading = true;
+ 
+	// const [loading, setLoading] = useState(false);
+
+	// const changeLoa = () => {
+	// 	setLoading(true);
+	// 	setTimeout(()=>{
+	// 		setLoading(false);
+	// 	},5000);
+	// }
+
+	// const ele = () =>	{
+	// 	// if(loading ){
+	// 	// 	<Loading clsName={style_L.loading} />
+	// 	// }else{
+	// 	// 	<button />
+	// 	// }
+	// }
+
 	return (
 		<>
 			<div className={props.clsName}>
 				<div className={style_L.panel_} id='lay'>
 					<Router>
 						<Routes>
+							<Route
+								exact
+								path="/test"
+								element = {<Loading clsName={style_L.loading} />}
+							/>
 							<Route
 								exact
 								path="/"
