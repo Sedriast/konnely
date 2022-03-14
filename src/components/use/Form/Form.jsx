@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Search } from "../../firebase/funtions/Search";
 import { Add } from "../../firebase/funtions/Add";
 import { Buttons } from "../Tools/Buttons";
+import { Dropdown } from "./Dropdown";
 
 export function Form(props) {
 	const init = {};
@@ -12,10 +13,17 @@ export function Form(props) {
 	const Enjendramiento = ["Monta natural", "Inseminación artificial"];
 	const [values, setValues] = useState(init);
 	const [image, setImage] = useState();
+	const [reason, setReason] = useState();
 
 	function handleChange(e) {
-		const { name, value } = e.target;
-		setValues({ ...values, [name]: value });
+		if (e.target.name === "motivo") {
+			setReason(e.target.value);
+			const { name, value } = e.target;
+			setValues({ ...values, [name]: value });
+		} else {
+			const { name, value } = e.target;
+			setValues({ ...values, [name]: value });
+		}
 	}
 
 	const handleSubmit = (e) => {
@@ -36,7 +44,6 @@ export function Form(props) {
 						type_="file"
 						HaveImage={HaveImage}
 					/>
-					{/**botones */}
 					<div className={style_F.grid}>
 						<Inputs
 							clsName={style_F.data1}
@@ -105,16 +112,24 @@ export function Form(props) {
 						/>
 
 						<Lists
-							clsName={style_F.race}
+							clsName={style_F.reason}
 							leyend="Motivo de ingreso"
 							name_="motivo"
 							listar={Search("motivo").props.children}
 							handleChange={handleChange}
 						/>
-						<Buttons 
-								clsName={style_F.submit_} 
-								click_={handleSubmit} link_='./list' 
-								icon_='https://drive.google.com/uc?export=download&id=1Du8Dqva3ACRixsy8WnGdnCbQ6CagPq3n' 
+						{reason && (
+							<Dropdown
+								motivo={reason}
+								handleChange={handleChange}
+							/>
+						)}
+
+						<Buttons
+							clsName={style_F.submit_}
+							click_={handleSubmit}
+							link_="./list"
+							icon_="https://drive.google.com/uc?export=download&id=1Du8Dqva3ACRixsy8WnGdnCbQ6CagPq3n"
 						/>
 					</div>
 				</div>
