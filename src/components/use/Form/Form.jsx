@@ -48,7 +48,7 @@ export function Form(props) {
 						<Inputs
 							clsName={style_F.data1}
 							leyend="Identificador"
-							name_="ID"
+							name_="id"
 							placeholder_="Ingrese el identificador"
 							type_="text"
 							handleChange={handleChange}
@@ -74,7 +74,7 @@ export function Form(props) {
 						<Lists
 							clsName={style_F.race}
 							leyend="Raza"
-							name_="Razas"
+							name_="raza"
 							listar={Search("raza").props.children}
 							handleChange={handleChange}
 						/>
@@ -82,7 +82,7 @@ export function Form(props) {
 						<Lists
 							clsName={style_F.race}
 							leyend="Enjendramiento"
-							name_="Enjendramiento"
+							name_="enjendramiento"
 							listar={Enjendramiento}
 							handleChange={handleChange}
 						/>
@@ -98,15 +98,15 @@ export function Form(props) {
 						<Inputs
 							clsName={style_F.data2}
 							leyend="Fecha de nacimiento"
-							name_="Fecha de nacimiento"
+							name_="nacimiento"
 							type_="date"
 							handleChange={handleChange}
 						/>
 
 						<Inputs
 							clsName={style_F.data2}
-							leyend="Fecha de de destete"
-							name_="Fecha de de destete"
+							leyend="Fecha de destete"
+							name_="destete"
 							type_="date"
 							handleChange={handleChange}
 						/>

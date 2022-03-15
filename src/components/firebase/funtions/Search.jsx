@@ -6,7 +6,17 @@ const db = getFirestore(app);
 
 export const Search = (props) => {
 	const coleccion = props;
-	const [data_, setData_] = useState([{ name: "Loading..." }]);
+	const [data_, setData_] = useState([
+		{
+			datos: {
+				name: "Loading...",
+				url: null,
+				genero: null,
+				raza: null,
+				enjendramiento: null,
+			},
+		},
+	]);
 
 	useEffect(
 		() =>
@@ -18,9 +28,14 @@ export const Search = (props) => {
 
 	return (
 		<>
-			{data_?.map((Object) => {
-				return Object.name;
-			})}
+			{coleccion === "conejos"
+				? data_?.map((Object) => {
+						return Object;
+				  })
+				: coleccion !== "conejos" &&
+				  data_?.map((Object) => {
+						return Object.datos.name;
+				  })}
 		</>
 	);
 };

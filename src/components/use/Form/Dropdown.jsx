@@ -10,15 +10,15 @@ export function Dropdown(props) {
 				<>
 					<Inputs
 						clsName={style_F.data2}
-						leyend="Fecha de de translado"
-						name_="Fecha de de translado"
+						leyend="Fecha de translado"
+						name_="translado"
 						type_="date"
 						handleChange={handleChange}
 					/>
 					<Inputs
 						clsName={style_F.data2}
 						leyend="Origen"
-						name_="Origen"
+						name_="origen"
 						placeholder_="Ingrese el origen"
 						type_="text"
 						handleChange={handleChange}
@@ -30,7 +30,7 @@ export function Dropdown(props) {
 					<Inputs
 						clsName={style_F.data2}
 						leyend="Identificador del padre"
-						name_="IDPadre"
+						name_="idPadre"
 						placeholder_="Ingrese el identificador"
 						type_="text"
 						handleChange={handleChange}
@@ -38,7 +38,7 @@ export function Dropdown(props) {
 					<Inputs
 						clsName={style_F.data2}
 						leyend="Identificador de la madre"
-						name_="IDMadre"
+						name_="idMadre"
 						placeholder_="Ingrese el identificador"
 						type_="text"
 						handleChange={handleChange}
@@ -50,7 +50,7 @@ export function Dropdown(props) {
 					<Inputs
 						clsName={style_F.data2}
 						leyend="Proveedor"
-						name_="Proveedor"
+						name_="proveedor"
 						placeholder_="Ingrese el proveedor"
 						type_="text"
 						handleChange={handleChange}
@@ -58,7 +58,7 @@ export function Dropdown(props) {
 					<Inputs
 						clsName={style_F.data2}
 						leyend="Precio"
-						name_="Precio"
+						name_="precio"
 						placeholder_="Ingrese el precio"
 						type_="text"
 						handleChange={handleChange}

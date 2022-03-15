@@ -1,5 +1,6 @@
 import style_I from "../../css/Tools/Inputs.module.css";
 import { useRef, useState, useEffect } from "react";
+import swal from "sweetalert";
 
 export function Inputs(props) {
 	const [image, setImage] = useState();
@@ -34,7 +35,15 @@ export function Inputs(props) {
 	}, [image]);
 
 	const changeImage = () => {
-		setImage(null);
+		swal({
+			title: "¿Desea eliminar la imagen?",
+			icon: "warning",
+			buttons: ["No", "Si"],
+		}).then((respuesta) => {
+			if (respuesta) {
+				setImage(null);
+			}
+		});
 	};
 
 	return (
@@ -43,27 +52,28 @@ export function Inputs(props) {
 				<div className={style_I.panel_}>
 					<h1 className={style_I.label}>{props.leyend}</h1>
 
-				<div className={style_I.br_} />
+					<div className={style_I.br_} />
 
-				{preview ? (
-					<img
-						className={style_I.inp}
-						src={preview}
-						style={{ objectFit: "cover" }}
-						onClick={changeImage}
-						alt=""
-					/>
-				) : (
-					<input
-						className={style_I.inp}
-						type={props.type_}
-						name={props.name_}
-						ref={fileInputRef}
-						placeholder={props.placeholder_}
-						accept="image/*"
-						onChange={action}
-					/>
-				)}
+					{preview ? (
+						<img
+							className={style_I.inp}
+							src={preview}
+							style={{ objectFit: "cover" }}
+							onClick={changeImage}
+							alt=""
+						/>
+					) : (
+						<input
+							required="True"
+							className={style_I.inp}
+							type={props.type_}
+							name={props.name_}
+							ref={fileInputRef}
+							placeholder={props.placeholder_}
+							accept="image/*"
+							onChange={action}
+						/>
+					)}
 				</div>
 			</div>
 		</>

@@ -7,15 +7,14 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 
 export const Add = (props) => {
-	const addImageAndInfo = async (Objeto) => {
+	const addImageAndInfo = async (datos) => {
 		try {
 			const storageRef = ref(storage, props.image.name);
 			await uploadBytes(storageRef, props.image);
 			const urlDescarga = await getDownloadURL(storageRef);
-			delete Objeto.image;
-			Objeto.url = urlDescarga;
-			console.log(Objeto);
-			await addDoc(collection(db, "conejos"), { Objeto });
+			delete datos.image;
+			datos.url = urlDescarga;
+			await addDoc(collection(db, "conejos"), { datos });
 		} catch (error) {
 			swal({
 				title: "No ha seleccionado una imagen",
