@@ -14,6 +14,7 @@ export const Search = (props) => {
 				genero: null,
 				raza: null,
 				enjendramiento: null,
+				grupo: null,
 			},
 		},
 	]);

@@ -14,10 +14,13 @@ export function List(props) {
 						placeholder_="Buscar"
 					/>
 					<div className={style_Li.grid}>
-						{Search("conejos").props.children.map((a) => (
+						{Search("conejos").props.children.map((a, index) => (
 							<Cards
+								key={index}
+								id_="cGp"
+								cGp="yellow"
 								url={a.datos.url}
-								rabitDataName={a.datos.genero}
+								rabitDataName={a.datos.id}
 								data={a}
 								data1={a.datos.raza}
 								data2={a.datos.enjendramiento}

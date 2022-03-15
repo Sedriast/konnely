@@ -127,12 +127,13 @@
 /*Master*/
 .image1 {
 	position: relative;
-	width: 238px;
-	height: 248px;
+	width: 250px;
+	height: 250px;
 	left: calc(50% - 238px / 2);
 	top: 0px;
-	box-sizing: border-box;
 	border-radius: 100%;
+
+	overflow: hidden;
 }
 .image1 img {
 	position: absolute;
@@ -140,6 +141,20 @@
 
 	width: 100%;
 	height: 100%;
+}
+.image1 input::before{
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	content: "+";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 .data1 {
 	display: block;

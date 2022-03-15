@@ -9,8 +9,12 @@ import { Dropdown } from "./Dropdown";
 
 export function Form(props) {
 	const init = {};
-	const genero = ["Hembra", "Macho"];
-	const Enjendramiento = ["Monta natural", "Inseminación artificial"];
+	const genero = ["Genero", "Hembra", "Macho"];
+	const Enjendramiento = [
+		"Enjendramiento",
+		"Monta natural",
+		"Inseminación artificial",
+	];
 	const [values, setValues] = useState(init);
 	const [image, setImage] = useState();
 	const [reason, setReason] = useState();
@@ -34,6 +38,8 @@ export function Form(props) {
 	function HaveImage(e) {
 		setImage(e);
 	}
+	var lhello = '{l s="hello"}';
+	console.log(lhello);
 
 	return (
 		<>

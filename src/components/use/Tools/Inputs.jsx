@@ -72,6 +72,7 @@ export function Inputs(props) {
 							placeholder={props.placeholder_}
 							accept="image/*"
 							onChange={action}
+							onFocus={props.focus_}
 						/>
 					)}
 				</div>
