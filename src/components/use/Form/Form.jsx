@@ -38,8 +38,6 @@ export function Form(props) {
 	function HaveImage(e) {
 		setImage(e);
 	}
-	var lhello = '{l s="hello"}';
-	console.log(lhello);
 
 	return (
 		<>

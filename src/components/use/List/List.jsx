@@ -18,12 +18,13 @@ export function List(props) {
 							<Cards
 								key={index}
 								id_="cGp"
-								cGp="yellow"
+								cGp={a.datos.grupo}
 								url={a.datos.url}
 								rabitDataName={a.datos.id}
 								data={a}
 								data1={a.datos.raza}
 								data2={a.datos.enjendramiento}
+								index_={index}
 							/>
 						))}
 					</div>
