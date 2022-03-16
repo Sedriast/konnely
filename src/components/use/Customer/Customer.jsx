@@ -4,7 +4,7 @@ import { Data } from "../Customer/Data";
 export function Customer(props) {
 
 	const back = () => {
-
+		console.log("sss");
 	};
 
 	return (
