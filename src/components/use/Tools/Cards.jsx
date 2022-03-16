@@ -4,31 +4,16 @@ import { Paragraphs } from "../Tools/Paragraphs";
 import { useEffect } from "react";
 
 export function Cards(props) {
-	// useEffect(function () {
-	// 	const color =
-	// 		"radial-gradient(100% 223.3% at 0% 50%, " +
-	// 		props.cGp +
-	// 		" 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5)";
+	useEffect(function () {
+		const color =
+			"radial-gradient(100% 223.3% at 0% 50%, " +
+			props.cGp +
+			" 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5)";
 
-	// 	window.setInterval(function () {
-	// 		document
-	// 			.getElementById("cGp")
-	// 			.style.setProperty("background", color);
-	// 	}, 1);
-	// });
-	const color =
-		"radial-gradient(100% 223.3% at 0% 50%, " +
-		props.cGp +
-		" 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5)";
-
-	useEffect(() => {
-		window.setInterval(function () {
 			document
 				.getElementById("cGp")
 				.style.setProperty("background", color);
-			console.log("Hola");
-		});
-	}, [color]);
+	});
 
 	return (
 		<>

@@ -16,6 +16,7 @@ export function List(props) {
 					<div className={style_Li.grid}>
 						{Search("conejos").props.children.map((a, index) => (
 							<Cards
+								clsName={style_Li.card}
 								key={index}
 								id_="cGp"
 								cGp={a.datos.grupo}
