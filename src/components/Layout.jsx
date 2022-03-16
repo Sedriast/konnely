@@ -13,7 +13,8 @@ import { useState } from "react/cjs/react.production.min";
 
 export function Layout(props) {
 
-	//const loading = true;
+	const loa = "linear-gradient(0deg, rgba(24, 3, 1, 0.75), rgba(24, 3, 1, 0.75))," +
+		"url(https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW)";
  
 	// const [loading, setLoading] = useState(false);
 
@@ -83,7 +84,7 @@ export function Layout(props) {
 								path="/list"
 								element={<>
 											<PanelButtons clsName={style_L.panelButtons} />
-											<List clsName={style_L.list}/>
+											<List clsName={style_L.list} st_={loa}/>
 										</>}
 							/>
 						</Routes>
