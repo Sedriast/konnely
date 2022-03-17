@@ -15,6 +15,7 @@ export function Form(props) {
 		"Monta natural",
 		"Inseminación artificial",
 	];
+
 	const [values, setValues] = useState(init);
 	const [image, setImage] = useState();
 	const [reason, setReason] = useState();

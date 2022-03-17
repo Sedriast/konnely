@@ -9,13 +9,9 @@ import { Login } from "./use/Login/Login";
 import { List } from "./use/List/List";
 import { Users } from "./use/Users/Users";
 import { Loading } from "./use/Tools/Loading";
-import { useState } from "react/cjs/react.production.min";
+//import { useState } from "react/cjs/react.production.min";
 
 export function Layout(props) {
-
-	const loa = "linear-gradient(0deg, rgba(24, 3, 1, 0.75), rgba(24, 3, 1, 0.75))," +
-		"url(https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW)";
- 
 	// const [loading, setLoading] = useState(false);
 
 	// const changeLoa = () => {
@@ -26,30 +22,40 @@ export function Layout(props) {
 	// }
 
 	// const ele = () =>	{
-	// 	// if(loading ){
-	// 	// 	<Loading clsName={style_L.loading} />
-	// 	// }else{
-	// 	// 	<button />
-	// 	// }
+	// if(loading ){
+	// 	<Loading clsName={style_L.loading} />
+	// }else{
+	// 	<button />
 	// }
+	// }
+
+	// const [st, setSt] = useState(props.st_);
+
+	// useState(function () {
+	// 	document.getElementById("lay").style.setProperty("background", st);
+	// 	document
+	// 		.getElementById("lay")
+	// 		.style.setProperty("background-repeat", "no-repeat");
+	// 	document
+	// 		.getElementById("lay")
+	// 		.style.setProperty("background-size", "cover");
+	// });
 
 	return (
 		<>
 			<div className={props.clsName}>
-				<div className={style_L.panel_} id='lay'>
+				<div className={style_L.panel_} id="lay">
 					<Router>
 						<Routes>
 							<Route
 								exact
 								path="/test"
-								element = {<Loading clsName={style_L.loading} />}
+								element={<Loading clsName={style_L.loading} />}
 							/>
 							<Route
 								exact
 								path="/"
-								element={
-									<Login clsName={style_L.login}/>
-								}
+								element={<Login clsName={style_L.login} />}
 							/>
 							<Route
 								exact
@@ -62,30 +68,37 @@ export function Layout(props) {
 								exact
 								path="/users"
 								element={
-									<Users 
-											clsName={style_L.users} 
-											src_='https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW'
-											title="Nombre"
-											label="y demas cosas"
+									<Users
+										clsName={style_L.users}
+										src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
+										title="Nombre"
+										label="y demas cosas"
 									/>
-											
 								}
 							/>
 							<Route
 								exact
 								path="/form"
-								element={<>
-											<PanelButtons clsName={style_L.panelButtons} />
-											<Form clsName={style_L.form_} />
-										</>}
+								element={
+									<>
+										<PanelButtons
+											clsName={style_L.panelButtons}
+										/>
+										<Form clsName={style_L.form_} />
+									</>
+								}
 							/>
 							<Route
 								exact
 								path="/list"
-								element={<>
-											<PanelButtons clsName={style_L.panelButtons} />
-											<List clsName={style_L.list} st_={loa}/>
-										</>}
+								element={
+									<>
+										<PanelButtons
+											clsName={style_L.panelButtons}
+										/>
+										<List clsName={style_L.list} />
+									</>
+								}
 							/>
 						</Routes>
 						<Navbar clsName={style_L.menu} />

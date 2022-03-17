@@ -19,152 +19,151 @@
 
 */
 
-
 /*Const*/
 :root {
 	--back-general: white;
 }
 /*Const*/
 
-
 /*Containers*/
-	/*Master*/
-	.panel_{
-		width: 100%;
-		height: 100%;
-	}
-	/*Master*/    
-	/*Sub*/
-	.panelImg_{
-		position: absolute;
-		width: 650px;
-		height: 650px;
-		left: 0;
-		top: calc(50% - 650px/2 );
+/*Master*/
+.panel_ {
+	width: 100%;
+	height: 100%;
+}
+/*Master*/
+/*Sub*/
+.panelImg_ {
+	position: absolute;
+	width: 650px;
+	height: 650px;
+	left: 0;
+	top: calc(50% - 650px / 2);
 
-		background: radial-gradient(75.92% 75.92% at 33.83% 24.08%, rgba(0, 0, 0, 0) 43.79%, rgba(0, 0, 0, 0.25) 53.88%, rgba(0, 0, 0, 0.5) 61.42%, #000000 80.46%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-		border-radius: 100%;
-	}
-	/*Sub*/
-	/*Button´s container*/
+	background: radial-gradient(
+			75.92% 75.92% at 33.83% 24.08%,
+			rgba(0, 0, 0, 0) 43.79%,
+			rgba(0, 0, 0, 0.25) 53.88%,
+			rgba(0, 0, 0, 0.5) 61.42%,
+			#000000 80.46%
+		)
+		/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+	border-radius: 100%;
+}
+/*Sub*/
+/*Button´s container*/
 
-	/*Button´s container*/
-	/*Input´s container*/
+/*Button´s container*/
+/*Input´s container*/
 
-	/*Input´s container*/
-	/*Oters*/
-	.userImg_{
-		background: white;
+/*Input´s container*/
+/*Oters*/
+.userImg_ {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	left: calc(50% - 400px / 2);
+	top: calc(50% - 400px / 2);
 
-		position: absolute;
-		width: 400px;
-		height: 400px;
-		left: calc(50% - 400px/2);
-		top: calc(50% - 400px/2);
+	border-radius: 100%;
 
-		border-radius: 100%;
-
-		z-index: 100;
-	}
-	/*Oters*/
+	z-index: 100;
+}
+/*Oters*/
 /*Containers*/
-
 
 /*Use*/
-	/*Button */
+/*Button */
 
-	/*Button */
-	/*Input */
+/*Button */
+/*Input */
 
-	/*Input */
+/*Input */
 /*Use*/
-
 
 /*Resizing */
 
 /*Resizing */
 
-
 /*Animations*/
 
 /*Animations*/
-
 
 /*Other´s Components*/
-	/*Master*/
-	.para_{
-		position: absolute;
+/*Master*/
+.para_ {
+	position: absolute;
 
-		width: 40%;
-		height: max-content;
-		--H: max-content;
+	width: 40%;
+	height: max-content;
+	--H: max-content;
 
-		right: 0;
-		top: 10%;
+	right: 0;
+	top: 10%;
 
-		-webkit-text-stroke: 0.5px white;
-		font-size: 30px;
-		font-family: Arial;
-	}
-	.op1{
-		position: absolute;
-		width: 100px;
-		height: 100px;
-		right: 38px;
-		top: 274.6px;
+	-webkit-text-stroke: 0.5px white;
+	font-size: 30px;
+	font-family: Arial;
+}
+.op1 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 38px;
+	top: 274.6px;
 
-		background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
-		border: 0.5px solid #FFFFFF;
-		box-sizing: border-box;
-		border-radius: 0px 40px 40px 0px;
-		transform: rotate(0.02deg);
+	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
+	border: 0.5px solid #ffffff;
+	box-sizing: border-box;
+	border-radius: 0px 40px 40px 0px;
+	transform: rotate(0.02deg);
 
-		overflow: hidden;
-	}
-	.op2{
-		position: absolute;
-		width: 100px;
-		height: 100px;
-		right: 70px;
-		top: 395px;
+	overflow: hidden;
+}
+.op2 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 70px;
+	top: 395px;
 
-		background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
-		border: 0.5px solid #FFFFFF;
-		box-sizing: border-box;
-		border-radius: 0px 40px 40px 0px;
-		transform: rotate(30deg);
+	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
+	border: 0.5px solid #ffffff;
+	box-sizing: border-box;
+	border-radius: 0px 40px 40px 0px;
+	transform: rotate(30deg);
 
-		overflow: hidden;
-	}
-	.op3{
-		position: absolute;
-		width: 100px;
-		height: 100px;
-		right: 150px;
-		top: 475px;
+	overflow: hidden;
+}
+.op3 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 150px;
+	top: 475px;
 
-		background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
-		border: 0.5px solid #FFFFFF;
-		box-sizing: border-box;
-		border-radius: 0px 40px 40px 0px;
-		transform: rotate(58deg);
+	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
+	border: 0.5px solid #ffffff;
+	box-sizing: border-box;
+	border-radius: 0px 40px 40px 0px;
+	transform: rotate(58deg);
 
-		overflow: hidden;
-	}
-	.op4{
-		position: absolute;
-		width: 100px;
-		height: 100px;
-		right: 255px;
-		top: 510px;
+	overflow: hidden;
+}
+.op4 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	right: 255px;
+	top: 510px;
 
-		background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
-		border: 0.5px solid #FFFFFF;
-		box-sizing: border-box;
-		border-radius: 0px 40px 40px 0px;
-		transform: rotate(85deg);
+	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
+	border: 0.5px solid #ffffff;
+	box-sizing: border-box;
+	border-radius: 0px 40px 40px 0px;
+	transform: rotate(85deg);
 
-		overflow: hidden;
-	}
-	/*Master*/   
+	overflow: hidden;
+}
+/*Master*/
 /*Other´s Components */

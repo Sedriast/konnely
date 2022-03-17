@@ -2,21 +2,9 @@ import style_Li from "../../css/List/List.module.css";
 import { Cards } from "../Tools/Cards";
 import { Search } from "../../firebase/funtions/Search";
 import { Inputs } from "../Tools/Inputs";
-import { useState } from "react/cjs/react.production.min";
+//import { useState } from "react/cjs/react.production.min";
 
 export function List(props) {
-const [st, setSt] = useState(props.st_);
-
-useState(function () {
-		document.getElementById("lay").style.setProperty("background", st);
-		document
-			.getElementById("lay")
-			.style.setProperty("background-repeat", "no-repeat");
-		document
-			.getElementById("lay")
-			.style.setProperty("background-size", "cover");
-	}
-);
 
 	return (
 		<>
@@ -39,7 +27,6 @@ useState(function () {
 								data={a}
 								data1={a.datos.raza}
 								data2={a.datos.enjendramiento}
-								index_={index}
 							/>
 						))}
 					</div>
