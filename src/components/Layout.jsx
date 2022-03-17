@@ -13,10 +13,7 @@ import { Search } from "./firebase/funtions/Search";
 import { useEffect } from "react";
 
 export function Layout(props) {
-	console.log(Search("usuarios").props.children[0].datos.tema);
-
 	const st = Search("usuarios").props.children[0].datos.tema;
-	console.log(typeof st);
 
 	const s = () => {
 		document.getElementById("lay").style.setProperty("background", st);
@@ -26,7 +23,6 @@ export function Layout(props) {
 		document
 			.getElementById("lay")
 			.style.setProperty("background-size", "cover");
-		console.log(st);
 	};
 
 	return (

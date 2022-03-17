@@ -189,6 +189,8 @@
 	transform: matrix(-1, 0, 0, 1, 0, 0);
 
 	overflow: hidden;
+
+	margin-top: 2rem;
 }
 /*Master*/
 /*Other´s Components */

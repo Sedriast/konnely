@@ -136,6 +136,9 @@
 	margin-left: 80px;
 	color: #ffffff;
 	visibility: hidden;
+
+	font-family: arial;
+	font-weight: 2rem;
 }
 .Panel_:hover .paragraphsPanel {
 	visibility: visible;

@@ -72,7 +72,7 @@
 /*Other´s Components*/
 	/*Master*/
 	.form_	{
-		position: absolute;
+		position: fixed;
 
 		width: 90%;
 		height: 85%;
@@ -134,12 +134,35 @@
 	}
 	.users{
 		position: absolute;
+		
 		width: 70%;
 		height: 90%;
 		left: calc(50% - 70%/2);
 		top: calc(50% - 90%/2);
 
-		overflow: hidden;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.users::-webkit-scrollbar {
+		-webkit-appearance: none;
+	}
+	.users::-webkit-scrollbar:vertical {
+		width: 1px;
+	}
+	.users::-webkit-scrollbar-button:increment,
+	.users::-webkit-scrollbar-button {
+		display: none;
+	}
+	.users::-webkit-scrollbar:horizontal {
+		height: 5px;
+	}
+	.users::-webkit-scrollbar-thumb {
+		background-color: rgba(255, 0, 0, 0.1);
+		border-radius: 20px;
+		border: none;
+	}
+	.users::-webkit-scrollbar-track {
+		border-radius: 10px;
 	}
 	.loading{
 		position: absolute;

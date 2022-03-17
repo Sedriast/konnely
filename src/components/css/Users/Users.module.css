@@ -32,15 +32,22 @@
 	height: 100%;
 
 	display: grid;
+	grid-template-columns: repeat(auto-fill, 500px);
+	grid-template-rows: repeat(auto-fill, 500px);
+	grid-column-gap: 1rem;
+	grid-row-gap: 1rem;
+
+	justify-content: center;
+	align-items: center;
 }
 /*Master*/
 /*Sub*/
 .panelImg_ {
-	position: absolute;
-	width: 650px;
-	height: 650px;
+	position: relative;
+	width: 500px;
+	height: 500px;
 	left: 0;
-	top: calc(50% - 650px / 2);
+	top: calc(50% - 500px / 2);
 
 	background: radial-gradient(
 			75.92% 75.92% at 33.83% 24.08%,
@@ -62,10 +69,10 @@
 /*Oters*/
 .userImg_ {
 	position: absolute;
-	width: 400px;
-	height: 400px;
-	left: calc(50% - 400px / 2);
-	top: calc(50% - 400px / 2);
+	width: 350px;
+	height: 350px;
+	left: calc(50% - 350px / 2);
+	top: calc(50% - 350px / 2);
 
 	border-radius: 100%;
 
@@ -94,25 +101,25 @@
 /*Other´s Components*/
 /*Master*/
 .para_ {
-	position: absolute;
+	position: relative;
 
-	width: 40%;
-	height: max-content;
+	width: 500px;
+	height: 500px;
 	--H: max-content;
 
 	right: 0;
 	top: 10%;
 
-	-webkit-text-stroke: 0.5px white;
-	font-size: 30px;
+	-webkit-text-stroke: 0.1rem  white;
+	font-size: 3rem;
 	font-family: Arial;
 }
 .op1 {
 	position: absolute;
-	width: 100px;
-	height: 100px;
-	right: 38px;
-	top: 274.6px;
+	width: 80px;
+	height: 80px;
+	right: 5px;
+	top: 220px;
 
 	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
 	border: 0.5px solid #ffffff;
@@ -124,10 +131,10 @@
 }
 .op2 {
 	position: absolute;
-	width: 100px;
-	height: 100px;
-	right: 70px;
-	top: 395px;
+	width: 80px;
+	height: 80px;
+	right: 30px;
+	top: 315px;
 
 	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
 	border: 0.5px solid #ffffff;
@@ -139,10 +146,10 @@
 }
 .op3 {
 	position: absolute;
-	width: 100px;
-	height: 100px;
-	right: 150px;
-	top: 475px;
+	width: 80px;
+	height: 80px;
+	right: 100px;
+	top: 380px;
 
 	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
 	border: 0.5px solid #ffffff;
@@ -154,10 +161,10 @@
 }
 .op4 {
 	position: absolute;
-	width: 100px;
-	height: 100px;
-	right: 255px;
-	top: 510px;
+	width: 80px;
+	height: 80px;
+	right: 188px;
+	top: 410px;
 
 	background: linear-gradient(270deg, #404728 0%, rgba(0, 0, 0, 0) 100%);
 	border: 0.5px solid #ffffff;
