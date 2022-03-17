@@ -36,17 +36,13 @@ export function Layout(props) {
 		}, 3000);
 	}
 
-	if(init){
-		return(
-			<>
-				<Loading />
-			</>
-		)
-	}else{
-		return (
-			<>
-				<div className={props.clsName}>
-					<div className={style_L.panel_} id="lay" onLoad={s}>
+	return (
+		<>
+			<div className={props.clsName} >
+				<div className={style_L.panel_} id="lay" onLoad={s}>
+					{init ? (
+						<Loading clsName={style_L.loading} />
+					) : (
 						<Router>
 							<Routes>
 								<Route
@@ -108,9 +104,9 @@ export function Layout(props) {
 							</Routes>
 							<Navbar clsName={style_L.menu} />
 						</Router>
-					</div>
+					)}
 				</div>
-			</>
-		);
-	}
+			</div>
+		</>
+	);
 }
