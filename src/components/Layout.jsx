@@ -12,9 +12,7 @@ import { Loading } from "./use/Tools/Loading";
 import { Search } from "./firebase/funtions/Search";
 import { useState } from "react";
 
-
 export function Layout(props) {
-
 	const [init, setInit] = useState(false);
 
 	const st = Search("usuarios").props.children[0].datos.tema;
@@ -29,16 +27,16 @@ export function Layout(props) {
 			.style.setProperty("background-size", "cover");
 	};
 
-	const changeLoad=()=>{
+	const changeLoad = () => {
 		setInit(true);
-		setTimeout(()=>{
+		setTimeout(() => {
 			setInit(false);
 		}, 3000);
-	}
+	};
 
 	return (
 		<>
-			<div className={props.clsName} >
+			<div className={props.clsName}>
 				<div className={style_L.panel_} id="lay" onLoad={s}>
 					{init ? (
 						<Loading clsName={style_L.loading} />
@@ -48,8 +46,12 @@ export function Layout(props) {
 								<Route
 									exact
 									path="/test"
-									element={<Loading clsName={style_L.loading} 
-										src_="https://drive.google.com/uc?export=download&id=13Y8ati6Sodd1r7tzlPawB2C1aH8xUCPZ"/>}
+									element={
+										<Loading
+											clsName={style_L.loading}
+											src_="https://drive.google.com/uc?export=download&id=13Y8ati6Sodd1r7tzlPawB2C1aH8xUCPZ"
+										/>
+									}
 								/>
 								<Route
 									exact
@@ -70,8 +72,11 @@ export function Layout(props) {
 										<Users
 											clsName={style_L.users}
 											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-											title="Nombre"
-											label="y demas cosas"
+											title={
+												Search("usuarios").props
+													.children[0].datos.usuario
+											}
+											label="Adminitrador"
 										/>
 									}
 								/>

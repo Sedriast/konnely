@@ -31,7 +31,7 @@ export function Cards(props) {
 							b1={props.data1}
 							b2={props.data2}
 							t1="Raza"
-							t2="Estado"
+							t2="Genero"
 						/>
 					</div>
 				</Link>

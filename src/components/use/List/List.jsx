@@ -5,7 +5,6 @@ import { Inputs } from "../Tools/Inputs";
 //import { useState } from "react/cjs/react.production.min";
 
 export function List(props) {
-
 	return (
 		<>
 			<div className={props.clsName}>
@@ -26,7 +25,7 @@ export function List(props) {
 								rabitDataName={a.datos.id}
 								data={a}
 								data1={a.datos.raza}
-								data2={a.datos.enjendramiento}
+								data2={a.datos.genero}
 							/>
 						))}
 					</div>
