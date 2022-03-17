@@ -33,6 +33,7 @@ export function Form(props) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		console.log("datasubmit!")
 		Add({ ...values, image: image });
 	};
 

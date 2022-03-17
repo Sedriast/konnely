@@ -9,7 +9,7 @@ export function Buttons (props){
 				<div className={style_B.panel_}>
 					<button onClick={props.click_} onChange={props.change_} name={props.name_} >
 						<Link to={props.link_}>
-							<img src={props.icon_} href='' alt='' />
+							<img src={props.icon_} onClick={props.cliLoa_} href='' alt='' />
 						</Link>
 					</button>
 				</div>

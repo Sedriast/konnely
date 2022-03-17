@@ -10,9 +10,13 @@ import { List } from "./use/List/List";
 import { Users } from "./use/Users/Users";
 import { Loading } from "./use/Tools/Loading";
 import { Search } from "./firebase/funtions/Search";
-import { useEffect } from "react";
+import { useState } from "react";
+
 
 export function Layout(props) {
+
+	const [init, setInit] = useState(false);
+
 	const st = Search("usuarios").props.children[0].datos.tema;
 
 	const s = () => {
@@ -25,70 +29,88 @@ export function Layout(props) {
 			.style.setProperty("background-size", "cover");
 	};
 
-	return (
-		<>
-			<div className={props.clsName}>
-				<div className={style_L.panel_} id="lay" onLoad={s}>
-					<Router>
-						<Routes>
-							<Route
-								exact
-								path="/test"
-								element={<Loading clsName={style_L.loading} />}
-							/>
-							<Route
-								exact
-								path="/"
-								element={<Login clsName={style_L.login} />}
-							/>
-							<Route
-								exact
-								path="/customer"
-								element={
-									<Customer clsName={style_L.customer} />
-								}
-							/>
-							<Route
-								exact
-								path="/users"
-								element={
-									<Users
-										clsName={style_L.users}
-										src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-										title="Nombre"
-										label="y demas cosas"
-									/>
-								}
-							/>
-							<Route
-								exact
-								path="/form"
-								element={
-									<>
-										<PanelButtons
-											clsName={style_L.panelButtons}
+	const changeLoad=()=>{
+		setInit(true);
+		setTimeout(()=>{
+			setInit(false);
+		}, 3000);
+	}
+
+	if(init){
+		return(
+			<>
+				<Loading />
+			</>
+		)
+	}else{
+		return (
+			<>
+				<div className={props.clsName}>
+					<div className={style_L.panel_} id="lay" onLoad={s}>
+						<Router>
+							<Routes>
+								<Route
+									exact
+									path="/test"
+									element={<Loading clsName={style_L.loading} 
+										src_="https://drive.google.com/uc?export=download&id=13Y8ati6Sodd1r7tzlPawB2C1aH8xUCPZ"/>}
+								/>
+								<Route
+									exact
+									path="/"
+									element={<Login clsName={style_L.login} />}
+								/>
+								<Route
+									exact
+									path="/customer"
+									element={
+										<Customer clsName={style_L.customer} />
+									}
+								/>
+								<Route
+									exact
+									path="/users"
+									element={
+										<Users
+											clsName={style_L.users}
+											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
+											title="Nombre"
+											label="y demas cosas"
 										/>
-										<Form clsName={style_L.form_} />
-									</>
-								}
-							/>
-							<Route
-								exact
-								path="/list"
-								element={
-									<>
-										<PanelButtons
-											clsName={style_L.panelButtons}
-										/>
-										<List clsName={style_L.list} />
-									</>
-								}
-							/>
-						</Routes>
-						<Navbar clsName={style_L.menu} />
-					</Router>
+									}
+								/>
+								<Route
+									exact
+									path="/form"
+									element={
+										<>
+											<PanelButtons
+												clsName={style_L.panelButtons}
+												loading_={changeLoad}
+											/>
+											<Form clsName={style_L.form_} />
+										</>
+									}
+								/>
+								<Route
+									exact
+									path="/list"
+									element={
+										<>
+											<PanelButtons
+												clsName={style_L.panelButtons}
+												loading_={changeLoad}
+											/>
+											<List clsName={style_L.list} />
+										</>
+									}
+								/>
+							</Routes>
+							<Navbar clsName={style_L.menu} />
+						</Router>
+					</div>
 				</div>
-			</div>
-		</>
-	);
+			</>
+		);
+	}
 }

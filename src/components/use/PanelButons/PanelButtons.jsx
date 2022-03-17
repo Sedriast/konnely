@@ -6,12 +6,12 @@ export function PanelButtons(props){
 		<>
 			<div className={props.clsName}>
 				<div className={style_PB.panel_}>
-					<Buttons clsName={style_PB.op1} link_='/form'/>
-					<Buttons clsName={style_PB.op2} link_='/list'/>
-					<Buttons clsName={style_PB.op3} link_='/'/>
-					<Buttons clsName={style_PB.op4} link_='/'/>
-					<Buttons clsName={style_PB.op5} link_='/'/>
-					<Buttons clsName={style_PB.op6} link_='/'/>
+					<Buttons clsName={style_PB.op1} link_='/form' cliLoa_={props.loading_}/>
+					<Buttons clsName={style_PB.op2} link_='/list' cliLoa_={props.loading_}/>
+					<Buttons clsName={style_PB.op3} link_='/' cliLoa_={props.loading_}/>
+					<Buttons clsName={style_PB.op4} link_='/' cliLoa_={props.loading_}/>
+					<Buttons clsName={style_PB.op5} link_='/' cliLoa_={props.loading_}/>
+					<Buttons clsName={style_PB.op6} link_='/' cliLoa_={props.loading_}/>
 				</div>
 			</div>
 		</>
