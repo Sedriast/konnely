@@ -9,42 +9,30 @@ import { Login } from "./use/Login/Login";
 import { List } from "./use/List/List";
 import { Users } from "./use/Users/Users";
 import { Loading } from "./use/Tools/Loading";
-//import { useState } from "react/cjs/react.production.min";
+import { Search } from "./firebase/funtions/Search";
+import { useEffect } from "react";
 
 export function Layout(props) {
-	// const [loading, setLoading] = useState(false);
+	console.log(Search("usuarios").props.children[0].datos.tema);
 
-	// const changeLoa = () => {
-	// 	setLoading(true);
-	// 	setTimeout(()=>{
-	// 		setLoading(false);
-	// 	},5000);
-	// }
+	const st = Search("usuarios").props.children[0].datos.tema;
+	console.log(typeof st);
 
-	// const ele = () =>	{
-	// if(loading ){
-	// 	<Loading clsName={style_L.loading} />
-	// }else{
-	// 	<button />
-	// }
-	// }
-
-	// const [st, setSt] = useState(props.st_);
-
-	// useState(function () {
-	// 	document.getElementById("lay").style.setProperty("background", st);
-	// 	document
-	// 		.getElementById("lay")
-	// 		.style.setProperty("background-repeat", "no-repeat");
-	// 	document
-	// 		.getElementById("lay")
-	// 		.style.setProperty("background-size", "cover");
-	// });
+	const s = () => {
+		document.getElementById("lay").style.setProperty("background", st);
+		document
+			.getElementById("lay")
+			.style.setProperty("background-repeat", "no-repeat");
+		document
+			.getElementById("lay")
+			.style.setProperty("background-size", "cover");
+		console.log(st);
+	};
 
 	return (
 		<>
 			<div className={props.clsName}>
-				<div className={style_L.panel_} id="lay">
+				<div className={style_L.panel_} id="lay" onLoad={s}>
 					<Router>
 						<Routes>
 							<Route

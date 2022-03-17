@@ -9,28 +9,8 @@ export function Cards(props) {
 			"radial-gradient(100% 223.3% at 0% 50%, " +
 			props.cGp +
 			" 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5)";
-		document.getElementById("cGp").style.setProperty("background", color);
+		document.getElementById(props.id_).style.setProperty("background", color);
 	});
-
-	// 	window.setInterval(function () {
-	// 		document
-	// 			.getElementById("cGp")
-	// 			.style.setProperty("background", color);
-	// 	}, 1);
-	// });
-	// const color =
-	// 	"radial-gradient(100% 223.3% at 0% 50%, " +
-	// 	props.cGp +
-	// 	" 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5)";
-
-	// useEffect(() => {
-	// 	window.setInterval(function () {
-	// 		document
-	// 			.getElementById("cGp")
-	// 			.style.setProperty("background", color);
-	// 		console.log("Hola");
-	// 	});
-	// }, [color]);
 
 	return (
 		<>

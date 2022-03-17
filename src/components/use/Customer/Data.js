@@ -4,47 +4,41 @@ export const Data = [
 		miniature:
 			"https://drive.google.com/uc?export=download&id=1TfQRti17n6dtBIE0Jifb9L-88BFRFsjO",
 		backgroud:
-			"linear-gradient(0deg, rgba(236, 224, 216, 0.8), url(https://drive.google.com/uc?export=download&id=1dC7tZBGOslUHWndLEmaWtu0MHsAocwkj)",
-		link: "https://drive.google.com/uc?export=download&id=1dC7tZBGOslUHWndLEmaWtu0MHsAocwkj",
+			"url(https://drive.google.com/uc?export=download&id=1p-s71I4bnyv5Gid9Iv6VzL6QEi-0iqba)",
 	},
 	{
 		name: "darpa",
 		miniature:
 			"https://drive.google.com/uc?export=download&id=171YQUEx7BERY3MqrCQhk2mpR_Qwp7DLL",
 		backgroud:
-			"linear-gradient(0deg, rgba(255, 234, 187, 0.8), url(https://drive.google.com/uc?export=download&id=1BXjMdK64VcUKxrZXDuhKDXR22tv9LX86)",
-		link: "https://drive.google.com/uc?export=download&id=1BXjMdK64VcUKxrZXDuhKDXR22tv9LX86",
+			"url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)",
 	},
 	{
 		name: "wine",
 		miniature:
 			"https://drive.google.com/uc?export=download&id=1lJhUinD1j3LSRRLtbXYR5V5k0Mz6dXnO",
 		backgroud:
-			"linear-gradient(0deg, rgba(139, 179, 123, 0.8), url(https://drive.google.com/uc?export=download&id=1dj81TSQtKY5rIy1UIVJMVpVqwQzE2r9Y)",
-		link: "https://drive.google.com/uc?export=download&id=1dj81TSQtKY5rIy1UIVJMVpVqwQzE2r9Y",
+			"url(https://drive.google.com/uc?export=download&id=1IUHu6CRZWVMQAolKFL8X-qqtdkJUc8je)",
 	},
 	{
 		name: "Broke",
 		miniature:
 			"https://drive.google.com/uc?export=download&id=1vAb2vSBiGQlzc_FQMFYGW0N0jbabRKw2",
 		backgroud:
-			"linear-gradient(0deg, rgba(120, 113, 0, 0.8), url(https://drive.google.com/uc?export=download&id=1xaaj8l1atqBpZDW3cHYqkLpgRugVVvjl)",
-		link: "https://drive.google.com/uc?export=download&id=1xaaj8l1atqBpZDW3cHYqkLpgRugVVvjl",
+			"url(https://drive.google.com/uc?export=download&id=1XoiOIa2O2gJXpzy9wKGMvBdgMWZYJ6k2)",
 	},
 	{
 		name: "line",
 		miniature:
 			"https://drive.google.com/uc?export=download&id=1udAanIgzMRTlXu3V7YNtTAP0X7L5hG59",
 		backgroud:
-			"linear-gradient(0deg, rgba(13, 38, 6, 0.8), url(https://drive.google.com/uc?export=download&id=1Vnxr7z3KQ0H3PaLXTKT1HM4TSsUhwrzJ)",
-		link: "https://drive.google.com/uc?export=download&id=1Vnxr7z3KQ0H3PaLXTKT1HM4TSsUhwrzJ",
+			"url(https://drive.google.com/uc?export=download&id=1KngiqrQ-IA8sekHOcDq_0FZ7ne4W-SeR)",
 	},
 	{
 		name: "caryBlack",
 		miniature:
 			"https://drive.google.com/uc?export=download&id=11aszYhyH-Hq0-mq1QIo-t9cLYCl88TnE",
 		backgroud:
-			"alguein mateme!!!!!!!",
-		link: "https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW",
+			"url(https://drive.google.com/uc?export=download&id=1uD5Xb_2enNKu4rzR3FXhq-IePyMGlQ4H)",
 	},
 ];

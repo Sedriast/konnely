@@ -15,6 +15,7 @@ export const Search = (props) => {
 				raza: null,
 				enjendramiento: null,
 				grupo: null,
+				tema: null,
 			},
 		},
 	]);
@@ -29,7 +30,7 @@ export const Search = (props) => {
 
 	return (
 		<>
-			{coleccion === "conejos"
+			{(coleccion === "conejos") | (coleccion === "usuarios")
 				? data_?.map((Object) => {
 						return Object;
 				  })

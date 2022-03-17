@@ -37,6 +37,10 @@
 
 	overflow: hidden;
 }
+input[type=date]:required:invalid::-webkit-datetime-edit {
+    color: var(--font-color);
+	font-size: 40px;
+}
 /*Master*/
 /*Sub*/
 .label {

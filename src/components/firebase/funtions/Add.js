@@ -24,22 +24,16 @@ export const Add = (props) => {
 		}
 	};
 
-	// const addCustomer = async (datos) => {
-	// 	try {
-	// 		const storageRef = ref(storage, "images/" + props.image.name);
-	// 		await uploadBytes(storageRef, props.image);
-	// 		const urlDescarga = await getDownloadURL(storageRef);
-	// 		delete datos.image;
-	// 		datos.url = urlDescarga;
-	// 		await addDoc(collection(db, "conejos"), { datos });
-	// 	} catch (error) {
-	// 		swal({
-	// 			title: "No ha seleccionado una imagen",
-	// 			icon: "error",
-	// 			button: "aceptar",
-	// 		});
-	// 	}
-	// };
-
 	addImageAndInfo(props);
+};
+
+export const addCustomer = (props) => {
+	const addCustomer = async (datos) => {
+		try {
+			await addDoc(collection(db, "usuarios"), { datos });
+		} catch (error) {
+			console.log(error);
+		}
+	};
+	addCustomer(props);
 };
