@@ -10,10 +10,10 @@ import { List } from "./use/List/List";
 import { Users } from "./use/Users/Users";
 import { Loading } from "./use/Tools/Loading";
 import { Search } from "./firebase/funtions/Search";
-import { useState } from "react";
+import g from "./css/Tools/lo.gif";
 
 export function Layout(props) {
-	const [init, setInit] = useState(false);
+	var init = false;
 
 	const st = Search("usuarios").props.children[0].datos.tema;
 
@@ -28,9 +28,9 @@ export function Layout(props) {
 	};
 
 	const changeLoad = () => {
-		setInit(true);
+		init = true;
 		setTimeout(() => {
-			setInit(false);
+			init = false;
 		}, 3000);
 	};
 
@@ -39,7 +39,9 @@ export function Layout(props) {
 			<div className={props.clsName}>
 				<div className={style_L.panel_} id="lay" onLoad={s}>
 					{init ? (
-						<Loading clsName={style_L.loading} />
+						<>
+							<Loading clsName={style_L.loading} src_={g} />
+						</>
 					) : (
 						<Router>
 							<Routes>
@@ -49,7 +51,7 @@ export function Layout(props) {
 									element={
 										<Loading
 											clsName={style_L.loading}
-											src_="https://drive.google.com/uc?export=download&id=13Y8ati6Sodd1r7tzlPawB2C1aH8xUCPZ"
+											src_={g}
 										/>
 									}
 								/>
