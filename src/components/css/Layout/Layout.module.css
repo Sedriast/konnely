@@ -120,7 +120,7 @@
 		overflow: hidden;
 	}
 	.list{
-		position: absolute;
+		position: fixed;
 
 		width: 80%;
 		height: 85%;

@@ -76,7 +76,6 @@
 	font-family: Arial;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 20px;
 
 	color: #ffffff;
 }
@@ -135,12 +134,12 @@
 	width: 70%;
 	height: 100%;
 	margin-left: 80px;
-	font-size: 1rem;
 	color: #ffffff;
 	visibility: hidden;
 }
 .Panel_:hover .paragraphsPanel {
 	visibility: visible;
+	
 }
 /*Master*/
 /*Other´s Components */
