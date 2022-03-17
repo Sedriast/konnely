@@ -133,7 +133,7 @@ export function Form(props) {
 						<Buttons
 							clsName={style_F.submit_}
 							click_={handleSubmit}
-							link_="./list"
+							link_="/list"
 							icon_="https://drive.google.com/uc?export=download&id=1Du8Dqva3ACRixsy8WnGdnCbQ6CagPq3n"
 						/>
 					</div>

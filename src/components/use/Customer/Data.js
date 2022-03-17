@@ -44,7 +44,7 @@ export const Data = [
 		miniature:
 			"https://drive.google.com/uc?export=download&id=11aszYhyH-Hq0-mq1QIo-t9cLYCl88TnE",
 		backgroud:
-			"linear-gradient(0deg,  rgba(24, 3, 1, 0.8), url(https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW)",
+			"alguein mateme!!!!!!!",
 		link: "https://drive.google.com/uc?export=download&id=1rmZYMQhdaMSTkGVcgD2JCKvo5ZD24QGW",
 	},
 ];
