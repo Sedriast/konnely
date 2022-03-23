@@ -10,10 +10,17 @@ import { List } from "./use/List/List";
 import { Users } from "./use/Users/Users";
 import { Loading } from "./use/Tools/Loading";
 import { Search } from "./firebase/funtions/Search";
+<<<<<<< HEAD
 import { useState } from "react";
 
 export function Layout(props) {
 	const [init, setInit] = useState(false);
+=======
+import g from "./css/Tools/lo.gif";
+
+export function Layout(props) {
+	var init = false;
+>>>>>>> 4b723e4e6e137822e40fa6cb1b7531c817bb28a6
 
 	const st = Search("usuarios").props.children[0].datos.theme;
 
@@ -35,13 +42,30 @@ export function Layout(props) {
 			<div className={props.clsName}>
 				<div className={style_L.panel_} id="lay" onLoad={s}>
 					{init ? (
-						<Loading clsName={style_L.loading} />
+						<>
+							<Loading clsName={style_L.loading} src_={g} />
+						</>
 					) : (
 						<Router>
 							<Routes>
 								<Route
 									exact
 									path="/test"
+									element={
+										<Loading
+											clsName={style_L.loading}
+											src_={g}
+										/>
+									}
+								/>
+								<Route
+									exact
+									path="/"
+									element={<Login clsName={style_L.login} />}
+								/>
+								<Route
+									exact
+									path="/customer"
 									element={
 										<Loading
 											clsName={style_L.loading}
@@ -58,8 +82,11 @@ export function Layout(props) {
 										<Users
 											clsName={style_L.users}
 											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-											title="Nombre"
-											label="y demas cosas"
+											title={
+												Search("usuarios").props
+													.children[0].datos.usuario
+											}
+											label="Adminitrador"
 										/>
 									}
 								/>
