@@ -1,5 +1,5 @@
 import app from "../credentials";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import { getFirestore, collection, addDoc, doc, setDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import swal from "sweetalert";
 
@@ -30,9 +30,13 @@ export const Add = (props) => {
 export const addCustomer = (props) => {
 	const addCustomer = async (datos) => {
 		try {
-			await addDoc(collection(db, "usuarios"), { datos });
+			await setDoc(doc(db, "Users", "Camila"), { datos });
 		} catch (error) {
-			console.log(error);
+			swal({
+				title: "Err",
+				icon: error,
+				button: "aceptar",
+			});
 		}
 	};
 	addCustomer(props);
