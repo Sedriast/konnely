@@ -30,7 +30,7 @@ export const Search = (props) => {
 
 	return (
 		<>
-			{(coleccion === "conejos") | (coleccion === "usuarios")
+			{(coleccion === "conejos") | (coleccion === "Users")
 				? data_?.map((Object) => {
 						return Object;
 				  })
