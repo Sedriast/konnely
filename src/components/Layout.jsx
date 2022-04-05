@@ -58,8 +58,18 @@ export function Layout(props) {
 										/>
 									}
 								/>
-								<Route exact path="/" element={<Login clsName={style_L.login} />} />
-								<Route exact path="/customer" element={<Customer clsName={style_L.customer} />} />
+								<Route
+									exact
+									path="/"
+									element={<Login clsName={style_L.login} />}
+								/>
+								<Route
+									exact
+									path="/customer"
+									element={
+										<Customer clsName={style_L.customer} />
+									}
+								/>
 								<Route
 									exact
 									path="/users"
@@ -67,7 +77,11 @@ export function Layout(props) {
 										<Users
 											clsName={style_L.users}
 											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
+<<<<<<< HEAD
 											title={Search('usuarios').props.children[0].datos.usuario}
+=======
+											title={""}
+>>>>>>> b8ce07508fb3320f1236fde1cc6859302472d599
 											label="Adminitrador"
 										/>
 									}
@@ -77,7 +91,10 @@ export function Layout(props) {
 									path="/form"
 									element={
 										<>
-											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
+											<PanelButtons
+												clsName={style_L.panelButtons}
+												loading_={changeLoad}
+											/>
 											<Form clsName={style_L.form_} />
 										</>
 									}
@@ -87,7 +104,10 @@ export function Layout(props) {
 									path="/list"
 									element={
 										<>
-											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
+											<PanelButtons
+												clsName={style_L.panelButtons}
+												loading_={changeLoad}
+											/>
 											<List clsName={style_L.list} />
 										</>
 									}
