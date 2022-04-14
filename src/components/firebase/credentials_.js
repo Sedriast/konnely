@@ -4,15 +4,15 @@ import { getAnalytics } from 'firebase/analytics';
 import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyDRszcLA2kI7vIDenGH-PZwHId2h4Y0Ol4',
-	authDomain: 'saos-72762.firebaseapp.com',
-	projectId: 'saos-72762',
-	storageBucket: 'saos-72762.appspot.com',
-	messagingSenderId: '13873951269',
-	appId: '1:13873951269:web:84f7094a3f8a82035945cc',
-	measurementId: 'G-2GK6CR9MMC',
+	apiKey: 'AIzaSyDaXr88lIYVyNuoXFRPitCBAWh0JwwRaxI',
+	authDomain: 'konnely-67d6a.firebaseapp.com',
+	projectId: 'konnely-67d6a',
+	storageBucket: 'konnely-67d6a.appspot.com',
+	messagingSenderId: '168142494376',
+	appId: '1:168142494376:web:dc32f5d9ffede5afa4009d',
 };
 
+// Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
