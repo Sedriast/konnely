@@ -1,27 +1,31 @@
-import style_L from '../components/css/Layout/Layout.module.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import style_L from "../components/css/Layout/Layout.module.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { Navbar } from './use/Menu/Navbar';
-import { Customer } from './use/Customer/Customer';
-import { Form } from './use/Form/Form';
-import { PanelButtons } from './use/PanelButons/PanelButtons';
-import { Login } from './use/Login/Login';
-import { List } from './use/List/List';
-import { Users } from './use/Users/Users';
-import { Loading } from './use/Tools/Loading';
-import { Search } from './firebase/funtions/Search';
-import { useState } from 'react';
-import g from './css/load.png';
+import { Navbar } from "./use/Menu/Navbar";
+import { Customer } from "./use/Customer/Customer";
+import { Form } from "./use/Form/Form";
+import { PanelButtons } from "./use/PanelButons/PanelButtons";
+import { Login } from "./use/Login/Login";
+import { List } from "./use/List/List";
+import { Users } from "./use/Users/Users";
+import { Loading } from "./use/Tools/Loading";
+import { Search } from "./firebase/funtions/Search";
+import { useState } from "react";
+import g from "./css/load.png";
 
 export function Layout(props) {
 	const [init, setInit] = useState(false);
 
-	const st = Search('usuarios').props.children[0].datos.theme;
+	var st = Search("usuarios").props.children[0].datos.tema;
 
 	const s = () => {
-		document.getElementById('lay').style.setProperty('background', st);
-		document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
-		document.getElementById('lay').style.setProperty('background-size', 'cover');
+		document.getElementById("lay").style.setProperty("background", st);
+		document
+			.getElementById("lay")
+			.style.setProperty("background-repeat", "no-repeat");
+		document
+			.getElementById("lay")
+			.style.setProperty("background-size", "cover");
 	};
 
 	const changeLoad = () => {
@@ -45,9 +49,18 @@ export function Layout(props) {
 								<Route
 									exact
 									path="/test"
-									element={<Loading clsName={style_L.loading} src_={g} />}
+									element={
+										<Loading
+											clsName={style_L.loading}
+											src_={g}
+										/>
+									}
 								/>
-								<Route exact path="/" element={<Login clsName={style_L.login} />} />
+								<Route
+									exact
+									path="/"
+									element={<Login clsName={style_L.login} />}
+								/>
 								<Route
 									exact
 									path="/customer"
@@ -77,11 +90,10 @@ export function Layout(props) {
 										<Users
 											clsName={style_L.users}
 											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-<<<<<<< HEAD
-											title={Search('usuarios').props.children[0].datos.usuario}
-=======
-											title={""}
->>>>>>> b8ce07508fb3320f1236fde1cc6859302472d599
+											title={
+												Search("usuarios").props
+													.children[0].datos.usuario
+											}
 											label="Adminitrador"
 										/>
 									}
