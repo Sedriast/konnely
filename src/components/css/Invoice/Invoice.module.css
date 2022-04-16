@@ -93,10 +93,20 @@
 /*Master*/
 .paragraphs {
 	position: absolute;
+	display: flex;
 	width: 853px;
 	height: 100px;
 	left: 20%;
 	top: 8%;
+}
+.paragraphs h2 {
+	position: absolute;
+	left: 0;
+	margin: 0;
+}
+.paragraphs p {
+	display: flex;
+	justify-content: flex-end;
 }
 /*Master*/
 /*Other´s Components */

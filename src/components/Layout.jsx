@@ -90,7 +90,14 @@ export function Layout(props) {
 									element={
 										<>
 											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
-											<Invoice clsName={style_L.invoice} />
+											<Invoice
+												clsName={style_L.invoice}
+												name="sadfadf"
+												nit="safasdfa"
+												email="sadfads@asdfasdfaf.com"
+												date="asdfasdf"
+												userID="asdfassdfad"
+											/>
 										</>
 									}
 								/>

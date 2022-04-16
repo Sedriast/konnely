@@ -10,10 +10,10 @@ export function Invoice(props) {
 					<Paragraphs
 						clsName={stInvoice.paragraphs}
 						t1={props.name}
-						h1={props.nit}
-						h2={props.email}
+						b1={props.nit}
+						b2={props.email}
 						t2={props.date}
-						h3={props.userID}
+						b3={props.userID}
 					/>
 					<div className={stInvoice.lines}>
 						{/* {Search('conejos').props.children.map((a, index) => (
