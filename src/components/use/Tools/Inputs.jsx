@@ -16,7 +16,7 @@ export function Inputs(props) {
 			} else {
 				setImage(null);
 			}
-		} else if ((props.type_ === "date") | (props.type_ === "text")) {
+		} else if (props.type_ !== "image") {
 			props.handleChange(e);
 		}
 	};

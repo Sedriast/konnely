@@ -30,7 +30,7 @@
 /*Containers*/
 	/*Master*/
 .panel_{
-	position: absolute;
+
 	width: 100%;
 	height: 100%;
 
@@ -39,7 +39,6 @@
 	overflow: hidden;
 }
 .panel_ button{
-	position: absolute;
 	background: transparent;
 
 	border: none;
@@ -53,6 +52,10 @@
 	width: 100%;
 	height: 100%;
 
+}
+.panel_ h1{
+	position: absolute;
+	margin: 0;
 }
 .panel_ a{
 	border:none;

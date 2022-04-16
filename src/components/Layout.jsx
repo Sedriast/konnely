@@ -12,6 +12,8 @@ import { Loading } from "./use/Tools/Loading";
 import { Search } from "./firebase/funtions/Search";
 import { useState } from "react";
 import g from "./css/load.png";
+import { Register } from "./use/Register/Register";
+import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
 
 export function Layout(props) {
 	const [init, setInit] = useState(false);
@@ -60,6 +62,13 @@ export function Layout(props) {
 									exact
 									path="/"
 									element={<Login clsName={style_L.login} />}
+								/>
+								<Route
+									exact
+									path="/register"
+									element={
+										<Register clsName={style_L.login} />
+									}
 								/>
 								<Route
 									exact
@@ -116,11 +125,15 @@ export function Layout(props) {
 									path="/list"
 									element={
 										<>
-											<PanelButtons
-												clsName={style_L.panelButtons}
-												loading_={changeLoad}
-											/>
-											<List clsName={style_L.list} />
+											<ProtectedRoute>
+												<PanelButtons
+													clsName={
+														style_L.panelButtons
+													}
+													loading_={changeLoad}
+												/>
+												<List clsName={style_L.list} />
+											</ProtectedRoute>
 										</>
 									}
 								/>
