@@ -19,18 +19,15 @@
 
 */
 
-
 /*Const*/
 :root {
 	--back-general: white;
 }
 /*Const*/
 
-
 /*Containers*/
-	/*Master*/
-.panel_{
-
+/*Master*/
+.panel_ {
 	width: 100%;
 	height: 100%;
 
@@ -38,7 +35,7 @@
 
 	overflow: hidden;
 }
-.panel_ button{
+.panel_ button {
 	background: transparent;
 
 	border: none;
@@ -48,56 +45,49 @@
 
 	z-index: 100;
 }
-.panel_ img {
-	width: 100%;
-	height: 100%;
-
-}
-.panel_ h1{
+.panel_ h1 {
 	position: absolute;
+
+	color: black;
 	margin: 0;
 }
-.panel_ a{
-	border:none;
+.panel_ a {
+	border: none;
 }
-	/*Master*/    
-	/*Sub*/
+/*Master*/
+/*Sub*/
 
-	/*Sub*/
-	/*Button´s container*/
+/*Sub*/
+/*Button´s container*/
 
-	/*Button´s container*/
-	/*Input´s container*/
+/*Button´s container*/
+/*Input´s container*/
 
-	/*Input´s container*/
-	/*Oters*/
+/*Input´s container*/
+/*Oters*/
 
-	/*Oters*/
+/*Oters*/
 /*Containers*/
 
-
 /*Use*/
-	/*Button */
+/*Button */
 
-	/*Button */
-	/*Input */
+/*Button */
+/*Input */
 
-	/*Input */
+/*Input */
 /*Use*/
-
 
 /*Resizing */
 
 /*Resizing */
 
-
 /*Animations*/
 
 /*Animations*/
-
 
 /*Other´s Components*/
-	/*Master*/
+/*Master*/
 
-	/*Master*/   
+/*Master*/
 /*Other´s Components */
