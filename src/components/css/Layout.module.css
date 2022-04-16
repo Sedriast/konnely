@@ -1,0 +1,183 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+:root {
+	--back-general: white;
+}
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.panel_ {
+	width: 100%;
+	height: 100%;
+}
+/*Master*/
+/*Sub*/
+
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+.form_ {
+	position: fixed;
+
+	width: 90%;
+	height: 85%;
+	left: calc(50% - 90% / 2);
+	top: calc(50% - 85% / 2 + 66px);
+
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 4.69%,
+		rgba(255, 255, 255, 0.450521) 13.02%,
+		rgba(255, 255, 255, 0.5) 100%
+	);
+	border-radius: 20px;
+}
+.customer {
+	font-family: Arial;
+
+	width: 80%;
+	height: 95%;
+	left: calc(50% - 80% / 2);
+	top: calc(50% - 95% / 2);
+
+	border-radius: 20px;
+	position: fixed;
+}
+.menu {
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+}
+.panelButtons {
+	position: absolute;
+
+	width: 650px;
+	height: 100px;
+	left: calc(50% - 650px / 2);
+	top: 0px;
+}
+.login {
+	position: absolute;
+	width: 500px;
+	height: 640px;
+
+	top: calc(50% - 640px / 2);
+	left: calc(50% - 500px / 2);
+
+	border-radius: 20px;
+
+	overflow: hidden;
+}
+.list {
+	position: fixed;
+
+	width: 80%;
+	height: 85%;
+
+	left: calc(50% - 80% / 2);
+	top: calc(50% - 85% / 2 + 66px);
+
+	overflow: hidden;
+
+	border-radius: 20px;
+}
+.users {
+	position: absolute;
+
+	width: 70%;
+	height: 90%;
+	left: calc(50% - 70% / 2);
+	top: calc(50% - 90% / 2);
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.users::-webkit-scrollbar {
+	-webkit-appearance: none;
+}
+.users::-webkit-scrollbar:vertical {
+	width: 1px;
+}
+.users::-webkit-scrollbar-button:increment,
+.users::-webkit-scrollbar-button {
+	display: none;
+}
+.users::-webkit-scrollbar:horizontal {
+	height: 5px;
+}
+.users::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 0, 0, 0.1);
+	border-radius: 20px;
+	border: none;
+}
+.users::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+.loading {
+	width: 100%;
+	height: 100%;
+
+	background: rgba(0, 0, 0, 0.1);
+}
+.invoice {
+	position: absolute;
+	width: 1200px;
+	height: 80%;
+	left: calc(50% - 1200px / 2);
+	top: 132px;
+
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
+}
+/*Master*/
+/*Other´s Components */

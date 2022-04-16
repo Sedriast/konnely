@@ -1,4 +1,4 @@
-import style_L from '../components/css/Layout/Layout.module.css';
+import style_L from '../components/css/Layout.module.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { Navbar } from './use/Menu/Navbar';
@@ -14,6 +14,7 @@ import { useState } from 'react';
 import g from './css/load.png';
 import { Register } from './use/Register/Register';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
+import { Invoice } from './use/Invoice/Invoice';
 
 export function Layout(props) {
 	const [init, setInit] = useState(false);
@@ -80,6 +81,16 @@ export function Layout(props) {
 												<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
 												<List clsName={style_L.list} />
 											</ProtectedRoute>
+										</>
+									}
+								/>
+								<Route
+									exact
+									path="/invoice"
+									element={
+										<>
+											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
+											<Invoice clsName={style_L.invoice} />
 										</>
 									}
 								/>
