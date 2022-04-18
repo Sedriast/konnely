@@ -21,7 +21,6 @@ export const useAuth = () => {
 
 export function AuthProvider({ children }) {
 	const [user, setUser] = useState(null);
-	const [loading, setLoading] = useState(true);
 
 	const signup = (email, password) => {
 		return createUserWithEmailAndPassword(auth, email, password);
@@ -47,7 +46,6 @@ export function AuthProvider({ children }) {
 		const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
 			console.log({ currentUser });
 			setUser(currentUser);
-			setLoading(false);
 		});
 		return () => unsubuscribe();
 	}, []);
@@ -59,7 +57,6 @@ export function AuthProvider({ children }) {
 				login,
 				user,
 				logout,
-				loading,
 				resetPassword,
 				notification_err,
 			}}
