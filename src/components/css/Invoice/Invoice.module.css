@@ -27,36 +27,39 @@
 
 /*Containers*/
 /*Master*/
-.panel_ {
+.panel {
 	width: 100%;
 	height: 100%;
-
-	border: none;
-
-	overflow: hidden;
 }
-.panel_ button {
-	background: transparent;
+.panel img {
+	position: absolute;
+	width: 125px;
+	height: 125px;
+	left: 8%;
+	top: 5%;
 
-	border: none;
-
-	width: 100%;
-	height: 100%;
-
-	z-index: 100;
+	background: #ffffff;
+	border: 1px solid #000000;
+	box-sizing: border-box;
+	border-radius: 75px;
 }
-.panel_ h1 {
+.panel h1 {
 	position: absolute;
 
-	color: black;
-	margin: 0;
-}
-.panel_ a {
-	border: none;
+	bottom: 1%;
+	right: 5%;
 }
 /*Master*/
 /*Sub*/
-
+.lines {
+	position: absolute;
+	top: 30%;
+	left: 5%;
+	width: 90%;
+	height: 55%;
+	border-top: solid 1px black;
+	border-bottom: solid 1px black;
+}
 /*Sub*/
 /*Button´s container*/
 
@@ -88,6 +91,22 @@
 
 /*Other´s Components*/
 /*Master*/
-
+.paragraphs {
+	position: absolute;
+	display: flex;
+	width: 853px;
+	height: 100px;
+	left: 20%;
+	top: 8%;
+}
+.paragraphs h2 {
+	position: absolute;
+	left: 0;
+	margin: 0;
+}
+.paragraphs p {
+	display: flex;
+	justify-content: flex-end;
+}
 /*Master*/
 /*Other´s Components */

@@ -1,33 +1,30 @@
-import style_L from "../components/css/Layout/Layout.module.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import style_L from '../components/css/Layout.module.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import { Navbar } from "./use/Menu/Navbar";
-import { Customer } from "./use/Customer/Customer";
-import { Form } from "./use/Form/Form";
-import { PanelButtons } from "./use/PanelButons/PanelButtons";
-import { Login } from "./use/Login/Login";
-import { List } from "./use/List/List";
-import { Users } from "./use/Users/Users";
-import { Loading } from "./use/Tools/Loading";
-import { Search } from "./firebase/funtions/Search";
-import { useState } from "react";
-import g from "./css/load.png";
-import { Register } from "./use/Register/Register";
-import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
+import { Navbar } from './use/Menu/Navbar';
+import { Customer } from './use/Customer/Customer';
+import { Form } from './use/Form/Form';
+import { PanelButtons } from './use/PanelButons/PanelButtons';
+import { Login } from './use/Login/Login';
+import { List } from './use/List/List';
+import { Users } from './use/Users/Users';
+import { Loading } from './use/Tools/Loading';
+import { Search } from './firebase/funtions/Search';
+import { useState } from 'react';
+import g from './css/load.png';
+import { Register } from './use/Register/Register';
+import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
+import { Invoice } from './use/Invoice/Invoice';
 
 export function Layout(props) {
 	const [init, setInit] = useState(false);
 
-	var st = Search("usuarios").props.children[0].datos.tema;
+	var st = Search('usuarios').props.children[0].datos.tema;
 
 	const s = () => {
-		document.getElementById("lay").style.setProperty("background", st);
-		document
-			.getElementById("lay")
-			.style.setProperty("background-repeat", "no-repeat");
-		document
-			.getElementById("lay")
-			.style.setProperty("background-size", "cover");
+		document.getElementById('lay').style.setProperty('background', st);
+		document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
+		document.getElementById('lay').style.setProperty('background-size', 'cover');
 	};
 
 	const changeLoad = () => {
@@ -48,50 +45,11 @@ export function Layout(props) {
 					) : (
 						<Router>
 							<Routes>
-								<Route
-									exact
-									path="/test"
-									element={
-										<Loading
-											clsName={style_L.loading}
-											src_={g}
-										/>
-									}
-								/>
-								<Route
-									exact
-									path="/"
-									element={<Login clsName={style_L.login} />}
-								/>
-								<Route
-									exact
-									path="/register"
-									element={
-										<Register clsName={style_L.login} />
-									}
-								/>
-								<Route
-									exact
-									path="/customer"
-									element={
-										<Loading
-											clsName={style_L.loading}
-											src_="https://drive.google.com/uc?export=download&id=13Y8ati6Sodd1r7tzlPawB2C1aH8xUCPZ"
-										/>
-									}
-								/>
-								<Route
-									exact
-									path="/"
-									element={<Login clsName={style_L.login} />}
-								/>
-								<Route
-									exact
-									path="/customer"
-									element={
-										<Customer clsName={style_L.customer} />
-									}
-								/>
+								<Route exact path="/test" element={<></>} />
+								<Route exact path="/" element={<Login clsName={style_L.login} />} />
+								<Route exact path="/register" element={<Register clsName={style_L.login} />} />
+								<Route exact path="/" element={<Login clsName={style_L.login} />} />
+								<Route exact path="/customer" element={<Customer clsName={style_L.customer} />} />
 								<Route
 									exact
 									path="/users"
@@ -99,10 +57,7 @@ export function Layout(props) {
 										<Users
 											clsName={style_L.users}
 											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-											title={
-												Search("usuarios").props
-													.children[0].datos.usuario
-											}
+											title={Search('usuarios').props.children[0].datos.usuario}
 											label="Adminitrador"
 										/>
 									}
@@ -112,10 +67,7 @@ export function Layout(props) {
 									path="/form"
 									element={
 										<>
-											<PanelButtons
-												clsName={style_L.panelButtons}
-												loading_={changeLoad}
-											/>
+											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
 											<Form clsName={style_L.form_} />
 										</>
 									}
@@ -126,14 +78,26 @@ export function Layout(props) {
 									element={
 										<>
 											<ProtectedRoute>
-												<PanelButtons
-													clsName={
-														style_L.panelButtons
-													}
-													loading_={changeLoad}
-												/>
+												<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
 												<List clsName={style_L.list} />
 											</ProtectedRoute>
+										</>
+									}
+								/>
+								<Route
+									exact
+									path="/invoice"
+									element={
+										<>
+											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
+											<Invoice
+												clsName={style_L.invoice}
+												name="sadfadf"
+												nit="safasdfa"
+												email="sadfads@asdfasdfaf.com"
+												date="asdfasdf"
+												userID="asdfassdfad"
+											/>
 										</>
 									}
 								/>
