@@ -24,7 +24,6 @@ export function Register(props) {
 	const navigate = useNavigate();
 
 	function handleChange(e) {
-		console.log(e);
 		const { name, value } = e.target;
 		setUser({ ...user, [name]: value });
 	}
