@@ -1,5 +1,5 @@
-import stInvoice from '../../css/Invoice/Invoice.module.css';
-import { Paragraphs } from '../Tools/Paragraphs';
+import stInvoice from "../../css/Invoice/Invoice.module.css";
+import { Paragraphs } from "../Tools/Paragraphs";
 
 export function Invoice(props) {
 	return (
@@ -21,12 +21,12 @@ export function Invoice(props) {
 								clsName={stInvoice.card}
 								key={index}
 								id_={index}
-								cGp={a.datos.grupo}
-								url={a.datos.url}
-								rabitDataName={a.datos.id}
+								cGp={a.grupo}
+								url={a.url}
+								rabitDataName={a.id}
 								data={a}
-								data1={a.datos.raza}
-								data2={a.datos.genero}
+								data1={a.raza}
+								data2={a.genero}
 							/>
 						))} */}
 					</div>

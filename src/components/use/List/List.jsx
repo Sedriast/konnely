@@ -20,12 +20,12 @@ export function List(props) {
 								clsName={style_Li.card}
 								key={index}
 								id_={index}
-								cGp={a.datos.grupo}
-								url={a.datos.url}
-								rabitDataName={a.datos.id}
+								cGp={a.grupo}
+								url={a.url}
+								rabitDataName={a.id}
 								data={a}
-								data1={a.datos.raza}
-								data2={a.datos.genero}
+								data1={a.raza}
+								data2={a.genero}
 							/>
 						))}
 					</div>

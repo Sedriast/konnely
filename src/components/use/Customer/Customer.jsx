@@ -33,7 +33,7 @@ export function Customer(props) {
 	const ca = async (d) => {
 		try {
 			await setDoc(doc(db, "Users", "Camila"), {
-				datos: { theme: d.target.id },
+				theme: d.target.id,
 			});
 		} catch (error) {
 			console.log(d);

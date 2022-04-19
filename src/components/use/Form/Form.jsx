@@ -3,7 +3,7 @@ import { Inputs } from "../Tools/Inputs";
 import { Lists } from "../Tools/Lists";
 import { useState } from "react";
 import { Search } from "../../firebase/funtions/Search";
-import { Add } from "../../firebase/funtions/Add";
+import { addImageAndInfo } from "../../firebase/funtions/Add";
 import { Buttons } from "../Tools/Buttons";
 import { Dropdown } from "./Dropdown";
 
@@ -33,7 +33,7 @@ export function Form(props) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		Add({ ...values, image: image });
+		addImageAndInfo({ ...values, image: image });
 	};
 
 	function HaveImage(e) {

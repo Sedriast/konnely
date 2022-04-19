@@ -8,15 +8,20 @@ export const Search = (props) => {
 	const coleccion = props;
 	const [data_, setData_] = useState([
 		{
-			datos: {
-				name: "Loading...",
-				url: null,
-				genero: null,
-				raza: null,
-				enjendramiento: null,
-				grupo: null,
-				tema: null,
-			},
+			name: "Loading...",
+			url: null,
+			genero: null,
+			raza: null,
+			enjendramiento: null,
+			grupo: null,
+			destete: null,
+			id: null,
+			idMadre: null,
+			idPadre: null,
+			motivo: null,
+			nacimiento: null,
+			peso: null,
+			tema: null,
 		},
 	]);
 
@@ -36,7 +41,7 @@ export const Search = (props) => {
 				  })
 				: coleccion !== "conejos" &&
 				  data_?.map((Object) => {
-						return Object.datos.name;
+						return Object.name;
 				  })}
 		</>
 	);

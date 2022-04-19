@@ -19,7 +19,7 @@ import { Invoice } from './use/Invoice/Invoice';
 export function Layout(props) {
 	const [init, setInit] = useState(false);
 
-	var st = Search('usuarios').props.children[0].datos.tema;
+	var st = Search('usuarios').props.children[0].tema;
 
 	const s = () => {
 		document.getElementById('lay').style.setProperty('background', st);
@@ -57,7 +57,7 @@ export function Layout(props) {
 										<Users
 											clsName={style_L.users}
 											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-											title={Search('usuarios').props.children[0].datos.usuario}
+											title={Search('usuarios').props.children[0].usuario}
 											label="Adminitrador"
 										/>
 									}
