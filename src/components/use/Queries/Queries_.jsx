@@ -16,7 +16,7 @@ export const Queries_ = (props) => {
 			url: null,
 			genero: null,
 			raza: null,
-			enjendramiento: null,
+			concepcion: null,
 			grupo: null,
 			destete: null,
 			id: null,

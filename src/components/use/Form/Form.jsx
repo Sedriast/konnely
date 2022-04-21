@@ -10,8 +10,8 @@ import { Dropdown } from "./Dropdown";
 export function Form(props) {
 	const init = {};
 	const genero = ["Genero", "Hembra", "Macho"];
-	const Enjendramiento = [
-		"Enjendramiento",
+	const concepcion = [
+		"Concepción",
 		"Monta natural",
 		"Inseminación artificial",
 	];
@@ -86,15 +86,15 @@ export function Form(props) {
 
 						<Lists
 							clsName={style_F.race}
-							leyend="Enjendramiento"
-							name_="enjendramiento"
-							listar={Enjendramiento}
+							leyend="Concepción"
+							name_="concepcion"
+							listar={concepcion}
 							handleChange={handleChange}
 						/>
 
 						<Lists
 							clsName={style_F.race}
-							leyend="Grupo Asociado"
+							leyend="Banda Asosiada"
 							name_="grupo"
 							listar={Search("grupo").props.children}
 							handleChange={handleChange}
