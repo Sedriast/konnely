@@ -6,6 +6,7 @@ import {
 	onAuthStateChanged,
 	sendPasswordResetEmail,
 	getAuth,
+	updateProfile,
 } from "firebase/auth";
 import app from "../components/firebase/credentials";
 import swal from "sweetalert";
@@ -22,8 +23,21 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
 	const [user, setUser] = useState(null);
 
-	const signup = (email, password) => {
-		return createUserWithEmailAndPassword(auth, email, password);
+	const signup = (userName, email, password) => {
+		return createUserWithEmailAndPassword(auth, email, password).then(
+			() => {
+				updateProfile(auth.currentUser, {
+					displayName: userName,
+				}).catch((error) => {
+					swal({
+						title: error,
+						icon: "error",
+						button: "aceptar",
+					});
+				});
+				console.log(auth.currentUser);
+			}
+		);
 	};
 
 	const login = (email, password) => {

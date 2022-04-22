@@ -9,6 +9,7 @@ export function Register(props) {
 	const { signup, notification_err, logout } = useAuth();
 
 	const [user, setUser] = useState({
+		userName: "",
 		email: "",
 		password: "",
 	});
@@ -31,7 +32,7 @@ export function Register(props) {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			await signup(user.email, user.password);
+			await signup(user.userName, user.email, user.password);
 			navigate("/list");
 		} catch (error) {
 			notification_err(error.code, "error", "aceptar");
@@ -43,6 +44,13 @@ export function Register(props) {
 				<div className={style_Lo.panel_}>
 					<Inputs
 						clsName={style_Lo.userName}
+						name_="userName"
+						type_="text"
+						leyend="Usuario"
+						handleChange={handleChange}
+					></Inputs>
+					<Inputs
+						clsName={style_Lo.userEmail}
 						name_="email"
 						type_="email"
 						leyend="Correo electronico"

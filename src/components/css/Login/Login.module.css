@@ -72,9 +72,19 @@
 	width: 400px;
 	height: 91px;
 	left: 50px;
+	top: 87px;
+	-webkit-text-stroke: 0.5px white;
+}
+
+.userEmail {
+	position: absolute;
+	width: 400px;
+	height: 91px;
+	left: 50px;
 	top: 180px;
 	-webkit-text-stroke: 0.5px white;
 }
+
 .userPass {
 	position: absolute;
 	width: 400px;
