@@ -1,11 +1,10 @@
 import style_Cu from "../../css/Customer/Customer.module.css";
 import { Data } from "./Data.js";
 import swal from "sweetalert";
-
 import app from "../../firebase/credentials";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 import { useState } from "react";
-import { AddInfoProfile } from "../../firebase/funtions/Add";
+import { UpdateInfoProfile } from "../../firebase/funtions/Add";
 import { useAuth } from "../../../context/AuthContext";
 
 const db = getFirestore(app);
@@ -25,7 +24,7 @@ export function Customer(props) {
 			buttons: ["No", "Si"],
 		}).then((respuesta) => {
 			if (respuesta) {
-				AddInfoProfile(f);
+				UpdateInfoProfile(f);
 			}
 		});
 	};

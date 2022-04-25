@@ -24,11 +24,14 @@ export function Layout(props) {
 
 	//El ERROR se encuentra aqui...
 
-	var st = Queries_({
-		coleccion: "usuarios",
-		parametro: "uid",
-		busqueda: user.uid,
-	}).props.children[0].tema;
+	var st = Search("usuarios").props.children[0].tema;
+	// console.log(user);
+	// var st = Queries_({
+	// 	coleccion: "usuarios",
+	// 	parametro: "uid",
+	// 	busqueda: user.uid,
+	// }).props.children[0].tema;
+
 	const s = () => {
 		document.getElementById("lay").style.setProperty("background", st);
 		document

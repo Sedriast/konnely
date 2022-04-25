@@ -5,6 +5,7 @@ import {
 	addDoc,
 	doc,
 	setDoc,
+	updateDoc,
 } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import swal from "sweetalert";
@@ -47,4 +48,20 @@ export const AddInfoProfile = (props) => {
 		}
 	};
 	AddInfoProfile(props);
+};
+
+export const UpdateInfoProfile = (props) => {
+	console.log(props);
+	const UpdateInfoProfile = async (datos) => {
+		try {
+			await updateDoc(doc(db, "usuarios", datos.user), datos.data);
+		} catch (error) {
+			swal({
+				title: "Err",
+				icon: error,
+				button: "aceptar",
+			});
+		}
+	};
+	UpdateInfoProfile(props);
 };
