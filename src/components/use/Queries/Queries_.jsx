@@ -7,6 +7,7 @@ import {
 	getFirestore,
 } from "firebase/firestore";
 import { useState, useEffect } from "react";
+import { useAuth } from "../../../context/AuthContext";
 
 const db = getFirestore(app);
 
@@ -31,8 +32,8 @@ export const Queries_ = (props) => {
 	useEffect(() => {
 		const simpleQueries = async (datos) => {
 			const q = query(
-				collection(db, "conejos"),
-				where("id", "==", datos)
+				collection(db, datos.coleccion),
+				where(datos.parametro, "==", datos.busqueda)
 			);
 			const querySnapshot = await getDocs(q);
 			querySnapshot.forEach((doc) => {
@@ -40,7 +41,7 @@ export const Queries_ = (props) => {
 			});
 		};
 		simpleQueries(props);
-	}, [props]);
+	}, [props.coleccion]);
 
 	return (
 		<>

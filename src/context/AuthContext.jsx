@@ -10,6 +10,7 @@ import {
 } from "firebase/auth";
 import app from "../components/firebase/credentials";
 import swal from "sweetalert";
+import { AddInfoProfile } from "../components/firebase/funtions/Add";
 export const auth = getAuth(app);
 
 const authContext = createContext();
@@ -23,6 +24,8 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
 	const [user, setUser] = useState(null);
 	const [loading, setLoading] = useState(true);
+	const tema =
+		"url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)";
 
 	const signup = (userName, email, password) => {
 		return createUserWithEmailAndPassword(auth, email, password).then(
@@ -35,6 +38,16 @@ export function AuthProvider({ children }) {
 						icon: "error",
 						button: "aceptar",
 					});
+				});
+				AddInfoProfile({
+					user: auth.currentUser.uid,
+					data: {
+						uid: auth.currentUser.uid,
+						usuario: userName,
+						email: auth.currentUser.email,
+						rol: "usuario",
+						tema: tema,
+					},
 				});
 			}
 		);

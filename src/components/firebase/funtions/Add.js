@@ -1,5 +1,4 @@
 import app from "../credentials";
-import { useAuth } from "../../../context/AuthContext";
 import {
 	getFirestore,
 	collection,

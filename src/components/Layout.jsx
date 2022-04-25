@@ -15,12 +15,20 @@ import g from "./css/load.png";
 import { Register } from "./use/Register/Register";
 import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
 import { Invoice } from "./use/Invoice/Invoice";
+import { Queries_ } from "./use/Queries/Queries_";
+import { useAuth } from "../context/AuthContext";
 
 export function Layout(props) {
+	const { user } = useAuth();
 	const [init, setInit] = useState(false);
 
-	var st = Search("usuarios").props.children[0].tema;
+	//El ERROR se encuentra aqui...
 
+	var st = Queries_({
+		coleccion: "usuarios",
+		parametro: "uid",
+		busqueda: user.uid,
+	}).props.children[0].tema;
 	const s = () => {
 		document.getElementById("lay").style.setProperty("background", st);
 		document
@@ -80,21 +88,25 @@ export function Layout(props) {
 										</>
 									}
 								/>
-								<Route
+								{/* <Route
 									exact
 									path="/users"
 									element={
-										<Users
-											clsName={style_L.users}
-											src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-											title={
-												Search("usuarios").props
-													.children[0].usuario
-											}
-											label="Adminitrador"
-										/>
+										<>
+											<ProtectedRoute>
+												<Users
+													clsName={style_L.users}
+													src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
+													title={
+														Search("usuarios").props
+															.children[0].usuario
+													}
+													label="Adminitrador"
+												/>
+											</ProtectedRoute>
+										</>
 									}
-								/>
+								/> */}
 								<Route
 									exact
 									path="/form"
