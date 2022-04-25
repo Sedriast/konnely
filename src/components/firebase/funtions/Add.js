@@ -41,8 +41,8 @@ export const AddInfoProfile = (props) => {
 			await setDoc(doc(db, "usuarios", datos.user), datos.data);
 		} catch (error) {
 			swal({
-				title: "Err",
-				icon: error,
+				title: error,
+				icon: "error",
 				button: "aceptar",
 			});
 		}
@@ -57,8 +57,8 @@ export const UpdateInfoProfile = (props) => {
 			await updateDoc(doc(db, "usuarios", datos.user), datos.data);
 		} catch (error) {
 			swal({
-				title: "Err",
-				icon: error,
+				title: error,
+				icon: "error",
 				button: "aceptar",
 			});
 		}
