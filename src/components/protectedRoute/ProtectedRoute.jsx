@@ -3,9 +3,11 @@ import swal from "sweetalert";
 import { useAuth } from "../../context/AuthContext";
 
 export function ProtectedRoute({ children }) {
-	const { user } = useAuth();
+	const { user, loading } = useAuth();
+	if (loading) return <h1>Loading</h1>;
 
 	if (!user) {
+		console.log(user);
 		swal({
 			title: "Debes iniciar sección primer",
 			icon: "error",

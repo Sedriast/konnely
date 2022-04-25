@@ -1,4 +1,5 @@
 import app from "../credentials";
+import { useAuth } from "../../../context/AuthContext";
 import {
 	getFirestore,
 	collection,
@@ -33,10 +34,11 @@ export const addImageAndInfo = (props) => {
 	addImageAndInfo(props);
 };
 
-export const addCustomer = (props) => {
-	const addCustomer = async (datos) => {
+export const AddInfoProfile = (props) => {
+	console.log(props);
+	const AddInfoProfile = async (datos) => {
 		try {
-			await setDoc(doc(db, "Users", "Camila"), datos);
+			await setDoc(doc(db, "usuarios", datos.user), datos.data);
 		} catch (error) {
 			swal({
 				title: "Err",
@@ -45,5 +47,5 @@ export const addCustomer = (props) => {
 			});
 		}
 	};
-	addCustomer(props);
+	AddInfoProfile(props);
 };
