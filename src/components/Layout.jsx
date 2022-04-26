@@ -10,7 +10,7 @@ import { List } from "./use/List/List";
 import { Users } from "./use/Users/Users";
 import { Loading } from "./use/Tools/Loading";
 import { Search } from "./firebase/funtions/Search";
-import { useState } from "react";
+import { useState, useReducer } from "react";
 import g from "./css/load.png";
 import { Register } from "./use/Register/Register";
 import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
@@ -31,7 +31,16 @@ export function Layout(props) {
 	// 	parametro: "uid",
 	// 	busqueda: user.uid,
 	// }).props.children[0].tema;
+	console.log(user);
+	console.log(
+		Queries_({
+			coleccion: "conejos",
+			parametro: "id",
+			busqueda: "szdfxcv",
+		}).props.children[0]
+	);
 
+	useReducer
 	const s = () => {
 		document.getElementById("lay").style.setProperty("background", st);
 		document

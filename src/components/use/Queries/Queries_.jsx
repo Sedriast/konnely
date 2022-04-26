@@ -7,7 +7,6 @@ import {
 	getFirestore,
 } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import { useAuth } from "../../../context/AuthContext";
 
 const db = getFirestore(app);
 
@@ -41,7 +40,7 @@ export const Queries_ = (props) => {
 			});
 		};
 		simpleQueries(props);
-	}, [props.coleccion]);
+	}, [props.busqueda]);
 
 	return (
 		<>

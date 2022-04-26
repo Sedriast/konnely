@@ -5,10 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 export function ProtectedRoute({ children }) {
 	const { user, loading } = useAuth();
 	if (loading) return <h1>Loading...</h1>;
-	console.log("3");
-
 	if (!user) {
-		console.log("2");
 		swal({
 			title: "Debes iniciar sección primer",
 			icon: "error",
