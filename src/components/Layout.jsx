@@ -33,6 +33,9 @@ export function Layout(props) {
 		{
 			tema: "",
 			usuario: "",
+			email: "",
+			rol: "",
+			uid: "",
 		},
 	]);
 
