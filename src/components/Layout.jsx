@@ -2,6 +2,8 @@ import app from "../components/firebase/credentials";
 import style_L from "../components/css/Layout.module.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+import g from "./css/load.png";
+import { Users } from "../components/use/Users/Users";
 import { Navbar } from "./use/Menu/Navbar";
 import { Customer } from "./use/Customer/Customer";
 import { Form } from "./use/Form/Form";
@@ -10,7 +12,6 @@ import { Login } from "./use/Login/Login";
 import { List } from "./use/List/List";
 import { Loading } from "./use/Tools/Loading";
 import { useState, useEffect } from "react";
-import g from "./css/load.png";
 import { Register } from "./use/Register/Register";
 import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
 import { Invoice } from "./use/Invoice/Invoice";
@@ -27,8 +28,7 @@ const db = getFirestore(app);
 export function Layout(props) {
 	const { user } = useAuth();
 	const [init, setInit] = useState(false);
-
-	const [tema_, setTema_] = useState([
+	const [user_, setUser_] = useState([
 		{
 			tema: "",
 		},
@@ -41,7 +41,7 @@ export function Layout(props) {
 				where("uid", "==", user.uid)
 			);
 			onSnapshot(q, (snapshot) =>
-				setTema_(snapshot.docs.map((doc) => ({ ...doc.data() })))
+				setUser_(snapshot.docs.map((doc) => ({ ...doc.data() })))
 			);
 		}
 	}, [user]);
@@ -49,7 +49,7 @@ export function Layout(props) {
 	const s = () => {
 		document
 			.getElementById("lay")
-			.style.setProperty("background", tema_[0].tema);
+			.style.setProperty("background", user_[0].tema);
 		document
 			.getElementById("lay")
 			.style.setProperty("background-repeat", "no-repeat");
@@ -57,6 +57,7 @@ export function Layout(props) {
 			.getElementById("lay")
 			.style.setProperty("background-size", "cover");
 	};
+	console.log(user_);
 
 	const changeLoad = () => {
 		setInit(true);
@@ -107,7 +108,7 @@ export function Layout(props) {
 										</>
 									}
 								/>
-								{/* <Route
+								<Route
 									exact
 									path="/users"
 									element={
@@ -116,16 +117,13 @@ export function Layout(props) {
 												<Users
 													clsName={style_L.users}
 													src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
-													title={
-														Search("usuarios").props
-															.children[0].usuario
-													}
+													title={user_[0].usuario}
 													label="Adminitrador"
 												/>
 											</ProtectedRoute>
 										</>
 									}
-								/> */}
+								/>
 								<Route
 									exact
 									path="/form"
