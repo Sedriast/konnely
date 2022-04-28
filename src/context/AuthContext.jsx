@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import app from "../components/firebase/credentials";
 import swal from "sweetalert";
-import { AddInfoProfile } from "../components/firebase/funtions/Add";
+import { AddInfoProfile } from "../components/firebase/funtions/AddInformation";
 export const auth = getAuth(app);
 
 const authContext = createContext();

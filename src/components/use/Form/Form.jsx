@@ -2,8 +2,8 @@ import style_F from "../../css/Form/Form.module.css";
 import { Inputs } from "../Tools/Inputs";
 import { Lists } from "../Tools/Lists";
 import { useState } from "react";
-import { Search } from "../../firebase/funtions/Search";
-import { addImageAndInfo } from "../../firebase/funtions/Add";
+import { SearchAll } from "../../firebase/funtions/SearchAll";
+import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
 import { Buttons } from "../Tools/Buttons";
 import { Dropdown } from "./Dropdown";
 
@@ -80,7 +80,7 @@ export function Form(props) {
 							clsName={style_F.race}
 							leyend="Raza"
 							name_="raza"
-							listar={Search("raza").props.children}
+							listar={SearchAll("raza").props.children}
 							handleChange={handleChange}
 						/>
 
@@ -96,7 +96,7 @@ export function Form(props) {
 							clsName={style_F.race}
 							leyend="Banda Asosiada"
 							name_="grupo"
-							listar={Search("grupo").props.children}
+							listar={SearchAll("grupo").props.children}
 							handleChange={handleChange}
 						/>
 
@@ -120,7 +120,7 @@ export function Form(props) {
 							clsName={style_F.reason}
 							leyend="Motivo de ingreso"
 							name_="motivo"
-							listar={Search("motivo").props.children}
+							listar={SearchAll("motivo").props.children}
 							handleChange={handleChange}
 						/>
 						{reason && (

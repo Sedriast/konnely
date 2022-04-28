@@ -1,6 +1,6 @@
 import style_Li from "../../css/List/List.module.css";
 import { Cards } from "../Tools/Cards";
-import { Search } from "../../firebase/funtions/Search";
+import { SearchAll } from "../../firebase/funtions/SearchAll";
 import { Inputs } from "../Tools/Inputs";
 
 export function List(props) {
@@ -14,7 +14,7 @@ export function List(props) {
 						placeholder_="Buscar"
 					/>
 					<div className={style_Li.grid}>
-						{Search("conejos").props.children.map((a, index) => (
+						{SearchAll("conejos").props.children.map((a, index) => (
 							<Cards
 								clsName={style_Li.card}
 								key={index}

@@ -1,7 +1,7 @@
 import style_Cu from "../../css/Customer/Customer.module.css";
 import { Data } from "./Data.js";
 import { useState } from "react";
-import { UpdateInfoProfile } from "../../firebase/funtions/Add";
+import { UpdateInfoProfile } from "../../firebase/funtions/AddInformation";
 import { useAuth } from "../../../context/AuthContext";
 import swal from "sweetalert";
 
