@@ -40,7 +40,7 @@ export const Queries_ = (props) => {
 			});
 		};
 		simpleQueries(props);
-	}, [props.busqueda]);
+	}, [props.coleccion]);
 
 	return (
 		<>

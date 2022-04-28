@@ -35,7 +35,6 @@ export const addImageAndInfo = (props) => {
 };
 
 export const AddInfoProfile = (props) => {
-	console.log(props);
 	const AddInfoProfile = async (datos) => {
 		try {
 			await setDoc(doc(db, "usuarios", datos.user), datos.data);
@@ -51,7 +50,6 @@ export const AddInfoProfile = (props) => {
 };
 
 export const UpdateInfoProfile = (props) => {
-	console.log(props);
 	const UpdateInfoProfile = async (datos) => {
 		try {
 			await updateDoc(doc(db, "usuarios", datos.user), datos.data);

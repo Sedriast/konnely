@@ -1,9 +1,9 @@
 import style_Cu from "../../css/Customer/Customer.module.css";
 import { Data } from "./Data.js";
-import swal from "sweetalert";
 import { useState } from "react";
 import { UpdateInfoProfile } from "../../firebase/funtions/Add";
 import { useAuth } from "../../../context/AuthContext";
+import swal from "sweetalert";
 
 export function Customer(props) {
 	const { user } = useAuth();

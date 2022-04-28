@@ -57,8 +57,6 @@ export function Layout(props) {
 			.getElementById("lay")
 			.style.setProperty("background-size", "cover");
 	};
-	console.log(user_);
-
 	const changeLoad = () => {
 		setInit(true);
 		setTimeout(() => {
