@@ -1,4 +1,4 @@
-import app from "../../firebase/credentials";
+import app from "../credentials";
 import {
 	collection,
 	query,
@@ -10,7 +10,7 @@ import { useState, useEffect } from "react";
 
 const db = getFirestore(app);
 
-export const Queries_ = (props) => {
+export const QueriesSimple_ = (props) => {
 	const [data_, setData_] = useState([
 		{
 			url: null,
