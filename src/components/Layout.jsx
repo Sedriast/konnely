@@ -1,28 +1,23 @@
-import app from "../components/firebase/credentials";
-import style_L from "../components/css/Layout.module.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import app from '../components/firebase/credentials';
+import style_L from '../components/css/Layout.module.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import g from "./css/load.png";
-import { Users } from "../components/use/Users/Users";
-import { Navbar } from "./use/Menu/Navbar";
-import { Customer } from "./use/Customer/Customer";
-import { Form } from "./use/Form/Form";
-import { PanelButtons } from "./use/PanelButons/PanelButtons";
-import { Login } from "./use/Login/Login";
-import { List } from "./use/List/List";
-import { Loading } from "./use/Tools/Loading";
-import { useState, useEffect } from "react";
-import { Register } from "./use/Register/Register";
-import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
-import { Invoice } from "./use/Invoice/Invoice";
-import { useAuth } from "../context/AuthContext";
-import {
-	collection,
-	getFirestore,
-	onSnapshot,
-	query,
-	where,
-} from "firebase/firestore";
+import g from './css/load.png';
+import { Users } from '../components/use/Users/Users';
+import { Navbar } from './use/Menu/Navbar';
+import { Customer } from './use/Customer/Customer';
+import { Form } from './use/Form/Form';
+import { PanelButtons } from './use/PanelButons/PanelButtons';
+import { Login } from './use/Login/Login';
+import { List } from './use/List/List';
+import { Loading } from './use/Tools/Loading';
+import { useState, useEffect } from 'react';
+import { Register } from './use/Register/Register';
+import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
+import { Invoice } from './use/Invoice/Invoice';
+import { useAuth } from '../context/AuthContext';
+import { collection, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
+
 const db = getFirestore(app);
 
 export function Layout(props) {
@@ -30,32 +25,21 @@ export function Layout(props) {
 	const [init, setInit] = useState(false);
 	const [user_, setUser_] = useState([
 		{
-			tema: "",
+			tema: '',
 		},
 	]);
 
 	useEffect(() => {
 		if (user) {
-			const q = query(
-				collection(db, "usuarios"),
-				where("uid", "==", user.uid)
-			);
-			onSnapshot(q, (snapshot) =>
-				setUser_(snapshot.docs.map((doc) => ({ ...doc.data() })))
-			);
+			const q = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
+			onSnapshot(q, (snapshot) => setUser_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
 		}
 	}, [user]);
 
 	const s = () => {
-		document
-			.getElementById("lay")
-			.style.setProperty("background", user_[0].tema);
-		document
-			.getElementById("lay")
-			.style.setProperty("background-repeat", "no-repeat");
-		document
-			.getElementById("lay")
-			.style.setProperty("background-size", "cover");
+		document.getElementById('lay').style.setProperty('background', user_[0].tema);
+		document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
+		document.getElementById('lay').style.setProperty('background-size', 'cover');
 	};
 	console.log(user_);
 
@@ -78,32 +62,16 @@ export function Layout(props) {
 						<Router>
 							<Routes>
 								<Route exact path="/test" element={<></>} />
-								<Route
-									exact
-									path="/"
-									element={<Login clsName={style_L.login} />}
-								/>
-								<Route
-									exact
-									path="/register"
-									element={
-										<Register clsName={style_L.login} />
-									}
-								/>
-								<Route
-									exact
-									path="/"
-									element={<Login clsName={style_L.login} />}
-								/>
+								<Route exact path="/" element={<Login clsName={style_L.login} />} />
+								<Route exact path="/register" element={<Register clsName={style_L.login} />} />
+								<Route exact path="/" element={<Login clsName={style_L.login} />} />
 								<Route
 									exact
 									path="/customer"
 									element={
 										<>
 											<ProtectedRoute>
-												<Customer
-													clsName={style_L.customer}
-												/>
+												<Customer clsName={style_L.customer} />
 											</ProtectedRoute>
 										</>
 									}
@@ -129,10 +97,7 @@ export function Layout(props) {
 									path="/form"
 									element={
 										<>
-											<PanelButtons
-												clsName={style_L.panelButtons}
-												loading_={changeLoad}
-											/>
+											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
 											<Form clsName={style_L.form_} />
 										</>
 									}
@@ -143,12 +108,7 @@ export function Layout(props) {
 									element={
 										<>
 											<ProtectedRoute>
-												<PanelButtons
-													clsName={
-														style_L.panelButtons
-													}
-													loading_={changeLoad}
-												/>
+												<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
 												<List clsName={style_L.list} />
 											</ProtectedRoute>
 										</>
@@ -159,10 +119,7 @@ export function Layout(props) {
 									path="/invoice"
 									element={
 										<>
-											<PanelButtons
-												clsName={style_L.panelButtons}
-												loading_={changeLoad}
-											/>
+											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
 											<Invoice
 												clsName={style_L.invoice}
 												name="sadfadf"
