@@ -1,3 +1,4 @@
+import app from "../components/firebase/credentials";
 import style_L from "../components/css/Layout.module.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -7,42 +8,48 @@ import { Form } from "./use/Form/Form";
 import { PanelButtons } from "./use/PanelButons/PanelButtons";
 import { Login } from "./use/Login/Login";
 import { List } from "./use/List/List";
-import { Users } from "./use/Users/Users";
 import { Loading } from "./use/Tools/Loading";
-import { Search } from "./firebase/funtions/Search";
-import { useState, useReducer } from "react";
+import { useState, useEffect } from "react";
 import g from "./css/load.png";
 import { Register } from "./use/Register/Register";
 import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
 import { Invoice } from "./use/Invoice/Invoice";
-import { Queries_ } from "./use/Queries/Queries_";
 import { useAuth } from "../context/AuthContext";
+import {
+	collection,
+	getFirestore,
+	onSnapshot,
+	query,
+	where,
+} from "firebase/firestore";
+const db = getFirestore(app);
 
 export function Layout(props) {
 	const { user } = useAuth();
 	const [init, setInit] = useState(false);
 
-	//El ERROR se encuentra aqui...
+	const [tema_, setTema_] = useState([
+		{
+			tema: "",
+		},
+	]);
 
-	var st = Search("usuarios").props.children[0].tema;
-	// console.log(user);
-	// var st = Queries_({
-	// 	coleccion: "usuarios",
-	// 	parametro: "uid",
-	// 	busqueda: user.uid,
-	// }).props.children[0].tema;
-	console.log(user);
-	console.log(
-		Queries_({
-			coleccion: "conejos",
-			parametro: "id",
-			busqueda: "szdfxcv",
-		}).props.children[0]
-	);
+	useEffect(() => {
+		if (user) {
+			const q = query(
+				collection(db, "usuarios"),
+				where("uid", "==", user.uid)
+			);
+			onSnapshot(q, (snapshot) =>
+				setTema_(snapshot.docs.map((doc) => ({ ...doc.data() })))
+			);
+		}
+	}, [user]);
 
-	useReducer
 	const s = () => {
-		document.getElementById("lay").style.setProperty("background", st);
+		document
+			.getElementById("lay")
+			.style.setProperty("background", tema_[0].tema);
 		document
 			.getElementById("lay")
 			.style.setProperty("background-repeat", "no-repeat");
