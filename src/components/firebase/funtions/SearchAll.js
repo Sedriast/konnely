@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const db = getFirestore(app);
 
-export const Search = (props) => {
+export const SearchAll = (props) => {
 	const coleccion = props;
 	const [data_, setData_] = useState([
 		{
