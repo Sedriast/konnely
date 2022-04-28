@@ -27,30 +27,27 @@ export function AuthProvider({ children }) {
 	const tema =
 		"url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)";
 
-	const signup = (userName, email, password) => {
-		return createUserWithEmailAndPassword(auth, email, password).then(
-			() => {
-				updateProfile(auth.currentUser, {
-					displayName: userName,
-				}).catch((error) => {
-					swal({
-						title: error,
-						icon: "error",
-						button: "aceptar",
-					});
-				});
-				AddInfoProfile({
-					user: auth.currentUser.uid,
-					data: {
-						uid: auth.currentUser.uid,
-						usuario: userName,
-						email: auth.currentUser.email,
-						rol: "usuario",
-						tema: tema,
-					},
-				});
-			}
-		);
+	const signup = async (userName, email, password) => {
+		await createUserWithEmailAndPassword(auth, email, password);
+		updateProfile(auth.currentUser, {
+			displayName: userName,
+		}).catch((error) => {
+			swal({
+				title: error,
+				icon: "error",
+				button: "aceptar",
+			});
+		});
+		AddInfoProfile({
+			user: auth.currentUser.uid,
+			data: {
+				uid: auth.currentUser.uid,
+				usuario: userName,
+				email: auth.currentUser.email,
+				rol: "usuario",
+				tema: tema,
+			},
+		});
 	};
 
 	const login = (email, password) => {
