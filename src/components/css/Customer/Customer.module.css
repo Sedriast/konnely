@@ -26,28 +26,28 @@
 /*Containers*/
 /*Master*/
 .panel_ {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 400px);
-	grid-template-rows: repeat(auto-fill, 250px);
-	grid-column-gap: 1rem;
-	grid-row-gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 400px);
+    grid-template-rows: repeat(auto-fill, 250px);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
 
-	justify-content: center;
-	align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 button {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 
-	z-index: 100px;
+    z-index: 100px;
 
-	padding: 0;
+    padding: 0;
 }
 .b {
-	font-size: 0px;
+    font-size: 0px;
 }
 /*Master*/
 /*Sub*/
@@ -55,11 +55,11 @@ button {
 /*Sub*/
 /*Button´s container*/
 .theme {
-	width: 400px;
-	height: 250px;
+    width: 400px;
+    height: 250px;
 
-	border-radius: 40px;
-	overflow: hidden;
+    border-radius: 40px;
+    overflow: hidden;
 }
 /*Button´s container*/
 /*Input´s container*/
@@ -67,10 +67,10 @@ button {
 /*Input´s container*/
 /*Oters*/
 .preview_ {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 
-	background: #ffffff;
+    background: #ffffff;
 }
 /*Oters*/
 /*Containers*/
@@ -78,11 +78,11 @@ button {
 /*Use*/
 /*Button */
 .ch {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 
-	background: transparent;
-	border: none;
+    background: transparent;
+    border: none;
 }
 /*Button */
 /*Input */

@@ -4,13 +4,13 @@ import React from "react";
 import { AuthProvider } from "./context/AuthContext";
 
 export function App() {
-	return (
-		<>
-			<React.StrictMode>
-				<AuthProvider>
-					<Layout clsName={style_A.Layout} />
-				</AuthProvider>
-			</React.StrictMode>
-		</>
-	);
+    return (
+        <>
+            <React.StrictMode>
+                <AuthProvider>
+                    <Layout clsName={style_A.Layout} />
+                </AuthProvider>
+            </React.StrictMode>
+        </>
+    );
 }

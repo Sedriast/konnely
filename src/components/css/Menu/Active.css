@@ -1,46 +1,46 @@
 .menu_ {
-	position: absolute;
+    position: absolute;
 
-	width: 0%;
-	height: 0%; 
-	right: 0;
-	top: 0;
+    width: 0%;
+    height: 0%;
+    right: 0;
+    top: 0;
 
-	z-index: 100;
+    z-index: 100;
 
-	overflow: hidden;
+    overflow: hidden;
 
-	border-radius: 0px 0px 0px 1000px;
+    border-radius: 0px 0px 0px 1000px;
 
-	animation-duration: 1s;
-	animation-name: menuOut;
+    animation-duration: 1s;
+    animation-name: menuOut;
 }
 .menu_.active {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 
-	animation-duration: 1s;
-	animation-name: menuIn;
+    animation-duration: 1s;
+    animation-name: menuIn;
 }
 
 @keyframes menuIn {
-	from {
-		width: 0%;
-		height: 0%;
-	}
-	to {
-		width: 100%;
-		height: 100%;
-	}
+    from {
+        width: 0%;
+        height: 0%;
+    }
+    to {
+        width: 100%;
+        height: 100%;
+    }
 }
 @keyframes menuOut {
-	from {
-		width: 100%;
-		height: 100%;
-	}
-	to {
-		right: 0;
-		width: 0%;
-		height: 0%;
-	}
+    from {
+        width: 100%;
+        height: 100%;
+    }
+    to {
+        right: 0;
+        width: 0%;
+        height: 0%;
+    }
 }

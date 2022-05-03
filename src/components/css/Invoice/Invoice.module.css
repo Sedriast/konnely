@@ -21,44 +21,44 @@
 
 /*Const*/
 :root {
-	--back-general: white;
+    --back-general: white;
 }
 /*Const*/
 
 /*Containers*/
 /*Master*/
 .panel {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 .panel img {
-	position: absolute;
-	width: 125px;
-	height: 125px;
-	left: 8%;
-	top: 5%;
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    left: 8%;
+    top: 5%;
 
-	background: #ffffff;
-	border: 1px solid #000000;
-	box-sizing: border-box;
-	border-radius: 75px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 75px;
 }
 .panel h1 {
-	position: absolute;
+    position: absolute;
 
-	bottom: 1%;
-	right: 5%;
+    bottom: 1%;
+    right: 5%;
 }
 /*Master*/
 /*Sub*/
 .lines {
-	position: absolute;
-	top: 30%;
-	left: 5%;
-	width: 90%;
-	height: 55%;
-	border-top: solid 1px black;
-	border-bottom: solid 1px black;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    width: 90%;
+    height: 55%;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
 }
 /*Sub*/
 /*Button´s container*/
@@ -92,21 +92,21 @@
 /*Other´s Components*/
 /*Master*/
 .paragraphs {
-	position: absolute;
-	display: flex;
-	width: 853px;
-	height: 100px;
-	left: 20%;
-	top: 8%;
+    position: absolute;
+    display: flex;
+    width: 853px;
+    height: 100px;
+    left: 20%;
+    top: 8%;
 }
 .paragraphs h2 {
-	position: absolute;
-	left: 0;
-	margin: 0;
+    position: absolute;
+    left: 0;
+    margin: 0;
 }
 .paragraphs p {
-	display: flex;
-	justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 /*Master*/
 /*Other´s Components */

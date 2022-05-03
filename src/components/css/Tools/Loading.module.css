@@ -19,70 +19,64 @@
 
 */
 
-
 /*Const*/
 :root {
-	--back-general: white;
+    --back-general: white;
 }
 /*Const*/
 
-
 /*Containers*/
-	/*Master*/
-	.panel_{
-		width: 100%;
-		height: 100%;
+/*Master*/
+.panel_ {
+    width: 100%;
+    height: 100%;
 
-		background: transparent;
-	}
-	/*Master*/    
-	/*Sub*/
+    background: transparent;
+}
+/*Master*/
+/*Sub*/
 
-	/*Sub*/
-	/*Button´s container*/
+/*Sub*/
+/*Button´s container*/
 
-	/*Button´s container*/
-	/*Input´s container*/
+/*Button´s container*/
+/*Input´s container*/
 
-	/*Input´s container*/
-	/*Oters*/
-	.panel_ img {
-		position: absolute;
+/*Input´s container*/
+/*Oters*/
+.panel_ img {
+    position: absolute;
 
-		width: 20%;
-		height: 25%;
+    width: 20%;
+    height: 25%;
 
-		border-radius: 1000px;
+    border-radius: 1000px;
 
-		top: calc(50% - 25%/2);
-		right: calc(50% - 25%/2);
-	}
-	/*Oters*/
+    top: calc(50% - 25% / 2);
+    right: calc(50% - 25% / 2);
+}
+/*Oters*/
 /*Containers*/
-
 
 /*Use*/
-	/*Button */
+/*Button */
 
-	/*Button */
-	/*Input */
+/*Button */
+/*Input */
 
-	/*Input */
+/*Input */
 /*Use*/
-
 
 /*Resizing */
 
 /*Resizing */
 
-
 /*Animations*/
 
 /*Animations*/
-
 
 /*Other´s Components*/
-	/*Master*/
+/*Master*/
 
-	/*Master*/   
+/*Master*/
 /*Other´s Components */

@@ -1,9 +1,7 @@
-Desarrollo de software multiplataforma para la administración de los datos del proceso cunícola en la unidad agroambiental El Tíbar 
+Desarrollo de software multiplataforma para la administración de los datos del proceso cunícola en la unidad agroambiental El Tíbar
 
+Konnely
 
-Konnely 
-
- 
-Juan Felipe Alonso Robayo y Sebastián Blanco Castañeda 
+Juan Felipe Alonso Robayo y Sebastián Blanco Castañeda
 
 https://g.co/kgs/KWJGPe

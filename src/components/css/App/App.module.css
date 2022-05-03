@@ -19,60 +19,54 @@
 
 */
 
-
 /*Const*/
 :root {
-	--back-general: white;
+    --back-general: white;
 }
 /*Const*/
 
-
 /*Containers*/
-	/*Master*/
+/*Master*/
 
-	/*Master*/    
-	/*Sub*/
+/*Master*/
+/*Sub*/
 
-	/*Sub*/
-	/*Button´s container*/
+/*Sub*/
+/*Button´s container*/
 
-	/*Button´s container*/
-	/*Input´s container*/
+/*Button´s container*/
+/*Input´s container*/
 
-	/*Input´s container*/
-	/*Oters*/
+/*Input´s container*/
+/*Oters*/
 
-	/*Oters*/
+/*Oters*/
 /*Containers*/
-
 
 /*Use*/
-	/*Button */
+/*Button */
 
-	/*Button */
-	/*Input */
+/*Button */
+/*Input */
 
-	/*Input */
+/*Input */
 /*Use*/
-
 
 /*Resizing */
 
 /*Resizing */
 
-
 /*Animations*/
 
 /*Animations*/
-
 
 /*Other´s Components*/
-	/*Master*/
-    .Layout {
-		position: absolute;
+/*Master*/
+.Layout {
+    position: absolute;
 
-		width: 100%;
-		height: 100%;
-	}
-	/*Master*/   
+    width: 100%;
+    height: 100%;
+}
+/*Master*/
 /*Other´s Components */

@@ -19,61 +19,55 @@
 
 */
 
-
 /*Const*/
 :root {
-	--back-general: white;
+    --back-general: white;
 }
 /*Const*/
 
-
 /*Containers*/
-	/*Master*/
-	.panel_{
-		text-align: center;
-		justify-content: center;
+/*Master*/
+.panel_ {
+    text-align: center;
+    justify-content: center;
 
-		width: 100%;
-		height: 100%;
-	}
-	/*Master*/    
-	/*Sub*/
+    width: 100%;
+    height: 100%;
+}
+/*Master*/
+/*Sub*/
 
-	/*Sub*/
-	/*Button´s container*/
+/*Sub*/
+/*Button´s container*/
 
-	/*Button´s container*/
-	/*Input´s container*/
+/*Button´s container*/
+/*Input´s container*/
 
-	/*Input´s container*/
-	/*Oters*/
+/*Input´s container*/
+/*Oters*/
 
-	/*Oters*/
+/*Oters*/
 /*Containers*/
-
 
 /*Use*/
-	/*Button */
+/*Button */
 
-	/*Button */
-	/*Input */
+/*Button */
+/*Input */
 
-	/*Input */
+/*Input */
 /*Use*/
-
 
 /*Resizing */
 
 /*Resizing */
 
-
 /*Animations*/
 
 /*Animations*/
-
 
 /*Other´s Components*/
-	/*Master*/
+/*Master*/
 
-	/*Master*/   
+/*Master*/
 /*Other´s Components */
