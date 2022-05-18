@@ -21,15 +21,15 @@
 
 /*Const*/
 :root {
-    --back-general: white;
+	--back-general: white;
 }
 /*Const*/
 
 /*Containers*/
 /*Master*/
 .panel_ {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 /*Master*/
 /*Sub*/
@@ -66,112 +66,113 @@
 /*Other´s Components*/
 /*Master*/
 .form_ {
-    position: fixed;
+	position: fixed;
 
-    width: 90%;
-    height: 85%;
-    left: calc(50% - 90% / 2);
-    top: calc(50% - 85% / 2 + 66px);
+	width: 90%;
+	height: 85%;
+	left: calc(50% - 90% / 2);
+	top: calc(50% - 85% / 2 + 66px);
 
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0) 4.69%,
-        rgba(255, 255, 255, 0.450521) 13.02%,
-        rgba(255, 255, 255, 0.5) 100%
-    );
-    border-radius: 20px;
+	background: linear-gradient(
+		180deg,
+		rgba(255, 255, 255, 0) 4.69%,
+		rgba(255, 255, 255, 0.450521) 13.02%,
+		rgba(255, 255, 255, 0.5) 100%
+	);
+	border-radius: 20px;
 }
 .customer {
-    font-family: Arial;
+	font-family: Arial;
 
-    width: 80%;
-    height: 95%;
-    left: calc(50% - 80% / 2);
-    top: calc(50% - 95% / 2);
+	width: 80%;
+	height: 95%;
+	left: calc(50% - 80% / 2);
+	top: calc(50% - 95% / 2);
 
-    border-radius: 20px;
-    position: fixed;
+	border-radius: 20px;
+	position: fixed;
 }
 .menu {
-    overflow: hidden;
+	overflow: hidden;
 
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 .panelButtons {
-    position: absolute;
+	position: absolute;
 
-    width: 650px;
-    height: 100px;
-    left: calc(50% - 650px / 2);
-    top: 0px;
+	width: 650px;
+	height: 100px;
+	left: calc(50% - 650px / 2);
+	top: 0px;
 }
 .login {
-    position: absolute;
-    background: url(../css/ubate-4.jpg) no-repeat;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	background: url(../css/ubate-4.jpg) no-repeat;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
 }
 .list {
-    position: fixed;
+	position: fixed;
 
-    width: 80%;
-    height: 85%;
+	width: 80%;
+	height: 85%;
 
-    left: calc(50% - 80% / 2);
-    top: calc(50% - 85% / 2 + 66px);
+	left: calc(50% - 80% / 2);
+	top: calc(50% - 85% / 2 + 66px);
 
-    overflow: hidden;
+	overflow: hidden;
 
-    border-radius: 20px;
+	border-radius: 20px;
 }
 .users {
-    position: absolute;
+	position: absolute;
 
-    width: 70%;
-    height: 90%;
-    left: calc(50% - 70% / 2);
-    top: calc(50% - 90% / 2);
+	width: 70%;
+	height: 90%;
+	left: calc(50% - 70% / 2);
+	top: calc(50% - 90% / 2);
 
-    overflow-y: scroll;
-    overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .users::-webkit-scrollbar {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 .users::-webkit-scrollbar:vertical {
-    width: 1px;
+	width: 1px;
 }
 .users::-webkit-scrollbar-button:increment,
 .users::-webkit-scrollbar-button {
-    display: none;
+	display: none;
 }
 .users::-webkit-scrollbar:horizontal {
-    height: 5px;
+	height: 5px;
 }
 .users::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 0, 0, 0.1);
-    border-radius: 20px;
-    border: none;
+	background-color: rgba(255, 0, 0, 0.1);
+	border-radius: 20px;
+	border: none;
 }
 .users::-webkit-scrollbar-track {
-    border-radius: 10px;
+	border-radius: 10px;
 }
 .loading {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 
-    background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.1);
 }
 .invoice {
-    position: absolute;
-    width: 1200px;
-    height: 80%;
-    left: calc(50% - 1200px / 2);
-    top: 132px;
+	position: absolute;
+	width: 1200px;
+	height: 80%;
+	left: calc(50% - 1200px / 2);
+	top: 132px;
 
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 20px;
 }
 /*Master*/
 /*Other´s Components */
