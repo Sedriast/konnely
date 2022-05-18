@@ -20,11 +20,15 @@ export function Customer(props) {
             buttons: ["No", "Si"],
         }).then((respuesta) => {
             if (respuesta) {
-                window.location.reload(true);
                 UpdateInfoProfile(f);
+                setTimeout(recargar, 1000);
             }
         });
     };
+
+    function recargar() {
+        window.location.reload(true);
+    }
 
     return (
         <>
