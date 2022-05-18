@@ -142,6 +142,7 @@ export function Layout(props) {
                                     element={
                                         <>
                                             <ProtectedRoute>
+                                                <Navbar clsName={style_L.menu} />
                                                 <PanelButtons
                                                     clsName={style_L.panelButtons}
                                                     loading_={changeLoad}
@@ -172,7 +173,6 @@ export function Layout(props) {
                                     }
                                 />
                             </Routes>
-                            <Navbar clsName={style_L.menu} />
                         </Router>
                     )}
                 </div>

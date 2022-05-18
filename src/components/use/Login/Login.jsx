@@ -29,6 +29,10 @@ export function Login(props) {
             notification_err(error.code, "error", "aceptar");
         }
     };
+
+    const navigate_ = () => {
+        navigate("/register");
+    };
     return (
         <>
             <div className={props.clsName}>
@@ -48,6 +52,10 @@ export function Login(props) {
                     <Buttons
                         clsName={style_Lo.submit_Lo}
                         click_={handleSubmit}
+                        link_="#"></Buttons>
+                    <Buttons
+                        clsName={style_Lo.submit_Lo_re}
+                        click_={navigate_}
                         link_="#"></Buttons>
                 </div>
             </div>

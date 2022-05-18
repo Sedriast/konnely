@@ -1,7 +1,7 @@
 export const Data = [
     {
         title: "Inicio",
-        path: "/",
+        path: "/list",
     },
     {
         title: "Mi cuenta",

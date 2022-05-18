@@ -22,6 +22,9 @@
 /*Const*/
 :root {
     --back-general: white;
+    --font-family-general: arial;
+    --font-color: rgba(0, 0, 0, 0.5);
+    --font-size: 28px;
 }
 /*Const*/
 
@@ -29,6 +32,11 @@
 /*Master*/
 .panel_ {
     background: rgba(0, 0, 0, 0.8);
+    width: 500px;
+    height: 640px;
+
+    top: calc(50% - 640px / 2);
+    left: calc(50% - 500px / 2);
 
     width: 100%;
     height: 100%;
@@ -99,6 +107,18 @@
     height: 52px;
     left: 168px;
     top: 408px;
+
+    border-radius: 50px;
+    overflow: hidden;
+
+    background-color: orange;
+}
+.submit_Lo_re {
+    position: absolute;
+    width: 163px;
+    height: 52px;
+    left: 168px;
+    top: 508px;
 
     border-radius: 50px;
     overflow: hidden;
