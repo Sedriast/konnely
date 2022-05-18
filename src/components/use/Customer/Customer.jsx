@@ -20,6 +20,7 @@ export function Customer(props) {
             buttons: ["No", "Si"],
         }).then((respuesta) => {
             if (respuesta) {
+                window.location.reload(true);
                 UpdateInfoProfile(f);
             }
         });
