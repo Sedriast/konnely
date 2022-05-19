@@ -30,9 +30,6 @@ export function Login(props) {
         }
     };
 
-    const navigate_ = () => {
-        navigate("/register");
-    };
     return (
         <>
             <div className={props.clsName}>
@@ -52,10 +49,13 @@ export function Login(props) {
                     <Buttons
                         clsName={style_Lo.submit_Lo}
                         click_={handleSubmit}
+                        text_="Iniciar sección"
                         link_="#"></Buttons>
                     <Buttons
                         clsName={style_Lo.submit_Lo_re}
-                        click_={navigate_}
+                        click_={() => {
+                            navigate("/Register");
+                        }}
                         link_="#"></Buttons>
                 </div>
             </div>

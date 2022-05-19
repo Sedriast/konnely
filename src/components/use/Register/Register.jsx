@@ -1,4 +1,4 @@
-import style_Lo from "../../css/Login/Login.module.css";
+import style_Lo from "../../css/Register/Register.module.css";
 import { Buttons } from "../Tools/Buttons";
 import { Inputs } from "../Tools/Inputs";
 import { useState } from "react";
@@ -65,8 +65,10 @@ export function Register(props) {
                         click_={handleSubmit}
                         link_="#"></Buttons>
                     <Buttons
-                        clsName={style_Lo.submit_Lo_2}
-                        click_={handleLogout}
+                        clsName={style_Lo.submit_Lo_re}
+                        click_={() => {
+                            navigate("/");
+                        }}
                         link_="#"></Buttons>
                 </div>
             </div>

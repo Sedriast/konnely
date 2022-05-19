@@ -78,7 +78,15 @@ export function Layout(props) {
                     ) : (
                         <Router>
                             <Routes>
-                                <Route exact path="/test" element={<></>} />
+                                <Route
+                                    exact
+                                    path="/test"
+                                    element={
+                                        <>
+                                            <Navbar clsName={style_L.menu} />
+                                        </>
+                                    }
+                                />
                                 <Route
                                     exact
                                     path="/"
@@ -88,11 +96,6 @@ export function Layout(props) {
                                     exact
                                     path="/register"
                                     element={<Register clsName={style_L.login} />}
-									/>
-                                <Route
-                                    exact
-                                    path="/"
-                                    element={<Login clsName={style_L.login} />}
                                 />
                                 <Route
                                     exact
@@ -100,6 +103,7 @@ export function Layout(props) {
                                     element={
                                         <>
                                             <ProtectedRoute>
+                                                <Navbar clsName={style_L.menu} />
                                                 <Customer
                                                     clsName={style_L.customer}
                                                 />
@@ -113,6 +117,7 @@ export function Layout(props) {
                                     element={
                                         <>
                                             <ProtectedRoute>
+                                                <Navbar clsName={style_L.menu} />
                                                 <Users
                                                     clsName={style_L.users}
                                                     src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
@@ -128,6 +133,7 @@ export function Layout(props) {
                                     path="/form"
                                     element={
                                         <>
+                                            <Navbar clsName={style_L.menu} />
                                             <PanelButtons
                                                 clsName={style_L.panelButtons}
                                                 loading_={changeLoad}
@@ -157,6 +163,7 @@ export function Layout(props) {
                                     path="/invoice"
                                     element={
                                         <>
+                                            <Navbar clsName={style_L.menu} />
                                             <PanelButtons
                                                 clsName={style_L.panelButtons}
                                                 loading_={changeLoad}

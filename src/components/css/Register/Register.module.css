@@ -80,7 +80,7 @@
     width: 400px;
     height: 91px;
     left: 50px;
-    top: 150px;
+    top: 50px;
     -webkit-text-stroke: 0.5px white;
 }
 
@@ -89,7 +89,7 @@
     width: 400px;
     height: 91px;
     left: 50px;
-    top: 180px;
+    top: 160px;
     -webkit-text-stroke: 0.5px white;
 }
 
@@ -98,7 +98,7 @@
     width: 400px;
     height: 91px;
     left: 50px;
-    top: 273px;
+    top: 270px;
     -webkit-text-stroke: 0.5px white;
 }
 .submit_Lo {
@@ -112,8 +112,6 @@
     overflow: hidden;
 
     background-color: orange;
-    font-family: var(--font-family-general);
-    font-size: 11px;
 }
 .submit_Lo_re {
     position: absolute;
