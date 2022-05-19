@@ -88,7 +88,7 @@ export function Layout(props) {
                                     exact
                                     path="/register"
                                     element={<Register clsName={style_L.login} />}
-                                />
+									/>
                                 <Route
                                     exact
                                     path="/"
