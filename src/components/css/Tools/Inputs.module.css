@@ -39,7 +39,8 @@
 }
 input[type='date']:required:invalid::-webkit-datetime-edit {
 	color: var(--font-color);
-	font-size: 40px;
+	padding-left: 1rem;
+	font-size: 25px;
 }
 /*Master*/
 /*Sub*/
@@ -50,7 +51,7 @@ input[type='date']:required:invalid::-webkit-datetime-edit {
 	margin-left: 1rem;
 
 	font-family: arial;
-	font-size: 30px;
+	font-size: 25px;
 }
 .br_ {
 	height: 10px;
