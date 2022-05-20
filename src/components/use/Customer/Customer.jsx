@@ -4,6 +4,7 @@ import { useState } from "react";
 import { UpdateInfoProfile } from "../../firebase/funtions/AddInformation";
 import { useAuth } from "../../../context/AuthContext";
 import swal from "sweetalert";
+import { Navigate } from "react-router-dom";
 
 export function Customer(props) {
     const { user } = useAuth();

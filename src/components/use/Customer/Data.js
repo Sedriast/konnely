@@ -1,14 +1,14 @@
-import uno_ from '../../css/Img/1_.png';
-import dos_ from '../../css/Img/2_.png';
-import tres_ from '../../css/Img/3_.png';
-import cuatro_ from '../../css/Img/4_.png';
-import cinco_ from '../../css/Img/5_.png';
-import seis_ from '../../css/Img/6_.png';
+import uno_ from "../../css/Img/1_.png";
+import dos_ from "../../css/Img/2_.png";
+import tres_ from "../../css/Img/3_.png";
+import cuatro_ from "../../css/Img/4_.png";
+import cinco_ from "../../css/Img/5_.png";
+import seis_ from "../../css/Img/6_.png";
 
 export const Data = [
     {
         name: "caryWhite",
-        miniature: "../../css/Fondos/1_.png",
+        miniature: uno_,
         miniature_1:
             "https://drive.google.com/uc?export=download&id=1TfQRti17n6dtBIE0Jifb9L-88BFRFsjO",
         backgroud:
@@ -16,7 +16,7 @@ export const Data = [
     },
     {
         name: "darpa",
-        miniature: "../../css/Fondos/2_.png",
+        miniature: dos_,
         miniature_1:
             "https://drive.google.com/uc?export=download&id=171YQUEx7BERY3MqrCQhk2mpR_Qwp7DLL",
         backgroud:
@@ -24,7 +24,7 @@ export const Data = [
     },
     {
         name: "wine",
-        miniature: "../../css/Fondos/3_.png",
+        miniature: tres_,
         miniature_1:
             "https://drive.google.com/uc?export=download&id=1lJhUinD1j3LSRRLtbXYR5V5k0Mz6dXnO",
         backgroud:
@@ -32,7 +32,7 @@ export const Data = [
     },
     {
         name: "Broke",
-        miniature: "../../css/Fondos/3_.png",
+        miniature: cuatro_,
         miniature_1:
             "https://drive.google.com/uc?export=download&id=1vAb2vSBiGQlzc_FQMFYGW0N0jbabRKw2",
         backgroud:
@@ -40,7 +40,7 @@ export const Data = [
     },
     {
         name: "line",
-        miniature: "../../css/Fondos/4_.png",
+        miniature: cinco_,
         miniature_1:
             "https://drive.google.com/uc?export=download&id=1udAanIgzMRTlXu3V7YNtTAP0X7L5hG59",
         backgroud:
@@ -48,7 +48,7 @@ export const Data = [
     },
     {
         name: "caryBlack",
-        miniature: "../../css/Fondos/5_.png",
+        miniature: seis_,
         miniature_1:
             "https://drive.google.com/uc?export=download&id=11aszYhyH-Hq0-mq1QIo-t9cLYCl88TnE",
         backgroud:
