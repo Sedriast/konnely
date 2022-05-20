@@ -9,35 +9,40 @@ export const Data = [
     },
     {
         name: "darpa",
-        miniature:
+        miniature: "../../css/Fondos/2_.png",
+        miniature_1:
             "https://drive.google.com/uc?export=download&id=171YQUEx7BERY3MqrCQhk2mpR_Qwp7DLL",
         backgroud:
             "url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)",
     },
     {
         name: "wine",
-        miniature:
+        miniature: "../../css/Fondos/3_.png",
+        miniature_1:
             "https://drive.google.com/uc?export=download&id=1lJhUinD1j3LSRRLtbXYR5V5k0Mz6dXnO",
         backgroud:
             "url(https://drive.google.com/uc?export=download&id=1IUHu6CRZWVMQAolKFL8X-qqtdkJUc8je)",
     },
     {
         name: "Broke",
-        miniature:
+        miniature: "../../css/Fondos/3_.png",
+        miniature_1:
             "https://drive.google.com/uc?export=download&id=1vAb2vSBiGQlzc_FQMFYGW0N0jbabRKw2",
         backgroud:
             "url(https://drive.google.com/uc?export=download&id=1XoiOIa2O2gJXpzy9wKGMvBdgMWZYJ6k2)",
     },
     {
         name: "line",
-        miniature:
+        miniature: "../../css/Fondos/4_.png",
+        miniature_1:
             "https://drive.google.com/uc?export=download&id=1udAanIgzMRTlXu3V7YNtTAP0X7L5hG59",
         backgroud:
             "url(https://drive.google.com/uc?export=download&id=1KngiqrQ-IA8sekHOcDq_0FZ7ne4W-SeR)",
     },
     {
         name: "caryBlack",
-        miniature:
+        miniature: "../../css/Fondos/5_.png",
+        miniature_1:
             "https://drive.google.com/uc?export=download&id=11aszYhyH-Hq0-mq1QIo-t9cLYCl88TnE",
         backgroud:
             "url(https://drive.google.com/uc?export=download&id=1uD5Xb_2enNKu4rzR3FXhq-IePyMGlQ4H)",
