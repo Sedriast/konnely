@@ -4,11 +4,13 @@ import { useState } from "react";
 import style_M from "../../css/Menu/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { Buttons } from "../Tools/Buttons";
-import { Logout } from "../Logout/Logout";
+import { Logout } from "../Login/Logout";
+import { useAuth } from "../../../context/AuthContext";
 
 export function Navbar(props) {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+    const { logout } = useAuth();
 
     return (
         <>
@@ -37,8 +39,8 @@ export function Navbar(props) {
                             <Buttons
                                 clsName={style_M.options}
                                 text_="Cerrar sección"
+                                click_={logout}
                                 link_="/"
-                                click_={Logout()}
                             />
                         </div>
                     </ul>
