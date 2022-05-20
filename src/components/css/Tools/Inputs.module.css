@@ -21,55 +21,56 @@
 
 /*Const*/
 :root {
-    --back-general: rgba(255, 255, 255, 0.75);
-    --font-family-general: arial;
-    --font-color: rgba(0, 0, 0, 0.75);
-    --font-size: 40px;
-    --focus-back: #fff;
+	--back-general: rgba(255, 255, 255, 0.75);
+	--font-family-general: arial;
+	--font-color: rgba(0, 0, 0, 0.75);
+	--font-size: 40px;
+	--focus-back: #fff;
 }
 /*Const*/
 
 /*Containers*/
 /*Master*/
 .panel_ {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 
-    overflow: hidden;
+	overflow: hidden;
 }
-input[type="date"]:required:invalid::-webkit-datetime-edit {
-    color: var(--font-color);
-    font-size: 40px;
+input[type='date']:required:invalid::-webkit-datetime-edit {
+	color: var(--font-color);
+	font-size: 40px;
 }
 /*Master*/
 /*Sub*/
 .label {
-    width: 100%;
-    height: 30px;
-    margin: 0;
-    margin-left: 1rem;
+	width: 100%;
+	height: 30px;
+	margin: 0;
+	margin-left: 1rem;
 
-    font-family: arial;
-    font-size: 30px;
+	font-family: arial;
+	font-size: 30px;
 }
 .br_ {
-    height: 10px;
+	height: 10px;
 }
 .inp {
-    background: var(--back-general);
-    width: 100%;
-    height: calc(100% - 10px - 30px);
+	background: var(--back-general);
+	width: 100%;
+	height: calc(100% - 10px - 30px);
 
-    font-size: var(--font-size);
-    box-sizing: border-box;
-    border: none;
-    border-radius: 20px;
+	font-size: var(--font-size);
+	box-sizing: border-box;
+	border: none;
+	border-radius: 20px;
 
-    font-family: Arial;
+	font-family: Arial;
 }
 .inp::placeholder {
-    font-size: 30px;
-    color: var(--font-color);
+	font-size: 25px;
+	padding-left: 1rem;
+	color: var(--font-color);
 }
 /*Sub*/
 /*Button´s container*/
