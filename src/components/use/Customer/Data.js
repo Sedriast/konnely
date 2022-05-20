@@ -9,31 +9,31 @@ export const Data = [
 	{
 		name: 'caryWhite',
 		miniature: uno_,
-		backgroud: '../../css/Img/1.png',
+		backgroud: '../css/Img/1.png',
 	},
 	{
 		name: 'darpa',
 		miniature: dos_,
-		backgroud: '../../css/Img/2.png',
+		backgroud: '../css/Img/2.png',
 	},
 	{
 		name: 'wine',
 		miniature: tres_,
-		backgroud: '../../css/Img/3.png',
+		backgroud: '../css/Img/3.png',
 	},
 	{
 		name: 'Broke',
 		miniature: cuatro_,
-		backgroud: '../../css/Img/4.png',
+		backgroud: '../css/Img/4.png',
 	},
 	{
 		name: 'line',
 		miniature: cinco_,
-		backgroud: '../../css/Img/5.png',
+		backgroud: '../css/Img/5.png',
 	},
 	{
 		name: 'caryBlack',
 		miniature: seis_,
-		backgroud: '../../css/Img/6.png',
+		backgroud: '../css/Img/6.png',
 	},
 ];
