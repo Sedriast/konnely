@@ -154,5 +154,11 @@
 	border: solid 1px white;
 	border-top: none;
 }
+.op6 img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
+}
 /*Master*/
 /*Other´s Components */

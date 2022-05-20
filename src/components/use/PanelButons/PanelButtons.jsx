@@ -12,7 +12,7 @@ export function PanelButtons(props) {
 					<Buttons clsName={style_PB.op3} link_="/" cliLoa_={props.loading_} />
 					<Buttons clsName={style_PB.op4} link_="/" cliLoa_={props.loading_} />
 					<Buttons clsName={style_PB.op5} link_="/" cliLoa_={props.loading_} />
-					<Buttons clsName={style_PB.op6} link_="/form" cliLoa_={props.loading_} />
+					<Buttons clsName={style_PB.op6} link_="/form" cliLoa_={props.loading_} icon_={ojo} />
 				</div>
 			</div>
 		</>
