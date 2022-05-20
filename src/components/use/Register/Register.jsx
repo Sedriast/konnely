@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 
+
 export function Register(props) {
     const { signup, notification_err, logout } = useAuth();
 

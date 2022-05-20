@@ -4,6 +4,7 @@ import { useState } from "react";
 import style_M from "../../css/Menu/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { Buttons } from "../Tools/Buttons";
+import { Logout } from "../Logout/Logout";
 
 export function Navbar(props) {
     const [sidebar, setSidebar] = useState(false);
@@ -33,6 +34,12 @@ export function Navbar(props) {
                                     />
                                 );
                             })}
+                            <Buttons
+                                clsName={style_M.options}
+                                text_="Cerrar sección"
+                                link_="/"
+                                click_={Logout()}
+                            />
                         </div>
                     </ul>
                 </nav>

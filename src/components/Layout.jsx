@@ -1,6 +1,6 @@
 import app from "../components/firebase/credentials";
 import style_L from "../components/css/Layout.module.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
 
 import g from "./css/load.png";
 import { Users } from "../components/use/Users/Users";
@@ -27,7 +27,7 @@ import {
 const db = getFirestore(app);
 
 export function Layout(props) {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const [init, setInit] = useState(false);
     const [user_, setUser_] = useState([
         {
@@ -102,8 +102,8 @@ export function Layout(props) {
                                     path="/customer"
                                     element={
                                         <>
+                                            <Navbar clsName={style_L.menu} />
                                             <ProtectedRoute>
-                                                <Navbar clsName={style_L.menu} />
                                                 <Customer
                                                     clsName={style_L.customer}
                                                 />
@@ -116,8 +116,8 @@ export function Layout(props) {
                                     path="/users"
                                     element={
                                         <>
+                                            <Navbar clsName={style_L.menu} />
                                             <ProtectedRoute>
-                                                <Navbar clsName={style_L.menu} />
                                                 <Users
                                                     clsName={style_L.users}
                                                     src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
@@ -147,8 +147,8 @@ export function Layout(props) {
                                     path="/list"
                                     element={
                                         <>
+                                            <Navbar clsName={style_L.menu} />
                                             <ProtectedRoute>
-                                                <Navbar clsName={style_L.menu} />
                                                 <PanelButtons
                                                     clsName={style_L.panelButtons}
                                                     loading_={changeLoad}
