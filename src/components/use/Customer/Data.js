@@ -1,7 +1,8 @@
 export const Data = [
     {
         name: "caryWhite",
-        miniature:
+        miniature: "../../css/Fondos/1_.png",
+        miniature_1:
             "https://drive.google.com/uc?export=download&id=1TfQRti17n6dtBIE0Jifb9L-88BFRFsjO",
         backgroud:
             "url(https://drive.google.com/uc?export=download&id=1p-s71I4bnyv5Gid9Iv6VzL6QEi-0iqba)",
