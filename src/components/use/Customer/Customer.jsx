@@ -4,6 +4,7 @@ import { useState } from "react";
 import { UpdateInfoProfile } from "../../firebase/funtions/AddInformation";
 import { useAuth } from "../../../context/AuthContext";
 import swal from "sweetalert";
+import { Navigate } from "react-router-dom";
 
 export function Customer(props) {
     const { user } = useAuth();
@@ -41,7 +42,8 @@ export function Customer(props) {
                                     <img
                                         className={style_Cu.preview_}
                                         id={a.backgroud}
-                                        src={a.miniature}
+                                        src={a.miniature_1}
+                                        // src={require(a.miniature).default}
                                         onClick={c}
                                         href=""
                                         alt=""
