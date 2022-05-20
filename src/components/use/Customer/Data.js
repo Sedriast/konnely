@@ -1,3 +1,10 @@
+import uno_ from '../../css/Img/1_.png';
+import dos_ from '../../css/Img/2_.png';
+import tres_ from '../../css/Img/3_.png';
+import cuatro_ from '../../css/Img/4_.png';
+import cinco_ from '../../css/Img/5_.png';
+import seis_ from '../../css/Img/6_.png';
+
 export const Data = [
     {
         name: "caryWhite",
