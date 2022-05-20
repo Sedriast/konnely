@@ -21,15 +21,15 @@
 
 /*Const*/
 :root {
-    --back-general: white;
+	--back-general: white;
 }
 /*Const*/
 
 /*Containers*/
 /*Master*/
 .panel_ {
-    width: 100%;
-    height: 100%;
+	width: 100%;
+	height: 100%;
 }
 /*Master*/
 /*Sub*/
@@ -60,95 +60,105 @@
 /*Resizing */
 
 /*Animations*/
-export
 /*Animations*/
-componenst/invoce/invoce
 
 /*Other´s Components*/
 /*Master*/
 .op1 {
-    position: absolute;
-    left: 0%;
-    right: 84.62%;
-    top: 0%;
-    bottom: 0%;
-    border-radius: 0px 0px 40px 40px;
-    overflow: hidden;
+	position: absolute;
+	left: 0%;
+	right: 84.62%;
+	top: 0%;
+	bottom: 0%;
+	border-radius: 0px 0px 40px 40px;
+	overflow: hidden;
 
-    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
-    border: solid 1px white;
-    border-top: none;
+	border: solid 1px white;
+	border-top: none;
+}
+.op1 img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
 }
 .op2 {
-    position: absolute;
-    left: 16.92%;
-    right: 67.69%;
-    top: 0%;
-    bottom: 0%;
-    border-radius: 0px 0px 40px 40px;
-    overflow: hidden;
+	position: absolute;
+	left: 16.92%;
+	right: 67.69%;
+	top: 0%;
+	bottom: 0%;
+	border-radius: 0px 0px 40px 40px;
+	overflow: hidden;
 
-    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
-    border: solid 1px white;
-    border-top: none;
+	border: solid 1px white;
+	border-top: none;
 }
 .op3 {
-    position: absolute;
-    left: 33.85%;
-    right: 50.77%;
-    top: 0%;
-    bottom: 0%;
-    border-radius: 0px 0px 40px 40px;
-    overflow: hidden;
+	position: absolute;
+	left: 33.85%;
+	right: 50.77%;
+	top: 0%;
+	bottom: 0%;
+	border-radius: 0px 0px 40px 40px;
+	overflow: hidden;
 
-    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
-    border: solid 1px white;
-    border-top: none;
+	border: solid 1px white;
+	border-top: none;
 }
 .op4 {
-    position: absolute;
-    left: 50.77%;
-    right: 33.85%;
-    top: 0%;
-    bottom: 0%;
-    border-radius: 0px 0px 40px 40px;
-    overflow: hidden;
+	position: absolute;
+	left: 50.77%;
+	right: 33.85%;
+	top: 0%;
+	bottom: 0%;
+	border-radius: 0px 0px 40px 40px;
+	overflow: hidden;
 
-    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
-    border: solid 1px white;
-    border-top: none;
+	border: solid 1px white;
+	border-top: none;
 }
 .op5 {
-    position: absolute;
-    left: 67.69%;
-    right: 16.92%;
-    top: 0%;
-    bottom: 0%;
-    border-radius: 0px 0px 40px 40px;
-    overflow: hidden;
+	position: absolute;
+	left: 67.69%;
+	right: 16.92%;
+	top: 0%;
+	bottom: 0%;
+	border-radius: 0px 0px 40px 40px;
+	overflow: hidden;
 
-    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
-    border: solid 1px white;
-    border-top: none;
+	border: solid 1px white;
+	border-top: none;
 }
 .op6 {
-    position: absolute;
-    left: 84.62%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
-    border-radius: 0px 0px 40px 40px;
-    overflow: hidden;
+	position: absolute;
+	left: 84.62%;
+	right: 0%;
+	top: 0%;
+	bottom: 0%;
+	border-radius: 0px 0px 40px 40px;
+	overflow: hidden;
 
-    background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	background: linear-gradient(360deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
-    border: solid 1px white;
-    border-top: none;
+	border: solid 1px white;
+	border-top: none;
+}
+.op6 img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100px;
 }
 /*Master*/
 /*Other´s Components */
