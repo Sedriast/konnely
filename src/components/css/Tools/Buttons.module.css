@@ -47,9 +47,10 @@
 }
 .panel_ h1 {
 	position: absolute;
-
+	left: 1rem;
 	color: black;
-	margin: 0;
+	top: 1rem;
+	margin: auto 0;
 }
 .panel_ a {
 	border: none;
