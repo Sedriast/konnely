@@ -2,10 +2,12 @@
     "name": "konnely",
     "version": "0.1.0",
     "private": true,
+    "main": "main.js",
     "dependencies": {
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^12.8.3",
+        "concurrently": "^7.2.1",
         "firebase": "^9.8.1",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
@@ -13,9 +15,11 @@
         "react-scripts": "4.0.3",
         "reactstrap": "^9.0.1",
         "sweetalert": "^2.1.2",
+        "wait-on": "^6.0.1",
         "web-vitals": "^1.1.2"
     },
     "scripts": {
+        "electron": "concurrently \"SET BROWSER=none && npm start\" \"wait-on http://localhost:3000 && electron .\"",
         "felips": "react-scripts --openssl-legacy-provider start",
         "start": "react-scripts start",
         "build": "react-scripts build",
@@ -39,5 +43,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "electron": "^19.0.3"
     }
 }

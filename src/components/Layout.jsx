@@ -1,6 +1,6 @@
 import app from "../components/firebase/credentials";
 import style_L from "../components/css/Layout.module.css";
-import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import g from "./css/load.png";
 import { Users } from "../components/use/Users/Users";
@@ -27,7 +27,7 @@ import {
 const db = getFirestore(app);
 
 export function Layout(props) {
-    const { user, logout } = useAuth();
+    const { user } = useAuth();
     const [init, setInit] = useState(false);
     const [user_, setUser_] = useState([
         {

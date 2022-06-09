@@ -1,16 +1,36 @@
 import "../../css/Menu/Active.css";
+import { useNavigate } from "react-router-dom";
 import { Data } from "./Data";
 import { useState } from "react";
 import style_M from "../../css/Menu/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { Buttons } from "../Tools/Buttons";
-import { Logout } from "../Login/Logout";
+import swal from "sweetalert";
 import { useAuth } from "../../../context/AuthContext";
 
 export function Navbar(props) {
+    const { logout, user } = useAuth();
+    const navigate = useNavigate();
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
-    const { logout } = useAuth();
+
+    const Logout_ = () => {
+        try {
+            swal({
+                title: "¿Desea cerrar sesión?",
+                icon: "warning",
+                buttons: ["No", "Si"],
+            }).then((respuesta) => {
+                if (respuesta) {
+                    handleSubmit2();
+                    navigate("/");
+                }
+            });
+        } catch (error) {}
+    };
+    const handleSubmit2 = async () => {
+        await logout();
+    };
 
     return (
         <>
@@ -39,8 +59,12 @@ export function Navbar(props) {
                             <Buttons
                                 clsName={style_M.options}
                                 text_="Cerrar sección"
-                                click_={logout}
-                                link_="/"
+                                click_={() => {
+                                    if (user) {
+                                        Logout_();
+                                    }
+                                }}
+                                link_="#"
                             />
                         </div>
                     </ul>

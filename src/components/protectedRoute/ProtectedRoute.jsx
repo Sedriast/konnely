@@ -7,7 +7,7 @@ export function ProtectedRoute({ children }) {
     if (loading) return <h1>Loading...</h1>;
     if (!user) {
         swal({
-            title: "Debes iniciar sección primer",
+            title: "Debes iniciar sección primero",
             icon: "error",
             button: "aceptar",
         });
