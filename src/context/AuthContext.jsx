@@ -7,7 +7,6 @@ import {
     sendPasswordResetEmail,
     getAuth,
     updateProfile,
-    sendSignInLinkToEmail,
     sendEmailVerification,
 } from "firebase/auth";
 import app from "../components/firebase/credentials";
@@ -50,10 +49,20 @@ export function AuthProvider({ children }) {
                 tema: tema,
             },
         });
+        await sendEmailVerification(auth.currentUser);
     };
 
-    const login = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password);
+    const login = async (email, password) => {
+        await signInWithEmailAndPassword(auth, email, password).then(async () => {
+            if (!auth.currentUser.emailVerified) {
+                swal({
+                    title: "Debes verificar tu cuenta primero",
+                    icon: "error",
+                    button: "aceptar",
+                });
+                await logout();
+            }
+        });
     };
 
     const notification_err = (titulo, icono, boton) => {

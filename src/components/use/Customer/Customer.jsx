@@ -29,7 +29,6 @@ export function Customer(props) {
     function recargar() {
         window.location.reload(true);
     }
-
     return (
         <>
             <div className={props.clsName}>

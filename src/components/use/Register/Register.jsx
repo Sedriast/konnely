@@ -5,11 +5,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { ValidationErrors } from "../Login/ValidationErrors";
+import swal from "sweetalert";
 
 export function Register(props) {
-    const { signup, notification_err } = useAuth();
+    const { signup, logout } = useAuth();
 
-    const [user, setUser] = useState({
+    const [newuser, setUser] = useState({
         userName: "",
         email: "",
         password: "",
@@ -19,18 +20,35 @@ export function Register(props) {
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setUser({ ...user, [name]: value });
+        setUser({ ...newuser, [name]: value });
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await signup(user.userName, user.email, user.password);
-            navigate("/list");
+            await signup(newuser.userName, newuser.email, newuser.password);
+            navigate("/");
+            swal({
+                title: "Debes verificar tu cuenta en la bandeja de entrada de tu correo, si no lo encuentra hay puedes buscar en el apartado de spam o no deseados",
+                icon: "warning",
+                buttons: "Aceptar",
+            }).then((respuesta) => {
+                if (respuesta) {
+                    cerrarSesion();
+                    navigate("/");
+                } else {
+                    cerrarSesion();
+                    navigate("/");
+                }
+            });
         } catch (error) {
             ValidationErrors(error.code);
         }
     };
+    const cerrarSesion = async () => {
+        await logout();
+    };
+
     return (
         <>
             <div className={props.clsName}>

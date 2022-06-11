@@ -7,7 +7,7 @@ export function ProtectedRoute({ children }) {
     if (loading) return <h1>Loading...</h1>;
     if (!user) {
         swal({
-            title: "Debes iniciar sección primero",
+            title: "Este ventana puede aparecer porque no ha verificado su cuenta o porque intenta acceder sin autorización",
             icon: "error",
             button: "aceptar",
         });

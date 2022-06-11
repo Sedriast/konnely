@@ -14,7 +14,7 @@ export function List(props) {
                         placeholder_="Buscar"
                     />
                     <div className={style_Li.grid}>
-                        {SearchAll("conejos").props.children.map((a, index) => (
+						{SearchAll("conejos").props.children.map((a, index) => (
                             <Cards
                                 clsName={style_Li.card}
                                 key={index}

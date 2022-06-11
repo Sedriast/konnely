@@ -22,13 +22,13 @@ export function Navbar(props) {
                 buttons: ["No", "Si"],
             }).then((respuesta) => {
                 if (respuesta) {
-                    handleSubmit2();
+                    cerrarSesion();
                     navigate("/");
                 }
             });
         } catch (error) {}
     };
-    const handleSubmit2 = async () => {
+    const cerrarSesion = async () => {
         await logout();
     };
 

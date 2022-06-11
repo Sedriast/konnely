@@ -9,7 +9,7 @@ import { ValidationErrors } from "./ValidationErrors";
 export function Login(props) {
     const { login } = useAuth();
 
-    const [user, setUser] = useState({
+    const [newuser, setNewuser] = useState({
         email: "",
         password: "",
     });
@@ -18,16 +18,17 @@ export function Login(props) {
 
     function handleChange(e) {
         const { name, value } = e.target;
-        setUser({ ...user, [name]: value });
+        setNewuser({ ...newuser, [name]: value });
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await login(user.email, user.password);
+            await login(newuser.email, newuser.password);
             navigate("/list");
         } catch (error) {
             ValidationErrors(error.code);
+            console.log(error);
         }
     };
 
