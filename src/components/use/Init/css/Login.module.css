@@ -32,7 +32,7 @@
 	justify-content: center;
 	flex-direction: column;
 
-	background: rgba(0, 0, 0, 0.77);
+	background: linear-gradient(180deg, #23272a 0%, rgba(0, 0, 0, 0.75) 100%);
 	width: 600px;
 	height: 640px;
 

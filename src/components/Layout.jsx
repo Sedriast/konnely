@@ -1,8 +1,8 @@
 import app from '../components/firebase/credentials';
-import style_L from '../components/css/Layout.module.css';
+import st from './Layout.module.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import g from './css/load.png';
+import g from './img/load.png';
 import { Users } from '../components/use/Users/Users';
 import { Navbar } from './use/Menu/Navbar';
 import { Customer } from './use/Customer/Customer';
@@ -54,10 +54,10 @@ export function Layout(props) {
 	return (
 		<>
 			<div className={props.clsName}>
-				<div className={style_L.panel_} id="lay" onLoad={s}>
+				<div className={st.panel_} id="lay" onLoad={s}>
 					{init ? (
 						<>
-							<Loading clsName={style_L.loading} src_={g} />
+							<Loading clsName={st.loading} src_={g} />
 						</>
 					) : (
 						<Router>
@@ -67,7 +67,7 @@ export function Layout(props) {
 									path="/test"
 									element={
 										<>
-											<Navbar clsName={style_L.menu} />
+											<Navbar clsName={st.menu} />
 										</>
 									}
 								/>
@@ -77,9 +77,9 @@ export function Layout(props) {
 									path="/customer"
 									element={
 										<>
-											<Navbar clsName={style_L.menu} />
+											<Navbar clsName={st.menu} />
 											<ProtectedRoute>
-												<Customer clsName={style_L.customer} />
+												<Customer clsName={st.customer} />
 											</ProtectedRoute>
 										</>
 									}
@@ -89,10 +89,10 @@ export function Layout(props) {
 									path="/users"
 									element={
 										<>
-											<Navbar clsName={style_L.menu} />
+											<Navbar clsName={st.menu} />
 											<ProtectedRoute>
 												<Users
-													clsName={style_L.users}
+													clsName={st.users}
 													src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
 													title={user_[0].usuario}
 													label="Adminitrador"
@@ -106,9 +106,9 @@ export function Layout(props) {
 									path="/form"
 									element={
 										<>
-											<Navbar clsName={style_L.menu} />
-											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
-											<Form clsName={style_L.form_} />
+											<Navbar clsName={st.menu} />
+											<PanelButtons clsName={st.panelButtons} loading_={changeLoad} />
+											<Form clsName={st.form_} />
 										</>
 									}
 								/>
@@ -117,10 +117,10 @@ export function Layout(props) {
 									path="/list"
 									element={
 										<>
-											<Navbar clsName={style_L.menu} />
+											<Navbar clsName={st.menu} />
 											<ProtectedRoute>
-												<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
-												<List clsName={style_L.list} />
+												<PanelButtons clsName={st.panelButtons} loading_={changeLoad} />
+												<List clsName={st.list} />
 											</ProtectedRoute>
 										</>
 									}
@@ -130,10 +130,10 @@ export function Layout(props) {
 									path="/invoice"
 									element={
 										<>
-											<Navbar clsName={style_L.menu} />
-											<PanelButtons clsName={style_L.panelButtons} loading_={changeLoad} />
+											<Navbar clsName={st.menu} />
+											<PanelButtons clsName={st.panelButtons} loading_={changeLoad} />
 											<Invoice
-												clsName={style_L.invoice}
+												clsName={st.invoice}
 												name="sadfadf"
 												nit="safasdfa"
 												email="sadfads@asdfasdfaf.com"

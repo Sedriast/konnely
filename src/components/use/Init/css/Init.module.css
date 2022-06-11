@@ -2,7 +2,7 @@
 	width: 600px;
 	max-width: 600px;
 	min-width: 450px;
-	margin: 30px auto;
+	margin: 3% auto;
 
 	font-size: 20px;
 	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
@@ -39,7 +39,7 @@ ul.tabs li a .tab text {
 	padding: 30px;
 }
 .active {
-	background: rgba(255, 255, 255, 0.15);
+	background: rgba(255, 255, 255, 0.1);
 	pointer-events: none;
 }
 .hidden {
