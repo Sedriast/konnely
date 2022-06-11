@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import st from './css/Init.module.css';
+import { useState } from 'react';
 import { Login } from './Login';
 import { Register } from './Register';
-// import { Login } from './Login';
-// import { Register } from './Register';
 
 export function Init() {
 	const [tab_, setTab_] = useState(false);

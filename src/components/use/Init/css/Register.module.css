@@ -24,6 +24,11 @@
 
 /*Containers*/
 /*Master*/
+* {
+	font-family: Arial;
+	font-size: 20px;
+	color: white;
+}
 .container {
 	position: absolute;
 
@@ -78,7 +83,7 @@
 
 	margin: 20px 0px;
 
-	-webkit-text-stroke: 0.5px white;
+	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
 }
 
 .userEmail {
@@ -87,7 +92,7 @@
 
 	margin: 20px 0px;
 
-	-webkit-text-stroke: 0.5px white;
+	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
 }
 
 .userPass {
@@ -96,7 +101,7 @@
 
 	margin: 20px 0px;
 
-	-webkit-text-stroke: 0.5px white;
+	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
 }
 .submit {
 	display: flex;
