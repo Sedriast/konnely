@@ -26,8 +26,7 @@
 /*Master*/
 * {
 	font-family: Arial;
-	font-size: 20px;
-	color: white;
+	color: rgb(255, 255, 255);
 }
 .container {
 	position: absolute;
@@ -83,7 +82,7 @@
 
 	margin: 20px 0px;
 
-	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
+	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 
 .userEmail {
@@ -92,7 +91,7 @@
 
 	margin: 20px 0px;
 
-	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
+	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 
 .userPass {
@@ -101,7 +100,7 @@
 
 	margin: 20px 0px;
 
-	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
+	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 .submit {
 	display: flex;
@@ -110,9 +109,9 @@
 	align-content: center;
 	align-items: center;
 
-	width: 100px;
+	width: 125px;
 	height: 49px;
-	border-radius: 20px;
+	border-radius: 24px;
 	border: 2px solid white;
 
 	margin: 20px 0px;
