@@ -1,5 +1,5 @@
 import st from './css/Login.module.css';
-import { Buttons } from '../Tools/Buttons';
+import { Buttons } from '../Tools/Buttons/Buttons';
 import { Inputs } from '../Tools/Inputs/Inputs';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';

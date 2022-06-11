@@ -4,7 +4,7 @@ import { Lists } from '../Tools/Lists';
 import { useState } from 'react';
 import { SearchAll } from '../../firebase/funtions/SearchAll';
 import { addImageAndInfo } from '../../firebase/funtions/AddInformation';
-import { Buttons } from '../Tools/Buttons';
+import { Buttons } from '../Tools/Buttons/Buttons';
 import { Dropdown } from './Dropdown';
 
 export function Form(props) {

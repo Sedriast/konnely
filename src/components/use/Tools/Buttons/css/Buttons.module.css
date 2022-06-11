@@ -49,8 +49,8 @@
 }
 .panel_ h1 {
 	text-decoration: none;
-	color: black;
-	margin: 0;
+	color: rgb(255, 255, 255);
+	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 .panel_ a {
 	text-decoration: none;

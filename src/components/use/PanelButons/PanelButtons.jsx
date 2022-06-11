@@ -1,5 +1,5 @@
 import style_PB from '../../css/PanelButtons/PanelButtons.module.css';
-import { Buttons } from '../Tools/Buttons';
+import { Buttons } from '../Tools/Buttons/Buttons';
 import ojo from '../../css/Img/ojo.png';
 
 export function PanelButtons(props) {

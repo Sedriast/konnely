@@ -5,14 +5,14 @@
 	margin: 3% auto;
 
 	font-size: 20px;
-	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
+	-webkit-text-stroke: 1px rgb(0, 0, 0);
 
 	border-radius: 20px 20px 0px 0px;
 	overflow: hidden;
 }
 ul.tabs {
 	width: 100%;
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.83);
 	list-style: none;
 	display: flex;
 }
