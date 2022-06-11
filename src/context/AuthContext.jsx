@@ -7,6 +7,8 @@ import {
     sendPasswordResetEmail,
     getAuth,
     updateProfile,
+    sendSignInLinkToEmail,
+    sendEmailVerification,
 } from "firebase/auth";
 import app from "../components/firebase/credentials";
 import swal from "sweetalert";

@@ -4,6 +4,7 @@ import { Inputs } from "../Tools/Inputs";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
+import { ValidationErrors } from "../Login/ValidationErrors";
 
 export function Register(props) {
     const { signup, notification_err } = useAuth();
@@ -27,7 +28,7 @@ export function Register(props) {
             await signup(user.userName, user.email, user.password);
             navigate("/list");
         } catch (error) {
-            notification_err(error.code, "error", "aceptar");
+            ValidationErrors(error.code);
         }
     };
     return (
