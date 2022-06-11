@@ -1,6 +1,6 @@
 import st from './css/Register.module.css';
 import { Buttons } from '../Tools/Buttons';
-import { Inputs } from '../Tools/Inputs';
+import { Inputs } from '../Tools/Inputs/Inputs';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';

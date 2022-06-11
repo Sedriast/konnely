@@ -1,5 +1,5 @@
 import style_F from '../../css/Form/Form.module.css';
-import { Inputs } from '../Tools/Inputs';
+import { Inputs } from '../Tools/Inputs/Inputs';
 import { Lists } from '../Tools/Lists';
 import { useState } from 'react';
 import { SearchAll } from '../../firebase/funtions/SearchAll';
