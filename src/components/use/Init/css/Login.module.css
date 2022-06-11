@@ -24,11 +24,6 @@
 
 /*Containers*/
 /*Master*/
-* {
-	font-family: Arial;
-	font-size: 20px;
-	color: white;
-}
 .container {
 	position: absolute;
 
@@ -116,6 +111,7 @@
 	border: 2px solid white;
 
 	margin: 20px 0px;
+	font-size: 15px;
 }
 /*Master*/
 /*Other´s Components */

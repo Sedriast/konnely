@@ -24,7 +24,7 @@
 	--back-general: rgba(255, 255, 255, 0.75);
 	--font-family-general: arial;
 	--font-color: rgba(0, 0, 0, 0.75);
-	--font-size: 40px;
+	--font-size: 20px;
 	--focus-back: #fff;
 }
 /*Const*/
@@ -40,7 +40,7 @@
 input[type='date']:required:invalid::-webkit-datetime-edit {
 	color: var(--font-color);
 	padding-left: 1rem;
-	font-size: 25px;
+	font-size: 20px;
 }
 /*Master*/
 /*Sub*/
@@ -51,7 +51,7 @@ input[type='date']:required:invalid::-webkit-datetime-edit {
 	margin-left: 1rem;
 
 	font-family: arial;
-	font-size: 25px;
+	font-size: 20px;
 }
 .br_ {
 	height: 10px;
@@ -65,11 +65,12 @@ input[type='date']:required:invalid::-webkit-datetime-edit {
 	box-sizing: border-box;
 	border: none;
 	border-radius: 20px;
+	padding-left: 1rem;
 
 	font-family: Arial;
 }
 .inp::placeholder {
-	font-size: 25px;
+	font-size: 20px;
 	padding-left: 1rem;
 	color: var(--font-color);
 }
