@@ -1,10 +1,3 @@
-* {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
 .container {
 	width: 600px;
 	max-width: 600px;
@@ -19,7 +12,7 @@
 }
 ul.tabs {
 	width: 100%;
-	background: rgb(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.9);
 	list-style: none;
 	display: flex;
 }
@@ -39,7 +32,6 @@ ul.tabs li a .tab text {
 	margin-left: 8px;
 }
 .sections {
-	display: flex;
 	width: 100%;
 	background: #fff;
 }
@@ -47,7 +39,7 @@ ul.tabs li a .tab text {
 	padding: 30px;
 }
 .active {
-	background: rgba(0, 0, 50, 0.75);
+	background: rgba(255, 255, 255, 0.15);
 	pointer-events: none;
 }
 .hidden {
