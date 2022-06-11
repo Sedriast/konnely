@@ -20,26 +20,23 @@
 */
 
 /*Const*/
-:root {
-	--back-general: white;
-	--font-family-general: arial;
-	--font-color: rgba(0, 0, 0, 0.5);
-	--font-size: 28px;
-}
 /*Const*/
 
 /*Containers*/
 /*Master*/
-.panel_ {
+.container {
 	position: absolute;
-	background: rgba(0, 0, 0, 0.8);
-	width: 500px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	background: rgba(0, 0, 0, 0.77);
+	width: 600px;
 	height: 640px;
 
-	top: calc(50% - 640px / 2);
-	left: calc(50% - 500px / 2);
-
-	border-radius: 20px;
+	border-radius: 0px 0px 20px 20px;
 }
 /*Master*/
 /*Sub*/
@@ -76,76 +73,44 @@
 /*Other´s Components*/
 /*Master*/
 .userName {
-	position: absolute;
 	width: 400px;
 	height: 91px;
-	left: 50px;
-	top: 50px;
+
+	margin: 20px 0px;
+
 	-webkit-text-stroke: 0.5px white;
 }
 
 .userEmail {
-	position: absolute;
 	width: 400px;
 	height: 91px;
-	left: 50px;
-	top: 160px;
+
+	margin: 20px 0px;
+
 	-webkit-text-stroke: 0.5px white;
 }
 
 .userPass {
-	position: absolute;
 	width: 400px;
 	height: 91px;
-	left: 50px;
-	top: 270px;
+
+	margin: 20px 0px;
+
 	-webkit-text-stroke: 0.5px white;
 }
-.submit_Lo {
-	position: absolute;
-	width: 163px;
-	height: 52px;
-	left: 168px;
-	top: 408px;
+.submit {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
 
-	border-radius: 50px;
-	overflow: hidden;
+	width: 100px;
+	height: 49px;
+	border-radius: 20px;
+	border: 2px solid white;
 
-	background-color: orange;
-}
-.submit_Lo h1 {
-	position: absolute;
-	top: 14px;
-	left: 51px;
-}
-.submit_Lo_re {
-	position: absolute;
-	width: 163px;
-	height: 52px;
-	left: 168px;
-	top: 490px;
-
-	border-radius: 50px;
-	overflow: hidden;
-
-	background-color: orange;
-}
-.submit_Lo_re h1 {
-	position: absolute;
-	top: 14px;
-	left: 3px;
-}
-.submit_Lo_2 {
-	position: absolute;
-	width: 163px;
-	height: 52px;
-	left: 168px;
-	top: 508px;
-
-	border-radius: 50px;
-	overflow: hidden;
-
-	background-color: orange;
+	margin: 20px 0px;
 }
 /*Master*/
 /*Other´s Components */
