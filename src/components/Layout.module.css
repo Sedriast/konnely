@@ -20,9 +20,6 @@
 */
 
 /*Const*/
-:root {
-	--back-general: white;
-}
 /*Const*/
 
 /*Containers*/
@@ -33,8 +30,7 @@
 	justify-content: center;
 	align-items: baseline;
 
-	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url(./img/ubate-4.jpg) no-repeat;
+	background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/ubate-4.jpg);
 	background-size: cover;
 
 	width: 100%;
@@ -114,12 +110,6 @@
 	height: 100px;
 	left: calc(50% - 650px / 2);
 	top: 0px;
-}
-.login {
-	position: absolute;
-
-	width: 100%;
-	height: 100%;
 }
 .list {
 	position: fixed;

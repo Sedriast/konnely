@@ -1,22 +1,21 @@
-import stInvoice from "../../css/Invoice/Invoice.module.css";
-import { Paragraphs } from "../Tools/Paragraphs";
+import st from './css/Invoice.module.css';
 
 export function Invoice(props) {
-    return (
-        <>
-            <div className={props.clsName}>
-                <div className={stInvoice.panel}>
-                    <img src={props.src} alt="" href="" />
-                    <Paragraphs
-                        clsName={stInvoice.paragraphs}
-                        t1={props.name}
-                        b1={props.nit}
-                        b2={props.email}
-                        t2={props.date}
-                        b3={props.userID}
-                    />
-                    <div className={stInvoice.lines}>
-                        {/* {Search('conejos').props.children.map((a, index) => (
+	return (
+		<>
+			<div className={props.clsName}>
+				<div className={st.panel}>
+					<img src={props.src} alt="" href="" />
+					<p>
+						<h1>{props.name}</h1>
+						<h2>{props.nit}</h2>
+						<h2>{props.email}</h2>
+						<h2>{props.date}</h2>
+						<h2>{props.userID}</h2>
+					</p>
+
+					<div className={st.lines}>
+						{/* {Search('conejos').props.children.map((a, index) => (
 							<Cards
 								clsName={stInvoice.card}
 								key={index}
@@ -29,10 +28,10 @@ export function Invoice(props) {
 								data2={a.genero}
 							/>
 						))} */}
-                    </div>
-                    <h1>Total: </h1>
-                </div>
-            </div>
-        </>
-    );
+					</div>
+					<h1>Total: </h1>
+				</div>
+			</div>
+		</>
+	);
 }

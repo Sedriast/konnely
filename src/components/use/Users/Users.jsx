@@ -1,6 +1,5 @@
 import style_U from '../../css/Users/Users.module.css';
 import { Buttons } from '../Tools/Buttons/Buttons';
-import { Paragraphs } from '../Tools/Paragraphs';
 
 export function Users(props) {
 	return (
@@ -14,7 +13,10 @@ export function Users(props) {
 						<Buttons clsName={style_U.op3} link_="/" />
 						<Buttons clsName={style_U.op4} link_="/" />
 					</div>
-					<Paragraphs clsName={style_U.para_} t1={props.title} b1={props.label} />
+					<p>
+						<h1>{props.title}</h1>
+						<h3>{props.label}</h3>
+					</p>
 				</div>
 			</div>
 		</>

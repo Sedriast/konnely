@@ -82,8 +82,6 @@
 	height: 91px;
 
 	margin: 20px 0px;
-
-	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 
 .userEmail {
@@ -91,8 +89,6 @@
 	height: 91px;
 
 	margin: 20px 0px;
-
-	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 
 .userPass {
@@ -100,8 +96,6 @@
 	height: 91px;
 
 	margin: 20px 0px;
-
-	-webkit-text-stroke: 0.5px rgb(0, 0, 0);
 }
 .submit {
 	display: flex;
@@ -116,7 +110,6 @@
 	border: 2px solid white;
 
 	margin: 20px 0px;
-	font-size: 15px;
 }
 /*Master*/
 /*Other´s Components */

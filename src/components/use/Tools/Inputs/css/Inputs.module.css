@@ -20,13 +20,6 @@
 */
 
 /*Const*/
-:root {
-	--back-general: rgba(255, 255, 255, 0.75);
-	--font-family-general: arial;
-	--font-color: rgba(0, 0, 0, 0.75);
-	--font-size: 20px;
-	--focus-back: #fff;
-}
 /*Const*/
 
 /*Containers*/
@@ -38,9 +31,7 @@
 	overflow: hidden;
 }
 input[type='date']:required:invalid::-webkit-datetime-edit {
-	color: var(--font-color);
 	padding-left: 1rem;
-	font-size: 20px;
 }
 /*Master*/
 /*Sub*/
@@ -49,9 +40,6 @@ input[type='date']:required:invalid::-webkit-datetime-edit {
 	height: 30px;
 	margin: 0;
 	margin-left: 1rem;
-
-	font-family: arial;
-	font-size: 20px;
 }
 .br_ {
 	height: 10px;
@@ -64,12 +52,9 @@ input[type='date']:required:invalid::-webkit-datetime-edit {
 	border: none;
 	border-radius: 20px;
 	padding-left: 1rem;
-	font-size: 20px;
 }
 .inp::placeholder {
-	font-size: 20px;
 	padding-left: 1rem;
-	color: rgb(0, 0, 0);
 }
 /*Sub*/
 /*Button´s container*/

@@ -20,9 +20,6 @@
 */
 
 /*Const*/
-:root {
-	--back-general: white;
-}
 /*Const*/
 
 /*Containers*/
@@ -34,7 +31,6 @@
 	border: none;
 	text-decoration: none;
 
-	font-size: 10px;
 	overflow: hidden;
 }
 .panel_ button {
@@ -49,8 +45,6 @@
 }
 .panel_ h1 {
 	text-decoration: none;
-	color: rgb(255, 255, 255);
-	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 .panel_ a {
 	text-decoration: none;
