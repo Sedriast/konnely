@@ -48,34 +48,29 @@ export function Inputs(props) {
 
 	return (
 		<>
-			<div className={props.clsName}>
-				<div className={st.panel_}>
-					<h1 className={st.label}>{props.leyend}</h1>
-
-					<div className={st.br_} />
-
-					{preview ? (
-						<img
-							className={st.inp}
-							src={preview}
-							style={{ objectFit: 'cover' }}
-							onClick={changeImage}
-							alt=""
-						/>
-					) : (
-						<input
-							required="True"
-							className={st.inp}
-							type={props.type_}
-							name={props.name_}
-							ref={fileInputRef}
-							placeholder={props.placeholder_}
-							accept="image/*"
-							onChange={action}
-							onFocus={props.focus_}
-						/>
-					)}
-				</div>
+			<div className={st.container}>
+				<h1 className={st.label}>{props.leyend}</h1>
+				{preview ? (
+					<img
+						className={st.inp}
+						src={preview}
+						style={{ objectFit: 'cover' }}
+						onClick={changeImage}
+						alt=""
+					/>
+				) : (
+					<input
+						required="True"
+						className={st.inp}
+						type={props.type_}
+						name={props.name_}
+						ref={fileInputRef}
+						placeholder={props.placeholder_}
+						accept="image/*"
+						onChange={action}
+						onFocus={props.focus_}
+					/>
+				)}
 			</div>
 		</>
 	);

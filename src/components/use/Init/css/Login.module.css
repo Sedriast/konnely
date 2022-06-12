@@ -27,6 +27,8 @@
 .container {
 	position: absolute;
 
+	width: 600px;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -38,9 +40,8 @@
 		rgba(0, 0, 0, 0.75) 59.09%,
 		rgba(0, 0, 0, 0.9) 100%
 	);
-	width: 600px;
-	height: 640px;
 
+	padding: 3rem 0;
 	border-radius: 0px 0px 20px 20px;
 }
 /*Master*/

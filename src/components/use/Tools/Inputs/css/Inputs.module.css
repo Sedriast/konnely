@@ -24,34 +24,30 @@
 
 /*Containers*/
 /*Master*/
-.panel_ {
-	width: 100%;
-	height: 100%;
+.container {
+	height: 3rem;
+	margin: 0.5rem 0;
 
-	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-content: space-around;
+	justify-content: space-around;
+	align-items: stretch;
 }
 input[type='date']:required:invalid::-webkit-datetime-edit {
 	padding-left: 1rem;
 }
 /*Master*/
 /*Sub*/
-.label {
-	width: 100%;
-	height: 30px;
-	margin: 0;
-	margin-left: 1rem;
-}
-.br_ {
-	height: 10px;
-}
+
 .inp {
 	width: 100%;
-	height: calc(100% - 40px);
+	height: 100%;
 
-	box-sizing: border-box;
-	border: none;
 	border-radius: 20px;
 	padding-left: 1rem;
+	color: black;
+	font-size: 20px;
 }
 .inp::placeholder {
 	padding-left: 1rem;
