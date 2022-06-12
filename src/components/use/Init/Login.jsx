@@ -48,7 +48,9 @@ export function Login(props) {
 					leyend="Contraseña"
 					handleChange={handleChange}
 				/>
-				<Buttons clsName={st.submit} click_={handleSubmit} text_="Iniciar sección" link_="#" />
+				<div className={st.submit}>
+					<Buttons click_={handleSubmit} text_="Iniciar sección" link_="#" />
+				</div>
 			</div>
 		</>
 	);

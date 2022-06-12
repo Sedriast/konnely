@@ -54,7 +54,9 @@ export function Register(props) {
 					leyend="Contraseña"
 					handleChange={handleChange}
 				></Inputs>
-				<Buttons clsName={st.submit} click_={handleSubmit} link_="#" text_="Crear"></Buttons>
+				<div className={st.submit}>
+					<Buttons click_={handleSubmit} link_="#" text_="Crear"></Buttons>
+				</div>
 			</div>
 		</>
 	);

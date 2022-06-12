@@ -24,31 +24,19 @@
 
 /*Containers*/
 /*Master*/
-.panel_ {
-	width: 100%;
-	height: 100%;
-
-	border: none;
-	text-decoration: none;
-
-	overflow: hidden;
-}
-.panel_ button {
+.container {
 	background: transparent;
-
-	border: none;
-
+	margin: 1rem 0;
+}
+.container h1 {
+	margin: 8px;
+}
+.container img {
+	position: absolute;
+}
+.container a {
 	width: 100%;
-	height: 100%;
-
-	z-index: 100;
-}
-.panel_ h1 {
 	text-decoration: none;
-}
-.panel_ a {
-	text-decoration: none;
-	border: none;
 }
 /*Master*/
 /*Sub*/
