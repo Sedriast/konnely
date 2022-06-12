@@ -44,6 +44,7 @@ export function Layout(props) {
 		document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
 		document.getElementById('lay').style.setProperty('background-size', 'cover');
 	};
+
 	const changeLoad = () => {
 		setInit(true);
 		setTimeout(() => {
@@ -53,8 +54,8 @@ export function Layout(props) {
 
 	return (
 		<>
-			<div className={props.clsName}>
-				<div className={st.panel_} id="lay" onLoad={s}>
+			<div className={st.container}>
+				<div className={st.panel} id="lay" onLoad={s}>
 					{init ? (
 						<>
 							<Loading clsName={st.loading} src_={g} />
