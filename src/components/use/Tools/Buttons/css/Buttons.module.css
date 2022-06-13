@@ -25,17 +25,13 @@
 /*Containers*/
 /*Master*/
 .container {
+	display: flex;
 	background: transparent;
-	margin: 1rem 0;
-}
-.container h1 {
-	margin: 8px;
 }
 .container img {
 	position: absolute;
 }
 .container a {
-	width: 100%;
 	text-decoration: none;
 }
 /*Master*/
