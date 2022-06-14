@@ -6,15 +6,18 @@
 	border-radius: 20px 20px 0px 0px;
 	overflow: hidden;
 }
+
 ul.tabs {
 	width: 100%;
 	background: rgba(0, 0, 0);
 	list-style: none;
 	display: flex;
 }
+
 ul.tabs li {
 	width: 50%;
 }
+
 ul.tabs li a {
 	color: antiquewhite;
 	text-decoration: none;
@@ -23,20 +26,25 @@ ul.tabs li a {
 	display: block;
 	padding: 20px 0px;
 }
+
 ul.tabs li a .tab text {
 	margin-left: 8px;
 }
+
 .sections {
 	width: 100%;
 	background: #fff;
 }
+
 .sections article {
 	padding: 30px;
 }
+
 .active {
 	background: rgba(255, 255, 255, 0.2);
 	pointer-events: none;
 }
+
 .hidden {
 	visibility: hidden;
 }
