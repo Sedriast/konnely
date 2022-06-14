@@ -64,6 +64,7 @@ export function Inputs(props) {
                         />
                     ) : (
                         <input
+                            id={props.id_}
                             required="True"
                             className={style_I.inp}
                             type={props.type_}

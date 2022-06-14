@@ -1,3 +1,6 @@
+import app from "../components/firebase/credentials";
+import swal from "sweetalert";
+import { AddInfoProfile } from "../components/firebase/funtions/AddInformation";
 import { createContext, useContext, useEffect, useState } from "react";
 import {
     createUserWithEmailAndPassword,
@@ -8,14 +11,10 @@ import {
     getAuth,
     updateProfile,
     sendEmailVerification,
+    RecaptchaVerifier,
 } from "firebase/auth";
-import app from "../components/firebase/credentials";
-import swal from "sweetalert";
-import { AddInfoProfile } from "../components/firebase/funtions/AddInformation";
-export const auth = getAuth(app);
-
 const authContext = createContext();
-
+export const auth = getAuth(app);
 export const useAuth = () => {
     const context = useContext(authContext);
     if (!context) throw new Error("There is no Auth provider");
@@ -28,6 +27,28 @@ export function AuthProvider({ children }) {
     const tema =
         "url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)";
 
+    const logout = () => signOut(auth);
+    const resetPassword = async (email) => await sendPasswordResetEmail(auth, email);
+    const verificarEmail = async (usuario) => await sendEmailVerification(usuario);
+    auth.useDeviceLanguage();
+
+    const createRecaptcha = (id) => {
+        window.recaptchaVerifier = new RecaptchaVerifier(
+            id,
+            {
+                size: "invisible",
+                callback: (response) => {
+                    // reCAPTCHA solved, allow signInWithPhoneNumber.
+                    // ...
+                },
+                "expired-callback": () => {
+                    // Response expired. Ask user to solve reCAPTCHA again.
+                    // ...
+                },
+            },
+            auth
+        );
+    };
     const signup = async (userName, email, password) => {
         await createUserWithEmailAndPassword(auth, email, password);
         updateProfile(auth.currentUser, {
@@ -49,9 +70,8 @@ export function AuthProvider({ children }) {
                 tema: tema,
             },
         });
-        await sendEmailVerification(auth.currentUser);
+        verificarEmail(auth.currentUser);
     };
-
     const login = async (email, password) => {
         await signInWithEmailAndPassword(auth, email, password).then(async () => {
             if (!auth.currentUser.emailVerified) {
@@ -64,7 +84,6 @@ export function AuthProvider({ children }) {
             }
         });
     };
-
     const notification_err = (titulo, icono, boton) => {
         swal({
             title: titulo,
@@ -72,10 +91,6 @@ export function AuthProvider({ children }) {
             button: boton,
         });
     };
-
-    const logout = () => signOut(auth);
-
-    const resetPassword = async (email) => sendPasswordResetEmail(auth, email);
 
     useEffect(() => {
         const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -95,6 +110,7 @@ export function AuthProvider({ children }) {
                 logout,
                 resetPassword,
                 notification_err,
+                createRecaptcha,
             }}>
             {children}
         </authContext.Provider>

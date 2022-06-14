@@ -26,18 +26,18 @@
 /*Containers*/
 /*Master*/
 .container {
-	position: absolute;
+    position: absolute;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-	background: rgba(0, 0, 0, 0.77);
-	width: 600px;
-	height: 640px;
+    background: rgba(0, 0, 0, 0.77);
+    width: 600px;
+    height: 640px;
 
-	border-radius: 0px 0px 20px 20px;
+    border-radius: 0px 0px 20px 20px;
 }
 /*Master*/
 /*Sub*/
@@ -74,59 +74,71 @@
 /*Other´s Components*/
 /*Master*/
 .userName {
-	width: 400px;
-	height: 91px;
-	-webkit-text-stroke: 0.5px white;
+    width: 400px;
+    height: 91px;
+    -webkit-text-stroke: 0.5px white;
 }
 
 .userEmail {
-	width: 400px;
-	height: 91px;
+    width: 400px;
+    height: 91px;
 
-	-webkit-text-stroke: 0.5px white;
+    -webkit-text-stroke: 0.5px white;
 }
 
 .userPass {
-	width: 400px;
-	height: 91px;
+    width: 400px;
+    height: 91px;
 
-	-webkit-text-stroke: 0.5px white;
+    -webkit-text-stroke: 0.5px white;
 }
 .submit_Lo {
-	width: 163px;
-	height: 52px;
+    width: 163px;
+    height: 52px;
 
-	border-radius: 50px;
-	overflow: hidden;
+    border-radius: 50px;
+    overflow: hidden;
 
-	background-color: rgba(255, 166, 0, 0);
-	font-family: var(--font-family-general);
-	font-size: 11px;
-	border: 1px solid white;
+    background-color: rgba(255, 166, 0, 0);
+    font-family: var(--font-family-general);
+    font-size: 11px;
+    border: 1px solid white;
 }
 .submit_Lo_re {
-	position: absolute;
-	width: 163px;
-	height: 52px;
-	left: 168px;
-	top: 490px;
+    position: absolute;
+    width: 163px;
+    height: 52px;
+    left: 168px;
+    top: 490px;
 
-	border-radius: 50px;
-	overflow: hidden;
+    border-radius: 50px;
+    overflow: hidden;
 
-	background-color: orange;
+    background-color: orange;
 }
 .submit_Lo_2 {
-	position: absolute;
-	width: 163px;
-	height: 52px;
-	left: 168px;
-	top: 508px;
+    position: absolute;
+    width: 163px;
+    height: 52px;
+    left: 168px;
+    top: 508px;
 
-	border-radius: 50px;
-	overflow: hidden;
+    border-radius: 50px;
+    overflow: hidden;
 
-	background-color: orange;
+    background-color: orange;
+}
+.submit_Lo_reset {
+    position: absolute;
+    width: 163px;
+    height: 52px;
+    left: 168px;
+    top: 556px;
+
+    border-radius: 50px;
+    overflow: hidden;
+
+    background-color: orange;
 }
 /*Master*/
 /*Other´s Components */

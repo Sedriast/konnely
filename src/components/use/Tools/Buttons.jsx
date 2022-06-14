@@ -7,11 +7,12 @@ export function Buttons(props) {
             <div className={props.clsName}>
                 <div className={style_B.panel_}>
                     <button
+                        id={props.id_}
                         onClick={props.click_}
                         onChange={props.change_}
                         name={props.name_}>
                         <Link to={props.link_}>
-                            <h1>{props.text_}</h1>
+                            <h1 id={props.id_}>{props.text_}</h1>
                             <img
                                 src={props.icon_}
                                 onClick={props.cliLoa_}
