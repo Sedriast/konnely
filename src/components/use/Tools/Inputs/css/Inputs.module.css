@@ -20,62 +20,49 @@
 */
 
 /*Const*/
-
 /*Const*/
 
 /*Containers*/
 /*Master*/
-.panel_ {
-	width: 100%;
-	height: 100%;
+.container {
+	height: 3rem;
+	margin: 0.5rem 0;
 
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 400px);
-	grid-template-rows: repeat(auto-fill, 250px);
-	grid-column-gap: 1rem;
-	grid-row-gap: 1rem;
-
-	justify-content: center;
-	align-items: center;
-}
-.b {
-	font-size: 0px;
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+	justify-content: space-between;
+	align-items: stretch;
 }
 /*Master*/
 /*Sub*/
 
+.inp {
+	width: 100% - 1rem;
+	height: 100%;
+
+	border-radius: 20px;
+	padding-left: 1rem;
+	color: black;
+}
+.inp::placeholder {
+	color: black;
+}
 /*Sub*/
 /*Button´s container*/
-.theme {
-	width: 400px;
-	height: 250px;
 
-	border-radius: 40px;
-	overflow: hidden;
-}
 /*Button´s container*/
 /*Input´s container*/
 
 /*Input´s container*/
 /*Oters*/
-.preview_ {
-	width: 100%;
-	height: 100%;
 
-	background: #ffffff;
-}
 /*Oters*/
 /*Containers*/
 
 /*Use*/
 /*Button */
-.ch {
-	width: 100%;
-	height: 100%;
 
-	background: transparent;
-	border: none;
-}
 /*Button */
 /*Input */
 

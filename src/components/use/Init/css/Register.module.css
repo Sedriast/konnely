@@ -1,0 +1,116 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+	position: absolute;
+
+	width: 600px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	background: linear-gradient(
+		180deg,
+		#333333 0%,
+		rgba(0, 0, 0, 0.75) 59.09%,
+		rgba(0, 0, 0, 0.9) 100%
+	);
+
+	padding: 2rem 0;
+	border-radius: 0px 0px 20px 20px;
+}
+/*Master*/
+/*Sub*/
+
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+.userName {
+	width: 400px;
+	height: 91px;
+
+	margin: 20px 0px;
+}
+
+.userEmail {
+	width: 400px;
+	height: 91px;
+
+	margin: 20px 0px;
+}
+
+.userPass {
+	width: 400px;
+	height: 91px;
+
+	margin: 20px 0px;
+}
+.submit {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+
+	width: 125px;
+	height: 49px;
+	border-radius: 24px;
+	border: 2px solid white;
+
+	margin: 20px 0px;
+}
+/*Master*/
+/*Other´s Components */

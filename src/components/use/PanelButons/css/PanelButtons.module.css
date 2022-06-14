@@ -1,0 +1,118 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+	width: 5.5%;
+
+	background: linear-gradient(
+		270deg,
+		rgba(0, 0, 0, 0.75) 0%,
+		rgba(0, 0, 0, 0.5) 24.23%,
+		rgba(0, 0, 0, 0) 64.71%
+	);
+
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	justify-content: center;
+}
+/*Master*/
+/*Sub*/
+
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+.op {
+	width: 60px;
+	height: 60px;
+
+	margin: 5px;
+
+	border-radius: 100%;
+
+	background: rgba(0, 0, 0, 0.25);
+
+	overflow: hidden;
+}
+.op:hover {
+	width: 70px;
+	height: 70px;
+}
+.op:hover img {
+	width: 70px;
+	height: 70px;
+}
+.op img {
+	width: 60px;
+	height: 60px;
+}
+.opUser {
+	position: absolute;
+
+	width: 80px;
+	height: 80px;
+	top: 0;
+	right: 0;
+
+	margin: 6px;
+	border: 1px solid black;
+	border-radius: 100%;
+	overflow: hidden;
+}
+.opUser img {
+	width: 80px;
+	height: 80px;
+}
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+
+/*Master*/
+/*Other´s Components */
