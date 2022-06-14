@@ -136,16 +136,12 @@
 	content: '+';
 }
 .panel {
-	overflow-y: scroll;
-	overflow: hidden;
-}
-.r {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
-.r div {
+.panel div {
 	width: 350px;
 }
 .submit {

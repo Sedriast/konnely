@@ -1,4 +1,4 @@
-import ojo from '../../css/Img/ojo.png';
+import ojo from '../../img/view.png';
 
 export const Data = [
 	{
