@@ -114,7 +114,9 @@ export function Layout(props) {
 								element={
 									<>
 										<PanelButtons clsName={st.panelButtons} loading_={changeLoad} />
-										<Form clsName={st.form_} />
+										<div className={st.form}>
+											<Form />
+										</div>
 									</>
 								}
 							/>

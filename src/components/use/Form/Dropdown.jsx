@@ -1,4 +1,4 @@
-import style_F from '../../css/Form/Form.module.css';
+import st from './css/Form.module.css';
 import { Inputs } from '../Tools/Inputs/Inputs';
 
 export function Dropdown(props) {
@@ -9,14 +9,14 @@ export function Dropdown(props) {
 			{motivo === 'Traslado' && (
 				<>
 					<Inputs
-						clsName={style_F.data2}
+						clsName={st.data2}
 						leyend="Fecha de translado"
 						name_="translado"
 						type_="date"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={style_F.data2}
+						clsName={st.data2}
 						leyend="Origen"
 						name_="origen"
 						placeholder_="Ingrese el origen"
@@ -28,7 +28,7 @@ export function Dropdown(props) {
 			{motivo === 'Nacimiento' && (
 				<>
 					<Inputs
-						clsName={style_F.data2}
+						clsName={st.data2}
 						leyend="Identificador del padre"
 						name_="idPadre"
 						placeholder_="Ingrese el identificador"
@@ -36,7 +36,7 @@ export function Dropdown(props) {
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={style_F.data2}
+						clsName={st.data2}
 						leyend="Identificador de la madre"
 						name_="idMadre"
 						placeholder_="Ingrese el identificador"
@@ -48,7 +48,7 @@ export function Dropdown(props) {
 			{motivo === 'Compra' && (
 				<>
 					<Inputs
-						clsName={style_F.data2}
+						clsName={st.data2}
 						leyend="Proveedor"
 						name_="proveedor"
 						placeholder_="Ingrese el proveedor"
@@ -56,7 +56,7 @@ export function Dropdown(props) {
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={style_F.data2}
+						clsName={st.data2}
 						leyend="Precio"
 						name_="precio"
 						placeholder_="Ingrese el precio"

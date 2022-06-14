@@ -86,21 +86,12 @@
 
 /*Other´s Components*/
 /*Master*/
-.form_ {
-	position: fixed;
+.form {
+	display: flex;
+	margin: 0 1rem;
 
-	width: 90%;
-	height: 85%;
-	left: calc(50% - 90% / 2);
-	top: calc(50% - 85% / 2 + 66px);
-
-	background: linear-gradient(
-		180deg,
-		rgba(255, 255, 255, 0) 4.69%,
-		rgba(255, 255, 255, 0.450521) 13.02%,
-		rgba(255, 255, 255, 0.5) 100%
-	);
-	border-radius: 20px;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .customer {
 	font-family: Arial;
