@@ -1,4 +1,4 @@
-import st from '../../css/Tools/Lists.module.css';
+import st from './css/Lists.module.css';
 
 export function Lists(props) {
 	const action = (e) => {
@@ -7,10 +7,8 @@ export function Lists(props) {
 
 	return (
 		<>
-			<div className={props.clsName}>
-				<h1 className={st.label}>{props.leyend}</h1>
-
-				<div className={st.br_}></div>
+			<div className={st.container}>
+				<h1>{props.leyend}</h1>
 
 				<select className={st.list_} name={props.name_} onChange={action}>
 					{props.listar?.map((a) => (

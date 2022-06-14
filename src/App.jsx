@@ -1,5 +1,5 @@
 import { Layout } from './components/Layout';
-import st from './components/css/App/App.module.css';
+import st from './App.module.css';
 import React from 'react';
 import { AuthProvider } from './context/AuthContext';
 

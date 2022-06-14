@@ -8,7 +8,7 @@ import { Customer } from './use/Customer/Customer';
 import { Form } from './use/Form/Form';
 import { PanelButtons } from './use/PanelButons/PanelButtons';
 import { List } from './use/List/List';
-import { Loading } from './use/Tools/Loading';
+import { Loading } from './use/Tools/Loading/Loading';
 import { useState, useEffect } from 'react';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
 import { Invoice } from './use/Invoice/Invoice';

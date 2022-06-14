@@ -34,9 +34,6 @@
 	justify-content: space-around;
 	align-items: stretch;
 }
-input[type='date']:required:invalid::-webkit-datetime-edit {
-	padding-left: 1rem;
-}
 /*Master*/
 /*Sub*/
 
@@ -47,10 +44,6 @@ input[type='date']:required:invalid::-webkit-datetime-edit {
 	border-radius: 20px;
 	padding-left: 1rem;
 	color: black;
-	font-size: 20px;
-}
-.inp::placeholder {
-	padding-left: 1rem;
 }
 /*Sub*/
 /*Button´s container*/
