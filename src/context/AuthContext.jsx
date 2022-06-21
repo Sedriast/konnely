@@ -12,6 +12,8 @@ import {
     updateProfile,
     sendEmailVerification,
     RecaptchaVerifier,
+    signInWithPhoneNumber,
+    updateEmail,
 } from "firebase/auth";
 const authContext = createContext();
 export const auth = getAuth(app);
@@ -30,56 +32,85 @@ export function AuthProvider({ children }) {
     const logout = () => signOut(auth);
     const resetPassword = async (email) => await sendPasswordResetEmail(auth, email);
     const verificarEmail = async (usuario) => await sendEmailVerification(usuario);
-    auth.useDeviceLanguage();
 
-    const createRecaptcha = (id) => {
-        window.recaptchaVerifier = new RecaptchaVerifier(
-            id,
-            {
-                size: "invisible",
-                callback: (response) => {
-                    // reCAPTCHA solved, allow signInWithPhoneNumber.
-                    // ...
-                },
-                "expired-callback": () => {
-                    // Response expired. Ask user to solve reCAPTCHA again.
-                    // ...
-                },
-            },
-            auth
-        );
-    };
-    const signup = async (userName, email, password) => {
-        await createUserWithEmailAndPassword(auth, email, password);
-        updateProfile(auth.currentUser, {
-            displayName: userName,
-        }).catch((error) => {
-            swal({
-                title: error,
-                icon: "error",
-                button: "aceptar",
+    auth.useDeviceLanguage();
+    // auth.settings.appVerificationDisabledForTesting = true;
+    // var phoneNumber = "+573202063426";
+    // var testVerificationCode = "888888";
+
+    // const createRecaptcha = (id) => {
+    //     window.recaptchaVerifier = new RecaptchaVerifier(
+    //         id,
+    //         {
+    //             size: "invisible",
+    //         },
+    //         auth
+    //     );
+    // };
+    const signup = async (verification, userName, email, password, telefono) => {
+        if (verification === "correo") {
+            await createUserWithEmailAndPassword(auth, email, password);
+            updateProfile(auth.currentUser, {
+                displayName: userName,
+            }).catch((error) => {
+                notification_err(error, "error", "aceptar");
             });
-        });
-        AddInfoProfile({
-            user: auth.currentUser.uid,
-            data: {
-                uid: auth.currentUser.uid,
-                usuario: userName,
-                email: auth.currentUser.email,
-                rol: "usuario",
-                tema: tema,
-            },
-        });
-        verificarEmail(auth.currentUser);
+            AddInfoProfile({
+                user: auth.currentUser.uid,
+                data: {
+                    uid: auth.currentUser.uid,
+                    usuario: userName,
+                    email: auth.currentUser.email,
+                    rol: "usuario",
+                    tema: tema,
+                },
+            });
+            verificarEmail(auth.currentUser);
+        }
+        // else if (verification === "telefono") {
+        //     let longitud = telefono.length;
+        //     console.log(telefono);
+        //     if ((longitud = 13)) {
+        //         createRecaptcha(verification);
+        //         const appVerifier = window.recaptchaVerifier;
+        //         await signInWithPhoneNumber(auth, phoneNumber, appVerifier)
+        //             .then((confirmationResult) => {
+        //                 window.confirmationResult = confirmationResult;
+        //             })
+        //             .catch((error) => {
+        //                 console.log(error);
+        //             });
+        //     }
+        // }
     };
+    // const verifyOtp = (code, userName, userEmail) => {
+    //     let longitud = code.length;
+    //     if (longitud === 6) {
+    //         let confirmationResult = window.confirmationResult;
+    //         confirmationResult
+    //             .confirm(testVerificationCode)
+    //             .then((result) => {
+    //                 const user = result.user;
+    //                 updateProfile(user, {
+    //                     displayName: userName,
+    //                 })
+    //                     .then(() => {
+    //                         updateEmail(user, userEmail);
+    //                     })
+    //                     .catch((error) => {
+    //                         notification_err(error, "error", "aceptar");
+    //                     });
+    //             })
+    //             .catch((error) => {
+    //                 // User couldn't sign in (bad verification code?)
+    //                 // ...
+    //                 console.log(error);
+    //             });
+    //     }
+    // };
     const login = async (email, password) => {
         await signInWithEmailAndPassword(auth, email, password).then(async () => {
             if (!auth.currentUser.emailVerified) {
-                swal({
-                    title: "Debes verificar tu cuenta primero",
-                    icon: "error",
-                    button: "aceptar",
-                });
                 await logout();
             }
         });
@@ -99,7 +130,7 @@ export function AuthProvider({ children }) {
         });
         return () => unsubuscribe();
     }, []);
-
+    console.log(auth.currentUser);
     return (
         <authContext.Provider
             value={{
@@ -110,7 +141,7 @@ export function AuthProvider({ children }) {
                 logout,
                 resetPassword,
                 notification_err,
-                createRecaptcha,
+                // verifyOtp,
             }}>
             {children}
         </authContext.Provider>

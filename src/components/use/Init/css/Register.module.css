@@ -34,16 +34,15 @@
 	justify-content: center;
 	flex-direction: column;
 
-	background: linear-gradient(
-		180deg,
-		#333333 0%,
-		rgba(0, 0, 0, 0.75) 59.09%,
-		rgba(0, 0, 0, 0.9) 100%
-	);
+	background: linear-gradient(180deg,
+			#333333 0%,
+			rgba(0, 0, 0, 0.75) 59.09%,
+			rgba(0, 0, 0, 0.9) 100%);
 
 	padding: 2rem 0;
 	border-radius: 0px 0px 20px 20px;
 }
+
 /*Master*/
 /*Sub*/
 
@@ -98,6 +97,21 @@
 
 	margin: 20px 0px;
 }
+
+.userPhone {
+	width: 300px;
+	height: 91px;
+
+	margin: 20px 0px;
+}
+
+.otp {
+	width: 300px;
+	height: 91px;
+
+	margin: 20px 0px;
+}
+
 .submit {
 	display: flex;
 	flex-direction: column;
@@ -112,5 +126,6 @@
 
 	margin: 20px 0px;
 }
+
 /*Master*/
 /*Other´s Components */
