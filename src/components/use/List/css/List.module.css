@@ -41,7 +41,7 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, 250px);
 	grid-column-gap: 15px;
-	grid-row-gap: 15px;
+	grid-row-gap: 1rem;
 
 	padding: 2.5rem 0;
 
@@ -50,7 +50,7 @@
 	border: 1px solid rgb(255, 255, 255);
 	border-radius: 20px;
 
-	box-shadow: inset 0px 50px 50px rgba(0, 0, 0, 0.75), inset 0px -50px 50px rgba(0, 0, 0, 0.75);
+	box-shadow: inset 0px 50px 50px rgba(0, 0, 0, 0.85), inset 0px -50px 50px rgba(0, 0, 0, 0.85);
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
