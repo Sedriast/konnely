@@ -31,17 +31,17 @@
 	width: 100vw;
 	height: fit-content;
 
-	margin: 0 2rem 2rem 2rem;
+	margin: 10% 2rem 2rem 2rem;
 	padding: 4rem 0 4rem 0;
 
-	border-radius: 0px 0px 20px 20px;
+	border-radius: 20px;
 }
 /*Master*/
 /*Sub*/
 .panel {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 300px);
-	grid-template-rows: repeat(225px);
+	grid-template-columns: repeat(auto-fill, 250px);
+	grid-template-rows: repeat(150px);
 	grid-column-gap: 15px;
 	grid-row-gap: 15px;
 
