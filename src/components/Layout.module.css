@@ -94,11 +94,10 @@
 	overflow-x: hidden;
 }
 .list {
+	width: 90%;
+
 	display: flex;
 	margin: 0 1rem;
-
-	overflow-y: scroll;
-	overflow-x: hidden;
 }
 .customer {
 	font-family: Arial;
