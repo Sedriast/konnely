@@ -29,7 +29,7 @@
 	width: 100vw;
 	height: 100%;
 
-	margin: 10% 2rem 2rem 2rem;
+	margin: 5.5rem 2rem 2rem 2rem;
 
 	border-radius: 20px;
 }
@@ -39,6 +39,9 @@
 	height: 65%;
 
 	display: grid;
+
+	background: rgba(0, 0, 0, 0.25);
+
 	grid-template-columns: repeat(auto-fill, 250px);
 	grid-column-gap: 15px;
 	grid-row-gap: 1rem;

@@ -50,6 +50,13 @@
 	font-size: 30px;
 	margin: 5px;
 }
+.panel h2 {
+	font-size: 18px;
+}
+.panel p {
+	font-size: 14px;
+	margin-left: 0.5rem;
+}
 .panel div {
 	margin: 1rem 0;
 	position: relative;
