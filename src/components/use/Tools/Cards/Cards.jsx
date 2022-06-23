@@ -28,7 +28,9 @@ export function Cards(props) {
 						</div>
 					</div>
 				</Link>
-				<img alt="" className={st.im} src={props.url} />
+				<Link to="/data">
+					<img alt="" className={st.im} src={props.url} />
+				</Link>
 			</div>
 		</>
 	);

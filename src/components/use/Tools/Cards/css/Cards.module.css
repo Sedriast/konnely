@@ -76,10 +76,10 @@
 .panel h1 {
 	font-size: 30px;
 	margin: 5px;
+	-webkit-text-stroke: 2px rgb(0, 0, 0);
 }
 .panel h2 {
 	font-size: 18px;
-	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 .panel p {
 	font-size: 14px;
