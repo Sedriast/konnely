@@ -31,9 +31,19 @@
 	border-radius: 20px;
 	overflow: hidden;
 }
-.container img {
-	width: 100%;
-	min-height: 100%;
+.container .im {
+	width: 1px;
+}
+.container:hover .im {
+	position: absolute;
+	width: 85%;
+	height: 90%;
+	left: calc(50% - 85% / 2);
+	top: calc(50% - 90% / 2);
+
+	border-radius: 300px;
+
+	opacity: 70%;
 }
 .container div {
 	position: absolute;
@@ -41,7 +51,23 @@
 	height: 100%;
 	width: 100%;
 }
+.container .h1_ {
+	transition: 300ms;
+}
+.container .pa {
+	transition: 300ms;
+}
+.container:hover .h1_ {
+	position: absolute;
+	left: -150px;
+}
+.container:hover .pa {
+	position: absolute;
+	right: -150px;
+}
 .panel {
+	background: url(../../../../img/ma.png);
+
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -63,6 +89,7 @@
 	width: fit-content;
 	height: fit-content;
 }
+
 /*Master*/
 /*Sub*/
 

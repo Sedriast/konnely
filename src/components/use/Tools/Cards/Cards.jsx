@@ -4,22 +4,19 @@ import st from './css/Cards.module.css';
 
 export function Cards(props) {
 	useEffect(function () {
-		const color =
-			'radial-gradient(78.6% 123.05% at 21.4% 50%, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.75) 17.83%,' +
-			props.cGp +
-			'100%), rgba(0, 0, 0, 0.5)';
+		const color = props.cGp;
 		document.getElementById(props.id_).style.setProperty('background', color);
 	});
 
 	return (
 		<>
-			<div className={st.container}>
+			<div className={st.container} id={props.id_}>
 				<Link to="/data">
-					<div className={st.panel} id={props.id_}>
-						<div>
+					<div className={st.panel}>
+						<div className={st.h1_}>
 							<h1>{props.rabitDataName}</h1>
 						</div>
-						<div>
+						<div className={st.pa}>
 							<div>
 								<h2>Raza:</h2>
 								<p>{props.data1}</p>
@@ -31,7 +28,7 @@ export function Cards(props) {
 						</div>
 					</div>
 				</Link>
-				<img alt="" src={props.url} style={{ objectFit: 'cover' }} />
+				<img alt="" className={st.im} src={props.url} />
 			</div>
 		</>
 	);
