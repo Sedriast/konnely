@@ -67,6 +67,7 @@
 }
 .panel {
 	background: url(../../../../img/ma.png);
+	background-size: cover;
 
 	display: flex;
 	justify-content: space-around;
