@@ -4,27 +4,32 @@ import st from './css/Cards.module.css';
 
 export function Cards(props) {
 	useEffect(function () {
-		const color =
-			'radial-gradient(100% 223.3% at 0% 50%, ' +
-			props.cGp +
-			' 1.49%, rgba(0, 0, 0, 0.25) 46.2%), rgba(0, 0, 0, 0.5)';
+		const color = props.cGp;
 		document.getElementById(props.id_).style.setProperty('background', color);
 	});
 
 	return (
 		<>
-			<div className={props.clsName}>
+			<div className={st.container} id={props.id_}>
 				<Link to="/data">
-					<div className={st.Panel_} id={props.id_}>
-						<img className={st.Image_} src={props.url} alt="" style={{ objectFit: 'cover' }} />
-						<h1 className={st.Name_}>{props.rabitDataName}</h1>
-						<p>
-							<h1>Raza</h1>
-							<h1>Genero</h1>
-							<h3>{props.data1}</h3>
-							<h3>{props.data2}</h3>
-						</p>
+					<div className={st.panel}>
+						<div className={st.h1_}>
+							<h1>{props.rabitDataName}</h1>
+						</div>
+						<div className={st.pa}>
+							<div>
+								<h2>Raza:</h2>
+								<p>{props.data1}</p>
+							</div>
+							<div>
+								<h2>Genero:</h2>
+								<p>{props.data2}</p>
+							</div>
+						</div>
 					</div>
+				</Link>
+				<Link to="/data">
+					<img alt="" className={st.im} src={props.url} />
 				</Link>
 			</div>
 		</>

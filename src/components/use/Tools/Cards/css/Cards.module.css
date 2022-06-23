@@ -15,24 +15,84 @@
 */
 
 /*Const*/
-:root {
-    --back-general: white;
-}
+
 /*Const*/
 
 /*Containers*/
 /*Master*/
-.Panel_ {
-    position: relative;
-    height: 100px;
-    width: 300px;
+.container {
+	position: relative;
 
-    border: 2px solid #000000;
-    box-sizing: border-box;
-    border-radius: 100px;
+	width: 250px;
+	height: 150px;
 
-    -webkit-text-stroke: 0.5px rgb(0, 0, 0);
+	border-radius: 20px;
+	border: 2px solid black;
+	border-radius: 20px;
+	overflow: hidden;
 }
+.container .im {
+	width: 1px;
+}
+.container:hover .im {
+	position: absolute;
+	width: 85%;
+	height: 90%;
+	left: calc(50% - 85% / 2);
+	top: calc(50% - 90% / 2);
+
+	border-radius: 300px;
+
+	opacity: 70%;
+}
+.container div {
+	position: absolute;
+
+	height: 100%;
+	width: 100%;
+}
+.container .h1_ {
+	transition: 300ms;
+}
+.container .pa {
+	transition: 300ms;
+}
+.container:hover .h1_ {
+	position: absolute;
+	left: -150px;
+}
+.container:hover .pa {
+	position: absolute;
+	right: -150px;
+}
+.panel {
+	background: url(../../../../img/ma.png);
+	background-size: cover;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.panel h1 {
+	font-size: 30px;
+	margin: 5px;
+	-webkit-text-stroke: 2px rgb(0, 0, 0);
+}
+.panel h2 {
+	font-size: 18px;
+}
+.panel p {
+	font-size: 14px;
+	margin-left: 0.5rem;
+	color: black;
+}
+.panel div {
+	margin: 1rem 0;
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+}
+
 /*Master*/
 /*Sub*/
 
@@ -44,48 +104,7 @@
 
 /*Input´s container*/
 /*Oters*/
-.Image_ {
-    position: absolute;
-    width: 75px;
-    height: 75px;
-    left: 10px;
-    top: calc(50% - 75px / 2);
 
-    background: rgba(255, 255, 255, 0.5);
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    border-radius: 100px;
-}
-.Panel_:hover .Image_ {
-    width: 100px;
-    height: 100px;
-    left: 10px;
-    top: 10px;
-}
-.Name_ {
-    text-overflow: ellipsis;
-    overflow: hidden;
-
-    position: absolute;
-    width: 175px;
-    height: auto;
-    right: 25px;
-    top: calc(50% - 22px / 2);
-    margin: 0;
-
-    font-family: Arial;
-    font-style: normal;
-    font-weight: normal;
-
-    color: #ffffff;
-}
-.Panel_:hover .Name_ {
-    right: 120px;
-    top: 120px;
-}
-.ParagPanel {
-    visibility: hidden;
-}
 /*Oters*/
 /*Containers*/
 
@@ -103,45 +122,11 @@
 /*Resizing */
 
 /*Animations*/
-@keyframes cardInHover {
-    from {
-        height: 100px;
-        width: 300px;
 
-        border-radius: 100px;
-    }
-    to {
-        height: 200px;
-        width: 325px;
-
-        border-radius: 20px;
-    }
-}
-.Panel_:hover {
-    height: 200px;
-    width: 325px;
-
-    border-radius: 20px;
-
-    animation-duration: 0.5s;
-    animation-name: cardInHover;
-}
 /*Animations*/
 
 /*Other´s Components*/
 /*Master*/
-.paragraphsPanel {
-    width: 70%;
-    height: 100%;
-    margin-left: 80px;
-    color: #ffffff;
-    visibility: hidden;
 
-    font-family: arial;
-    font-weight: 2rem;
-}
-.Panel_:hover .paragraphsPanel {
-    visibility: visible;
-}
 /*Master*/
 /*Other´s Components */
