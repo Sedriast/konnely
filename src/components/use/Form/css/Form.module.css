@@ -26,13 +26,11 @@
 /*Containers*/
 /*Master*/
 .container {
-	background: radial-gradient(
-		216.67% 100% at 50% 0%,
-		rgba(0, 0, 0, 0) 26.55%,
-		rgba(0, 0, 0, 0.5) 34.9%,
-		rgba(0, 0, 0, 0.5) 56.52%,
-		rgba(0, 0, 0, 0.75) 100%
-	);
+	background: radial-gradient(216.67% 100% at 50% 0%,
+			rgba(0, 0, 0, 0) 26.55%,
+			rgba(0, 0, 0, 0.5) 34.9%,
+			rgba(0, 0, 0, 0.5) 56.52%,
+			rgba(0, 0, 0, 0.75) 100%);
 
 	width: 100%;
 	height: fit-content;
@@ -46,6 +44,7 @@
 
 	border-radius: 20px;
 }
+
 /*Master*/
 /*Sub*/
 /*Sub*/
@@ -93,6 +92,7 @@
 
 	margin: 5px;
 }
+
 .panelImage div {
 	width: 250px;
 	height: 250px;
@@ -104,6 +104,7 @@
 
 	align-items: stretch;
 }
+
 .panelImage img {
 	width: 250px;
 	height: 250px;
@@ -114,6 +115,7 @@
 	border-radius: 100%;
 	border: 1px solid black;
 }
+
 .panelImage input {
 	width: 250px;
 	height: 250px;
@@ -122,6 +124,7 @@
 	border-radius: 100%;
 	padding: 0;
 }
+
 .panelImage input::before {
 	position: relative;
 	height: inherit;
@@ -135,15 +138,37 @@
 
 	content: '+';
 }
+
 .panel {
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
+
 .panel div {
 	width: 350px;
 }
+
+
+.cam button {
+	background: radial-gradient(216.67% 100% at 50% 0%,
+			rgba(0, 0, 0, 0) 26.55%,
+			rgba(0, 0, 0, 0.5) 34.9%,
+			rgba(0, 0, 0, 0.5) 56.52%,
+			rgba(0, 0, 0, 0.75) 100%);
+	position: relative;
+	bottom: 0;
+	height: 100px;
+	border-radius: 0 0 100% 100%;
+}
+
+.cam video {
+	border-radius: 100%;
+	position: relative;
+	top: 0;
+}
+
 .submit {
 	width: 100px;
 	height: 100px;
@@ -152,6 +177,7 @@
 
 	border-radius: 100%;
 }
+
 .submit img {
 	position: relative;
 
@@ -161,5 +187,6 @@
 	object-fit: cover;
 	border-radius: 100%;
 }
+
 /*Master*/
 /*Other´s Components */

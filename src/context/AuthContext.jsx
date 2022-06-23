@@ -130,7 +130,6 @@ export function AuthProvider({ children }) {
         });
         return () => unsubuscribe();
     }, []);
-    console.log(auth.currentUser);
     return (
         <authContext.Provider
             value={{
