@@ -79,10 +79,12 @@
 }
 .panel h2 {
 	font-size: 18px;
+	-webkit-text-stroke: 1px rgb(0, 0, 0);
 }
 .panel p {
 	font-size: 14px;
 	margin-left: 0.5rem;
+	color: black;
 }
 .panel div {
 	margin: 1rem 0;

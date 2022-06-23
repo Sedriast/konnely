@@ -4,10 +4,10 @@
 	border: none;
 
 	font-size: 20px;
-	color: white;
-	-webkit-text-stroke: 1px rgb(0, 0, 0);
-	font-family: Arial;
-	font-weight: bold;
+	color: rgb(255, 255, 255);
+	-webkit-text-stroke: 2px rgb(0, 0, 0);
+	font-family: cursive;
+	font-weight: revert;
 }
 body {
 	width: 100%;
