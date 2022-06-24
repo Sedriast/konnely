@@ -81,9 +81,9 @@ ul.tabs li a .tab text {
 }
 .c3 {
 	position: absolute;
-	width: 550px;
-	height: 550px;
-	left: -212px;
+	width: 400px;
+	height: 400px;
+	left: -144px;
 	top: -9px;
 
 	border-radius: 100%;
@@ -97,7 +97,7 @@ ul.tabs li a .tab text {
 	position: absolute;
 	width: 300px;
 	height: 300px;
-	left: 123px;
+	left: 104px;
 	top: -92px;
 
 	border-radius: 100%;
@@ -109,13 +109,14 @@ ul.tabs li a .tab text {
 }
 .c5 {
 	position: absolute;
-	width: 500px;
-	height: 500px;
-	left: 516px;
-	top: 346px;
+	width: 600px;
+	height: 600px;
+	left: 326px;
+	top: 271px;
 	border-radius: 100%;
 
 	background: #05a18c;
+	transform: rotate(180deg);
 	animation: in 1s;
 
 	z-index: 6;
@@ -124,10 +125,11 @@ ul.tabs li a .tab text {
 	position: absolute;
 	width: 450px;
 	height: 450px;
-	left: 955px;
+	left: 833px;
 	top: 422px;
 
 	border-radius: 100%;
+	transform: rotate(180deg);
 	background: #66b317;
 
 	animation: in 1s;
