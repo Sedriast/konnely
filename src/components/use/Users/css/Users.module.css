@@ -1,0 +1,84 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+:root {
+	--back-general: white;
+}
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+/*Master*/
+/*Sub*/
+.b {
+	background: rgba(0, 0, 0, 0.25);
+
+	width: 100px;
+	height: 100px;
+
+	border-radius: 0 0 100% 100%;
+
+	overflow: hidden;
+}
+.b img {
+	width: 100px;
+	height: 100px;
+}
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+
+/*Master*/
+/*Other´s Components */
