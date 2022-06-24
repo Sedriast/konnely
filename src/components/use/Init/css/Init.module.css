@@ -5,6 +5,8 @@
 
 	border-radius: 20px 20px 0px 0px;
 	overflow: hidden;
+
+	z-index: 10;
 }
 
 ul.tabs {
@@ -47,4 +49,98 @@ ul.tabs li a .tab text {
 
 .hidden {
 	visibility: hidden;
+}
+.c1 {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left: 1190px;
+	top: -75px;
+
+	border-radius: 100%;
+	background: #66b317;
+
+	transform: rotate(90deg);
+	animation: in 1s;
+
+	z-index: 3;
+}
+.c2 {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	left: 870px;
+	top: -75px;
+	border-radius: 100%;
+	background: #05a18c;
+
+	transform: rotate(90deg);
+	animation: in 1s;
+
+	z-index: 1;
+}
+.c3 {
+	position: absolute;
+	width: 550px;
+	height: 550px;
+	left: -212px;
+	top: -9px;
+
+	border-radius: 100%;
+	background: #05a18c;
+
+	animation: in 1s;
+
+	z-index: 2;
+}
+.c4 {
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	left: 123px;
+	top: -92px;
+
+	border-radius: 100%;
+	background: #66b317;
+
+	animation: in 1s;
+
+	z-index: 8;
+}
+.c5 {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	left: 516px;
+	top: 346px;
+	border-radius: 100%;
+
+	background: #05a18c;
+	animation: in 1s;
+
+	z-index: 6;
+}
+.c6 {
+	position: absolute;
+	width: 450px;
+	height: 450px;
+	left: 955px;
+	top: 422px;
+
+	border-radius: 100%;
+	background: #66b317;
+
+	animation: in 1s;
+
+	z-index: 3;
+}
+@keyframes in {
+	from {
+		width: 0%;
+		height: 0%;
+		border-radius: 0%;
+	}
+	to {
+		border-radius: 100%;
+	}
 }

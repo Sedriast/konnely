@@ -9,6 +9,12 @@ export function Init() {
 
 	return (
 		<>
+			<div className={st.c1} />
+			<div className={st.c2} />
+			<div className={st.c3} />
+			<div className={st.c4} />
+			<div className={st.c5} />
+			<div className={st.c6} />
 			<div className={st.container}>
 				<ul className={st.tabs}>
 					<li onClick={select} className={!tab_ ? st.active : ''}>
