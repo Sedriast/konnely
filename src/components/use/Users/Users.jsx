@@ -19,13 +19,14 @@ export function Users(props) {
 						<Buttons link_="/" />
 					</div>
 				</div>
-				div.
-				<div className={st.parag}>
-					<h1>{props.title}</h1>
-					<h3>{props.label}</h3>
-				</div>
-				<div className={st.im}>
-					<img src={props.src_} alt="" href="" />
+				<div className={st.panelInf}>
+					<div className={st.i}>
+						<img src={props.src_} alt="" href="" />
+					</div>
+					<div className={st.p}>
+						<h1>{props.title}</h1>
+						<h3>{props.label}</h3>
+					</div>
 				</div>
 			</div>
 		</>
