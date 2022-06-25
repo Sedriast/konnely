@@ -40,9 +40,11 @@
 	width: 100px;
 	height: 100px;
 
-	border-radius: 0 0 100% 100%;
+	border-radius: 0 100% 100% 0;
 
 	overflow: hidden;
+
+	animation-duration: 1s;
 }
 .i {
 	display: flex;
@@ -88,6 +90,10 @@
 	right: 0;
 }
 .panelB {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 /*Sub*/
 /*Button´s container*/
@@ -125,7 +131,7 @@
 }
 @keyframes a2 {
 	from {
-		width: 0%;
+		width: 2px;
 		height: fit-content;
 	}
 	to {

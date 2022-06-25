@@ -18,7 +18,11 @@ export function Users(props) {
 					<div className={st.b}>
 						<Buttons link_="/" />
 					</div>
+					<div className={st.b}>
+						<Buttons link_="/" />
+					</div>
 				</div>
+
 				<div className={st.panelInf}>
 					<div className={st.i}>
 						<img src={props.src_} alt="" href="" />
