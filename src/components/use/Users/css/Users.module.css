@@ -58,7 +58,7 @@
 .i img {
 	width: 350px;
 
-	animation-duration: 2s;
+	animation-duration: 1s;
 	animation-name: a1;
 }
 .p {
@@ -71,7 +71,7 @@
 
 	padding: 1rem;
 
-	animation-duration: 2s;
+	animation-duration: 3s;
 	animation-name: a2;
 }
 .panelInf {
