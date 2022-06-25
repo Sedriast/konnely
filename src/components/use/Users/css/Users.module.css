@@ -87,13 +87,7 @@
 
 	right: 0;
 }
-@keyframes a1 {
-	from {
-		width: 0%;
-	}
-	to {
-		width: 100%;
-	}
+.panelB {
 }
 /*Sub*/
 /*Button´s container*/
@@ -121,6 +115,14 @@
 /*Resizing */
 
 /*Animations*/
+@keyframes a1 {
+	from {
+		width: 80px;
+	}
+	to {
+		width: 100%;
+	}
+}
 @keyframes a2 {
 	from {
 		width: 0%;
