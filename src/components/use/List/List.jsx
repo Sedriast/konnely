@@ -1,7 +1,6 @@
 import st from './css/List.module.css';
 import { Cards } from '../Tools/Cards/Cards';
 import { SearchAll } from '../../firebase/funtions/SearchAll';
-import { Inputs } from '../Tools/Inputs/Inputs';
 
 export function List(props) {
 	return (
