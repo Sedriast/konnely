@@ -40,13 +40,60 @@
 	width: 100px;
 	height: 100px;
 
-	border-radius: 0 0 100% 100%;
+	border-radius: 0 100% 100% 0;
 
 	overflow: hidden;
+
+	animation-duration: 1s;
 }
-.b img {
-	width: 100px;
-	height: 100px;
+.i {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	width: 350px;
+	height: 350px;
+
+	padding: 1rem;
+}
+.i img {
+	width: 350px;
+
+	animation-duration: 1s;
+	animation-name: a1;
+}
+.p {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+	width: 350px;
+
+	padding: 1rem;
+
+	animation-duration: 3s;
+	animation-name: a2;
+}
+.panelInf {
+	position: absolute;
+
+	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+
+	right: 0;
+}
+.panelB {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
 }
 /*Sub*/
 /*Button´s container*/
@@ -74,7 +121,24 @@
 /*Resizing */
 
 /*Animations*/
-
+@keyframes a1 {
+	from {
+		width: 80px;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes a2 {
+	from {
+		width: 2px;
+		height: fit-content;
+	}
+	to {
+		width: 100%;
+		height: fit-content;
+	}
+}
 /*Animations*/
 
 /*Other´s Components*/
