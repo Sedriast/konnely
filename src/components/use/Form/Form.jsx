@@ -8,14 +8,13 @@ import { Buttons } from "../Tools/Buttons/Buttons";
 import { Dropdown } from "./Dropdown";
 import sendICO from "../../img/send.png";
 import Webcam from "react-webcam";
-
 import { useModal } from "../Tools/Modals/useModal";
 import Modal from "../Tools/Modals/Modal";
 
 export function Form() {
     const genero = ["Genero", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
-    const [isOpenModal1, openModal1, closeModal1] = useModal(false);
+    const [isOpenModal, openModal, closeModal] = useModal(false);
     const [values, setValues] = useState({});
     const [image, setImage] = useState(null);
     const [reason, setReason] = useState();
@@ -51,7 +50,7 @@ export function Form() {
                             setImage(e);
                         }}
                     />
-                    <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
+                    <Modal isOpen={isOpenModal} closeModal={closeModal}>
                         <Webcam
                             audio={false}
                             height={250}
@@ -72,7 +71,7 @@ export function Form() {
                     </Modal>
                 </div>
                 <div>
-                    <Buttons text_="Camara" click_={openModal1} link_="#" />
+                    <Buttons text_="Camara" click_={openModal} link_="#" />
                 </div>
                 <div className={st.panel}>
                     <Inputs
