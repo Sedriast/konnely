@@ -1,5 +1,5 @@
 import st from "./Modal.module.css";
-const Modal = ({ children, isOpen, closeModal }) => {
+export const Modal = ({ children, isOpen, closeModal }) => {
     const handleModalContainerClick = (e) => e.stopPropagation();
     var modal = st.modal;
     if (isOpen) {
@@ -7,7 +7,6 @@ const Modal = ({ children, isOpen, closeModal }) => {
     } else if (!isOpen) {
         modal = st.modal;
     }
-
     return (
         <article className={modal} onClick={closeModal}>
             <div className={st.container} onClick={handleModalContainerClick}>
@@ -19,5 +18,3 @@ const Modal = ({ children, isOpen, closeModal }) => {
         </article>
     );
 };
-
-export default Modal;

@@ -9,7 +9,7 @@ import { Dropdown } from "./Dropdown";
 import sendICO from "../../img/send.png";
 import Webcam from "react-webcam";
 import { useModal } from "../Tools/Modals/useModal";
-import Modal from "../Tools/Modals/Modal";
+import { Modal } from "../Tools/Modals/Modal";
 
 export function Form() {
     const genero = ["Genero", "Hembra", "Macho"];
@@ -18,11 +18,6 @@ export function Form() {
     const [values, setValues] = useState({});
     const [image, setImage] = useState(null);
     const [reason, setReason] = useState();
-    const videoConstraints = {
-        width: 1920,
-        height: 1080,
-        facingMode: "user",
-    };
 
     function handleChange(e) {
         if (e.target.name === "motivo") {
@@ -51,23 +46,26 @@ export function Form() {
                         }}
                     />
                     <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                        <Webcam
-                            audio={false}
-                            height={250}
-                            width={330}
-                            screenshotFormat="image/jpeg"
-                            videoConstraints={videoConstraints}>
-                            {({ getScreenshot }) => (
-                                <button
-                                    onClick={() => {
-                                        const imageSrc = getScreenshot();
-                                        setImage(imageSrc);
-                                    }}>
-                                    Capturar foto
-                                </button>
-                            )}
-                        </Webcam>
-                        <img src={image}></img>
+                        {isOpenModal && (
+                            <>
+                                <Webcam
+                                    audio={false}
+                                    height={250}
+                                    width={330}
+                                    screenshotFormat="image/jpeg">
+                                    {({ getScreenshot }) => (
+                                        <button
+                                            onClick={() => {
+                                                const imageSrc = getScreenshot();
+                                                setImage(imageSrc);
+                                            }}>
+                                            Capturar foto
+                                        </button>
+                                    )}
+                                </Webcam>
+                                <img src={image}></img>
+                            </>
+                        )}
                     </Modal>
                 </div>
                 <div>
