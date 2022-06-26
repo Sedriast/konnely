@@ -15,16 +15,15 @@ import Modal from "../Tools/Modals/Modal";
 export function Form() {
     const genero = ["Genero", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
+    const [isOpenModal1, openModal1, closeModal1] = useModal(false);
     const [values, setValues] = useState({});
     const [image, setImage] = useState(null);
     const [reason, setReason] = useState();
-    const [perfil, setPerfil] = useState("Archivo");
     const videoConstraints = {
         width: 1920,
         height: 1080,
         facingMode: "user",
     };
-    const [isOpenModal1, openModal1, closeModal1] = useModal(false);
 
     function handleChange(e) {
         if (e.target.name === "motivo") {
@@ -44,63 +43,36 @@ export function Form() {
 
     return (
         <>
-            <div>
-                <button onClick={openModal1}>Modal 1</button>
-                <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
-                    <h3>Modal 1</h3>
-                    <p>Hola ese es el contenido de mi modal 1</p>
-                    <img src="https://placeimg.com/400/400/animals" alt="Animals" />
-                </Modal>
-            </div>
             <div className={st.container}>
                 <div className={st.panelImage}>
-                    {perfil === "Archivo" ? (
-                        <>
-                            <Inputs
-                                type_="file"
-                                HaveImage={(e) => {
-                                    setImage(e);
-                                }}
-                            />
-                        </>
-                    ) : (
-                        <>
-                            <div className={st.cam}>
-                                <Webcam
-                                    audio={false}
-                                    height={250}
-                                    width={330}
-                                    screenshotFormat="image/jpeg"
-                                    videoConstraints={videoConstraints}>
-                                    {({ getScreenshot }) => (
-                                        <button
-                                            onClick={() => {
-                                                const imageSrc = getScreenshot();
-                                                setImage(imageSrc);
-                                            }}>
-                                            Capturar foto
-                                        </button>
-                                    )}
-                                </Webcam>
-                            </div>
-                        </>
-                    )}
+                    <Inputs
+                        type_="file"
+                        HaveImage={(e) => {
+                            setImage(e);
+                        }}
+                    />
+                    <Modal isOpen={isOpenModal1} closeModal={closeModal1}>
+                        <Webcam
+                            audio={false}
+                            height={250}
+                            width={330}
+                            screenshotFormat="image/jpeg"
+                            videoConstraints={videoConstraints}>
+                            {({ getScreenshot }) => (
+                                <button
+                                    onClick={() => {
+                                        const imageSrc = getScreenshot();
+                                        setImage(imageSrc);
+                                    }}>
+                                    Capturar foto
+                                </button>
+                            )}
+                        </Webcam>
+                        <img src={image}></img>
+                    </Modal>
                 </div>
                 <div>
-                    <Buttons
-                        text_="Archivo"
-                        click_={() => {
-                            setPerfil("Archivo");
-                        }}
-                        link_="#"
-                    />
-                    <Buttons
-                        text_="Camara"
-                        click_={() => {
-                            setPerfil("Camara");
-                        }}
-                        link_="#"
-                    />
+                    <Buttons text_="Camara" click_={openModal1} link_="#" />
                 </div>
                 <div className={st.panel}>
                     <Inputs
