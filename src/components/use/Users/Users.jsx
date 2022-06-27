@@ -22,7 +22,7 @@ export function Users(props) {
 						<Buttons link_="/" />
 					</div>
 				</div>
-
+				<div className={st.panelCom}>{}</div>
 				<div className={st.panelInf}>
 					<div className={st.i}>
 						<img src={props.src_} alt="" href="" />

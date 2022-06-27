@@ -36,6 +36,10 @@
 /*Master*/
 /*Sub*/
 .ops {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	width: 350px;
 	height: 250px;
 
@@ -43,8 +47,8 @@
 	overflow: hidden;
 }
 .ops img {
-	width: 350px;
-	height: 250px;
+	width: 370px;
+	height: 270px;
 }
 /*Sub*/
 /*Button´s container*/

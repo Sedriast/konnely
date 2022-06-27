@@ -40,7 +40,6 @@ export function Customer(props) {
 									className={st.preview_}
 									id={a.backgroud}
 									src={a.miniature_1}
-									// src={require(a.miniature).default}
 									onClick={c}
 									href=""
 									alt=""
