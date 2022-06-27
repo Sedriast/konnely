@@ -46,6 +46,10 @@
 
 	animation-duration: 1s;
 }
+.b img {
+	width: 100px;
+	height: 100px;
+}
 .i {
 	display: flex;
 	flex-direction: row-reverse;
