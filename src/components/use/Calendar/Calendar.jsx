@@ -2,18 +2,18 @@ import st from './css/Calendar.module.css';
 
 export function Calendar() {
 	var monthNames = [
-		'January',
-		'February',
-		'March',
-		'April',
-		'May',
-		'June',
-		'July',
-		'August',
-		'September',
-		'October',
-		'November',
-		'December',
+		'Enero',
+		'Febrero',
+		'Marzo',
+		'Abril',
+		'Mayo',
+		'Junio',
+		'Julio',
+		'Augosto',
+		'Septiembre',
+		'Octubre',
+		'Noviembre',
+		'Deciembre',
 	];
 
 	var currentDate = new Date();
@@ -114,26 +114,26 @@ export function Calendar() {
 	return (
 		<>
 			<div className={st.container}>
-				<div class="calendar">
-					<div class="calendar__info">
-						<div class="calendar__prev" id="prev-month">
+				<div className="calendar">
+					<div className="calendar__info">
+						<div className="calendar__prev" id="prev-month">
 							&#9664;
 						</div>
-						<div class="calendar__month" id="month"></div>
-						<div class="calendar__year" id="year"></div>
-						<div class="calendar__next" id="next-month">
+						<div className="calendar__month" id="month"></div>
+						<div className="calendar__year" id="year"></div>
+						<div className="calendar__next" id="next-month">
 							&#9654;
 						</div>
 					</div>
 
 					<div class="calendar__week">
-						<div class="calendar__day calendar__item">Mon</div>
-						<div class="calendar__day calendar__item">Tue</div>
-						<div class="calendar__day calendar__item">Wed</div>
-						<div class="calendar__day calendar__item">Thu</div>
-						<div class="calendar__day calendar__item">Fri</div>
-						<div class="calendar__day calendar__item">Sat</div>
-						<div class="calendar__day calendar__item">Sun</div>
+						<div className="calendar__day calendar__item">Mon</div>
+						<div className="calendar__day calendar__item">Tue</div>
+						<div className="calendar__day calendar__item">Wed</div>
+						<div className="calendar__day calendar__item">Thu</div>
+						<div className="calendar__day calendar__item">Fri</div>
+						<div className="calendar__day calendar__item">Sat</div>
+						<div className="calendar__day calendar__item">Sun</div>
 					</div>
 
 					<div class="calendar__dates" id="dates"></div>
