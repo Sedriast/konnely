@@ -31,7 +31,8 @@
 	width: 100%;
 	height: fit-content;
 
-	margin: 2rem;
+	padding: 1.5rem;
+	margin: 1rem;
 
 	display: flex;
 	justify-content: space-between;
@@ -146,13 +147,14 @@
 	width: 350px;
 }
 
-
 .cam button {
-	background: radial-gradient(216.67% 100% at 50% 0%,
-			rgba(0, 0, 0, 0) 26.55%,
-			rgba(0, 0, 0, 0.5) 34.9%,
-			rgba(0, 0, 0, 0.5) 56.52%,
-			rgba(0, 0, 0, 0.75) 100%);
+	background: radial-gradient(
+		216.67% 100% at 50% 0%,
+		rgba(0, 0, 0, 0) 26.55%,
+		rgba(0, 0, 0, 0.5) 34.9%,
+		rgba(0, 0, 0, 0.5) 56.52%,
+		rgba(0, 0, 0, 0.75) 100%
+	);
 	position: relative;
 	bottom: 0;
 	height: 100px;
