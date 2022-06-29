@@ -42,6 +42,7 @@ export function Inputs(props) {
         }).then((respuesta) => {
             if (respuesta) {
                 setImage(null);
+                props.HaveImage(null);
             }
         });
     };

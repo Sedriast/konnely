@@ -1,22 +1,22 @@
+import Webcam from "react-webcam";
 import st from "./css/Form.module.css";
-import { Inputs } from "../Tools/Inputs/Inputs";
-import { Lists } from "../Tools/List/Lists.jsx";
+import sendICO from "../../img/send.png";
 import { useState } from "react";
+import { Dropdown } from "./Dropdown";
+import { Modal } from "../Tools/Modals/Modal";
+import { Lists } from "../Tools/List/Lists.jsx";
+import { Inputs } from "../Tools/Inputs/Inputs";
+import { Buttons } from "../Tools/Buttons/Buttons";
+import { useModal } from "../Tools/Modals/useModal";
 import { SearchAll } from "../../firebase/funtions/SearchAll";
 import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
-import { Buttons } from "../Tools/Buttons/Buttons";
-import { Dropdown } from "./Dropdown";
-import sendICO from "../../img/send.png";
-import Webcam from "react-webcam";
-import { useModal } from "../Tools/Modals/useModal";
-import { Modal } from "../Tools/Modals/Modal";
 
 export function Form() {
     const genero = ["Genero", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
     const [isOpenModal, openModal, closeModal] = useModal(false);
     const [values, setValues] = useState({});
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState({});
     const [reason, setReason] = useState();
 
     function handleChange(e) {
@@ -43,6 +43,7 @@ export function Form() {
                         type_="file"
                         HaveImage={(e) => {
                             setImage(e);
+                            setValues({ ...values, typeImage: "download" });
                         }}
                     />
                     <Modal isOpen={isOpenModal} closeModal={closeModal}>
@@ -52,18 +53,23 @@ export function Form() {
                                     audio={false}
                                     height={250}
                                     width={330}
-                                    screenshotFormat="image/jpeg">
+                                    screenshotFormat="image/png">
                                     {({ getScreenshot }) => (
                                         <button
                                             onClick={() => {
                                                 const imageSrc = getScreenshot();
                                                 setImage(imageSrc);
+                                                setValues({
+                                                    ...values,
+                                                    typeImage: "camera",
+                                                });
                                             }}>
                                             Capturar foto
                                         </button>
                                     )}
                                 </Webcam>
                                 <img src={image}></img>
+                                <button>Aceptar</button>
                             </>
                         )}
                     </Modal>
