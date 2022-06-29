@@ -54,6 +54,7 @@ export function Layout(props) {
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
+										<Calendar />
 									</ProtectedRoute>
 								</>
 							}
@@ -76,15 +77,6 @@ export function Layout(props) {
 										<Customer clsName={st.customer} />
 									</ProtectedRoute>
 								</>
-							}
-						/>
-						<Route
-							exact
-							path="/test"
-							element={
-								<div className={st.calendarPanel}>
-									<Calendar />
-								</div>
 							}
 						/>
 						<Route
