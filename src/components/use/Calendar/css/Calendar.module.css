@@ -1,0 +1,22 @@
+.container {
+	width: 100%;
+	margin: 2rem;
+}
+.calendar {
+	display: flex;
+}
+.info {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	margin: 1rem;
+}
+.sem {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-evenly;
+}

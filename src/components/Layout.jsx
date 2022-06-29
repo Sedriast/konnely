@@ -13,6 +13,7 @@ import { Invoice } from './use/Invoice/Invoice';
 import { useAuth } from '../context/AuthContext';
 import { collection, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
 import { Init } from './use/Init/Init';
+import { Calendar } from './use/Calendar/Calendar';
 
 const db = getFirestore(app);
 
@@ -53,6 +54,7 @@ export function Layout(props) {
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
+										<Calendar />
 									</ProtectedRoute>
 								</>
 							}
