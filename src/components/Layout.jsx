@@ -80,7 +80,7 @@ export function Layout(props) {
 						/>
 						<Route
 							exact
-							path="/home"
+							path="/test"
 							element={
 								<div className={st.calendarPanel}>
 									<Calendar />
