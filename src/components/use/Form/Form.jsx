@@ -10,15 +10,14 @@ import { Buttons } from "../Tools/Buttons/Buttons";
 import { useModal } from "../Tools/Modals/useModal";
 import { SearchAll } from "../../firebase/funtions/SearchAll";
 import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
-import { usePreview } from "../../../context/AuthContext";
 
 export function Form() {
-    const { imagenPreview } = usePreview();
     const genero = ["Genero", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
     const [isOpenModal, openModal, closeModal] = useModal(false);
     const [values, setValues] = useState({});
     const [image, setImage] = useState(null);
+    const [image_, setImage_] = useState(null);
     const [reason, setReason] = useState();
 
     function handleChange(e) {
@@ -45,8 +44,8 @@ export function Form() {
                         type_="file"
                         HaveImage={(e) => {
                             setImage(e);
-                            setValues({ ...values, typeImage: "download" });
                         }}
+                        Preview={image_}
                     />
                     <Modal isOpen={isOpenModal} closeModal={closeModal}>
                         {isOpenModal && (
@@ -60,18 +59,13 @@ export function Form() {
                                         <button
                                             onClick={() => {
                                                 const imageSrc = getScreenshot();
-                                                setImage(imageSrc);
-                                                imagenPreview(imageSrc);
-                                                setValues({
-                                                    ...values,
-                                                    typeImage: "camera",
-                                                });
+                                                setImage_(imageSrc);
                                             }}>
                                             Capturar foto
                                         </button>
                                     )}
                                 </Webcam>
-                                <img src={image}></img>
+                                <img src={image_}></img>
                             </>
                         )}
                     </Modal>

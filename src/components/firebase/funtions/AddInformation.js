@@ -22,21 +22,13 @@ const storage = getStorage(app);
 export const addImageAndInfo = (props) => {
     const addImageAndInfo = async (datos) => {
         try {
-            if (datos.typeImage !== "camera") {
-                const storageRef = ref(storage, datos.image.name);
-                await uploadBytes(storageRef, datos.image);
-                const urlDescarga = await getDownloadURL(storageRef);
-                datos.url = urlDescarga;
-            } else {
-                var auxiliar = [];
-                auxiliar = datos.image.split(",");
-                const refStorage = ref(storage, "base2");
-                await uploadString(refStorage, auxiliar[1], "base64");
-                const urlDescarga = await getDownloadURL(refStorage);
-                datos.url = urlDescarga;
-            }
+            var auxiliar = [];
+            auxiliar = datos.image.split(",");
+            const refStorage = ref(storage, datos.id);
+            await uploadString(refStorage, auxiliar[1], "base64");
+            const urlDescarga = await getDownloadURL(refStorage);
+            datos.url = urlDescarga;
             delete datos.image;
-            delete datos.typeImage;
             await addDoc(collection(db, "conejos"), datos);
         } catch (error) {
             console.log(error);

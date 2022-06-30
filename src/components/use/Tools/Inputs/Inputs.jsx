@@ -1,46 +1,39 @@
 import swal from "sweetalert";
 import st from "./css/Inputs.module.css";
 import { useRef, useState, useEffect } from "react";
-import { ModalCamera } from "../../Form/ModalCamera";
-import { usePreview } from "../../../../context/AuthContext";
 
 export function Inputs(props) {
-    const { imagen64, imagenPreview } = usePreview();
     const fileInputRef = useRef();
+    const [preview, setPreview] = useState(false);
     const [image, setImage] = useState(false);
-    const [preview, setPreview] = useState();
 
     const action = (e) => {
         if (props.type_ === "file") {
             const file = e.target.files[0];
             if (file && file.type.substr(0, 5) === "image") {
                 setImage(file);
-                props.HaveImage(file);
             } else {
                 setImage(null);
             }
         } else if (props.type_ !== "image") {
             props.handleChange(e);
-        } else if (props.type_ !== "modal") {
-            console.log("Hola");
-            ModalCamera("openModal");
         }
     };
 
     // Configuracion para input tipo imagen
     useEffect(() => {
-        if (imagen64 && props.type_ === "file") {
-            setPreview(imagen64);
-        } else if (image) {
+        if (image) {
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPreview(reader.result);
             };
             reader.readAsDataURL(image);
+        } else if (props.Preview !== null) {
+            setPreview(props.Preview);
         } else {
             setPreview(null);
         }
-    }, [image, imagen64]);
+    }, [image, props.Preview]);
 
     const changeImage = () => {
         swal({
@@ -50,12 +43,14 @@ export function Inputs(props) {
         }).then((respuesta) => {
             if (respuesta) {
                 setPreview(null);
-                imagenPreview(null);
                 setImage(null);
                 props.HaveImage(null);
             }
         });
     };
+    if (preview) {
+        props.HaveImage(preview);
+    }
 
     return (
         <>

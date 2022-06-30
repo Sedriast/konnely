@@ -18,7 +18,6 @@ import {
 
 export const auth = getAuth(app);
 const authContext = createContext();
-const formContext = createContext();
 
 export const useAuth = () => {
     const context = useContext(authContext);
@@ -26,15 +25,8 @@ export const useAuth = () => {
     return context;
 };
 
-export const usePreview = () => {
-    const contextForm = useContext(formContext);
-    if (!contextForm) throw new Error("There is no Auth provider");
-    return contextForm;
-};
-
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
-    const [imagen64, setImagen64] = useState(false);
     const [loading, setLoading] = useState(true);
     const tema =
         "url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)";
@@ -133,10 +125,6 @@ export function AuthProvider({ children }) {
         });
     };
 
-    const imagenPreview = (imagenPreview) => {
-        setImagen64(imagenPreview);
-    };
-
     useEffect(() => {
         const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -157,9 +145,7 @@ export function AuthProvider({ children }) {
                     notification_err,
                     // verifyOtp,
                 }}>
-                <formContext.Provider value={{ imagenPreview, imagen64 }}>
-                    {children}
-                </formContext.Provider>
+                {children}
             </authContext.Provider>
         </>
     );
