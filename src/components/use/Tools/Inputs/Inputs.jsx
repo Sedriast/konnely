@@ -1,11 +1,14 @@
+import swal from "sweetalert";
 import st from "./css/Inputs.module.css";
 import { useRef, useState, useEffect } from "react";
-import swal from "sweetalert";
+import { ModalCamera } from "../../Form/ModalCamera";
+import { usePreview } from "../../../../context/AuthContext";
 
 export function Inputs(props) {
-    const [image, setImage] = useState();
-    const [preview, setPreview] = useState();
+    const { imagen64, imagenPreview } = usePreview();
     const fileInputRef = useRef();
+    const [image, setImage] = useState(false);
+    const [preview, setPreview] = useState();
 
     const action = (e) => {
         if (props.type_ === "file") {
@@ -18,12 +21,17 @@ export function Inputs(props) {
             }
         } else if (props.type_ !== "image") {
             props.handleChange(e);
+        } else if (props.type_ !== "modal") {
+            console.log("Hola");
+            ModalCamera("openModal");
         }
     };
 
     // Configuracion para input tipo imagen
     useEffect(() => {
-        if (image) {
+        if (imagen64 && props.type_ === "file") {
+            setPreview(imagen64);
+        } else if (image) {
             const reader = new FileReader();
             reader.onloadend = () => {
                 setPreview(reader.result);
@@ -32,7 +40,7 @@ export function Inputs(props) {
         } else {
             setPreview(null);
         }
-    }, [image]);
+    }, [image, imagen64]);
 
     const changeImage = () => {
         swal({
@@ -41,6 +49,8 @@ export function Inputs(props) {
             buttons: ["No", "Si"],
         }).then((respuesta) => {
             if (respuesta) {
+                setPreview(null);
+                imagenPreview(null);
                 setImage(null);
                 props.HaveImage(null);
             }

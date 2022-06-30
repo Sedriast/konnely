@@ -1,7 +1,7 @@
-import app from "../components/firebase/credentials";
 import swal from "sweetalert";
-import { AddInfoProfile } from "../components/firebase/funtions/AddInformation";
+import app from "../components/firebase/credentials";
 import { createContext, useContext, useEffect, useState } from "react";
+import { AddInfoProfile } from "../components/firebase/funtions/AddInformation";
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -15,16 +15,26 @@ import {
     signInWithPhoneNumber,
     updateEmail,
 } from "firebase/auth";
-const authContext = createContext();
+
 export const auth = getAuth(app);
+const authContext = createContext();
+const formContext = createContext();
+
 export const useAuth = () => {
     const context = useContext(authContext);
     if (!context) throw new Error("There is no Auth provider");
     return context;
 };
 
+export const usePreview = () => {
+    const contextForm = useContext(formContext);
+    if (!contextForm) throw new Error("There is no Auth provider");
+    return contextForm;
+};
+
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
+    const [imagen64, setImagen64] = useState(false);
     const [loading, setLoading] = useState(true);
     const tema =
         "url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)";
@@ -123,6 +133,10 @@ export function AuthProvider({ children }) {
         });
     };
 
+    const imagenPreview = (imagenPreview) => {
+        setImagen64(imagenPreview);
+    };
+
     useEffect(() => {
         const unsubuscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -131,18 +145,22 @@ export function AuthProvider({ children }) {
         return () => unsubuscribe();
     }, []);
     return (
-        <authContext.Provider
-            value={{
-                signup,
-                login,
-                user,
-                loading,
-                logout,
-                resetPassword,
-                notification_err,
-                // verifyOtp,
-            }}>
-            {children}
-        </authContext.Provider>
+        <>
+            <authContext.Provider
+                value={{
+                    signup,
+                    login,
+                    user,
+                    loading,
+                    logout,
+                    resetPassword,
+                    notification_err,
+                    // verifyOtp,
+                }}>
+                <formContext.Provider value={{ imagenPreview, imagen64 }}>
+                    {children}
+                </formContext.Provider>
+            </authContext.Provider>
+        </>
     );
 }

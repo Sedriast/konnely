@@ -10,8 +10,10 @@ import { Buttons } from "../Tools/Buttons/Buttons";
 import { useModal } from "../Tools/Modals/useModal";
 import { SearchAll } from "../../firebase/funtions/SearchAll";
 import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
+import { usePreview } from "../../../context/AuthContext";
 
 export function Form() {
+    const { imagenPreview } = usePreview();
     const genero = ["Genero", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
     const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -59,6 +61,7 @@ export function Form() {
                                             onClick={() => {
                                                 const imageSrc = getScreenshot();
                                                 setImage(imageSrc);
+                                                imagenPreview(imageSrc);
                                                 setValues({
                                                     ...values,
                                                     typeImage: "camera",
