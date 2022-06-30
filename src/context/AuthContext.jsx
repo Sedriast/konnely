@@ -11,9 +11,6 @@ import {
     getAuth,
     updateProfile,
     sendEmailVerification,
-    RecaptchaVerifier,
-    signInWithPhoneNumber,
-    updateEmail,
 } from "firebase/auth";
 
 export const auth = getAuth(app);

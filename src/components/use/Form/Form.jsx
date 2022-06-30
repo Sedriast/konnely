@@ -14,11 +14,11 @@ import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
 export function Form() {
     const genero = ["Genero", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
-    const [isOpenModal, openModal, closeModal] = useModal(false);
-    const [values, setValues] = useState({});
-    const [image, setImage] = useState(null);
-    const [image_, setImage_] = useState(null);
     const [reason, setReason] = useState();
+    const [image, setImage] = useState(null);
+    const [values, setValues] = useState({});
+    const [image_, setImage_] = useState(null);
+    const [isOpenModal, openModal, closeModal] = useModal(false);
 
     function handleChange(e) {
         if (e.target.name === "motivo") {
@@ -65,7 +65,7 @@ export function Form() {
                                         </button>
                                     )}
                                 </Webcam>
-                                <img src={image_}></img>
+                                <img src={image_} alt=""></img>
                             </>
                         )}
                     </Modal>

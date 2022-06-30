@@ -1,6 +1,5 @@
 import st from "./css/Users.module.css";
 import { Buttons } from "../Tools/Buttons/Buttons";
-import { Inputs } from "../Tools/Inputs/Inputs";
 
 export function Users(props) {
     return (

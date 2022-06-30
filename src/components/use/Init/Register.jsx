@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/AuthContext";
 import { ValidationErrors } from "./ValidationErrors";
 
-export function Register(props) {
-    const { signup, logout, verifyOtp } = useAuth();
+export function Register() {
+    const { signup, logout } = useAuth();
     const navigate = useNavigate();
     // const [otp, setOtp] = useState(false);
     const [newuser, setUser] = useState({
