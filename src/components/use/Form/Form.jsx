@@ -18,6 +18,7 @@ export function Form() {
     const [image, setImage] = useState(null);
     const [values, setValues] = useState({});
     const [image_, setImage_] = useState(null);
+    const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
 
     function handleChange(e) {
@@ -59,13 +60,14 @@ export function Form() {
                                         <button
                                             onClick={() => {
                                                 const imageSrc = getScreenshot();
-                                                setImage_(imageSrc);
+                                                setAuxImage_(imageSrc);
                                             }}>
                                             Capturar foto
                                         </button>
                                     )}
                                 </Webcam>
-                                <img src={image_} alt=""></img>
+                                <img src={auxImage_} alt=""></img>;
+                                <button onClick={closeModal}>Aceptar</button>
                             </>
                         )}
                     </Modal>
