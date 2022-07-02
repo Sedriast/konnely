@@ -10,10 +10,12 @@ import { Buttons } from "../Tools/Buttons/Buttons";
 import { useModal } from "../Tools/Modals/useModal";
 import { SearchAll } from "../../firebase/funtions/SearchAll";
 import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
+import { GroupValidation } from "./GroupValidation";
 
 export function Form() {
     const genero = ["Genero", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
+    const grupo = ["Banda Asosiada", "Azul", "Rojo", "Verde", "Blanco"];
     const [reason, setReason] = useState();
     const [image, setImage] = useState(null);
     const [values, setValues] = useState({});
@@ -22,12 +24,13 @@ export function Form() {
     const [isOpenModal, openModal, closeModal] = useModal(false);
 
     function handleChange(e) {
+        const { name, value } = e.target;
         if (e.target.name === "motivo") {
             setReason(e.target.value);
-            const { name, value } = e.target;
             setValues({ ...values, [name]: value });
+        } else if (e.target.name === "grupo") {
+            setValues({ ...values, [name]: GroupValidation(value).props.children });
         } else {
-            const { name, value } = e.target;
             setValues({ ...values, [name]: value });
         }
     }
@@ -66,8 +69,13 @@ export function Form() {
                                         </button>
                                     )}
                                 </Webcam>
-                                <img src={auxImage_} alt=""></img>;
-                                <button onClick={closeModal}>Aceptar</button>
+                                <img src={auxImage_} alt=""></img>
+                                <button
+                                    onClick={() => {
+                                        setImage_(auxImage_);
+                                    }}>
+                                    Aceptar
+                                </button>
                             </>
                         )}
                     </Modal>
@@ -115,7 +123,7 @@ export function Form() {
                     <Lists
                         leyend="Banda Asosiada"
                         name_="grupo"
-                        listar={SearchAll("grupo").props.children}
+                        listar={grupo}
                         handleChange={handleChange}
                     />
 
