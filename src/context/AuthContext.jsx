@@ -27,6 +27,8 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true);
     const tema =
         "url(https://drive.google.com/uc?export=download&id=1bqq3el_cZUMSzOvs9OyBW5UakjNES9Iv)";
+    const imagenPerfil =
+        "https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/ImagenDeUsuario.png?alt=media&token=e4b0499b-1ff2-42b3-93f9-e95d11533536";
 
     const logout = () => signOut(auth);
     const resetPassword = async (email) => await sendPasswordResetEmail(auth, email);
@@ -51,6 +53,7 @@ export function AuthProvider({ children }) {
             await createUserWithEmailAndPassword(auth, email, password);
             updateProfile(auth.currentUser, {
                 displayName: userName,
+                photoURL: imagenPerfil,
             }).catch((error) => {
                 notification_err(error, "error", "aceptar");
             });
@@ -62,6 +65,7 @@ export function AuthProvider({ children }) {
                     email: auth.currentUser.email,
                     rol: "usuario",
                     tema: tema,
+                    foto: imagenPerfil,
                 },
             });
             verificarEmail(auth.currentUser);

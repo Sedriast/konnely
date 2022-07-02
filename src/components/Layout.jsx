@@ -32,6 +32,7 @@ export function Layout() {
             email: "",
             rol: "",
             uid: "",
+            foto: "",
         },
     ]);
 
@@ -102,7 +103,7 @@ export function Layout() {
                                     <ProtectedRoute>
                                         <Users
                                             clsName={st.users}
-                                            src_="https://drive.google.com/uc?export=download&id=1E7CWChneuESSmcVQ-CpZHTMQxLwbedyi"
+                                            src_={user_[0].foto}
                                             title={user_[0].usuario}
                                             label="Adminitrador"
                                         />
