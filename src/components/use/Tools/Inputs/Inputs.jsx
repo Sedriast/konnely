@@ -47,9 +47,9 @@ export function Inputs(props) {
             buttons: ["No", "Si"],
         }).then((respuesta) => {
             if (respuesta) {
+                setImage(null);
                 setPreview(null);
                 props.HaveImage(null);
-                setImage(null);
             }
         });
     };

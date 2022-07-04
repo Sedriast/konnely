@@ -7,10 +7,10 @@ import { Modal } from "../Tools/Modals/Modal";
 import { Inputs } from "../Tools/Inputs/Inputs";
 import { Lists } from "../Tools/List/Lists.jsx";
 import { Buttons } from "../Tools/Buttons/Buttons";
+import { GroupValidation } from "./GroupValidation";
 import { useModal } from "../Tools/Modals/useModal";
 import { SearchAll } from "../../firebase/funtions/SearchAll";
 import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
-import { GroupValidation } from "./GroupValidation";
 
 export function Form() {
     const genero = ["Genero", "Hembra", "Macho"];
