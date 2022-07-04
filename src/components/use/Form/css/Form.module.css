@@ -107,8 +107,7 @@
 	display: flex;
 	align-content: space-between;
 	justify-content: space-between;
-
-	align-items: stretch;
+	align-items: center;
 }
 
 .panelImage img {

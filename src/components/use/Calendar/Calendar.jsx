@@ -46,12 +46,6 @@ export function Calendar() {
 
 	const setNewDate = () => {
 		currentDate.setFullYear(currentYear, monthNumber, currentDay);
-		setMonthNumber();
-		setCurrentYear();
-
-		// month.textContent = monthNames[monthNumber];
-		// year.textContent = currentYear.toString();
-		// dates.textContent = '';
 		//	writeMonth(monthNumber);
 	};
 
@@ -136,7 +130,7 @@ export function Calendar() {
 						</div>
 					</div>
 
-					<div class={st.week}>
+					<div className={st.week}>
 						<div className="calendar__day calendar__item">Lun</div>
 						<div className="calendar__day calendar__item">Mar</div>
 						<div className="calendar__day calendar__item">Mie</div>
@@ -146,7 +140,7 @@ export function Calendar() {
 						<div className="calendar__day calendar__item">Dom</div>
 					</div>
 
-					<div class="calendar__dates" id="dates"></div>
+					<div className="calendar__dates" id="dates"></div>
 				</div>
 			</div>
 		</>

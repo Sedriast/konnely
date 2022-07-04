@@ -1,24 +1,23 @@
 .modal {
-
 	display: none;
-
 }
 
 .container {
 	position: relative;
 	padding: 1rem;
-	min-width: 800px;
-	max-width: 1000px;
-	min-height: 200px;
-	max-height: 600px;
+	min-width: 330px;
+	min-height: 580px;
 	overflow-y: auto;
 	background-color: #fff;
+	flex-direction: column;
+	border-radius: 20px;
 }
 
 .close {
 	position: absolute;
 	top: 1rem;
 	right: 1rem;
+	z-index: 1;
 }
 
 .modalOpen {
@@ -32,5 +31,4 @@
 	background-color: rgba(0, 0, 0, 0.75);
 	justify-content: center;
 	align-items: center;
-
 }
