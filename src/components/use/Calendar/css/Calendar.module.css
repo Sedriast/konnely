@@ -10,13 +10,20 @@
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
-	justify-content: center;
-	margin: 1rem;
+	justify-content: space-evenly;
+	margin: 1rem 20rem;
+	text-transform: uppercase;
 }
-.sem {
+.week {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;
 	justify-content: space-evenly;
+}
+.prec,
+.next {
+	cursor: grab;
+	color: rgb(255, 0, 0);
+	-webkit-text-stroke: 1px rgb(255, 255, 255);
 }
