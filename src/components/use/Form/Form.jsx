@@ -48,6 +48,10 @@ export function Form() {
                         type_="file"
                         HaveImage={(e) => {
                             setImage(e);
+                            if (e === null) {
+                                setImage_(null);
+                                setAuxImage_(null);
+                            }
                         }}
                         Preview={image_}
                     />
@@ -72,6 +76,7 @@ export function Form() {
                                 <img src={auxImage_} alt=""></img>
                                 <button
                                     onClick={() => {
+                                        closeModal();
                                         setImage_(auxImage_);
                                     }}>
                                     Aceptar

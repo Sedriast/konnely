@@ -4,8 +4,9 @@ import { useRef, useState, useEffect } from "react";
 
 export function Inputs(props) {
     const fileInputRef = useRef();
-    const [preview, setPreview] = useState(false);
+    const preview_ = props.Preview;
     const [image, setImage] = useState(false);
+    const [preview, setPreview] = useState(false);
 
     const action = (e) => {
         if (props.type_ === "file") {
@@ -29,7 +30,7 @@ export function Inputs(props) {
             };
             reader.readAsDataURL(image);
         } else if (props.Preview !== null) {
-            setPreview(props.Preview);
+            setPreview(preview_);
         } else {
             setPreview(null);
         }
@@ -43,11 +44,12 @@ export function Inputs(props) {
         }).then((respuesta) => {
             if (respuesta) {
                 setPreview(null);
-                setImage(null);
                 props.HaveImage(null);
+                setImage(null);
             }
         });
     };
+
     if (preview) {
         props.HaveImage(preview);
     }
