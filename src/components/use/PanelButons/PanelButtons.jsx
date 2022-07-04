@@ -36,8 +36,8 @@ export function PanelButtons(props) {
 				</div>
 				{Data.map((item, index) => {
 					return (
-						<div className={st.op}>
-							<Buttons key={index} link_={item.path} cliLoa_={props.loading_} icon_={item.icon} />
+						<div key={index} className={st.op}>
+							<Buttons link_={item.path} cliLoa_={props.loading_} icon_={item.icon} />
 						</div>
 					);
 				})}
