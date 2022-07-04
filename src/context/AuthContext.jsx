@@ -48,7 +48,7 @@ export function AuthProvider({ children }) {
     //         auth
     //     );
     // };
-    const signup = async (verification, userName, email, password, telefono) => {
+    const signup = async (verification, userName, email, password) => {
         if (verification === "correo") {
             await createUserWithEmailAndPassword(auth, email, password);
             updateProfile(auth.currentUser, {

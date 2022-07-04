@@ -76,8 +76,8 @@ export function Form() {
                                 <img src={auxImage_} alt=""></img>
                                 <button
                                     onClick={() => {
-                                        closeModal();
                                         setImage_(auxImage_);
+                                        closeModal();
                                     }}>
                                     Aceptar
                                 </button>
