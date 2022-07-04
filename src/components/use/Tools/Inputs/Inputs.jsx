@@ -10,7 +10,7 @@ export function Inputs(props) {
     const action = (e) => {
         if (props.type_ === "file") {
             const file = e.target.files[0];
-            if (file && file.type.substr(0, 5) === "image") {
+            if (file && file.type.substring(0, 5) === "image") {
                 setImage(file);
             } else {
                 setImage(null);
