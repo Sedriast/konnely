@@ -1,18 +1,17 @@
+import swal from "sweetalert";
 import st from "./css/Inputs.module.css";
 import { useRef, useState, useEffect } from "react";
-import swal from "sweetalert";
 
 export function Inputs(props) {
-    const [image, setImage] = useState();
-    const [preview, setPreview] = useState();
     const fileInputRef = useRef();
+    const [preview, setPreview] = useState(false);
+    const [image, setImage] = useState(false);
 
     const action = (e) => {
         if (props.type_ === "file") {
             const file = e.target.files[0];
             if (file && file.type.substr(0, 5) === "image") {
                 setImage(file);
-                props.HaveImage(file);
             } else {
                 setImage(null);
             }
@@ -29,10 +28,12 @@ export function Inputs(props) {
                 setPreview(reader.result);
             };
             reader.readAsDataURL(image);
+        } else if (props.Preview !== null) {
+            setPreview(props.Preview);
         } else {
             setPreview(null);
         }
-    }, [image]);
+    }, [image, props.Preview]);
 
     const changeImage = () => {
         swal({
@@ -41,10 +42,15 @@ export function Inputs(props) {
             buttons: ["No", "Si"],
         }).then((respuesta) => {
             if (respuesta) {
+                setPreview(null);
                 setImage(null);
+                props.HaveImage(null);
             }
         });
     };
+    if (preview) {
+        props.HaveImage(preview);
+    }
 
     return (
         <>

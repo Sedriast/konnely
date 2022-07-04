@@ -1,4 +1,6 @@
+import swal from "sweetalert";
 import app from "../credentials";
+import { getStorage, ref, getDownloadURL, uploadString } from "firebase/storage";
 import {
     getFirestore,
     collection,
@@ -7,8 +9,6 @@ import {
     setDoc,
     updateDoc,
 } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import swal from "sweetalert";
 
 const db = getFirestore(app);
 const storage = getStorage(app);
@@ -16,15 +16,17 @@ const storage = getStorage(app);
 export const addImageAndInfo = (props) => {
     const addImageAndInfo = async (datos) => {
         try {
-            const storageRef = ref(storage, props.image.name);
-            await uploadBytes(storageRef, props.image);
-            const urlDescarga = await getDownloadURL(storageRef);
-            delete datos.image;
+            var auxiliar = [];
+            auxiliar = datos.image.split(",");
+            const refStorage = ref(storage, datos.id);
+            await uploadString(refStorage, auxiliar[1], "base64");
+            const urlDescarga = await getDownloadURL(refStorage);
             datos.url = urlDescarga;
+            delete datos.image;
             await addDoc(collection(db, "conejos"), datos);
         } catch (error) {
             swal({
-                title: "No ha seleccionado una imagen",
+                title: "Ha ocurrido un error con su registro",
                 icon: "error",
                 button: "aceptar",
             });
