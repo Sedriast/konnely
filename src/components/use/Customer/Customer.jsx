@@ -2,7 +2,7 @@ import swal from "sweetalert";
 import st from "./css/Customer.module.css";
 
 import { useState } from "react";
-import { Data } from "./Data.js";
+import { DataC } from "./DataC.js";
 import { useAuth } from "../../../context/AuthContext";
 import { UpdateInfoProfile } from "../../firebase/funtions/AddInformation";
 
@@ -11,7 +11,8 @@ export function Customer() {
     const [f, setF] = useState({ user: null, data: {} });
 
     const ca = (e) => {
-        setF({ ...f, user: user.uid, data: { tema: e.target.id } });
+        const tema = parseInt(e.target.id);
+        setF({ ...f, user: user.uid, data: { tema: tema } });
     };
 
     const c = () => {
@@ -33,13 +34,13 @@ export function Customer() {
     return (
         <>
             <div className={st.container}>
-                {Data.map((a, index) => {
+                {DataC.map((a, index) => {
                     return (
                         <div className={st.ops} key={index}>
                             <button onMouseEnter={ca}>
                                 <img
                                     className={st.preview_}
-                                    id={a.backgroud}
+                                    id={a.number}
                                     src={a.miniature}
                                     onClick={c}
                                     href=""

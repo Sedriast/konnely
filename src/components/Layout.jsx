@@ -1,6 +1,5 @@
 import st from "./Layout.module.css";
 import app from "../components/firebase/credentials";
-import seis_ from "./backgrounds/5.png";
 
 import { Init } from "./use/Init/Init";
 import { List } from "./use/List/List";
@@ -22,7 +21,7 @@ import {
     query,
     where,
 } from "firebase/firestore";
-import { async } from "@firebase/util";
+import { DataC } from "./use/Customer/DataC";
 
 const db = getFirestore(app);
 
@@ -39,20 +38,18 @@ export function Layout() {
 
     function s() {
         if (user && user_.tema !== null) {
-            console.log("Hola_1");
-            console.log(user_.tema);
-            // document
-            //     .getElementById("lay")
-            //     .style.setProperty(
-            //         "background-image",
-            //         "url(" + "./backgrounds/5.png" + ")"
-            //     );
-            // document
-            //     .getElementById("lay")
-            //     .style.setProperty("background-repeat", "no-repeat");
-            // document
-            //     .getElementById("lay")
-            //     .style.setProperty("background-size", "cover");
+            document
+                .getElementById("lay")
+                .style.setProperty(
+                    "background-image",
+                    "url(" + DataC[user_.tema].miniature + ")"
+                );
+            document
+                .getElementById("lay")
+                .style.setProperty("background-repeat", "no-repeat");
+            document
+                .getElementById("lay")
+                .style.setProperty("background-size", "cover");
         }
     }
 
