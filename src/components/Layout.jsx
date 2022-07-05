@@ -1,6 +1,6 @@
 import st from "./Layout.module.css";
 import app from "../components/firebase/credentials";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import seis_ from "./backgrounds/5.png";
 
 import { Init } from "./use/Init/Init";
 import { List } from "./use/List/List";
@@ -13,54 +13,71 @@ import { Customer } from "./use/Customer/Customer";
 import { Users } from "../components/use/Users/Users";
 import { PanelButtons } from "./use/PanelButons/PanelButtons";
 import { ProtectedRoute } from "./protectedRoute/ProtectedRoute";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import {
     collection,
+    getDocs,
     getFirestore,
     onSnapshot,
     query,
     where,
 } from "firebase/firestore";
+import { async } from "@firebase/util";
 
 const db = getFirestore(app);
 
 export function Layout() {
     const { user } = useAuth();
-    const [user_, setUser_] = useState([
-        {
-            tema: "",
-            usuario: "",
-            email: "",
-            rol: "",
-            uid: "",
-            foto: "",
-        },
-    ]);
+    const [user_, setUser_] = useState({
+        uid: null,
+        rol: null,
+        tema: null,
+        foto: null,
+        email: null,
+        usuario: null,
+    });
+
+    function s() {
+        if (user && user_.tema !== null) {
+            console.log("Hola_1");
+            console.log(user_.tema);
+            // document
+            //     .getElementById("lay")
+            //     .style.setProperty(
+            //         "background-image",
+            //         "url(" + "./backgrounds/5.png" + ")"
+            //     );
+            // document
+            //     .getElementById("lay")
+            //     .style.setProperty("background-repeat", "no-repeat");
+            // document
+            //     .getElementById("lay")
+            //     .style.setProperty("background-size", "cover");
+        }
+    }
 
     useEffect(() => {
-        if (user) {
+        const obtener = async () => {
             const q = query(
                 collection(db, "usuarios"),
                 where("uid", "==", user.uid)
             );
-            onSnapshot(q, (snapshot) =>
-                setUser_(snapshot.docs.map((doc) => ({ ...doc.data() })))
-            );
+            const querySnapshot = await getDocs(q);
+            querySnapshot.forEach((doc) => {
+                setUser_(doc.data());
+            });
+            // onSnapshot(q, (snapshot) =>
+            //     snapshot.docs.map((doc) => setUser_({ ...doc.data() }))
+            // );
+        };
+        if (user) {
+            obtener();
         }
     }, [user]);
 
-    const s = () => {
-        document
-            .getElementById("lay")
-            .style.setProperty("background", user_[0].tema);
-        document
-            .getElementById("lay")
-            .style.setProperty("background-repeat", "no-repeat");
-        document.getElementById("lay").style.setProperty("background-size", "cover");
-    };
-
     return (
         <>
-            <div className={st.container} id="lay" onLoad={s}>
+            <div className={st.container} id="lay" onLoad={s()}>
                 <Router>
                     <Routes>
                         <Route
@@ -103,9 +120,9 @@ export function Layout() {
                                     <ProtectedRoute>
                                         <Users
                                             clsName={st.users}
-                                            src_={user_[0].foto}
-                                            title={user_[0].usuario}
-                                            label="Adminitrador"
+                                            src_={user_.foto}
+                                            title={user_.usuario}
+                                            label="Administrador"
                                         />
                                     </ProtectedRoute>
                                 </>
