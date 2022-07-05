@@ -1,5 +1,6 @@
 import swal from "sweetalert";
 import st from "./css/Customer.module.css";
+
 import { useState } from "react";
 import { Data } from "./Data.js";
 import { useAuth } from "../../../context/AuthContext";
