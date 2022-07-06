@@ -11,8 +11,8 @@ export function Buttons(props) {
                 onChange={props.change_}
                 name={props.name_}>
                 <Link to={props.link_}>
-                    <h1 id={props.id_}>{props.text_}</h1>
                     <img src={props.icon_} onClick={props.cliLoa_} href="" alt="" />
+                    <h1 id={props.id_}>{props.text_}</h1>
                 </Link>
             </button>
         </>

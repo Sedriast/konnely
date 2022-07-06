@@ -33,6 +33,7 @@
 
 	border-radius: 20px;
 }
+
 /*Master*/
 /*Sub*/
 .panel {
@@ -58,6 +59,71 @@
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
+
+.fil {
+	display: flex;
+
+	width: 180px;
+
+	padding-bottom: 1rem;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.fil h1 {
+	font-size: 10px;
+}
+
+.opF {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	border: solid 1px black;
+}
+
+.opF img {
+	height: 40px;
+	border-radius: 100%;
+}
+
+.opF h1 {
+	position: absolute;
+
+	width: 40px;
+	height: 40px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: rgb(88, 88, 88);
+}
+
+.se {
+	width: calc(100% - 180px);
+	height: 40px;
+	padding-bottom: 1rem;
+}
+
+.pa {
+	display: flex;
+}
+
+.pa input {
+	height: 40px;
+	width: 95%;
+	border-radius: 20px;
+	margin-left: 1rem;
+	padding-left: 1rem;
+	border: 1px solid black;
+}
+
+@media (max-width: 850px) {
+	.pa {
+		width: 91%;
+	}
+}
+
 /*Sub*/
 /*Button´s container*/
 
