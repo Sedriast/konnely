@@ -18,7 +18,6 @@ export const QueriesSimple_ = (props) => {
         };
         simpleQueries(props);
     }, [props.coleccion]);
-    console.log(data_);
 
     return (
         <>
