@@ -7,7 +7,7 @@ import { Form } from './use/Form/Form';
 import { useState, useEffect } from 'react';
 import { Invoice } from './use/Invoice/Invoice';
 import { useAuth } from '../context/AuthContext';
-import { Calendar } from './use/Calendar/Calendar';
+import { Diary } from './use/Diary/Diary';
 import { Customer } from './use/Customer/Customer';
 import { Users } from '../components/use/Users/Users';
 import { PanelButtons } from './use/PanelButons/PanelButtons';
@@ -67,7 +67,7 @@ export function Layout() {
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
-										<Calendar />
+										<Diary />
 									</ProtectedRoute>
 								</>
 							}

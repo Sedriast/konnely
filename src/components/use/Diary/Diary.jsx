@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Header } from './com/Header';
-import st from './css/Calendar.module.css';
+import { Items } from './com/Items';
+import st from './css/Diary.module.css';
 
 export function Diary() {
 	const items = [
