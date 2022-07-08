@@ -2,7 +2,7 @@ import Webcam from "react-webcam";
 import st from "./css/Form.module.css";
 import sendICO from "../../img/send.png";
 import { useState } from "react";
-import { Dropdown } from "./Dropdown";
+import { DropdownForm } from "./DropdownForm";
 import { Modal } from "../Tools/Modals/Modal";
 import { Inputs } from "../Tools/Inputs/Inputs";
 import { Lists } from "../Tools/List/Lists.jsx";
@@ -153,7 +153,7 @@ export function Form() {
                         handleChange={handleChange}
                     />
                     {reason && (
-                        <Dropdown motivo={reason} handleChange={handleChange} />
+                        <DropdownForm motivo={reason} handleChange={handleChange} />
                     )}
                 </div>
                 <div className={st.submit}>

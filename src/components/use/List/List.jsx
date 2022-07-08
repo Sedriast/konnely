@@ -5,12 +5,11 @@ import w from "../../img/c/w.jpeg";
 import st from "./css/List.module.css";
 
 import { useState } from "react";
-import { Cards } from "../Tools/Cards/Cards";
 import { Buttons } from "../Tools/Buttons/Buttons";
-import { QueriesSimple_ } from "../../firebase/funtions/QueriesSimple_";
+import { DropdownList } from "./DropdownList";
 
 export function List() {
-    const [filter, setFilter] = useState(null);
+    const [filter, setFilter] = useState("red");
     return (
         <>
             <div className={st.container}>
@@ -62,23 +61,10 @@ export function List() {
                     </div>
                 </div>
                 <div className={st.panel}>
-                    {QueriesSimple_({
-                        coleccion: "conejos",
-                        parametro: "grupo",
-                        busqueda: "red",
-                    }).props.children.map((a, index) => (
-                        <Cards
-                            clsName={st.card}
-                            key={index}
-                            id_={index}
-                            cGp={a.grupo}
-                            url={a.url}
-                            rabitDataName={a.id}
-                            data={a}
-                            data1={a.raza}
-                            data2={a.genero}
-                        />
-                    ))}
+                    {filter === "red" && <DropdownList filter={filter} />}
+                    {filter === "blue" && <DropdownList filter={filter} />}
+                    {filter === "white" && <DropdownList filter={filter} />}
+                    {filter === "green" && <DropdownList filter={filter} />}
                 </div>
             </div>
         </>
