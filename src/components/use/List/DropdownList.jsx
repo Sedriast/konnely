@@ -7,9 +7,9 @@ export function DropdownList(props) {
     return (
         <>
             {QueriesSimple_({
-                coleccion: "conejos",
-                parametro: "grupo",
-                busqueda: props.filter,
+                coleccion: props.coleccion,
+                parametro: props.parametro,
+                busqueda: props.busqueda,
             }).props.children.map((a, index) => (
                 <Cards
                     clsName={st.card}

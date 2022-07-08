@@ -9,7 +9,13 @@ import { Buttons } from "../Tools/Buttons/Buttons";
 import { DropdownList } from "./DropdownList";
 
 export function List() {
-    const [filter, setFilter] = useState("red");
+    const [filter, setFilter] = useState("");
+    const [auxsearch_, setAuxsearch_] = useState("");
+    const [search_, setSearch_] = useState("");
+    function handleChange(e) {
+        const { value } = e.target;
+        setAuxsearch_(value);
+    }
     return (
         <>
             <div className={st.container}>
@@ -21,6 +27,8 @@ export function List() {
                                 text_="Azul"
                                 icon_={b}
                                 click_={() => {
+                                    setAuxsearch_("");
+                                    setSearch_("");
                                     setFilter("blue");
                                 }}
                             />
@@ -31,6 +39,8 @@ export function List() {
                                 text_="Rojo"
                                 icon_={r}
                                 click_={() => {
+                                    setAuxsearch_("");
+                                    setSearch_("");
                                     setFilter("red");
                                 }}
                             />
@@ -41,6 +51,8 @@ export function List() {
                                 text_="Verde"
                                 icon_={g}
                                 click_={() => {
+                                    setAuxsearch_("");
+                                    setSearch_("");
                                     setFilter("green");
                                 }}
                             />
@@ -51,20 +63,63 @@ export function List() {
                                 text_="Blanco"
                                 icon_={w}
                                 click_={() => {
+                                    setAuxsearch_("");
+                                    setSearch_("");
                                     setFilter("white");
                                 }}
                             />
                         </div>
                     </div>
                     <div className={st.se}>
-                        <input placeholder="Buscar"></input>
+                        <input
+                            value={auxsearch_}
+                            placeholder="Buscar"
+                            onChange={handleChange}></input>
+                        <button
+                            onClick={() => {
+                                setFilter(null);
+                                setSearch_(auxsearch_);
+                            }}>
+                            Buscar
+                        </button>
                     </div>
                 </div>
                 <div className={st.panel}>
-                    {filter === "red" && <DropdownList filter={filter} />}
-                    {filter === "blue" && <DropdownList filter={filter} />}
-                    {filter === "white" && <DropdownList filter={filter} />}
-                    {filter === "green" && <DropdownList filter={filter} />}
+                    {search_ !== "" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="id"
+                            busqueda={search_}
+                        />
+                    )}
+                    {filter === "red" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
+                    {filter === "blue" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
+                    {filter === "white" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
+                    {filter === "green" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
                 </div>
             </div>
         </>
