@@ -4,6 +4,21 @@ import { Cards } from "../Tools/Cards/Cards";
 import { QueriesSimple_ } from "../../firebase/funtions/QueriesSimple_";
 
 export function DropdownList(props) {
+    // const resultado = QueriesSimple_({
+    //     coleccion: props.coleccion,
+    //     parametro: props.parametro,
+    //     busqueda: props.busqueda,
+    // }).props.children[0];
+    // useEffect(() => {
+    //     if (resultado === undefined) {
+    //         props.searchInit("");
+    //         console.log("Hola");
+    //     } else {
+    //         props.searchInit("");
+    //         console.log("Hola_2");
+    //     }
+    // }, [resultado]);
+
     return (
         <>
             {QueriesSimple_({

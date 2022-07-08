@@ -5,8 +5,8 @@ import w from "../../img/c/w.jpeg";
 import st from "./css/List.module.css";
 
 import { useState } from "react";
-import { Buttons } from "../Tools/Buttons/Buttons";
 import { DropdownList } from "./DropdownList";
+import { Buttons } from "../Tools/Buttons/Buttons";
 
 export function List() {
     const [filter, setFilter] = useState("");
@@ -71,10 +71,7 @@ export function List() {
                         </div>
                     </div>
                     <div className={st.se}>
-                        <input
-                            value={auxsearch_}
-                            placeholder="Buscar"
-                            onChange={handleChange}></input>
+                        <input placeholder="Buscar" onChange={handleChange}></input>
                         <button
                             onClick={() => {
                                 setFilter(null);
@@ -90,6 +87,7 @@ export function List() {
                             coleccion="conejos"
                             parametro="id"
                             busqueda={search_}
+                            // searchInit={searchInit}
                         />
                     )}
                     {filter === "red" && (
