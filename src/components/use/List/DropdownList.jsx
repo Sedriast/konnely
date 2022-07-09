@@ -12,7 +12,7 @@ export function DropdownList(props) {
     // }).props.children[0]
     useEffect(() => {
         if (props.change) {
-            props.change("");
+            props.change("Realizada");
         }
     }, [props]);
     return (
