@@ -2,23 +2,19 @@ import st from "./css/List.module.css";
 
 import { Cards } from "../Tools/Cards/Cards";
 import { QueriesSimple_ } from "../../firebase/funtions/QueriesSimple_";
+import { useEffect } from "react";
 
 export function DropdownList(props) {
     // const resultado = QueriesSimple_({
     //     coleccion: props.coleccion,
     //     parametro: props.parametro,
     //     busqueda: props.busqueda,
-    // }).props.children[0];
-    // useEffect(() => {
-    //     if (resultado === undefined) {
-    //         props.searchInit("");
-    //         console.log("Hola");
-    //     } else {
-    //         props.searchInit("");
-    //         console.log("Hola_2");
-    //     }
-    // }, [resultado]);
-
+    // }).props.children[0]
+    useEffect(() => {
+        if (props.change) {
+            props.change("");
+        }
+    }, [props]);
     return (
         <>
             {QueriesSimple_({

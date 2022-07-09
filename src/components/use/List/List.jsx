@@ -12,10 +12,15 @@ export function List() {
     const [filter, setFilter] = useState("");
     const [auxsearch_, setAuxsearch_] = useState("");
     const [search_, setSearch_] = useState("");
+    const search = { busqueda: "", vieja: "" };
     function handleChange(e) {
         const { value } = e.target;
         setAuxsearch_(value);
     }
+    function change(props) {
+        search.vieja = props;
+    }
+
     return (
         <>
             <div className={st.container}>
@@ -27,6 +32,8 @@ export function List() {
                                 text_="Azul"
                                 icon_={b}
                                 click_={() => {
+                                    search.busqueda = "";
+                                    search.vieja = "";
                                     setAuxsearch_("");
                                     setSearch_("");
                                     setFilter("blue");
@@ -39,6 +46,8 @@ export function List() {
                                 text_="Rojo"
                                 icon_={r}
                                 click_={() => {
+                                    search.busqueda = "";
+                                    search.vieja = "";
                                     setAuxsearch_("");
                                     setSearch_("");
                                     setFilter("red");
@@ -51,6 +60,8 @@ export function List() {
                                 text_="Verde"
                                 icon_={g}
                                 click_={() => {
+                                    search.busqueda = "";
+                                    search.vieja = "";
                                     setAuxsearch_("");
                                     setSearch_("");
                                     setFilter("green");
@@ -63,6 +74,8 @@ export function List() {
                                 text_="Blanco"
                                 icon_={w}
                                 click_={() => {
+                                    search.busqueda = "";
+                                    search.vieja = "";
                                     setAuxsearch_("");
                                     setSearch_("");
                                     setFilter("white");
@@ -71,25 +84,22 @@ export function List() {
                         </div>
                     </div>
                     <div className={st.se}>
-                        <input placeholder="Buscar" onChange={handleChange}></input>
-                        <button
-                            onClick={() => {
-                                setFilter(null);
+                        <input
+                            value={auxsearch_}
+                            placeholder="Buscar"
+                            onChange={handleChange}></input>
+                        <Buttons
+                            link_="#"
+                            text_="Buscar"
+                            click_={() => {
                                 setSearch_(auxsearch_);
-                            }}>
-                            Buscar
-                        </button>
+                                setFilter("");
+                                setAuxsearch_("");
+                            }}
+                        />
                     </div>
                 </div>
                 <div className={st.panel}>
-                    {search_ !== "" && (
-                        <DropdownList
-                            coleccion="conejos"
-                            parametro="id"
-                            busqueda={search_}
-                            // searchInit={searchInit}
-                        />
-                    )}
                     {filter === "red" && (
                         <DropdownList
                             coleccion="conejos"
@@ -116,6 +126,16 @@ export function List() {
                             coleccion="conejos"
                             parametro="grupo"
                             busqueda={filter}
+                        />
+                    )}
+                    {console.log(search_)}
+                    {console.log(search.vieja)}
+                    {auxsearch_ === search.vieja && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="id"
+                            busqueda={search_}
+                            change={change}
                         />
                     )}
                 </div>
