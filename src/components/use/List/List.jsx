@@ -11,7 +11,7 @@ import { Buttons } from "../Tools/Buttons/Buttons";
 export function List() {
     var search = { vieja: "init" };
     const [search_, setSearch_] = useState("");
-    const [filter, setFilter] = useState("white");
+    const [filter, setFilter] = useState("green");
     const [parametro, setParametro] = useState("");
     const [auxsearch_, setAuxsearch_] = useState(null);
 
