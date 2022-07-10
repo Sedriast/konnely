@@ -11,7 +11,6 @@ export function DropdownList(props) {
         parametro: props.parametro,
         busqueda: props.busqueda,
     }).props.children;
-    console.log(resultado.length);
     useEffect(() => {
         if (resultado.length === 0 && props.parametro === "id") {
             swal({
