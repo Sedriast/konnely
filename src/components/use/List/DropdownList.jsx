@@ -1,20 +1,27 @@
 import st from "./css/List.module.css";
+import swal from "sweetalert";
 
 import { Cards } from "../Tools/Cards/Cards";
 import { QueriesSimple_ } from "../../firebase/funtions/QueriesSimple_";
 import { useEffect } from "react";
 
 export function DropdownList(props) {
-    // const resultado = QueriesSimple_({
-    //     coleccion: props.coleccion,
-    //     parametro: props.parametro,
-    //     busqueda: props.busqueda,
-    // }).props.children[0]
+    const resultado = QueriesSimple_({
+        coleccion: props.coleccion,
+        parametro: props.parametro,
+        busqueda: props.busqueda,
+    }).props.children;
+    console.log(resultado.length);
     useEffect(() => {
-        if (props.change) {
-            props.change("Realizada");
+        if (resultado.length === 0 && props.parametro === "id") {
+            swal({
+                title: "El registro no existe",
+                icon: "error",
+                button: "aceptar",
+            });
         }
-    }, [props]);
+    }, [resultado, props]);
+
     return (
         <>
             {QueriesSimple_({

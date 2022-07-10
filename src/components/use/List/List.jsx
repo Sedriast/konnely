@@ -9,16 +9,16 @@ import { DropdownList } from "./DropdownList";
 import { Buttons } from "../Tools/Buttons/Buttons";
 
 export function List() {
-    const [filter, setFilter] = useState("");
-    const [auxsearch_, setAuxsearch_] = useState("");
+    var search = { vieja: "init" };
     const [search_, setSearch_] = useState("");
-    const search = { busqueda: "", vieja: "" };
+    const [filter, setFilter] = useState("white");
+    const [parametro, setParametro] = useState("");
+    const [auxsearch_, setAuxsearch_] = useState(null);
+
     function handleChange(e) {
         const { value } = e.target;
         setAuxsearch_(value);
-    }
-    function change(props) {
-        search.vieja = props;
+        setParametro(value);
     }
 
     return (
@@ -32,9 +32,7 @@ export function List() {
                                 text_="Azul"
                                 icon_={b}
                                 click_={() => {
-                                    search.busqueda = "";
-                                    search.vieja = "";
-                                    setAuxsearch_("");
+                                    setAuxsearch_("Azul");
                                     setSearch_("");
                                     setFilter("blue");
                                 }}
@@ -46,9 +44,7 @@ export function List() {
                                 text_="Rojo"
                                 icon_={r}
                                 click_={() => {
-                                    search.busqueda = "";
-                                    search.vieja = "";
-                                    setAuxsearch_("");
+                                    setAuxsearch_("Rojo");
                                     setSearch_("");
                                     setFilter("red");
                                 }}
@@ -60,9 +56,7 @@ export function List() {
                                 text_="Verde"
                                 icon_={g}
                                 click_={() => {
-                                    search.busqueda = "";
-                                    search.vieja = "";
-                                    setAuxsearch_("");
+                                    setAuxsearch_("Verde");
                                     setSearch_("");
                                     setFilter("green");
                                 }}
@@ -74,9 +68,7 @@ export function List() {
                                 text_="Blanco"
                                 icon_={w}
                                 click_={() => {
-                                    search.busqueda = "";
-                                    search.vieja = "";
-                                    setAuxsearch_("");
+                                    setAuxsearch_("Blanco");
                                     setSearch_("");
                                     setFilter("white");
                                 }}
@@ -85,7 +77,7 @@ export function List() {
                     </div>
                     <div className={st.se}>
                         <input
-                            value={auxsearch_}
+                            value={parametro}
                             placeholder="Buscar"
                             onChange={handleChange}></input>
                         <Buttons
@@ -94,7 +86,8 @@ export function List() {
                             click_={() => {
                                 setSearch_(auxsearch_);
                                 setFilter("");
-                                setAuxsearch_("");
+                                setParametro("");
+                                setAuxsearch_("init");
                             }}
                         />
                     </div>
@@ -128,14 +121,11 @@ export function List() {
                             busqueda={filter}
                         />
                     )}
-                    {console.log(search_)}
-                    {console.log(search.vieja)}
                     {auxsearch_ === search.vieja && (
                         <DropdownList
                             coleccion="conejos"
                             parametro="id"
                             busqueda={search_}
-                            change={change}
                         />
                     )}
                 </div>
