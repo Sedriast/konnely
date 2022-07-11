@@ -35,18 +35,17 @@
 .b {
 	background: rgba(0, 0, 0, 0.25);
 
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 
 	border-radius: 0 100% 100% 0;
 
 	overflow: hidden;
-
-	animation-duration: 1s;
+	margin: 6px 0;
 }
 .b img {
-	width: 100px;
-	height: 100px;
+	width: 80px;
+	height: 80px;
 }
 .i {
 	display: flex;
@@ -92,8 +91,8 @@
 .panelB {
 	display: flex;
 	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
+	flex-wrap: nowrap;
+	justify-content: center;
 }
 .panelCom {
 	width: 100%;

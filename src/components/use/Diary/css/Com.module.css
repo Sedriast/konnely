@@ -4,10 +4,19 @@
 	align-items: center;
 }
 .container {
-	height: 100px;
+	height: 55px;
 	margin: 1rem;
-
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	border-radius: 20px;
+	background: antiquewhite;
+	padding: 1rem;
+}
+.container * {
+	color: black;
+}
+.del {
+	color: red;
+	color: rgb(255, 255, 255);
 }
