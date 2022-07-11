@@ -1,29 +1,22 @@
 .container {
 	width: 100%;
 	margin: 2rem;
+
+	padding: 2rem 3rem;
 }
-.calendar {
-	display: flex;
+.panel {
+	height: 500px;
+
+	border-radius: 20px;
+	border: solid 1px white;
+	padding: 1rem;
+	background: rgb(255 255 255 / 75%);
+
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
-.info {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: space-evenly;
-	margin: 1rem 20rem;
-	text-transform: uppercase;
-}
-.week {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: space-evenly;
-}
-.prec,
-.next {
-	cursor: grab;
-	color: rgb(255, 0, 0);
-	-webkit-text-stroke: 1px rgb(255, 255, 255);
+.panel h1 {
+	margin-left: auto;
+	margin-right: auto;
+	width: fit-content;
 }

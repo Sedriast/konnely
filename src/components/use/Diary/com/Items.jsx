@@ -1,12 +1,11 @@
-import imgCat from '../../../img/ma2.png';
-import st from '../css/Com.module.css';
+import { Item } from './Item';
 
-export const Items = ({ items }) => {
+export function Items({ items }) {
 	return (
 		<>
 			{items.map((item) => (
-				<div className={st.container}></div>
+				<Item key={item.id} item={item} />
 			))}
 		</>
 	);
-};
+}

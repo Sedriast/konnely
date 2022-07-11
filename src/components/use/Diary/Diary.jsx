@@ -1,10 +1,9 @@
 import { useState } from 'react';
-import { Header } from './com/Header';
 import { Items } from './com/Items';
 import st from './css/Diary.module.css';
 
 export function Diary() {
-	const items = [
+	const [items, setItems] = useState([
 		{
 			id: 1,
 			title: 'Desarrollo 1',
@@ -23,26 +22,26 @@ export function Diary() {
 		},
 		{
 			id: 3,
-			title: 'Desarrollo 1',
-			category: 'lo',
+			title: 'Desarrollo 3',
+			category: 'des',
 			img: 'img',
 			day: 'lun',
 			time: '18:00',
 		},
 		{
 			id: 4,
-			title: 'Desarrollo 1',
-			category: 'desarrollo',
+			title: 'Desarrollo 4',
+			category: 'des',
 			img: 'img',
 			day: 'lun',
 			time: '18:00',
 		},
-	];
+	]);
 	return (
 		<>
 			<div className={st.container}>
-				<div className={st.rows}>
-					<Header />
+				<div className={st.panel}>
+					<h1>Cronograma agendado</h1>
 					<Items items={items} />
 				</div>
 			</div>
