@@ -5,11 +5,22 @@ import w from "../../img/c/w.jpeg";
 import st from "./css/List.module.css";
 
 import { useState } from "react";
-import { Buttons } from "../Tools/Buttons/Buttons";
 import { DropdownList } from "./DropdownList";
+import { Buttons } from "../Tools/Buttons/Buttons";
 
 export function List() {
-    const [filter, setFilter] = useState("red");
+    var search = { vieja: "init" };
+    const [search_, setSearch_] = useState("");
+    const [filter, setFilter] = useState("green");
+    const [parametro, setParametro] = useState("");
+    const [auxsearch_, setAuxsearch_] = useState(null);
+
+    function handleChange(e) {
+        const { value } = e.target;
+        setAuxsearch_(value);
+        setParametro(value);
+    }
+
     return (
         <>
             <div className={st.container}>
@@ -21,6 +32,8 @@ export function List() {
                                 text_="Azul"
                                 icon_={b}
                                 click_={() => {
+                                    setAuxsearch_("Azul");
+                                    setSearch_("");
                                     setFilter("blue");
                                 }}
                             />
@@ -31,6 +44,8 @@ export function List() {
                                 text_="Rojo"
                                 icon_={r}
                                 click_={() => {
+                                    setAuxsearch_("Rojo");
+                                    setSearch_("");
                                     setFilter("red");
                                 }}
                             />
@@ -41,6 +56,8 @@ export function List() {
                                 text_="Verde"
                                 icon_={g}
                                 click_={() => {
+                                    setAuxsearch_("Verde");
+                                    setSearch_("");
                                     setFilter("green");
                                 }}
                             />
@@ -51,20 +68,66 @@ export function List() {
                                 text_="Blanco"
                                 icon_={w}
                                 click_={() => {
+                                    setAuxsearch_("Blanco");
+                                    setSearch_("");
                                     setFilter("white");
                                 }}
                             />
                         </div>
                     </div>
                     <div className={st.se}>
-                        <input placeholder="Buscar"></input>
+                        <input
+                            value={parametro}
+                            placeholder="Buscar"
+                            onChange={handleChange}></input>
+                        <Buttons
+                            link_="#"
+                            text_="Buscar"
+                            click_={() => {
+                                setSearch_(auxsearch_);
+                                setFilter("");
+                                setParametro("");
+                                setAuxsearch_("init");
+                            }}
+                        />
                     </div>
                 </div>
                 <div className={st.panel}>
-                    {filter === "red" && <DropdownList filter={filter} />}
-                    {filter === "blue" && <DropdownList filter={filter} />}
-                    {filter === "white" && <DropdownList filter={filter} />}
-                    {filter === "green" && <DropdownList filter={filter} />}
+                    {filter === "red" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
+                    {filter === "blue" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
+                    {filter === "white" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
+                    {filter === "green" && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="grupo"
+                            busqueda={filter}
+                        />
+                    )}
+                    {auxsearch_ === search.vieja && (
+                        <DropdownList
+                            coleccion="conejos"
+                            parametro="id"
+                            busqueda={search_}
+                        />
+                    )}
                 </div>
             </div>
         </>

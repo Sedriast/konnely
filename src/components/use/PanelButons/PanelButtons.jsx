@@ -1,9 +1,10 @@
-import { Buttons } from '../Tools/Buttons/Buttons';
-import { Data } from './Data';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../../../context/AuthContext';
 import swal from 'sweetalert';
 import st from './css/PanelButtons.module.css';
+
+import { Data } from './Data';
+import { useNavigate } from 'react-router-dom';
+import { Buttons } from '../Tools/Buttons/Buttons';
+import { useAuth } from '../../../context/AuthContext';
 
 export function PanelButtons(props) {
 	const { logout, user } = useAuth();
