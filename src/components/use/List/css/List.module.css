@@ -82,6 +82,12 @@
 	background: rgb(255, 150, 150);
 }
 
+.opFr button {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background: transparent;
+}
 .opFg {
 	width: 40px;
 	height: 40px;
@@ -89,6 +95,12 @@
 	border: solid 1px black;
 
 	background: rgb(150, 255, 150);
+}
+.opFg button {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background: transparent;
 }
 .opFb {
 	width: 40px;
@@ -98,6 +110,12 @@
 
 	background: rgb(150, 150, 255);
 }
+.opFb button {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background: transparent;
+}
 .opFw {
 	width: 40px;
 	height: 40px;
@@ -105,7 +123,12 @@
 	border: solid 1px black;
 	background: rgb(255, 255, 255);
 }
-
+.opFw button {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background: transparent;
+}
 .se {
 	width: calc(100% - 180px);
 	height: 40px;
