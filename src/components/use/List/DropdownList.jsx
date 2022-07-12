@@ -1,9 +1,9 @@
-import st from "./css/List.module.css";
 import swal from "sweetalert";
+import st from "./css/List.module.css";
 
+import { useEffect } from "react";
 import { Cards } from "../Tools/Cards/Cards";
 import { QueriesSimple_ } from "../../firebase/funtions/QueriesSimple_";
-import { useEffect } from "react";
 
 export function DropdownList(props) {
     const resultado = QueriesSimple_({
