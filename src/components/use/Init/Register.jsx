@@ -74,7 +74,7 @@ export function Register() {
                         clsName={st.userEmail}
                         name_="email"
                         type_="email"
-                        leyend="Correo electronico"
+                        leyend="Correo electrónico"
                         handleChange={handleChange}></Inputs>
                     <Inputs
                         clsName={st.userPass}
