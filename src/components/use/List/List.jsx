@@ -1,12 +1,7 @@
-import r from '../../img/c/r.jpeg';
-import g from '../../img/c/g.jpeg';
-import b from '../../img/c/b.jpeg';
-import w from '../../img/c/w.jpeg';
 import st from './css/List.module.css';
 
 import { useState } from 'react';
 import { DropdownList } from './DropdownList';
-import { Buttons } from '../Tools/Buttons/Buttons';
 
 export function List() {
 	let search = { vieja: 'init' };
@@ -26,53 +21,41 @@ export function List() {
 			<div className={st.container}>
 				<div className={st.pa}>
 					<div className={st.fil}>
-						<div className={st.opF} id="b">
-							<Buttons
-								link_="#"
-								text_="Azul"
-								icon_={b}
-								click_={() => {
+						<div className={st.opFb} id="b">
+							<button
+								onClick={() => {
 									setAuxsearch_('Azul');
 									setSearch_('');
 									setFilter('blue');
 								}}
-							/>
+							></button>
 						</div>
-						<div className={st.opF} id="r">
-							<Buttons
-								link_="#"
-								text_="Rojo"
-								icon_={r}
-								click_={() => {
+						<div className={st.opFr} id="r">
+							<button
+								onClick={() => {
 									setAuxsearch_('Rojo');
 									setSearch_('');
 									setFilter('red');
 								}}
-							/>
+							></button>
 						</div>
-						<div className={st.opF} id="g">
-							<Buttons
-								link_="#"
-								text_="Verde"
-								icon_={g}
-								click_={() => {
+						<div className={st.opFg} id="g">
+							<button
+								onClick={() => {
 									setAuxsearch_('Verde');
 									setSearch_('');
 									setFilter('green');
 								}}
-							/>
+							></button>
 						</div>
-						<div className={st.opF} id="w">
-							<Buttons
-								link_="#"
-								text_="Blanco"
-								icon_={w}
-								click_={() => {
+						<div className={st.opFw} id="w">
+							<button
+								onClick={() => {
 									setAuxsearch_('Blanco');
 									setSearch_('');
 									setFilter('white');
 								}}
-							/>
+							></button>
 						</div>
 					</div>
 					<div className={st.se}>
