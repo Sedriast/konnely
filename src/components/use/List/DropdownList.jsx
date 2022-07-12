@@ -14,7 +14,7 @@ export function DropdownList(props) {
     useEffect(() => {
         if (resultado.length === 0 && props.parametro === "id") {
             swal({
-                title: "El registro no existe",
+                title: "El identificador no corresponde a un registro actual.",
                 icon: "error",
                 button: "aceptar",
             });

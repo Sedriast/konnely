@@ -13,7 +13,7 @@ import { SearchAll } from "../../firebase/funtions/SearchAll";
 import { addImageAndInfo } from "../../firebase/funtions/AddInformation";
 
 export function Form() {
-    const genero = ["Genero", "Hembra", "Macho"];
+    const genero = ["Género", "Hembra", "Macho"];
     const concepcion = ["Concepción", "Monta natural", "Inseminación artificial"];
     const grupo = ["Banda Asosiada", "Azul", "Rojo", "Verde", "Blanco"];
     const [reason, setReason] = useState();
@@ -86,7 +86,7 @@ export function Form() {
                     </Modal>
                 </div>
                 <div className={st.btnC}>
-                    <Buttons text_="Camara" click_={openModal} link_="#" />
+                    <Buttons text_="Cámara" click_={openModal} link_="#" />
                 </div>
                 <div className={st.panel}>
                     <Inputs
@@ -98,7 +98,7 @@ export function Form() {
                     />
 
                     <Lists
-                        leyend="Genero"
+                        leyend="Género"
                         name_="genero"
                         listar={genero}
                         handleChange={handleChange}
@@ -126,7 +126,7 @@ export function Form() {
                         handleChange={handleChange}
                     />
                     <Lists
-                        leyend="Banda Asosiada"
+                        leyend="Banda Asociada"
                         name_="grupo"
                         listar={grupo}
                         handleChange={handleChange}

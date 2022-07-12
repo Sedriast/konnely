@@ -1,12 +1,13 @@
 import st from "./css/Login.module.css";
-import { Buttons } from "../Tools/Buttons/Buttons";
-import { Inputs } from "../Tools/Inputs/Inputs";
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../../context/AuthContext";
+import { Inputs } from "../Tools/Inputs/Inputs";
+import { Buttons } from "../Tools/Buttons/Buttons";
 import { ValidationErrors } from "./ValidationErrors";
+import { useAuth } from "../../../context/AuthContext";
 
-export function Login(props) {
+export function Login() {
     const { login } = useAuth();
 
     const [user, setUser] = useState({
@@ -38,7 +39,7 @@ export function Login(props) {
                     clsName={st.userName}
                     name_="email"
                     type_="email"
-                    leyend="Correo electronico"
+                    leyend="Correo electrónico"
                     handleChange={handleChange}
                 />
                 <Inputs
@@ -51,7 +52,7 @@ export function Login(props) {
                 <div className={st.submit}>
                     <Buttons
                         click_={handleSubmit}
-                        text_="Iniciar sección"
+                        text_="Iniciar sesión"
                         link_="#"
                     />
                 </div>

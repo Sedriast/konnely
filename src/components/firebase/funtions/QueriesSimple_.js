@@ -17,7 +17,7 @@ export const QueriesSimple_ = (props) => {
             setData_(querySnapshot.docs.map((doc) => ({ ...doc.data() })));
         };
         simpleQueries(props);
-    }, [props.coleccion]);
+    }, [props]);
 
     return (
         <>

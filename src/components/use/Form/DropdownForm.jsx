@@ -10,8 +10,8 @@ export function DropdownForm(props) {
                 <>
                     <Inputs
                         clsName={st.data2}
-                        leyend="Fecha de translado"
-                        name_="translado"
+                        leyend="Fecha de traslado"
+                        name_="traslado"
                         type_="date"
                         handleChange={handleChange}
                     />
