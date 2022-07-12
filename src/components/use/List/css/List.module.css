@@ -74,29 +74,36 @@
 	font-size: 10px;
 }
 
-.opF {
+.opFr {
 	width: 40px;
 	height: 40px;
 	border-radius: 100%;
 	border: solid 1px black;
+	background: rgb(255, 150, 150);
 }
 
-.opF img {
-	height: 40px;
-	border-radius: 100%;
-}
-
-.opF h1 {
-	position: absolute;
-
+.opFg {
 	width: 40px;
 	height: 40px;
+	border-radius: 100%;
+	border: solid 1px black;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	background: rgb(150, 255, 150);
+}
+.opFb {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	border: solid 1px black;
 
-	color: rgb(88, 88, 88);
+	background: rgb(150, 150, 255);
+}
+.opFw {
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	border: solid 1px black;
+	background: rgb(255, 255, 255);
 }
 
 .se {
@@ -135,6 +142,9 @@
 	}
 }
 
+#r {
+	background: rgb(255, 106, 106);
+}
 /*Sub*/
 /*Button´s container*/
 
