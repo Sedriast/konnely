@@ -104,18 +104,29 @@
 	height: 40px;
 	padding-bottom: 1rem;
 }
-
+.se button {
+	width: 40px;
+	height: 40px;
+	border-radius: 0 100% 100% 0;
+	border-right: 2px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+}
 .pa {
 	display: flex;
+	width: 100%;
 }
 
 .pa input {
 	height: 40px;
-	width: 95%;
-	border-radius: 20px;
+	width: inherit;
 	margin-left: 1rem;
 	padding-left: 1rem;
-	border: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+
+	border-radius: 20px 0 0 20px;
 }
 
 @media (max-width: 850px) {
