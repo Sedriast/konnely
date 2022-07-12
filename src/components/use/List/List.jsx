@@ -68,7 +68,7 @@ export function List() {
                                         icon: "error",
                                         button: "aceptar",
                                     });
-                                } else {
+                                } else if (auxsearch_ !== null) {
                                     setSearch_(auxsearch_);
                                     setFilter("");
                                     setParametro("");
