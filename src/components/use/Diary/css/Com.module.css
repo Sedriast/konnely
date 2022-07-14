@@ -16,6 +16,95 @@
 .container * {
 	color: black;
 }
+.containerB {
+	background: antiquewhite;
+	border-radius: 20px;
+	width: 90%;
+	height: 92%;
+	margin-top: 1rem;
+}
+.title {
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1rem;
+	margin-bottom: 1rem;
+	color: black;
+}
+.title input {
+	border-radius: 20px;
+	padding: 5px;
+	padding-left: 1rem;
+}
+.title input::placeholder {
+	color: rgba(0, 0, 0, 0.1);
+}
+.category {
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1rem;
+	margin-bottom: 1rem;
+	color: black;
+}
+.category select {
+	border-radius: 20px;
+	padding: 5px;
+	padding-left: 1rem;
+}
+.category select::placeholder {
+	color: rgba(0, 0, 0, 0.1);
+}
+.day {
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1rem;
+	margin-bottom: 1rem;
+	color: black;
+}
+.day select {
+	border-radius: 20px;
+	padding: 5px;
+	padding-left: 1rem;
+}
+.day select::placeholder {
+	color: rgba(0, 0, 0, 0.1);
+}
+.hour {
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1rem;
+	margin-bottom: 1rem;
+	color: black;
+}
+.hour input {
+	border-radius: 20px;
+	padding: 5px;
+	padding-left: 1rem;
+}
+.hour input::placeholder {
+	color: rgba(0, 0, 0, 0.1);
+}
+.group {
+	width: 75%;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 1rem;
+	margin-bottom: 1rem;
+	color: black;
+}
 .del {
 	color: red;
 	color: rgb(255, 255, 255);

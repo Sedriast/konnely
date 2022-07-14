@@ -41,7 +41,6 @@ export function Diary() {
 		<>
 			<div className={st.container}>
 				<div className={st.panel}>
-					<h1>Cronograma agendado</h1>
 					<Items items={items} />
 				</div>
 			</div>

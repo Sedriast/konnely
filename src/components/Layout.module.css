@@ -60,6 +60,30 @@
 .calendarPanel {
 	width: 100%;
 }
+.btnD {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background: black;
+	left: 0;
+	bottom: 3rem;
+	border-radius: 0 100% 100% 0;
+}
+.btnD img {
+	width: 80px;
+	height: 80px;
+}
+.pa {
+	width: 100%;
+
+	margin: 1rem;
+	padding: 1rem;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
 
 /*Sub*/
 /*Button´s container*/
