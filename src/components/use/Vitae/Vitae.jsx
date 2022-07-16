@@ -9,7 +9,7 @@ export function Vitae() {
 		<>
 			<div className={st.container}>
 				<div className={st.panelBasicInfo}>
-					<div className={st.imgVitae}>Imagen.....................................</div>
+					<div className={st.imgVitae}>.............................................</div>
 					<div className={st.basicInf}>
 						<div className={st.re}>
 							<div className={st.id}>

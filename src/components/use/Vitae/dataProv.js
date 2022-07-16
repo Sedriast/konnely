@@ -10,7 +10,7 @@ export const basicData = {
 };
 export const ciclo = [
 	{
-		etapa: 'nacimiento',
+		etapa: 'Nacimiento',
 		peso: '200gr',
 		fecha: '**-**-****',
 	},
