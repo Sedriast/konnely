@@ -34,6 +34,11 @@ export const ciclo = [
 		peso: '2.5kg',
 		fecha: '**-**-****',
 	},
+	{
+		etapa: '-----',
+		peso: '3kg',
+		fecha: '**-**-****',
+	},
 ];
 export const reproData = {
 	rechazos: '0',
