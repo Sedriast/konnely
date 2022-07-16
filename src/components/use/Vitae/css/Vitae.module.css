@@ -1,7 +1,9 @@
 .container {
 	width: 100%;
 	padding: 1rem;
-	margin: 0 2rem;
+	margin: 1rem 2rem;
+	background: rgb(126, 126, 126, 0.9);
+	border-radius: 20px;
 }
 .panelBasicInfo {
 	display: flex;
@@ -49,8 +51,7 @@
 .stadistics {
 	width: auto;
 	display: flex;
-	margin: 1rem;
-	padding: 1rem 0;
+	padding: 1rem;
 	justify-content: space-around;
 }
 .btnEdits {
