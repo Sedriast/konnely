@@ -1,0 +1,57 @@
+.container {
+	width: 100%;
+	padding: 1rem;
+	margin: 0 2rem;
+}
+.panelBasicInfo {
+	display: flex;
+}
+.imgVitae {
+	width: 250px;
+	height: 250px;
+
+	margin: 1rem;
+}
+.basicInf {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.re {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+.id {
+	margin: 1rem;
+}
+.raza {
+	margin: 1rem;
+}
+.genero {
+	margin: 1rem;
+}
+.idPadre {
+	margin: 1rem;
+}
+.idMadre {
+	margin: 1rem;
+}
+.origen {
+	margin: 1rem;
+}
+.time1 {
+	margin: 1rem;
+}
+.procentaje {
+	margin: 1rem;
+}
+.stadistics {
+	width: auto;
+	display: flex;
+	margin: 1rem;
+	padding: 1rem 0;
+	justify-content: space-around;
+}
+.btnEdits {
+}

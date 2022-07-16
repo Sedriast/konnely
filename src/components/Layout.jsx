@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { AddItem } from './use/Diary/com/AddItem';
 import { Buttons } from './use/Tools/Buttons/Buttons';
+import { Vitae } from './use/Vitae/Vitae';
 
 const db = getFirestore(app);
 
@@ -64,29 +65,23 @@ export function Layout() {
 					<Routes>
 						<Route
 							exact
-							path="/diary"
+							path="/data"
 							element={
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
-										<Diary />
-										<div className={st.btnD}>
-											<Buttons link_="/addD" />
-										</div>
+										<Vitae />
 									</ProtectedRoute>
 								</>
 							}
 						/>
 						<Route
 							exact
-							path="/addD"
+							path="/home"
 							element={
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
-										<div className={st.pa}>
-											<AddItem />
-										</div>
 									</ProtectedRoute>
 								</>
 							}
