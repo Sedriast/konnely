@@ -54,9 +54,9 @@ export function Vitae() {
 
 				<Lifecycle />
 				<div className={st.stadistics}>
-					<div>Crias rechasadas: {reproData.rechazos}</div>
-					<div>Crias muertas: {reproData.muertes}</div>
-					<div>Crias vivas: {reproData.vivos}</div>
+					<div className={st.rej}>Crias rechasadas: {reproData.rechazos}</div>
+					<div className={st.dea}>Crias muertas: {reproData.muertes}</div>
+					<div className={st.lif}>Crias vivas: {reproData.vivos}</div>
 				</div>
 
 				<div className={st.btnEdits}>

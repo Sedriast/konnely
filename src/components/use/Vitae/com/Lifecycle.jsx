@@ -5,21 +5,15 @@ export function Lifecycle() {
 	return (
 		<>
 			<div className={st.container}>
-				<div className={st.panelE}>
-					|<div className={st.viewI}>{ciclo[0].etapa}</div>
-					<div className={st.viewI}>{ciclo[0].peso}</div>
-					<div className={st.viewI}>{ciclo[0].fecha}</div>
-				</div>
-				<div className={st.panelE}>
-					|<div className={st.viewI}>{ciclo[1].etapa}</div>
-					<div className={st.viewI}>{ciclo[1].peso}</div>
-					<div className={st.viewI}>{ciclo[1].fecha}</div>
-				</div>
-				<div className={st.panelE}>
-					|<div className={st.viewI}>{ciclo[2].etapa}</div>
-					<div className={st.viewI}>{ciclo[2].peso}</div>
-					<div className={st.viewI}>{ciclo[2].fecha}</div>
-				</div>
+				{ciclo.map((items, index) => {
+					return (
+						<div key={index} className={st.panelE}>
+							|<div className={st.viewI}>{items.etapa}</div>
+							<div className={st.viewI}>{items.peso}</div>
+							<div className={st.viewI}>{items.fecha}</div>
+						</div>
+					);
+				})}
 			</div>
 		</>
 	);

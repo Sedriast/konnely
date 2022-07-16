@@ -59,7 +59,7 @@
 	width: auto;
 	display: flex;
 	padding: 1rem;
-	justify-content: space-around;
+	justify-content: space-evenly;
 }
 .btnEdits {
 	display: flex;
@@ -71,4 +71,19 @@
 	background: rgb(60, 60, 60);
 	padding: 5px 10px;
 	border-radius: 20px;
+}
+.rej {
+	background: linear-gradient(90deg, #443c3a 72.13%, #6464ff 100%);
+	border-radius: 20px;
+	padding: 8px 1rem;
+}
+.dea {
+	background: linear-gradient(90deg, #443c3a 72.13%, #000000 100%);
+	border-radius: 20px;
+	padding: 8px 1rem;
+}
+.lif {
+	background: linear-gradient(90deg, #443c3a 72.13%, #64ff64 100%);
+	border-radius: 20px;
+	padding: 8px 1rem;
 }
