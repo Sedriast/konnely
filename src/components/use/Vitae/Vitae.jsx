@@ -1,4 +1,3 @@
-import { Button } from 'reactstrap';
 import { Buttons } from '../Tools/Buttons/Buttons';
 import { Lifecycle } from './com/Lifecycle';
 import st from './css/Vitae.module.css';
@@ -53,6 +52,7 @@ export function Vitae() {
 				</div>
 
 				<Lifecycle />
+
 				<div className={st.stadistics}>
 					<div className={st.rej}>Crias rechasadas: {reproData.rechazos}</div>
 					<div className={st.dea}>Crias muertas: {reproData.muertes}</div>

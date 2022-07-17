@@ -16,3 +16,51 @@
 	margin: 2px;
 	border-radius: 20px;
 }
+.conItems {
+	background: rgb(126, 126, 126, 0.9);
+	width: 100%;
+	margin: 2rem;
+	padding: 1rem;
+	border-radius: 20px;
+}
+.ti {
+	width: fit-content;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+}
+.panelTrat {
+	cursor: pointer;
+	margin: 1rem;
+	padding: 5px 0;
+	width: 80%;
+	display: flex;
+	justify-content: space-around;
+	margin-left: auto;
+	margin-right: auto;
+	background: rgb(120, 75, 75);
+	border-radius: 20px;
+}
+.back {
+	width: 50px;
+	height: 50px;
+	background: white;
+	border-radius: 100%;
+}
+.save {
+	position: absolute;
+	left: 1100px;
+	top: 540px;
+	width: 50px;
+	height: 50px;
+	background: white;
+	border-radius: 100%;
+	right: 0;
+}
+.scroll {
+	height: 400px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}

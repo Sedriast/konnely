@@ -46,3 +46,50 @@ export const reproData = {
 	vivos: '0',
 	partos: '0',
 };
+export const tratamientos = [
+	{
+		idTratamiento: '1',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '2',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '3',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '4',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '5',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '6',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '7',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '8',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+	{
+		idTratamiento: '9',
+		fecha: '**-**-****',
+		enfermedad: 'cancer',
+	},
+];

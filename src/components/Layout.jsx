@@ -4,7 +4,6 @@ import app from '../components/firebase/credentials';
 import { Init } from './use/Init/Init';
 import { List } from './use/List/List';
 import { Form } from './use/Form/Form';
-import { Diary } from './use/Diary/Diary';
 import { useState, useEffect } from 'react';
 import { DataC } from './use/Customer/DataC';
 import { Invoice } from './use/Invoice/Invoice';
@@ -15,9 +14,8 @@ import { PanelButtons } from './use/PanelButons/PanelButtons';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import { AddItem } from './use/Diary/com/AddItem';
-import { Buttons } from './use/Tools/Buttons/Buttons';
 import { Vitae } from './use/Vitae/Vitae';
+import { Items } from './use/Vitae/com/Items';
 
 const db = getFirestore(app);
 
@@ -70,7 +68,7 @@ export function Layout() {
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
-										<Vitae />
+										<Items />
 									</ProtectedRoute>
 								</>
 							}
