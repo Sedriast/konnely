@@ -14,7 +14,7 @@ import { PanelButtons } from './use/PanelButons/PanelButtons';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import { Curriculum } from './use/Vitae/Curriculum';
+import { NewTrats } from './use/NewTrats/NewTrats';
 
 const db = getFirestore(app);
 
@@ -67,7 +67,7 @@ export function Layout() {
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
-										<Curriculum />
+										<NewTrats />
 									</ProtectedRoute>
 								</>
 							}
