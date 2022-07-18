@@ -3,7 +3,7 @@ import ojo from '../../img/view.png';
 export const Data = [
 	{
 		icon: ojo,
-		path: '/diary',
+		path: '/data',
 	},
 	{
 		icon: ojo,
