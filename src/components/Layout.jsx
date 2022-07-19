@@ -15,6 +15,7 @@ import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { Curriculum } from './use/Vitae/Curriculum';
+import { NewTrats } from './use/NewTrats/NewTrats';
 
 const db = getFirestore(app);
 
@@ -60,6 +61,17 @@ export function Layout() {
 			<div className={st.container} id="lay" onLoad={s()}>
 				<Router>
 					<Routes>
+						<Route
+							exact
+							path="/test"
+							element={
+								<>
+									<ProtectedRoute>
+										<NewTrats />
+									</ProtectedRoute>
+								</>
+							}
+						/>
 						<Route
 							exact
 							path="/data"
