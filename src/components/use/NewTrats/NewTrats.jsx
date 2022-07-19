@@ -8,7 +8,8 @@ export function NewTrats() {
     function handleChange(e) {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value });
-    }
+	}
+	
     return (
         <div className={st.container}>
             <div className={st.backBTN}></div>

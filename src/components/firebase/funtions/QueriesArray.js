@@ -9,7 +9,7 @@ export const QueriesSimple_ = (props) => {
         const simpleQueries = async (datos) => {
             const q = query(
                 collection(db, datos.coleccion),
-                where(datos.parametro, '==', datos.busqueda)
+                where('Prueba', 'array-contains', 'Esto funciona')
             );
             const querySnapshot = await getDocs(q);
             querySnapshot.docs.map((doc) => console.log({ ...doc.data() }));
