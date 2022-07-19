@@ -10,8 +10,11 @@
 	border-radius: 20px;
 }
 .panel {
-	width: 100%;
+	width: 400px;
 	height: 100%;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .saveBTN {
 	width: 50px;
@@ -30,14 +33,15 @@
 }
 .panel {
 	display: flex;
-	padding: 1rem 5rem;
+	padding: 1rem 10rem;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	width: auto;
 }
-.obse {
-	height: 300px;
-}
 .obse div {
+	height: 100%;
+}
+.imgs div {
+	width: 263px;
 	height: 100%;
 }
