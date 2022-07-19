@@ -4,6 +4,7 @@ import st from './css/NewTrats.module.css';
 
 export function NewTrats() {
     const [values, setValues] = useState({});
+    const [image, setImage] = useState(null);
     function handleChange(e) {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value });
@@ -38,7 +39,13 @@ export function NewTrats() {
                 </div>
 
                 <div className={st.imgs}>
-                    <Inputs leyend='Imagenes' type_='file' />
+                    <Inputs
+                        leyend='Imagenes'
+                        type_='file'
+                        HaveImage={(e) => {
+                            setImage(e);
+                        }}
+                    />
                 </div>
             </div>
             <div className={st.saveBTN}></div>
