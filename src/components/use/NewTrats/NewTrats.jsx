@@ -1,3 +1,4 @@
+import { Inputs } from '../Tools/Inputs/Inputs';
 import st from './css/NewTrats.module.css';
 
 export function NewTrats() {
@@ -5,13 +6,21 @@ export function NewTrats() {
 		<div className={st.container}>
 			<div className={st.backBTN}></div>
 			<div className={st.panel}>
-				<div className={st.imgEdit}></div>
-				<div className={st.id}></div>
-				<div className={st.date}></div>
-				<div className={st.illness}></div>
-				<div className={st.check}></div>
-				<div className={st.observation}></div>
-				<div className={st.imgs}></div>
+				<Inputs leyend="ID.Tratamiento"></Inputs>
+
+				<Inputs leyend="Fecha"></Inputs>
+
+				<Inputs leyend="Enfermedad"></Inputs>
+
+				<Inputs leyend="Chequeo"></Inputs>
+
+				<div className={st.obse}>
+					<Inputs leyend="Obserbaciones"></Inputs>
+				</div>
+
+				<div className={st.imgs}>
+					<Inputs leyend="Imagenes"></Inputs>
+				</div>
 			</div>
 			<div className={st.saveBTN}></div>
 		</div>

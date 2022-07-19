@@ -28,3 +28,16 @@
 	background: white;
 	border-radius: 100%;
 }
+.panel {
+	display: flex;
+	padding: 1rem 5rem;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: auto;
+}
+.obse {
+	height: 300px;
+}
+.obse div {
+	height: 100%;
+}
