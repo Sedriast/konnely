@@ -6,20 +6,20 @@ export function NewTrats() {
 		<div className={st.container}>
 			<div className={st.backBTN}></div>
 			<div className={st.panel}>
-				<Inputs leyend="ID.Tratamiento"></Inputs>
+				<Inputs leyend="ID.Tratamiento" type_="text"></Inputs>
 
-				<Inputs leyend="Fecha"></Inputs>
+				<Inputs leyend="Fecha" type_="text"></Inputs>
 
-				<Inputs leyend="Enfermedad"></Inputs>
+				<Inputs leyend="Enfermedad" type_="text"></Inputs>
 
-				<Inputs leyend="Chequeo"></Inputs>
+				<Inputs leyend="Chequeo" type_="text"></Inputs>
 
 				<div className={st.obse}>
-					<Inputs leyend="Obserbaciones"></Inputs>
+					<Inputs leyend="Obserbaciones" type_="text"></Inputs>
 				</div>
 
 				<div className={st.imgs}>
-					<Inputs leyend="Imagenes"></Inputs>
+					<Inputs leyend="Imagenes" type_="file"></Inputs>
 				</div>
 			</div>
 			<div className={st.saveBTN}></div>
