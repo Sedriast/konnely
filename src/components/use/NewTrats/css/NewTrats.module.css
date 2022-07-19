@@ -10,7 +10,11 @@
 	border-radius: 20px;
 }
 .panel {
-	width: 400px;
+	display: flex;
+	padding: 1rem 10rem;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
 	height: 100%;
 
 	overflow-y: scroll;
@@ -30,13 +34,6 @@
 	height: 50px;
 	background: white;
 	border-radius: 100%;
-}
-.panel {
-	display: flex;
-	padding: 1rem 10rem;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	width: auto;
 }
 .obse div {
 	height: 100%;
