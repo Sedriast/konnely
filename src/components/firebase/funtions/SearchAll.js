@@ -1,6 +1,6 @@
-import app from "../credentials";
-import { collection, onSnapshot, getFirestore } from "firebase/firestore";
-import { useEffect, useState } from "react";
+import app from '../credentials';
+import { collection, onSnapshot, getFirestore } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 
 const db = getFirestore(app);
 
@@ -8,7 +8,7 @@ export const SearchAll = (props) => {
     const coleccion = props;
     const [data_, setData_] = useState([
         {
-            name: "Loading...",
+            name: 'Loading...',
             url: null,
             genero: null,
             raza: null,
@@ -35,11 +35,11 @@ export const SearchAll = (props) => {
 
     return (
         <>
-            {(coleccion === "conejos") | (coleccion === "usuarios")
+            {coleccion === 'conejos' || coleccion === 'usuarios'
                 ? data_?.map((Object) => {
                       return Object;
                   })
-                : coleccion !== "conejos" &&
+                : coleccion !== 'conejos' &&
                   data_?.map((Object) => {
                       return Object.name;
                   })}
