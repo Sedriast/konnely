@@ -1,21 +1,28 @@
 import app from '../credentials';
 import { useEffect } from 'react';
-import { collection, query, where, getDocs, getFirestore } from 'firebase/firestore';
+import {
+    collection,
+    query,
+    where,
+    getDocs,
+    getFirestore,
+    limit,
+} from 'firebase/firestore';
 
 const db = getFirestore(app);
 
-export const QueriesSimple_ = (props) => {
+export const QueriesArray = () => {
     useEffect(() => {
-        const simpleQueries = async (datos) => {
+        const simpleQueries = async () => {
             const q = query(
-                collection(db, datos.coleccion),
-                where('Prueba', 'array-contains', 'Esto funciona')
+                collection(db, 'Prueba'),
+                where('Pruebas_2', 'array-contains-any', [1])
             );
             const querySnapshot = await getDocs(q);
-            querySnapshot.docs.map((doc) => console.log({ ...doc.data() }));
+            console.log(querySnapshot.docs.map((doc) => ({ ...doc.data() })));
         };
-        simpleQueries(props);
-    }, [props]);
+        simpleQueries();
+    }, []);
 
     return <></>;
 };
