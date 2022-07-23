@@ -1,9 +1,9 @@
-import swal from "sweetalert";
-import st from "./css/List.module.css";
+import swal from 'sweetalert';
+import st from './css/List.module.css';
 
-import { useEffect } from "react";
-import { Cards } from "../Tools/Cards/Cards";
-import { QueriesSimple_ } from "../../firebase/funtions/QueriesSimple_";
+import { useEffect } from 'react';
+import { Cards } from '../Tools/Cards/Cards';
+import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
 
 export function DropdownList(props) {
     const resultado = QueriesSimple_({
@@ -12,11 +12,11 @@ export function DropdownList(props) {
         busqueda: props.busqueda,
     }).props.children;
     useEffect(() => {
-        if (resultado.length === 0 && props.parametro === "id") {
+        if (resultado.length === 0 && props.parametro === 'id') {
             swal({
-                title: "El identificador no corresponde a un registro actual.",
-                icon: "error",
-                button: "aceptar",
+                title: 'El identificador no corresponde a un registro actual.',
+                icon: 'error',
+                button: 'aceptar',
             });
         }
     }, [resultado, props]);

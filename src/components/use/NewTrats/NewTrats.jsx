@@ -14,36 +14,16 @@ export function NewTrats() {
         <div className={st.container}>
             <div className={st.backBTN}></div>
             <div className={st.panel}>
-                <Inputs
-                    name_='tratamiento'
-                    type_='text'
-                    handleChange={handleChange}
-                    leyend='ID.Tratamiento'
-                />
+                <Inputs name_='tratamiento' type_='text' handleChange={handleChange} leyend='ID.Tratamiento' />
 
                 <Inputs leyend='Fecha' type_='text' handleChange={handleChange} />
 
-                <Inputs
-                    name_='Enfremedad'
-                    leyend='Enfermedad'
-                    type_='text'
-                    handleChange={handleChange}
-                />
+                <Inputs name_='Enfremedad' leyend='Enfermedad' type_='text' handleChange={handleChange} />
 
-                <Inputs
-                    name_='Chequeo'
-                    leyend='Chequeo'
-                    type_='text'
-                    handleChange={handleChange}
-                />
+                <Inputs name_='Chequeo' leyend='Chequeo' type_='text' handleChange={handleChange} />
 
                 <div className={st.obse}>
-                    <Inputs
-                        name_='Observaciones'
-                        leyend='Obserbaciones'
-                        type_='text'
-                        handleChange={handleChange}
-                    />
+                    <Inputs name_='Observaciones' leyend='Obserbaciones' type_='text' handleChange={handleChange} />
                 </div>
 
                 <div className={st.imgs}>

@@ -1,11 +1,5 @@
 import app from '../credentials';
-import {
-    collection,
-    onSnapshot,
-    getFirestore,
-    query,
-    where,
-} from 'firebase/firestore';
+import { collection, onSnapshot, getFirestore, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
 const db = getFirestore(app);
@@ -31,13 +25,8 @@ export const RealTime = (props) => {
     ]);
 
     useEffect(() => {
-        const q = query(
-            collection(db, props.coleccion),
-            where(props.parametro, '==', props.busqueda)
-        );
-        onSnapshot(q, (snapshot) =>
-            setData_(snapshot.docs.map((doc) => ({ ...doc.data() })))
-        );
+        const q = query(collection(db, props.coleccion), where(props.parametro, '==', props.busqueda));
+        onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
     }, [props]);
 
     return (

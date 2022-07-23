@@ -1,14 +1,7 @@
 import swal from 'sweetalert';
 import app from '../credentials';
 import { getStorage, ref, getDownloadURL, uploadString } from 'firebase/storage';
-import {
-    getFirestore,
-    collection,
-    addDoc,
-    doc,
-    setDoc,
-    updateDoc,
-} from 'firebase/firestore';
+import { getFirestore, collection, addDoc, doc, setDoc, updateDoc } from 'firebase/firestore';
 
 const db = getFirestore(app);
 const storage = getStorage(app);

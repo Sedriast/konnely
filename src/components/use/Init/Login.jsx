@@ -1,18 +1,18 @@
-import st from "./css/Login.module.css";
+import st from './css/Login.module.css';
 
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Inputs } from "../Tools/Inputs/Inputs";
-import { Buttons } from "../Tools/Buttons/Buttons";
-import { ValidationErrors } from "./ValidationErrors";
-import { useAuth } from "../../../context/AuthContext";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Inputs } from '../Tools/Inputs/Inputs';
+import { Buttons } from '../Tools/Buttons/Buttons';
+import { ValidationErrors } from './ValidationErrors';
+import { useAuth } from '../../../context/AuthContext';
 
 export function Login() {
     const { login } = useAuth();
 
     const [user, setUser] = useState({
-        email: "",
-        password: "",
+        email: '',
+        password: '',
     });
 
     const navigate = useNavigate();
@@ -26,7 +26,7 @@ export function Login() {
         e.preventDefault();
         try {
             await login(user.email, user.password);
-            navigate("/list");
+            navigate('/list');
         } catch (error) {
             ValidationErrors(error.code);
         }
@@ -37,24 +37,20 @@ export function Login() {
             <div className={st.container}>
                 <Inputs
                     clsName={st.userName}
-                    name_="email"
-                    type_="email"
-                    leyend="Correo electrónico"
+                    name_='email'
+                    type_='email'
+                    leyend='Correo electrónico'
                     handleChange={handleChange}
                 />
                 <Inputs
                     clsName={st.userPass}
-                    name_="password"
-                    type_="password"
-                    leyend="Contraseña"
+                    name_='password'
+                    type_='password'
+                    leyend='Contraseña'
                     handleChange={handleChange}
                 />
                 <div className={st.submit}>
-                    <Buttons
-                        click_={handleSubmit}
-                        text_="Iniciar sesión"
-                        link_="#"
-                    />
+                    <Buttons click_={handleSubmit} text_='Iniciar sesión' link_='#' />
                 </div>
             </div>
         </>

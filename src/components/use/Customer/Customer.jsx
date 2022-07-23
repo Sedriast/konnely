@@ -1,10 +1,10 @@
-import swal from "sweetalert";
-import st from "./css/Customer.module.css";
+import swal from 'sweetalert';
+import st from './css/Customer.module.css';
 
-import { useState } from "react";
-import { DataC } from "./DataC.js";
-import { useAuth } from "../../../context/AuthContext";
-import { UpdateInfoProfile } from "../../firebase/funtions/AddInformation";
+import { useState } from 'react';
+import { DataC } from './DataC.js';
+import { useAuth } from '../../../context/AuthContext';
+import { UpdateInfoProfile } from '../../firebase/funtions/AddInformation';
 
 export function Customer() {
     const { user } = useAuth();
@@ -17,9 +17,9 @@ export function Customer() {
 
     const c = () => {
         swal({
-            title: "¿Desea cambiar el tema predeterminado?",
-            icon: "warning",
-            buttons: ["No", "Si"],
+            title: '¿Desea cambiar el tema predeterminado?',
+            icon: 'warning',
+            buttons: ['No', 'Si'],
         }).then((respuesta) => {
             if (respuesta) {
                 UpdateInfoProfile(f);
@@ -43,8 +43,8 @@ export function Customer() {
                                     id={a.number}
                                     src={a.miniature}
                                     onClick={c}
-                                    href=""
-                                    alt=""
+                                    href=''
+                                    alt=''
                                 />
                             </button>
                         </div>

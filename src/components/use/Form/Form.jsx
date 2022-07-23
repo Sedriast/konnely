@@ -58,11 +58,7 @@ export function Form() {
                     <Modal isOpen={isOpenModal} closeModal={closeModal}>
                         {isOpenModal && (
                             <>
-                                <Webcam
-                                    audio={false}
-                                    height={250}
-                                    width={330}
-                                    screenshotFormat='image/jpeg'>
+                                <Webcam audio={false} height={250} width={330} screenshotFormat='image/jpeg'>
                                     {({ getScreenshot }) => (
                                         <button
                                             onClick={() => {
@@ -97,12 +93,7 @@ export function Form() {
                         handleChange={handleChange}
                     />
 
-                    <Lists
-                        leyend='Género'
-                        name_='genero'
-                        listar={genero}
-                        handleChange={handleChange}
-                    />
+                    <Lists leyend='Género' name_='genero' listar={genero} handleChange={handleChange} />
 
                     <Inputs
                         leyend='Peso'
@@ -119,32 +110,12 @@ export function Form() {
                         handleChange={handleChange}
                     />
 
-                    <Lists
-                        leyend='Concepción'
-                        name_='concepcion'
-                        listar={concepcion}
-                        handleChange={handleChange}
-                    />
-                    <Lists
-                        leyend='Banda Asociada'
-                        name_='grupo'
-                        listar={grupo}
-                        handleChange={handleChange}
-                    />
+                    <Lists leyend='Concepción' name_='concepcion' listar={concepcion} handleChange={handleChange} />
+                    <Lists leyend='Banda Asociada' name_='grupo' listar={grupo} handleChange={handleChange} />
 
-                    <Inputs
-                        leyend='Fecha de nacimiento'
-                        name_='nacimiento'
-                        type_='date'
-                        handleChange={handleChange}
-                    />
+                    <Inputs leyend='Fecha de nacimiento' name_='nacimiento' type_='date' handleChange={handleChange} />
 
-                    <Inputs
-                        leyend='Fecha de destete'
-                        name_='destete'
-                        type_='date'
-                        handleChange={handleChange}
-                    />
+                    <Inputs leyend='Fecha de destete' name_='destete' type_='date' handleChange={handleChange} />
 
                     <Lists
                         leyend='Motivo de ingreso'
@@ -152,9 +123,7 @@ export function Form() {
                         listar={SearchAll('motivo').props.children}
                         handleChange={handleChange}
                     />
-                    {reason && (
-                        <DropdownForm motivo={reason} handleChange={handleChange} />
-                    )}
+                    {reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
                 </div>
                 <div className={st.submit}>
                     <Buttons click_={handleSubmit} link_='/list' icon_={sendICO} />
