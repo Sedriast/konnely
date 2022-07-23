@@ -10,6 +10,7 @@
 
 import swal from 'sweetalert';
 import st from './css/Inputs.module.css';
+
 import { useRef, useState, useEffect } from 'react';
 
 export function Inputs(props) {

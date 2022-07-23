@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { QueriesArray } from '../../firebase/funtions/QueriesArray';
-import { Inputs } from '../Tools/Inputs/Inputs';
 import st from './css/NewTrats.module.css';
+
+import { useState } from 'react';
+import { Inputs } from '../Tools/Inputs/Inputs';
+import { QueriesArray } from '../../firebase/funtions/QueriesArray';
 
 export function NewTrats() {
     const [values, setValues] = useState({});
