@@ -50,7 +50,6 @@ export function Layout() {
             obtener();
         }
     }, [user]);
-
     return (
         <>
             <div className={st.container} id='lay' onLoad={s()}>

@@ -29,7 +29,7 @@ export function Cards(props) {
                         </div>
                     </div>
                 </Link>
-                <Link to='/data'>
+                <Link to={'/data'} state={{ id: props.rabitDataName }}>
                     <img alt='' className={st.im} src={props.url} />
                 </Link>
             </div>

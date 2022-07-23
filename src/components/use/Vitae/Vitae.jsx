@@ -1,9 +1,20 @@
-import { Buttons } from '../Tools/Buttons/Buttons';
-import { Lifecycle } from './com/Lifecycle';
 import st from './css/Vitae.module.css';
+
+import { Lifecycle } from './com/Lifecycle';
+import { useLocation } from 'react-router-dom';
 import { basicData, reproData } from './dataProv';
+import { Buttons } from '../Tools/Buttons/Buttons';
+import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
 
 export function Vitae() {
+    const location = useLocation();
+    const informationRabbit = QueriesSimple_({
+        coleccion: 'conejos',
+        parametro: 'id',
+        busqueda: location.state.id,
+    }).props.children[0];
+    console.log(informationRabbit.id);
+
     return (
         <>
             <div className={st.container}>

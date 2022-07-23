@@ -1,3 +1,5 @@
+
+
 export const basicData = {
     id: '123456789',
     raza: 'viena',
@@ -32,16 +34,6 @@ export const ciclo = [
     {
         etapa: 'Ceba',
         peso: '2.5kg',
-        fecha: '**-**-****',
-    },
-    {
-        etapa: '-----',
-        peso: '3kg',
-        fecha: '**-**-****',
-    },
-    {
-        etapa: '-----',
-        peso: '3kg',
         fecha: '**-**-****',
     },
 ];

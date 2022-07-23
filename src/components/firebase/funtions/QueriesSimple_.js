@@ -5,16 +5,19 @@ import { collection, query, where, getDocs, getFirestore } from 'firebase/firest
 const db = getFirestore(app);
 
 export const QueriesSimple_ = (props) => {
+    const coleccion = props.coleccion;
+    const parametro = props.parametro;
+    const busqueda = props.busqueda;
     const [data_, setData_] = useState([{}]);
 
     useEffect(() => {
-        const simpleQueries = async (datos) => {
-            const q = query(collection(db, datos.coleccion), where(datos.parametro, '==', datos.busqueda));
+        const simpleQueries = async () => {
+            const q = query(collection(db, coleccion), where(parametro, '==', busqueda));
             const querySnapshot = await getDocs(q);
             setData_(querySnapshot.docs.map((doc) => ({ ...doc.data() })));
         };
-        simpleQueries(props);
-    }, [props]);
+        simpleQueries();
+    }, [coleccion, busqueda, parametro]);
 
     return (
         <>

@@ -1,6 +1,7 @@
 import st from './css/Com.module.css';
-import { useState } from 'react';
+
 import { Vitae } from './Vitae';
+import { useState } from 'react';
 import { Items } from './com/Items';
 
 export function Curriculum() {
