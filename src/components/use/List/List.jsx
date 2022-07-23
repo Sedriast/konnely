@@ -1,13 +1,19 @@
+import swal from 'sweetalert';
 import st from './css/List.module.css';
 
 import { useState } from 'react';
 import { DropdownList } from './DropdownList';
-import swal from 'sweetalert';
 
 export function List() {
-    let Prueba = new Date(1657670400000 + 43200000);
+    // Fecha de hoy en formato timestamp
+    let Prueba_1 = Date.now();
+    // Convertir una fecha de string a formato timestamp
     console.log(Date.parse('2022-07-13'));
+    // Extraer la fecha correspondiente a los cuatro meses seguidos en base al dia de hoy en formato timestamp
+    let Prueba = new Date(Prueba_1 + 10605600000);
+    // Imprimirlo en consola
     console.log(Prueba);
+
     let search = { vieja: 'init' };
     const [search_, setSearch_] = useState('');
     const [filter, setFilter] = useState('green');

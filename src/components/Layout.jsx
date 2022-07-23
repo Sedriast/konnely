@@ -53,7 +53,7 @@ export function Layout() {
 
     return (
         <>
-            <div className={st.container} id='lay' onLoad={s}>
+            <div className={st.container} id='lay' onLoad={s()}>
                 <Router>
                     <Routes>
                         <Route
