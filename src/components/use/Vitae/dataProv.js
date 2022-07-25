@@ -2,7 +2,7 @@ export const recuperar = (id) => {
     basicData.id = id;
 };
 export const basicData = {
-    id: '123456789',
+    id: null,
     raza: 'viena',
     genero: 'femenino',
     idPadre: '987654321',

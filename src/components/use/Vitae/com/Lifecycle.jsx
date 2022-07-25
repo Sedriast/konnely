@@ -1,11 +1,12 @@
+import Dates from '../../Dates/Dates';
 import st from '../css/Com.module.css';
-import { ciclo } from '../dataProv';
 
 export function Lifecycle() {
+    console.log(Dates('2022-07-13'));
     return (
         <>
             <div className={st.container}>
-                {ciclo.map((items, index) => {
+                {Dates('2022-07-13').map((items, index) => {
                     return (
                         <div key={index} className={st.panelE}>
                             |<div className={st.viewI}>{items.etapa}</div>

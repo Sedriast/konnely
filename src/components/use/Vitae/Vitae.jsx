@@ -1,18 +1,27 @@
 import st from './css/Vitae.module.css';
 
+import { useEffect } from 'react';
 import { Lifecycle } from './com/Lifecycle';
-import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { basicData, reproData } from './dataProv';
 import { Buttons } from '../Tools/Buttons/Buttons';
 import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
 
 export function Vitae() {
-    // const informationRabbit = QueriesSimple_({
-    //     coleccion: 'conejos',
-    //     parametro: 'id',
-    //     busqueda: location.state.id,
-    // }).props.children[0];
-    // console.log(informationRabbit.id);
+    const navigate = useNavigate();
+    if (basicData.id !== null) {
+        const informationRabbit = QueriesSimple_({
+            coleccion: 'conejos',
+            parametro: 'id',
+            busqueda: basicData.id,
+        }).props.children[0];
+        console.log(informationRabbit);
+    }
+    useEffect(() => {
+        if (basicData.id === null) {
+            navigate('/list');
+        }
+    }, [navigate]);
 
     return (
         <>

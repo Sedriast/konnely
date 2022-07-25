@@ -31,13 +31,12 @@ export function Cards(props) {
                         </div>
                     </div>
                 </Link>
-                <Link to={'/data'}>
-                    <button
-                        onClick={() => {
-                            recuperar(rabbit_);
-                        }}>
-                        <img alt='' className={st.im} src={props.url} />
-                    </button>
+                <Link
+                    to={'/data'}
+                    onClick={() => {
+                        recuperar(rabbit_);
+                    }}>
+                    <img alt='' className={st.im} src={props.url} />
                 </Link>
             </div>
         </>
