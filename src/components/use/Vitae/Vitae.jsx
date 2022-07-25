@@ -7,13 +7,12 @@ import { Buttons } from '../Tools/Buttons/Buttons';
 import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
 
 export function Vitae() {
-    const location = useLocation();
-    const informationRabbit = QueriesSimple_({
-        coleccion: 'conejos',
-        parametro: 'id',
-        busqueda: location.state.id,
-    }).props.children[0];
-    console.log(informationRabbit.id);
+    // const informationRabbit = QueriesSimple_({
+    //     coleccion: 'conejos',
+    //     parametro: 'id',
+    //     busqueda: location.state.id,
+    // }).props.children[0];
+    // console.log(informationRabbit.id);
 
     return (
         <>

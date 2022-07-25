@@ -7,7 +7,6 @@ import { Items } from './com/Items';
 export function Curriculum() {
     const [tab_, setTab_] = useState(false);
     const select = () => setTab_(!tab_);
-
     return (
         <div className={st.con}>
             <ul className={st.tabs}>

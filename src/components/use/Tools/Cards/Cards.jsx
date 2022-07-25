@@ -2,8 +2,10 @@ import st from './css/Cards.module.css';
 
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { recuperar } from '../../Vitae/dataProv';
 
 export function Cards(props) {
+    const rabbit_ = props.rabitDataName;
     useEffect(function () {
         const color = props.cGp;
         document.getElementById(props.id_).style.setProperty('background', color);
@@ -29,8 +31,13 @@ export function Cards(props) {
                         </div>
                     </div>
                 </Link>
-                <Link to={'/data'} state={{ id: props.rabitDataName }}>
-                    <img alt='' className={st.im} src={props.url} />
+                <Link to={'/data'}>
+                    <button
+                        onClick={() => {
+                            recuperar(rabbit_);
+                        }}>
+                        <img alt='' className={st.im} src={props.url} />
+                    </button>
                 </Link>
             </div>
         </>
