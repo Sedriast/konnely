@@ -9,7 +9,6 @@ import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
 
 export function Vitae() {
     const navigate = useNavigate();
-    const [rabbit, setRabbit] = useState();
 
     function rabbitData() {
         if (basicData.id !== null) {
@@ -36,15 +35,15 @@ export function Vitae() {
                         <div className={st.re}>
                             <div className={st.id}>
                                 <h1>Identificador</h1>
-                                <div className={st.viewI}>{basicData.id}</div>
+                                <div className={st.viewI}>{rabbitData().id}</div>
                             </div>
                             <div className={st.raza}>
                                 <h1>Raza</h1>
-                                <div className={st.viewI}>{basicData.raza}</div>
+                                <div className={st.viewI}>{rabbitData().raza}</div>
                             </div>
                             <div className={st.genero}>
                                 <h1>Genero</h1>
-                                <div className={st.viewI}>{basicData.genero}</div>
+                                <div className={st.viewI}>{rabbitData().genero}</div>
                             </div>
                         </div>
                         <div className={st.re}>

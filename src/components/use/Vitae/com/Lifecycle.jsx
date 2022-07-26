@@ -13,10 +13,6 @@ export function Lifecycle(props) {
             return rabbit;
         }
     }
-    if (props.id !== null) {
-        console.log(rabbitData().nacimiento);
-    }
-
     return (
         <>
             <div className={st.container}>

@@ -1,5 +1,4 @@
 export const Dates = (props) => {
-    console.log(props);
     let birth = Date.parse(props);
 
     let lactation = new Date(birth + 2592000000);
