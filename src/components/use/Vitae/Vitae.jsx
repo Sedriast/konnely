@@ -1,6 +1,6 @@
 import st from './css/Vitae.module.css';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Lifecycle } from './com/Lifecycle';
 import { useNavigate } from 'react-router-dom';
 import { basicData, reproData } from './dataProv';
@@ -9,13 +9,17 @@ import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
 
 export function Vitae() {
     const navigate = useNavigate();
-    if (basicData.id !== null) {
-        const informationRabbit = QueriesSimple_({
-            coleccion: 'conejos',
-            parametro: 'id',
-            busqueda: basicData.id,
-        }).props.children[0];
-        console.log(informationRabbit);
+    const [rabbit, setRabbit] = useState();
+
+    function rabbitData() {
+        if (basicData.id !== null) {
+            const rabbit = QueriesSimple_({
+                coleccion: 'conejos',
+                parametro: 'id',
+                busqueda: basicData.id,
+            }).props.children[0];
+            return rabbit;
+        }
     }
     useEffect(() => {
         if (basicData.id === null) {
@@ -70,7 +74,7 @@ export function Vitae() {
                     </div>
                 </div>
 
-                <Lifecycle />
+                <Lifecycle id={basicData.id} />
 
                 <div className={st.stadistics}>
                     <div className={st.rej}>Crias rechasadas: {reproData.rechazos}</div>

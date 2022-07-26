@@ -1,4 +1,5 @@
-const Dates = (props) => {
+export const Dates = (props) => {
+    console.log(props);
     let birth = Date.parse(props);
 
     let lactation = new Date(birth + 2592000000);
@@ -47,5 +48,3 @@ const Dates = (props) => {
 
     return ciclo;
 };
-
-export default Dates;
