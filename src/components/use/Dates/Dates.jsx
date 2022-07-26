@@ -1,4 +1,4 @@
-export const Dates = (props) => {
+export const lifecycleChild = (props) => {
     let birth = Date.parse(props);
 
     let lactation = new Date(birth + 2592000000);

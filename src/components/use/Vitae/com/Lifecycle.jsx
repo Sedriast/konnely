@@ -1,5 +1,5 @@
 import st from '../css/Com.module.css';
-import { Dates } from '../../Dates/Dates';
+import { lifecycleChild } from '../../Dates/Dates';
 import { QueriesSimple_ } from '../../../firebase/funtions/QueriesSimple_';
 
 export function Lifecycle(props) {
@@ -17,7 +17,7 @@ export function Lifecycle(props) {
         <>
             <div className={st.container}>
                 {props.id !== null ? (
-                    Dates(rabbitData().nacimiento).map((items, index) => {
+                    lifecycleChild(rabbitData().nacimiento).map((items, index) => {
                         return (
                             <div key={index} className={st.panelE}>
                                 |<div className={st.viewI}>{items.etapa}</div>
