@@ -88,3 +88,41 @@
 	border-radius: 20px;
 	padding: 8px 1rem;
 }
+.basicData button a {
+	height: 75px;
+	width: 250px;
+	margin: 0 10px;
+	background: #545454;
+	border-radius: 10px;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.basicData button img {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	margin-right: 1rem;
+}
+.lifeCi button a {
+	height: 75px;
+	width: 225px;
+	margin: 0 10px;
+	background: #545454;
+	border-radius: 10px;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+.lifeCi button img {
+	position: relative;
+	height: 30px;
+	width: 30px;
+	margin-right: 1rem;
+}

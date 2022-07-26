@@ -6,24 +6,26 @@ import { useNavigate } from 'react-router-dom';
 import { basicData, reproData } from './dataProv';
 import { Buttons } from '../Tools/Buttons/Buttons';
 import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
+import ed from '../../img/ed.png';
 
 export function Vitae() {
-    const navigate = useNavigate();
-    function rabbitData() {
-        if (basicData.id !== null) {
-            const rabbit = QueriesSimple_({
-                coleccion: 'conejos',
-                parametro: 'id',
-                busqueda: basicData.id,
-            }).props.children[0];
-            return rabbit;
-        }
-    }
-    useEffect(() => {
-        if (basicData.id === null) {
-            navigate('/list');
-        }
-    }, [navigate]);
+	const navigate = useNavigate();
+
+	function rabbitData() {
+		if (basicData.id !== null) {
+			const rabbit = QueriesSimple_({
+				coleccion: 'conejos',
+				parametro: 'id',
+				busqueda: basicData.id,
+			}).props.children[0];
+			return rabbit;
+		}
+	}
+	useEffect(() => {
+		if (basicData.id === null) {
+			navigate('/list');
+		}
+	}, [navigate]);
 
     return (
         <>
@@ -78,26 +80,26 @@ export function Vitae() {
                     )}
                 </div>
 
-                <Lifecycle id={basicData.id} />
+				<Lifecycle id={basicData.id} />
 
-                <div className={st.stadistics}>
-                    <div className={st.rej}>Crias rechasadas: {reproData.rechazos}</div>
-                    <div className={st.dea}>Crias muertas: {reproData.muertes}</div>
-                    <div className={st.lif}>Crias vivas: {reproData.vivos}</div>
-                </div>
+				<div className={st.stadistics}>
+					<div className={st.rej}>Crias rechasadas: {reproData.rechazos}</div>
+					<div className={st.dea}>Crias muertas: {reproData.muertes}</div>
+					<div className={st.lif}>Crias vivas: {reproData.vivos}</div>
+				</div>
 
-                <div className={st.btnEdits}>
-                    <div className={st.lifeCi}>
-                        <Buttons link_='#' />
-                    </div>
-                    <div className={st.basicData}>
-                        <Buttons link_='#' />
-                    </div>
-                    <div className={st.nPartos}>
-                        <Buttons link_='#'>{reproData.partos}</Buttons>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
+				<div className={st.btnEdits}>
+					<div className={st.basicData}>
+						<Buttons link_="/form" text_="Datos básicos" icon_={ed} />
+					</div>
+					<div className={st.lifeCi}>
+						<Buttons link_="/list" text_="Ciclo de vida" icon_={ed} />
+					</div>
+					<div className={st.nPartos}>
+						<Buttons link_="#">{reproData.partos}</Buttons>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 }
