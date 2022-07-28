@@ -5,12 +5,11 @@ import { QueriesSimple_ } from '../../../firebase/funtions/QueriesSimple_';
 export function Lifecycle(props) {
     function rabbitData() {
         if (props.id !== null) {
-            const rabbit = QueriesSimple_({
+            return QueriesSimple_({
                 coleccion: 'conejos',
                 parametro: 'id',
                 busqueda: props.id,
             }).props.children[0];
-            return rabbit;
         }
     }
     return (
