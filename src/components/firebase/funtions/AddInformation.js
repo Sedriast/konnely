@@ -12,11 +12,13 @@ export const addImageAndInfo = (props) => {
         try {
             let auxiliar = [];
             auxiliar = datos.image.split(',');
+            datos.lifecycle[0].peso = datos.peso;
             const refStorage = ref(storage, datos.id);
             await uploadString(refStorage, auxiliar[1], 'base64');
             const urlDescarga = await getDownloadURL(refStorage);
             datos.url = urlDescarga;
             delete datos.image;
+            delete datos.peso;
             await addDoc(collection(db, 'conejos'), datos);
         } catch (error) {
             swal({

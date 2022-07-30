@@ -43,28 +43,28 @@ export function Form() {
             lifecycle: [
                 {
                     etapa: 'Nacimiento',
-                    peso: '200gr',
                     fecha: '****-**-**',
+                    peso: '',
                 },
                 {
                     etapa: 'Lactancia',
-                    peso: '1kg',
                     fecha: '****-**-**',
+                    peso: '',
                 },
                 {
                     etapa: 'Levante',
-                    peso: '1.5kg',
                     fecha: '****-**-**',
+                    peso: '',
                 },
                 {
                     etapa: 'Engorde',
-                    peso: '2kg',
                     fecha: '****-**-**',
+                    peso: '',
                 },
                 {
                     etapa: 'Ceba',
-                    peso: '2.5kg',
                     fecha: '****-**-**',
+                    peso: '',
                 },
             ],
         });
@@ -135,6 +135,13 @@ export function Form() {
                         leyend='Procentaje de pureza'
                         name_='Procentaje'
                         placeholder_='Procentaje de pureza'
+                        type_='text'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        leyend='Peso'
+                        name_='peso'
+                        placeholder_='Ingrese el peso'
                         type_='text'
                         handleChange={handleChange}
                     />

@@ -12,11 +12,12 @@ export function Lifecycle(props) {
             }).props.children[0];
         }
     }
+
     return (
         <>
-            <div className={st.container}>
-                {props.id !== null ? (
-                    lifecycleChild(rabbitData().nacimiento).map((items, index) => {
+            {props.id !== null ? (
+                <div className={st.container}>
+                    {lifecycleChild(rabbitData().nacimiento).map((items, index) => {
                         return (
                             <div key={index} className={st.panelE}>
                                 |<div className={st.viewI}>{items.etapa}</div>
@@ -24,11 +25,11 @@ export function Lifecycle(props) {
                                 <div className={st.viewI}>{items.fecha}</div>
                             </div>
                         );
-                    })
-                ) : (
-                    <></>
-                )}
-            </div>
+                    })}
+                </div>
+            ) : (
+                <></>
+            )}
         </>
     );
 }
