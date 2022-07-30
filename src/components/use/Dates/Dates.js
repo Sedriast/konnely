@@ -1,6 +1,4 @@
 export const lifecycleChild = (props) => {
-    let actual = new Date();
-    let actualTimestap = Date.parse(actual);
     let birth = Date.parse(props);
 
     let lactationDate = new Date(birth + 2673000000);
