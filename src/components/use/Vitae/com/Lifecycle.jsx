@@ -1,32 +1,23 @@
 import st from '../css/Com.module.css';
 import { lifecycleChild } from '../../Dates/Dates';
-import { QueriesSimple_ } from '../../../firebase/funtions/QueriesSimple_';
 
 export function Lifecycle(props) {
-    function rabbitData() {
-        if (props.id !== null) {
-            return QueriesSimple_({
-                coleccion: 'conejos',
-                parametro: 'id',
-                busqueda: props.id,
-            }).props.children[0];
-        }
-    }
-
     return (
         <>
-            {props.id !== null ? (
-                <div className={st.container}>
-                    {lifecycleChild(rabbitData().nacimiento).map((items, index) => {
-                        return (
-                            <div key={index} className={st.panelE}>
-                                |<div className={st.viewI}>{items.etapa}</div>
-                                <div className={st.viewI}>{items.peso}</div>
-                                <div className={st.viewI}>{items.fecha}</div>
-                            </div>
-                        );
-                    })}
-                </div>
+            {JSON.stringify(props.id) !== '{}' ? (
+                Date.now() - Date.parse(props?.id?.nacimiento) < 2629800000 && (
+                    <div className={st.container}>
+                        {lifecycleChild(props?.id?.nacimiento).map((items, index) => {
+                            return (
+                                <div key={index} className={st.panelE}>
+                                    |<div className={st.viewI}>{items.etapa}</div>
+                                    <div className={st.viewI}>{items.peso}</div>
+                                    <div className={st.viewI}>{items.fecha}</div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                )
             ) : (
                 <></>
             )}

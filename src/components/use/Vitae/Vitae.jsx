@@ -12,7 +12,9 @@ export function Vitae() {
     const navigate = useNavigate();
 
     function rabbitData() {
-        if (basicData.id !== null) {
+        if (basicData.id === null) {
+            return null;
+        } else {
             return QueriesSimple_({
                 coleccion: 'conejos',
                 parametro: 'id',
@@ -79,7 +81,9 @@ export function Vitae() {
                     )}
                 </div>
 
-                <Lifecycle id={basicData.id} />
+                <Lifecycle
+                    id={rabbitData()}
+                />
 
                 <div className={st.stadistics}>
                     <div className={st.rej}>Crias rechasadas: {reproData.rechazos}</div>
