@@ -1,14 +1,15 @@
+import swal from 'sweetalert';
 import Webcam from 'react-webcam';
 import st from './css/Form.module.css';
 import sendICO from '../../img/send.png';
 
 import { useState } from 'react';
 import { DropdownForm } from './DropdownForm';
+import { DropdownDate } from './DropdownDate';
 import { Modal } from '../Tools/Modals/Modal';
 import { Inputs } from '../Tools/Inputs/Inputs';
 import { Lists } from '../Tools/List/Lists.jsx';
 import { Buttons } from '../Tools/Buttons/Buttons';
-import { GroupValidation } from './GroupValidation';
 import { useModal } from '../Tools/Modals/useModal';
 import { SearchAll } from '../../firebase/funtions/SearchAll';
 import { addImageAndInfo } from '../../firebase/funtions/AddInformation';
@@ -16,6 +17,7 @@ import { addImageAndInfo } from '../../firebase/funtions/AddInformation';
 export function Form() {
     const genero = ['Género', 'Hembra', 'Macho'];
     const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
+    const [date, setDate] = useState();
     const [reason, setReason] = useState();
     const [image, setImage] = useState(null);
     const [values, setValues] = useState({});
@@ -28,8 +30,18 @@ export function Form() {
         if (e.target.name === 'motivo') {
             setReason(e.target.value);
             setValues({ ...values, [name]: value });
-        } else if (e.target.name === 'grupo') {
-            setValues({ ...values, [name]: GroupValidation(value).props.children });
+        } else if (e.target.name === 'nacimiento') {
+            if (Date.now() - Date.parse(e.target.value) <= 0) {
+                e.target.value = null;
+                swal({
+                    title: 'A ingresado una fecha incorrecta',
+                    icon: 'error',
+                    button: 'aceptar',
+                });
+            } else {
+                setDate(e.target.value);
+                setValues({ ...values, [name]: value });
+            }
         } else {
             setValues({ ...values, [name]: value });
         }
@@ -138,16 +150,14 @@ export function Form() {
                         type_='text'
                         handleChange={handleChange}
                     />
+                    <Lists leyend='Concepción' name_='concepcion' listar={concepcion} handleChange={handleChange} />
                     <Inputs
-                        leyend='Peso'
-                        name_='peso'
-                        placeholder_='Ingrese el peso'
-                        type_='text'
+                        leyend='Fecha de nacimiento'
+                        name_='nacimiento'
+                        type_='date'
                         handleChange={handleChange}
                     />
-
-                    <Lists leyend='Concepción' name_='concepcion' listar={concepcion} handleChange={handleChange} />
-
+                    {date && <DropdownDate date={date} handleChange={handleChange} />}
                     <Lists
                         leyend='Motivo de ingreso'
                         name_='motivo'

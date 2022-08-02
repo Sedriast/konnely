@@ -70,7 +70,13 @@ export function Inputs(props) {
             <div className={st.container}>
                 <h1 className={st.label}>{props.leyend}</h1>
                 {preview ? (
-                    <img className={st.inp} src={preview} style={{ objectFit: 'cover' }} onClick={changeImage} alt='' />
+                    <img
+                        className={st.inp}
+                        src={preview}
+                        style={{ objectFit: 'cover' }}
+                        onClick={changeImage}
+                        alt=''
+                    />
                 ) : (
                     <input
                         required='True'
