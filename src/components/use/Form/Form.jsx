@@ -42,6 +42,17 @@ export function Form() {
                 setDate(e.target.value);
                 setValues({ ...values, [name]: value });
             }
+        } else if (e.target.name === 'traslado') {
+            if (Date.now() - Date.parse(e.target.value) <= 0) {
+                e.target.value = null;
+                swal({
+                    title: 'A ingresado una fecha incorrecta',
+                    icon: 'error',
+                    button: 'aceptar',
+                });
+            } else {
+                setValues({ ...values, [name]: value });
+            }
         } else {
             setValues({ ...values, [name]: value });
         }
@@ -56,27 +67,27 @@ export function Form() {
                 {
                     etapa: 'Nacimiento',
                     fecha: '****-**-**',
-                    peso: '',
+                    peso: 'Sin datos',
                 },
                 {
                     etapa: 'Lactancia',
                     fecha: '****-**-**',
-                    peso: '',
+                    peso: 'Sin datos',
                 },
                 {
                     etapa: 'Levante',
                     fecha: '****-**-**',
-                    peso: '',
+                    peso: 'Sin datos',
                 },
                 {
                     etapa: 'Engorde',
                     fecha: '****-**-**',
-                    peso: '',
+                    peso: 'Sin datos',
                 },
                 {
                     etapa: 'Ceba',
                     fecha: '****-**-**',
-                    peso: '',
+                    peso: 'Sin datos',
                 },
             ],
         });

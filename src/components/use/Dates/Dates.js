@@ -1,5 +1,5 @@
 export const lifecycleChild = (props) => {
-    let birth = Date.parse(props);
+    let birth = Date.parse(props?.nacimiento);
 
     let lactationDate = new Date(birth + 2673000000);
     let monthLactation = lactationDate.getMonth() + 1;
@@ -16,31 +16,38 @@ export const lifecycleChild = (props) => {
     let cebaDate = new Date(birth + 10562400000);
     let monthCeba = cebaDate.getMonth() + 1;
     const ceba_ = cebaDate.getFullYear() + '-' + monthCeba + '-' + cebaDate.getDate();
+    function peso(posicion) {
+        if (props?.lifecycle[posicion].peso === 'Sin datos') {
+            return props?.lifecycle[posicion].peso;
+        } else {
+            return props?.lifecycle[posicion].peso + ' gr';
+        }
+    }
 
     return [
         {
             etapa: 'Nacimiento',
-            peso: '200gr',
-            fecha: props,
+            peso: peso(0),
+            fecha: props?.nacimiento,
         },
         {
             etapa: 'Lactancia',
-            peso: '1kg',
+            peso: peso(1),
             fecha: lactation_,
         },
         {
             etapa: 'Levante',
-            peso: '1.5kg',
+            peso: peso(2),
             fecha: raised_,
         },
         {
             etapa: 'Engorde',
-            peso: '2kg',
+            peso: peso(3),
             fecha: fattening_,
         },
         {
             etapa: 'Ceba',
-            peso: '2.5kg',
+            peso: peso(4),
             fecha: ceba_,
         },
     ];
