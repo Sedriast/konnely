@@ -13,7 +13,7 @@ export function DropdownDate(props) {
             return 3;
         } else if (Date.now() - Date.parse(date_) > 7889400000 && Date.now() - Date.parse(date_) <= 10519200000) {
             return 4;
-        } else if (Date.now() - Date.parse(date_) <= 0) {
+        } else if (Date.now() - Date.parse(date_) > 10519200000) {
             return 5;
         }
     }
@@ -68,8 +68,8 @@ export function DropdownDate(props) {
                     />
                     <Inputs
                         clsName={st.data2}
-                        leyend='Peso al terminar la fase de engorde'
-                        name_='engorde'
+                        leyend='Peso al terminar la fase de levante'
+                        name_='levante'
                         placeholder_='Ingrese el peso'
                         type_='text'
                         handleChange={handleChange}
@@ -95,6 +95,49 @@ export function DropdownDate(props) {
                     />
                     <Inputs
                         clsName={st.data2}
+                        leyend='Peso al terminar la fase de levante'
+                        name_='levante'
+                        placeholder_='Ingrese el peso'
+                        type_='text'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        clsName={st.data2}
+                        leyend='Peso al terminar la fase de engorde'
+                        name_='engorde'
+                        placeholder_='Ingrese el peso'
+                        type_='text'
+                        handleChange={handleChange}
+                    />
+                </>
+            )}
+            {phase() === 5 && (
+                <>
+                    <Inputs
+                        leyend='Peso al nacer'
+                        name_='peso'
+                        placeholder_='Ingrese el peso'
+                        type_='text'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        clsName={st.data2}
+                        leyend='Peso al terminar la fase de lactancia'
+                        name_='lactancia'
+                        placeholder_='Ingrese el peso'
+                        type_='text'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        clsName={st.data2}
+                        leyend='Peso al terminar la fase de levante'
+                        name_='levante'
+                        placeholder_='Ingrese el peso'
+                        type_='text'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        clsName={st.data2}
                         leyend='Peso al terminar la fase de engorde'
                         name_='engorde'
                         placeholder_='Ingrese el peso'
@@ -109,11 +152,6 @@ export function DropdownDate(props) {
                         type_='text'
                         handleChange={handleChange}
                     />
-                </>
-            )}
-            {phase() === 5 && (
-                <>
-                    <></>
                 </>
             )}
         </>
