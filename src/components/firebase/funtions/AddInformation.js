@@ -12,6 +12,18 @@ export const addImageAndInfo = (props) => {
         try {
             let auxiliar = [];
             auxiliar = datos.image.split(',');
+            if (datos.lactancia) {
+                datos.lifecycle[1].peso = datos.lactancia;
+            }
+            if (datos.levante) {
+                datos.lifecycle[2].peso = datos.levante;
+            }
+            if (datos.engorde) {
+                datos.lifecycle[3].peso = datos.engorde;
+            }
+            if (datos.ceba) {
+                datos.lifecycle[4].peso = datos.ceba;
+            }
             datos.lifecycle[0].peso = datos.peso;
             const refStorage = ref(storage, datos.id);
             await uploadString(refStorage, auxiliar[1], 'base64');

@@ -5,14 +5,14 @@ import { useState } from 'react';
 import { DropdownList } from './DropdownList';
 
 export function List() {
-    // Fecha de hoy en formato timestamp
-    let Prueba_1 = Date.now();
-    // Convertir una fecha de string a formato timestamp
-    console.log(Date.parse('2022-07-13'));
-    // Extraer la fecha correspondiente a los cuatro meses seguidos en base al dia de hoy en formato timestamp
-    let Prueba = new Date(Prueba_1 + 10605600000);
-    // Imprimirlo en consola
-    console.log(Prueba);
+    // // Fecha de hoy en formato timestamp
+    // let Prueba_1 = Date.now();
+    // // Convertir una fecha de string a formato timestamp
+    // console.log(Date.parse('2022-07-13'));
+    // // Extraer la fecha correspondiente a los cuatro meses seguidos en base al dia de hoy en formato timestamp
+    // let Prueba = new Date(Prueba_1 + 10605600000);
+    // // Imprimirlo en consola
+    // console.log(Prueba);
 
     let search = { vieja: 'init' };
     const [search_, setSearch_] = useState('');
