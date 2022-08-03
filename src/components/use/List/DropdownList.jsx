@@ -3,10 +3,10 @@ import st from './css/List.module.css';
 
 import { useEffect } from 'react';
 import { Cards } from '../Tools/Cards/Cards';
-import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
+import { RealTime } from '../../firebase/funtions/RealTime';
 
 export function DropdownList(props) {
-    const resultado = QueriesSimple_({
+    const resultado = RealTime({
         coleccion: props.coleccion,
         parametro: props.parametro,
         busqueda: props.busqueda,
@@ -14,20 +14,15 @@ export function DropdownList(props) {
     useEffect(() => {
         if (resultado.length === 0 && props.parametro === 'id') {
             swal({
-                title: 'El identificador no corresponde a un registro actual.',
+                title: 'No existe ningun registro con ese identificador.',
                 icon: 'error',
                 button: 'aceptar',
             });
         }
-    }, [resultado, props]);
-
+    }, [resultado, props.parametro]);
     return (
         <>
-            {QueriesSimple_({
-                coleccion: props.coleccion,
-                parametro: props.parametro,
-                busqueda: props.busqueda,
-            }).props.children.map((a, index) => (
+            {resultado.map((a, index) => (
                 <Cards
                     clsName={st.card}
                     key={index}

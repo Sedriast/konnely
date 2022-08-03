@@ -155,8 +155,8 @@ export function Form() {
                         handleChange={handleChange}
                     />
                     <Inputs
-                        leyend='Procentaje de pureza'
-                        name_='Procentaje'
+                        leyend='Porcentaje de pureza'
+                        name_='porcentaje'
                         placeholder_='Procentaje de pureza'
                         type_='text'
                         handleChange={handleChange}

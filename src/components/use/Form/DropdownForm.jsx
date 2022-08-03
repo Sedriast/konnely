@@ -71,6 +71,13 @@ export function DropdownForm(props) {
                         handleChange={handleChange}
                     />
                     <Inputs
+                        leyend='Origen'
+                        name_='origen'
+                        placeholder_='Ingrese el origen'
+                        type_='text'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
                         clsName={st.data2}
                         leyend='Identificador del padre'
                         name_='idPadre'

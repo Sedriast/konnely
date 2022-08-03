@@ -9,24 +9,7 @@ export const RealTime = (props) => {
     const coleccion = props.coleccion;
     const parametro = props.parametro;
     const busqueda = props.busqueda;
-    const [data_, setData_] = useState([
-        {
-            name: 'Loading...',
-            url: null,
-            genero: null,
-            raza: null,
-            concepcion: null,
-            grupo: null,
-            destete: null,
-            id: null,
-            idMadre: null,
-            idPadre: null,
-            motivo: null,
-            nacimiento: null,
-            peso: null,
-            tema: null,
-        },
-    ]);
+    const [data_, setData_] = useState([]);
 
     useEffect(() => {
         const q = query(collection(db, coleccion), where(parametro, '==', busqueda));

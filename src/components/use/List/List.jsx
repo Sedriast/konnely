@@ -5,20 +5,11 @@ import { useState } from 'react';
 import { DropdownList } from './DropdownList';
 
 export function List() {
-    // // Fecha de hoy en formato timestamp
-    // let Prueba_1 = Date.now();
-    // // Convertir una fecha de string a formato timestamp
-    // console.log(Date.parse('2022-07-13'));
-    // // Extraer la fecha correspondiente a los cuatro meses seguidos en base al dia de hoy en formato timestamp
-    // let Prueba = new Date(Prueba_1 + 10605600000);
-    // // Imprimirlo en consola
-    // console.log(Prueba);
-
     let search = { vieja: 'init' };
     const [search_, setSearch_] = useState('');
     const [filter, setFilter] = useState('Hembra');
     const [parametro, setParametro] = useState('');
-    const [auxsearch_, setAuxsearch_] = useState(null);
+    const [auxsearch_, setAuxsearch_] = useState('');
 
     function handleChange(e) {
         const { value } = e.target;
@@ -52,13 +43,13 @@ export function List() {
                         <input value={parametro} placeholder='Buscar' onChange={handleChange}></input>
                         <button
                             onClick={() => {
-                                if (auxsearch_ === null) {
+                                if (auxsearch_ === '') {
                                     swal({
                                         title: 'Digite un identificador válido.',
                                         icon: 'error',
                                         button: 'aceptar',
                                     });
-                                } else if (auxsearch_ !== null) {
+                                } else {
                                     setSearch_(auxsearch_);
                                     setFilter('');
                                     setParametro('');

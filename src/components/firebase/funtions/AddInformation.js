@@ -12,6 +12,9 @@ export const addImageAndInfo = (props) => {
         try {
             let auxiliar = [];
             auxiliar = datos.image.split(',');
+            if (!datos.origen) {
+                datos.origen = 'Ubaté';
+            }
             if (datos.lactancia) {
                 datos.lifecycle[1].peso = datos.lactancia;
             }

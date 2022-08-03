@@ -53,25 +53,25 @@ export function Vitae() {
                                 <div className={st.re}>
                                     <div className={st.idPadre}>
                                         <h1>Id. Padre</h1>
-                                        <div className={st.viewI}>{basicData.idPadre}</div>
+                                        <div className={st.viewI}>{rabbitData().idPadre}</div>
                                     </div>
                                     <div className={st.idMadre}>
                                         <h1>id. Madre</h1>
-                                        <div className={st.viewI}>{basicData.idMadre}</div>
+                                        <div className={st.viewI}>{rabbitData().idMadre}</div>
                                     </div>
                                     <div className={st.origen}>
                                         <h1>Origen</h1>
-                                        <div className={st.viewI}>{basicData.origen}</div>
+                                        <div className={st.viewI}>{rabbitData().origen}</div>
                                     </div>
                                 </div>
                                 <div className={st.re}>
                                     <div className={st.time1}>
                                         <h1>Fecha concepcion</h1>
-                                        <div className={st.viewI}>{basicData.fechaConcepcion}</div>
+                                        <div className={st.viewI}>{rabbitData().nacimiento}</div>
                                     </div>
                                     <div className={st.procentaje}>
                                         <h1>Porcentaje pureza</h1>
-                                        <div className={st.viewI}>{basicData.porcentajePureza}</div>
+                                        <div className={st.viewI}>{rabbitData().porcentaje}</div>
                                     </div>
                                 </div>
                             </div>
@@ -81,9 +81,7 @@ export function Vitae() {
                     )}
                 </div>
 
-                <Lifecycle
-                    id={rabbitData()}
-                />
+                <Lifecycle id={rabbitData()} />
 
                 <div className={st.stadistics}>
                     <div className={st.rej}>Crias rechasadas: {reproData.rechazos}</div>
