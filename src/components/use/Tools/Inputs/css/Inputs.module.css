@@ -25,7 +25,7 @@
 /*Containers*/
 /*Master*/
 .container {
-	height: 3rem;
+	height: 4rem;
 	margin: 0.5rem 0;
 
 	display: flex;
@@ -38,13 +38,15 @@
 /*Sub*/
 
 .inp {
+	width: calc(100% - 2rem);
 	height: 100%;
+
+	margin: 0.5rem 0;
+
+	border: 1px solid black;
 	border-radius: 20px;
 	padding-left: 1rem;
-	color: black;
-}
-.inp::placeholder {
-	color: black;
+	padding-right: 1rem;
 }
 /*Sub*/
 /*Button´s container*/

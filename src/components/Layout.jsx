@@ -1,7 +1,8 @@
 import st from './Layout.module.css';
 import app from '../components/firebase/credentials';
 
-import { Init } from './use/Init/Init';
+import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
+import { User } from './use/A_User/User';
 import { List } from './use/List/List';
 import { Form } from './use/Form/Form';
 import { useState, useEffect } from 'react';
@@ -11,12 +12,12 @@ import { useAuth } from '../context/AuthContext';
 import { NewTrats } from './use/NewTrats/NewTrats';
 import { Customer } from './use/Customer/Customer';
 import { Curriculum } from './use/Vitae/Curriculum';
-import { Users } from '../components/use/Users/Users';
 import { PanelButtons } from './use/PanelButons/PanelButtons';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { FormCR } from './use/Tools/Cards/FormCR';
+import { Decorations } from './use/Tools/Deco/Decorations';
 
 const db = getFirestore(app);
 
@@ -60,6 +61,27 @@ export function Layout() {
 					<Routes>
 						<Route
 							exact
+							path="/"
+							element={
+								<div className={st.A_Login_Register}>
+									<Decorations />
+									<LoginRegister />
+								</div>
+							}
+						/>
+						<Route
+							exact
+							path="/users"
+							element={
+								<>
+									<ProtectedRoute>
+										<User src_={user_.foto} title={user_.usuario} label={user_.rol} />
+									</ProtectedRoute>
+								</>
+							}
+						/>
+						<Route
+							exact
 							path="/test"
 							element={
 								<>
@@ -94,36 +116,11 @@ export function Layout() {
 						/>
 						<Route
 							exact
-							path="/"
-							element={
-								<div className={st.initPanel}>
-									<Init />
-								</div>
-							}
-						/>
-						<Route
-							exact
 							path="/customer"
 							element={
 								<>
 									<ProtectedRoute>
 										<Customer clsName={st.customer} />
-									</ProtectedRoute>
-								</>
-							}
-						/>
-						<Route
-							exact
-							path="/users"
-							element={
-								<>
-									<ProtectedRoute>
-										<Users
-											clsName={st.users}
-											src_={user_.foto}
-											title={user_.usuario}
-											label="Administrador"
-										/>
 									</ProtectedRoute>
 								</>
 							}

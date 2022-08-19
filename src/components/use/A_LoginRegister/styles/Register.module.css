@@ -29,15 +29,14 @@
 
 	width: 600px;
 
+	background: #423531;
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 
-	background: linear-gradient(180deg,
-			#333333 0%,
-			rgba(0, 0, 0, 0.75) 59.09%,
-			rgba(0, 0, 0, 0.9) 100%);
+	background: #68534d;
 
 	padding: 2rem 0;
 	border-radius: 0px 0px 20px 20px;
@@ -45,7 +44,26 @@
 
 /*Master*/
 /*Sub*/
+.inpCont {
+	width: 350px;
+}
+.submit {
+	width: 125px;
+	height: 49px;
 
+	background: #423531;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+
+	border-radius: 24px;
+	border: 2px solid rgb(0, 0, 0);
+
+	margin: 20px 0px;
+}
 /*Sub*/
 /*Button´s container*/
 
@@ -77,55 +95,6 @@
 
 /*Other´s Components*/
 /*Master*/
-.userName {
-	width: 400px;
-	height: 91px;
-
-	margin: 20px 0px;
-}
-
-.userEmail {
-	width: 400px;
-	height: 91px;
-
-	margin: 20px 0px;
-}
-
-.userPass {
-	width: 400px;
-	height: 91px;
-
-	margin: 20px 0px;
-}
-
-.userPhone {
-	width: 300px;
-	height: 91px;
-
-	margin: 20px 0px;
-}
-
-.otp {
-	width: 300px;
-	height: 91px;
-
-	margin: 20px 0px;
-}
-
-.submit {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
-
-	width: 125px;
-	height: 49px;
-	border-radius: 24px;
-	border: 2px solid white;
-
-	margin: 20px 0px;
-}
 
 /*Master*/
 /*Other´s Components */
