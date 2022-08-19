@@ -54,29 +54,27 @@ export function Register() {
 	};
 	return (
 		<>
-			<form id="formulario">
+			<form
+				onSubmit={(e) => {
+					e.preventDefault();
+					handleSubmit({ email: e.target.email.value, password: e.target.password.value });
+				}}
+			>
 				<div className={st.container}>
 					<div className={st.inpCont}>
-						<Inputs name_="userName" type_="text" leyend="Usuario" handleChange={handleChange} />
+						<h3>Nombre de usuario</h3>
+						<input name="userName" type="text" />
 					</div>
 					<div className={st.inpCont}>
-						<Inputs
-							name_="email"
-							type_="email"
-							leyend="Correo electrónico"
-							handleChange={handleChange}
-						/>
+						<h3>Correo electronico</h3>
+						<input name="email" type="email" />
 					</div>
 					<div className={st.inpCont}>
-						<Inputs
-							name_="password"
-							type_="password"
-							leyend="Contraseña"
-							handleChange={handleChange}
-						/>
+						<h3>Contraseña</h3>
+						<input name="password" type="password" />
 					</div>
 					<div className={st.submit}>
-						<Buttons id_="correo" link_="#" text_="Crear" click_={handleSubmit} />
+						<button type="submit">Registrar</button>
 					</div>
 				</div>
 			</form>

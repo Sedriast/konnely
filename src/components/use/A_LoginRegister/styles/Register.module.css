@@ -46,6 +46,20 @@
 /*Sub*/
 .inpCont {
 	width: 350px;
+	margin-bottom: 1rem;
+}
+.inpCont input {
+	width: calc(100% - 2rem);
+	height: 100%;
+
+	margin: 0.5rem 0;
+
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 8px 1rem;
+}
+.inpCont h3 {
+	width: 350px;
 }
 .submit {
 	width: 125px;
@@ -63,6 +77,9 @@
 	border: 2px solid rgb(0, 0, 0);
 
 	margin: 20px 0px;
+}
+.submit button {
+	background: transparent;
 }
 /*Sub*/
 /*Button´s container*/

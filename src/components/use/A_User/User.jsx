@@ -1,28 +1,14 @@
 import st from './style/User.module.css';
-import { Buttons } from '../Tools/Buttons/Buttons';
+
+import { Options } from './components/Options';
 
 export function User(props) {
 	return (
 		<>
 			<div className={st.container}>
-				<div className={st.panelB}>
-					<div className={st.b}>
-						<Buttons link_="/customer" />
-					</div>
-					<div className={st.b}>
-						<Buttons link_="/" />
-					</div>
-					<div className={st.b}>
-						<Buttons link_="/" />
-					</div>
-					<div className={st.b}>
-						<Buttons link_="/" />
-					</div>
-					<div className={st.b}>
-						<Buttons link_="/" />
-					</div>
+				<div className={st.menuLeft}>
+					<Options />
 				</div>
-				<div className={st.panelCom}>{}</div>
 				<div className={st.panelInf}>
 					<div className={st.i}>
 						<img src={props.src_} alt="" href="" />
