@@ -1,17 +1,15 @@
-import st from './styles/ALoginRegister.module.css';
+import st from './styles/LoginRegister.module.css';
 import { useState } from 'react';
 
 import { Login } from './components/Login';
 import { Register } from './components/Register';
-import { Decorations } from './components/Decorations';
 
-export function ALoginRegister() {
+export function LoginRegister() {
 	const [tab_, setTab_] = useState(false);
 	const select = () => setTab_(!tab_);
 
 	return (
 		<>
-			<Decorations />
 			<div className={st.container}>
 				<ul className={st.tabs}>
 					<li onClick={select} className={!tab_ ? st.active : ''}>

@@ -56,26 +56,27 @@ export function Register() {
 		<>
 			<form id="formulario">
 				<div className={st.container}>
-					<Inputs
-						name_="userName"
-						type_="text"
-						leyend="Usuario"
-						handleChange={handleChange}
-					></Inputs>
-					<Inputs
-						name_="email"
-						type_="email"
-						leyend="Correo electrónico"
-						handleChange={handleChange}
-					/>
-					<Inputs
-						name_="password"
-						type_="password"
-						leyend="Contraseña"
-						handleChange={handleChange}
-					/>
+					<div className={st.inpCont}>
+						<Inputs name_="userName" type_="text" leyend="Usuario" handleChange={handleChange} />
+					</div>
+					<div className={st.inpCont}>
+						<Inputs
+							name_="email"
+							type_="email"
+							leyend="Correo electrónico"
+							handleChange={handleChange}
+						/>
+					</div>
+					<div className={st.inpCont}>
+						<Inputs
+							name_="password"
+							type_="password"
+							leyend="Contraseña"
+							handleChange={handleChange}
+						/>
+					</div>
 					<div className={st.submit}>
-						<Buttons id_="correo" click_={handleSubmit} link_="#" text_="Crear" />
+						<Buttons id_="correo" link_="#" text_="Crear" click_={handleSubmit} />
 					</div>
 				</div>
 			</form>

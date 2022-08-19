@@ -1,4 +1,4 @@
-import st from '../styles/Decorations.module.css';
+import st from './styles/Decorations.module.css';
 
 export function Decorations() {
 	return (

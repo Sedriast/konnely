@@ -35,15 +35,24 @@ export function Login() {
 	return (
 		<>
 			<div className={st.container}>
-				<Inputs
-					name_="email"
-					type_="email"
-					leyend="Correo electrónico"
-					handleChange={handleChange}
-				/>
-				<Inputs name_="password" type_="password" leyend="Contraseña" handleChange={handleChange} />
+				<div className={st.inpCont}>
+					<Inputs
+						name_="email"
+						type_="email"
+						leyend="Correo electrónico"
+						handleChange={handleChange}
+					/>
+				</div>
+				<div className={st.inpCont}>
+					<Inputs
+						name_="password"
+						type_="password"
+						leyend="Contraseña"
+						handleChange={handleChange}
+					/>
+				</div>
 				<div className={st.submit}>
-					<Buttons click_={handleSubmit} text_="Iniciar sesión" link_="#" />
+					<Buttons text_="Iniciar sesión" link_="#" click_={handleSubmit} />
 				</div>
 			</div>
 		</>

@@ -1,0 +1,46 @@
+.container {
+	width: 600px;
+	min-width: 600px;
+	height: 535px;
+
+	border-radius: 20px 20px 0px 0px;
+	overflow: hidden;
+
+	z-index: 10;
+}
+
+ul.tabs {
+	width: 100%;
+	background: #423531;
+	list-style: none;
+	display: flex;
+
+	transition: 300ms;
+}
+
+ul.tabs li {
+	width: 50%;
+}
+
+ul.tabs li a {
+	text-decoration: none;
+	text-align: center;
+
+	display: block;
+	padding: 20px 0px;
+}
+
+.sections article {
+	padding: 30px;
+}
+
+.active {
+	background: #68534d;
+	pointer-events: none;
+
+	transition: 300ms;
+}
+
+.hidden {
+	visibility: hidden;
+}
