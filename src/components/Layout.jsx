@@ -1,7 +1,7 @@
 import st from './Layout.module.css';
 import app from '../components/firebase/credentials';
 
-import { Init } from './use/Init/Init';
+import { ALoginRegister } from './use/A_Login_Register/ALoginRegister';
 import { List } from './use/List/List';
 import { Form } from './use/Form/Form';
 import { useState, useEffect } from 'react';
@@ -60,6 +60,15 @@ export function Layout() {
 					<Routes>
 						<Route
 							exact
+							path="/"
+							element={
+								<div className={st.initPanel}>
+									<ALoginRegister />
+								</div>
+							}
+						/>
+						<Route
+							exact
 							path="/test"
 							element={
 								<>
@@ -90,15 +99,6 @@ export function Layout() {
 										<PanelButtons />
 									</ProtectedRoute>
 								</>
-							}
-						/>
-						<Route
-							exact
-							path="/"
-							element={
-								<div className={st.initPanel}>
-									<Init />
-								</div>
 							}
 						/>
 						<Route

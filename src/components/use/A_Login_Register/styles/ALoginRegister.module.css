@@ -1,7 +1,10 @@
 .container {
 	width: 600px;
 	min-width: 600px;
-	margin: 1rem;
+	height: 475px;
+
+	margin-top: auto;
+	margin-bottom: auto;
 
 	border-radius: 20px 20px 0px 0px;
 	overflow: hidden;
@@ -11,9 +14,11 @@
 
 ul.tabs {
 	width: 100%;
-	background: rgba(0, 0, 0);
+	background: #423531;
 	list-style: none;
 	display: flex;
+
+	transition: 300ms;
 }
 
 ul.tabs li {
@@ -43,8 +48,10 @@ ul.tabs li a .tab text {
 }
 
 .active {
-	background: rgba(255, 255, 255, 0.2);
+	background: #68534d;
 	pointer-events: none;
+
+	transition: 300ms;
 }
 
 .hidden {
