@@ -25,7 +25,7 @@ export const useAuth = () => {
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const tema = 3;
+    const tema = 0;
     const imagenPerfil =
         'https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/ImagenDeUsuario.png?alt=media&token=e4b0499b-1ff2-42b3-93f9-e95d11533536';
 
@@ -45,11 +45,11 @@ export function AuthProvider({ children }) {
                 user: auth.currentUser.uid,
                 data: {
                     uid: auth.currentUser.uid,
-                    usuario: userName,
+                    user: userName,
                     email: auth.currentUser.email,
                     rol: 'usuario',
-                    tema: tema,
-                    foto: imagenPerfil,
+                    theme: tema,
+                    photo: imagenPerfil,
                 },
             });
             verificarEmail(auth.currentUser);

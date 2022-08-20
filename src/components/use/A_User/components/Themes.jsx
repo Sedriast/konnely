@@ -1,9 +1,9 @@
-import st from '../style/Theme.module.css';
 import swal from 'sweetalert';
+import st from '../style/Theme.module.css';
 
+import { useState } from 'react';
 import { themesData } from '../scripts/customThemeData';
 import { useAuth } from '../../../../context/AuthContext';
-import { useState } from 'react';
 import { UpdateInfoProfile } from '../../../firebase/funtions/AddInformation';
 
 export function Themes() {
@@ -12,10 +12,11 @@ export function Themes() {
 
 	const ca = (e) => {
 		const tema = parseInt(e.target.id);
-		setF({ ...f, user: user.uid, data: { tema: tema } });
+		setF({ ...f, user: user.uid, data: { theme: tema } });
 	};
 
 	const c = () => {
+		console.log(f);
 		swal({
 			title: '¿Desea cambiar el tema predeterminado?',
 			icon: 'warning',

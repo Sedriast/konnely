@@ -1,10 +1,10 @@
-import st from '../style/UserData.module.css';
 import swal from 'sweetalert';
+import st from '../style/UserData.module.css';
 import app from '../../../firebase/credentials';
 
-import { useAuth } from '../../../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../../context/AuthContext';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 const db = getFirestore(app);

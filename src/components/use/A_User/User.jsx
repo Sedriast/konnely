@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { optionsData } from './scripts/optionsData';
 
-import { UserData } from './components/UserData';
 import { Option } from './components/Option';
+import { UserData } from './components/UserData';
 
 export function User() {
 	const [optionSelect, setOptionSelect] = useState(0);
