@@ -23,7 +23,8 @@
 /*Containers*/
 /*Master*/
 .themePanel {
-	height: -webkit-fill-available;
+	width: 40rem;
+	height: 15rem;
 
 	border-radius: 20px;
 	background: #68534d;
