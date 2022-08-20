@@ -32,15 +32,16 @@ export function User() {
 				<div className={st.menuLeft}>
 					{optionsData.map((option) => {
 						return (
-							<button
-								key={option.id}
-								className={st.optionST}
-								onClick={() => {
-									setOptionSelect(option.id);
-								}}
-							>
-								{option.icon}
-							</button>
+							<figure key={option.id} id={option.id} title={option.label} tooltip-dir="rigth">
+								<button
+									className={st.optionST}
+									onClick={() => {
+										setOptionSelect(option.id);
+									}}
+								>
+									{option.icon}
+								</button>
+							</figure>
 						);
 					})}
 				</div>

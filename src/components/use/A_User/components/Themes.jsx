@@ -37,9 +37,16 @@ export function Themes() {
 			<div className={st.themePanel}>
 				{themesData.map((option) => {
 					return (
-						<button key={option.themeId} className={st.theme} onMouseEnter={ca}>
-							<img alt="" href="" src={option.theme} id={option.themeId} onClick={c} />
-						</button>
+						<figure
+							key={option.themeId}
+							id={option.themeId}
+							title={option.name}
+							tooltip-dir="bottom"
+						>
+							<button className={st.theme} onMouseEnter={ca}>
+								<img alt="" href="" src={option.theme} id={option.themeId} onClick={c} />
+							</button>
+						</figure>
 					);
 				})}
 			</div>

@@ -95,7 +95,52 @@
 }
 /*Sub*/
 /*Button´s container*/
+figure {
+	position: relative;
+}
 
+figure:after {
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 5px;
+	color: #fff;
+	content: attr(title);
+	opacity: 0;
+	padding: 6px 12px;
+	position: absolute;
+	left: 110%;
+	top: 30px;
+	transition: all 0.25s ease;
+	visibility: hidden;
+	white-space: nowrap;
+}
+
+figure[tooltip-dir='left']:after {
+	left: auto;
+	right: 110%;
+}
+
+figure[tooltip-dir='bottom']:after,
+figure[tooltip-dir='top']:after {
+	left: 50%;
+	right: auto;
+
+	transform: translateX(-50%);
+}
+
+figure[tooltip-dir='bottom']:after {
+	bottom: auto;
+	top: 110%;
+}
+
+figure[tooltip-dir='top']:after {
+	bottom: 110%;
+	top: auto;
+}
+
+figure:hover:after {
+	opacity: 1;
+	visibility: visible;
+}
 /*Button´s container*/
 /*Input´s container*/
 

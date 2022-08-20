@@ -75,24 +75,28 @@ export function UserData() {
 				</div>
 				{/* Aqui estan los botones de la parte inferior de la informacion del usuario */}
 				<div className={st.btnP}>
-					<button
-						onClick={() => {
-							if (user) {
-								navigate(-1);
-							}
-						}}
-					>
-						🔙
-					</button>
-					<button
-						onClick={() => {
-							if (user) {
-								exit();
-							}
-						}}
-					>
-						📤
-					</button>
+					<figure id="btnBack" title="Atras" tooltip-dir="left">
+						<button
+							onClick={() => {
+								if (user) {
+									navigate(-1);
+								}
+							}}
+						>
+							🔙
+						</button>
+					</figure>
+					<figure id="btnBack" title="Salir" tooltip-dir="left">
+						<button
+							onClick={() => {
+								if (user) {
+									exit();
+								}
+							}}
+						>
+							📤
+						</button>
+					</figure>
 				</div>
 			</div>
 		</>
