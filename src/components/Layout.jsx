@@ -24,28 +24,22 @@ export function Layout() {
     const { user } = useAuth();
 
     useEffect(() => {
-        let u = {
-            uid: null,
-            photo: null,
-            displayName: null,
-            email: null,
-            rol: null,
-            theme: 0,
-        };
-
-        if (user !== null) {
+        if (user) {
+            let u = {};
             const getData = async () => {
                 const query_ = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
                 const querySnapshot = await getDocs(query_);
                 querySnapshot.forEach((doc) => {
                     u = doc.data();
                 });
+                document
+                    .getElementById('lay')
+                    .style.setProperty('background-image', `url(${themesData[u.theme].theme})`);
+                document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
+                document.getElementById('lay').style.setProperty('background-size', 'cover');
             };
             getData();
         }
-        document.getElementById('lay').style.setProperty('background-image', `url(${themesData[u.theme].theme})`);
-        document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
-        document.getElementById('lay').style.setProperty('background-size', 'cover');
     }, [user]);
 
     return (
