@@ -22,7 +22,16 @@
 
 /*Containers*/
 /*Master*/
+.panelList {
+	width: 100%;
+	height: 100%;
 
+	text-align: center;
+
+	background: #68534d;
+
+	border-radius: 20px;
+}
 /*Master*/
 /*Sub*/
 
