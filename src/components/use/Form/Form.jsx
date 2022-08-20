@@ -6,11 +6,11 @@ import sendICO from '../../img/send.png';
 import { useState } from 'react';
 import { DropdownForm } from './DropdownForm';
 import { DropdownDate } from './DropdownDate';
-import { Modal } from '../Tools/Modals/Modal';
-import { Inputs } from '../Tools/Inputs/Inputs';
-import { Lists } from '../Tools/List/Lists.jsx';
-import { Buttons } from '../Tools/Buttons/Buttons';
-import { useModal } from '../Tools/Modals/useModal';
+import { Modal } from '../0-GeneralComp/Modals/Modal';
+import { Inputs } from '../0-GeneralComp/Inputs/Inputs';
+import { Lists } from '../0-GeneralComp/List/Lists.jsx';
+import { Buttons } from '../0-GeneralComp/Buttons/Buttons';
+import { useModal } from '../0-GeneralComp/Modals/useModal';
 import { SearchAll } from '../../firebase/funtions/SearchAll';
 import { addImageAndInfo } from '../../firebase/funtions/AddInformation';
 

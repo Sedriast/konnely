@@ -1,5 +1,5 @@
 import swal from 'sweetalert';
-import st from '../style/UserData.module.css';
+import st from '../styles/UserData.module.css';
 import app from '../../../firebase/credentials';
 
 import { useEffect, useState } from 'react';

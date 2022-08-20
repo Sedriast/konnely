@@ -1,4 +1,4 @@
-import st from '../style/ListUsers.module.css';
+import st from '../styles/ListUsers.module.css';
 
 export function ListUsers() {
 	return (

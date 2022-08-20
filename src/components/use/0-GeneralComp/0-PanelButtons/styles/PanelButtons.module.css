@@ -25,7 +25,8 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 5.5%;
+	width: 6rem;
+	height: 100%;
 
 	background: linear-gradient(
 		270deg,
@@ -34,11 +35,12 @@
 		rgba(0, 0, 0, 0) 64.71%
 	);
 
+	padding-right: 5px;
+
 	display: flex;
 	flex-direction: column;
-	flex-wrap: nowrap;
-	align-items: flex-end;
 	justify-content: center;
+	align-items: center;
 }
 /*Master*/
 /*Sub*/
@@ -51,27 +53,36 @@
 
 /*Input´s container*/
 /*Oters*/
-.op {
-	width: 80px;
-	height: 80px;
+.option {
+	width: 4rem;
+	height: 4rem;
 
-	margin: 5px;
+	font-size: 40px;
 
+	right: 0;
 	border-radius: 100%;
+	margin: 0.4rem 0;
 
-	background: rgba(0, 0, 0, 0.25);
+	background: #2aab83;
+	border: 2px solid black;
 
 	overflow: hidden;
 }
-.op:hover {
+
+.option:hover {
+	width: 5rem;
+	height: 5rem;
+
+	font-size: 50px;
+
+	right: 0;
+	border: 2px solid black;
+}
+.option:hover img {
 	width: 90px;
 	height: 90px;
 }
-.op:hover img {
-	width: 90px;
-	height: 90px;
-}
-.op img {
+.option img {
 	width: 80px;
 	height: 80px;
 }

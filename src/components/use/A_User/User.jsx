@@ -1,4 +1,4 @@
-import st from './style/User.module.css';
+import st from './styles/User.module.css';
 
 import { useEffect, useState } from 'react';
 

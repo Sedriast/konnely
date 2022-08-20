@@ -1,5 +1,5 @@
 import swal from 'sweetalert';
-import st from '../style/Theme.module.css';
+import st from '../styles/Theme.module.css';
 
 import { useState } from 'react';
 import { themesData } from '../scripts/customThemeData';
