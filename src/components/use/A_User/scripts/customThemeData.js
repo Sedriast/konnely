@@ -5,17 +5,17 @@ import down from '../../../img/Miniatures/down.png';
 export const themesData = [
 	{
 		themeId: 0,
-		name: 'caryWhite',
+		name: 'Cary White',
 		theme: top,
 	},
 	{
 		themeId: 1,
-		name: 'caryDarpa',
+		name: 'Cary Darpa',
 		theme: mid,
 	},
 	{
 		themeId: 2,
-		name: 'darWine',
+		name: 'Darpa Wine',
 		theme: down,
 	},
 ];
