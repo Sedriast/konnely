@@ -33,6 +33,7 @@ export function UserData() {
 
         if (user) {
             getData();
+            console.log(user);
         }
     }, [user]);
 
@@ -58,12 +59,12 @@ export function UserData() {
     return (
         <>
             <div className={st.profilePhoto}>
-                <img src={userData.photo} alt='' href='' />
+                <img src={user.photoURL} alt='' href='' />
             </div>
             <div className={st.userData}>
                 <div className={st.paragraph}>
-                    <div>{userData.displayName}</div>
-                    <div>{userData.email}</div>
+                    <div>{user.displayName}</div>
+                    <div>{user.email}</div>
                     <p>
                         Otros datos del usuario
                         <br />
