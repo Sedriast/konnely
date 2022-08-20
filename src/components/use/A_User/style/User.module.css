@@ -31,74 +31,60 @@
 
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
+}
+.menuLeft {
+	width: 4rem;
+	height: 100%;
+
+	background: linear-gradient(90deg, #000000 0.65%, rgba(0, 0, 0, 0) 100%);
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+.panel {
+	width: 60%;
+	height: 80%;
+}
+.menuRigth {
+	width: 18rem;
+	height: 100%;
+
+	background: linear-gradient(
+		270deg,
+		#000000 0%,
+		rgba(0, 0, 0, 0.5) 23.96%,
+		rgba(0, 0, 0, 0.5) 86.98%,
+		rgba(0, 0, 0, 0) 100%
+	);
 }
 /*Master*/
 /*Sub*/
-.b {
-	background: rgba(0, 0, 0, 0.25);
+.optionST {
+	width: 100%;
+	height: 3.5rem;
 
-	width: 80px;
-	height: 80px;
+	font-size: 45px;
+	cursor: pointer;
 
-	border-radius: 0 100% 100% 0;
+	background: linear-gradient(270deg, #ffffff 42.31%, rgba(255, 255, 255, 0) 100%);
+
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	justify-content: center;
+
+	border: 2px solid #000000;
+	border-width: 2px 4px 2px 0px;
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 0px 75px 75px 0px;
+
+	margin: 0.5rem 0;
 
 	overflow: hidden;
-	margin: 6px 0;
-}
-.b img {
-	width: 80px;
-	height: 80px;
-}
-.i {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: flex-start;
-	align-items: flex-start;
-
-	width: 350px;
-	height: 350px;
-
-	padding: 1rem;
-}
-.i img {
-	width: 350px;
-
-	animation-duration: 1s;
-	animation-name: a1;
-}
-.p {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-
-	width: 350px;
-
-	padding: 1rem;
-
-	animation-duration: 3s;
-	animation-name: a2;
-}
-.panelInf {
-	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-
-	height: 100%;
-
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-
-	right: 0;
-}
-.panelB {
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
-}
-.panelCom {
-	width: 100%;
-	margin: 2rem;
 }
 /*Sub*/
 /*Button´s container*/
@@ -126,24 +112,7 @@
 /*Resizing */
 
 /*Animations*/
-@keyframes a1 {
-	from {
-		width: 80px;
-	}
-	to {
-		width: 100%;
-	}
-}
-@keyframes a2 {
-	from {
-		width: 2px;
-		height: fit-content;
-	}
-	to {
-		width: 100%;
-		height: fit-content;
-	}
-}
+
 /*Animations*/
 
 /*Other´s Components*/

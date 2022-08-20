@@ -3,25 +3,18 @@ import swal from 'sweetalert';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Inputs } from '../../Tools/Inputs/Inputs';
-import { Buttons } from '../../Tools/Buttons/Buttons';
 import { ValidationErrors } from '../scripts/ValidationErrors';
 import { useAuth } from '../../../../context/AuthContext';
 
 export function Register() {
 	const { signup, logout } = useAuth();
 	const navigate = useNavigate();
-	const [newuser, setUser] = useState({
+	const newuser = useState({
 		userName: '',
 		email: '',
 		password: '',
 		phone: '',
 	});
-
-	function handleChange(e) {
-		const { name, value } = e.target;
-		setUser({ ...newuser, [name]: value });
-	}
 
 	const handleSubmit = async (e) => {
 		try {
@@ -39,7 +32,7 @@ export function Register() {
 				buttons: 'Aceptar',
 			}).then((respuesta) => {
 				if (respuesta || !respuesta) {
-					cerrarSesion();
+					exit();
 					document.getElementById('formulario').reset();
 					navigate('/#tab1');
 				}
@@ -49,7 +42,7 @@ export function Register() {
 			console.log(error);
 		}
 	};
-	const cerrarSesion = async () => {
+	const exit = async () => {
 		await logout();
 	};
 	return (

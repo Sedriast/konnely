@@ -1,0 +1,127 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.profilePhoto {
+	width: 10rem;
+	height: 10rem;
+
+	margin: 1rem auto;
+
+	background: url(../../../img/Z-ProfilePhoto.jpg);
+	background-size: cover;
+
+	border-radius: 100%;
+	border: 1px solid black;
+
+	overflow: hidden;
+}
+.profilePhoto img {
+	width: 10rem;
+	height: 10rem;
+}
+.userData {
+	width: 80%;
+	height: 20rem;
+
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.btnP {
+	width: 80%;
+
+	display: flex;
+	justify-content: space-evenly;
+}
+.btnP button {
+	width: 3rem;
+	height: 3rem;
+
+	background: rgb(54, 54, 54);
+
+	cursor: pointer;
+
+	font-size: 25px;
+
+	border-radius: 100%;
+	border: 2px solid black;
+}
+.paragraph {
+	width: 80%;
+	height: 55%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.paragraph div {
+	font-size: 15px;
+}
+.paragraph p {
+	text-align: center;
+}
+/*Master*/
+/*Sub*/
+
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+
+/*Master*/
+/*Other´s Components */

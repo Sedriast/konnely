@@ -1,22 +1,54 @@
 import st from './style/User.module.css';
 
-import { Options } from './components/Options';
+import { useEffect, useState } from 'react';
 
-export function User(props) {
+import { optionsData } from './scripts/optionsData';
+
+import { UserData } from './components/UserData';
+import { Option } from './components/Option';
+
+export function User() {
+	const [optionSelect, setOptionSelect] = useState(0);
+
+	useEffect(() => {
+		async function setSelect() {
+			if (optionSelect !== null) {
+				try {
+					const recuest = optionSelect;
+					if (recuest === String) {
+						console.log(recuest);
+					}
+				} catch (error) {
+					console.log();
+				}
+			}
+		}
+		setSelect();
+	}, [optionSelect]);
+
 	return (
 		<>
 			<div className={st.container}>
 				<div className={st.menuLeft}>
-					<Options />
+					{optionsData.map((option) => {
+						return (
+							<button
+								key={option.id}
+								className={st.optionST}
+								onClick={() => {
+									setOptionSelect(option.id);
+								}}
+							>
+								{option.icon}
+							</button>
+						);
+					})}
 				</div>
-				<div className={st.panelInf}>
-					<div className={st.i}>
-						<img src={props.src_} alt="" href="" />
-					</div>
-					<div className={st.p}>
-						<h1>{props.title}</h1>
-						<h3>{props.label}</h3>
-					</div>
+				<div className={st.panel}>
+					<Option op={optionSelect}></Option>
+				</div>
+				<div className={st.menuRigth}>
+					<UserData />
 				</div>
 			</div>
 		</>

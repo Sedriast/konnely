@@ -15,42 +15,17 @@
 
 
 
-
-
 */
 
 /*Const*/
-
 /*Const*/
 
 /*Containers*/
 /*Master*/
-.container {
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	align-content: space-around;
 
-	margin: 2rem;
-}
 /*Master*/
 /*Sub*/
-.ops {
-	display: flex;
-	justify-content: center;
-	align-items: center;
 
-	width: 350px;
-	height: 250px;
-
-	border: 2px black solid;
-	border-radius: 100%;
-	overflow: hidden;
-}
-.ops img {
-	width: 370px;
-	height: 270px;
-}
 /*Sub*/
 /*Button´s container*/
 

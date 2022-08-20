@@ -1,24 +1,17 @@
-function conf() {}
-function users() {}
-function custome() {}
-
 export const optionsData = [
 	{
-		id: 1,
+		id: 0,
 		icon: '⚙️',
 		label: 'Configuración',
-		path: conf,
+	},
+	{
+		id: 1,
+		icon: '🚻',
+		label: 'Administrar usuarios',
 	},
 	{
 		id: 2,
-		icon: '🚻',
-		label: 'Administrar usuarios',
-		path: users,
-	},
-	{
-		id: 3,
 		icon: '🎨',
 		label: 'Temas',
-		path: custome,
 	},
 ];

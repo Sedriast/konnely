@@ -22,24 +22,33 @@
 
 /*Containers*/
 /*Master*/
+.themePanel {
+	height: -webkit-fill-available;
 
+	border-radius: 20px;
+	background: #68534d;
+
+	display: flex;
+	align-content: center;
+	justify-content: space-evenly;
+	align-items: center;
+}
 /*Master*/
 /*Sub*/
-.op {
-	width: 80px;
-	height: 80px;
-
-	margin: 5px;
+.theme {
+	width: 10rem;
+	height: 10rem;
 
 	border-radius: 100%;
+	border: 1px solid black;
 
-	background: rgba(0, 0, 0, 0.25);
+	cursor: pointer;
 
 	overflow: hidden;
 }
-.op:hover {
-	width: 90px;
-	height: 90px;
+.theme img {
+	width: 10rem;
+	height: 10rem;
 }
 /*Sub*/
 /*Button´s container*/
