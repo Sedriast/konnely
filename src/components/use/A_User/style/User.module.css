@@ -51,18 +51,18 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	animation: optSel;
+	animation-duration: 1s;
 }
 .menuRigth {
 	width: 18rem;
 	height: 100%;
 
-	background: linear-gradient(
-		270deg,
-		#000000 0%,
-		rgba(0, 0, 0, 0.5) 23.96%,
-		rgba(0, 0, 0, 0.5) 86.98%,
-		rgba(0, 0, 0, 0) 100%
-	);
+	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+
+	animation: userInfo;
+	animation-duration: 1s;
 }
 /*Master*/
 /*Sub*/
@@ -89,6 +89,9 @@
 	margin: 0.5rem 0;
 
 	overflow: hidden;
+
+	animation: btnOP;
+	animation-duration: 500ms;
 }
 /*Sub*/
 /*Button´s container*/
@@ -116,7 +119,30 @@
 /*Resizing */
 
 /*Animations*/
-
+@keyframes btnOP {
+	from {
+		width: 0px;
+	}
+	to {
+		width: 100%;
+	}
+}
+@keyframes optSel {
+	from {
+		opacity: 0%;
+	}
+	to {
+		opacity: 100%;
+	}
+}
+@keyframes userInfo {
+	from {
+		width: 4rem;
+	}
+	to {
+		width: 18rem;
+	}
+}
 /*Animations*/
 
 /*Other´s Components*/
