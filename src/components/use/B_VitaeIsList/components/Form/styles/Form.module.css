@@ -40,6 +40,9 @@
 	flex-direction: column;
 
 	border-radius: 20px;
+
+	visibility: visible;
+	transition: visibility 500ms ease-in;
 }
 
 /*Master*/

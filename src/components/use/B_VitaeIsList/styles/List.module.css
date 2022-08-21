@@ -32,6 +32,9 @@
 	padding: 0 3rem 0 0.5rem;
 
 	border-radius: 20px;
+
+	visibility: visible;
+	transition: visibility 500ms ease-in;
 }
 
 /*Master*/

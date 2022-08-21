@@ -1,18 +1,19 @@
+import st from './styles/Form.module.css';
 import swal from 'sweetalert';
 import Webcam from 'react-webcam';
-import st from './css/Form.module.css';
-import sendICO from '../../img/send.png';
+
+import { useModal } from '../../../0-GeneralComp/0-Modals/useModal';
+import { SearchAll } from '../../../../firebase/funtions/SearchAll';
+import { addImageAndInfo } from '../../../../firebase/funtions/AddInformation';
 
 import { useState } from 'react';
+
 import { DropdownForm } from './DropdownForm';
 import { DropdownDate } from './DropdownDate';
-import { Modal } from '../0-GeneralComp/Modals/Modal';
-import { Inputs } from '../0-GeneralComp/Inputs/Inputs';
-import { Lists } from '../0-GeneralComp/List/Lists.jsx';
-import { Buttons } from '../0-GeneralComp/Buttons/Buttons';
-import { useModal } from '../0-GeneralComp/Modals/useModal';
-import { SearchAll } from '../../firebase/funtions/SearchAll';
-import { addImageAndInfo } from '../../firebase/funtions/AddInformation';
+import { Modal } from '../../../0-GeneralComp/0-Modals/Modal';
+import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
+import { Lists } from '../../../0-GeneralComp/F-List/Lists.jsx';
+import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
 
 export function Form() {
 	const genero = ['Género', 'Hembra', 'Macho'];
@@ -185,7 +186,7 @@ export function Form() {
 					{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
 				</div>
 				<div className={st.submit}>
-					<Buttons click_={handleSubmit} link_="/list" icon_={sendICO} />
+					<Buttons click_={handleSubmit} link_="/list" />
 				</div>
 			</div>
 		</>
