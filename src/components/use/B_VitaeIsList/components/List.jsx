@@ -24,52 +24,54 @@ export function List() {
 	}
 	return (
 		<>
-			{' '}
 			<div className={st.container}>
-				<div className={st.pa}>
-					<div className={st.fil}>
-						<div className={st.opFb} id="b">
+				<div className={st.panelSearchBar}>
+					<div className={st.filter}>
+						<figure title="Filtrar machos" tooltip-dir="bottom">
 							<button
+								id="b"
+								className={st.male}
 								onClick={() => {
 									setAuxsearch_('Macho');
 									setSearch_('');
 									setFilter('Macho');
 								}}
-							></button>
-						</div>
-						<div className={st.opFr} id="r">
+							/>
+						</figure>
+						<figure title="Filtrar hembras" tooltip-dir="bottom">
 							<button
+								id="r"
+								className={st.female}
 								onClick={() => {
 									setAuxsearch_('Hembra');
 									setSearch_('');
 									setFilter('Hembra');
 								}}
-							></button>
-						</div>
+							/>
+						</figure>
 					</div>
-					<div className={st.se}>
-						<input value={parametro} placeholder="Buscar" onChange={handleChange}></input>
-						<button
-							onClick={() => {
-								if (auxsearch_ === '') {
-									swal({
-										title: 'Digite un identificador válido.',
-										icon: 'error',
-										button: 'aceptar',
-									});
-								} else {
-									setSearch_(auxsearch_);
-									setFilter('');
-									setParametro('');
-									setAuxsearch_('init');
-								}
-							}}
-						>
-							🔎
-						</button>
-					</div>
+					<input value={parametro} placeholder="Buscar" onChange={handleChange} />
+					<button
+						className={st.btnSearch}
+						onClick={() => {
+							if (auxsearch_ === '') {
+								swal({
+									title: 'Digite un identificador válido.',
+									icon: 'error',
+									button: 'aceptar',
+								});
+							} else {
+								setSearch_(auxsearch_);
+								setFilter('');
+								setParametro('');
+								setAuxsearch_('init');
+							}
+						}}
+					>
+						🔎
+					</button>
 				</div>
-				<div className={st.panel}>
+				<div className={st.panelCards}>
 					{filter === 'Hembra' && (
 						<DropdownList coleccion="conejos" parametro="genero" busqueda={filter} />
 					)}

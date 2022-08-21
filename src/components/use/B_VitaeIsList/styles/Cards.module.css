@@ -34,14 +34,57 @@
 			#f4fec1 93.75%,
 			rgba(0, 0, 0, 0.5) 100%
 		);
+	background-size: cover;
 
 	cursor: pointer;
 	border-radius: 20px;
 	border: 1px solid black;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	overflow: hidden;
+}
+.container:hover .rabitImg {
+	width: 8rem;
+	height: 80%;
+
+	margin: 0 1.5rem;
+
+	opacity: 100%;
+
+	transition: opacity 300ms ease-in;
 }
 /*Master*/
 /*Sub*/
+.idName {
+	width: 40%;
 
+	padding: 2px;
+	font-size: 1.5rem;
+
+	overflow: hidden;
+}
+.parag {
+	width: 50%;
+	overflow: hidden;
+}
+.parag div {
+	font-size: 0.5rem;
+}
+.parag div h1 {
+	font-size: 0.8rem;
+	color: rgba(0, 0, 0, 0.75);
+}
+.rabitImg {
+	width: 0%;
+	height: 0%;
+
+	opacity: 0%;
+
+	border-radius: 100%;
+}
 /*Sub*/
 /*Button´s container*/
 

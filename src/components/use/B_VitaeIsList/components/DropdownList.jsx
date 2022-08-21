@@ -21,8 +21,14 @@ export function DropdownList(props) {
 	}, [resultado, props.parametro]);
 	return (
 		<>
-			{resultado.map((a, index) => (
-				<Cards key={index} />
+			{resultado.map((item, index) => (
+				<Cards
+					key={index}
+					rabitID={item.id}
+					rabitImage={item.url}
+					rabitGen={item.genero}
+					rabitRaza={item.raza}
+				/>
 			))}
 		</>
 	);

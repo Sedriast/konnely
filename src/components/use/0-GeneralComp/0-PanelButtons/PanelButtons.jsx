@@ -19,7 +19,7 @@ export function PanelButtons(props) {
 				<div className={st.optPrincipal}>
 					{btnData.map((options) => {
 						return (
-							<figure key={options.id} id={options.id} title={options.label} tooltip-dir="rigth">
+							<figure key={options.id} id={options.id} title={options.label} tooltip-dir="left">
 								<Link to={options.path}>
 									<button className={st.option}>{options.icon}</button>
 								</Link>

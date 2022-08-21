@@ -26,17 +26,17 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 100vw;
+	width: 100%;
 	height: 100%;
 
-	margin: 5.5rem 2rem 2rem 2rem;
+	margin: 2rem;
 
 	border-radius: 20px;
 }
 
 /*Master*/
 /*Sub*/
-.panel {
+.panelCards {
 	display: grid;
 
 	grid-template-columns: repeat(auto-fill, 220px);
@@ -44,7 +44,7 @@
 	grid-column-gap: 15px;
 	grid-row-gap: 30px;
 
-	padding: 3rem 2rem;
+	padding: 2rem;
 
 	justify-content: center;
 	align-items: center;
@@ -53,113 +53,59 @@
 	overflow-x: hidden;
 }
 
-.fil {
+.panelSearchBar {
 	display: flex;
 
-	width: 180px;
+	margin: 2rem 8rem;
+}
+.panelSearchBar input {
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+	padding: 0 1rem;
 
-	padding-bottom: 1rem;
-	flex-direction: row;
-	justify-content: space-between;
-}
+	width: auto;
 
-.fil h1 {
-	font-size: 10px;
-}
-
-.opFr {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	border: solid 1px black;
-	background: rgb(255, 150, 150);
-}
-
-.opFr button {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	background: transparent;
-}
-.opFg {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	border: solid 1px black;
-
-	background: rgb(150, 255, 150);
-}
-.opFg button {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	background: transparent;
-}
-.opFb {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	border: solid 1px black;
-
-	background: rgb(150, 150, 255);
-}
-.opFb button {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	background: transparent;
-}
-.opFw {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	border: solid 1px black;
-	background: rgb(255, 255, 255);
-}
-.opFw button {
-	width: 40px;
-	height: 40px;
-	border-radius: 100%;
-	background: transparent;
-}
-.se {
-	width: calc(100% - 180px);
-	height: 40px;
-	padding-bottom: 1rem;
-}
-.se button {
-	width: 40px;
-	height: 40px;
-	border-radius: 0 100% 100% 0;
-	border-right: 2px solid black;
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
-}
-.pa {
-	display: flex;
-	width: 100%;
-}
-
-.pa input {
-	height: 40px;
-	width: inherit;
-	margin-left: 1rem;
-	padding-left: 1rem;
-	border-top: 1px solid black;
 	border-left: 1px solid black;
+	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-
-	border-radius: 20px 0 0 20px;
 }
-
-@media (max-width: 850px) {
-	.pa {
-		width: 91%;
-	}
+.panelSearchBar input {
+	width: -webkit-fill-available;
 }
+.btnSearch {
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 
-#r {
-	background: rgb(255, 106, 106);
+	padding: 0 0.5rem;
+
+	cursor: pointer;
+
+	background: white;
+
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+.male {
+	width: 2rem;
+	height: 2rem;
+
+	margin: 0 0.5rem;
+
+	border-radius: 100%;
+	border: 1px solid black;
+}
+.female {
+	width: 2rem;
+	height: 2rem;
+
+	margin: 0 0.5rem;
+
+	border-radius: 100%;
+	border: 1px solid black;
+}
+.filter {
+	display: flex;
 }
 /*Sub*/
 /*Button´s container*/

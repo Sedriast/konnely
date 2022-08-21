@@ -25,7 +25,7 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 6rem;
+	width: 4rem;
 	height: 100%;
 
 	background: linear-gradient(
@@ -54,8 +54,8 @@
 /*Input´s container*/
 /*Oters*/
 .option {
-	width: 4rem;
-	height: 4rem;
+	width: 3rem;
+	height: 3rem;
 
 	font-size: 40px;
 
@@ -70,8 +70,8 @@
 }
 
 .option:hover {
-	width: 5rem;
-	height: 5rem;
+	width: 3.5rem;
+	height: 3.5rem;
 
 	font-size: 50px;
 
