@@ -40,6 +40,12 @@
 /*Master*/
 /*Sub*/
 .panelCards {
+	height: 80%;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.cards {
 	display: grid;
 
 	grid-template-columns: repeat(auto-fill, 220px);
@@ -49,9 +55,6 @@
 
 	justify-content: center;
 	align-items: center;
-
-	overflow-y: scroll;
-	overflow-x: hidden;
 }
 
 .panelSearchBar {

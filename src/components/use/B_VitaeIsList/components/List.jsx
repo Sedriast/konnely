@@ -26,6 +26,26 @@ export function List() {
 		<>
 			<div className={st.container}>
 				<div className={st.panelSearchBar}>
+					<input value={parametro} placeholder="Buscar" onChange={handleChange} />
+					<button
+						className={st.btnSearch}
+						onClick={() => {
+							if (auxsearch_ === '') {
+								swal({
+									title: 'Digite un identificador válido.',
+									icon: 'error',
+									button: 'aceptar',
+								});
+							} else {
+								setSearch_(auxsearch_);
+								setFilter('');
+								setParametro('');
+								setAuxsearch_('init');
+							}
+						}}
+					>
+						🔎
+					</button>
 					<div className={st.filter}>
 						<figure title="Filtrar machos" tooltip-dir="bottom">
 							<button
@@ -50,37 +70,19 @@ export function List() {
 							/>
 						</figure>
 					</div>
-					<input value={parametro} placeholder="Buscar" onChange={handleChange} />
-					<button
-						className={st.btnSearch}
-						onClick={() => {
-							if (auxsearch_ === '') {
-								swal({
-									title: 'Digite un identificador válido.',
-									icon: 'error',
-									button: 'aceptar',
-								});
-							} else {
-								setSearch_(auxsearch_);
-								setFilter('');
-								setParametro('');
-								setAuxsearch_('init');
-							}
-						}}
-					>
-						🔎
-					</button>
 				</div>
 				<div className={st.panelCards}>
-					{filter === 'Hembra' && (
-						<DropdownList coleccion="conejos" parametro="genero" busqueda={filter} />
-					)}
-					{filter === 'Macho' && (
-						<DropdownList coleccion="conejos" parametro="genero" busqueda={filter} />
-					)}
-					{auxsearch_ === search.vieja && (
-						<DropdownList coleccion="conejos" parametro="id" busqueda={search_} />
-					)}
+					<div className={st.cards}>
+						{filter === 'Hembra' && (
+							<DropdownList coleccion="conejos" parametro="genero" busqueda={filter} />
+						)}
+						{filter === 'Macho' && (
+							<DropdownList coleccion="conejos" parametro="genero" busqueda={filter} />
+						)}
+						{auxsearch_ === search.vieja && (
+							<DropdownList coleccion="conejos" parametro="id" busqueda={search_} />
+						)}
+					</div>
 				</div>
 			</div>
 		</>
