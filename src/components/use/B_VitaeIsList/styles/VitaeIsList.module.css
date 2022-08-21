@@ -72,7 +72,10 @@
 	animation: btnOPBack;
 	animation-duration: 500ms;
 }
-
+.opSel_ {
+	width: 80%;
+	height: 95%;
+}
 /*Master*/
 /*Sub*/
 

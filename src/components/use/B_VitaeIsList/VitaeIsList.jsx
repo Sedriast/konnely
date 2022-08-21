@@ -32,7 +32,9 @@ export function ViewIsList() {
 					</figure>
 				)}
 			</div>
-			<Option op={optionSelect} />
+			<div className={st.opSel_}>
+				<Option op={optionSelect} />
+			</div>
 		</>
 	);
 }
