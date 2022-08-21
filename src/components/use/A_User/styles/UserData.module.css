@@ -31,7 +31,7 @@
 
 	margin: 1rem;
 
-	background: url(../../../img/Z-ProfilePhoto.jpg);
+	background: white;
 	background-size: cover;
 
 	border-radius: 100%;
@@ -39,14 +39,12 @@
 
 	overflow: hidden;
 
-	animation-delay: 200ms;
-
 	animation: userPhoto;
 	animation-duration: 1s;
 }
 .profilePhoto img {
-	width: 10rem;
-	height: 10rem;
+	width: -webkit-fill-available;
+	height: -webkit-fill-available;
 }
 .userData {
 	width: 80%;
