@@ -2,11 +2,12 @@ import st from './styles/Form.module.css';
 import swal from 'sweetalert';
 import Webcam from 'react-webcam';
 
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
+
 import { useModal } from '../../../0-GeneralComp/0-Modals/useModal';
 import { SearchAll } from '../../../../firebase/funtions/SearchAll';
 import { addImageAndInfo } from '../../../../firebase/funtions/AddInformation';
-
-import { useState } from 'react';
 
 import { DropdownForm } from './DropdownForm';
 import { DropdownDate } from './DropdownDate';
@@ -97,96 +98,102 @@ export function Form() {
 	return (
 		<>
 			<div className={st.container}>
-				<div className={st.panelImage}>
-					<Inputs
-						type_="file"
-						HaveImage={(e) => {
-							setImage(e);
-							if (e === null) {
-								setImage_(null);
-								setAuxImage_(null);
-							}
-						}}
-						Preview={image_}
-					/>
-					<Modal isOpen={isOpenModal} closeModal={closeModal}>
-						{isOpenModal && (
-							<>
-								<Webcam audio={false} height={250} width={330} screenshotFormat="image/jpeg">
-									{({ getScreenshot }) => (
-										<button
-											onClick={() => {
-												const imageSrc = getScreenshot();
-												setAuxImage_(imageSrc);
-											}}
-										>
-											Capturar foto
-										</button>
-									)}
-								</Webcam>
-								<img src={auxImage_} alt=""></img>
-								<button
-									onClick={() => {
-										setImage_(auxImage_);
-										closeModal();
-									}}
-								>
-									Aceptar
-								</button>
-							</>
-						)}
-					</Modal>
-				</div>
-				<div className={st.btnC}>
-					<Buttons text_="Cámara" click_={openModal} link_="#" />
-				</div>
-				<div className={st.panel}>
-					<Inputs
-						leyend="Identificador"
-						name_="id"
-						placeholder_="Ingrese el identificador"
-						type_="text"
-						handleChange={handleChange}
-					/>
+				<div className={st.panelContainer}>
+					<div className={st.panelImage}>
+						<Inputs
+							type_="file"
+							HaveImage={(e) => {
+								setImage(e);
+								if (e === null) {
+									setImage_(null);
+									setAuxImage_(null);
+								}
+							}}
+							Preview={image_}
+						/>
+						<Modal isOpen={isOpenModal} closeModal={closeModal}>
+							{isOpenModal && (
+								<>
+									<Webcam audio={false} height={250} width={330} screenshotFormat="image/jpeg">
+										{({ getScreenshot }) => (
+											<button
+												onClick={() => {
+													const imageSrc = getScreenshot();
+													setAuxImage_(imageSrc);
+												}}
+											>
+												Capturar foto
+											</button>
+										)}
+									</Webcam>
+									<img src={auxImage_} alt=""></img>
+									<button
+										onClick={() => {
+											setImage_(auxImage_);
+											closeModal();
+										}}
+									>
+										Aceptar
+									</button>
+								</>
+							)}
+						</Modal>
+					</div>
+					<div className={st.btnC}>
+						<Buttons text_="Cámara" click_={openModal} link_="#" />
+					</div>
+					<div className={st.panel}>
+						<Inputs
+							leyend="Identificador"
+							name_="id"
+							placeholder_="Ingrese el identificador"
+							type_="text"
+							handleChange={handleChange}
+						/>
 
-					<Lists leyend="Género" name_="genero" listar={genero} handleChange={handleChange} />
+						<Lists leyend="Género" name_="genero" listar={genero} handleChange={handleChange} />
 
-					<Lists
-						leyend="Raza"
-						name_="raza"
-						listar={SearchAll('raza').props.children}
-						handleChange={handleChange}
-					/>
-					<Inputs
-						leyend="Porcentaje de pureza"
-						name_="porcentaje"
-						placeholder_="Procentaje de pureza"
-						type_="text"
-						handleChange={handleChange}
-					/>
-					<Lists
-						leyend="Concepción"
-						name_="concepcion"
-						listar={concepcion}
-						handleChange={handleChange}
-					/>
-					<Inputs
-						leyend="Fecha de nacimiento"
-						name_="nacimiento"
-						type_="date"
-						handleChange={handleChange}
-					/>
-					{date && <DropdownDate date={date} handleChange={handleChange} />}
-					<Lists
-						leyend="Motivo de ingreso"
-						name_="motivo"
-						listar={SearchAll('motivo').props.children}
-						handleChange={handleChange}
-					/>
-					{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
-				</div>
-				<div className={st.submit}>
-					<Buttons click_={handleSubmit} link_="/list" />
+						<Lists
+							leyend="Raza"
+							name_="raza"
+							listar={SearchAll('raza').props.children}
+							handleChange={handleChange}
+						/>
+						<Inputs
+							leyend="Porcentaje de pureza"
+							name_="porcentaje"
+							placeholder_="Procentaje de pureza"
+							type_="text"
+							handleChange={handleChange}
+						/>
+						<Lists
+							leyend="Concepción"
+							name_="concepcion"
+							listar={concepcion}
+							handleChange={handleChange}
+						/>
+						<Inputs
+							leyend="Fecha de nacimiento"
+							name_="nacimiento"
+							type_="date"
+							handleChange={handleChange}
+						/>
+						{date && <DropdownDate date={date} handleChange={handleChange} />}
+						<Lists
+							leyend="Motivo de ingreso"
+							name_="motivo"
+							listar={SearchAll('motivo').props.children}
+							handleChange={handleChange}
+						/>
+						{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
+					</div>
+					<figure title="Crear Hoja de vida" tooltip-dir="up">
+						<Link to="/vite">
+							<button id="b" className={st.submit} onClick={handleSubmit}>
+								🗳️
+							</button>
+						</Link>
+					</figure>
 				</div>
 			</div>
 		</>

@@ -15,7 +15,7 @@ import { User } from './use/A_User/User';
 import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
 // import { Form } from './use/Form/Form';
 // import { Invoice } from './use/Invoice/Invoice';
-// import { Curriculum } from './use/Vitae/Curriculum';
+import { Curriculum } from './use/Vitae/Curriculum';
 import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
 
 const db = getFirestore(app);
@@ -80,9 +80,9 @@ export function Layout() {
 								</>
 							}
 						/>
-						{/* <Route
+						<Route
 							exact
-							path="/data"
+							path="/vitae"
 							element={
 								<>
 									<ProtectedRoute>
@@ -92,6 +92,7 @@ export function Layout() {
 								</>
 							}
 						/>
+						{/* 
 						<Route
 							exact
 							path="/home"
@@ -103,20 +104,7 @@ export function Layout() {
 								</>
 							}
 						/>
-						<Route
-							exact
-							path="/form"
-							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-										<div className={st.form}>
-											<Form />
-										</div>
-									</ProtectedRoute>
-								</>
-							}
-						/>
+
 						<Route
 							exact
 							path="/invoice"

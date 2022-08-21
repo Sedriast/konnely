@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { Lifecycle } from './com/Lifecycle';
 import { useNavigate } from 'react-router-dom';
 import { basicData, reproData } from './dataProv';
-import { Buttons } from '../0-GeneralComp/Buttons/Buttons';
+import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
 import { QueriesSimple_ } from '../../firebase/funtions/QueriesSimple_';
 
 export function Vitae() {

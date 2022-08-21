@@ -1,7 +1,7 @@
 import st from '../css/Com.module.css';
 
 import { Item } from './Item';
-import { Buttons } from '../../0-GeneralComp/Buttons/Buttons';
+import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
 
 export function Items() {
 	return (
