@@ -33,17 +33,18 @@ input [type='file' i] {
 	-webkit-appearance: none;
 }
 ::-webkit-scrollbar:vertical {
-	width: 1px;
+	width: 0.4rem;
 }
 ::-webkit-scrollbar-button:increment,
 ::-webkit-scrollbar-button {
 	display: none;
 }
 ::-webkit-scrollbar:horizontal {
-	height: 5px;
+	height: 3rem;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: rgba(255, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 1px solid black;
 	border-radius: 20px;
 	border: none;
 }
