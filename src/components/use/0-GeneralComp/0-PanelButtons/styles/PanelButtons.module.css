@@ -28,12 +28,7 @@
 	width: 4rem;
 	height: 100%;
 
-	background: linear-gradient(
-		270deg,
-		rgba(0, 0, 0, 0.75) 0%,
-		rgba(0, 0, 0, 0.5) 24.23%,
-		rgba(0, 0, 0, 0) 64.71%
-	);
+	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
 
 	padding-right: 5px;
 
@@ -69,7 +64,7 @@
 	width: 3.5rem;
 	height: 3.5rem;
 
-	font-size: 50px;
+	font-size: 30px;
 
 	right: 0;
 	border: 2px solid black;
