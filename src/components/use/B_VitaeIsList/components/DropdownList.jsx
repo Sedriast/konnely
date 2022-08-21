@@ -1,7 +1,7 @@
 import swal from 'sweetalert';
 
 import { useEffect } from 'react';
-// import { Cards } from '../../0-GeneralComp/Cards/Cards';
+import { Cards } from './Cards';
 import { RealTime } from '../../../firebase/funtions/RealTime';
 
 export function DropdownList(props) {
@@ -21,18 +21,9 @@ export function DropdownList(props) {
 	}, [resultado, props.parametro]);
 	return (
 		<>
-			{/* {resultado.map((a, index) => (
-				<Cards
-					key={index}
-					id_={index}
-					cGp={a.grupo}
-					url={a.url}
-					rabitDataName={a.id}
-					data={a}
-					data1={a.raza}
-					data2={a.genero}
-				/>
-			))} */}
+			{resultado.map((a, index) => (
+				<Cards key={index} />
+			))}
 		</>
 	);
 }
