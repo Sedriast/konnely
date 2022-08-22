@@ -1,4 +1,4 @@
-import st from '../css/Com.module.css';
+import st from '../styles/Com.module.css';
 
 import { Item } from './Item';
 import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';

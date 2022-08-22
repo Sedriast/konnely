@@ -1,5 +1,5 @@
 import ed from '../../img/ed.png';
-import st from './css/Vitae.module.css';
+import st from './styles/Vitae.module.css';
 
 import { useEffect } from 'react';
 import { Lifecycle } from './com/Lifecycle';

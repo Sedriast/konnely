@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen }) {
 	return (
 		<>
-			<Link to="/users">
+			<Link to="/vitae">
 				<button className={st.container}>
 					<img className={st.rabitImg} src={rabitImage} alt="" />
 					<div className={st.idName}>{rabitID}</div>
