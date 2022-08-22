@@ -50,7 +50,7 @@
 /*Oters*/
 .optPrincipal {
 	display: flex;
-	height: inherit;
+	height: 80%;
 	justify-content: center;
 	flex-direction: column;
 }
@@ -76,7 +76,7 @@
 	border: 2px solid black;
 }
 .opUser {
-	display: inline-table;
+	display: flex;
 	width: 5rem;
 	height: 5rem;
 	margin: 6px;

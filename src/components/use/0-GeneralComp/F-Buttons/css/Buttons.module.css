@@ -27,15 +27,35 @@
 .container {
 	display: flex;
 	background: transparent;
+
+	width: 100%;
+	height: 100%;
 }
-.container img {
-	position: absolute;
-}
+
 .container a {
 	text-decoration: none;
 }
+
 /*Master*/
 /*Sub*/
+.fig {
+	width: 100%;
+	height: 100%;
+}
+
+.icon_ {
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.link {
+	width: 100%;
+	height: 100%;
+}
 
 /*Sub*/
 /*Button´s container*/

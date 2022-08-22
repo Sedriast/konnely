@@ -35,6 +35,7 @@
 	visibility: visible;
 	transition: visibility 500ms ease-in;
 }
+
 .btnNew {
 	width: 100%;
 	height: 3.5rem;
@@ -52,6 +53,7 @@
 	animation: btnOP;
 	animation-duration: 500ms;
 }
+
 .btnBack {
 	width: 3rem;
 	height: 3rem;
@@ -67,15 +69,17 @@
 	cursor: pointer;
 
 	margin-left: 1rem;
-	margin-bottom: 25rem;
+	margin-bottom: 70vh;
 
 	animation: btnOPBack;
 	animation-duration: 500ms;
 }
+
 .opSel_ {
 	width: 80%;
 	height: 95%;
 }
+
 /*Master*/
 /*Sub*/
 
@@ -109,18 +113,22 @@
 	from {
 		width: 0px;
 	}
+
 	to {
 		width: 100%;
 	}
 }
+
 @keyframes btnOPBack {
 	from {
 		margin-bottom: 0rem;
 	}
+
 	to {
-		margin-bottom: 25rem;
+		margin-bottom: 70vh;
 	}
 }
+
 /*Animations*/
 
 /*Other´s Components*/

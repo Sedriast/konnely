@@ -16,6 +16,7 @@ export const lifecycleChild = (props) => {
     let cebaDate = new Date(birth + 10562400000);
     let monthCeba = cebaDate.getMonth() + 1;
     const ceba_ = cebaDate.getFullYear() + '-' + monthCeba + '-' + cebaDate.getDate();
+
     function peso(posicion) {
         if (props?.lifecycle[posicion].peso === 'Sin datos') {
             return props?.lifecycle[posicion].peso;

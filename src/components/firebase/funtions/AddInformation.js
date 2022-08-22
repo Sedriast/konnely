@@ -36,6 +36,7 @@ export const addImageAndInfo = (props) => {
             delete datos.peso;
             await addDoc(collection(db, 'conejos'), datos);
         } catch (error) {
+            console.log(error.message);
             swal({
                 title: 'Ha ocurrido un error con su registro',
                 icon: 'error',

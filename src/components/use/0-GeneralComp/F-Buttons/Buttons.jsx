@@ -14,20 +14,16 @@ import st from './css/Buttons.module.css';
 
 import { Link } from 'react-router-dom';
 
-export function Buttons(props) {
+export function Buttons({ tittle, id_, click_, change_, name_, link_, text_, icon_ }) {
     return (
         <>
-            <button
-                id={props.id_}
-                className={st.container}
-                onClick={props.click_}
-                onChange={props.change_}
-                name={props.name_}>
-                <Link to={props.link_}>
-                    <img src={props.icon_} onClick={props.cliLoa_} href='' alt='' />
-                    <h1 id={props.id_}>{props.text_}</h1>
-                </Link>
-            </button>
+            <figure className={st.fig} title={tittle} tooltip-dir='up'>
+                <button id={id_} className={st.container} onClick={click_} onChange={change_} name={name_}>
+                    <Link className={st.link} to={link_}>
+                        <div className={st.icon_}>{icon_}</div>
+                    </Link>
+                </button>
+            </figure>
         </>
     );
 }

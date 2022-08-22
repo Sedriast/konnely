@@ -28,8 +28,7 @@
 .container {
 	height: 92%;
 
-	background: rgba(255, 255, 255, 0.01);
-	opacity: 0.9;
+	background: radial-gradient(130% 100% at 50% 0%, rgba(104, 86, 77, 0) 10%, rgba(104, 83, 77, 0.25) 25%, #68534d 40.96%);
 
 	margin: 0 0.5rem;
 
@@ -42,25 +41,30 @@
 
 	overflow-y: scroll;
 }
+
 .panelContainer {
-	background: radial-gradient(
-		130% 100% at 50% 0%,
-		rgba(104, 86, 77, 0) 11.13%,
-		rgba(104, 83, 77, 0.25) 31.1%,
-		#68534d 40.96%
-	);
+	height: fit-content;
+	width: initial;
 
 	padding: 0 2rem;
 
 	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
 	align-content: stretch;
+	justify-content: space-between;
 	align-items: center;
+	flex-direction: column;
 }
 
 /*Master*/
 /*Sub*/
+.panelInpImg {
+	display: flex;
+	align-content: stretch;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+
 .btnC {
 	width: 100px;
 	height: 100px;
@@ -175,13 +179,11 @@
 }
 
 .cam button {
-	background: radial-gradient(
-		216.67% 100% at 50% 0%,
-		rgba(0, 0, 0, 0) 26.55%,
-		rgba(0, 0, 0, 0.5) 34.9%,
-		rgba(0, 0, 0, 0.5) 56.52%,
-		rgba(0, 0, 0, 0.75) 100%
-	);
+	background: radial-gradient(216.67% 100% at 50% 0%,
+			rgba(0, 0, 0, 0) 26.55%,
+			rgba(0, 0, 0, 0.5) 34.9%,
+			rgba(0, 0, 0, 0.5) 56.52%,
+			rgba(0, 0, 0, 0.75) 100%);
 	position: relative;
 	bottom: 0;
 	height: 100px;
@@ -198,13 +200,15 @@
 	width: 4rem;
 	height: 4rem;
 
-	background: #d2d68d;
-
-	font-size: 2rem;
+	background: rgba(0, 0, 0, 0.75);
+	border: 0.2rem solid black;
+	border-radius: 100%;
 
 	margin: 2rem;
+}
 
-	border-radius: 100%;
+.submit div {
+	font-size: 2rem;
 }
 
 /*Master*/

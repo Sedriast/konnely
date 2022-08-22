@@ -1,6 +1,6 @@
 import st from './styles/Com.module.css';
 
-import { Vitae } from './Vitae';
+import { Vitae } from './components/Vitae/Vitae';
 import { useState } from 'react';
 import { Items } from './com/Items';
 
