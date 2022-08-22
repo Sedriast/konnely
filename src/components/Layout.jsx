@@ -13,9 +13,8 @@ import { Decorations } from './use/0-GeneralComp/A-Deco/Decorations';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { User } from './use/A_User/User';
 import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
-// import { Form } from './use/Form/Form';
 // import { Invoice } from './use/Invoice/Invoice';
-import { Curriculum } from './use/Vitae/Curriculum';
+import { Curriculum } from './use/C_DataView/Curriculum';
 import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
 
 const db = getFirestore(app);
@@ -113,7 +112,6 @@ export function Layout() {
 									<ProtectedRoute>
 										<PanelButtons />
 										<Invoice
-											clsName={st.invoice}
 											name="sadfadf"
 											nit="safasdfa"
 											email="sadfads@asdfasdfaf.com"
