@@ -1,5 +1,5 @@
 import st from '../styles/Com.module.css';
-import { tratamientos } from '../dataProv';
+import { tratamientos } from '../scripts/dataProv';
 
 export function Item() {
 	return (

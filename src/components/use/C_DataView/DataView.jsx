@@ -4,7 +4,7 @@ import { Vitae } from './components/Vitae/Vitae';
 import { useState } from 'react';
 import { Items } from './com/Items';
 
-export function Curriculum() {
+export function DataView() {
 	const [tab_, setTab_] = useState(false);
 	const select = () => setTab_(!tab_);
 	return (

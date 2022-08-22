@@ -26,11 +26,9 @@
 /*Master*/
 .container {
 	width: 6rem;
-	height: -webkit-fill-available;
+	height: 100%;
 
 	background: linear-gradient(270deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
-
-	padding-right: 5px;
 
 	display: flex;
 	flex-direction: column;

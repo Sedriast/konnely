@@ -1,5 +1,5 @@
 import st from '../styles/Com.module.css';
-import { lifecycleChild } from '../../Z-Dates/Dates';
+import { lifecycleChild } from '../../0-GeneralComp/0-Dates/Dates';
 
 export function Lifecycle(props) {
 	return (

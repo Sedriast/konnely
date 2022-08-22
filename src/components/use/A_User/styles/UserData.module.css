@@ -26,6 +26,8 @@
 /*Containers*/
 /*Master*/
 .profilePhoto {
+	position: relative;
+
 	width: 10rem;
 	height: 10rem;
 
@@ -58,7 +60,7 @@
 	align-items: center;
 
 	animation: textP;
-	animation-duration: 2s;
+	animation-duration: 5s;
 }
 .btnP {
 	width: 80%;
@@ -171,6 +173,8 @@ figure:hover:after {
 /*Animations*/
 @keyframes userPhoto {
 	from {
+		position: absolute;
+
 		width: 6rem;
 		height: 6rem;
 
