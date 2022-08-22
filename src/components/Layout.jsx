@@ -21,78 +21,78 @@ import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
 const db = getFirestore(app);
 
 export function Layout() {
-	const { user } = useAuth();
+    const { user } = useAuth();
 
-	useEffect(() => {
-		if (user) {
-			let u = {};
-			const getData = async () => {
-				const query_ = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
-				const querySnapshot = await getDocs(query_);
-				querySnapshot.forEach((doc) => {
-					u = doc.data();
-				});
-				document
-					.getElementById('lay')
-					.style.setProperty('background-image', `url(${themesData[u.theme].theme})`);
-				document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
-				document.getElementById('lay').style.setProperty('background-size', 'cover');
-			};
-			getData();
-		}
-	}, [user]);
+    useEffect(() => {
+        if (user) {
+            let u = {};
+            const getData = async () => {
+                const query_ = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
+                const querySnapshot = await getDocs(query_);
+                querySnapshot.forEach((doc) => {
+                    u = doc.data();
+                });
+                document
+                    .getElementById('lay')
+                    .style.setProperty('background-image', `url(${themesData[u.theme].theme})`);
+                document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
+                document.getElementById('lay').style.setProperty('background-size', 'cover');
+            };
+            getData();
+        }
+    }, [user]);
 
-	return (
-		<>
-			<div className={st.container} id="lay">
-				<Router>
-					<Routes>
-						<Route
-							exact
-							path="/"
-							element={
-								<div className={st.A_Login_Register}>
-									<Decorations />
-									<LoginRegister />
-								</div>
-							}
-						/>
-						<Route
-							exact
-							path="/users"
-							element={
-								<ProtectedRoute>
-									<User />
-								</ProtectedRoute>
-							}
-						/>
-						<Route
-							exact
-							path="/vitaeslist"
-							element={
-								<>
-									<ProtectedRoute>
-										<div className={st.B_ViewIsList}>
-											<ViewIsList />
-											<PanelButtons />
-										</div>
-									</ProtectedRoute>
-								</>
-							}
-						/>
-						<Route
-							exact
-							path="/vitae"
-							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-										<Curriculum />
-									</ProtectedRoute>
-								</>
-							}
-						/>
-						{/* 
+    return (
+        <>
+            <div className={st.container} id='lay'>
+                <Router>
+                    <Routes>
+                        <Route
+                            exact
+                            path='/'
+                            element={
+                                <div className={st.A_Login_Register}>
+                                    <Decorations />
+                                    <LoginRegister />
+                                </div>
+                            }
+                        />
+                        <Route
+                            exact
+                            path='/users'
+                            element={
+                                <ProtectedRoute>
+                                    <User />
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            exact
+                            path='/vitaeslist'
+                            element={
+                                <>
+                                    <ProtectedRoute>
+                                        <div className={st.B_ViewIsList}>
+                                            <ViewIsList />
+                                            <PanelButtons />
+                                        </div>
+                                    </ProtectedRoute>
+                                </>
+                            }
+                        />
+                        <Route
+                            exact
+                            path='/vitae'
+                            element={
+                                <>
+                                    <ProtectedRoute>
+                                        <PanelButtons />
+                                        <Curriculum />
+                                    </ProtectedRoute>
+                                </>
+                            }
+                        />
+                        {/*
 						<Route
 							exact
 							path="/home"
@@ -124,9 +124,9 @@ export function Layout() {
 								</>
 							}
 						/> */}
-					</Routes>
-				</Router>
-			</div>
-		</>
-	);
+                    </Routes>
+                </Router>
+            </div>
+        </>
+    );
 }
