@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 import { optionsDataUser, optionsDataAdmin } from './scripts/optionsData';
 
 import { Option } from './components/Option';
-import { UserData } from './components/UserData';
+import { UserData } from './components/UserData/UserData';
 import { useAuth } from '../../../context/AuthContext';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
@@ -14,7 +14,7 @@ const db = getFirestore(app);
 
 export function User() {
 	const { user } = useAuth();
-	const [optionSelect, setOptionSelect] = useState(1);
+	const [optionSelect, setOptionSelect] = useState(0);
 	const [rol, setRol] = useState(null);
 
 	useEffect(() => {

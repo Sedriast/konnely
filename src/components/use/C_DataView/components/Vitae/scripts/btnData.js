@@ -1,20 +1,23 @@
 export const btnData = [
 	{
 		id: 0,
-		icon: '✏️',
-		path: '/analitics',
-		label: 'Estadisticas',
+		iconText: '✏️   Datos basicos',
+		path: '/formEdit',
+		label: 'Editar datos basicos',
+		cls: 'formEdit',
 	},
 	{
 		id: 1,
-		icon: '✏️',
-		path: '/vitaeslist',
-		label: 'Hojas de vida',
+		iconText: '✏️   Ciclo de vida',
+		path: '/lifeCycle',
+		label: 'Editar ciclo de vida',
+		cls: 'lifeCycle',
 	},
 	{
 		id: 2,
-		icon: '✏️',
-		path: '/audit',
-		label: 'Auditoria',
+		iconText: 'Partos/Montas',
+		path: '/reproductionCycle',
+		label: 'Ver ciclo reproductivo',
+		cls: 'reproductionCycle',
 	},
 ];

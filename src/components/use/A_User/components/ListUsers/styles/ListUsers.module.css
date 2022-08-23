@@ -22,15 +22,29 @@
 
 /*Containers*/
 /*Master*/
-.panelList {
-	width: 100%;
-	height: 100%;
+.container {
+	width: 65vw;
+	height: 80vh;
 
-	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.panelList {
+	width: 80%;
+	height: fit-content;
+
+	padding: 2rem;
 
 	background: #68534d;
 
+	border: 1px solid black;
 	border-radius: 20px;
+
+	display: flex;
 }
 /*Master*/
 /*Sub*/

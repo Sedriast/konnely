@@ -1,8 +1,8 @@
-import st from './css/Buttons.module.css';
+import st from './styles/Buttons.module.css';
 
 import { Link } from 'react-router-dom';
 
-export function Buttons({ label, btnId, btnClick, btnChange, btnName, path, btnIconText }) {
+export function Buttons({ label, btnId, btnClick, btnChange, btnName, route, btnIconText }) {
 	return (
 		<>
 			<figure className={st.fig} title={label} tooltip-dir="up">
@@ -13,7 +13,7 @@ export function Buttons({ label, btnId, btnClick, btnChange, btnName, path, btnI
 					onClick={btnClick}
 					onChange={btnChange}
 				>
-					<Link className={st.link} to={path}>
+					<Link className={st.link} to={route}>
 						<div className={st.icon_}>{btnIconText}</div>
 					</Link>
 				</button>

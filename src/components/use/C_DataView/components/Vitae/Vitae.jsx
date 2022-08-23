@@ -1,56 +1,52 @@
 import st from './styles/Vitae.module.css';
 
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useEffect } from 'react';
+// import { useNavigate } from 'react-router-dom';
 
-import { Lifecycle } from '../../com/Lifecycle';
-import { basicData, reproData } from '../../scripts/dataProv';
+import { LifeCycle } from './components/LifeCycle';
+import { RabbitStadisticsView } from './components/RabbitStadisticsView';
+import { EditButtons } from './components/EditButtons';
 
-import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
-import { RabbitDataView } from './components/RabbitDataView';
-import { RabbitStadistics } from './components/RabbitStadistics';
-import { RealTime } from '../../../../firebase/funtions/RealTime';
+// import { RabbitDataView } from './components/RabbitDataView';
 
-export function Vitae() {
-	const navigate = useNavigate();
+// import { RealTime } from '../../../../firebase/funtions/RealTime';
 
-	function rabbitData() {
-		if (basicData.id === null) {
-			return null;
-		} else {
-			return RealTime({
-				coleccion: 'conejos',
-				parametro: 'id',
-				busqueda: basicData.id,
-			}).props.children[0];
-		}
-	}
-	useEffect(() => {
-		if (basicData.id === null) {
-			navigate('/vitaeslist');
-			return null;
-		}
-	}, [navigate]);
+export function Vitae({ rabbitData }) {
+	// const navigate = useNavigate();
+
+	// function rabbitData() {
+	// 	if (basicData.id === null) {
+	// 		return null;
+	// 	} else {
+	// 		return RealTime({
+	// 			coleccion: 'conejos',
+	// 			parametro: 'id',
+	// 			busqueda: basicData.id,
+	// 		}).props.children[0];
+	// 	}
+	// }
+	// useEffect(() => {
+	// 	if (basicData.id === null) {
+	// 		navigate('/vitaeslist');
+	// 		return null;
+	// 	}
+	// }, [navigate]);
 
 	return (
 		<>
 			<div className={st.container}>
-				<RabbitDataView rabbitData={rabbitData} />
+				<div className={st.panel}>
+					{/* <RabbitDataView rabbitData={reproData} />*/}
 
-				<Lifecycle id={rabbitData()} />
+					<LifeCycle id={rabbitData} />
 
-				<RabbitStadistics reproData={reproData} />
+					<hr />
 
-				<div className={st.btnEdits}>
-					<div className={st.basicData}>
-						<Buttons path="" btnIconText="✏️ Datos básicos" />
-					</div>
-					<div className={st.lifeCi}>
-						<Buttons path="" btnIconText="✏️ Ciclo de vida" />
-					</div>
-					<div className={st.nPartos}>
-						<Buttons path="#" btnIconText={'Ciclo de reproductico: ' + reproData.partos} />
-					</div>
+					<RabbitStadisticsView />
+
+					<hr />
+
+					<EditButtons />
 				</div>
 			</div>
 		</>

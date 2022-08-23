@@ -1,0 +1,50 @@
+.container {
+	width: 95%;
+
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.rejected {
+	display: flex;
+	align-items: center;
+
+	padding: 0 1rem;
+	margin: 1rem 0;
+
+	height: 2rem;
+
+	background: linear-gradient(90deg, #f2fcc6 65.1%, #000056 88.54%);
+
+	border: 1px solid black;
+	border-radius: 20px;
+}
+.death {
+	display: flex;
+	align-items: center;
+
+	padding: 0 1rem;
+	margin: 1rem 0;
+
+	height: 2rem;
+
+	background: linear-gradient(90deg, #f2fcc6 72.13%, #535353 85.94%);
+
+	border: 1px solid black;
+	border-radius: 20px;
+}
+.life {
+	display: flex;
+	align-items: center;
+
+	padding: 0 1rem;
+	margin: 1rem 0;
+
+	height: 2rem;
+
+	background: linear-gradient(90deg, #f2fcc6 72.13%, #00ff00 85.94%);
+
+	border: 1px solid black;
+	border-radius: 20px;
+}

@@ -94,18 +94,6 @@ export function Layout() {
 						{/*
 						<Route
 							exact
-							path="/home"
-							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-									</ProtectedRoute>
-								</>
-							}
-						/>
-
-						<Route
-							exact
 							path="/invoice"
 							element={
 								<>
