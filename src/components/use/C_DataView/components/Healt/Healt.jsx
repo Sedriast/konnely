@@ -1,9 +1,10 @@
 import st from '../styles/Com.module.css';
+import { tratamientos } from '../../../scripts/dataProv';
 
-import { Item } from './Item';
+import { Item } from './components/Item';
 import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
 
-export function Items() {
+export function Healt() {
 	return (
 		<>
 			<div className={st.conItems}>

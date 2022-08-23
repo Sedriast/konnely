@@ -192,7 +192,7 @@ export function Form() {
 						{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
 					</div>
 					<div className={st.submit}>
-						<Buttons label="Enviar" btnClick={handleSubmit} route="/vitae" btnIconText="🗳️" />
+						<Buttons label="Enviar" btnClick={handleSubmit} route="/user" btnIconText="🗳️" />
 					</div>
 				</div>
 			</div>

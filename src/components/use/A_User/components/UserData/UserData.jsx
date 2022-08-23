@@ -75,15 +75,15 @@ export function UserData() {
 				</div>
 				{/* Aqui estan los botones de la parte inferior de la informacion del usuario */}
 				<div className={st.btnP}>
-					<figure id="btnBack" title="Atras" tooltip-dir="left">
+					<figure id="btnBack" title="Página principal" tooltip-dir="left">
 						<button
 							onClick={() => {
 								if (user) {
-									navigate(-1);
+									navigate('/vitaeslist');
 								}
 							}}
 						>
-							🔙
+							🛖
 						</button>
 					</figure>
 					<figure id="btnBack" title="Salir" tooltip-dir="left">

@@ -1,6 +1,6 @@
 import swal from 'sweetalert';
 import Webcam from 'react-webcam';
-import st from './styles/Form.module.css';
+import st from './styles/EditRabbitData.module.css';
 
 import { useState } from 'react';
 
@@ -16,7 +16,7 @@ import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
 import { Lists } from '../../../0-GeneralComp/F-List/Lists.jsx';
 import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
 
-export function Form() {
+export function EditRabbitData() {
 	const genero = ['Género', 'Hembra', 'Macho'];
 	const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
 	const [date, setDate] = useState();

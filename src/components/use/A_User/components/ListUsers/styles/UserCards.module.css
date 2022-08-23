@@ -25,10 +25,10 @@
 	border-radius: 0.5rem;
 	border: 1px solid black;
 
-	overflow: hidden;
-}
-.btnEdit div {
 	text-align: center;
 	background: #f1fbc2;
 	font-size: 1.5rem;
+}
+.btnEdit div {
+	border-radius: 0.5rem;
 }

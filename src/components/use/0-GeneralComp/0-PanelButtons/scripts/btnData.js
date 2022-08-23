@@ -3,7 +3,7 @@ export const btnData = [
 		id: 0,
 		icon: '🎢',
 		path: '/analitics',
-		label: 'Estadisticas',
+		label: 'Estadísticas',
 	},
 	{
 		id: 1,
@@ -15,6 +15,6 @@ export const btnData = [
 		id: 2,
 		icon: '📃',
 		path: '/audit',
-		label: 'Auditoria',
+		label: 'Auditoría',
 	},
 ];

@@ -2,10 +2,19 @@ import st from './styles/Buttons.module.css';
 
 import { Link } from 'react-router-dom';
 
-export function Buttons({ label, btnId, btnClick, btnChange, btnName, route, btnIconText }) {
+export function Buttons({
+	direction,
+	label,
+	btnId,
+	btnClick,
+	btnChange,
+	btnName,
+	route,
+	btnIconText,
+}) {
 	return (
 		<>
-			<figure className={st.fig} title={label} tooltip-dir="up">
+			<figure className={st.fig} title={label} tooltip-dir={direction !== '' ? direction : 'rigth'}>
 				<button
 					id={btnId}
 					name={btnName}

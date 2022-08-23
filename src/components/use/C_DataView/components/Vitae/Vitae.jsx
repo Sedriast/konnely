@@ -36,7 +36,7 @@ export function Vitae({ rabbitData }) {
 		<>
 			<div className={st.container}>
 				<div className={st.panel}>
-					<RabbitDataView rabbitData={rabbitData} />
+					{/* <RabbitDataView rabbitData={rabbitData} /> */}
 
 					<hr />
 

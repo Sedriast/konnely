@@ -1,7 +1,6 @@
 import st from '../styles/Com.module.css';
-import { tratamientos } from '../../../scripts/dataProv';
 
-export function Item() {
+export function Item({ treatments }) {
 	return (
 		<>
 			{tratamientos.map((item, index) => {
