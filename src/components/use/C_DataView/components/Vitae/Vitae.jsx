@@ -7,7 +7,7 @@ import { LifeCycle } from './components/LifeCycle';
 import { RabbitStadisticsView } from './components/RabbitStadisticsView';
 import { EditButtons } from './components/EditButtons';
 
-// import { RabbitDataView } from './components/RabbitDataView';
+import { RabbitDataView } from './components/RabbitDataView';
 
 // import { RealTime } from '../../../../firebase/funtions/RealTime';
 
@@ -36,7 +36,9 @@ export function Vitae({ rabbitData }) {
 		<>
 			<div className={st.container}>
 				<div className={st.panel}>
-					{/* <RabbitDataView rabbitData={reproData} />*/}
+					<RabbitDataView rabbitData={rabbitData} />
+
+					<hr />
 
 					<LifeCycle id={rabbitData} />
 

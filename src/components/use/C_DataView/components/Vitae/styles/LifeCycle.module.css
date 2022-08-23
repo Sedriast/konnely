@@ -1,20 +1,17 @@
 .container {
-	width: 80%;
-	height: 190px;
-
-	padding: 0 1rem;
-
+	width: 90%;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+.panel {
 	display: flex;
-	flex-direction: row;
-	align-content: space-around;
-	flex-wrap: nowrap;
-
-	overflow-y: hidden;
-	overflow-x: scroll;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 }
 .panelStage {
-	height: 11.5;
-	width: 7rem;
+	height: fit-content;
+	width: 175px;
 
 	margin: 0.5rem;
 	padding: 1rem;

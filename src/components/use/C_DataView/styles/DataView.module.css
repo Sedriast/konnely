@@ -1,15 +1,16 @@
 .container {
-	display: flex;
-
 	width: 100%;
 	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	align-content: center;
 }
 .leftMenu {
 	width: 5rem;
 	height: 100%;
 
 	background: linear-gradient(90deg, #000000 0.65%, rgba(0, 0, 0, 0) 100%);
-	padding-bottom: 5rem;
 
 	display: flex;
 	flex-direction: column;
@@ -55,15 +56,6 @@
 	margin-left: 0.5rem;
 }
 .opSel_ {
-	width: inherit;
-	height: inherit;
-
-	padding: 0 2rem;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	overflow-y: scroll;
-	overflow-x: hidden;
+	width: 85%;
+	height: 90%;
 }

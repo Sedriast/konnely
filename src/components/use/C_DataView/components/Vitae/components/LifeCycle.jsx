@@ -6,11 +6,11 @@ export function LifeCycle({ stageId }) {
 		<>
 			<div className={st.container}>
 				{JSON.stringify(stageId) !== '{}' ? (
-					<>
+					<div className={st.panel}>
 						{lifecycleChild(stageId).map((items, index) => {
 							return (
 								<div key={index} className={st.panelStage}>
-									<p>
+									<div>
 										{items.etapa}
 										<br />
 										<br />
@@ -21,11 +21,11 @@ export function LifeCycle({ stageId }) {
 										Fecha de registro:
 										<br />
 										<div>{items.fecha}</div>
-									</p>
+									</div>
 								</div>
 							);
 						})}
-					</>
+					</div>
 				) : (
 					<></>
 				)}
