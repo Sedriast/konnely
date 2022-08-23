@@ -17,6 +17,7 @@ import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
 import { DataView } from './use/C_DataView/DataView';
 import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
 import { EditUserData } from './use/F-EditUserData/EditUserData';
+import { EditRabbitData } from './use/F-EditRabbitData/EditRabbitData';
 
 const db = getFirestore(app);
 
@@ -100,6 +101,18 @@ export function Layout() {
 									<ProtectedRoute>
 										<PanelButtons />
 										<EditUserData />
+									</ProtectedRoute>
+								</>
+							}
+						/>
+						<Route
+							exact
+							path="/formEdit"
+							element={
+								<>
+									<ProtectedRoute>
+										<PanelButtons />
+										<EditRabbitData />
 									</ProtectedRoute>
 								</>
 							}

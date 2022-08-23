@@ -7,7 +7,7 @@ import { LifeCycle } from './components/LifeCycle';
 import { RabbitStadisticsView } from './components/RabbitStadisticsView';
 import { EditButtons } from './components/EditButtons';
 
-import { RabbitDataView } from './components/RabbitDataView';
+// import { RabbitDataView } from './components/RabbitDataView';
 
 // import { RealTime } from '../../../../firebase/funtions/RealTime';
 
