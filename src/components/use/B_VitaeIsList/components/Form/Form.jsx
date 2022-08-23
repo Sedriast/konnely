@@ -142,7 +142,13 @@ export function Form() {
 							</Modal>
 						</div>
 						<div className={st.btnC}>
-							<Buttons icon_="Cámara" click_={openModal} link_="#" />
+							<Buttons
+								direction="bottom"
+								label="Cámara"
+								btnIconText="📷"
+								btnClick={openModal}
+								route="#"
+							/>
 						</div>
 					</div>
 

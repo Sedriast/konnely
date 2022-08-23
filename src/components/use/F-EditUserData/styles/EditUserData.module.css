@@ -8,6 +8,7 @@
 	align-content: center;
 }
 .container_ {
+	width: 85%;
 	height: 92%;
 
 	background: radial-gradient(
@@ -17,7 +18,7 @@
 		#68534d 40.96%
 	);
 
-	margin: 0 0.5rem;
+	margin: 0 2rem;
 
 	border-width: 0px 2px 4px 2px;
 	border-style: solid;
