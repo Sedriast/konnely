@@ -28,7 +28,12 @@
 .container {
 	height: 92%;
 
-	background: radial-gradient(130% 100% at 50% 0%, rgba(104, 86, 77, 0) 10%, rgba(104, 83, 77, 0.25) 25%, #68534d 40.96%);
+	background: radial-gradient(
+		130% 100% at 50% 0%,
+		rgba(104, 86, 77, 0) 10%,
+		rgba(104, 83, 77, 0.25) 25%,
+		#68534d 40.96%
+	);
 
 	margin: 0 0.5rem;
 
@@ -41,7 +46,9 @@
 
 	overflow-y: scroll;
 }
-
+.panelInpImg {
+	display: contents;
+}
 .panelContainer {
 	height: fit-content;
 	width: initial;
@@ -66,10 +73,12 @@
 }
 
 .btnC {
-	width: 100px;
-	height: 100px;
+	width: 4rem;
+	height: 4rem;
+
 	border-radius: 0 0 100% 100%;
 	background: radial-gradient(127% 60% at 50% 0%, rgba(0, 0, 0, 0) 40%, rgb(255 255 255 / 90%) 50%);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -179,11 +188,13 @@
 }
 
 .cam button {
-	background: radial-gradient(216.67% 100% at 50% 0%,
-			rgba(0, 0, 0, 0) 26.55%,
-			rgba(0, 0, 0, 0.5) 34.9%,
-			rgba(0, 0, 0, 0.5) 56.52%,
-			rgba(0, 0, 0, 0.75) 100%);
+	background: radial-gradient(
+		216.67% 100% at 50% 0%,
+		rgba(0, 0, 0, 0) 26.55%,
+		rgba(0, 0, 0, 0.5) 34.9%,
+		rgba(0, 0, 0, 0.5) 56.52%,
+		rgba(0, 0, 0, 0.75) 100%
+	);
 	position: relative;
 	bottom: 0;
 	height: 100px;

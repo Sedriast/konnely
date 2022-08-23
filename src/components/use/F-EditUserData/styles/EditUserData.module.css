@@ -54,11 +54,12 @@
 	visibility: visible;
 	transition: visibility 500ms ease-in;
 }
+.panelInpImg {
+	display: contents;
+}
 .btnBack {
 	width: 3rem;
 	height: 3rem;
-
-	font-size: 30px;
 
 	background: rgba(0, 0, 0, 0.5);
 
@@ -72,4 +73,102 @@
 
 	margin-left: 1rem;
 	margin-bottom: 70vh;
+}
+.btnBack button a div {
+	font-size: 30px;
+}
+.panelImage {
+	width: 100%;
+	height: 250px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 5px;
+}
+
+.panelImage div {
+	width: 250px;
+	height: 250px;
+	margin: 1rem;
+
+	display: flex;
+	align-content: space-between;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.panelImage img {
+	width: 250px;
+	height: 250px;
+
+	padding: 0;
+
+	object-fit: cover;
+	border-radius: 100%;
+	border: 1px solid black;
+}
+
+.panelImage input {
+	width: 250px;
+	height: 250px;
+
+	border: 1px solid black;
+	border-radius: 100%;
+	padding: 0;
+}
+
+.panelImage input::before {
+	position: relative;
+	height: inherit;
+
+	background-color: white;
+	color: black;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	content: '+';
+	font-size: 75px;
+}
+.panel {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+.panel div {
+	width: 350px;
+}
+
+.cam button {
+	background: radial-gradient(
+		216.67% 100% at 50% 0%,
+		rgba(0, 0, 0, 0) 26.55%,
+		rgba(0, 0, 0, 0.5) 34.9%,
+		rgba(0, 0, 0, 0.5) 56.52%,
+		rgba(0, 0, 0, 0.75) 100%
+	);
+	position: relative;
+	bottom: 0;
+	height: 100px;
+	border-radius: 0 0 100% 100%;
+}
+
+.cam video {
+	border-radius: 100%;
+	position: relative;
+	top: 0;
+}
+.btnC {
+	width: 4rem;
+	height: 4rem;
+	border-radius: 0 0 100% 100%;
+	background: radial-gradient(127% 60% at 50% 0%, rgba(0, 0, 0, 0) 40%, rgb(255 255 255 / 90%) 50%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }

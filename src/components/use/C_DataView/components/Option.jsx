@@ -1,3 +1,4 @@
+import { Healt } from './Healt/Healt';
 import { Vitae } from './Vitae/Vitae';
 
 export function Option({ op, rabbitData, rabbitHealt }) {
@@ -5,7 +6,7 @@ export function Option({ op, rabbitData, rabbitHealt }) {
 		case 0:
 			return <Vitae />;
 		case 1:
-			return <></>;
+			return <Healt />;
 		default:
 			break;
 	}

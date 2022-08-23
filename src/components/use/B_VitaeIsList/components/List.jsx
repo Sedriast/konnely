@@ -56,7 +56,9 @@ export function List() {
 									setSearch_('');
 									setFilter('Macho');
 								}}
-							/>
+							>
+								♂️
+							</button>
 						</figure>
 						<figure title="Filtrar hembras" tooltip-dir="bottom">
 							<button
@@ -67,7 +69,9 @@ export function List() {
 									setSearch_('');
 									setFilter('Hembra');
 								}}
-							/>
+							>
+								♀️
+							</button>
 						</figure>
 					</div>
 				</div>

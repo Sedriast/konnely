@@ -1,5 +1,5 @@
-import st from '../styles/Form.module.css';
-import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
+import st from '../styles/EditRabbitData.module.css';
+import { Inputs } from '../../0-GeneralComp/F-Inputs/Inputs';
 
 export function DropdownForm(props) {
 	const motivo = props.motivo;

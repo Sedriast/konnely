@@ -1,9 +1,9 @@
-import st from '../styles/Com.module.css';
+import st from '../styles/Item.module.css';
 
-export function Item({ treatments }) {
+export function Item({ trataments }) {
 	return (
 		<>
-			{tratamientos.map((item, index) => {
+			{trataments.map((item, index) => {
 				return (
 					<button key={index} className={st.panelTrat}>
 						<div className={st.v}>
