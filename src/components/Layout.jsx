@@ -6,18 +6,18 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 import { useAuth } from '../context/AuthContext';
-import { themesData } from './use/A_User/scripts/customThemeData';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
+import { themesData } from './use/A_User/scripts/customThemeData';
 import { Decorations } from './use/0-GeneralComp/A-Deco/Decorations';
 
-import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { User } from './use/A_User/User';
-import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
 // import { Invoice } from './use/Invoice/Invoice';
 import { DataView } from './use/C_DataView/DataView';
-import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
+import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
 import { EditUserData } from './use/F-EditUserData/EditUserData';
+import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { EditRabbitData } from './use/F-EditRabbitData/EditRabbitData';
+import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
 
 const db = getFirestore(app);
 
