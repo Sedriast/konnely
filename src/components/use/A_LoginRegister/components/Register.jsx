@@ -59,12 +59,28 @@ export function Register() {
 						<input name="userName" type="text" />
 					</div>
 					<div className={st.inpCont}>
-						<h3>Correo electronico</h3>
-						<input name="email" type="email" />
+						<h3>Nombres</h3>
+						<input name="name" type="text" />
+					</div>
+					<div className={st.inpCont}>
+						<h3>Apellidos</h3>
+						<input name="lastName" type="text" />
+					</div>
+					<div className={st.inpCont}>
+						<h3>Id Intitucional</h3>
+						<input name="idIns" type="text" />
+					</div>
+					<div className={st.inpCont}>
+						<h3>Número telefónico</h3>
+						<input name="noTel" type="password" />
 					</div>
 					<div className={st.inpCont}>
 						<h3>Contraseña</h3>
 						<input name="password" type="password" />
+					</div>
+					<div className={st.inpCont}>
+						<h3>Correo electronico</h3>
+						<input name="email" type="email" />
 					</div>
 					<div className={st.submit}>
 						<button type="submit">Registrar</button>
