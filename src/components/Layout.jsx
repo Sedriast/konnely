@@ -117,6 +117,28 @@ export function Layout() {
 								</>
 							}
 						/>
+						<Route
+							exact
+							path="/analitics"
+							element={
+								<>
+									<ProtectedRoute>
+										<PanelButtons />
+									</ProtectedRoute>
+								</>
+							}
+						/>
+						<Route
+							exact
+							path="/audit"
+							element={
+								<>
+									<ProtectedRoute>
+										<PanelButtons />
+									</ProtectedRoute>
+								</>
+							}
+						/>
 						{/*
 						<Route
 							exact
