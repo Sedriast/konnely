@@ -10,7 +10,7 @@ import { Inputs } from '../0-GeneralComp/F-Inputs/Inputs';
 
 export function EditUserData({ dataUser }) {
     const [image, setImage] = useState(null);
-    // console.log(image);
+    console.log(image);
     const [image_, setImage_] = useState(null);
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
