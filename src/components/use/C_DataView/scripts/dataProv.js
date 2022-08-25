@@ -3,13 +3,6 @@ export const recuperar = (id) => {
 };
 export const basicData = {
     id: null,
-    raza: 'viena',
-    genero: 'femenino',
-    idPadre: '987654321',
-    idMadre: '369258147',
-    origen: 'Facatativa',
-    fechaConcepcion: '**-**-****',
-    porcentajePureza: '75% desconocido',
 };
 export const ciclo = [
     {

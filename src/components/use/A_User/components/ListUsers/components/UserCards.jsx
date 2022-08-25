@@ -1,6 +1,5 @@
-import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
 import st from '../styles/UserCards.module.css';
-
+import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
 export function UserCards({ userEmail, userId, userName }) {
     return (
         <div className={st.container}>
