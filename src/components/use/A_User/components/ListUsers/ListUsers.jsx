@@ -10,8 +10,8 @@ export function ListUsers() {
                 <div className={st.panelList}>
                     {data[0].uid !== null && (
                         <>
-                            {data.map((users) => (
-                                <UserCards userName={users.user} userEmail={users.email} />
+                            {data.map((users, index) => (
+                                <UserCards key={index} userName={users.user} userEmail={users.email} />
                             ))}
                         </>
                     )}
