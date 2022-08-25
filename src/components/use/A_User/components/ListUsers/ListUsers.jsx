@@ -1,21 +1,22 @@
-import { UserCards } from './components/UserCards';
 import st from './styles/ListUsers.module.css';
+import { UserCards } from './components/UserCards';
+import { SearchAll } from '../../../../firebase/funtions/SearchAll';
 
 export function ListUsers() {
-	return (
-		<>
-			<div className={st.container}>
-				<div className={st.panelList}>
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-					<UserCards userId="1076669813" userName="Sedriast" userEmail="sedriast@gmail.com" />
-				</div>
-			</div>
-		</>
-	);
+    const data = SearchAll('usuarios').props.children;
+    return (
+        <>
+            <div className={st.container}>
+                <div className={st.panelList}>
+                    {data[0].uid !== null && (
+                        <>
+                            {data.map((users) => (
+                                <UserCards userName={users.user} userEmail={users.email} />
+                            ))}
+                        </>
+                    )}
+                </div>
+            </div>
+        </>
+    );
 }

@@ -22,7 +22,6 @@ export function List() {
         setAuxsearch_(value);
         setParametro(value);
     }
-    console.log('hola');
     return (
         <>
             <div className={st.container}>

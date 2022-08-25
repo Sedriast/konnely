@@ -15,7 +15,7 @@ export const SearchAll = (props) => {
             concepcion: null,
             grupo: null,
             destete: null,
-            id: null,
+            uid: null,
             idMadre: null,
             idPadre: null,
             motivo: null,
