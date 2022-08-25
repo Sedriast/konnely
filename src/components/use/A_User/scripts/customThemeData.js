@@ -1,6 +1,6 @@
-import top from '../../../img/Miniatures/top.png';
-import mid from '../../../img/Miniatures/mid.png';
-import down from '../../../img/Miniatures/down.png';
+import top from '../../../img/Backgrounds/top.png';
+import mid from '../../../img/Backgrounds/mid.png';
+import down from '../../../img/Backgrounds/down.png';
 
 export const themesData = [
 	{
