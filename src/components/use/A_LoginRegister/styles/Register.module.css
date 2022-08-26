@@ -27,7 +27,7 @@
 .container {
 	width: 600px;
 
-	background: rgba(0, 0, 0, 0.9);
+	background: rgba(0, 0, 0, 0.85);
 
 	display: flex;
 	align-items: center;
