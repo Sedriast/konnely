@@ -29,8 +29,6 @@
 	padding: 2rem;
 	border-radius: 20px;
 
-	background: #68534d;
-
 	display: flex;
 	align-content: center;
 	justify-content: space-evenly;
@@ -44,7 +42,9 @@
 	height: 10rem;
 
 	border-radius: 100%;
-	border: 1px solid black;
+	border: 0.25rem solid black;
+
+	margin: 0.5rem;
 
 	cursor: pointer;
 

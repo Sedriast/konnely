@@ -2,10 +2,12 @@
 	width: 100%;
 	height: fit-content;
 
-	margin: 1rem;
-	padding: 1rem;
+	padding: 0 1rem;
+	margin: 0.5rem 0;
 
-	border: 1px solid black;
+	background: #f1fbc5;
+
+	border: 0.25rem solid black;
 	border-radius: 20px;
 
 	display: flex;
@@ -14,21 +16,22 @@
 	flex-wrap: wrap;
 }
 .mid {
-	margin: 2rem 0;
+	font-size: 15px;
+	margin: 0.5rem 0;
 }
 .btnEdit {
-	width: 3rem;
-	height: 3rem;
+	width: 2.5rem;
+	height: 2.5rem;
 
 	margin: 1rem;
 
-	border-radius: 0.5rem;
-	border: 1px solid black;
+	border-radius: 100%;
+	border: 2px solid black;
 
 	text-align: center;
-	background: #f1fbc2;
-	font-size: 1.5rem;
+
+	background: rgba(0, 0, 0, 0.5);
 }
-.btnEdit div {
-	border-radius: 0.5rem;
+.btnEdit button a div {
+	font-size: 1.2rem;
 }
