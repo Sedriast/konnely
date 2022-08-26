@@ -1,24 +1,24 @@
 import swal from 'sweetalert';
 import Webcam from 'react-webcam';
+import app from '../../firebase/credentials';
 import st from './styles/EditRabbitData.module.css';
 
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
+import { SearchAll } from '../../firebase/funtions/SearchAll';
 import { useModal } from '../0-GeneralComp/0-Modals/useModal';
 import { addImageAndInfo } from '../../firebase/funtions/AddInformation';
-import { recuperar } from '../C_DataView/scripts/dataProv';
-import { SearchAll } from '../../firebase/funtions/SearchAll';
-import { basicData, datos } from '../C_DataView/scripts/dataProv';
+import { recuperar, basicData, datos } from '../C_DataView/scripts/dataProv';
 
+import { Modal } from '../0-GeneralComp/0-Modals/Modal';
 import { DropdownForm } from './components/DropdownForm';
 import { DropdownDate } from './components/DropdownDate';
-import { Modal } from '../0-GeneralComp/0-Modals/Modal';
-import { Inputs } from '../0-GeneralComp/F-Inputs/Inputs';
 import { Lists } from '../0-GeneralComp/F-List/Lists.jsx';
+import { Inputs } from '../0-GeneralComp/F-Inputs/Inputs';
 import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
 import { collection, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
-import app from '../../firebase/credentials';
-import { useNavigate } from 'react-router-dom';
+
 const db = getFirestore(app);
 
 export function EditRabbitData() {
@@ -67,7 +67,6 @@ export function EditRabbitData() {
             setValues({ ...values, [name]: value });
         }
     }
-
     const handleSubmit = () => {
         addImageAndInfo({
             ...values,
@@ -103,16 +102,14 @@ export function EditRabbitData() {
         recuperar(values.id);
     };
     useEffect(() => {
-        if (basicData.id === null) {
-            navigate('/vitaeslist');
-            return null;
-        } else {
+        if (basicData.id !== null) {
             const q = query(collection(db, 'conejos'), where('id', '==', basicData.id));
             onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
+        } else {
+            navigate('/vitaeslist');
+            return null;
         }
     }, [navigate]);
-    console.log(data_[0]);
-
     return (
         <>
             {basicData.id !== null && (
@@ -191,7 +188,7 @@ export function EditRabbitData() {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value_={data_[0].porcentaje || 'Loading...'}
+                                value_={data_[0].porcentaje}
                                 leyend='Porcentaje de pureza'
                                 name_='porcentaje'
                                 placeholder_='Procentaje de pureza'

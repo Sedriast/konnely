@@ -88,7 +88,7 @@ export const tratamientos = [
 export const datos = [
     {
         name: 'Loading...',
-        url: 'Loading...',
+        url: null,
         genero: 'Loading...',
         raza: 'Loading...',
         concepcion: 'Loading...',
