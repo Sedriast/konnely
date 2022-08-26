@@ -65,13 +65,13 @@
 		rgba(0, 0, 0, 0) 100%
 	);
 
-	animation: userInfo;
-	animation-duration: 1s;
-
 	display: flex;
 	align-content: stretch;
 	flex-wrap: wrap;
 	justify-content: center;
+
+	animation: userInfo;
+	animation-duration: 1s;
 }
 /*Master*/
 /*Sub*/

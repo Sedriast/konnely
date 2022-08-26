@@ -9,11 +9,11 @@ import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
 import { Inputs } from '../0-GeneralComp/F-Inputs/Inputs';
 
 export function EditUserData({ dataUser }) {
-    const [image, setImage] = useState(null);
-    console.log(image);
-    const [image_, setImage_] = useState(null);
-    const [auxImage_, setAuxImage_] = useState(null);
-    const [isOpenModal, openModal, closeModal] = useModal(false);
+	const [image, setImage] = useState(null);
+	console.log(image);
+	const [image_, setImage_] = useState(null);
+	const [auxImage_, setAuxImage_] = useState(null);
+	const [isOpenModal, openModal, closeModal] = useModal(false);
 
 	return (
 		<div className={st.container}>
@@ -75,6 +75,45 @@ export function EditUserData({ dataUser }) {
 							/>
 						</div>
 					</div>
+					<form
+						className={st.panelContainer_}
+						onSubmit={(e) => {
+							e.preventDefault();
+							// handleSubmit({ email: e.target.email.value, password: e.target.password.value });
+						}}
+					>
+						<div className={st.inpCont}>
+							<h3>Nombre de usuario</h3>
+							<input name="userName" type="text" />
+						</div>
+						<div className={st.inpCont}>
+							<h3>Nombres</h3>
+							<input name="name" type="text" />
+						</div>
+						<div className={st.inpCont}>
+							<h3>Apellidos</h3>
+							<input name="lastName" type="text" />
+						</div>
+						<div className={st.inpCont}>
+							<h3>Id Intitucional</h3>
+							<input name="idIns" type="number" min="1" pattern="^[0-9]+" />
+						</div>
+						<div className={st.inpCont}>
+							<h3>Número telefónico</h3>
+							<input name="noTel" type="number" min="1" pattern="^[0-9]+" />
+						</div>
+						<div className={st.inpContEm}>
+							<h3>Correo electronico</h3>
+							<input name="email" type="text" /> @ucundinamarca.edu.co
+						</div>
+						<div className={st.inpCont}>
+							<h3>Contraseña</h3>
+							<input name="password" type="password" />
+						</div>
+						<div className={st.submit}>
+							<button type="submit">Registrar</button>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
