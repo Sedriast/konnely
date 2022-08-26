@@ -198,7 +198,13 @@ export function SendRabbitData() {
 						{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
 					</div>
 					<div className={st.submit}>
-						<Buttons label="Enviar" btnClick={handleSubmit} route="/vitae" btnIconText="🗳️" />
+						<Buttons
+							direction="bottom"
+							label="Enviar"
+							btnClick={handleSubmit}
+							route="/vitae"
+							btnIconText="🗳️"
+						/>
 					</div>
 				</div>
 			</div>
