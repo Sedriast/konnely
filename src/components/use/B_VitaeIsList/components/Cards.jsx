@@ -10,7 +10,7 @@ export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen }) {
             <Link
                 to='/vitae'
                 onClick={() => {
-                    recuperar(rabbit_);
+                    recuperar(rabbit_, rabitImage);
                 }}>
                 <button className={st.container} id={rabitID}>
                     <img className={st.rabitImg} src={rabitImage} alt='' />

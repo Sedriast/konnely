@@ -105,6 +105,7 @@ export function EditRabbitData() {
         if (basicData.id !== null) {
             const q = query(collection(db, 'conejos'), where('id', '==', basicData.id));
             onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
+            setImage_(basicData.url);
         } else {
             navigate('/vitaeslist');
             return null;
