@@ -1,8 +1,10 @@
-export const recuperar = (id) => {
+export const recuperar = (id, url) => {
     basicData.id = id;
+    basicData.url = url;
 };
 export const basicData = {
     id: null,
+    url: null,
 };
 export const ciclo = [
     {
