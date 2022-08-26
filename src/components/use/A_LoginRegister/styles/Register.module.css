@@ -52,6 +52,8 @@
 
 	margin: 0.5rem 0;
 
+	font-size: 15px;
+
 	border: 1px solid black;
 	border-radius: 20px;
 	padding: 8px 1rem;
@@ -63,13 +65,15 @@
 	margin-bottom: 1rem;
 }
 .inpContEm input {
-	width: calc(28% - 2rem);
+	width: calc(34% - 2rem);
 
 	margin: 0.5rem 0;
 
+	font-size: 15px;
+
 	border: 1px solid black;
 	border-radius: 20px;
-	padding: 8px 1rem;
+	padding: 8px 0.4rem;
 
 	color: black;
 }
