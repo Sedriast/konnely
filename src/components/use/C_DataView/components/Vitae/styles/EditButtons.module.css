@@ -5,6 +5,9 @@
 	flex-wrap: wrap;
 	width: 88%;
 }
+.btnEdits button a div {
+	font-size: 20px;
+}
 .lifeCycle {
 	height: 3rem;
 	width: auto;
@@ -19,7 +22,7 @@
 	width: auto;
 	padding: 0 0.5rem;
 	margin: 1rem 0;
-	background: linear-gradient(90deg, #f2fcc6 72.13%, #00ff00 85.94%);
+	background: #00ff00;
 	border-radius: 10px;
 	border: 2px solid black;
 }

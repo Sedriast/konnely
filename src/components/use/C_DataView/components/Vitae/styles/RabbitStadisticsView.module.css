@@ -15,7 +15,7 @@
 
 	height: 2rem;
 
-	background: linear-gradient(90deg, #f2fcc6 65.1%, #000056 88.54%);
+	background: #f2fcc6;
 
 	border: 1px solid black;
 	border-radius: 20px;
@@ -29,7 +29,7 @@
 
 	height: 2rem;
 
-	background: linear-gradient(90deg, #f2fcc6 72.13%, #535353 85.94%);
+	background: #f2fcc6;
 
 	border: 1px solid black;
 	border-radius: 20px;
@@ -43,7 +43,7 @@
 
 	height: 2rem;
 
-	background: linear-gradient(90deg, #f2fcc6 72.13%, #00ff00 85.94%);
+	background: #f2fcc6;
 
 	border: 1px solid black;
 	border-radius: 20px;
