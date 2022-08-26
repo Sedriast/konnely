@@ -68,15 +68,16 @@ export function Register() {
 					</div>
 					<div className={st.inpCont}>
 						<h3>Id Intitucional</h3>
-						<input name="idIns" type="number" />
+						<input name="idIns" type="number" min="1" pattern="^[0-9]+" />
 					</div>
 					<div className={st.inpCont}>
 						<h3>Número telefónico</h3>
-						<input name="noTel" type="number" />
+						<input name="noTel" type="number" min="1" pattern="^[0-9]+" />
 					</div>
-					<div className={st.inpCont}>
+					<div className={st.inpContEm}>
 						<h3>Correo electronico</h3>
-						<input name="email" type="email" />
+						<input name="email" type="text" />
+						@ucundinamarca.edu.co
 					</div>
 					<div className={st.inpCont}>
 						<h3>Contraseña</h3>

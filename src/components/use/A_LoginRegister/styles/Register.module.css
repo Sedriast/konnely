@@ -49,13 +49,31 @@
 }
 .inpCont input {
 	width: calc(100% - 2rem);
-	height: 100%;
 
 	margin: 0.5rem 0;
+
+	font-size: 15px;
 
 	border: 1px solid black;
 	border-radius: 20px;
 	padding: 8px 1rem;
+
+	color: black;
+}
+.inpContEm {
+	width: 350px;
+	margin-bottom: 1rem;
+}
+.inpContEm input {
+	width: calc(34% - 2rem);
+
+	margin: 0.5rem 0;
+
+	font-size: 15px;
+
+	border: 1px solid black;
+	border-radius: 20px;
+	padding: 8px 0.4rem;
 
 	color: black;
 }
