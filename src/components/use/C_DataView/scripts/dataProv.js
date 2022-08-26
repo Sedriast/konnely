@@ -84,3 +84,22 @@ export const tratamientos = [
         enfermedad: 'cancer',
     },
 ];
+
+export const datos = [
+    {
+        name: 'Loading...',
+        url: 'Loading...',
+        genero: 'Loading...',
+        raza: 'Loading...',
+        concepcion: 'Loading...',
+        grupo: 'Loading...',
+        destete: 'Loading...',
+        uid: 'Loading...',
+        idMadre: 'Loading...',
+        idPadre: 'Loading...',
+        motivo: 'Loading...',
+        nacimiento: 'Loading...',
+        peso: 'Loading...',
+        tema: 'Loading...',
+    },
+];

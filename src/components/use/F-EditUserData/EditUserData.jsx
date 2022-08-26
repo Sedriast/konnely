@@ -9,11 +9,11 @@ import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
 import { Inputs } from '../0-GeneralComp/F-Inputs/Inputs';
 
 export function EditUserData({ dataUser }) {
-	const [image, setImage] = useState(null);
-	console.log(image + 'R');
-	const [image_, setImage_] = useState(null);
-	const [auxImage_, setAuxImage_] = useState(null);
-	const [isOpenModal, openModal, closeModal] = useModal(false);
+    const [image, setImage] = useState(null);
+    console.log(image);
+    const [image_, setImage_] = useState(null);
+    const [auxImage_, setAuxImage_] = useState(null);
+    const [isOpenModal, openModal, closeModal] = useModal(false);
 
 	return (
 		<div className={st.container}>
