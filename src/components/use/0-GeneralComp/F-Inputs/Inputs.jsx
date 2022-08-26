@@ -79,7 +79,7 @@ export function Inputs(props) {
                     />
                 ) : (
                     <input
-                        value={props.value_}
+                        defaultValue={props.value_}
                         required='True'
                         className={st.inp}
                         type={props.type_}
