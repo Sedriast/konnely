@@ -15,7 +15,7 @@ import { DataView } from './use/C_DataView/DataView';
 import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
 import { EditUserData } from './use/F-EditUserData/EditUserData';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
-import { EditRabbitData } from './use/F-EditRabbitData/components/Form';
+import { EditRabbitData } from './use/F-EditRabbitData/EditRabbitData';
 import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
 
 const db = getFirestore(app);
@@ -128,7 +128,7 @@ export function Layout() {
 						/>
 						<Route
 							exact
-							path="/audit"
+							path="/record"
 							element={
 								<>
 									<ProtectedRoute>

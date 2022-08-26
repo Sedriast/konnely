@@ -14,7 +14,7 @@ export const btnData = [
 	{
 		id: 2,
 		icon: '📃',
-		path: '/audit',
-		label: 'Auditoría',
+		path: '/record',
+		label: 'Historial',
 	},
 ];

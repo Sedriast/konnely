@@ -21,7 +21,7 @@ import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
 
 const db = getFirestore(app);
 
-export function EditRabbitData() {
+export function Form() {
 	const navigate = useNavigate();
 	const genero = ['Género', 'Hembra', 'Macho'];
 	const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
@@ -216,7 +216,13 @@ export function EditRabbitData() {
 							{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
 						</div>
 						<div className={st.submit}>
-							<Buttons label="Enviar" btnClick={handleSubmit} route="/vitae" btnIconText="🗳️" />
+							<Buttons
+								direction="bottom"
+								label="Guardar"
+								btnClick={handleSubmit}
+								route="/vitae"
+								btnIconText="🗳️"
+							/>
 						</div>
 					</div>
 				</div>

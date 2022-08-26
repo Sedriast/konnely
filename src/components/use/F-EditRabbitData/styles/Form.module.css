@@ -66,8 +66,16 @@
 	width: 4rem;
 	height: 4rem;
 
-	border-radius: 0 0 100% 100%;
-	background: radial-gradient(127% 60% at 50% 0%, rgba(0, 0, 0, 0) 40%, rgb(255 255 255 / 90%) 50%);
+	background: radial-gradient(
+		112% 112% at 50% -12%,
+		rgba(0, 0, 0, 0) 26.04%,
+		rgba(0, 0, 0, 0.5) 46.35%,
+		#000000 69.27%
+	);
+	border-width: 0px 2px 4px 2px;
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 50px;
 
 	display: flex;
 	justify-content: center;
