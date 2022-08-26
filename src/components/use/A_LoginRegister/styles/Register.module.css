@@ -25,21 +25,20 @@
 /*Containers*/
 /*Master*/
 .container {
-	position: absolute;
-
 	width: 600px;
 
-	background: #423531;
+	background: rgba(0, 0, 0, 0.9);
 
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 
-	background: #68534d;
-
 	padding: 2rem 0;
 	border-radius: 0px 0px 20px 20px;
+}
+.container * {
+	color: white;
 }
 
 /*Master*/
@@ -57,6 +56,8 @@
 	border: 1px solid black;
 	border-radius: 20px;
 	padding: 8px 1rem;
+
+	color: black;
 }
 .inpCont h3 {
 	width: 350px;
@@ -65,7 +66,7 @@
 	width: 125px;
 	height: 49px;
 
-	background: #423531;
+	background: rgba(0, 0, 0, 0.75);
 
 	display: flex;
 	flex-direction: column;

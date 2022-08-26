@@ -5,19 +5,19 @@
 
 * {
 	font-family: arialRounded;
-	-webkit-text-stroke: 1px rgb(0, 0, 0);
 	margin: 0%;
 	padding: 0%;
 	border: none;
 
 	font-size: 20px;
-	color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
 }
 body {
 	width: 100%;
 	height: 100%;
 }
 html {
+	background: url(./A-GeneralWaterMark.png), #ffffff;
 	width: 100%;
 	height: 100%;
 }

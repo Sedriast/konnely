@@ -1,46 +1,59 @@
 .container {
-	width: 600px;
-	min-width: 600px;
-	height: 548px;
+	width: fit-content;
+	height: 85%;
 
-	border-radius: 20px 20px 0px 0px;
-	overflow: hidden;
-
-	z-index: 10;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
-
-ul.tabs {
-	width: 100%;
-	background: #423531;
-	list-style: none;
+.panelContainer {
+	width: fit-content;
+	height: fit-content;
+}
+.containerOption {
 	display: flex;
-
-	transition: 300ms;
+	height: -webkit-fill-available;
 }
-
-ul.tabs li {
-	width: 50%;
+.btns {
+	display: flex;
+	width: 600px;
 }
+.active_1 {
+	width: 300px;
+	height: 3rem;
 
-ul.tabs li a {
-	text-decoration: none;
-	text-align: center;
+	border-radius: 20px 0px 0px 0px;
 
-	display: block;
-	padding: 20px 0px;
+	background: rgba(0, 0, 0, 0.9);
+
+	color: white;
 }
+.inactive_1 {
+	width: 300px;
+	height: 3rem;
 
-.sections article {
-	padding: 30px;
+	border-radius: 20px 0px 0px 0px;
+
+	background: rgba(0, 0, 0);
+
+	color: white;
 }
+.active_2 {
+	width: 300px;
+	height: 3rem;
 
-.active {
-	background: #68534d;
-	pointer-events: none;
+	border-radius: 0px 20px 0px 0px;
 
-	transition: 300ms;
+	background: rgba(0, 0, 0, 0.9);
+
+	color: white;
 }
+.inactive_2 {
+	width: 300px;
+	height: 3rem;
 
-.hidden {
-	visibility: hidden;
+	border-radius: 0px 20px 0px 0px;
+
+	background: rgba(0, 0, 0);
+
+	color: white;
 }

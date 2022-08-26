@@ -25,8 +25,6 @@
 /*Containers*/
 /*Master*/
 .container {
-	position: absolute;
-
 	width: 600px;
 
 	display: flex;
@@ -34,10 +32,13 @@
 	justify-content: center;
 	flex-direction: column;
 
-	background: #68534d;
+	background: rgba(0, 0, 0, 0.9);
 
 	padding: 3rem 0;
 	border-radius: 0px 0px 20px 20px;
+}
+.container * {
+	color: white;
 }
 /*Master*/
 /*Sub*/
@@ -54,6 +55,8 @@
 	border: 1px solid black;
 	border-radius: 20px;
 	padding: 8px 1rem;
+
+	color: black;
 }
 .inpCont h3 {
 	width: 350px;
@@ -62,8 +65,6 @@
 	width: 175px;
 	height: 49px;
 
-	background: #423531;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -71,9 +72,9 @@
 	align-items: center;
 
 	border-radius: 24px;
-	border: 2px solid rgb(0, 0, 0);
+	background: rgba(0, 0, 0, 0.75);
 
-	margin: 20px 0px;
+	margin: 0 auto;
 }
 .submit button {
 	background: transparent;
