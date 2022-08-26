@@ -1,13 +1,13 @@
-import { EditRabbitData } from '../../F-EditRabbitData/EditRabbitData';
+import { RegisterRabbitData } from '../../F-RegisterRabbitData/RegisterRabbitData';
 import { List } from './List';
 
 export function Option({ op }) {
-	switch (op) {
-		case 0:
-			return <List />;
-		case 1:
-			return <EditRabbitData />;
-		default:
-			break;
-	}
+    switch (op) {
+        case 0:
+            return <List />;
+        case 1:
+            return <RegisterRabbitData />;
+        default:
+            break;
+    }
 }
