@@ -8,7 +8,7 @@ export function UserCards({ userEmail, userId, userName }) {
 			<div className={st.mid}>{userEmail}</div>
 
 			<div className={st.btnEdit}>
-				<Buttons route="/user" btnIconText="✏️" label="Editar" direction="left" />
+				<Buttons route="/user" btnIconText="✏️" label="Editar" direction="bottom" />
 			</div>
 		</div>
 	);
