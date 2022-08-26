@@ -1,5 +1,5 @@
-import st from '../styles/EditRabbitData.module.css';
-import { Inputs } from '../../0-GeneralComp/F-Inputs/Inputs';
+import st from '../styles/SendRabbitData.module.css';
+import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
 
 export function DropdownDate(props) {
 	const date_ = props.date;

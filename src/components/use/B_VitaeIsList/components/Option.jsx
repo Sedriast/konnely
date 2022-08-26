@@ -1,4 +1,4 @@
-import { EditRabbitData } from '../../F-EditRabbitData/EditRabbitData';
+import { SendRabbitData } from './F-SendRabbitData/SendRabbitData';
 import { List } from './List';
 
 export function Option({ op }) {
@@ -6,7 +6,7 @@ export function Option({ op }) {
 		case 0:
 			return <List />;
 		case 1:
-			return <EditRabbitData />;
+			return <SendRabbitData />;
 		default:
 			break;
 	}

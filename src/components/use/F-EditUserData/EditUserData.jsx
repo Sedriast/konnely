@@ -111,7 +111,7 @@ export function EditUserData({ dataUser }) {
 							<input name="password" type="password" />
 						</div>
 						<div className={st.submit}>
-							<button type="submit">Registrar</button>
+							<button type="submit">Guardar</button>
 						</div>
 					</form>
 				</div>

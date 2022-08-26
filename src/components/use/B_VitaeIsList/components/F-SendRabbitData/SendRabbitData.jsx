@@ -4,19 +4,19 @@ import st from './styles/SendRabbitData.module.css';
 
 import { useState } from 'react';
 
-import { useModal } from '../0-GeneralComp/0-Modals/useModal';
-import { addImageAndInfo } from '../../firebase/funtions/AddInformation';
-import { recuperar } from '../C_DataView/scripts/dataProv';
-import { SearchAll } from '../../firebase/funtions/SearchAll';
+import { useModal } from '../../../0-GeneralComp/0-Modals/useModal';
+import { addImageAndInfo } from '../../../../firebase/funtions/AddInformation';
+import { recuperar } from '../../../C_DataView/scripts/dataProv';
+import { SearchAll } from '../../../../firebase/funtions/SearchAll';
 
 import { DropdownForm } from './components/DropdownForm';
 import { DropdownDate } from './components/DropdownDate';
-import { Modal } from '../0-GeneralComp/0-Modals/Modal';
-import { Inputs } from '../0-GeneralComp/F-Inputs/Inputs';
-import { Lists } from '../0-GeneralComp/F-List/Lists.jsx';
-import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
+import { Modal } from '../../../0-GeneralComp/0-Modals/Modal';
+import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
+import { Lists } from '../../../0-GeneralComp/F-List/Lists';
+import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
 
-export function EditRabbitData() {
+export function SendRabbitData() {
 	const genero = ['Género', 'Hembra', 'Macho'];
 	const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
 	const [date, setDate] = useState();
