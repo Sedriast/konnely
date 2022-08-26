@@ -25,7 +25,7 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 600px;
+	width: 30rem;
 
 	background: rgba(0, 0, 0, 0.85);
 
@@ -45,14 +45,12 @@
 /*Sub*/
 .inpCont {
 	width: 350px;
-	margin-bottom: 1rem;
+	margin-bottom: 1.6rem;
 }
 .inpCont input {
 	width: calc(100% - 2rem);
 
 	margin: 0.5rem 0;
-
-	font-size: 15px;
 
 	border: 1px solid black;
 	border-radius: 20px;
@@ -69,7 +67,7 @@
 
 	margin: 0.5rem 0;
 
-	font-size: 15px;
+	font-size: 16px;
 
 	border: 1px solid black;
 	border-radius: 20px;

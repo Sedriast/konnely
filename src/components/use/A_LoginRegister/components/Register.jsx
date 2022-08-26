@@ -76,8 +76,7 @@ export function Register() {
 					</div>
 					<div className={st.inpContEm}>
 						<h3>Correo electronico</h3>
-						<input name="email" type="text" />
-						@ucundinamarca.edu.co
+						<input name="email" type="text" /> @ucundinamarca.edu.co
 					</div>
 					<div className={st.inpCont}>
 						<h3>Contraseña</h3>
