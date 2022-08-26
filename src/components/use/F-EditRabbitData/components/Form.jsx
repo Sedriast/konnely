@@ -221,7 +221,7 @@ export function Form() {
 								label="Guardar"
 								btnClick={handleSubmit}
 								route="/vitae"
-								btnIconText="🗳️"
+								btnIconText="💾"
 							/>
 						</div>
 					</div>
