@@ -9,62 +9,60 @@ import { collection, getFirestore, onSnapshot, query, where } from 'firebase/fir
 const db = getFirestore(app);
 
 export function RabbitDataView({ stageId }) {
-    const [data_, setData_] = useState([]);
-    useEffect(() => {
-        const q = query(collection(db, 'conejos'), where('id', '==', stageId));
-        onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
-    }, [stageId]);
-    return (
-        <>
-            {basicData.id !== null && (
-                <>
-                    <div className={st.panelBasicInfo}>
-                        <div className={st.imgVitae}>
-                            <img src={data_[0]?.url} alt='' />
-                        </div>
-                        <div className={st.basicInf}>
-                            <div className={st.re}>
-                                <div className={st.id}>
-                                    <h1>Identificador</h1>
-                                    <div className={st.viewI}>{data_[0]?.id}</div>
-                                </div>
-                                <div className={st.raza}>
-                                    <h1>Raza</h1>
-                                    <div className={st.viewI}>{data_[0]?.raza}</div>
-                                </div>
-                                <div className={st.genero}>
-                                    <h1>Genero</h1>
-                                    <div className={st.viewI}>{data_[0]?.genero}</div>
-                                </div>
-                            </div>
-                            <div className={st.re}>
-                                <div className={st.idPadre}>
-                                    <h1>Id. Padre</h1>
-                                    <div className={st.viewI}>{data_[0]?.idPadre}</div>
-                                </div>
-                                <div className={st.idMadre}>
-                                    <h1>id. Madre</h1>
-                                    <div className={st.viewI}>{data_[0]?.idMadre}</div>
-                                </div>
-                                <div className={st.origen}>
-                                    <h1>Origen</h1>
-                                    <div className={st.viewI}>{data_[0]?.origen}</div>
-                                </div>
-                            </div>
-                            <div className={st.re}>
-                                <div className={st.time1}>
-                                    <h1>Fecha concepcion</h1>
-                                    <div className={st.viewI}>{data_[0]?.nacimiento}</div>
-                                </div>
-                                <div className={st.procentaje}>
-                                    <h1>Porcentaje pureza</h1>
-                                    <div className={st.viewI}>{data_[0]?.porcentaje}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </>
-            )}
-        </>
-    );
+	const [data_, setData_] = useState([]);
+	useEffect(() => {
+		const q = query(collection(db, 'conejos'), where('id', '==', stageId));
+		onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
+	}, [stageId]);
+	return (
+		<>
+			{basicData.id !== null && (
+				<>
+					<div className={st.panelBasicInfo}>
+						<img className={st.imgVitae} src={data_[0]?.url} alt="" />
+						<div className={st.subPanel}>
+							Identificador:
+							<br />
+							<h1>{data_[0]?.id}</h1>
+						</div>
+						<div className={st.subPanel}>
+							Raza:
+							<br />
+							<h1>{data_[0]?.raza}</h1>
+						</div>
+						<div className={st.subPanel}>
+							Genero:
+							<br />
+							<h1>{data_[0]?.genero}</h1>
+						</div>
+						<div className={st.subPanel}>
+							Id. Padre:
+							<br />
+							<h1>{data_[0]?.idPadre}</h1>
+						</div>
+						<div className={st.subPanel}>
+							Id. Madre:
+							<br />
+							<h1>{data_[0]?.idMadre}</h1>
+						</div>
+						<div className={st.subPanel}>
+							Origen:
+							<br />
+							<h1>{data_[0]?.origen}</h1>
+						</div>
+						<div className={st.subPanel}>
+							Fecha concepcion:
+							<br />
+							<h1>{data_[0]?.nacimiento}</h1>
+						</div>
+						<div className={st.subPanel}>
+							Porcentaje pureza:
+							<br />
+							<h1>{data_[0]?.porcentaje}</h1>
+						</div>
+					</div>
+				</>
+			)}
+		</>
+	);
 }

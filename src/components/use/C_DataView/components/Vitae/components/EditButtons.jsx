@@ -9,7 +9,12 @@ export function EditButtons() {
 			{btnData.map((item) => {
 				return (
 					<div key={item.id} className={st[item.cls]}>
-						<Buttons route={item.path} btnIconText={item.iconText} label={item.label} />
+						<Buttons
+							direction="bottom"
+							route={item.path}
+							btnIconText={item.iconText}
+							label={item.label}
+						/>
 					</div>
 				);
 			})}
