@@ -1,10 +1,9 @@
 import st from './styles/Healt.module.css';
-import { tratamientos } from '../../scripts/dataProv';
 
 import { Item } from './components/Item';
 import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
 
-export function Healt() {
+export function Healt({ trataments }) {
 	return (
 		<>
 			<div className={st.container}>
@@ -12,7 +11,7 @@ export function Healt() {
 				<br />
 				<div className={st.panelContainer}>
 					<div className={st.panelItems}>
-						<Item trataments={tratamientos} />
+						<Item trataments={trataments} />
 					</div>
 				</div>
 				<div className={st.new}>
