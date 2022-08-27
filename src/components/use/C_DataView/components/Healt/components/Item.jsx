@@ -8,7 +8,7 @@ export function Item({ trataments }) {
 					<button key={index} className={st.panelTrat}>
 						<div className={st.v}>
 							<h1>ID. Tratamiento</h1>
-							<div className={st.viewI}>{item.fecha}</div>
+							<div className={st.viewI}>{item.idTratamiento}</div>
 						</div>
 						<div className={st.v}>
 							<h1>Fecha</h1>
@@ -16,7 +16,7 @@ export function Item({ trataments }) {
 						</div>
 						<div className={st.v}>
 							<h1>Enfermedad</h1>
-							<div className={st.viewI}>{item.idTratamiento}</div>
+							<div className={st.viewI}>{item.title}</div>
 						</div>
 					</button>
 				);

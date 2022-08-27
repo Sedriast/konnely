@@ -1,0 +1,39 @@
+.container {
+	padding: 1rem;
+}
+.container h1 {
+	width: fit-content;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+.panelContainer {
+	height: 61vh;
+
+	margin: 1rem;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.new {
+	width: 8rem;
+	height: 2rem;
+
+	padding: 10px;
+
+	border: 1px solid black;
+	border-radius: 20px;
+
+	background: rgb(0 0 0 / 50%);
+
+	margin-left: auto;
+	margin-right: auto;
+}
+.new div {
+	font-size: 20px;
+}
+.panelItems {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}

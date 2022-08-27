@@ -20,45 +20,47 @@ export function RabbitDataView({ stageId }) {
 				<>
 					<div className={st.panelBasicInfo}>
 						<img className={st.imgVitae} src={data_[0]?.url} alt="" />
-						<div className={st.subPanel}>
-							Identificador:
-							<br />
-							<h1>{data_[0]?.id}</h1>
-						</div>
-						<div className={st.subPanel}>
-							Raza:
-							<br />
-							<h1>{data_[0]?.raza}</h1>
-						</div>
-						<div className={st.subPanel}>
-							Genero:
-							<br />
-							<h1>{data_[0]?.genero}</h1>
-						</div>
-						<div className={st.subPanel}>
-							Id. Padre:
-							<br />
-							<h1>{data_[0]?.idPadre}</h1>
-						</div>
-						<div className={st.subPanel}>
-							Id. Madre:
-							<br />
-							<h1>{data_[0]?.idMadre}</h1>
-						</div>
-						<div className={st.subPanel}>
-							Origen:
-							<br />
-							<h1>{data_[0]?.origen}</h1>
-						</div>
-						<div className={st.subPanel}>
-							Fecha concepcion:
-							<br />
-							<h1>{data_[0]?.nacimiento}</h1>
-						</div>
-						<div className={st.subPanel}>
-							Porcentaje pureza:
-							<br />
-							<h1>{data_[0]?.porcentaje}</h1>
+						<div className={st.dataVitae}>
+							<div className={st.subPanel}>
+								Identificador:
+								<br />
+								<h1>{data_[0]?.id}</h1>
+							</div>
+							<div className={st.subPanel}>
+								Raza:
+								<br />
+								<h1>{data_[0]?.raza}</h1>
+							</div>
+							<div className={st.subPanel}>
+								Genero:
+								<br />
+								<h1>{data_[0]?.genero}</h1>
+							</div>
+							<div className={st.subPanel}>
+								Id. Padre:
+								<br />
+								<h1>{data_[0]?.idPadre}</h1>
+							</div>
+							<div className={st.subPanel}>
+								Id. Madre:
+								<br />
+								<h1>{data_[0]?.idMadre}</h1>
+							</div>
+							<div className={st.subPanel}>
+								Origen:
+								<br />
+								<h1>{data_[0]?.origen}</h1>
+							</div>
+							<div className={st.subPanel}>
+								Fecha concepcion:
+								<br />
+								<h1>{data_[0]?.nacimiento}</h1>
+							</div>
+							<div className={st.subPanel}>
+								Porcentaje pureza:
+								<br />
+								<h1>{data_[0]?.porcentaje}</h1>
+							</div>
 						</div>
 					</div>
 				</>
