@@ -17,6 +17,7 @@ import { EditUserData } from './use/F-EditUserData/EditUserData';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { EditRabbitData } from './use/F-EditRabbitData/EditRabbitData';
 import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
+import { NewTrat } from './use/F-NewTrats/NewTrat';
 
 const db = getFirestore(app);
 
@@ -133,6 +134,18 @@ export function Layout() {
 								<>
 									<ProtectedRoute>
 										<PanelButtons />
+									</ProtectedRoute>
+								</>
+							}
+						/>
+						<Route
+							exact
+							path="/addTrat"
+							element={
+								<>
+									<ProtectedRoute>
+										<PanelButtons />
+										<NewTrat />
 									</ProtectedRoute>
 								</>
 							}
