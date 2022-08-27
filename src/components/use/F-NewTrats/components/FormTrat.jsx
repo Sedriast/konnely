@@ -48,7 +48,7 @@ export function FormTrat() {
 			</div>
 			<div className={st.btn}>
 				{/**Este boton tiene que enviar los datos del conejo para lograr regresar a al componenete de la ruta '/vitae'*/}
-				<Buttons direction="rigth" btnIconText="💾" label="Atrás" route="/vitae" />
+				<Buttons direction="bottom" btnIconText="💾" label="Guardar" route="/vitae" />
 			</div>
 		</div>
 	);
