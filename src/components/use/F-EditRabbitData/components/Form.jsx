@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { SearchAll } from '../../../firebase/funtions/SearchAll';
 import { useModal } from '../../0-GeneralComp/0-Modals/useModal';
 import { addImageAndInfo } from '../../../firebase/funtions/AddInformation';
-import { recuperar, basicData, datos } from '../../C_DataView/scripts/dataProv';
+import { recuperar, basicData } from '../../C_DataView/scripts/dataProv';
 
 import { DropdownForm } from './DropdownForm';
 import { DropdownDate } from './DropdownDate';
@@ -21,7 +21,6 @@ export function Form() {
     const navigate = useNavigate();
     const genero = ['Género', 'Hembra', 'Macho'];
     const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
-    const [data_, setData_] = useState(datos);
     const [date, setDate] = useState();
     const [reason, setReason] = useState();
     const [image, setImage] = useState(null);
@@ -99,7 +98,6 @@ export function Form() {
     };
     useEffect(() => {
         if (basicData.id !== null) {
-            setData_([basicData.info]);
             setImage_(basicData.info.url);
             setReason(basicData.info.motivo);
             setDate(basicData.info.nacimiento);
