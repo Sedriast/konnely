@@ -23,71 +23,76 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 220px;
-	height: 150px;
+	width: 100%;
+	height: 100%;
 
-	background: linear-gradient(
-		90deg,
-		rgba(0, 0, 0, 0.5) 0%,
-		#f4fec1 5%,
-		#f4fec1 95%,
-		rgba(0, 0, 0, 0.5) 100%
-	);
+	background: rgba(255, 255, 255, 0.5);
 	background-size: cover;
-	padding: 0.5rem;
+
+	padding: 1rem;
+	padding-bottom: 0;
 
 	cursor: pointer;
 	border-radius: 20px;
-	border: 0.5px solid black;
 
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
+	flex-direction: column;
 
 	overflow: hidden;
 }
-.parag div {
-	text-decoration: none;
-}
-.idName {
-	text-decoration: none;
+.container hr {
+	width: 100%;
+
+	height: 0.1rem;
 }
 .container:hover .rabitImg {
-	width: 8rem;
-	height: 80%;
+	width: 6.5rem;
+	height: 6.5rem;
 
-	margin: 0 1.5rem;
+	margin: 0 1rem;
 
-	opacity: 100%;
-
-	transition: opacity 300ms ease-in;
+	animation: ig 500ms;
 }
 /*Master*/
 /*Sub*/
 .idName {
-	width: 40%;
-
+	width: 74%;
 	padding: 2px;
 	font-size: 1.5rem;
 
+	text-overflow: ellipsis;
 	overflow: hidden;
 }
 .parag {
-	width: 50%;
-	overflow: hidden;
+	padding: 0 1rem;
+
+	display: flex;
+	text-decoration: none;
+	flex-direction: column;
+	align-items: flex-start;
 }
-.parag div {
-	font-size: 0.5rem;
+.parag h1 {
+	font-size: 1rem;
+
+	color: rgba(0, 0, 0);
 }
-.parag div h1 {
-	font-size: 0.8rem;
-	color: rgba(0, 0, 0, 0.75);
+.parag p {
+	font-size: 0.6rem;
+
+	color: rgba(0, 0, 0, 75);
+}
+.panelId {
+	width: 100%;
+
+	display: flex;
+	align-items: flex-end;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .rabitImg {
-	width: 0%;
-	height: 0%;
-
-	opacity: 0%;
+	width: 2rem;
+	height: 2rem;
 
 	border-radius: 100%;
 }
@@ -117,7 +122,16 @@
 /*Resizing */
 
 /*Animations*/
-
+@keyframes ig {
+	from {
+		width: 2rem;
+		height: 2rem;
+	}
+	to {
+		width: 6.5rem;
+		height: 6.5rem;
+	}
+}
 /*Animations*/
 
 /*Other´s Components*/

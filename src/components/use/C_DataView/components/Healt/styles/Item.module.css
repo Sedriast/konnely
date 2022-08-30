@@ -1,7 +1,11 @@
 .panelTrat {
 	padding: 1rem;
-	margin: 1rem;
-	border-radius: 20px;
-	border: 2px solid black;
-	background: #f1fbc5;
+
+	margin: 0.5rem;
+	border-radius: 10px;
+
+	background: rgb(255 255 255 / 75%);
+}
+.panelTrat h3 {
+	color: rgb(0, 100, 0);
 }

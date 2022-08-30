@@ -8,17 +8,15 @@ export function Item({ trataments }) {
 					<button key={index} className={st.panelTrat}>
 						ID. Tratamiento:
 						<br />
-						{item.idTratamiento}
-						<br />
+						<h3>{item.idTratamiento}</h3>
 						<br />
 						Fecha:
 						<br />
-						{item.fecha}
-						<br />
+						<h3>{item.fecha}</h3>
 						<br />
 						Enfermedad:
 						<br />
-						{item.title}
+						<h3>{item.title}</h3>
 					</button>
 				);
 			})}

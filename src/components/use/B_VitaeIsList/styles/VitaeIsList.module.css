@@ -68,15 +68,15 @@
 	cursor: pointer;
 
 	margin-left: 1rem;
-	margin-bottom: 70vh;
+	margin-bottom: 82vh;
 
 	animation: btnOPBack;
 	animation-duration: 500ms;
 }
 
 .opSel_ {
-	width: 80%;
-	height: 95%;
+	width: 82%;
+	height: 100%;
 }
 
 /*Master*/
@@ -124,7 +124,7 @@
 	}
 
 	to {
-		margin-bottom: 70vh;
+		margin-bottom: 82vh;
 	}
 }
 

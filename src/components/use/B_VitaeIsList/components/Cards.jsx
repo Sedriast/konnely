@@ -13,18 +13,20 @@ export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen, rabitInfo }) {
 				}}
 			>
 				<button className={st.container} id={rabitID}>
-					<img className={st.rabitImg} src={rabitImage} alt="" />
-					<div className={st.idName}>{rabitID}</div>
+					<div className={st.panelId}>
+						<img className={st.rabitImg} src={rabitImage} alt="" />
+						<div className={st.idName}>{rabitID}</div>
+					</div>
+					<br />
+					<hr />
+					<br />
 					<div className={st.parag}>
-						<div>
-							<h1>Raza:</h1>
-							{rabitRaza}
-							<br />
-							<br />
-							<br />
-							<h1>Genero:</h1>
-							{rabitGen}
-						</div>
+						<h1>Raza:</h1>
+						<p>{rabitRaza}</p>
+						<br />
+						<h1>Genero:</h1>
+						<p>{rabitGen}</p>
+						<br />
 					</div>
 				</button>
 			</Link>
