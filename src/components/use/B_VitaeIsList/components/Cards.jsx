@@ -3,14 +3,13 @@ import st from '../styles/Cards.module.css';
 import { Link } from 'react-router-dom';
 import { recuperar } from '../../C_DataView/scripts/dataProv';
 
-export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen }) {
-	const rabbit_ = rabitID;
+export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen, rabitInfo }) {
 	return (
 		<>
 			<Link
 				to="/vitae"
 				onClick={() => {
-					recuperar(rabbit_, rabitImage);
+					recuperar(rabitID, rabitInfo);
 				}}
 			>
 				<button className={st.container} id={rabitID}>
