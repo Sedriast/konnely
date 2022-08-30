@@ -5,7 +5,7 @@
 	width: 5rem;
 	height: 100%;
 
-	margin-top: 2rem;
+	margin-top: 1rem;
 }
 .btnBack {
 	width: 3rem;
@@ -24,7 +24,6 @@
 	cursor: pointer;
 
 	margin-left: 1rem;
-	margin-bottom: 70vh;
 }
 .btnBack div {
 	font-size: 25px;
