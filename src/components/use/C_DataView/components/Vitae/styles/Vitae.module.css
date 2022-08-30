@@ -6,8 +6,6 @@
 	overflow-x: hidden;
 }
 .panel {
-	padding: 1rem;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;

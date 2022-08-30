@@ -29,21 +29,28 @@
 	background: linear-gradient(
 		90deg,
 		rgba(0, 0, 0, 0.5) 0%,
-		#f4fec1 5.73%,
-		#f4fec1 93.75%,
+		#f4fec1 5%,
+		#f4fec1 95%,
 		rgba(0, 0, 0, 0.5) 100%
 	);
 	background-size: cover;
+	padding: 0.5rem;
 
 	cursor: pointer;
 	border-radius: 20px;
-	border: 1px solid black;
+	border: 0.5px solid black;
 
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	overflow: hidden;
+}
+.parag div {
+	text-decoration: none;
+}
+.idName {
+	text-decoration: none;
 }
 .container:hover .rabitImg {
 	width: 8rem;

@@ -3,11 +3,10 @@
 	flex-direction: column;
 
 	background: rgba(0, 0, 0, 0.5);
-	box-shadow: 0px 32px 20px 20px rgba(0, 0, 0, 0.9);
 
 	width: 100%;
-	margin: 3rem;
-	padding: 1rem;
+	margin: 1rem;
+	padding: 2rem 3rem;
 	border-radius: 20px;
 }
 .panel {
