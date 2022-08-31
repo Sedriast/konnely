@@ -24,14 +24,16 @@ export function DropdownForm(props) {
 						leyend="Identificador del padre"
 						name="idPadre"
 						placeholder="Ingrese el identificador"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
 						leyend="Identificador de la madre"
 						name="idMadre"
 						placeholder="Ingrese el identificador"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>
@@ -42,14 +44,16 @@ export function DropdownForm(props) {
 						leyend="Identificador del padre"
 						name="idPadre"
 						placeholder="Ingrese el identificador"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
 						leyend="Identificador de la madre"
 						name="idMadre"
 						placeholder="Ingrese el identificador"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>
@@ -67,7 +71,8 @@ export function DropdownForm(props) {
 						leyend="Precio"
 						name="precio"
 						placeholder="Ingrese el precio"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
@@ -81,14 +86,16 @@ export function DropdownForm(props) {
 						leyend="Identificador del padre"
 						name="idPadre"
 						placeholder="Ingrese el identificador"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
 						leyend="Identificador de la madre"
 						name="idMadre"
 						placeholder="Ingrese el identificador"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>

@@ -157,7 +157,8 @@ export function SendRabbitData() {
 							leyend="Identificador"
 							name="id"
 							placeholder="Ingrese el identificador"
-							type="text"
+							type="number"
+							inputmode="numeric"
 							handleChange={handleChange}
 						/>
 						<Lists leyend="Género" name_="genero" listar={genero} handleChange={handleChange} />
@@ -172,8 +173,10 @@ export function SendRabbitData() {
 							name="porcentaje"
 							placeholder="Procentaje de pureza"
 							type="number"
+							inputmode="numeric"
 							min="1"
 							max="100"
+							step="0.1"
 							handleChange={handleChange}
 						/>
 						<Lists

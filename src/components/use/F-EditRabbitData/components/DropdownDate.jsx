@@ -33,7 +33,8 @@ export function DropdownDate(props) {
 						leyend="Peso al nacer"
 						name="peso"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>
@@ -44,14 +45,16 @@ export function DropdownDate(props) {
 						leyend="Peso al nacer"
 						name="peso"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de lactancia"
+						leyend="Peso final en lactancia"
 						name="lactancia"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>
@@ -62,21 +65,24 @@ export function DropdownDate(props) {
 						leyend="Peso al nacer"
 						name="peso"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de lactancia"
+						leyend="Peso final en lactancia"
 						name="lactancia"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de levante"
+						leyend="Peso final en levante"
 						name="levante"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>
@@ -87,28 +93,32 @@ export function DropdownDate(props) {
 						leyend="Peso al nacer"
 						name="peso"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de lactancia"
+						leyend="Peso final en lactancia"
 						name="lactancia"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de levante"
+						leyend="Peso final en levante"
 						name="levante"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de engorde"
+						leyend="Peso final en engorde"
 						name="engorde"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>
@@ -119,35 +129,40 @@ export function DropdownDate(props) {
 						leyend="Peso al nacer"
 						name="peso"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de lactancia"
+						leyend="Peso final en lactancia"
 						name="lactancia"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de levante"
+						leyend="Peso final en levante"
 						name="levante"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de engorde"
+						leyend="Peso final en engorde"
 						name="engorde"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						leyend="Peso al terminar la fase de ceba"
+						leyend="Peso final en ceba"
 						name="ceba"
 						placeholder="Ingrese el peso"
-						type="text"
+						type="number"
+						inputmode="numeric"
 						handleChange={handleChange}
 					/>
 				</>

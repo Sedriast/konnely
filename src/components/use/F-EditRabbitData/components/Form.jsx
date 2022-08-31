@@ -168,7 +168,8 @@ export function Form() {
 								leyend="Identificador"
 								name="id"
 								placeholder="Ingrese el identificador"
-								type="text"
+								type="number"
+								inputmode="numeric"
 								handleChange={handleChange}
 							/>
 							<Lists
@@ -190,7 +191,8 @@ export function Form() {
 								leyend="Porcentaje de pureza"
 								name="porcentaje"
 								placeholder="Procentaje de pureza"
-								type="text"
+								type="number"
+								inputmode="numeric"
 								handleChange={handleChange}
 							/>
 							<Lists
