@@ -1,4 +1,3 @@
-import st from '../styles/SendRabbitData.module.css';
 import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
 
 export function DropdownForm(props) {
@@ -10,31 +9,29 @@ export function DropdownForm(props) {
 				<>
 					<Inputs
 						leyend="Fecha de traslado"
-						name_="traslado"
-						type_="date"
+						name="traslado"
+						type="date"
 						handleChange={handleChange}
 					/>
 					<Inputs
 						leyend="Origen"
-						name_="origen"
-						placeholder_="Ingrese el origen"
-						type_="text"
+						name="origen"
+						placeholder="Ingrese el origen"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Identificador del padre"
-						name_="idPadre"
-						placeholder_="Ingrese el identificador"
-						type_="text"
+						name="idPadre"
+						placeholder="Ingrese el identificador"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Identificador de la madre"
-						name_="idMadre"
-						placeholder_="Ingrese el identificador"
-						type_="text"
+						name="idMadre"
+						placeholder="Ingrese el identificador"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>
@@ -42,19 +39,17 @@ export function DropdownForm(props) {
 			{motivo === 'Nacimiento' && (
 				<>
 					<Inputs
-						clsName={st.data2}
 						leyend="Identificador del padre"
-						name_="idPadre"
-						placeholder_="Ingrese el identificador"
-						type_="text"
+						name="idPadre"
+						placeholder="Ingrese el identificador"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Identificador de la madre"
-						name_="idMadre"
-						placeholder_="Ingrese el identificador"
-						type_="text"
+						name="idMadre"
+						placeholder="Ingrese el identificador"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>
@@ -63,39 +58,37 @@ export function DropdownForm(props) {
 				<>
 					<Inputs
 						leyend="Proveedor"
-						name_="proveedor"
-						placeholder_="Ingrese el proveedor"
-						type_="text"
+						name="proveedor"
+						placeholder="Ingrese el proveedor"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
 						leyend="Precio"
-						name_="precio"
-						placeholder_="Ingrese el precio"
-						type_="text"
+						name="precio"
+						placeholder="Ingrese el precio"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
 						leyend="Origen"
-						name_="origen"
-						placeholder_="Ingrese el origen"
-						type_="text"
+						name="origen"
+						placeholder="Ingrese el origen"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Identificador del padre"
-						name_="idPadre"
-						placeholder_="Ingrese el identificador"
-						type_="text"
+						name="idPadre"
+						placeholder="Ingrese el identificador"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Identificador de la madre"
-						name_="idMadre"
-						placeholder_="Ingrese el identificador"
-						type_="text"
+						name="idMadre"
+						placeholder="Ingrese el identificador"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>

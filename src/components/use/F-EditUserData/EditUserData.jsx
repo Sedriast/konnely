@@ -27,7 +27,7 @@ export function EditUserData({ dataUser }) {
 					<div className={st.panelInpImg}>
 						<div className={st.panelImage}>
 							<Inputs
-								type_="file"
+								type="file"
 								HaveImage={(e) => {
 									setImage(e);
 									if (e === null) {
@@ -35,7 +35,7 @@ export function EditUserData({ dataUser }) {
 										setAuxImage_(null);
 									}
 								}}
-								Preview={image_}
+								preview={image_}
 							/>
 							<Modal isOpen={isOpenModal} closeModal={closeModal}>
 								{isOpenModal && (

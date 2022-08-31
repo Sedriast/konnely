@@ -18,29 +18,29 @@ export function FormTrat() {
 		<div className={st.container}>
 			<div className={st.panel}>
 				<Inputs
-					name_="tratamiento"
-					type_="text"
+					name="tratamiento"
+					type="text"
 					handleChange={handleChange}
 					leyend="ID.Tratamiento"
 				/>
 
-				<Inputs leyend="Fecha" type_="text" handleChange={handleChange} />
+				<Inputs leyend="Fecha" type="text" handleChange={handleChange} />
 
-				<Inputs name_="Enfremedad" leyend="Enfermedad" type_="text" handleChange={handleChange} />
+				<Inputs name="Enfremedad" leyend="Enfermedad" type="text" handleChange={handleChange} />
 
-				<Inputs name_="Chequeo" leyend="Chequeo" type_="text" handleChange={handleChange} />
+				<Inputs name="Chequeo" leyend="Chequeo" type="text" handleChange={handleChange} />
 
 				<Inputs
-					name_="Observaciones"
+					name="Observaciones"
 					leyend="Obserbaciones"
-					type_="text"
+					type="text"
 					handleChange={handleChange}
 				/>
 
 				<Inputs
-					name_="Imagenes"
+					name="Imagenes"
 					leyend="Imagenes"
-					type_="file"
+					type="file"
 					HaveImage={(e) => {
 						console.log(e);
 					}}

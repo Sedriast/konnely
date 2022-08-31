@@ -103,7 +103,7 @@ export function SendRabbitData() {
 					<div className={st.panelInpImg}>
 						<div className={st.panelImage}>
 							<Inputs
-								type_="file"
+								type="file"
 								HaveImage={(e) => {
 									setImage(e);
 									if (e === null) {
@@ -111,7 +111,7 @@ export function SendRabbitData() {
 										setAuxImage_(null);
 									}
 								}}
-								Preview={image_}
+								preview={image_}
 							/>
 							<Modal isOpen={isOpenModal} closeModal={closeModal}>
 								{isOpenModal && (
@@ -155,14 +155,12 @@ export function SendRabbitData() {
 					<div className={st.panel}>
 						<Inputs
 							leyend="Identificador"
-							name_="id"
-							placeholder_="Ingrese el identificador"
-							type_="text"
+							name="id"
+							placeholder="Ingrese el identificador"
+							type="text"
 							handleChange={handleChange}
 						/>
-
 						<Lists leyend="Género" name_="genero" listar={genero} handleChange={handleChange} />
-
 						<Lists
 							leyend="Raza"
 							name_="raza"
@@ -171,9 +169,11 @@ export function SendRabbitData() {
 						/>
 						<Inputs
 							leyend="Porcentaje de pureza"
-							name_="porcentaje"
-							placeholder_="Procentaje de pureza"
-							type_="text"
+							name="porcentaje"
+							placeholder="Procentaje de pureza"
+							type="number"
+							min="1"
+							max="100"
 							handleChange={handleChange}
 						/>
 						<Lists
@@ -184,8 +184,8 @@ export function SendRabbitData() {
 						/>
 						<Inputs
 							leyend="Fecha de nacimiento"
-							name_="nacimiento"
-							type_="date"
+							name="nacimiento"
+							type="date"
 							handleChange={handleChange}
 						/>
 						{date && <DropdownDate date={date} handleChange={handleChange} />}

@@ -1,4 +1,3 @@
-import st from '../styles/EditRabbitData.module.css';
 import { Inputs } from '../../0-GeneralComp/F-Inputs/Inputs';
 
 export function DropdownDate(props) {
@@ -32,9 +31,9 @@ export function DropdownDate(props) {
 				<>
 					<Inputs
 						leyend="Peso al nacer"
-						name_="peso"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="peso"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>
@@ -43,17 +42,16 @@ export function DropdownDate(props) {
 				<>
 					<Inputs
 						leyend="Peso al nacer"
-						name_="peso"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="peso"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de lactancia"
-						name_="lactancia"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="lactancia"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>
@@ -62,25 +60,23 @@ export function DropdownDate(props) {
 				<>
 					<Inputs
 						leyend="Peso al nacer"
-						name_="peso"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="peso"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de lactancia"
-						name_="lactancia"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="lactancia"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de levante"
-						name_="levante"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="levante"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>
@@ -89,33 +85,30 @@ export function DropdownDate(props) {
 				<>
 					<Inputs
 						leyend="Peso al nacer"
-						name_="peso"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="peso"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de lactancia"
-						name_="lactancia"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="lactancia"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de levante"
-						name_="levante"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="levante"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de engorde"
-						name_="engorde"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="engorde"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>
@@ -124,41 +117,37 @@ export function DropdownDate(props) {
 				<>
 					<Inputs
 						leyend="Peso al nacer"
-						name_="peso"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="peso"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de lactancia"
-						name_="lactancia"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="lactancia"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de levante"
-						name_="levante"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="levante"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de engorde"
-						name_="engorde"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="engorde"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 					<Inputs
-						clsName={st.data2}
 						leyend="Peso al terminar la fase de ceba"
-						name_="ceba"
-						placeholder_="Ingrese el peso"
-						type_="text"
+						name="ceba"
+						placeholder="Ingrese el peso"
+						type="text"
 						handleChange={handleChange}
 					/>
 				</>
