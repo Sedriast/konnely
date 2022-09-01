@@ -16,10 +16,8 @@ export function DropdownList({ coleccion, parametro, busqueda, reset }) {
                 title: 'No existe ningun registro con ese identificador.',
                 icon: 'error',
                 button: 'Aceptar',
-            }).then((respuesta) => {
-                if (respuesta) {
-                    reset();
-                }
+            }).then(() => {
+                reset();
             });
         }
     }, [resultado, parametro, reset]);
