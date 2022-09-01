@@ -8,25 +8,26 @@ import { DropdownList } from './DropdownList';
 export function List() {
     let search = { vieja: 'init' };
     const [filter, setFilter] = useState('Hembra');
-    const [search_, setSearch_] = useState({
-        genero: 'genero',
-        coletion: 'rabits',
-        filter: { filter },
-    });
-
+    const [search_, setSearch_] = useState('init');
     const [parametro, setParametro] = useState('');
     const [auxsearch_, setAuxsearch_] = useState('');
-
-    function handleChange(e) {
-        const { value } = e.target;
-        setAuxsearch_(value);
-        setParametro(value);
+    function reset() {
+        setParametro('');
+        setAuxsearch_('');
+        setFilter('Hembra');
     }
     return (
         <>
             <div className={st.container}>
                 <div className={st.panelSearchBar}>
-                    <input value={parametro} placeholder='Buscar' onChange={handleChange} />
+                    <input
+                        value={parametro}
+                        placeholder='Buscar'
+                        onChange={(e) => {
+                            setAuxsearch_(e.target.value);
+                            setParametro(e.target.value);
+                        }}
+                    />
                     <button
                         className={st.btnSearch}
                         onClick={() => {
@@ -51,8 +52,8 @@ export function List() {
                                 id='b'
                                 className={st.male}
                                 onClick={() => {
-                                    setAuxsearch_('Macho');
                                     setSearch_('');
+                                    setAuxsearch_('Macho');
                                     setFilter('Macho');
                                 }}>
                                 ♂️
@@ -63,8 +64,8 @@ export function List() {
                                 id='r'
                                 className={st.female}
                                 onClick={() => {
-                                    setAuxsearch_('Hembra');
                                     setSearch_('');
+                                    setAuxsearch_('Hembra');
                                     setFilter('Hembra');
                                 }}>
                                 ♀️
@@ -81,7 +82,7 @@ export function List() {
                             <DropdownList coleccion='conejos' parametro='genero' busqueda={filter} />
                         )}
                         {auxsearch_ === search.vieja && (
-                            <DropdownList coleccion='conejos' parametro='id' busqueda={search_} />
+                            <DropdownList coleccion='conejos' parametro='id' busqueda={search_} reset={reset} />
                         )}
                     </div>
                 </div>
