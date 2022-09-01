@@ -12,8 +12,8 @@ export function List() {
     const [parametro, setParametro] = useState('');
     const [auxsearch_, setAuxsearch_] = useState('');
     function reset() {
-        setParametro('');
         setAuxsearch_('');
+        setParametro('');
         setFilter('Hembra');
     }
     return (

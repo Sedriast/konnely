@@ -5,11 +5,8 @@ import { useEffect, useState } from 'react';
 
 const db = getFirestore(app);
 
-export const RealTime = (props) => {
-    const coleccion = props.coleccion;
-    const parametro = props.parametro;
-    const busqueda = props.busqueda;
-    const [data_, setData_] = useState([{}]);
+export const RealTime = ({ coleccion, parametro, busqueda }) => {
+    const [data_, setData_] = useState([]);
 
     useEffect(() => {
         const q = query(collection(db, coleccion), where(parametro, '==', busqueda));
@@ -18,11 +15,11 @@ export const RealTime = (props) => {
 
     return (
         <>
-            {props.coleccion === 'conejos' || props.coleccion === 'usuarios'
+            {coleccion === 'conejos' || coleccion === 'usuarios'
                 ? data_?.map((Object) => {
                       return Object;
                   })
-                : props.coleccion !== 'conejos' &&
+                : coleccion !== 'conejos' &&
                   data_?.map((Object) => {
                       return Object.name;
                   })}

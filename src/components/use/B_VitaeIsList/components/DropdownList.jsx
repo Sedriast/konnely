@@ -23,18 +23,22 @@ export function DropdownList({ coleccion, parametro, busqueda, reset }) {
             });
         }
     }, [resultado, parametro, reset]);
+    if (resultado.length === 0) {
+        console.log(resultado);
+    }
     return (
         <>
-            {resultado.map((item, index) => (
-                <Cards
-                    key={index}
-                    rabitID={item.id}
-                    rabitImage={item.url}
-                    rabitGen={item.genero}
-                    rabitRaza={item.raza}
-                    rabitInfo={item}
-                />
-            ))}
+            {resultado.length !== 0 &&
+                resultado.map((item, index) => (
+                    <Cards
+                        key={index}
+                        rabitID={item.id}
+                        rabitImage={item.url}
+                        rabitGen={item.genero}
+                        rabitRaza={item.raza}
+                        rabitInfo={item}
+                    />
+                ))}
         </>
     );
 }
