@@ -23,7 +23,7 @@ export function DropdownList({ coleccion, parametro, busqueda, reset }) {
     }, [resultado, parametro, reset]);
     return (
         <>
-            {resultado.length !== 0 &&
+            {JSON.stringify(resultado) !== '[{}]' &&
                 resultado.map((item, index) => (
                     <Cards
                         key={index}

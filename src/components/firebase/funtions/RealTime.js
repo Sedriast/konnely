@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 const db = getFirestore(app);
 
 export const RealTime = ({ coleccion, parametro, busqueda }) => {
-    const [data_, setData_] = useState([]);
+    const [data_, setData_] = useState([{}]);
 
     useEffect(() => {
         const q = query(collection(db, coleccion), where(parametro, '==', busqueda));
