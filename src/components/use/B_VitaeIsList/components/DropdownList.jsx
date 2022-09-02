@@ -21,9 +21,6 @@ export function DropdownList({ coleccion, parametro, busqueda, reset }) {
             });
         }
     }, [resultado, parametro, reset]);
-    if (resultado.length === 0) {
-        console.log(resultado);
-    }
     return (
         <>
             {resultado.length !== 0 &&

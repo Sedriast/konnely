@@ -8,7 +8,7 @@ export function ProtectedRoute({ children }) {
     if (loading) return <h1>Loading...</h1>;
     if (!user) {
         swal({
-            title: 'Esta ventana puede aparecer porque no ha verificado su cuenta o porque intenta acceder sin autorización',
+            title: 'Para iniciar sección debe ingresar credenciales registradas o verificar su cuenta en la bandeja de entrada de su correo electronico (si no lo encuentra puede buscarlo en el apartado de “spam/correos no deseados”)',
             icon: 'error',
             button: 'aceptar',
         });

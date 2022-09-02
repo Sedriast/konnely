@@ -49,9 +49,9 @@ export const addImageAndInfo = (props) => {
 };
 
 export const AddInfoProfile = (props) => {
-    const funtionAddInfoProfile = async (datos) => {
+    const funtionAddInfoProfile = async ({ user, data }) => {
         try {
-            await setDoc(doc(db, 'usuarios', datos.user), datos.data);
+            await setDoc(doc(db, 'usuarios', user), data);
         } catch (error) {
             swal({
                 title: error,
