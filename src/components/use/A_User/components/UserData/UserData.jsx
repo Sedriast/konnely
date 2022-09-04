@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../../../context/AuthContext';
 
 export function UserData({ user_ }) {
-    console.log(user_);
     const { logout, user } = useAuth();
     const navigate = useNavigate();
 

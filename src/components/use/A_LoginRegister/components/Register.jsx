@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { ValidationErrors } from '../scripts/ValidationErrors';
 import { useAuth } from '../../../../context/AuthContext';
+import swal from 'sweetalert';
 
 export function Register() {
     const { signup } = useAuth();
@@ -18,7 +19,15 @@ export function Register() {
                 e.noTel,
                 e.email + '@ucundinamarca.edu.co',
                 e.password
-            );
+            ).then(() => {
+                swal({
+                    title: 'Verifique su cuenta en la bandeja de su correo electronico',
+                    icon: 'error',
+                    button: 'aceptar',
+                }).then(() => {
+                    document.getElementById('formulario').reset();
+                });
+            });
         } catch (error) {
             ValidationErrors(error.code);
             console.log(error);

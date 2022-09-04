@@ -1,14 +1,10 @@
 import st from './styles/LoginRegister.module.css';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { useAuth } from '../../../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import { Option } from './components/Option';
 
 export function LoginRegister() {
-    const { user } = useAuth();
-    const navigate = useNavigate();
     const [optionSelect, setOptionSelect] = useState(0);
 
     return (

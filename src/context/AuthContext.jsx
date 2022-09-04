@@ -12,7 +12,6 @@ import {
     updateProfile,
     sendEmailVerification,
 } from 'firebase/auth';
-import { Navigate } from 'react-router-dom';
 
 export const auth = getAuth(app);
 const authContext = createContext();
