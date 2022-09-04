@@ -1,22 +1,30 @@
 import st from '../styles/Login.module.css';
-import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../../../../context/AuthContext';
 import { ValidationErrors } from '../scripts/ValidationErrors';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Login() {
-    const { login, user } = useAuth();
     const navigate = useNavigate();
+    const { login, user } = useAuth();
 
     const handleSubmit = async (e) => {
         try {
             await login(e.email, e.password);
-            console.log(user);
-            navigate('/vitaeslist');
         } catch (error) {
+            console.log(error);
             ValidationErrors(error.code);
         }
     };
+
+    useEffect(() => {
+        if (!user) {
+            navigate('/');
+        } else if (user && user.emailVerified) {
+            navigate('/vitaeslist');
+        }
+    }, [navigate, user]);
 
     return (
         <>

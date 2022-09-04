@@ -1,42 +1,16 @@
 import st from './styles/UserData.module.css';
-import app from '../../../../firebase/credentials';
 import swal from 'sweetalert';
 
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../../../context/AuthContext';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
-const db = getFirestore(app);
-
-export function UserData() {
+export function UserData({ user_ }) {
+    console.log(user_);
     const { logout, user } = useAuth();
     const navigate = useNavigate();
 
-    const [userData, setUserData] = useState({
-        uid: null,
-        photo: null,
-        displayName: null,
-        email: null,
-        rol: null,
-        theme: 0,
-    });
-
-    useEffect(() => {
-        const getData = async () => {
-            const query_ = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
-            const querySnapshot = await getDocs(query_);
-            querySnapshot.forEach((doc) => {
-                setUserData(doc.data());
-            });
-        };
-
-        if (user) {
-            getData();
-        }
-    }, [user]);
-
     const handleSubmit = async () => {
+        navigate('/');
         await logout();
     };
 
@@ -49,7 +23,6 @@ export function UserData() {
             }).then((respuesta) => {
                 if (respuesta) {
                     handleSubmit();
-                    navigate('/');
                 }
             });
         } catch (error) {
@@ -69,7 +42,7 @@ export function UserData() {
                     <p>
                         Otros datos del usuario
                         <br />
-                        Tema: {userData.theme}
+                        Tema: {user_.theme}
                         <br />
                         <br />
                         fadfadfafdsafaf

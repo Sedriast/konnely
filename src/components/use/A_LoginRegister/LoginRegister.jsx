@@ -11,14 +11,6 @@ export function LoginRegister() {
     const navigate = useNavigate();
     const [optionSelect, setOptionSelect] = useState(0);
 
-    useEffect(() => {
-        if (!user) {
-            navigate('/');
-        } else {
-            navigate('/vitaeslist');
-        }
-    }, [navigate, user]);
-
     return (
         <>
             <div className={st.container}>
