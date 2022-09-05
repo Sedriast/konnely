@@ -26,6 +26,7 @@ export function Register() {
                     button: 'aceptar',
                 }).then(() => {
                     document.getElementById('formulario').reset();
+                    navigate('/');
                 });
             });
         } catch (error) {
@@ -39,7 +40,6 @@ export function Register() {
                 id='formulario'
                 onSubmit={(e) => {
                     e.preventDefault();
-                    navigate('/');
                     handleSubmit({
                         userName: e.target.userName.value,
                         name: e.target.name.value,

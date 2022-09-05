@@ -1,4 +1,3 @@
-import swal from 'sweetalert';
 import st from '../styles/Login.module.css';
 
 import { useAuth } from '../../../../context/AuthContext';
@@ -7,25 +6,17 @@ import { useNavigate } from 'react-router-dom';
 
 export function Login() {
     const navigate = useNavigate();
-    const { login, user } = useAuth();
-    console.log(user);
+    const { login } = useAuth();
 
     const handleSubmit = async (e) => {
         try {
-            await login(e.email, e.password);
+            await login(e.email, e.password).then(() => {
+                navigate('/vitaeslist');
+            });
         } catch (error) {
             ValidationErrors(error.code);
         }
     };
-    if (user !== null && user.emailVerified === true) {
-        navigate('/vitaeslist');
-    } else {
-        swal({
-            title: 'Verifique su cuenta en la bandeja de su correo electronico',
-            icon: 'error',
-            button: 'aceptar',
-        });
-    }
 
     return (
         <>
