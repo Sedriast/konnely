@@ -2,7 +2,7 @@ import swal from 'sweetalert';
 
 import { useEffect } from 'react';
 import { Cards } from './Cards';
-import { RealTime } from '../../../firebase/funtions/RealTime';
+import { RealTime } from '../../../../../firebase/funtions/RealTime';
 
 export function DropdownList({ coleccion, parametro, busqueda, reset }) {
     const resultado = RealTime({

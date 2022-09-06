@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 
 import { useState } from 'react';
 
-import { DropdownList } from '../DropdownList';
+import { DropdownList } from './components';
 
 export function List() {
     let search = { vieja: 'init' };

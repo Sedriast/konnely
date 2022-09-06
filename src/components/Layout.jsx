@@ -17,7 +17,6 @@ import { DataView } from './use/C_DataView/DataView';
 import { EditUserData } from './use/F-EditUserData/EditUserData';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { EditRabbitData } from './use/F-EditRabbitData/EditRabbitData';
-import { PanelButtons } from './use/0-GeneralComp/0-PanelButtons/PanelButtons';
 
 const db = getFirestore(app);
 
@@ -52,7 +51,7 @@ export function Layout() {
 							exact
 							path="/"
 							element={
-								<div className={st.A_Login_Register}>
+								<div className={st.componentContainer}>
 									<LoginRegister />
 								</div>
 							}
@@ -70,84 +69,51 @@ export function Layout() {
                             exact
                             path='/vitaeslist'
                             element={
-                                <>
+                                
                                     <ProtectedRoute>
                                         <div className={st.B_ViewIsList}>
                                             <ViewIsList />
-                                            <PanelButtons />
                                         </div>
                                     </ProtectedRoute>
-                                </>
+                                
                             }
                         /> */}
 						<Route
 							exact
 							path="/vitae"
 							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-										<DataView />
-									</ProtectedRoute>
-								</>
+								<ProtectedRoute>
+									<DataView />
+								</ProtectedRoute>
 							}
 						/>
 						<Route
 							exact
 							path="/user"
 							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-										<EditUserData />
-									</ProtectedRoute>
-								</>
+								<ProtectedRoute>
+									<EditUserData />
+								</ProtectedRoute>
 							}
 						/>
 						<Route
 							exact
 							path="/formEdit"
 							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-										<EditRabbitData />
-									</ProtectedRoute>
-								</>
+								<ProtectedRoute>
+									<EditRabbitData />
+								</ProtectedRoute>
 							}
 						/>
-						<Route
-							exact
-							path="/analitics"
-							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-									</ProtectedRoute>
-								</>
-							}
-						/>
-						<Route
-							exact
-							path="/record"
-							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-									</ProtectedRoute>
-								</>
-							}
-						/>
+						<Route exact path="/analitics" element={<ProtectedRoute></ProtectedRoute>} />
+						<Route exact path="/record" element={<ProtectedRoute></ProtectedRoute>} />
 						<Route
 							exact
 							path="/addTrat"
 							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-										<NewTrat />
-									</ProtectedRoute>
-								</>
+								<ProtectedRoute>
+									<NewTrat />
+								</ProtectedRoute>
 							}
 						/>
 						{/*
@@ -168,7 +134,8 @@ export function Layout() {
 									</ProtectedRoute>
 								</>
 							}
-						/> */}
+						/>
+						*/}
 					</Routes>
 				</Router>
 			</div>
