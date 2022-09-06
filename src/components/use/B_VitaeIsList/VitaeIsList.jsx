@@ -20,7 +20,7 @@ export function ViewIsList() {
 					setOptionSelect(!optionSelect);
 				}}
 			/>
-			<div className={st.opSel_}>
+			<div className={st.optionContainer}>
 				<Option op={optionSelect} />
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />

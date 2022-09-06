@@ -22,61 +22,17 @@
 
 /*Containers*/
 /*Master*/
-.leftMenu {
-	display: flex;
-	flex-direction: column-reverse;
+.optionContainer {
+	width: 78%;
+	height: 95%;
 
-	width: 5rem;
-	height: 100%;
+	margin-top: auto;
+	margin-bottom: auto;
 
-	padding-bottom: 5rem;
+	border-radius: 10px;
 
-	visibility: visible;
-	transition: visibility 500ms ease-in;
-}
-
-.btnNew {
-	width: 100%;
-	height: 3.5rem;
-
-	font-size: 35px;
-
-	border: 2px solid #000000;
-	border-width: 2px 4px 2px 0px;
-	border-style: solid;
-	border-color: #000000;
-	border-radius: 0px 75px 75px 0px;
-
-	cursor: pointer;
-
-	animation: btnOP;
-	animation-duration: 500ms;
-}
-
-.btnBack {
-	width: 3rem;
-	height: 3rem;
-
-	font-size: 30px;
-
-	border: 2px solid #000000;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #000000;
-	border-radius: 100%;
-
-	cursor: pointer;
-
-	margin-left: 1rem;
-	margin-bottom: 82vh;
-
-	animation: btnOPBack;
-	animation-duration: 500ms;
-}
-
-.opSel_ {
-	width: 82%;
-	height: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 /*Master*/

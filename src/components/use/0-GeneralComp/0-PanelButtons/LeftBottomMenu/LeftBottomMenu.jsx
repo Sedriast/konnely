@@ -10,7 +10,7 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 					<div className={st.option} key={backCancel.id}>
 						<Buttons
 							label={backCancel.label}
-							direction="bottom"
+							direction="rigth"
 							route={backCancel.path}
 							btnId={backCancel.id}
 							btnName={backCancel.label}
@@ -27,7 +27,7 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 					<div className={st.option} key={opt.id}>
 						<Buttons
 							label={opt.label}
-							direction="bottom"
+							direction="rigth"
 							route={opt.path}
 							btnId={opt.id}
 							btnName={opt.label}
@@ -42,7 +42,7 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 					<div className={st.option} key={additionExtras.id}>
 						<Buttons
 							label={additionExtras.label}
-							direction="bottom"
+							direction="rigth"
 							route={additionExtras.path}
 							btnId={additionExtras.id}
 							btnName={additionExtras.label}

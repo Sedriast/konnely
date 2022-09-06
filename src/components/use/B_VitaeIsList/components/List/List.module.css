@@ -39,7 +39,7 @@
 /*Master*/
 /*Sub*/
 .panelCards {
-	height: 80%;
+	height: 85%;
 
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -58,8 +58,7 @@
 }
 .panelSearchBar {
 	display: flex;
-
-	margin: 2rem;
+	margin: 0 0 2rem 0;
 }
 .panelSearchBar input {
 	border-bottom-left-radius: 20px;

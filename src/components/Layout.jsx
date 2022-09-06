@@ -7,7 +7,7 @@ import { collection, getDocs, getFirestore, query, where } from 'firebase/firest
 
 import { useAuth } from '../context/AuthContext';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
-import { themesData } from './use/A_User/scripts/customThemeData';
+import { themesData } from './use/0-GeneralComp/0-StaticData/customThemeData';
 
 import { User } from './use/A_User/User';
 // import { Invoice } from './use/Invoice/Invoice';

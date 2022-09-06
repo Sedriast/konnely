@@ -26,13 +26,7 @@
 /*Containers*/
 /*Master*/
 .container {
-	height: 100%;
-
-	background: rgba(0, 0, 0, 0.5);
-
-	border-radius: 20px;
-
-	overflow-y: scroll;
+	background: rgba(0, 72, 43, 0.666);
 }
 .panelInpImg {
 	display: contents;
