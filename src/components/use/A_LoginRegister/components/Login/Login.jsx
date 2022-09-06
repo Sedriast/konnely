@@ -26,7 +26,6 @@ export function Login() {
 			button: 'aceptar',
 		});
 	}
-
 	return (
 		<>
 			<div className={st.container}>

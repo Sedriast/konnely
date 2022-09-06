@@ -1,8 +1,8 @@
-import st from './Register.module.css';
+import st from '../styles/Register.module.css';
 import { useNavigate } from 'react-router-dom';
 
-import { ValidationErrors } from '../../scripts/ValidationErrors';
-import { useAuth } from '../../../../../context/AuthContext';
+import { ValidationErrors } from '../scripts/ValidationErrors';
+import { useAuth } from '../../../../context/AuthContext';
 import swal from 'sweetalert';
 
 export function Register() {
@@ -12,12 +12,12 @@ export function Register() {
 	const handleSubmit = async (e) => {
 		try {
 			await signup(
+				e.email + '@ucundinamarca.edu.co',
+				e.idIns,
 				e.userName,
 				e.name,
 				e.lastName,
-				e.idIns,
 				e.noTel,
-				e.email + '@ucundinamarca.edu.co',
 				e.password
 			).then(() => {
 				swal({
@@ -68,16 +68,13 @@ export function Register() {
 						<h3>Apellidos</h3>
 						<input name="lastName" type="text" />
 					</div>
+
 					<div className={st.inpCont}>
 						<h3>Número telefónico</h3>
 						<input name="noTel" type="number" min="1" pattern="^[0-9]+" />
 					</div>
 					<div className={st.inpCont}>
 						<h3>Contraseña</h3>
-						<input name="password" type="password" />
-					</div>
-					<div className={st.inpCont}>
-						<h3>Confirmación de contraseña</h3>
 						<input name="password" type="password" />
 					</div>
 					<div className={st.submit}>
