@@ -51,7 +51,7 @@ export function Layout() {
 							exact
 							path="/"
 							element={
-								<div className={st.componentContainer}>
+								<div className={st.initContainer}>
 									<LoginRegister />
 								</div>
 							}

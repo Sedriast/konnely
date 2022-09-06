@@ -30,24 +30,26 @@ export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen, rabitInfo }) {
 						<br />
 						Genero:
 						<br />
+						<br />
 						Concepción:
 						<br />
-						Fecha de concepción:
+						Fecha:
 						<br />
 						Procedencia:
 					</div>
 					<div className={st.ask}>
-						Activo
+						-----------------------------
 						<br />
-						Azul de viena
+						{rabitRaza}
 						<br />
 						{rabitGen}
 						<br />
-						Monta natural
 						<br />
-						10-20-20221
+						-----------------------------
 						<br />
-						Facatativa
+						-----------------------------
+						<br />
+						-----------------------------
 					</div>
 				</button>
 			</Link>

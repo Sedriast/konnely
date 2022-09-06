@@ -58,7 +58,7 @@
 
 	border-radius: 100%;
 	margin: 0.4rem 0;
-	background: #4e4b48;
+	background: rgba(78, 75, 72, 0.9);
 }
 .option button a div {
 	font-size: 20px;

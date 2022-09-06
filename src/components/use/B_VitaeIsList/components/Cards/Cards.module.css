@@ -29,27 +29,21 @@
 	background: rgba(0, 72, 43, 0.67);
 	background-size: cover;
 
-	padding: 2rem 1rem;
+	padding: 2rem 0.5rem;
 	cursor: pointer;
 	border-radius: 10px;
 
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
 
 	overflow: hidden;
 }
 .container hr {
-	width: 100%;
+	width: 90%;
 	height: 3px;
 	background: white;
-}
-.rabitImg {
-	width: 2rem;
-	height: 2rem;
-
-	border-radius: 100%;
 }
 .container:hover .rabitImg {
 	width: 7rem;
@@ -59,13 +53,27 @@
 
 	transition-property: width, height, margin;
 	transition-delay: 900ms;
-	transition-duration: 250ms;
+	transition-duration: 200ms;
 	transition-timing-function: cubic-bezier(0.55, 1.4, 1, 1.35);
 }
 /*Master*/
 /*Sub*/
+.rabitImg {
+	width: 2rem;
+	height: 2rem;
+
+	border-radius: 100%;
+}
+.panelId {
+	width: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
 .idName {
-	width: 74%;
+	width: 50%;
 
 	padding: 2px;
 	font-size: 1.5rem;
@@ -75,22 +83,15 @@
 
 	overflow: hidden;
 }
-.panelId {
-	width: 100%;
-
-	display: flex;
-	align-items: flex-end;
-	flex-wrap: wrap;
-	justify-content: center;
-}
 .titles {
-	text-align: start;
-	font-size: 12px;
+	text-align: end;
+	font-size: 11px;
 	color: rgba(251, 225, 34, 1);
+	margin-right: 0.3rem;
 }
 .ask {
 	text-align: start;
-	font-size: 12px;
+	font-size: 11px;
 	color: rgb(255, 255, 255);
 }
 
