@@ -1,7 +1,10 @@
 import st from './styles/VitaeIsList.module.css';
 
-import { Option } from './components/Option';
+import { generalOptions } from '../0-GeneralComp/0-StaticData/generalOptions';
+
+//import { Option } from './components/Option';
 import { useState } from 'react';
+import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
 
 export function ViewIsList() {
 	const [optionSelect, setOptionSelect] = useState(0);
@@ -32,9 +35,10 @@ export function ViewIsList() {
 					</figure>
 				)}
 			</div>
-			<div className={st.opSel_}>
+			{/* <div className={st.opSel_}>
 				<Option op={optionSelect} />
-			</div>
+			</div> */}
+			<RigthTopButtons BTNS={generalOptions} />
 		</>
 	);
 }

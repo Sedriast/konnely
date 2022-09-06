@@ -13,7 +13,7 @@ import { User } from './use/A_User/User';
 // import { Invoice } from './use/Invoice/Invoice';
 import { NewTrat } from './use/F-NewTrats/NewTrat';
 import { DataView } from './use/C_DataView/DataView';
-// import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
+import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
 import { EditUserData } from './use/F-EditUserData/EditUserData';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { EditRabbitData } from './use/F-EditRabbitData/EditRabbitData';
@@ -65,19 +65,17 @@ export function Layout() {
 								</ProtectedRoute>
 							}
 						/>
-						{/* <Route
-                            exact
-                            path='/vitaeslist'
-                            element={
-                                
-                                    <ProtectedRoute>
-                                        <div className={st.B_ViewIsList}>
-                                            <ViewIsList />
-                                        </div>
-                                    </ProtectedRoute>
-                                
-                            }
-                        /> */}
+						<Route
+							exact
+							path="/vitaeslist"
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<ViewIsList />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
 						<Route
 							exact
 							path="/vitae"

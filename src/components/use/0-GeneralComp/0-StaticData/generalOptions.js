@@ -1,4 +1,4 @@
-export const btnData = [
+export const generalOptions = [
 	{
 		id: 0,
 		icon: '🎢',
