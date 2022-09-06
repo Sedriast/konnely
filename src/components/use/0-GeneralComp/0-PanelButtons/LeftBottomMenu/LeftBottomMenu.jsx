@@ -2,7 +2,7 @@ import st from './LeftBottomMenu.module.css';
 
 import { Buttons } from '../../F-Buttons/Buttons';
 
-export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
+export function LeftBottomMenu({ backCancel, options, additionExtras, click, dis }) {
 	return (
 		<div className={st.container}>
 			<div className={st.backCancelPanel}>
@@ -15,6 +15,7 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 							btnId={backCancel.id}
 							btnName={backCancel.label}
 							btnIconText={backCancel.icon}
+							btnDisable={dis}
 							btnClick={click}
 						/>
 					</div>
@@ -24,17 +25,19 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 			</div>
 			<div className={st.optionsPanel}>
 				{options?.map((opt) => {
-					<div className={st.option} key={opt.id}>
-						<Buttons
-							label={opt.label}
-							direction="rigth"
-							route={opt.path}
-							btnId={opt.id}
-							btnName={opt.label}
-							btnIconText={opt.icon}
-							btnClick={click}
-						/>
-					</div>;
+					return (
+						<div className={st.option} key={opt.id}>
+							<Buttons
+								label={opt.label}
+								direction="rigth"
+								route={opt.path}
+								btnId={opt.id}
+								btnName={opt.label}
+								btnIconText={opt.icon}
+								btnClick={click}
+							/>
+						</div>
+					);
 				})}
 			</div>
 			<div className={st.additionExtrasPanel}>

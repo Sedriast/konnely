@@ -52,7 +52,7 @@
 	margin: 0 1rem;
 
 	transition-property: width, height, margin;
-	transition-delay: 900ms;
+	transition-delay: 600ms;
 	transition-duration: 200ms;
 	transition-timing-function: cubic-bezier(0.55, 1.4, 1, 1.35);
 }
@@ -63,6 +63,10 @@
 	height: 2rem;
 
 	border-radius: 100%;
+
+	transition-property: width, height;
+	transition-duration: 200ms;
+	transition-timing-function: cubic-bezier(0.55, 1.4, 1, 1.35);
 }
 .panelId {
 	width: 100%;

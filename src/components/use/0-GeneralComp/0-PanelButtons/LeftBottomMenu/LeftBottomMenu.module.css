@@ -17,11 +17,10 @@
 }
 .optionsPanel {
 	width: 5rem;
-	height: fit-content;
 
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
-	align-items: center;
 }
 .additionExtrasPanel {
 	width: 5rem;
@@ -34,6 +33,8 @@
 .option {
 	width: 3rem;
 	height: 3rem;
+
+	margin: 0.5rem;
 
 	background: rgba(78, 75, 72, 0.9);
 	border-radius: 100%;
