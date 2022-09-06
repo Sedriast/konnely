@@ -49,9 +49,9 @@
 
 	display: grid;
 
-	grid-template-columns: repeat(auto-fill, 225px);
-	grid-column-gap: 3rem;
-	grid-row-gap: 2rem;
+	grid-template-columns: repeat(auto-fill, 275px);
+	grid-column-gap: 1.5rem;
+	grid-row-gap: 2.6rem;
 
 	justify-content: center;
 	align-items: center;

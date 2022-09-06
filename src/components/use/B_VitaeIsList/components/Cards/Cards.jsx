@@ -20,13 +20,31 @@ export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen, rabitInfo }) {
 					<br />
 					<hr />
 					<br />
-					<div className={st.parag}>
-						<h1>Raza:</h1>
-						<p>{rabitRaza}</p>
+					<div className={st.titles}>
+						Estado:
 						<br />
-						<h1>Genero:</h1>
-						<p>{rabitGen}</p>
+						Raza:
 						<br />
+						Genero:
+						<br />
+						Concepción:
+						<br />
+						Fecha de concepción:
+						<br />
+						Procedencia:
+					</div>
+					<div className={st.ask}>
+						Activo
+						<br />
+						Azul de viena
+						<br />
+						{rabitGen}
+						<br />
+						Monta natural
+						<br />
+						10-20-20221
+						<br />
+						Facatativa
 					</div>
 				</button>
 			</Link>
