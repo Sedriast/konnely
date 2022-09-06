@@ -1,5 +1,5 @@
-import { SendRabbitData } from './F-SendRabbitData/SendRabbitData';
-import { List } from './List';
+import { SendRabbitData } from './FormSend/SendRabbitData';
+import { List } from './List/List';
 
 export function Option({ op }) {
 	switch (op) {

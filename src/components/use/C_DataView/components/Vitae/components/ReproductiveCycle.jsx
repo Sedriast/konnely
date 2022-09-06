@@ -1,7 +1,7 @@
 import st from '../styles/LifeCycle.module.css';
 import { lifeCycleChild } from '../../../../0-GeneralComp/0-Dates/Dates';
 
-export function LifeCycle({ stageId, info }) {
+export function ReproductiveCycle({ stageId, info }) {
 	return (
 		<>
 			<div className={st.container}>
