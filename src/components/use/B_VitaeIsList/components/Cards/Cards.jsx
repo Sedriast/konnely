@@ -1,7 +1,7 @@
-import st from '../styles/Cards.module.css';
+import st from './Cards.module.css';
 
 import { Link } from 'react-router-dom';
-import { recuperar } from '../../C_DataView/scripts/dataProv';
+import { recuperar } from '../../../C_DataView/scripts/dataProv';
 
 export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen, rabitInfo }) {
 	return (

@@ -3,9 +3,9 @@ import { List } from './List/List';
 
 export function Option({ op }) {
 	switch (op) {
-		case 0:
+		case false:
 			return <List />;
-		case 1:
+		case true:
 			return <SendRabbitData />;
 		default:
 			break;

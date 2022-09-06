@@ -1,6 +1,6 @@
 import swal from 'sweetalert';
 import Webcam from 'react-webcam';
-import st from './styles/SendRabbitData.module.css';
+import st from './SendRabbitData.module.css';
 
 import { useState } from 'react';
 
