@@ -1,8 +1,8 @@
-import st from '../styles/Register.module.css';
+import st from './Register.module.css';
 import { useNavigate } from 'react-router-dom';
 
-import { ValidationErrors } from '../scripts/ValidationErrors';
-import { useAuth } from '../../../../context/AuthContext';
+import { ValidationErrors } from '../../scripts/ValidationErrors';
+import { useAuth } from '../../../../../context/AuthContext';
 import swal from 'sweetalert';
 
 export function Register() {
@@ -75,6 +75,10 @@ export function Register() {
 					</div>
 					<div className={st.inpCont}>
 						<h3>Contraseña</h3>
+						<input name="password" type="password" />
+					</div>
+					<div className={st.inpCont}>
+						<h3>Confirmación de contraseña</h3>
 						<input name="password" type="password" />
 					</div>
 					<div className={st.submit}>
