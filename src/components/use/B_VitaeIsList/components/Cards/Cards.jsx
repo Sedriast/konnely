@@ -18,7 +18,10 @@ export function Cards({ rabitID, rabitImage, rabitRaza, rabitGen, rabitInfo }) {
 						<div className={st.idName}>{rabitID}</div>
 					</div>
 					<br />
+					<br />
 					<hr />
+					<br />
+					<br />
 					<br />
 					<div className={st.titles}>
 						Estado:
