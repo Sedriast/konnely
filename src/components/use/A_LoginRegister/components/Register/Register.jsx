@@ -40,15 +40,23 @@ export function Register() {
                 id='formulario'
                 onSubmit={(e) => {
                     e.preventDefault();
-                    handleSubmit({
-                        userName: e.target.email.value,
-                        name: e.target.name.value,
-                        lastName: e.target.lastName.value,
-                        idIns: e.target.idIns.value,
-                        noTel: e.target.noTel.value,
-                        email: e.target.email.value,
-                        password: e.target.password.value,
-                    });
+                    if (e.target.password.value === e.target.authpassword.value) {
+                        handleSubmit({
+                            userName: e.target.email.value,
+                            name: e.target.name.value,
+                            lastName: e.target.lastName.value,
+                            idIns: e.target.idIns.value,
+                            noTel: e.target.noTel.value,
+                            email: e.target.email.value,
+                            password: e.target.password.value,
+                        });
+                    } else {
+                        swal({
+                            title: 'Las contraseñas no coinciden',
+                            icon: 'error',
+                            button: 'aceptar',
+                        });
+                    }
                 }}>
                 <div className={st.container}>
                     <div className={st.inpContEm}>
@@ -78,7 +86,7 @@ export function Register() {
                     </div>
                     <div className={st.inpCont}>
                         <h3>Confirmación de contraseña</h3>
-                        <input name='password' type='password' />
+                        <input name='authpassword' type='password' />
                     </div>
                     <div className={st.submit}>
                         <button type='submit'>Registrar</button>
