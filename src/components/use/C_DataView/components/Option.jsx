@@ -1,13 +1,12 @@
 import { Healt } from './Healt/Healt';
 import { Vitae } from './Vitae/Vitae';
-import { tratamientos } from '../scripts/dataProv';
 
-export function Option({ op }) {
+export function Option({ op, data1 }) {
 	switch (op) {
 		case false:
 			return <Vitae />;
 		case true:
-			return <Healt trataments={tratamientos} />;
+			return <Healt />;
 		default:
 			break;
 	}

@@ -1,0 +1,38 @@
+export const tratamientos = [
+	{
+		id: 1234,
+		date: '20-12-20222',
+		signs: 'Aquí está presente una breve descripción de los síntomas',
+		diagnosis: 'Presencia escherichia coli en ciego',
+		tratament: ['medicamento', 'dosis'],
+		result: 'positivo',
+		professional: 'YULIETH MONROY',
+	},
+	{
+		id: 1235,
+		date: '20-12-20222',
+		signs: 'Aquí está presente una breve descripción de los síntomas',
+		diagnosis: 'Presencia escherichia coli en ciego',
+		tratament: ['medicamento', 'dosis'],
+		result: 'positivo',
+		professional: 'YULIETH MONROY',
+	},
+	{
+		id: 1236,
+		date: '20-12-20222',
+		signs: 'Aquí está presente una breve descripción de los síntomas',
+		diagnosis: 'Presencia escherichia coli en ciego',
+		tratament: ['medicamento', 'dosis'],
+		result: 'positivo',
+		professional: 'YULIETH MONROY',
+	},
+	{
+		id: 1236,
+		date: '20-12-20222',
+		signs: 'Aquí está presente una breve descripción de los síntomas',
+		diagnosis: 'Presencia escherichia coli en ciego',
+		tratament: ['medicamento', 'dosis'],
+		result: 'positivo',
+		professional: 'YULIETH MONROY',
+	},
+];
