@@ -112,7 +112,9 @@ export function Layout() {
 							path="/addTrat"
 							element={
 								<ProtectedRoute>
-									<NewTrat />
+									<div className={st.componentContainer}>
+										<NewTrat />
+									</div>
 								</ProtectedRoute>
 							}
 						/>

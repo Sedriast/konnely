@@ -1,5 +1,14 @@
-.container {
-	display: flex;
+.optionContainer {
+	width: 78%;
+	height: 90%;
+
+	margin-top: auto;
+	margin-bottom: auto;
+
+	border-radius: 10px;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .leftMenu {
 	width: 5rem;
@@ -13,12 +22,8 @@
 
 	font-size: 30px;
 
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(78, 75, 72, 0.9);
 
-	border: 2px solid #000000;
-	border-width: 2px;
-	border-style: solid;
-	border-color: #000000;
 	border-radius: 100%;
 
 	cursor: pointer;
