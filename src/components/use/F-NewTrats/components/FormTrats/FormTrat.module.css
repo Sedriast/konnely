@@ -1,24 +1,23 @@
 .container {
-	display: flex;
-	flex-direction: column;
-
 	background: rgba(0, 0, 0, 0.5);
 
-	width: 100%;
-	margin: 1rem;
 	padding: 2rem 3rem;
-	border-radius: 20px;
-}
-.panel {
+
 	display: flex;
-	padding: 1rem;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: space-between;
+}
+.d {
+	display: flex;
 
-	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+	text-align: center;
+}
+.container form {
+	width: 100%;
+	text-align: left;
 }
 .btn {
 	width: 4rem;
@@ -31,10 +30,7 @@
 		#000000 69.27%
 	);
 
-	border-width: 0px 2px 4px 2px;
-	border-style: solid;
-	border-color: #000000;
-	border-radius: 50px;
+	border-radius: 100%;
 
 	margin-left: auto;
 	margin-right: auto;
