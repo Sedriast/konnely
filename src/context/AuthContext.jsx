@@ -32,7 +32,7 @@ export function AuthProvider({ children }) {
     const logout = () => signOut(auth);
     const resetPassword = async (email) => sendPasswordResetEmail(auth, email);
     const verificarEmail = async (usuario) => sendEmailVerification(usuario);
-    const signup = async (userName, name, lastName, idIns, noTel, email, password) => {
+    const signup = async (email, idIns, userName, name, lastName, noTel, password) => {
         await createUserWithEmailAndPassword(auth, email, password).then(() => {
             AddInfoProfile({
                 user: auth.currentUser.uid,

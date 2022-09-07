@@ -10,7 +10,7 @@ export function Login() {
 
     const handleSubmit = async (e) => {
         try {
-            await login(e.email, e.password).then(() => {
+            await login(e.email + '@ucundinamarca.edu.co', e.password).then(() => {
                 navigate('/vitaeslist');
             });
         } catch (error) {
