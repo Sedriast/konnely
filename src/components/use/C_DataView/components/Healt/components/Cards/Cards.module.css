@@ -23,13 +23,14 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 100%;
+	width: 95%;
 	height: 100%;
 
 	background: rgba(0, 72, 43, 0.67);
 	background-size: cover;
 
 	padding: 2rem 0.5rem;
+	margin: 0.5rem;
 	cursor: pointer;
 	border-radius: 10px;
 
@@ -45,60 +46,28 @@
 	height: 3px;
 	background: white;
 }
-.container:hover .rabitImg {
-	width: 7rem;
-	height: 7rem;
-
-	margin: 0 1rem;
-
-	transition-property: width, height, margin;
-	transition-delay: 600ms;
-	transition-duration: 200ms;
-	transition-timing-function: cubic-bezier(0.55, 1.4, 1, 1.35);
-}
 /*Master*/
 /*Sub*/
-.rabitImg {
-	width: 2rem;
-	height: 2rem;
-
-	border-radius: 100%;
-
-	transition-property: width, height;
-	transition-duration: 200ms;
-	transition-timing-function: cubic-bezier(0.55, 1.4, 1, 1.35);
-}
-.panelId {
-	width: 100%;
-
+.btnPanel {
 	display: flex;
+}
+.panelInfo {
+	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
+	justify-content: space-around;
 	align-items: center;
-	justify-content: center;
 }
-.idName {
-	width: 50%;
-
-	padding: 2px;
-	font-size: 1.5rem;
-
+.sp {
+	color: rgba(251, 226, 34);
+	font-size: 20px;
+	width: 300px;
+	margin: 1rem;
+}
+.sp div {
+	font-size: 15px;
 	color: white;
-	text-overflow: ellipsis;
-
-	overflow: hidden;
 }
-.titles {
-	text-align: end;
-	font-size: 11px;
-	color: rgba(251, 225, 34, 1);
-	margin-right: 0.3rem;
-}
-.ask {
-	text-align: start;
-	font-size: 11px;
-	color: rgb(255, 255, 255);
-}
-
 /*Sub*/
 /*Button´s container*/
 

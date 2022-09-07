@@ -11,6 +11,8 @@
 	margin: 0 0 2rem 0;
 
 	position: fixed;
+
+	z-index: 1;
 }
 .panelSearchBar input {
 	border-bottom-left-radius: 20px;
@@ -50,10 +52,13 @@
 	background: rgb(72 70 67);
 
 	bottom: 1rem;
+
+	z-index: 0;
 }
 .new button a div {
 	color: white;
 }
 .panelItems {
+	color: rgba(251, 226, 34);
 	padding-top: 4rem;
 }

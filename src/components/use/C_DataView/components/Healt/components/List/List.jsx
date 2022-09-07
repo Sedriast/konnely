@@ -1,6 +1,3 @@
-import st from './List.module.css';
-
-import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
 import { Cards } from '../Cards/Cards';
 
 export function List({ trataments }) {
@@ -18,9 +15,6 @@ export function List({ trataments }) {
 						result={item.result}
 						professional={item.professional}
 					/>
-					<div className={st.btn}>
-						<Buttons route="#" label="eliminar" direction="bottom" btnIconText="🚮" />
-					</div>
 				</>
 			))}
 		</>
