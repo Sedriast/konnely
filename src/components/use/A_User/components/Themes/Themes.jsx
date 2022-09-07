@@ -2,7 +2,7 @@ import swal from 'sweetalert';
 import st from './styles/Theme.module.css';
 
 import { useState } from 'react';
-import { themesData } from '../../scripts/customThemeData';
+import { themesData } from '../../../0-GeneralComp/0-StaticData/customThemeData';
 import { useAuth } from '../../../../../context/AuthContext';
 import { UpdateInfoProfile } from '../../../../firebase/funtions/AddInformation';
 

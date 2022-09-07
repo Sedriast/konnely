@@ -1,0 +1,20 @@
+export const generalOptions = [
+	{
+		id: 0,
+		icon: '🎢',
+		path: '/analitics',
+		label: 'Estadísticas',
+	},
+	{
+		id: 1,
+		icon: '🪟',
+		path: '/vitaeslist',
+		label: 'Hojas de vida',
+	},
+	{
+		id: 2,
+		icon: '📃',
+		path: '/record',
+		label: 'Historial',
+	},
+];

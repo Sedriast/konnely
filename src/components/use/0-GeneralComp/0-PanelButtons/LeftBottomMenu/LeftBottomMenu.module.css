@@ -1,0 +1,44 @@
+.container {
+	width: 5rem;
+	height: 100%;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.backCancelPanel {
+	width: 5rem;
+	height: 6rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.optionsPanel {
+	width: 5rem;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.additionExtrasPanel {
+	width: 5rem;
+	height: 6rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.option {
+	width: 3rem;
+	height: 3rem;
+
+	margin: 0.5rem;
+
+	background: rgba(78, 75, 72, 0.9);
+	border-radius: 100%;
+}
+.option button a div {
+	font-size: 20px;
+}

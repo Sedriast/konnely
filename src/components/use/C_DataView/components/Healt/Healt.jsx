@@ -1,28 +1,29 @@
 import st from './styles/Healt.module.css';
 
-import { Item } from './components/Item';
+import { tratamientos } from '../../../0-GeneralComp/0-fakeData/tratamientos';
+
 import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
+import { List } from './components/List/List';
 
 export function Healt({ trataments }) {
+	// trataments = tratamientos;
 	return (
-		<>
-			<div className={st.container}>
-				<h1>Lista de Tratamientos</h1>
-				<br />
-				<div className={st.panelContainer}>
-					<div className={st.panelItems}>
-						<Item trataments={trataments} />
-					</div>
-				</div>
-				<div className={st.new}>
-					<Buttons
-						btnIconText="🧑🏽‍⚕️ Nuevo 🧑🏽‍⚕️"
-						route="/addTrat"
-						label="Nuevo tratamiento"
-						direction="bottom"
-					/>
-				</div>
+		<div className={st.container}>
+			<div className={st.panelSearchBar}>
+				<input placeholder="Buscar" />
+				<button className={st.btnSearch}>🔎</button>
 			</div>
-		</>
+			<div className={st.panelItems}>
+				<List trataments={tratamientos} />
+			</div>
+			<div className={st.new}>
+				<Buttons
+					btnIconText="Nuevo"
+					route="/addTrat"
+					label="Nuevo tratamiento"
+					direction="bottom"
+				/>
+			</div>
+		</div>
 	);
 }

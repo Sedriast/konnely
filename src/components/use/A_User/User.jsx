@@ -3,96 +3,90 @@ import app from '../../firebase/credentials';
 
 import { useEffect, useState } from 'react';
 
-import { optionsDataUser, optionsDataAdmin } from './scripts/optionsData';
+import { optionsDataUser, optionsDataAdmin } from '../0-GeneralComp/0-StaticData/userOptions';
+import { useAuth } from '../../../context/AuthContext';
 
 import { Option } from './components/Option';
 import { UserData } from './components/UserData/UserData';
-import { useAuth } from '../../../context/AuthContext';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 const db = getFirestore(app);
 
 export function User() {
-    const { user } = useAuth();
-    const [optionSelect, setOptionSelect] = useState(0);
-    const [rol, setRol] = useState(null);
+	const { user } = useAuth();
+	const [optionSelect, setOptionSelect] = useState(0);
+	const [rol, setRol] = useState(null);
 
-    useEffect(() => {
-        async function setSelect() {
-            if (optionSelect !== null) {
-                try {
-                    const recuest = optionSelect;
-                    if (recuest === String) {
-                        console.log(recuest);
-                    }
-                } catch (error) {
-                    console.log(error);
-                }
-            }
-        }
-        const getData = async () => {
-            const query_ = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
-            const querySnapshot = await getDocs(query_);
+	useEffect(() => {
+		async function setSelect() {
+			if (optionSelect !== null) {
+				try {
+					const recuest = optionSelect;
+					if (recuest === String) {
+						console.log(recuest);
+					}
+				} catch (error) {
+					console.log(error);
+				}
+			}
+		}
+		const getData = async () => {
+			const query_ = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
+			const querySnapshot = await getDocs(query_);
 
-            querySnapshot.forEach((doc) => {
-                setRol(doc.data());
-            });
-        };
+			querySnapshot.forEach((doc) => {
+				setRol(doc.data());
+			});
+		};
 
-        if (user) {
-            getData();
-        }
-        setSelect();
-    }, [user, optionSelect]);
-    return (
-        <>
-            {rol !== null && (
-                <div className={st.container}>
-                    <div className={st.menuLeft}>
-                        {rol.rol === 'usuario'
-                            ? optionsDataUser.map((option) => {
-                                  return (
-                                      <figure
-                                          key={option.id}
-                                          id={option.id}
-                                          title={option.label}
-                                          tooltip-dir='rigth'>
-                                          <button
-                                              className={st.optionST}
-                                              onClick={() => {
-                                                  setOptionSelect(option.id);
-                                              }}>
-                                              {option.icon}
-                                          </button>
-                                      </figure>
-                                  );
-                              })
-                            : optionsDataAdmin.map((option) => {
-                                  return (
-                                      <figure
-                                          key={option.id}
-                                          id={option.id}
-                                          title={option.label}
-                                          tooltip-dir='rigth'>
-                                          <button
-                                              className={st.optionST}
-                                              onClick={() => {
-                                                  setOptionSelect(option.id);
-                                              }}>
-                                              {option.icon}
-                                          </button>
-                                      </figure>
-                                  );
-                              })}
-                    </div>
-                    <div className={st.panel}>
-                        <Option op={optionSelect}></Option>
-                    </div>
-                    <div className={st.menuRigth}>
-                        <UserData user_={rol} />
-                    </div>
-                </div>
-            )}
-        </>
-    );
+		if (user) {
+			getData();
+		}
+		setSelect();
+	}, [user, optionSelect]);
+	return (
+		<>
+			{rol !== null && (
+				<div className={st.container}>
+					<div className={st.menuLeft}>
+						{rol.rol === 'usuario'
+							? optionsDataUser.map((option) => {
+									return (
+										<figure key={option.id} id={option.id} title={option.label} tooltip-dir="rigth">
+											<button
+												className={st.optionST}
+												onClick={() => {
+													setOptionSelect(option.id);
+												}}
+											>
+												{option.icon}
+											</button>
+										</figure>
+									);
+							  })
+							: optionsDataAdmin.map((option) => {
+									return (
+										<figure key={option.id} id={option.id} title={option.label} tooltip-dir="rigth">
+											<button
+												className={st.optionST}
+												onClick={() => {
+													setOptionSelect(option.id);
+												}}
+											>
+												{option.icon}
+											</button>
+										</figure>
+									);
+							  })}
+					</div>
+					<div className={st.panel}>
+						<Option op={optionSelect}></Option>
+					</div>
+					<div className={st.menuRigth}>
+						<UserData user_={rol} />
+					</div>
+				</div>
+			)}
+		</>
+	);
 }

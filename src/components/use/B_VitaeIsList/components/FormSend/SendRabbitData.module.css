@@ -1,0 +1,213 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+	background: rgba(0, 72, 43, 0.666);
+}
+.panelInpImg {
+	display: contents;
+}
+.panelContainer {
+	height: fit-content;
+	width: initial;
+
+	padding: 0 2rem;
+
+	display: flex;
+	align-content: stretch;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+/*Master*/
+/*Sub*/
+.panelInpImg {
+	display: flex;
+	align-content: stretch;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
+}
+.btnC {
+	width: 4rem;
+	height: 4rem;
+
+	background: radial-gradient(
+		112% 112% at 50% -12%,
+		rgba(0, 0, 0, 0) 26.04%,
+		rgba(0, 0, 0, 0.5) 46.35%,
+		#000000 69.27%
+	);
+
+	border-width: 0px 2px 4px 2px;
+	border-style: solid;
+	border-color: #000000;
+	border-radius: 50px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.panelContainer div {
+	color: white;
+}
+.panelContainer div h1 {
+	color: white;
+}
+.panelContainer div button {
+	color: white;
+}
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Select */
+
+/*Select  */
+
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+.panelImage {
+	width: 100%;
+	height: 250px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	margin: 5px;
+}
+.panelImage div {
+	width: 250px;
+	height: 250px;
+	margin: 1rem;
+
+	display: flex;
+	align-content: space-between;
+	justify-content: space-between;
+	align-items: center;
+}
+.panelImage img {
+	width: 250px;
+	height: 250px;
+
+	padding: 0;
+
+	object-fit: cover;
+	border-radius: 100%;
+	border: 1px solid black;
+}
+.panelImage input {
+	width: 250px;
+	height: 250px;
+
+	border: 1px solid black;
+	border-radius: 100%;
+	padding: 0;
+}
+.panelImage input::before {
+	position: relative;
+	height: inherit;
+
+	background-color: white;
+	color: black;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	content: '+';
+	font-size: 75px;
+}
+.panel {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+.panel div {
+	width: 350px;
+}
+.cam button {
+	background: radial-gradient(
+		216.67% 100% at 50% 0%,
+		rgba(0, 0, 0, 0) 26.55%,
+		rgba(0, 0, 0, 0.5) 34.9%,
+		rgba(0, 0, 0, 0.5) 56.52%,
+		rgba(0, 0, 0, 0.75) 100%
+	);
+	position: relative;
+	bottom: 0;
+	height: 100px;
+	border-radius: 0 0 100% 100%;
+}
+.cam video {
+	border-radius: 100%;
+	position: relative;
+	top: 0;
+}
+.submit {
+	width: 4rem;
+	height: 4rem;
+
+	background: rgba(0, 0, 0, 0.75);
+	border: 0.2rem solid black;
+	border-radius: 100%;
+
+	margin: 2rem;
+}
+.submit div {
+	font-size: 2rem;
+}
+
+/*Master*/
+/*Other´s Components */

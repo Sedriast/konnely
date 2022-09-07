@@ -1,0 +1,119 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+	width: 6rem;
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+/*Master*/
+/*Sub*/
+
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+.optPrincipal {
+	display: flex;
+	height: 80%;
+	justify-content: center;
+	flex-direction: column;
+}
+.option {
+	width: 3rem;
+	height: 3rem;
+
+	right: 0;
+
+	border-radius: 100%;
+	margin: 0.4rem 0;
+	background: rgba(78, 75, 72, 0.9);
+}
+.option button a div {
+	font-size: 20px;
+}
+
+.option:hover {
+	width: 3.5rem;
+	height: 3.5rem;
+
+	right: 0;
+}
+.option button a div:hover {
+	font-size: 30px;
+}
+.opUser {
+	display: flex;
+	width: 5rem;
+	height: 5rem;
+	margin: 6px;
+	border: 1px solid black;
+	border-radius: 100%;
+}
+.opUser button {
+	border-radius: 100%;
+	display: flex;
+}
+.opUser img {
+	width: 5rem;
+	height: 5rem;
+
+	border-radius: 100%;
+
+	background: rgba(0, 0, 0, 0.5);
+}
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+
+/*Master*/
+/*Other´s Components */
