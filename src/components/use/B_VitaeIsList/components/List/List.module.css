@@ -60,6 +60,10 @@
 	display: flex;
 	margin: 0 0 2rem 0;
 }
+.panelSearchBar form {
+	width: 100%;
+	display: flex;
+}
 .panelSearchBar form input {
 	border-bottom-left-radius: 20px;
 	border-top-left-radius: 20px;
