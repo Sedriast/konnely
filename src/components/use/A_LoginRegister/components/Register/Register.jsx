@@ -41,7 +41,7 @@ export function Register() {
                 onSubmit={(e) => {
                     e.preventDefault();
                     handleSubmit({
-                        userName: e.target.userName.value,
+                        userName: e.target.email.value,
                         name: e.target.name.value,
                         lastName: e.target.lastName.value,
                         idIns: e.target.idIns.value,

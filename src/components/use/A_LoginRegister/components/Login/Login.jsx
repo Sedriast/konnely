@@ -10,7 +10,7 @@ export function Login() {
 
     const handleSubmit = async (e) => {
         try {
-            await login(e.email + '@ucundinamarca.edu.co', e.password).then(() => {
+            await login(e.email, e.password).then(() => {
                 navigate('/vitaeslist');
             });
         } catch (error) {
@@ -27,7 +27,7 @@ export function Login() {
                     }}>
                     <div className={st.inpCont}>
                         <h3>Usuario institucional</h3>
-                        <input name='email' type='text' autocomplete='username' />
+                        <input name='email' type='text' />
                     </div>
                     <div className={st.inpCont}>
                         <h3>Contraseña</h3>
