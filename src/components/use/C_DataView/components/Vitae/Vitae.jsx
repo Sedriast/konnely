@@ -4,11 +4,8 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { basicData } from '../../scripts/dataProv';
-import { LifeCycle } from './components/LifeCycle';
-import { EditButtons } from './components/EditButtons';
-import { RabbitDataView } from './components/RabbitDataView';
-import { RabbitStadisticsView } from './components/RabbitStadisticsView';
-import { ReproductiveCycle } from './components/ReproductiveCycle';
+import { LifeCycle } from './components/LifeCycle/LifeCycle';
+import { RabbitDataView } from './components/RabbitDataView/RabbitDataView';
 
 export function Vitae() {
 	const navigate = useNavigate();
@@ -22,26 +19,10 @@ export function Vitae() {
 	return (
 		<>
 			{basicData.id !== null && (
-				<div className={st.container}>
-					<div className={st.panel}>
-						<RabbitDataView stageId={basicData.id} />
-						<hr />
-						<br />
-						Ciclo de vida
-						<br />
-						<br />
-						<LifeCycle stageId={basicData.id} info={basicData.info} />
-						<hr />
-						<br />
-						Ciclo reproductivo
-						<br />
-						<br />
-						<ReproductiveCycle />
-						<hr />
-						<RabbitStadisticsView />
-						<hr />
-						<EditButtons />
-					</div>
+				<div className={st.panel}>
+					<RabbitDataView stageId={basicData.id} />
+					<LifeCycle stageId={basicData.id} info={basicData.info} />
+					<LifeCycle stageId={basicData.id} info={basicData.info} />
 				</div>
 			)}
 		</>

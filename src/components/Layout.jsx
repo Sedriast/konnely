@@ -81,7 +81,9 @@ export function Layout() {
 							path="/vitae"
 							element={
 								<ProtectedRoute>
-									<DataView />
+									<div className={st.componentContainer}>
+										<DataView />
+									</div>
 								</ProtectedRoute>
 							}
 						/>

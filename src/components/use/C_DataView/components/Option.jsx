@@ -4,9 +4,9 @@ import { tratamientos } from '../scripts/dataProv';
 
 export function Option({ op }) {
 	switch (op) {
-		case true:
-			return <Vitae />;
 		case false:
+			return <Vitae />;
+		case true:
 			return <Healt trataments={tratamientos} />;
 		default:
 			break;

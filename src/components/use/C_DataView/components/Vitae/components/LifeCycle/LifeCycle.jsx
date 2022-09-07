@@ -1,9 +1,14 @@
-import st from '../styles/LifeCycle.module.css';
-import { lifeCycleChild } from '../../../../0-GeneralComp/0-Dates/Dates';
+import st from './LifeCycle.module.css';
+import { lifeCycleChild } from '../../../../../0-GeneralComp/0-Dates/Dates';
 
-export function ReproductiveCycle({ stageId, info }) {
+export function LifeCycle({ stageId, info }) {
 	return (
 		<>
+			<hr />
+			<br />
+			Ciclo de vida
+			<br />
+			<br />
 			<div className={st.container}>
 				{stageId !== null ? (
 					<div className={st.panel}>
@@ -30,6 +35,10 @@ export function ReproductiveCycle({ stageId, info }) {
 					<></>
 				)}
 			</div>
+			<br />
+			<br />
+			<hr />
+			<br />
 		</>
 	);
 }

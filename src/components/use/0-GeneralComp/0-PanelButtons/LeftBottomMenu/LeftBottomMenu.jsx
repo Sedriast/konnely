@@ -2,7 +2,7 @@ import st from './LeftBottomMenu.module.css';
 
 import { Buttons } from '../../F-Buttons/Buttons';
 
-export function LeftBottomMenu({ backCancel, options, additionExtras, click, dis }) {
+export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 	return (
 		<div className={st.container}>
 			<div className={st.backCancelPanel}>
@@ -15,7 +15,6 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click, dis
 							btnId={backCancel.id}
 							btnName={backCancel.label}
 							btnIconText={backCancel.icon}
-							btnDisable={dis}
 							btnClick={click}
 						/>
 					</div>
@@ -34,7 +33,7 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click, dis
 								btnId={opt.id}
 								btnName={opt.label}
 								btnIconText={opt.icon}
-								btnClick={click}
+								btnClick={opt.state}
 							/>
 						</div>
 					);

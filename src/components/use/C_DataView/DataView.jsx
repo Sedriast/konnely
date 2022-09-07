@@ -2,7 +2,6 @@ import st from './styles/DataView.module.css';
 
 import { useState } from 'react';
 
-import { dataViewOptions } from '../0-GeneralComp/0-StaticData/DataView/dataView';
 import { generalOptions } from '../0-GeneralComp/0-StaticData/generalOptions';
 import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
 import { LeftBottomMenu } from '../0-GeneralComp/0-PanelButtons/LeftBottomMenu/LeftBottomMenu';
@@ -10,21 +9,37 @@ import { LeftBottomMenu } from '../0-GeneralComp/0-PanelButtons/LeftBottomMenu/L
 import { Option } from './components/Option';
 
 export function DataView() {
-	const [optSelect, setOptSelect] = useState(false);
-	const [optionSelect, setOptionSelect] = useState(0);
+	const [optionSelect, setOptionSelect] = useState(false);
+	const fal = () => {
+		setOptionSelect(false);
+	};
+	const tru = () => {
+		setOptionSelect(true);
+	};
+	const dataViewOptions = [
+		{
+			id: 0,
+			state: fal,
+			icon: 'ℹ️',
+			path: '#',
+			label: 'Información general',
+		},
+		{
+			id: 1,
+			state: tru,
+			icon: '💉',
+			path: '#',
+			label: 'Tratamientos',
+		},
+	];
 
 	return (
-		<div className={st.container}>
-			<LeftBottomMenu
-				options={dataViewOptions}
-				click={() => {
-					setOptSelect(!optSelect);
-				}}
-			/>
+		<>
+			<LeftBottomMenu options={dataViewOptions} />
 			<div className={st.optionContainer}>
-				<Option op={optSelect} />
+				<Option op={optionSelect} />
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />
-		</div>
+		</>
 	);
 }
