@@ -1,11 +1,14 @@
 .container {
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 72, 43, 0.666);
 
 	padding: 2rem 3rem;
 
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+.container h1 {
+	color: white;
 }
 .d {
 	display: flex;

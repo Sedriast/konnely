@@ -29,8 +29,8 @@
 	background: rgba(0, 72, 43, 0.67);
 	background-size: cover;
 
-	padding: 2rem 0.5rem;
-	margin: 0.5rem;
+	padding: 2.5rem 1rem;
+	margin: 2rem 0rem;
 	cursor: pointer;
 	border-radius: 10px;
 
@@ -48,8 +48,17 @@
 }
 /*Master*/
 /*Sub*/
+.panelId {
+	font-size: 1.5rem;
+	color: rgba(251, 226, 34);
+}
 .btnPanel {
 	display: flex;
+	margin-left: 0.5rem;
+}
+.btnPanel div {
+	font-size: 25px;
+	filter: none;
 }
 .panelInfo {
 	display: flex;

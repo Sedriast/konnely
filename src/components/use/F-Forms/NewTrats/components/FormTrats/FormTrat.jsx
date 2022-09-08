@@ -16,12 +16,12 @@ export function FormTrat() {
 
 	return (
 		<div className={st.container}>
-			<div className={st.d}>
+			<h1 className={st.d}>
 				Tratamiento:
 				<br />
 				<br />
 				Mostrar id del tratamiento
-			</div>
+			</h1>
 			<form action="">
 				<Inputs name="date" type="date" leyend="Fecha" handleChange={handleChange} />
 				<Inputs name="signs" type="text" leyend="Sintomas" handleChange={handleChange} />
