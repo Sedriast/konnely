@@ -1,10 +1,10 @@
 import st from './FormTrat.module.css';
 
 import { useState } from 'react';
-import { QueriesArray } from '../../../../firebase/funtions/QueriesArray';
+import { QueriesArray } from '../../../../../firebase/funtions/QueriesArray';
 
-import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
-import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
+import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
+import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
 
 export function FormTrat() {
 	const [values, setValues] = useState({});

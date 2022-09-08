@@ -58,28 +58,21 @@
 
 	background: radial-gradient(
 		112% 112% at 50% -12%,
-		rgba(0, 0, 0, 0) 26.04%,
-		rgba(0, 0, 0, 0.5) 46.35%,
-		#000000 69.27%
+		rgba(78, 75, 72, 0) 26.04%,
+		rgba(78, 75, 72, 0.5) 46.35%,
+		rgba(78, 75, 72, 1) 69.27%
 	);
 
-	border-width: 0px 2px 4px 2px;
-	border-style: solid;
-	border-color: #000000;
+	font-size: 1.5rem;
+
 	border-radius: 50px;
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.panelContainer div {
-	color: white;
-}
 .panelContainer div h1 {
-	color: white;
-}
-.panelContainer div button {
-	color: white;
+	color: rgb(255, 255, 255);
 }
 /*Sub*/
 /*Button´s container*/
@@ -199,14 +192,13 @@
 	width: 4rem;
 	height: 4rem;
 
-	background: rgba(0, 0, 0, 0.75);
-	border: 0.2rem solid black;
+	background: rgba(78, 75, 72, 0.9);
 	border-radius: 100%;
 
 	margin: 2rem;
 }
 .submit div {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 /*Master*/

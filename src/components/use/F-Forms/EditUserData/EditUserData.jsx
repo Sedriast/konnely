@@ -3,10 +3,10 @@ import Webcam from 'react-webcam';
 
 import { useState } from 'react';
 
-import { useModal } from '../0-GeneralComp/0-Modals/useModal';
-import { Modal } from '../0-GeneralComp/0-Modals/Modal';
-import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
-import { Inputs } from '../0-GeneralComp/F-Inputs/Inputs';
+import { useModal } from '../../0-GeneralComp/0-Modals/useModal';
+import { Modal } from '../../0-GeneralComp/0-Modals/Modal';
+import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
+import { Inputs } from '../../0-GeneralComp/F-Inputs/Inputs';
 
 export function EditUserData({ dataUser }) {
 	const [image, setImage] = useState(null);

@@ -1,10 +1,10 @@
 import st from './styles/EditRabbitData.module.css';
 
-import { generalOptions } from '../0-GeneralComp/0-StaticData/generalOptions';
+import { generalOptions } from '../../0-GeneralComp/0-StaticData/generalOptions';
 
 import { Form } from './components/Form';
-import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
-import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
+import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
+import { RigthTopButtons } from '../../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
 
 export function EditRabbitData() {
 	return (
