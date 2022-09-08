@@ -205,7 +205,7 @@ export function SendRabbitData() {
 							direction="bottom"
 							label="Enviar"
 							btnClick={handleSubmit}
-							route="/vitae"
+							route="/vitaeslist"
 							btnIconText="🗳️"
 						/>
 					</div>

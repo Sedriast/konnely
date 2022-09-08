@@ -1,6 +1,6 @@
 import swal from 'sweetalert';
 import Webcam from 'react-webcam';
-import st from '../styles/Form.module.css';
+import st from './Form.module.css';
 
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

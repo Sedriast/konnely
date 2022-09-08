@@ -101,7 +101,9 @@ export function Layout() {
 							path="/formEdit"
 							element={
 								<ProtectedRoute>
-									<EditRabbitData />
+									<div className={st.componentContainer}>
+										<EditRabbitData />
+									</div>
 								</ProtectedRoute>
 							}
 						/>

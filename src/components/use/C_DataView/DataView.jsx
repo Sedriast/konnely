@@ -2,7 +2,7 @@ import st from './styles/DataView.module.css';
 
 import { useState } from 'react';
 
-import { generalOptions } from '../0-GeneralComp/0-StaticData/generalOptions';
+import { generalOptions } from '../0-GeneralComp/0-StaticData/options';
 import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
 import { LeftBottomMenu } from '../0-GeneralComp/0-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
