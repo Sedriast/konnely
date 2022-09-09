@@ -48,6 +48,14 @@ export const addImageAndInfo = (props) => {
     funtionAddImageAndInfo(props);
 };
 
+export const EditImageAndInfo = (props) => {
+    const funtionEditImageAndInfo = async (datos) => {
+        console.log(datos);
+    };
+
+    funtionEditImageAndInfo(props);
+};
+
 export const AddInfoProfile = (props) => {
     const funtionAddInfoProfile = async ({ user, data }) => {
         try {
