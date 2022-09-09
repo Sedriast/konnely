@@ -22,7 +22,7 @@ export function ViewIsList() {
 			<div className={st.optionContainer}>
 				<Option op={optionSelect} />
 			</div>
-			<RigthTopButtons BTNS={generalOptions} />
+			{!optionSelect ? <RigthTopButtons BTNS={generalOptions} /> : <></>}
 		</>
 	);
 }

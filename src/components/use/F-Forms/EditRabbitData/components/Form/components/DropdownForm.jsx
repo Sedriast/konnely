@@ -1,5 +1,5 @@
-import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
-import { basicData } from '../../../C_DataView/scripts/dataProv';
+import { Inputs } from '../../../../../0-GeneralComp/F-Inputs/Inputs';
+import { basicData } from '../../../../../C_DataView/scripts/dataProv';
 
 export function DropdownForm({ motivo, handleChange }) {
 	console.log(basicData);

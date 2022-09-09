@@ -9,10 +9,10 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 				{backCancel ? (
 					<div className={st.option} key={backCancel.id}>
 						<Buttons
+							btnId={backCancel.id}
 							label={backCancel.label}
 							direction="rigth"
 							route={backCancel.path}
-							btnId={backCancel.id}
 							btnName={backCancel.label}
 							btnIconText={backCancel.icon}
 							btnClick={click}

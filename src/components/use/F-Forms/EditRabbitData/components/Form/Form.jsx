@@ -5,17 +5,17 @@ import st from './Form.module.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { SearchAll } from '../../../../firebase/funtions/SearchAll';
-import { useModal } from '../../../0-GeneralComp/0-Modals/useModal';
-import { addImageAndInfo } from '../../../../firebase/funtions/AddInformation';
-import { recuperar, basicData } from '../../../C_DataView/scripts/dataProv';
+import { SearchAll } from '../../../../../firebase/funtions/SearchAll';
+import { useModal } from '../../../../0-GeneralComp/0-Modals/useModal';
+import { addImageAndInfo } from '../../../../../firebase/funtions/AddInformation';
+import { recuperar, basicData } from '../../../../C_DataView/scripts/dataProv';
 
-import { DropdownForm } from './DropdownForm';
-import { DropdownDate } from './DropdownDate';
-import { Modal } from '../../../0-GeneralComp/0-Modals/Modal';
-import { Lists } from '../../../0-GeneralComp/F-List/Lists';
-import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
-import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
+import { DropdownForm } from './components/DropdownForm';
+import { DropdownDate } from './components/DropdownDate';
+import { Modal } from '../../../../0-GeneralComp/0-Modals/Modal';
+import { Lists } from '../../../../0-GeneralComp/F-List/Lists';
+import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
+import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
 
 export function Form() {
 	const navigate = useNavigate();
@@ -224,7 +224,7 @@ export function Form() {
 								direction="bottom"
 								label="Guardar"
 								btnClick={handleSubmit}
-								route="/vitae"
+								route="/vitaeslist"
 								btnIconText="💾"
 							/>
 						</div>
