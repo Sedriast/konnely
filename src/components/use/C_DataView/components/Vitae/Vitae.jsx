@@ -21,7 +21,8 @@ export function Vitae() {
 			{basicData.id !== null && (
 				<div className={st.panel}>
 					<RabbitDataView stageId={basicData.id} />
-					<LifeCycle stageId={basicData.id} info={basicData.info} />
+					<hr />
+					<br />
 					<LifeCycle stageId={basicData.id} info={basicData.info} />
 				</div>
 			)}

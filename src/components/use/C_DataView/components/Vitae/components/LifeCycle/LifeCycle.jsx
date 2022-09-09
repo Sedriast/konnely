@@ -1,44 +1,27 @@
 import st from './LifeCycle.module.css';
-import { lifeCycleChild } from '../../../../../0-GeneralComp/0-Dates/Dates';
+
+//import { lifeCycleChild } from '../../../../../../0-GeneralComp/0-Dates/Dates';
+import { stages } from '../../../../../0-GeneralComp/0-fakeData/liveCycle';
+import { Cards } from './Cards/Cards';
 
 export function LifeCycle({ stageId, info }) {
 	return (
 		<>
-			<hr />
 			<br />
-			Ciclo de vida
-			<br />
-			<br />
-			<div className={st.container}>
-				{stageId !== null ? (
-					<div className={st.panel}>
-						{lifeCycleChild(info).map((items, index) => {
-							return (
-								<div key={index} className={st.panelStage}>
-									<div>
-										{items.etapa}
-										<br />
-										<br />
-										Peso:
-										<br />
-										<h1>{items.peso}</h1>
-										<br />
-										Fecha de registro:
-										<br />
-										<h1>{items.fecha}</h1>
-									</div>
-								</div>
-							);
-						})}
-					</div>
-				) : (
-					<></>
-				)}
-			</div>
+			<div className={st.tit}>Ciclo de vida</div>
 			<br />
 			<br />
-			<hr />
 			<br />
+			{/* <div className={st.panel}>
+				<Cards stageId={stageId} info={lifeCycleChild[info]} />
+			</div> */}
+			{stageId !== null ? (
+				<div className={st.panel}>
+					<Cards stageId={102222} info={stages} />
+				</div>
+			) : (
+				<></>
+			)}
 		</>
 	);
 }
