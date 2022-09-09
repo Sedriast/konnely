@@ -50,8 +50,8 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 	align-items: stretch;
+	justify-content: space-around;
 }
 /*Sub*/
 /*Button´s container*/

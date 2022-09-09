@@ -17,12 +17,7 @@ export function Healt({ trataments }) {
 				<List trataments={tratamientos} />
 			</div>
 			<div className={st.new}>
-				<Buttons
-					btnIconText="Nuevo"
-					route="/addTrat"
-					label="Nuevo tratamiento"
-					direction="bottom"
-				/>
+				<Buttons btnIconText="Nuevo" route="/addTrat" label="Nuevo tratamiento" direction="top" />
 			</div>
 		</div>
 	);

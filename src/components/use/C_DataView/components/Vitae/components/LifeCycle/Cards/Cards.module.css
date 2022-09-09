@@ -1,15 +1,3 @@
-.tit {
-	color: rgba(251, 225, 34, 1);
-	font-size: 30px;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-.tit div {
-	margin-left: 0.5rem;
-}
-
 .container {
 	width: 350px;
 
@@ -25,8 +13,22 @@
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
+}
+.bird {
+	width: 75%;
 
-	overflow: hidden;
+	background: rgba(0, 0, 0, 0.1);
+	background-size: cover;
+
+	padding: 1.5rem 0.5rem;
+	margin: 1rem;
+	cursor: pointer;
+	border-radius: 10px;
+
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .panel {
 	display: flex;
@@ -55,21 +57,25 @@
 }
 .titles {
 	text-align: end;
-	font-size: 14px;
+	font-size: 16px;
 	color: rgba(251, 225, 34, 1);
 	margin-right: 0.3rem;
 }
 .ask {
 	text-align: start;
-	font-size: 14px;
+	font-size: 16px;
 	color: rgb(255, 255, 255);
 }
 .idName {
+	width: 100%;
+
 	padding: 2px;
 	font-size: 1.5rem;
 
 	color: white;
 	text-overflow: ellipsis;
 
-	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

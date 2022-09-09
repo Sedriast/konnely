@@ -1,7 +1,6 @@
 import st from './styles/VitaeIsList.module.css';
 
-import { generalOptions } from '../0-GeneralComp/0-StaticData/generalOptions';
-import { viewsListOptions } from '../0-GeneralComp/0-StaticData/viewsListOptions';
+import { viewsListOptions, generalOptions } from '../0-GeneralComp/0-StaticData/options';
 
 import { Option } from './components/Option';
 import { useState } from 'react';
@@ -23,7 +22,7 @@ export function ViewIsList() {
 			<div className={st.optionContainer}>
 				<Option op={optionSelect} />
 			</div>
-			<RigthTopButtons BTNS={generalOptions} />
+			{optionSelect ? <></> : <RigthTopButtons BTNS={generalOptions} />}
 		</>
 	);
 }

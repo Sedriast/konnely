@@ -11,12 +11,12 @@ import { themesData } from './use/0-GeneralComp/0-StaticData/customThemeData';
 
 import { User } from './use/A_User/User';
 // import { Invoice } from './use/Invoice/Invoice';
-import { NewTrat } from './use/F-NewTrats/NewTrat';
+import { NewTrat } from './use/F-Forms/NewTrats/NewTrat';
 import { DataView } from './use/C_DataView/DataView';
 import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
-import { EditUserData } from './use/F-EditUserData/EditUserData';
+import { EditUserData } from './use/F-Forms/EditUserData/EditUserData';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
-import { EditRabbitData } from './use/F-EditRabbitData/EditRabbitData';
+import { EditRabbitData } from './use/F-Forms/EditRabbitData/EditRabbitData';
 
 const db = getFirestore(app);
 
@@ -101,7 +101,9 @@ export function Layout() {
 							path="/formEdit"
 							element={
 								<ProtectedRoute>
-									<EditRabbitData />
+									<div className={st.componentContainer}>
+										<EditRabbitData />
+									</div>
 								</ProtectedRoute>
 							}
 						/>

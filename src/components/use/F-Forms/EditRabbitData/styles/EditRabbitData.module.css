@@ -1,7 +1,14 @@
-.container {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.optionContainer {
+	width: 80%;
+	height: 90%;
+
+	margin-top: auto;
+	margin-bottom: auto;
+
+	border-radius: 10px;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .leftMenu {
 	width: 5rem;

@@ -1,9 +1,9 @@
 import st from './styles/NewTrat.module.css';
 
 import { FormTrat } from './components/FormTrats/FormTrat';
-import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
-import { generalOptions } from '../0-GeneralComp/0-StaticData/generalOptions';
-import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
+import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
+import { generalOptions } from '../../0-GeneralComp/0-StaticData/options';
+import { RigthTopButtons } from '../../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
 
 export function NewTrat() {
 	return (

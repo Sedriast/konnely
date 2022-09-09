@@ -20,7 +20,9 @@ export function RabbitDataView({ stageId }) {
 			{basicData.id !== null && (
 				<>
 					<div className={st.initInfo}>
-						<img className={st.rabbitImg} src={data_[0]?.url} alt="" />
+						<div className={st.rabbitImg}>
+							<img src={data_[0]?.url} alt="" />
+						</div>
 						<br />
 						{data_[0]?.id}
 						<br />

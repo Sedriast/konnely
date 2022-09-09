@@ -47,18 +47,19 @@
 
 	border-radius: 20px;
 
-	padding: 0.5rem 1rem;
+	padding: 0.5rem;
 
 	background: rgb(72 70 67);
 
-	bottom: 1.5rem;
+	bottom: 0.1rem;
 
 	z-index: 0;
 }
 .new button a div {
 	color: white;
+	filter: none;
 }
 .panelItems {
 	color: rgba(251, 226, 34);
-	padding-top: 4rem;
+	padding-top: 1.5rem;
 }

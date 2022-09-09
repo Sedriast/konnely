@@ -3,7 +3,7 @@ import app from '../../firebase/credentials';
 
 import { useEffect, useState } from 'react';
 
-import { optionsDataUser, optionsDataAdmin } from '../0-GeneralComp/0-StaticData/userOptions';
+import { optionsDataUser, optionsDataAdmin } from '../0-GeneralComp/0-StaticData/options';
 import { useAuth } from '../../../context/AuthContext';
 
 import { Option } from './components/Option';
