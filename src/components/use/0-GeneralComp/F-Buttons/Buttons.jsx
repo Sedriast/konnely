@@ -11,6 +11,7 @@ export function Buttons({
 	btnName,
 	route,
 	btnIconText,
+	btnType,
 }) {
 	return (
 		<>
@@ -21,6 +22,7 @@ export function Buttons({
 					className={st.container}
 					onClick={btnClick}
 					onChange={btnChange}
+					type={btnType}
 				>
 					<Link className={st.link} to={route}>
 						<div className={st.icon_}>{btnIconText}</div>

@@ -15,6 +15,7 @@ export function RabbitDataView({ stageId }) {
 		const q = query(collection(db, 'conejos'), where('id', '==', stageId));
 		onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
 	}, [stageId]);
+
 	return (
 		<>
 			{basicData.id !== null && (

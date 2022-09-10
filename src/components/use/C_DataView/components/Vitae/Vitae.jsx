@@ -16,6 +16,7 @@ export function Vitae() {
 			return null;
 		}
 	}, [navigate]);
+
 	return (
 		<>
 			{basicData.id !== null && (
