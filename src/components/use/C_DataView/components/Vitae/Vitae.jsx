@@ -25,6 +25,11 @@ export function Vitae() {
 					<hr />
 					<br />
 					<LifeCycle stageId={basicData.id} info={basicData.info} />
+					<br />
+					<br />
+					<hr />
+					<br />
+					<br />
 				</div>
 			)}
 		</>

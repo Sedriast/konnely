@@ -32,9 +32,9 @@ export function FormCards({ info }) {
 									{items.approDate}
 									<br />
 									<br />
-									<input value={items.weigth} name="weigth" />
+									<input value={items.weigth} type="number" name="weigth" />
 									<br />
-									<input value={items.date} name="date" />
+									<input value={items.date} type="text" name="date" />
 								</div>
 							</>
 						)}
