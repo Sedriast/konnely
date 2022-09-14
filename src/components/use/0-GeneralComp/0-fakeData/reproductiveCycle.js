@@ -16,22 +16,22 @@ export const litter = [
 		stages: [
             {
             stage: 'Monta/Servicio',
-            state:  Hecho,
-            date: 20-12-2022,
+            state:  'Hecho',
+            date: '20-12-2022',
             males: [1234, 1223],
             },
            {
             stage: 'Palpación',
             state:  'Hecho',
-            approximateDate: 20-12-2022,
+            approximateDate: '20-12-2022',
             realDate: 21-12-2022,
             },
             {
             stage: 'PreParto',
             state:  'Hecho',
-            approximateDate: 20-12-2022,
+            approximateDate: '20-12-2022',
             realDate: 21-12-2022
-            }
+            },
             {
             stage: 'Parto',
             state:  'Hecho',
@@ -49,7 +49,7 @@ export const litter = [
             approximateDate: '20-12-2022',
             total: 24,
             averageWeight: '1000gr',
-            realDate: 21-12-2022,
+            realDate: '21-12-2022',
             },],
 	},
 ];

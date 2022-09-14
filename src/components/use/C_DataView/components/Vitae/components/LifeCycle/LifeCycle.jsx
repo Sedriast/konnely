@@ -2,6 +2,8 @@ import st from './LifeCycle.module.css';
 
 import { useState } from 'react';
 
+import { faPenToSquare, faXmark } from '@fortawesome/free-solid-svg-icons';
+
 //import { lifeCycleChild } from '../../../../../../0-GeneralComp/0-Dates/Dates';
 import { stages } from '../../../../../0-GeneralComp/0-fakeData/liveCycle';
 import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
@@ -23,7 +25,7 @@ export function LifeCycle({ stageId, info }) {
 							route="#"
 							label="Cancelar"
 							direction="bottom"
-							btnIconText="❌"
+							btnIconText={faXmark}
 							btnClick={() => {
 								setEdit(false);
 							}}
@@ -35,7 +37,7 @@ export function LifeCycle({ stageId, info }) {
 							route="#"
 							label="Editar"
 							direction="bottom"
-							btnIconText="✏️"
+							btnIconText={faPenToSquare}
 							btnClick={() => {
 								setEdit(true);
 							}}

@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { basicData } from '../../scripts/dataProv';
 import { LifeCycle } from './components/LifeCycle/LifeCycle';
 import { RabbitDataView } from './components/RabbitDataView/RabbitDataView';
+import { ReproductiveCycle } from './components/ReproductiveCycle/ReproductiveCycle';
 
 export function Vitae() {
 	const navigate = useNavigate();
@@ -30,6 +31,7 @@ export function Vitae() {
 					<hr />
 					<br />
 					<br />
+					<ReproductiveCycle />
 				</div>
 			)}
 		</>

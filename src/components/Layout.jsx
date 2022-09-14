@@ -17,6 +17,7 @@ import { ViewIsList } from './use/B_VitaeIsList/VitaeIsList';
 import { EditUserData } from './use/F-Forms/EditUserData/EditUserData';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { EditRabbitData } from './use/F-Forms/EditRabbitData/EditRabbitData';
+import { Buttons } from './use/0-GeneralComp/F-Buttons/Buttons';
 
 const db = getFirestore(app);
 

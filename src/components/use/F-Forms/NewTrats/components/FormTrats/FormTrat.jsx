@@ -3,8 +3,11 @@ import st from './FormTrat.module.css';
 import { useState } from 'react';
 import { QueriesArray } from '../../../../../firebase/funtions/QueriesArray';
 
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+
 import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
 import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function FormTrat() {
 	const [values, setValues] = useState({});
@@ -30,7 +33,7 @@ export function FormTrat() {
 				<Inputs name="result" type="text" leyend="Resultados" handleChange={handleChange} />
 				<Inputs name="professional" type="text" leyend="Nombre del profecional" />
 				<div className={st.btn}>
-					<Buttons direction="bottom" btnIconText="💾" label="Guardar" route="/vitae" />
+					<Buttons direction="bottom" btnIconText={faPaperPlane} label="Guardar" route="/vitae" />
 				</div>
 			</form>
 		</div>

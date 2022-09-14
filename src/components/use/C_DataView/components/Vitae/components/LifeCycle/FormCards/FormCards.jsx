@@ -1,5 +1,7 @@
-import { Buttons } from '../../../../../../0-GeneralComp/F-Buttons/Buttons';
 import st from './FormCards.module.css';
+
+import { Buttons } from '../../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
 export function FormCards({ info }) {
 	return (
@@ -46,7 +48,7 @@ export function FormCards({ info }) {
 								<Buttons
 									route="#"
 									btnType="submit"
-									btnIconText="✔️"
+									btnIconText={faFloppyDisk}
 									label="Hecho"
 									direction="bottom"
 								/>

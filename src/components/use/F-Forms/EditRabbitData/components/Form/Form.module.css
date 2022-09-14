@@ -25,19 +25,20 @@
 
 /*Containers*/
 /*Master*/
-.container {
-	background: rgba(0, 72, 43, 0.666);
+.panelInpImg {
+	display: contents;
 }
 .panelContainer {
 	height: fit-content;
 	width: initial;
 
-	padding: 2rem;
+	padding: 0 2rem;
 
 	display: flex;
 	align-content: stretch;
-	justify-content: center;
-	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	flex-direction: column;
 }
 /*Master*/
 /*Sub*/
@@ -49,8 +50,8 @@
 	flex-direction: column;
 }
 .btnC {
-	width: 4rem;
-	height: 4rem;
+	width: 3rem;
+	height: 3rem;
 
 	background: radial-gradient(
 		112% 112% at 50% -12%,
@@ -114,6 +115,7 @@
 	align-items: center;
 
 	margin-bottom: 2rem;
+	margin-top: 2rem;
 }
 .panelImage div {
 	width: 16rem;
@@ -121,7 +123,10 @@
 
 	padding: 0;
 
-	border-radius: 100%;
+	display: flex;
+	align-content: space-between;
+	justify-content: space-between;
+	align-items: center;
 }
 .panelImage img {
 	width: 16rem;
@@ -131,7 +136,8 @@
 
 	border-radius: 100%;
 
-	border: none;
+	object-fit: cover;
+	border-radius: 100%;
 }
 .panelImage input {
 	width: 16rem;
@@ -140,6 +146,7 @@
 	padding: 0;
 
 	border-radius: 100%;
+	border: none;
 }
 .panelImage input::before {
 	position: relative;
@@ -183,8 +190,8 @@
 	top: 0;
 }
 .submit {
-	width: 4rem;
-	height: 4rem;
+	width: 3rem;
+	height: 3rem;
 
 	background: rgba(78, 75, 72, 0.9);
 	border-radius: 100%;
