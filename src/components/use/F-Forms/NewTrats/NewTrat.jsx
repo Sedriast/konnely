@@ -1,6 +1,6 @@
 import st from './styles/NewTrat.module.css';
 
-import { faXmark, faBackward } from '@fortawesome/free-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { FormTrat } from './components/FormTrats/FormTrat';
 import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
