@@ -1,21 +1,9 @@
 import st from './Cards.module.css';
 
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
-
-import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
-
 export function Cards({ id, date, signs, diagnosis, tratament, result, professional }) {
 	return (
 		<div className={st.container} id={id}>
-			<div className={st.panelId}>Tratamiento: {id}</div>
-			<div className={st.btnPanel}>
-				<div className={st.btnEdit}>
-					<Buttons route="#" label="Editar" direction="bottom" btnIconText={faPen} />
-				</div>
-				<div className={st.btnTrash}>
-					<Buttons route="#" label="Eliminar" direction="bottom" btnIconText={faTrash} />
-				</div>
-			</div>
+			<div className={st.panelId}>{id}</div>
 			<br />
 			<br />
 			<hr />

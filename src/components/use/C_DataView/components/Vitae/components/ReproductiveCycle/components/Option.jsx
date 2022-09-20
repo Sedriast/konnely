@@ -2,6 +2,7 @@ import st from '../ReproductiveCycle.module.css';
 
 import { Buttons } from '../../../../../../0-GeneralComp/F-Buttons/Buttons';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
+import { Cards } from './Repro/components/Cards/Cards';
 
 export function Option({ op, click }) {
 	switch (op) {
@@ -20,7 +21,7 @@ export function Option({ op, click }) {
 				</div>
 			);
 		case true:
-			return <></>;
+			return <Cards />;
 		default:
 			break;
 	}

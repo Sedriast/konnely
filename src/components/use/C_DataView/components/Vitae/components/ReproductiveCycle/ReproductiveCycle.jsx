@@ -24,8 +24,6 @@ export function ReproductiveCycle() {
 				</div>
 			</div>
 			<br />
-			<br />
-			<br />
 			<Option
 				op={opt}
 				click={() => {
