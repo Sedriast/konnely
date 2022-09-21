@@ -9,10 +9,10 @@ export function Cards({ id, date, signs, diagnosis, tratament, result, professio
 		<div className={st.container} id={id}>
 			<div className={st.panelId}>Tratamiento: {id}</div>
 			<div className={st.btnPanel}>
-				<div className={st.btnEdit}>
+				<div>
 					<Buttons route="#" label="Editar" direction="bottom" btnIconText={faPen} />
 				</div>
-				<div className={st.btnTrash}>
+				<div>
 					<Buttons route="#" label="Eliminar" direction="bottom" btnIconText={faTrash} />
 				</div>
 			</div>

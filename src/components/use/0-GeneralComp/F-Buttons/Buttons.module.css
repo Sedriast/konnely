@@ -44,8 +44,6 @@
 	font-size: 200%;
 	text-decoration: none;
 
-	filter: drop-shadow(0px 0px 5px #ffffff);
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
