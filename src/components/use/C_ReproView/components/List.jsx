@@ -1,9 +1,11 @@
 import { Cards } from './Cards/Cards';
 
+import { litter } from '../../0-GeneralComp/0-fakeData/reproductiveCycle';
+
 export function List({ trataments }) {
 	return (
 		<>
-			{trataments.map((item) => (
+			{litter.map((item) => (
 				<>
 					<Cards
 						key={item.id}

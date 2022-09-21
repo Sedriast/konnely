@@ -4,61 +4,26 @@ import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
 
-export function Cards({ id, date, signs, diagnosis, tratament, result, professional }) {
+export function Cards({ id, editors, state, idMother, stages }) {
 	return (
 		<div className={st.container} id={id}>
-			<div className={st.panelId}>Tratamiento: {id}</div>
-			<div className={st.btnPanel}>
-				<div className={st.btnEdit}>
-					<Buttons route="#" label="Editar" direction="bottom" btnIconText={faPen} />
-				</div>
-				<div className={st.btnTrash}>
-					<Buttons route="#" label="Eliminar" direction="bottom" btnIconText={faTrash} />
-				</div>
-			</div>
-			<br />
+			<div className={st.panelId}>Camada {id}</div>
 			<br />
 			<hr />
 			<br />
 			<br />
-			<br />
 			<div className={st.panelInfo}>
-				<table>
-					<thead>
-						<tr>
-							<td>Fecha</td>
-							<td>Sintomas</td>
-							<td>Diagnostico</td>
-							<td>Tratamiento</td>
-							<td>Resultados</td>
-							<td>Nombre del profecional</td>
-						</tr>
-					</thead>
-				</table>
 				<div className={st.sp}>
+					Último editor
 					<br />
-					<div>{date}</div>
+					<div>{editors ? editors[0] : <></>}</div>
 				</div>
 				<div className={st.sp}>
+					Id de la madre:
 					<br />
-					<div>{signs}</div>
+					<div>{idMother}</div>
 				</div>
-				<div className={st.sp}>
-					<br />
-					<div>{diagnosis}</div>
-				</div>
-				<div className={st.sp}>
-					<br />
-					<div>{tratament}</div>
-				</div>
-				<div className={st.sp}>
-					<br />
-					<div>{result}</div>
-				</div>
-				<div className={st.sp}>
-					<br />
-					<div>{professional}</div>
-				</div>
+				<div className={st.sp}>Etapas</div>
 			</div>
 		</div>
 	);
