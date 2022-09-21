@@ -23,33 +23,39 @@ export function Cards({ id, date, signs, diagnosis, tratament, result, professio
 			<br />
 			<br />
 			<div className={st.panelInfo}>
+				<table>
+					<thead>
+						<tr>
+							<td>Fecha</td>
+							<td>Sintomas</td>
+							<td>Diagnostico</td>
+							<td>Tratamiento</td>
+							<td>Resultados</td>
+							<td>Nombre del profecional</td>
+						</tr>
+					</thead>
+				</table>
 				<div className={st.sp}>
-					Fecha:
 					<br />
 					<div>{date}</div>
 				</div>
 				<div className={st.sp}>
-					Sintomas:
 					<br />
 					<div>{signs}</div>
 				</div>
 				<div className={st.sp}>
-					Diagnostico:
 					<br />
 					<div>{diagnosis}</div>
 				</div>
 				<div className={st.sp}>
-					Tratamiento:
 					<br />
 					<div>{tratament}</div>
 				</div>
 				<div className={st.sp}>
-					Resultados:
 					<br />
 					<div>{result}</div>
 				</div>
 				<div className={st.sp}>
-					Nombre del profecional:
 					<br />
 					<div>{professional}</div>
 				</div>
