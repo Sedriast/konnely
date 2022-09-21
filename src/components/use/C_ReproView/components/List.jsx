@@ -1,4 +1,4 @@
-import { Cards } from './Cards';
+import { Cards } from './Cards/Cards';
 
 export function List({ trataments }) {
 	return (

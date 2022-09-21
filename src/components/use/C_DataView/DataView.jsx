@@ -1,4 +1,4 @@
-import st from './styles/DataView.module.css';
+import st from './DataView.module.css';
 
 import { useState } from 'react';
 
