@@ -13,6 +13,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 }
+
 .bird {
 	width: 75%;
 
@@ -60,9 +61,21 @@
 	margin-right: 0.3rem;
 }
 .ask {
-	text-align: start;
+	width: 20%;
 	font-size: 16px;
 	color: rgb(255, 255, 255);
+}
+.ask input {
+	width: 130%;
+
+	border-radius: 5px;
+	border: 1px solid black;
+
+	padding: 0 5px;
+
+	text-align: start;
+	font-size: 16px;
+	color: rgb(0, 0, 0);
 }
 .idName {
 	width: 100%;
@@ -76,4 +89,25 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+.btn {
+	width: 100%;
+
+	margin-top: 1rem;
+
+	display: flex;
+	justify-content: center;
+}
+.btn figure {
+	width: fit-content;
+}
+.btn button {
+	background: transparent;
+
+	border-radius: 100%;
+
+	filter: drop-shadow(0px 0px 5px #ffffff);
+}
+.btn button a div {
+	font-size: 20px;
 }

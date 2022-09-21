@@ -7,7 +7,7 @@ import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
 import { List } from './components/List/List';
 
-export function Healt({ trataments }) {
+export function Repro({ trataments }) {
 	// trataments = tratamientos;
 	return (
 		<div className={st.container}>

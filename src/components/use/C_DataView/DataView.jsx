@@ -2,6 +2,8 @@ import st from './styles/DataView.module.css';
 
 import { useState } from 'react';
 
+import { faCircleInfo, faSyringe } from '@fortawesome/free-solid-svg-icons';
+
 import { generalOptions } from '../0-GeneralComp/0-StaticData/options';
 import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
 import { LeftBottomMenu } from '../0-GeneralComp/0-PanelButtons/LeftBottomMenu/LeftBottomMenu';
@@ -20,14 +22,14 @@ export function DataView() {
 		{
 			id: 0,
 			state: fal,
-			icon: 'ℹ️',
+			icon: faCircleInfo,
 			path: '#',
 			label: 'Información general',
 		},
 		{
 			id: 1,
 			state: tru,
-			icon: '💉',
+			icon: faSyringe,
 			path: '#',
 			label: 'Tratamientos',
 		},

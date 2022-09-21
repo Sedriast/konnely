@@ -3,6 +3,8 @@ import Webcam from 'react-webcam';
 
 import { useState } from 'react';
 
+import { faCamera, faBackward } from '@fortawesome/free-solid-svg-icons';
+
 import { useModal } from '../../0-GeneralComp/0-Modals/useModal';
 import { Modal } from '../../0-GeneralComp/0-Modals/Modal';
 import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
@@ -19,7 +21,7 @@ export function EditUserData({ dataUser }) {
 		<div className={st.container}>
 			<div className={st.leftMenu}>
 				<div className={st.btnBack}>
-					<Buttons route="/users" btnIconText="🔙" label="Atrás" />
+					<Buttons route="/users" btnIconText={faBackward} label="Atrás" />
 				</div>
 			</div>
 			<div className={st.container_}>
@@ -69,7 +71,7 @@ export function EditUserData({ dataUser }) {
 							<Buttons
 								direction="bottom"
 								label="Cámara"
-								btnIconText="📷"
+								btnIconText={faCamera}
 								btnClick={openModal}
 								route="#"
 							/>

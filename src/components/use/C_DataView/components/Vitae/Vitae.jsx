@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { basicData } from '../../scripts/dataProv';
 import { LifeCycle } from './components/LifeCycle/LifeCycle';
 import { RabbitDataView } from './components/RabbitDataView/RabbitDataView';
+import { ReproductiveCycle } from './components/ReproductiveCycle/ReproductiveCycle';
 
 export function Vitae() {
 	const navigate = useNavigate();
@@ -16,6 +17,7 @@ export function Vitae() {
 			return null;
 		}
 	}, [navigate]);
+
 	return (
 		<>
 			{basicData.id !== null && (
@@ -24,6 +26,12 @@ export function Vitae() {
 					<hr />
 					<br />
 					<LifeCycle stageId={basicData.id} info={basicData.info} />
+					<br />
+					<br />
+					<hr />
+					<br />
+					<br />
+					<ReproductiveCycle />
 				</div>
 			)}
 		</>

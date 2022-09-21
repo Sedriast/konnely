@@ -1,6 +1,9 @@
-import st from './Cards.module.css';
+import st from './FormCards.module.css';
 
-export function Cards({ info }) {
+import { Buttons } from '../../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+
+export function FormCards({ info }) {
 	return (
 		<>
 			{info?.map((items, index) => {
@@ -11,32 +14,7 @@ export function Cards({ info }) {
 						action=""
 					>
 						{items.stage === 'Nacimiento' ? (
-							<>
-								<div className={st.idName}>
-									{items.stage}
-									<br />
-									<br />
-									<hr />
-								</div>
-								<br />
-								<br />
-								<br />
-								<br />
-								<div className={st.titles}>
-									Camada:
-									<br />
-									Fecha:
-									<br />
-									Peso al destete:
-								</div>
-								<div className={st.ask}>
-									{items.state}
-									<br />
-									{items.date}
-									<br />
-									{items.weigth} gr
-								</div>
-							</>
+							<></>
 						) : (
 							<>
 								<div className={st.idName}>{items.stage}</div>
@@ -56,11 +34,25 @@ export function Cards({ info }) {
 									{items.approDate}
 									<br />
 									<br />
-									{items.weigth} gr
+									<input value={items.weigth} type="number" name="weigth" />
 									<br />
-									{items.date}
+									<input value={items.date} type="text" name="date" />
 								</div>
 							</>
+						)}
+
+						{items.stage === 'Nacimiento' ? (
+							<></>
+						) : (
+							<div className={st.btn}>
+								<Buttons
+									route="#"
+									btnType="submit"
+									btnIconText={faFloppyDisk}
+									label="Hecho"
+									direction="bottom"
+								/>
+							</div>
 						)}
 					</form>
 				);

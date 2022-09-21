@@ -1,6 +1,4 @@
 .panel {
-	background: rgba(0, 72, 43, 0.666);
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;

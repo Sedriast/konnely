@@ -1,3 +1,13 @@
+import {
+	faGripVertical,
+	faBarcode,
+	faFileInvoice,
+	faUsers,
+	faWrench,
+	faXmark,
+	faPlus,
+} from '@fortawesome/free-solid-svg-icons';
+
 /*##################################################################################|
 |																					|
 |									viewsListOptions								|
@@ -5,7 +15,7 @@
 ####################################################################################*/
 export const newTreats = {
 	id: 0,
-	icon: '❌',
+	icon: faXmark,
 	path: '#',
 	label: 'Cancelar',
 };
@@ -17,13 +27,13 @@ export const newTreats = {
 export const viewsListOptions = [
 	{
 		id: 0,
-		icon: '❌',
+		icon: faXmark,
 		path: '#',
 		label: 'Cancelar',
 	},
 	{
 		id: 1,
-		icon: '➕',
+		icon: faPlus,
 		path: '#',
 		label: 'Nuevo conejo',
 	},
@@ -36,19 +46,19 @@ export const viewsListOptions = [
 export const optionsData = [
 	{
 		id: 0,
-		icon: '⚙️',
+		icon: faWrench,
 		label: 'Configuración',
 	},
 	{
 		id: 1,
-		icon: '🚻',
+		icon: faUsers,
 		label: 'Administrar usuarios',
 	},
 ];
 export const optionsDataUser = [
 	{
 		id: 0,
-		icon: '⚙️',
+		icon: faWrench,
 		label: 'Configuración',
 	},
 ];
@@ -56,12 +66,12 @@ export const optionsDataUser = [
 export const optionsDataAdmin = [
 	{
 		id: 0,
-		icon: '⚙️',
+		icon: faWrench,
 		label: 'Configuración',
 	},
 	{
 		id: 1,
-		icon: '🚻',
+		icon: faUsers,
 		label: 'Administrar usuarios',
 	},
 ];
@@ -73,19 +83,19 @@ export const optionsDataAdmin = [
 export const generalOptions = [
 	{
 		id: 0,
-		icon: '📶',
+		icon: faBarcode,
 		path: '/analitics',
 		label: 'Estadísticas',
 	},
 	{
 		id: 1,
-		icon: '🪟',
+		icon: faGripVertical,
 		path: '/vitaeslist',
 		label: 'Hojas de vida',
 	},
 	{
 		id: 2,
-		icon: '📃',
+		icon: faFileInvoice,
 		path: '/record',
 		label: 'Historial',
 	},

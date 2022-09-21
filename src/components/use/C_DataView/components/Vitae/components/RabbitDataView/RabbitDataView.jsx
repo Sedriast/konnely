@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { basicData } from '../../../../scripts/dataProv';
 import { collection, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
 import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 const db = getFirestore(app);
 
@@ -15,6 +16,7 @@ export function RabbitDataView({ stageId }) {
 		const q = query(collection(db, 'conejos'), where('id', '==', stageId));
 		onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
 	}, [stageId]);
+
 	return (
 		<>
 			{basicData.id !== null && (
@@ -33,7 +35,12 @@ export function RabbitDataView({ stageId }) {
 					<div className={st.tit}>
 						Datos Básicos
 						<div>
-							<Buttons route="/formEdit" label="Editar" direction="bottom" btnIconText="✏️" />
+							<Buttons
+								route="/formEdit"
+								label="Editar"
+								direction="bottom"
+								btnIconText={faPenToSquare}
+							/>
 						</div>
 					</div>
 					<br />

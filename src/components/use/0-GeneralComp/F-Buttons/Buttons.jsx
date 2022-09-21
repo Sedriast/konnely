@@ -1,4 +1,6 @@
-import st from './styles/Buttons.module.css';
+import st from './Buttons.module.css';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Link } from 'react-router-dom';
 
@@ -11,6 +13,7 @@ export function Buttons({
 	btnName,
 	route,
 	btnIconText,
+	btnType,
 }) {
 	return (
 		<>
@@ -21,9 +24,10 @@ export function Buttons({
 					className={st.container}
 					onClick={btnClick}
 					onChange={btnChange}
+					type={btnType}
 				>
 					<Link className={st.link} to={route}>
-						<div className={st.icon_}>{btnIconText}</div>
+						<FontAwesomeIcon icon={btnIconText} />
 					</Link>
 				</button>
 			</figure>

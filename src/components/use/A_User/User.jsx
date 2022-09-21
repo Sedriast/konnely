@@ -9,6 +9,7 @@ import { useAuth } from '../../../context/AuthContext';
 import { Option } from './components/Option';
 import { UserData } from './components/UserData/UserData';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
 
 const db = getFirestore(app);
 
@@ -52,30 +53,32 @@ export function User() {
 						{rol.rol === 'usuario'
 							? optionsDataUser.map((option) => {
 									return (
-										<figure key={option.id} id={option.id} title={option.label} tooltip-dir="rigth">
-											<button
-												className={st.optionST}
-												onClick={() => {
+										<div key={option.id} id={option.id} className={st.optionST}>
+											<Buttons
+												route="#"
+												label={option.label}
+												direction="rigth"
+												btnIconText={option.icon}
+												btnClick={() => {
 													setOptionSelect(option.id);
 												}}
-											>
-												{option.icon}
-											</button>
-										</figure>
+											/>
+										</div>
 									);
 							  })
 							: optionsDataAdmin.map((option) => {
 									return (
-										<figure key={option.id} id={option.id} title={option.label} tooltip-dir="rigth">
-											<button
-												className={st.optionST}
-												onClick={() => {
+										<div key={option.id} id={option.id} className={st.optionST}>
+											<Buttons
+												route="#"
+												label={option.label}
+												direction="rigth"
+												btnIconText={option.icon}
+												btnClick={() => {
 													setOptionSelect(option.id);
 												}}
-											>
-												{option.icon}
-											</button>
-										</figure>
+											/>
+										</div>
 									);
 							  })}
 					</div>
