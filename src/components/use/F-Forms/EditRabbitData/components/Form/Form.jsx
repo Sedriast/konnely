@@ -31,6 +31,7 @@ export function Form() {
 
     function handleChange(e) {
         e.preventDefault();
+        console.log(e);
         const { name, value } = e.target;
         if (e.target.name === 'motivo') {
             setReason(e.target.value);
@@ -110,127 +111,135 @@ export function Form() {
         <>
             {basicData.id !== null && (
                 <div className={st.container}>
-                    <div className={st.panelContainer}>
-                        <div className={st.panelInpImg}>
-                            <div className={st.panelImage}>
-                                <Inputs
-                                    type='file'
-                                    HaveImage={(e) => {
-                                        setImage(e);
-                                        if (e === null) {
-                                            setImage_(null);
-                                            setAuxImage_(null);
-                                        }
-                                    }}
-                                    preeview={image_}
-                                />
-                                <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                                    {isOpenModal && (
-                                        <>
-                                            <Webcam
-                                                audio={false}
-                                                height={250}
-                                                width={330}
-                                                screenshotFormat='image/jpeg'>
-                                                {({ getScreenshot }) => (
-                                                    <button
-                                                        onClick={() => {
-                                                            const imageSrc = getScreenshot();
-                                                            setAuxImage_(imageSrc);
-                                                        }}>
-                                                        Capturar foto
-                                                    </button>
-                                                )}
-                                            </Webcam>
-                                            <img src={auxImage_} alt=''></img>
-                                            <button
-                                                onClick={() => {
-                                                    setImage_(auxImage_);
-                                                    closeModal();
-                                                }}>
-                                                Aceptar
-                                            </button>
-                                        </>
-                                    )}
-                                </Modal>
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            const { name, value } = e.target;
+                            console.log(name);
+                        }}>
+                        <div className={st.panelContainer}>
+                            <div className={st.panelInpImg}>
+                                <div className={st.panelImage}>
+                                    <Inputs
+                                        type='file'
+                                        HaveImage={(e) => {
+                                            setImage(e);
+                                            if (e === null) {
+                                                setImage_(null);
+                                                setAuxImage_(null);
+                                            }
+                                        }}
+                                        preeview={image_}
+                                    />
+                                    <Modal isOpen={isOpenModal} closeModal={closeModal}>
+                                        {isOpenModal && (
+                                            <>
+                                                <Webcam
+                                                    audio={false}
+                                                    height={250}
+                                                    width={330}
+                                                    screenshotFormat='image/jpeg'>
+                                                    {({ getScreenshot }) => (
+                                                        <button
+                                                            onClick={() => {
+                                                                const imageSrc = getScreenshot();
+                                                                setAuxImage_(imageSrc);
+                                                            }}>
+                                                            Capturar foto
+                                                        </button>
+                                                    )}
+                                                </Webcam>
+                                                <img src={auxImage_} alt=''></img>
+                                                <button
+                                                    onClick={() => {
+                                                        setImage_(auxImage_);
+                                                        closeModal();
+                                                    }}>
+                                                    Aceptar
+                                                </button>
+                                            </>
+                                        )}
+                                    </Modal>
+                                </div>
+                                <div className={st.btnC}>
+                                    <Buttons
+                                        direction='bottom'
+                                        label='Cámara'
+                                        btnIconText='📷'
+                                        btnClick={openModal}
+                                        route='#'
+                                    />
+                                </div>
                             </div>
-                            <div className={st.btnC}>
+                            <div className={st.panel}>
+                                <Inputs
+                                    value={basicData.id}
+                                    leyend='Identificador'
+                                    name='id'
+                                    placeholder='Ingrese el identificador'
+                                    type='number'
+                                    inputmode='numeric'
+                                    handleChange={handleChange}
+                                />
+                                <Lists
+                                    value_={basicData.info.genero}
+                                    leyend='Género'
+                                    name_='genero'
+                                    listar={genero}
+                                    handleChange={handleChange}
+                                />
+                                <Lists
+                                    value_={basicData.info.raza}
+                                    leyend='Raza'
+                                    name_='raza'
+                                    listar={SearchAll('raza').props.children}
+                                    handleChange={handleChange}
+                                />
+                                <Inputs
+                                    value={basicData.info.porcentaje}
+                                    leyend='Porcentaje de pureza'
+                                    name='porcentaje'
+                                    placeholder='Procentaje de pureza'
+                                    type='number'
+                                    inputmode='numeric'
+                                    handleChange={handleChange}
+                                />
+                                <Lists
+                                    value_={basicData.info.concepcion}
+                                    leyend='Concepción'
+                                    name_='concepcion'
+                                    listar={concepcion}
+                                    handleChange={handleChange}
+                                />
+                                <Inputs
+                                    value={basicData.info.nacimiento}
+                                    leyend='Fecha de nacimiento'
+                                    name='nacimiento'
+                                    type='date'
+                                    handleChange={handleChange}
+                                />
+                                {/* {date && <DropdownDate date={date} handleChange={handleChange} />} */}
+                                <Lists
+                                    value_={basicData.info.motivo}
+                                    leyend='Motivo de ingreso'
+                                    name_='motivo'
+                                    listar={SearchAll('motivo').props.children}
+                                    handleChange={handleChange}
+                                />
+                                {/* {reason && <DropdownForm motivo={reason} handleChange={handleChange} />} */}
+                            </div>
+                            <div className={st.submit}>
                                 <Buttons
                                     direction='bottom'
-                                    label='Cámara'
-                                    btnIconText='📷'
-                                    btnClick={openModal}
-                                    route='#'
+                                    label='Guardar'
+                                    btnClick={handleSubmit}
+                                    route='/vitaeslist'
+                                    btnIconText='💾'
                                 />
+                                <button type='submit'>Hola</button>
                             </div>
                         </div>
-                        <div className={st.panel}>
-                            <Inputs
-                                value={basicData.id}
-                                leyend='Identificador'
-                                name='id'
-                                placeholder='Ingrese el identificador'
-                                type='number'
-                                inputmode='numeric'
-                                handleChange={handleChange}
-                            />
-                            <Lists
-                                value_={basicData.info.genero}
-                                leyend='Género'
-                                name_='genero'
-                                listar={genero}
-                                handleChange={handleChange}
-                            />
-                            <Lists
-                                value_={basicData.info.raza}
-                                leyend='Raza'
-                                name_='raza'
-                                listar={SearchAll('raza').props.children}
-                                handleChange={handleChange}
-                            />
-                            <Inputs
-                                value={basicData.info.porcentaje}
-                                leyend='Porcentaje de pureza'
-                                name='porcentaje'
-                                placeholder='Procentaje de pureza'
-                                type='number'
-                                inputmode='numeric'
-                                handleChange={handleChange}
-                            />
-                            <Lists
-                                value_={basicData.info.concepcion}
-                                leyend='Concepción'
-                                name_='concepcion'
-                                listar={concepcion}
-                                handleChange={handleChange}
-                            />
-                            <Inputs
-                                value={basicData.info.nacimiento}
-                                leyend='Fecha de nacimiento'
-                                name='nacimiento'
-                                type='date'
-                                handleChange={handleChange}
-                            />
-                            {date && <DropdownDate date={date} handleChange={handleChange} />}
-                            <Lists
-                                value_={basicData.info.motivo}
-                                leyend='Motivo de ingreso'
-                                name_='motivo'
-                                listar={SearchAll('motivo').props.children}
-                                handleChange={handleChange}
-                            />
-                            {reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
-                        </div>
-                        <div className={st.submit}>
-                            <Buttons
-                                direction='bottom'
-                                label='Guardar'
-                                btnClick={handleSubmit}
-                                route='/vitaeslist'
-                                btnIconText='💾'
-                            />
-                        </div>
-                    </div>
+                    </form>
                 </div>
             )}
         </>
