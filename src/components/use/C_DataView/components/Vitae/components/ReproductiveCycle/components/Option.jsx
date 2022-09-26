@@ -2,7 +2,7 @@ import st from '../ReproductiveCycle.module.css';
 
 import { Buttons } from '../../../../../../0-GeneralComp/F-Buttons/Buttons';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
-import { Cards } from './Repro/components/Cards/Cards';
+import { Cards } from '../../../../../../C_ReproView/components/Cards/Cards';
 
 export function Option({ op, click }) {
 	switch (op) {
