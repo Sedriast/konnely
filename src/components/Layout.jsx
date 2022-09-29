@@ -132,26 +132,6 @@ export function Layout() {
 								</ProtectedRoute>
 							}
 						/>
-						{/*
-						<Route
-							exact
-							path="/invoice"
-							element={
-								<>
-									<ProtectedRoute>
-										<PanelButtons />
-										<Invoice
-											name="sadfadf"
-											nit="safasdfa"
-											email="sadfads@asdfasdfaf.com"
-											date="asdfasdf"
-											userID="asdfassdfad"
-										/>
-									</ProtectedRoute>
-								</>
-							}
-						/>
-						*/}
 					</Routes>
 				</Router>
 			</div>
