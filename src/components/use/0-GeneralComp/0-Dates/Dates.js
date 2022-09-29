@@ -70,3 +70,18 @@ export const ceba = (props) => {
 
     return cebaFunction.getFullYear() + '-' + monthCeba + '-' + cebaFunction.getDate();
 };
+
+export const Approximate = (props) => {
+    const days = {};
+    let birth = Date.parse(props);
+    let raisedDate = new Date(birth + 5302800000);
+    let monthRaised = raisedDate.getMonth() + 1;
+    days.raised = raisedDate.getFullYear() + '-' + monthRaised + '-' + raisedDate.getDate();
+    let fatteningDate = new Date(birth + 7932600000);
+    let monthFattening = fatteningDate.getMonth() + 1;
+    days.fattening = fatteningDate.getFullYear() + '-' + monthFattening + '-' + fatteningDate.getDate();
+    let cebaDate = new Date(birth + 10562400000);
+    let monthCeba = cebaDate.getMonth() + 1;
+    days.ceba = cebaDate.getFullYear() + '-' + monthCeba + '-' + cebaDate.getDate();
+    return days;
+};

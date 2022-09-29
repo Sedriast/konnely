@@ -97,7 +97,6 @@ export function Inputs({
                         max={max}
                         step={step}
                         inputMode={inputmode}
-                        pattern='^[0-9]+'
                     />
                 )}
             </div>

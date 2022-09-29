@@ -15,26 +15,30 @@ export const addImageAndInfo = (props) => {
             if (!datos.origen) {
                 datos.origen = 'Ubaté';
             }
-            if (datos.lactancia) {
-                datos.lifecycle[1].peso = datos.lactancia;
-            }
             if (datos.levante) {
-                datos.lifecycle[2].peso = datos.levante;
+                datos.lifecycle[1].weigth = datos.levante;
+                datos.lifecycle[1].date = datos.levantefin;
+                delete datos.levantefin;
             }
             if (datos.engorde) {
-                datos.lifecycle[3].peso = datos.engorde;
+                datos.lifecycle[2].weigth = datos.engorde;
+                datos.lifecycle[2].date = datos.engordefin;
+                delete datos.engordefin;
             }
             if (datos.ceba) {
-                datos.lifecycle[4].peso = datos.ceba;
+                datos.lifecycle[3].weigth = datos.ceba;
+                datos.lifecycle[3].date = datos.cebafin;
+                delete datos.cebafin;
             }
-            datos.lifecycle[0].peso = datos.peso;
             const refStorage = ref(storage, datos.id);
             await uploadString(refStorage, auxiliar[1], 'base64');
             const urlDescarga = await getDownloadURL(refStorage);
             datos.url = urlDescarga;
             delete datos.image;
             delete datos.peso;
-            await addDoc(collection(db, 'conejos'), datos);
+            console.log(datos);
+            const docRef = await addDoc(collection(db, 'conejos'), datos);
+            await updateDoc(doc(db, 'conejos', docRef.id), { uid: docRef.id });
         } catch (error) {
             console.log(error.message);
             swal({
@@ -50,7 +54,16 @@ export const addImageAndInfo = (props) => {
 
 export const EditImageAndInfo = (props) => {
     const funtionEditImageAndInfo = async (datos) => {
-        console.log(datos);
+        try {
+            await updateDoc(doc(db, 'conejos', datos.uid), datos);
+        } catch (error) {
+            console.log(error);
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
     };
 
     funtionEditImageAndInfo(props);

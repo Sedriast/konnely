@@ -4,19 +4,19 @@ import { basicData } from '../../../../../C_DataView/scripts/dataProv';
 export function DropdownForm({ motivo, handleChange }) {
     return (
         <>
-            {basicData.info.motivo === motivo ? (
+            {basicData?.info?.motivo === motivo ? (
                 <>
-                    {basicData.info.motivo === 'Traslado' && (
+                    {basicData?.info?.motivo === 'Traslado' && (
                         <>
                             <Inputs
-                                value={basicData.info.traslado}
+                                value={basicData?.info?.traslado}
                                 leyend='Fecha de traslado'
                                 name='traslado'
                                 type='date'
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.origen}
+                                value={basicData?.info?.origen}
                                 leyend='Origen'
                                 name='origen'
                                 placeholder='Ingrese el origen'
@@ -24,7 +24,7 @@ export function DropdownForm({ motivo, handleChange }) {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.idPadre}
+                                value={basicData?.info?.idPadre}
                                 leyend='Identificador del padre'
                                 name='idPadre'
                                 placeholder='Ingrese el identificador'
@@ -33,7 +33,7 @@ export function DropdownForm({ motivo, handleChange }) {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.idMadre}
+                                value={basicData?.info?.idMadre}
                                 leyend='Identificador de la madre'
                                 name='idMadre'
                                 placeholder='Ingrese el identificador'
@@ -46,7 +46,7 @@ export function DropdownForm({ motivo, handleChange }) {
                     {motivo === 'Nacimiento' && (
                         <>
                             <Inputs
-                                value={basicData.info.idPadre}
+                                value={basicData?.info?.idPadre}
                                 leyend='Identificador del padre'
                                 name='idPadre'
                                 placeholder='Ingrese el identificador'
@@ -55,7 +55,7 @@ export function DropdownForm({ motivo, handleChange }) {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.idMadre}
+                                value={basicData?.info?.idMadre}
                                 leyend='Identificador de la madre'
                                 name='idMadre'
                                 placeholder='Ingrese el identificador'
@@ -68,7 +68,7 @@ export function DropdownForm({ motivo, handleChange }) {
                     {motivo === 'Compra' && (
                         <>
                             <Inputs
-                                value={basicData.info.proveedor}
+                                value={basicData?.info?.proveedor}
                                 leyend='Proveedor'
                                 name='proveedor'
                                 placeholder='Ingrese el proveedor'
@@ -76,7 +76,7 @@ export function DropdownForm({ motivo, handleChange }) {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.precio}
+                                value={basicData?.info?.precio}
                                 leyend='Precio'
                                 name='precio'
                                 placeholder='Ingrese el precio'
@@ -85,7 +85,7 @@ export function DropdownForm({ motivo, handleChange }) {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.origen}
+                                value={basicData?.info?.origen}
                                 leyend='Origen'
                                 name='origen'
                                 placeholder='Ingrese el origen'
@@ -93,7 +93,7 @@ export function DropdownForm({ motivo, handleChange }) {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.idPadre}
+                                value={basicData?.info?.idPadre}
                                 leyend='Identificador del padre'
                                 name='idPadre'
                                 placeholder='Ingrese el identificador'
@@ -102,7 +102,7 @@ export function DropdownForm({ motivo, handleChange }) {
                                 handleChange={handleChange}
                             />
                             <Inputs
-                                value={basicData.info.idMadre}
+                                value={basicData?.info?.idMadre}
                                 leyend='Identificador de la madre'
                                 name='idMadre'
                                 placeholder='Ingrese el identificador'
