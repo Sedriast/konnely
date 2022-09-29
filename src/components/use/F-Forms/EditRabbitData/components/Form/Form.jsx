@@ -22,15 +22,16 @@ import { conditionalBasis } from '../../../../0-GeneralComp/0-Dates/conditionals
 import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
 
 export function Form() {
-	const navigate = useNavigate();
-	const genero = ['Género', 'Hembra', 'Macho'];
-	const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
-	const [reason, setReason] = useState();
-	const [image, setImage] = useState(null);
-	const [values, setValues] = useState({});
-	const [image_, setImage_] = useState(null);
-	const [auxImage_, setAuxImage_] = useState(null);
-	const [isOpenModal, openModal, closeModal] = useModal(false);
+    const navigate = useNavigate();
+    const genero = ['Género', 'Hembra', 'Macho'];
+    const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
+    const [date, setDate] = useState();
+    const [reason, setReason] = useState();
+    const [image, setImage] = useState(null);
+    const [values, setValues] = useState({});
+    const [image_, setImage_] = useState(null);
+    const [auxImage_, setAuxImage_] = useState(null);
+    const [isOpenModal, openModal, closeModal] = useModal(false);
 
     const updateState = (name, value) => {
         if (name === 'nacimiento') {
@@ -213,12 +214,12 @@ export function Form() {
                                     route='/vitaeslist'
 									btnIconText={faPaperPlane}
 								/> */}
-								<button type="Submit">Hola</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			)}
-		</>
-	);
+                                <button type='Submit'>Hola</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            )}
+        </>
+    );
 }
