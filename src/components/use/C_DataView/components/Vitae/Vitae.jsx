@@ -25,7 +25,7 @@ export function Vitae() {
                     <RabbitDataView stageId={basicData.id} />
                     <hr />
                     <br />
-                    <LifeCycle stageId={basicData.id} lifecycle_={basicData.info.lifecycle} />
+                    <LifeCycle stageId={basicData.id} info={basicData.info} />
                     <br />
                     <br />
                     <hr />

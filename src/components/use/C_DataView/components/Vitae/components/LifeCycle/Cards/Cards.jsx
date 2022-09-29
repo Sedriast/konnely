@@ -2,12 +2,12 @@ import st from './Cards.module.css';
 
 export function Cards({ stageId, info }) {
     function peso(weigth) {
-        if (weigth !== 'Sin datos') return weigth + ' gr';
+        if (weigth !== 'Sin datos') return weigth + ' kg';
         return weigth;
     }
     return (
         <>
-            {info?.map((items, index) => {
+            {info?.lifecycle.map((items, index) => {
                 return (
                     <form key={index} className={items.stage === 'Nacimiento' ? st.bird : st.container} action=''>
                         {items.stage === 'Nacimiento' ? (

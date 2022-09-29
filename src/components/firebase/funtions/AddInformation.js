@@ -39,9 +39,8 @@ export const addImageAndInfo = (props) => {
             datos.url = urlDescarga;
             delete datos.image;
             delete datos.peso;
-            console.log(datos);
-            const docRef = await addDoc(collection(db, 'conejos'), datos);
-            await updateDoc(doc(db, 'conejos', docRef.id), { uid: docRef.id });
+            const docRef = await addDoc(collection(db, 'rabbits'), datos);
+            await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id });
         } catch (error) {
             console.log(error.message);
             swal({
@@ -58,7 +57,7 @@ export const addImageAndInfo = (props) => {
 export const EditImageAndInfo = (props) => {
     const funtionEditImageAndInfo = async (datos) => {
         try {
-            await updateDoc(doc(db, 'conejos', datos.uid), datos);
+            await updateDoc(doc(db, 'rabbits', datos.uid), datos);
         } catch (error) {
             console.log(error);
             swal({
@@ -75,7 +74,7 @@ export const EditImageAndInfo = (props) => {
 export const AddInfoProfile = (props) => {
     const funtionAddInfoProfile = async ({ user, data }) => {
         try {
-            await setDoc(doc(db, 'usuarios', user), data);
+            await setDoc(doc(db, 'users', user), data);
         } catch (error) {
             swal({
                 title: error,
@@ -90,7 +89,7 @@ export const AddInfoProfile = (props) => {
 export const UpdateInfoProfile = (props) => {
     const funtionUpdateInfoProfile = async (datos) => {
         try {
-            await updateDoc(doc(db, 'usuarios', datos.user), datos.data);
+            await updateDoc(doc(db, 'users', datos.user), datos.data);
         } catch (error) {
             swal({
                 title: error,

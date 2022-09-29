@@ -18,6 +18,7 @@ import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
 import { Lists } from '../../../0-GeneralComp/F-List/Lists';
 import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
 import { conditionalBasis, conditionalLevante, conditionalNext } from '../../../0-GeneralComp/0-Dates/conditionals';
+import { GetDocument } from '../../../../firebase/funtions/GetDocument';
 
 export function SendRabbitData() {
     const genero = ['Género', 'Hembra', 'Macho'];
@@ -80,21 +81,21 @@ export function SendRabbitData() {
                     stage: 'Levante',
                     state: null,
                     approDate: approximate.raised,
-                    date: '****-**-**',
+                    date: 'Sin datos',
                     weigth: 'Sin datos',
                 },
                 {
                     stage: 'Engorde',
                     state: null,
                     approDate: approximate.fattening,
-                    date: '****-**-**',
+                    date: 'Sin datos',
                     weigth: 'Sin datos',
                 },
                 {
                     stage: 'Ceba',
                     state: null,
                     approDate: approximate.ceba,
-                    date: '****-**-**',
+                    date: 'Sin datos',
                     weigth: 'Sin datos',
                 },
             ],
@@ -173,7 +174,7 @@ export function SendRabbitData() {
                         <Lists
                             leyend='Raza'
                             name_='raza'
-                            listar={SearchAll('raza').props.children}
+                            listar={GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values}
                             handleChange={handleChange}
                         />
                         <Inputs
@@ -203,7 +204,7 @@ export function SendRabbitData() {
                         <Lists
                             leyend='Motivo de ingreso'
                             name_='motivo'
-                            listar={SearchAll('motivo').props.children}
+                            listar={GetDocument({ coleccion: 'lists', list: 'reasons' }).props.children[0].values}
                             handleChange={handleChange}
                         />
                         {reason && <DropdownForm motivo={reason} handleChange={handleChange} />}

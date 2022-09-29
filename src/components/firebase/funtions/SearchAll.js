@@ -35,11 +35,11 @@ export const SearchAll = (props) => {
 
     return (
         <>
-            {coleccion === 'conejos' || coleccion === 'usuarios'
+            {coleccion === 'rabbits' || coleccion === 'usuarios'
                 ? data_?.map((Object) => {
                       return Object;
                   })
-                : coleccion !== 'conejos' &&
+                : coleccion !== 'rabbits' &&
                   data_?.map((Object) => {
                       return Object.name;
                   })}

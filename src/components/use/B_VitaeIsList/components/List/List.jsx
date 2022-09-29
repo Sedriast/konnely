@@ -79,13 +79,13 @@ export function List() {
                 <div className={st.panelCards}>
                     <div className={st.cards}>
                         {filter === 'Hembra' && (
-                            <DropdownList coleccion='conejos' parametro='genero' busqueda={filter} />
+                            <DropdownList coleccion='rabbits' parametro='genero' busqueda={filter} />
                         )}
                         {filter === 'Macho' && (
-                            <DropdownList coleccion='conejos' parametro='genero' busqueda={filter} />
+                            <DropdownList coleccion='rabbits' parametro='genero' busqueda={filter} />
                         )}
                         {auxsearch_ === search.vieja && (
-                            <DropdownList coleccion='conejos' parametro='id' busqueda={search_} reset={reset} />
+                            <DropdownList coleccion='rabbits' parametro='id' busqueda={search_} reset={reset} />
                         )}
                     </div>
                 </div>

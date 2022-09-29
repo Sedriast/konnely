@@ -13,7 +13,7 @@ const db = getFirestore(app);
 export function RabbitDataView({ stageId }) {
 	const [data_, setData_] = useState([]);
 	useEffect(() => {
-		const q = query(collection(db, 'conejos'), where('id', '==', stageId));
+		const q = query(collection(db, 'rabbits'), where('id', '==', stageId));
 		onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
 	}, [stageId]);
 
