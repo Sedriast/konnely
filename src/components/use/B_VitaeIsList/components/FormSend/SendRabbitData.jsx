@@ -1,4 +1,3 @@
-import swal from 'sweetalert';
 import Webcam from 'react-webcam';
 import st from './SendRabbitData.module.css';
 
@@ -18,6 +17,7 @@ import { Modal } from '../../../0-GeneralComp/0-Modals/Modal';
 import { Inputs } from '../../../0-GeneralComp/F-Inputs/Inputs';
 import { Lists } from '../../../0-GeneralComp/F-List/Lists';
 import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
+import { conditionalBasis, conditionalLevante, conditionalNext } from '../../../0-GeneralComp/0-Dates/conditionals';
 
 export function SendRabbitData() {
     const genero = ['Género', 'Hembra', 'Macho'];
@@ -31,88 +31,36 @@ export function SendRabbitData() {
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
 
+    const updateState = (name, value) => {
+        if (name === 'nacimiento') {
+            setApproximate(Approximate(value));
+            setDate(value);
+            setValues({ ...values, [name]: value });
+        } else if (name === 'motivo') {
+            setReason(value);
+            setValues({ ...values, [name]: value });
+        } else {
+            setValues({ ...values, [name]: value });
+        }
+    };
+
     function handleChange(e) {
         e.preventDefault();
         const { name, value } = e.target;
         if (name === 'motivo') {
-            setReason(value);
-            setValues({ ...values, [name]: value });
-        } else if (e.target.name === 'nacimiento') {
-            if (Date.now() - 43200000 - Date.parse(value) <= 0) {
-                e.target.value = null;
-                swal({
-                    title: 'A ingresado una fecha incorrecta',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else {
-                setApproximate(Approximate(value));
-                setDate(value);
-                setValues({ ...values, [name]: value });
-            }
+            updateState(name, value);
+        } else if (name === 'nacimiento') {
+            e.target.value = conditionalBasis(updateState, name, value);
         } else if (name === 'traslado') {
-            if (Date.now() - 43200000 - Date.parse(value) <= 0) {
-                e.target.value = null;
-                swal({
-                    title: 'A ingresado una fecha incorrecta',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else {
-                setValues({ ...values, [name]: value });
-            }
+            e.target.value = conditionalBasis(updateState, name, value);
         } else if (name === 'levantefin') {
-            if (
-                Date.now() - 43200000 - Date.parse(value) <= 0 ||
-                Date.parse(value) - Date.parse(values.nacimiento) <= 0
-            ) {
-                e.target.value = null;
-                swal({
-                    title: 'A ingresado una fecha incorrecta',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else {
-                setValues({ ...values, [name]: value });
-            }
+            e.target.value = conditionalLevante(updateState, name, value, values.nacimiento);
         } else if (name === 'engordefin') {
-            if (Date.now() - 43200000 - Date.parse(value) <= 0) {
-                e.target.value = null;
-                swal({
-                    title: 'A ingresado una fecha incorrecta',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else if (Date.parse(value) - Date.parse(values.levantefin) <= 0 || !values.levantefin) {
-                e.target.value = null;
-                swal({
-                    title: 'No se puede asignar esa fecha a la finalización de esta etapa',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else {
-                setValues({ ...values, [name]: value });
-            }
+            e.target.value = conditionalNext(updateState, name, value, values.levantefin);
         } else if (name === 'cebafin') {
-            if (Date.now() - 43200000 - Date.parse(value) <= 0) {
-                e.target.value = null;
-                swal({
-                    title: 'A ingresado una fecha incorrecta',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else if (Date.parse(value) - Date.parse(values.engordefin) <= 0 || !values.engordefin) {
-                e.target.value = null;
-                swal({
-                    title: 'Primero ingrese una fecha de finalización de la fase de engorde',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else {
-                setValues({ ...values, [name]: value });
-            }
+            e.target.value = conditionalNext(updateState, name, value, values.engordefin);
         } else {
-            setValues({ ...values, [name]: value });
+            updateState(name, value);
         }
     }
 
