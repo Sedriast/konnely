@@ -1,4 +1,4 @@
-import st from './styles/Healt.module.css';
+import st from './Repro.module.css';
 
 import { tratamientos } from '../../../0-GeneralComp/0-fakeData/tratamientos';
 

@@ -25,12 +25,7 @@
 .container {
 	width: 95%;
 
-	background: rgba(0, 0, 0, 0.05);
-	background-size: cover;
-
-	padding: 2.5rem 1rem;
-	margin: 2rem 0rem;
-	border-radius: 10px;
+	padding: 1rem;
 
 	display: flex;
 	align-items: center;
