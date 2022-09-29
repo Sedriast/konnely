@@ -1,40 +1,73 @@
 import st from './FormTrat.module.css';
 
-import { useState } from 'react';
-import { QueriesArray } from '../../../../../firebase/funtions/QueriesArray';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
+import { basicData } from '../../../../C_DataView/scripts/dataProv';
 import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
+import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
+import { conditionalBasis } from '../../../../0-GeneralComp/0-Dates/conditionals';
 
 export function FormTrat() {
-	const [values, setValues] = useState({});
-	function handleChange(e) {
-		const { name, value } = e.target;
-		setValues({ ...values, [name]: value });
-	}
-	QueriesArray();
+    const navigate = useNavigate();
+    const [values, setValues] = useState({});
 
-	return (
-		<div className={st.container}>
-			<h1 className={st.d}>
-				Tratamiento:
-				<br />
-				<br />
-				Mostrar id del tratamiento
-			</h1>
-			<form action="">
-				<Inputs name="date" type="date" leyend="Fecha" handleChange={handleChange} />
-				<Inputs name="signs" type="text" leyend="Sintomas" handleChange={handleChange} />
-				<Inputs name="diagnosis" type="text" leyend="Diagnostico" handleChange={handleChange} />
-				<Inputs name="treatment" type="text" leyend="Tratamiento" handleChange={handleChange} />
-				<Inputs name="result" type="text" leyend="Resultados" handleChange={handleChange} />
-				<Inputs name="professional" type="text" leyend="Nombre del profecional" />
-				<div className={st.btn}>
-					<Buttons direction="bottom" btnIconText={faPaperPlane} label="Guardar" route="/vitae" />
-				</div>
-			</form>
-		</div>
-	);
+    const updateState = (name, value) => {
+        setValues({ ...values, [name]: value });
+    };
+    function handleChange(e) {
+        const { name, value } = e.target;
+        if (name === 'date') {
+            e.target.value = conditionalBasis(updateState, name, value);
+        }
+        updateState(name, value);
+    }
+    useEffect(() => {
+        if (basicData.id === null) {
+            navigate('/vitaeslist');
+            return null;
+        }
+    }, [navigate]);
+    return (
+        <div className={st.container}>
+            <h1 className={st.d}>
+                Tratamiento:
+                <br />
+                <br />
+                Mostrar id del tratamiento
+            </h1>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    let aux = {};
+                    for (const element of e.target) {
+                        if (element.name !== '') {
+                            aux = { ...aux, [element.name]: element.value };
+                        }
+                    }
+                    aux.uidRabbit = basicData.info.uid;
+                    AddTratament({ data: aux });
+                }}
+                action=''>
+                <Inputs name='date' type='date' leyend='Fecha' handleChange={handleChange} />
+                <Inputs name='signs' type='text' leyend='Sintomas' handleChange={handleChange} />
+                <Inputs name='diagnosis' type='text' leyend='Diagnostico' handleChange={handleChange} />
+                <Inputs name='treatment' type='text' leyend='Tratamiento' handleChange={handleChange} />
+                <Inputs name='result' type='text' leyend='Resultados' handleChange={handleChange} />
+                <Inputs
+                    name='professional'
+                    type='text'
+                    leyend='Nombre del profecional'
+                    handleChange={handleChange}
+                />
+                <div className={st.btn}>
+                    <Buttons direction='bottom' btnIconText={faPaperPlane} label='Guardar' route='/vitae' />
+                    <button type='submit'>Hola</button>
+                </div>
+            </form>
+        </div>
+    );
 }

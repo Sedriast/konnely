@@ -19,6 +19,8 @@ import { Lists } from '../../../../0-GeneralComp/F-List/Lists';
 import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
 import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
 import { ListGroup } from 'reactstrap';
+import { conditionalBasis } from '../../../../0-GeneralComp/0-Dates/conditionals';
+import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
 
 export function Form() {
     const navigate = useNavigate();
@@ -32,36 +34,28 @@ export function Form() {
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
 
+    const updateState = (name, value) => {
+        if (name === 'nacimiento') {
+            setDate(value);
+            setValues({ ...values, [name]: value });
+        } else if (name === 'motivo') {
+            setReason(value);
+            setValues({ ...values, [name]: value });
+        } else {
+            setValues({ ...values, [name]: value });
+        }
+    };
+
     function handleChange(e) {
         const { name, value } = e.target;
         if (name === 'motivo') {
-            setReason(value);
-            setValues({ ...values, [name]: value });
+            updateState(name, value);
         } else if (name === 'nacimiento') {
-            if (Date.now() - Date.parse(value) <= 0) {
-                e.target.value = basicData.info.nacimiento;
-                swal({
-                    title: 'A ingresado una fecha incorrecta',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else {
-                setDate(value);
-                setValues({ ...values, [name]: value });
-            }
+            e.target.value = conditionalBasis(updateState, name, value);
         } else if (name === 'traslado') {
-            if (Date.now() - Date.parse(value) <= 0) {
-                e.target.value = basicData.info.traslado;
-                swal({
-                    title: 'A ingresado una fecha incorrecta',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
-            } else {
-                setValues({ ...values, [name]: value });
-            }
+            e.target.value = conditionalBasis(updateState, name, value);
         } else {
-            setValues({ ...values, [name]: value });
+            updateState(name, value);
         }
     }
     const handleSubmit = (aux) => {
@@ -172,7 +166,9 @@ export function Form() {
                                     value_={basicData?.info?.raza}
                                     leyend='Raza'
                                     name_='raza'
-                                    listar={SearchAll('raza').props.children}
+                                    listar={
+                                        GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values
+                                    }
                                     handleChange={handleChange}
                                 />
                                 <Inputs
@@ -203,7 +199,10 @@ export function Form() {
                                     value_={basicData?.info?.motivo}
                                     leyend='Motivo de ingreso'
                                     name_='motivo'
-                                    listar={SearchAll('motivo').props.children}
+                                    listar={
+                                        GetDocument({ coleccion: 'lists', list: 'reasons' }).props.children[0]
+                                            .values
+                                    }
                                     handleChange={handleChange}
                                 />
                                 {reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
