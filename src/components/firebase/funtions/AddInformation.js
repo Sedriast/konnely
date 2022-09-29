@@ -100,3 +100,19 @@ export const UpdateInfoProfile = (props) => {
     };
     funtionUpdateInfoProfile(props);
 };
+
+export const AddTratament = (props) => {
+    const funtionAddTratament = async ({ data }) => {
+        try {
+            const docRef = await addDoc(collection(db, 'trataments'), data);
+            await updateDoc(doc(db, 'trataments', docRef.id), { uid: docRef.id });
+        } catch (error) {
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+    funtionAddTratament(props);
+};
