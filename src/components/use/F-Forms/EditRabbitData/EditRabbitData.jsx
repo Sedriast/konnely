@@ -3,7 +3,7 @@ import st from './styles/EditRabbitData.module.css';
 import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
 
 import { Form } from './components/Form/Form';
-import { LeftBottomMenu } from '../../0-GeneralComp/0-PanelButtons/LeftBottomMenu/LeftBottomMenu';
+import { LeftBottomMenu } from '../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
 export function EditRabbitData() {
 	return (

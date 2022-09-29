@@ -1,10 +1,10 @@
 import st from './styles/Healt.module.css';
 
-import { tratamientos } from '../../../0-GeneralComp/0-fakeData/tratamientos';
+import { tratamientos } from '../../../0-GeneralComp/2-FakeData/tratamientos';
 
 import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
-import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
 import { List } from './components/List/List';
 
 export function Healt() {

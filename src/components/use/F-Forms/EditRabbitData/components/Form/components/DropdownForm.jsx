@@ -1,4 +1,4 @@
-import { Inputs } from '../../../../../0-GeneralComp/F-Inputs/Inputs';
+import { Inputs } from '../../../../../0-GeneralComp/1-Inputs/Inputs';
 import { basicData } from '../../../../../C_DataView/scripts/dataProv';
 
 export function DropdownForm({ motivo, handleChange }) {

@@ -6,16 +6,16 @@ import { useNavigate } from 'react-router-dom';
 
 import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
-import { useModal } from '../../../../0-GeneralComp/0-Modals/useModal';
+import { useModal } from '../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { EditImageAndInfo } from '../../../../../firebase/funtions/AddInformation';
 import { recuperar, basicData } from '../../../../C_DataView/scripts/dataProv';
 
 import { DropdownForm } from './components/DropdownForm';
-import { Modal } from '../../../../0-GeneralComp/0-Modals/Modal';
-import { Lists } from '../../../../0-GeneralComp/F-List/Lists';
-import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
-import { Buttons } from '../../../../0-GeneralComp/F-Buttons/Buttons';
-import { conditionalBasis } from '../../../../0-GeneralComp/0-Dates/conditionals';
+import { Modal } from '../../../../0-GeneralComp/0-StaticData/Modals/Modal';
+import { Lists } from '../../../../0-GeneralComp/1-List/Lists';
+import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
+import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
+import { conditionalBasis } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
 
 export function Form() {

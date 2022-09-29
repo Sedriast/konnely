@@ -4,8 +4,8 @@ import { viewsListOptions, generalOptions } from '../0-GeneralComp/0-StaticData/
 
 import { Option } from './components/Option';
 import { useState } from 'react';
-import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
-import { LeftBottomMenu } from '../0-GeneralComp/0-PanelButtons/LeftBottomMenu/LeftBottomMenu';
+import { RigthTopButtons } from '../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons';
+import { LeftBottomMenu } from '../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
 export function ViewIsList() {
 	const [optionSelect, setOptionSelect] = useState(false);

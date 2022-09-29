@@ -4,7 +4,7 @@ import swal from 'sweetalert';
 import { faHouse, faPersonWalkingDashedLineArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../../../context/AuthContext';
-import { Buttons } from '../../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
 
 export function UserData({ user_ }) {
 	const { logout, user } = useAuth();

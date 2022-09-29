@@ -3,7 +3,7 @@ import st from './styles/NewTrat.module.css';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { FormTrat } from './components/FormTrats/FormTrat';
-import { Buttons } from '../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../0-GeneralComp/1-Buttons/Buttons';
 
 export function NewTrat() {
 	return (

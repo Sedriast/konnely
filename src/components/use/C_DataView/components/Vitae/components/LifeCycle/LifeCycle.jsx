@@ -2,7 +2,7 @@ import st from './LifeCycle.module.css';
 
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
-import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 
 import { Cards } from './Cards/Cards';
 

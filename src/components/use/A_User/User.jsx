@@ -9,7 +9,7 @@ import { useAuth } from '../../../context/AuthContext';
 import { Option } from './components/Option';
 import { UserData } from './components/UserData/UserData';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import { Buttons } from '../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../0-GeneralComp/1-Buttons/Buttons';
 
 const db = getFirestore(app);
 

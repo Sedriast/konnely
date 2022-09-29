@@ -2,7 +2,7 @@ import st from './ReproView.module.css';
 
 import { newTreats } from '../0-GeneralComp/0-StaticData/options';
 
-import { LeftBottomMenu } from '../0-GeneralComp/0-PanelButtons/LeftBottomMenu/LeftBottomMenu';
+import { LeftBottomMenu } from '../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 import { List } from './components/List';
 
 export function ReproView() {
