@@ -16,19 +16,22 @@ export const addImageAndInfo = (props) => {
                 datos.origen = 'Ubaté';
             }
             if (datos.levante) {
-                datos.lifecycle[1].weigth = datos.levante;
                 datos.lifecycle[1].date = datos.levantefin;
+                datos.lifecycle[1].weigth = datos.levante;
                 delete datos.levantefin;
+                delete datos.levante;
             }
             if (datos.engorde) {
-                datos.lifecycle[2].weigth = datos.engorde;
                 datos.lifecycle[2].date = datos.engordefin;
+                datos.lifecycle[2].weigth = datos.engorde;
                 delete datos.engordefin;
+                delete datos.engorde;
             }
             if (datos.ceba) {
-                datos.lifecycle[3].weigth = datos.ceba;
                 datos.lifecycle[3].date = datos.cebafin;
+                datos.lifecycle[3].weigth = datos.ceba;
                 delete datos.cebafin;
+                delete datos.ceba;
             }
             const refStorage = ref(storage, datos.id);
             await uploadString(refStorage, auxiliar[1], 'base64');

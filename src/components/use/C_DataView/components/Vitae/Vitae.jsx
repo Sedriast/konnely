@@ -9,31 +9,31 @@ import { RabbitDataView } from './components/RabbitDataView/RabbitDataView';
 import { ReproductiveCycle } from './components/ReproductiveCycle/ReproductiveCycle';
 
 export function Vitae() {
-	const navigate = useNavigate();
+    const navigate = useNavigate();
 
-	useEffect(() => {
-		if (basicData.id === null) {
-			navigate('/vitaeslist');
-			return null;
-		}
-	}, [navigate]);
+    useEffect(() => {
+        if (basicData.id === null) {
+            navigate('/vitaeslist');
+            return null;
+        }
+    }, [navigate]);
 
-	return (
-		<>
-			{basicData.id !== null && (
-				<div className={st.panel}>
-					<RabbitDataView stageId={basicData.id} />
-					<hr />
-					<br />
-					<LifeCycle stageId={basicData.id} info={basicData.info} />
-					<br />
-					<br />
-					<hr />
-					<br />
-					<br />
-					<ReproductiveCycle />
-				</div>
-			)}
-		</>
-	);
+    return (
+        <>
+            {basicData.id !== null && (
+                <div className={st.panel}>
+                    <RabbitDataView stageId={basicData.id} />
+                    <hr />
+                    <br />
+                    <LifeCycle stageId={basicData.id} lifecycle_={basicData.info.lifecycle} />
+                    <br />
+                    <br />
+                    <hr />
+                    <br />
+                    <br />
+                    <ReproductiveCycle />
+                </div>
+            )}
+        </>
+    );
 }

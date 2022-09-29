@@ -1,6 +1,10 @@
 import st from './Cards.module.css';
 
 export function Cards({ stageId, info }) {
+    function peso(weigth) {
+        if (weigth !== 'Sin datos') return weigth + ' gr';
+        return weigth;
+    }
     return (
         <>
             {info?.map((items, index) => {
@@ -30,7 +34,7 @@ export function Cards({ stageId, info }) {
                                     <br />
                                     {items.date}
                                     <br />
-                                    {items.weigth} gr
+                                    {peso(items.weigth)}
                                 </div>
                             </>
                         ) : (
@@ -52,7 +56,7 @@ export function Cards({ stageId, info }) {
                                     {items.approDate}
                                     <br />
                                     <br />
-                                    {items.weigth} gr
+                                    {peso(items.weigth)}
                                     <br />
                                     {items.date}
                                 </div>

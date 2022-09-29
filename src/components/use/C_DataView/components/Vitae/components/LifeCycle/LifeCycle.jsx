@@ -11,7 +11,7 @@ import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
 import { Cards } from './Cards/Cards';
 import { FormCards } from './FormCards/FormCards';
 
-export function LifeCycle({ stageId, info }) {
+export function LifeCycle({ stageId, lifecycle_ }) {
     const [edit, setEdit] = useState(false);
 
     return (
@@ -56,7 +56,11 @@ export function LifeCycle({ stageId, info }) {
 					<></>
 				)*/}
             <div className={st.panel}>
-                {edit ? <FormCards stageId={stageId} info={stages} /> : <Cards stageId={stageId} info={stages} />}
+                {edit ? (
+                    <FormCards stageId={stageId} info={lifecycle_} />
+                ) : (
+                    <Cards stageId={stageId} info={lifecycle_} />
+                )}
             </div>
         </>
     );
