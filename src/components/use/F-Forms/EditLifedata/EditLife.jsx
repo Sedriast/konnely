@@ -1,6 +1,6 @@
-import st from './FormCards.module.css';
+import st from './EditLife.module.css';
 
-export function FormCards({ info }) {
+export function EditLife({ info }) {
 	return (
 		<>
 			{info?.lifecycle.map((items, index) => {
@@ -61,9 +61,9 @@ export function FormCards({ info }) {
                                     label='Hecho'
                                     direction='bottom'
                                 /> */}
-								<button type="submit">Enviar</button>
 							</div>
 						)}
+						<button type="submit">Enviar</button>
 					</form>
 				);
 			})}

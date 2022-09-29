@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { faCircleInfo, faSyringe } from '@fortawesome/free-solid-svg-icons';
 
 import { generalOptions } from '../0-GeneralComp/0-StaticData/options';
-import { RigthTopButtons } from '../0-GeneralComp/0-PanelButtons/RigthTopButtons/RigthTopButtons';
-import { LeftBottomMenu } from '../0-GeneralComp/0-PanelButtons/LeftBottomMenu/LeftBottomMenu';
+import { RigthTopButtons } from '../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons';
+import { LeftBottomMenu } from '../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
 import { Option } from './components/Option';
 

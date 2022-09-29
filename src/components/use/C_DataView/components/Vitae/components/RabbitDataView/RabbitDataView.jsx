@@ -5,7 +5,7 @@ import app from '../../../../../../firebase/credentials';
 import { useEffect, useState } from 'react';
 import { basicData } from '../../../../scripts/dataProv';
 import { collection, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
-import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 const db = getFirestore(app);

@@ -2,7 +2,7 @@ import st from './Cards.module.css';
 
 import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 
 export function Cards({ id, date, signs, diagnosis, tratament, result, professional }) {
 	return (

@@ -3,7 +3,7 @@ import st from './ReproductiveCycle.module.css';
 import { faRectangleList } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
 import { Option } from './components/Option';
-import { Buttons } from '../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 
 export function ReproductiveCycle() {
 	//este será el estado de la ultima camada; true: activa; false: inactiva

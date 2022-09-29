@@ -1,6 +1,6 @@
 import st from '../ReproductiveCycle.module.css';
 
-import { Buttons } from '../../../../../../0-GeneralComp/F-Buttons/Buttons';
+import { Buttons } from '../../../../../../0-GeneralComp/1-Buttons/Buttons';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Cards } from '../../../../../../C_ReproView/components/Cards/Cards';
 

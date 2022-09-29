@@ -1,4 +1,4 @@
-import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
+import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 
 export function DropdownForm(props) {
 	const motivo = props.motivo;

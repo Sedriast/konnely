@@ -1,6 +1,6 @@
 import st from './LeftBottomMenu.module.css';
 
-import { Buttons } from '../../F-Buttons/Buttons';
+import { Buttons } from '../../1-Buttons/Buttons';
 
 export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 	return (

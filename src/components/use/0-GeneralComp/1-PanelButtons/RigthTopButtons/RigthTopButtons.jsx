@@ -2,7 +2,7 @@ import st from './RigthTopButtons.module.css';
 
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../../../../context/AuthContext';
-import { Buttons } from '../../F-Buttons/Buttons';
+import { Buttons } from '../../1-Buttons/Buttons';
 
 export function RigthTopButtons({ BTNS }) {
 	const { user } = useAuth();

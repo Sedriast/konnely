@@ -1,6 +1,6 @@
 import { Cards } from './Cards/Cards';
 
-import { litter } from '../../0-GeneralComp/0-fakeData/reproductiveCycle';
+import { litter } from '../../0-GeneralComp/2-FakeData/reproductiveCycle';
 
 export function List({ trataments }) {
 	return (
