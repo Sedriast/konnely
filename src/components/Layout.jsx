@@ -18,6 +18,7 @@ import { EditUserData } from './use/F-Forms/EditUserData/EditUserData';
 import { LoginRegister } from './use/A_LoginRegister/LoginRegister';
 import { EditRabbitData } from './use/F-Forms/EditRabbitData/EditRabbitData';
 import { ReproView } from './use/C_ReproView/ReproView';
+import { EditLife } from './use/F-Forms/EditLifedata/EditLife';
 
 const db = getFirestore(app);
 
@@ -128,6 +129,17 @@ export function Layout() {
 								<ProtectedRoute>
 									<div className={st.componentContainer}>
 										<ReproView />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path="/EditLife"
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditLife />
 									</div>
 								</ProtectedRoute>
 							}
