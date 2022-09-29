@@ -5,7 +5,7 @@ import st from './Form.module.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { faCamera, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import { SearchAll } from '../../../../../firebase/funtions/SearchAll';
 import { useModal } from '../../../../0-GeneralComp/0-Modals/useModal';
@@ -13,7 +13,6 @@ import { EditImageAndInfo } from '../../../../../firebase/funtions/AddInformatio
 import { recuperar, basicData } from '../../../../C_DataView/scripts/dataProv';
 
 import { DropdownForm } from './components/DropdownForm';
-import { DropdownDate } from './components/DropdownDate';
 import { Modal } from '../../../../0-GeneralComp/0-Modals/Modal';
 import { Lists } from '../../../../0-GeneralComp/F-List/Lists';
 import { Inputs } from '../../../../0-GeneralComp/F-Inputs/Inputs';
@@ -23,16 +22,15 @@ import { conditionalBasis } from '../../../../0-GeneralComp/0-Dates/conditionals
 import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
 
 export function Form() {
-    const navigate = useNavigate();
-    const genero = ['Género', 'Hembra', 'Macho'];
-    const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
-    const [date, setDate] = useState();
-    const [reason, setReason] = useState();
-    const [image, setImage] = useState(null);
-    const [values, setValues] = useState({});
-    const [image_, setImage_] = useState(null);
-    const [auxImage_, setAuxImage_] = useState(null);
-    const [isOpenModal, openModal, closeModal] = useModal(false);
+	const navigate = useNavigate();
+	const genero = ['Género', 'Hembra', 'Macho'];
+	const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
+	const [reason, setReason] = useState();
+	const [image, setImage] = useState(null);
+	const [values, setValues] = useState({});
+	const [image_, setImage_] = useState(null);
+	const [auxImage_, setAuxImage_] = useState(null);
+	const [isOpenModal, openModal, closeModal] = useModal(false);
 
     const updateState = (name, value) => {
         if (name === 'nacimiento') {
@@ -215,12 +213,12 @@ export function Form() {
                                     route='/vitaeslist'
 									btnIconText={faPaperPlane}
 								/> */}
-                                <button type='Submit'>Hola</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            )}
-        </>
-    );
+								<button type="Submit">Hola</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			)}
+		</>
+	);
 }
