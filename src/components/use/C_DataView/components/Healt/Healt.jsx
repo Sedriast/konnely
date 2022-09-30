@@ -24,7 +24,12 @@ export function Healt() {
     const buscar = (e) => {
         setSearch(e);
         const valor = trataments.filter((element) => {
-            if (element.date.toString().toLowerCase().includes(e.toLowerCase())) return element;
+            if (
+                element.signs.toString().toLowerCase().includes(e.toLowerCase()) ||
+                element.date.toString().toLowerCase().includes(e.toLowerCase()) ||
+                element.diagnosis.toString().toLowerCase().includes(e.toLowerCase())
+            )
+                return element;
         });
         setSearch_(valor);
     };
