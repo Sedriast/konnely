@@ -1,8 +1,14 @@
 export const recuperar = (id, info) => {
-	basicData.info.id = id;
+	basicData.id = id;
 	basicData.info = info;
 };
 
 const basicData = {
-	info: { id: 123456789, rad: 'asdfas' },
+	id: 123456789,
+	info: {
+		stage: 'nac',
+		weigth: 200,
+		date: '20-10-1111',
+		titles: 'ver',
+	},
 };

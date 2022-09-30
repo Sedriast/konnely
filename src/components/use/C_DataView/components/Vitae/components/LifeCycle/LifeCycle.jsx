@@ -24,9 +24,7 @@ export function LifeCycle({ info }) {
 			<br />
 			<br />
 			<br />
-			<div className={st.panel}>
-				<Cards info={info} />
-			</div>
+			<div className={st.panel}>{/* <Cards info={info} /> */}</div>
 		</>
 	);
 }
