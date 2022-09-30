@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { basicData } from '../../../0-GeneralComp/0-StaticData/dataProv';
 
+
+
 import { LifeCycle } from './components/LifeCycle/LifeCycle';
 import { RabbitDataView } from './components/RabbitDataView/RabbitDataView';
 import { ReproductiveCycle } from './components/ReproductiveCycle/ReproductiveCycle';

@@ -1,8 +1,9 @@
 import st from './EditLife.module.css';
 
 import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
+import { stages } from '../../0-GeneralComp/2-FakeData/liveCycle';
 
-import { Form } from './Form/Form';
+import { Form } from './comoponents/Form/Form';
 import { LeftBottomMenu } from '../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
 export function EditLife() {
@@ -15,7 +16,7 @@ export function EditLife() {
 				}}
 			/>
 			<div className={st.optionContainer}>
-				<Form />
+				<Form info={stages} />
 			</div>
 		</>
 	);
