@@ -2,13 +2,14 @@ export const recuperar = (id, info) => {
 	basicData.id = id;
 	basicData.info = info;
 };
-
 export const basicData = {
-	id: 123456789,
-	info: {
-		stage: 'nac',
-		weigth: 200,
-		date: '20-10-1111',
-		titles: 'ver',
-	},
+	id: null,
+	info: {},
+};
+
+export const reproData = {
+	rechazos: '0',
+	muertes: '0',
+	vivos: '0',
+	partos: '0',
 };
