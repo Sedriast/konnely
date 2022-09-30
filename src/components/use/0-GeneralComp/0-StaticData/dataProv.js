@@ -3,7 +3,7 @@ export const recuperar = (id, info) => {
 	basicData.info = info;
 };
 
-const basicData = {
+export const basicData = {
 	id: 123456789,
 	info: {
 		stage: 'nac',
