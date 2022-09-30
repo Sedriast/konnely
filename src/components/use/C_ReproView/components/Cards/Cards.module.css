@@ -23,27 +23,30 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 95%;
+	width: 75%;
 
+	background: rgba(0, 0, 0, 0.25);
+	margin: 2rem 0;
 	padding: 1rem;
+	border-radius: 10px;
 
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
+	flex-direction: column;
 
 	overflow: hidden;
-}
-.container hr {
-	width: 90%;
-	height: 3px;
-	background: white;
 }
 /*Master*/
 /*Sub*/
 .panelId {
 	font-size: 1.5rem;
 	color: rgba(251, 226, 34);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .btnPanel {
 	display: flex;
@@ -54,6 +57,12 @@
 	filter: none;
 }
 .panelInfo {
+	width: fit-content;
+	height: fit-content;
+
+	border: solid black 1px;
+	border-radius: 10px;
+
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;

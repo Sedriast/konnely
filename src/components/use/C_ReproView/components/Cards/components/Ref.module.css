@@ -1,0 +1,6 @@
+.panel {
+	height: min-content;
+
+	display: flex;
+	background: black;
+}
