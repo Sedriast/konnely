@@ -1,5 +1,5 @@
 .container {
-	width: 350px;
+	width: 90%;
 
 	background: rgba(0, 0, 0, 0.1);
 	background-size: cover;
@@ -12,8 +12,17 @@
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
+	flex-direction: column;
 }
 
+.panel {
+	background: rgba(0, 0, 0, 0.1);
+	background-size: cover;
+
+	padding: 1.5rem 0.5rem;
+	margin: 1rem;
+	border-radius: 10px;
+}
 .bird {
 	width: 75%;
 
