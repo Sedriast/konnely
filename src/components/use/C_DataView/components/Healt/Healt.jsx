@@ -7,7 +7,7 @@ import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 import { List } from './components/List/List';
 import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
-import { basicData } from '../../../C_DataView/scripts/dataProv';
+import { recuperar } from '../../../0-GeneralComp/0-StaticData/dataProv';
 import { QueriesSimple_ } from '../../../../firebase/funtions/QueriesSimple_';
 
 export function Healt() {
@@ -15,10 +15,10 @@ export function Healt() {
 	const trataments = QueriesSimple_({
 		coleccion: 'trataments',
 		parametro: 'uidRabbit',
-		busqueda: basicData.info.uid,
+		busqueda: recuperar.info.uid,
 	}).props.children;
 	useEffect(() => {
-		if (basicData.id === null) {
+		if (recuperar.id === null) {
 			navigate('/vitaeslist');
 			return null;
 		}

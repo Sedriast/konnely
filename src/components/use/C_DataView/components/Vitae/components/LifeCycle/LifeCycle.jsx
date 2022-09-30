@@ -6,7 +6,7 @@ import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 
 import { Cards } from './Cards/Cards';
 
-export function LifeCycle({ stageId, info }) {
+export function LifeCycle({ info }) {
 	return (
 		<>
 			<br />
@@ -25,7 +25,7 @@ export function LifeCycle({ stageId, info }) {
 			<br />
 			<br />
 			<div className={st.panel}>
-				<Cards stageId={stageId} info={info} />
+				<Cards info={info} />
 			</div>
 		</>
 	);

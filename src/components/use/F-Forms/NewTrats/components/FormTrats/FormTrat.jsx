@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { basicData } from '../../../../C_DataView/scripts/dataProv';
+import { recuperar } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
@@ -26,7 +26,7 @@ export function FormTrat() {
 		updateState(name, value);
 	}
 	useEffect(() => {
-		if (basicData.id === null) {
+		if (recuperar.id === null) {
 			navigate('/vitaeslist');
 			return null;
 		}
@@ -48,7 +48,7 @@ export function FormTrat() {
 							aux = { ...aux, [element.name]: element.value };
 						}
 					}
-					aux.uidRabbit = basicData.info.uid;
+					aux.uidRabbit = recuperar.info.uid;
 					AddTratament({ data: aux });
 				}}
 				action=""
