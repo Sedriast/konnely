@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { recuperar } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
@@ -26,10 +26,10 @@ export function FormTrat() {
 		updateState(name, value);
 	}
 	useEffect(() => {
-		if (recuperar.id === null) {
-			navigate('/vitaeslist');
-			return null;
-		}
+		if (basicData.id === null) {
+            navigate('/vitaeslist');
+            return null;
+        }
 	}, [navigate]);
 	return (
 		<div className={st.container}>
@@ -48,7 +48,7 @@ export function FormTrat() {
 							aux = { ...aux, [element.name]: element.value };
 						}
 					}
-					aux.uidRabbit = recuperar.info.uid;
+					aux.uidRabbit = basicData.info.uid;
 					AddTratament({ data: aux });
 				}}
 				action=""
