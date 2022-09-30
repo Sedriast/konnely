@@ -1,9 +1,6 @@
 .container {
 	width: 90%;
 
-	background: rgba(0, 0, 0, 0.1);
-	background-size: cover;
-
 	padding: 1.5rem 0.5rem;
 	margin: 1rem;
 	border-radius: 10px;
@@ -25,18 +22,7 @@
 }
 .bird {
 	width: 75%;
-
-	background: rgba(0, 0, 0, 0.1);
-	background-size: cover;
-
-	padding: 1.5rem 0.5rem;
-	margin: 1rem;
-	border-radius: 10px;
-
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
+	height: 1px;
 }
 .panel {
 	display: flex;
@@ -100,9 +86,13 @@
 	align-items: center;
 }
 .btn {
-	width: 100%;
+	width: 3rem;
+	height: 3rem;
+
+	background: rgba(0, 0, 0, 0.5);
 
 	margin-top: 1rem;
+	border-radius: 100%;
 
 	display: flex;
 	justify-content: center;
@@ -114,9 +104,7 @@
 	background: transparent;
 
 	border-radius: 100%;
-
-	filter: drop-shadow(0px 0px 5px #ffffff);
 }
-.btn button a div {
-	font-size: 20px;
+.btn button a svg {
+	font-size: 1.5rem;
 }

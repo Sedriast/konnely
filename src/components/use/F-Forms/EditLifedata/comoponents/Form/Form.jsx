@@ -1,5 +1,7 @@
 import st from './Form.module.css';
 
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 export function Form({ info }) {
 	return (
 		<>
@@ -45,25 +47,20 @@ export function Form({ info }) {
 									</div>
 								</>
 							)}
-
-							{items.stage === 'Nacimiento' ? (
-								<></>
-							) : (
-								<div className={st.btn}>
-									{/* <Buttons
-                                    route='#'
-                                    btnType='submit'
-                                    btnIconText={faFloppyDisk}
-                                    label='Hecho'
-                                    direction='bottom'
-                                /> */}
-								</div>
-							)}
 						</div>
 					);
 				})}{' '}
-				<div>
-					<button type="submit">Enviar</button>
+				<div className={st.btn}>
+					<Buttons
+						route="#"
+						btnType="submit"
+						btnIconText={faFloppyDisk}
+						label="Guardar cambios"
+						direction="top"
+						btnClick={() => {
+							window.history.back();
+						}}
+					/>
 				</div>
 			</form>
 		</>
