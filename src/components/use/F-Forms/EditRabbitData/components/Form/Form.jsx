@@ -8,7 +8,7 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import { useModal } from '../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { EditImageAndInfo } from '../../../../../firebase/funtions/AddInformation';
-import { recuperar, basicData } from '../../../../C_DataView/scripts/dataProv';
+import { recuperar } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 
 import { DropdownForm } from './components/DropdownForm';
 import { Modal } from '../../../../0-GeneralComp/0-StaticData/Modals/Modal';
@@ -55,15 +55,15 @@ export function Form() {
 	const handleSubmit = (aux) => {
 		EditImageAndInfo({
 			...aux,
-			uid: basicData.info.uid,
+			uid: recuperar.info.uid,
 			image: image,
 		});
 		recuperar(values.id);
 	};
 	useEffect(() => {
-		if (basicData.id !== null) {
-			setImage_(basicData.info.url);
-			setReason(basicData.info.motivo);
+		if (recuperar.id !== null) {
+			setImage_(recuperar.info.url);
+			setReason(recuperar.info.motivo);
 		} else {
 			navigate('/vitaeslist');
 			return null;
@@ -71,7 +71,7 @@ export function Form() {
 	}, [navigate]);
 	return (
 		<>
-			{basicData.id !== null && (
+			{recuperar.id !== null && (
 				<div className={st.container}>
 					<form
 						onSubmit={(e) => {
@@ -144,7 +144,7 @@ export function Form() {
 							</div>
 							<div className={st.panel}>
 								<Inputs
-									value={basicData?.id}
+									value={recuperar?.id}
 									leyend="Identificador"
 									name="id"
 									placeholder="Ingrese el identificador"
@@ -153,14 +153,14 @@ export function Form() {
 									handleChange={handleChange}
 								/>
 								<Lists
-									value_={basicData?.info?.genero}
+									value_={recuperar?.info?.genero}
 									leyend="Género"
 									name_="genero"
 									listar={genero}
 									handleChange={handleChange}
 								/>
 								<Lists
-									value_={basicData?.info?.raza}
+									value_={recuperar?.info?.raza}
 									leyend="Raza"
 									name_="raza"
 									listar={
@@ -169,7 +169,7 @@ export function Form() {
 									handleChange={handleChange}
 								/>
 								<Inputs
-									value={basicData?.info?.porcentaje}
+									value={recuperar?.info?.porcentaje}
 									leyend="Porcentaje de pureza"
 									name="porcentaje"
 									placeholder="Procentaje de pureza"
@@ -178,14 +178,14 @@ export function Form() {
 									handleChange={handleChange}
 								/>
 								<Lists
-									value_={basicData?.info?.concepcion}
+									value_={recuperar?.info?.concepcion}
 									leyend="Concepción"
 									name_="concepcion"
 									listar={concepcion}
 									handleChange={handleChange}
 								/>
 								<Inputs
-									value={basicData?.info?.nacimiento}
+									value={recuperar?.info?.nacimiento}
 									leyend="Fecha de nacimiento"
 									name="nacimiento"
 									type="date"
@@ -193,7 +193,7 @@ export function Form() {
 								/>
 								{/* {date && <DropdownDate date={date} handleChange={handleChange} />} */}
 								<Lists
-									value_={basicData?.info?.motivo}
+									value_={recuperar?.info?.motivo}
 									leyend="Motivo de ingreso"
 									name_="motivo"
 									listar={

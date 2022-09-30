@@ -7,7 +7,7 @@ import { faCamera, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
 import { useModal } from '../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { addImageAndInfo } from '../../../../firebase/funtions/AddInformation';
-import { recuperar } from '../../../C_DataView/scripts/dataProv';
+import { recuperar } from '../../../0-GeneralComp/0-StaticData/dataProv';
 import { Approximate } from '../../../0-GeneralComp/0-StaticData/Dates/Dates';
 
 import { DropdownForm } from './components/DropdownForm';

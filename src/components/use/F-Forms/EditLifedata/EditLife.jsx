@@ -1,7 +1,9 @@
-import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
-import { LeftBottomMenu } from '../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 import st from './EditLife.module.css';
+
+import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
+
 import { Form } from './Form/Form';
+import { LeftBottomMenu } from '../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
 export function EditLife() {
 	return (

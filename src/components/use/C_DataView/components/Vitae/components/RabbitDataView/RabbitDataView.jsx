@@ -3,7 +3,7 @@ import st from './RabbitDataView.module.css';
 import app from '../../../../../../firebase/credentials';
 
 import { useEffect, useState } from 'react';
-import { basicData } from '../../../../scripts/dataProv';
+import { recuperar } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 import { collection, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
 import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
@@ -19,7 +19,7 @@ export function RabbitDataView({ stageId }) {
 
 	return (
 		<>
-			{basicData.id !== null && (
+			{recuperar.id !== null && (
 				<>
 					<div className={st.initInfo}>
 						<div className={st.rabbitImg}>

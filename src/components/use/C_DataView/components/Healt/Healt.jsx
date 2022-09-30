@@ -7,7 +7,7 @@ import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 import { List } from './components/List/List';
 import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
-import { basicData } from '../../../C_DataView/scripts/dataProv';
+import { recuperar } from '../../../0-GeneralComp/0-StaticData/dataProv';
 import { QueriesSimple_ } from '../../../../firebase/funtions/QueriesSimple_';
 
 export function Healt() {
