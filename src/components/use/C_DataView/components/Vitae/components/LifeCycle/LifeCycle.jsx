@@ -1,12 +1,10 @@
 import st from './LifeCycle.module.css';
-
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-
 import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 
 import { Cards } from './Cards/Cards';
 
-export function LifeCycle({ info }) {
+export function LifeCycle({ stageId, info }) {
 	return (
 		<>
 			<br />
@@ -24,7 +22,9 @@ export function LifeCycle({ info }) {
 			<br />
 			<br />
 			<br />
-			<div className={st.panel}>{/* <Cards info={info} /> */}</div>
+			<div className={st.panel}>
+				<Cards stageId={stageId} info={info} />
+			</div>
 		</>
 	);
 }
