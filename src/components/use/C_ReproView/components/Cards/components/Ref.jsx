@@ -1,9 +1,9 @@
 import st from './Ref.module.css';
 
 export function Ref({ stage }) {
-	switch (stage.title) {
-		case 'Monta':
-			return (
+	return (
+		<>
+			{stage[0].title === 'Monta/Servicio' && stage[0].state === true ? (
 				<div className={st.panel}>
 					<div>Etapa: {stage.title}</div>
 					<div>Estado: {stage.state}</div>
@@ -12,27 +12,30 @@ export function Ref({ stage }) {
 
 					<div>Fecha: {stage.date}</div>
 				</div>
-			);
-		case 'Palpación':
-			return (
+			) : (
+				<></>
+			)}
+			{stage[1].title === 'Palpacion' && stage[1].state === true ? (
 				<div className={st.panel}>
 					<div>Etapa: {stage.title}</div>
 					<div>Estado: {stage.state}</div>
 
 					<div>Fecha: {stage.date}</div>
 				</div>
-			);
-		case 'Preparto':
-			return (
+			) : (
+				<></>
+			)}
+			{stage[2].title === 'Preparto' && stage[2].state === true ? (
 				<div className={st.panel}>
 					<div>Etapa: {stage.title}</div>
 					<div>Estado: {stage.state}</div>
 
 					<div>Fecha: {stage.date}</div>
 				</div>
-			);
-		case 'Parto':
-			return (
+			) : (
+				<></>
+			)}
+			{stage[3].title === 'Parto' && stage[3].state === true ? (
 				<div className={st.panel}>
 					<div>Etapa: {stage.title}</div>
 					<div>Estado: {stage.state}</div>
@@ -44,9 +47,10 @@ export function Ref({ stage }) {
 
 					<div>Fecha: {stage.date}</div>
 				</div>
-			);
-		case 'Destete':
-			return (
+			) : (
+				<></>
+			)}
+			{stage[4].title === 'Destete' && stage[4].state === true ? (
 				<div className={st.panel}>
 					<div>Etapa: {stage.title}</div>
 					<div>Estado: {stage.state}</div>
@@ -56,8 +60,9 @@ export function Ref({ stage }) {
 
 					<div>Fecha: {stage.date}</div>
 				</div>
-			);
-		default:
-			break;
-	}
+			) : (
+				<></>
+			)}
+		</>
+	);
 }

@@ -57,17 +57,17 @@
 	filter: none;
 }
 .panelInfo {
+	width: -moz-fit-content;
 	width: fit-content;
+	height: -moz-fit-content;
 	height: fit-content;
-
 	border: solid black 1px;
 	border-radius: 10px;
-
 	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
 	justify-content: space-around;
 	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
 }
 .sp {
 	color: rgba(251, 226, 34);

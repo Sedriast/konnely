@@ -2,30 +2,30 @@ export const litter = [
 	{
 		id: 124,
 		editors: [123, 124],
-		state: '10/20/2030',
+		state: true,
 		idMother: 123456,
 		stages: [
 			{
 				title: 'Monta/Servicio',
-				state: 'Hecho',
+				state: true,
 				date: '20-12-2022',
 				males: [1234, 1223],
 			},
 			{
 				title: 'Palpación',
-				state: 'Hecho',
+				state: true,
 				approximateDate: '20-12-2022',
 				realDate: 21 - 12 - 2022,
 			},
 			{
 				title: 'PreParto',
-				state: 'Hecho',
+				state: true,
 				approximateDate: '20-12-2022',
 				realDate: 21 - 12 - 2022,
 			},
 			{
 				title: 'Parto',
-				state: 'Hecho',
+				state: true,
 				approximateDate: '20-12-2022',
 				lives: 20,
 				deaths: 2,
@@ -36,7 +36,7 @@ export const litter = [
 			},
 			{
 				title: 'Destete',
-				state: 'Hecho',
+				state: false,
 				approximateDate: '20-12-2022',
 				total: 24,
 				averageWeight: '1000gr',
@@ -47,30 +47,30 @@ export const litter = [
 	{
 		id: 123,
 		editors: [123, 124],
-		state: '10/20/2030',
+		state: false,
 		idMother: 123456,
 		stages: [
 			{
 				title: 'Monta/Servicio',
-				state: 'Hecho',
+				state: true,
 				date: '20-12-2022',
 				males: [1234, 1223],
 			},
 			{
-				title: 'Palpación',
+				title: 'Palpacion',
 				state: 'Hecho',
 				approximateDate: '20-12-2022',
 				realDate: 21 - 12 - 2022,
 			},
 			{
 				title: 'PreParto',
-				state: 'Hecho',
+				state: true,
 				approximateDate: '20-12-2022',
 				realDate: 21 - 12 - 2022,
 			},
 			{
 				title: 'Parto',
-				state: 'Hecho',
+				state: true,
 				approximateDate: '20-12-2022',
 				lives: 20,
 				deaths: 2,
@@ -81,7 +81,7 @@ export const litter = [
 			},
 			{
 				title: 'Destete',
-				state: 'Hecho',
+				state: false,
 				approximateDate: '20-12-2022',
 				total: 24,
 				averageWeight: '1000gr',

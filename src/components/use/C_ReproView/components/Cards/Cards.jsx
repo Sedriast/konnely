@@ -11,11 +11,7 @@ export function Cards({ id, editor, stages }) {
 			</div>
 
 			<div className={st.panelInfo}>
-				{() => {
-					for (let i = 0; i < stages.length; i++) {
-						<Ref title={stages[i].title} stage={stages[i]} />;
-					}
-				}}
+				<Ref stage={stages} />
 			</div>
 		</div>
 	);
