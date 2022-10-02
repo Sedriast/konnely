@@ -1,7 +1,7 @@
 import swal from 'sweetalert';
 import app from '../credentials';
 
-import { getStorage, ref, getDownloadURL, uploadString } from 'firebase/storage';
+import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
 import { getFirestore, collection, addDoc, doc, setDoc, updateDoc } from 'firebase/firestore';
 
 const db = getFirestore(app);
@@ -57,6 +57,17 @@ export const addImageAndInfo = (props) => {
 export const EditImageAndInfo = (props) => {
     const funtionEditImageAndInfo = async (datos) => {
         try {
+            if (datos.image.includes(',')) {
+                let auxiliar = [];
+                const desertRef = ref(storage, datos.idOld);
+                await deleteObject(desertRef);
+                auxiliar = datos.image.split(',');
+                const refStorage = ref(storage, datos.id);
+                await uploadString(refStorage, auxiliar[1], 'base64');
+                const urlDescarga = await getDownloadURL(refStorage);
+                datos.url = urlDescarga;
+                delete datos.image;
+            }
             await updateDoc(doc(db, 'rabbits', datos.uid), datos);
         } catch (error) {
             console.log(error);
