@@ -65,7 +65,6 @@ export function Form() {
         if (basicData.id !== null) {
             setImage_(basicData.info.url);
             setReason(basicData.info.motivo);
-            console.log(basicData);
         } else {
             navigate('/vitaeslist');
             return null;
