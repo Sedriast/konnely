@@ -25,7 +25,8 @@
 .container {
 	width: 90%;
 
-	background: rgba(0, 0, 0, 0.25);
+	background: rgba(0, 0, 0, 0.1);
+
 	margin: 2rem 0;
 	padding: 1rem;
 	border-radius: 10px;
@@ -55,11 +56,11 @@
 	filter: none;
 }
 .panelInfo {
-	border-radius: 10px;
+	height: 145px;
 
 	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	justify-content: center;
+	align-items: flex-end;
 	flex-wrap: wrap;
 }
 .sp {
