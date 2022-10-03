@@ -1,13 +1,12 @@
 import st from './Ref.module.css';
 
 export function Ref({ stage }) {
-	console.log('lpm');
 	switch (stage.title) {
-		case 'Monta/Servicio':
+		case 'Monta':
 			return (
 				<div className={st.panel}>
-					{stage.title}
-					<br />
+					<h3>{stage.title}</h3>
+
 					<br />
 
 					<div className={st.pt}>
@@ -25,8 +24,8 @@ export function Ref({ stage }) {
 		case 'Palpación':
 			return (
 				<div className={st.panel}>
-					{stage.title}
-					<br />
+					<h3>{stage.title}</h3>
+
 					<br />
 
 					<div className={st.pt}>
@@ -39,8 +38,8 @@ export function Ref({ stage }) {
 		case 'Preparto':
 			return (
 				<div className={st.panel}>
-					{stage.title}
-					<br />
+					<h3>{stage.title}</h3>
+
 					<br />
 
 					<div className={st.pt}>
@@ -53,8 +52,8 @@ export function Ref({ stage }) {
 		case 'Parto':
 			return (
 				<div className={st.panel}>
-					{stage.title}
-					<br />
+					<h3>{stage.title}</h3>
+
 					<br />
 
 					<div className={st.pt}>
@@ -84,8 +83,8 @@ export function Ref({ stage }) {
 		case 'Destete':
 			return (
 				<div className={st.panel}>
-					{stage.title}
-					<br />
+					<h3>{stage.title}</h3>
+
 					<br />
 
 					<div className={st.pt}>

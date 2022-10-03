@@ -6,7 +6,7 @@ export const litter = [
 		idMother: 123456,
 		stages: [
 			{
-				title: 'Monta/Servicio',
+				title: 'Monta',
 				state: true,
 				date: '20-12-2022',
 				males: [1234, 1223],
@@ -55,7 +55,7 @@ export const litter = [
 		idMother: 123456,
 		stages: [
 			{
-				title: 'Monta/Servicio',
+				title: 'Monta',
 				state: true,
 				date: '20-12-2022',
 				males: [1234, 1223],

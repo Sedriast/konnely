@@ -11,6 +11,8 @@ export function Cards({ id, editor, stages }) {
 				<br />
 				Editor: {editor}
 			</div>
+			<br />
+			<br />
 
 			<div className={st.panelInfo}>
 				{stages?.map((element) => {
