@@ -56,12 +56,10 @@
 	filter: none;
 }
 .panelInfo {
-	height: 145px;
-
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: flex-end;
-	flex-wrap: wrap;
 }
 .sp {
 	color: rgba(251, 226, 34);

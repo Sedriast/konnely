@@ -8,10 +8,9 @@ export function Cards({ id, editor, stages }) {
 			<div className={st.panelId}>
 				{id}
 				<br />
-				<br />
 				Editor: {editor}
 			</div>
-
+			<br />
 			<div className={st.panelInfo}>
 				{stages?.map((element) => {
 					return (
