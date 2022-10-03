@@ -9,10 +9,6 @@ export function Ref({ stage }) {
 					{stage.title}
 					<br />
 					<br />
-					<div className={st.pt}>
-						<h1>Estado: </h1>
-						<h2>{stage.state}</h2>
-					</div>
 
 					<div className={st.pt}>
 						<h1>Males: </h1>
@@ -26,16 +22,12 @@ export function Ref({ stage }) {
 				</div>
 			);
 
-		case 'Palpacion':
+		case 'Palpación':
 			return (
 				<div className={st.panel}>
 					{stage.title}
 					<br />
 					<br />
-					<div className={st.pt}>
-						<h1>Estado: </h1>
-						<h2>{stage.state}</h2>
-					</div>
 
 					<div className={st.pt}>
 						<h1>Fecha: </h1>
@@ -50,10 +42,6 @@ export function Ref({ stage }) {
 					{stage.title}
 					<br />
 					<br />
-					<div className={st.pt}>
-						<h1>Estado: </h1>
-						<h2>{stage.state}</h2>
-					</div>
 
 					<div className={st.pt}>
 						<h1>Fecha: </h1>
@@ -68,10 +56,6 @@ export function Ref({ stage }) {
 					{stage.title}
 					<br />
 					<br />
-					<div className={st.pt}>
-						<h1>Estado: </h1>
-						<h2>{stage.state}</h2>
-					</div>
 
 					<div className={st.pt}>
 						<h1>Crias vivas: </h1>
@@ -103,10 +87,6 @@ export function Ref({ stage }) {
 					{stage.title}
 					<br />
 					<br />
-					<div className={st.pt}>
-						<h1>Estado: </h1>
-						<h2>{stage.state}</h2>
-					</div>
 
 					<div className={st.pt}>
 						<h1>Crias destetadas: </h1>
