@@ -23,16 +23,13 @@ export function Option({ op, click }) {
 				</div>
 			);
 		case true:
-			return (
-				<>
-					{litter.map((item) =>
-						item.state === true ? (
-							<Cards key={item.id} id={item.id} editor={item.editors} stages={item.stages} />
-						) : (
-							<></>
-						)
-					)}
-				</>
+			return litter?.map((item, index) =>
+				// Esta condicion puede ser sustituid por una busqueda simple
+				item.state === true ? (
+					<Cards key={index} id={item.id} editor={item.editors} stages={item.stages} />
+				) : (
+					<></>
+				)
 			);
 		default:
 			break;

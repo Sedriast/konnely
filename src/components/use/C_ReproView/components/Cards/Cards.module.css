@@ -44,9 +44,7 @@
 	font-size: 1.5rem;
 	color: rgba(251, 226, 34);
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 .btnPanel {
 	display: flex;
@@ -57,17 +55,12 @@
 	filter: none;
 }
 .panelInfo {
-	width: -moz-fit-content;
-	width: fit-content;
-	height: -moz-fit-content;
-	height: fit-content;
-	border: solid black 1px;
 	border-radius: 10px;
+
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	flex-wrap: wrap;
-	flex-direction: column;
 }
 .sp {
 	color: rgba(251, 226, 34);

@@ -1,68 +1,130 @@
 import st from './Ref.module.css';
 
 export function Ref({ stage }) {
-	return (
-		<>
-			{stage[0].title === 'Monta/Servicio' && stage[0].state === true ? (
+	console.log('lpm');
+	switch (stage.title) {
+		case 'Monta/Servicio':
+			return (
 				<div className={st.panel}>
-					<div>Etapa: {stage.title}</div>
-					<div>Estado: {stage.state}</div>
+					{stage.title}
+					<br />
+					<br />
+					<div className={st.pt}>
+						<h1>Estado: </h1>
+						<h2>{stage.state}</h2>
+					</div>
 
-					<div>Males: {stage.males}</div>
+					<div className={st.pt}>
+						<h1>Males: </h1>
+						<h2>{stage.males}</h2>
+					</div>
 
-					<div>Fecha: {stage.date}</div>
+					<div className={st.pt}>
+						<h1>Fecha: </h1>
+						<h2>{stage.date}</h2>
+					</div>
 				</div>
-			) : (
-				<></>
-			)}
-			{stage[1].title === 'Palpacion' && stage[1].state === true ? (
+			);
+
+		case 'Palpacion':
+			return (
 				<div className={st.panel}>
-					<div>Etapa: {stage.title}</div>
-					<div>Estado: {stage.state}</div>
+					{stage.title}
+					<br />
+					<br />
+					<div className={st.pt}>
+						<h1>Estado: </h1>
+						<h2>{stage.state}</h2>
+					</div>
 
-					<div>Fecha: {stage.date}</div>
+					<div className={st.pt}>
+						<h1>Fecha: </h1>
+						<h2>{stage.date}</h2>
+					</div>
 				</div>
-			) : (
-				<></>
-			)}
-			{stage[2].title === 'Preparto' && stage[2].state === true ? (
+			);
+
+		case 'Preparto':
+			return (
 				<div className={st.panel}>
-					<div>Etapa: {stage.title}</div>
-					<div>Estado: {stage.state}</div>
+					{stage.title}
+					<br />
+					<br />
+					<div className={st.pt}>
+						<h1>Estado: </h1>
+						<h2>{stage.state}</h2>
+					</div>
 
-					<div>Fecha: {stage.date}</div>
+					<div className={st.pt}>
+						<h1>Fecha: </h1>
+						<h2>{stage.date}</h2>
+					</div>
 				</div>
-			) : (
-				<></>
-			)}
-			{stage[3].title === 'Parto' && stage[3].state === true ? (
+			);
+
+		case 'Parto':
+			return (
 				<div className={st.panel}>
-					<div>Etapa: {stage.title}</div>
-					<div>Estado: {stage.state}</div>
+					{stage.title}
+					<br />
+					<br />
+					<div className={st.pt}>
+						<h1>Estado: </h1>
+						<h2>{stage.state}</h2>
+					</div>
 
-					<div>Crias vivas: {stage.lives}</div>
-					<div>Crias muertas: {stage.deaths}</div>
-					<div>Homogeneizados: {stage.homogen}</div>
-					<div>Crias totales: {stage.total}</div>
+					<div className={st.pt}>
+						<h1>Crias vivas: </h1>
+						<h2>{stage.lives}</h2>
+					</div>
+					<div className={st.pt}>
+						<h1>Crias muertas: </h1>
+						<h2>{stage.deaths}</h2>
+					</div>
+					<div className={st.pt}>
+						<h1>Homogeneizados: </h1>
+						<h2>{stage.homogen}</h2>
+					</div>
+					<div className={st.pt}>
+						<h1>Crias totales: </h1>
+						<h2>{stage.total}</h2>
+					</div>
 
-					<div>Fecha: {stage.date}</div>
+					<div className={st.pt}>
+						<h1>Fecha: </h1>
+						<h2>{stage.date}</h2>
+					</div>
 				</div>
-			) : (
-				<></>
-			)}
-			{stage[4].title === 'Destete' && stage[4].state === true ? (
+			);
+
+		case 'Destete':
+			return (
 				<div className={st.panel}>
-					<div>Etapa: {stage.title}</div>
-					<div>Estado: {stage.state}</div>
+					{stage.title}
+					<br />
+					<br />
+					<div className={st.pt}>
+						<h1>Estado: </h1>
+						<h2>{stage.state}</h2>
+					</div>
 
-					<div>Crias destetadas: {stage.total}</div>
-					<div>Peso de la camada: {stage.averageWeight}</div>
+					<div className={st.pt}>
+						<h1>Crias destetadas: </h1>
+						<h2>{stage.total}</h2>
+					</div>
+					<div className={st.pt}>
+						<h1>Peso de la camada: </h1>
+						<h2>{stage.averageWeight}</h2>
+					</div>
 
-					<div>Fecha: {stage.date}</div>
+					<div className={st.pt}>
+						<h1>Fecha: </h1>
+						<h2>{stage.date}</h2>
+					</div>
 				</div>
-			) : (
-				<></>
-			)}
-		</>
-	);
+			);
+
+		default:
+			return <></>;
+	}
 }

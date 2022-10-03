@@ -1,8 +1,33 @@
 .panel {
-	height: min-content;
+	width: 100%;
+
+	margin: 1rem;
+	background: rgba(255, 255, 255, 0.15);
+
+	padding: 1rem;
+	border-radius: 10px;
+
+	font-size: 1.5rem;
 
 	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
+}
+.pt h1 {
+	text-align: right;
+	color: white;
+	width: 50%;
+}
+.pt h2 {
+	text-align: left;
+	color: rgb(0, 255, 0);
+	margin-left: 10px;
+	width: 50%;
+}
+.pt {
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
 }

@@ -58,7 +58,7 @@ export const litter = [
 			},
 			{
 				title: 'Palpacion',
-				state: 'Hecho',
+				state: true,
 				approximateDate: '20-12-2022',
 				realDate: 21 - 12 - 2022,
 			},
