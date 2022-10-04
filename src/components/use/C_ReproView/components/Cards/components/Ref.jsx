@@ -1,3 +1,5 @@
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 import st from './Ref.module.css';
 
 export function Ref({ stage }) {
@@ -6,6 +8,15 @@ export function Ref({ stage }) {
 			return (
 				<div className={st.panel}>
 					<h3>{stage.title}</h3>
+
+					<div>
+						<Buttons
+							route="/formEditRepro"
+							label="Editar"
+							direction="bottom"
+							btnIconText={faPenToSquare}
+						/>
+					</div>
 
 					<br />
 
