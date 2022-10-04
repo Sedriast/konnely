@@ -27,9 +27,9 @@ export function FormTrat() {
 	}
 	useEffect(() => {
 		if (basicData.id === null) {
-            navigate('/vitaeslist');
-            return null;
-        }
+			navigate('/vitaeslist');
+			return null;
+		}
 	}, [navigate]);
 	return (
 		<div className={st.container}>
@@ -65,8 +65,13 @@ export function FormTrat() {
 					handleChange={handleChange}
 				/>
 				<div className={st.btn}>
-					<Buttons direction="bottom" btnIconText={faPaperPlane} label="Guardar" route="/vitae" />
-					<button type="submit">Hola</button>
+					<Buttons
+						btnType="Submit"
+						direction="bottom"
+						btnIconText={faPaperPlane}
+						label="Guardar"
+						route="/vitae"
+					/>
 				</div>
 			</form>
 		</div>

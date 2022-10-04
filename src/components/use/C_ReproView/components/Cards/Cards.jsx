@@ -1,5 +1,8 @@
 import st from './Cards.module.css';
 
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
+
 import { Ref } from './components/Ref';
 
 export function Cards({ id, editor, stages }) {
@@ -7,6 +10,14 @@ export function Cards({ id, editor, stages }) {
 		<div className={st.container}>
 			<div className={st.panelId}>
 				{id}
+				<div>
+					<Buttons
+						route="/formEditRepro"
+						label="Editar"
+						direction="bottom"
+						btnIconText={faPenToSquare}
+					/>
+				</div>
 				<br />
 				Editor: {editor}
 			</div>
