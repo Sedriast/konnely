@@ -56,10 +56,11 @@
 	filter: none;
 }
 .panelInfo {
+	height: 180px;
+
 	display: flex;
+	align-items: center;
 	flex-wrap: wrap;
-	justify-content: center;
-	align-items: flex-end;
 }
 .sp {
 	color: rgba(251, 226, 34);
@@ -93,7 +94,15 @@
 /*Use*/
 
 /*Resizing */
+@media (max-width: 800px) {
+	.panelInfo {
+		height: fit-content;
 
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
 /*Resizing */
 
 /*Animations*/
