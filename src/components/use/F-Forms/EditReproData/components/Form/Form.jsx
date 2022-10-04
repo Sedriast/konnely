@@ -1,8 +1,16 @@
 import st from './Form.module.css';
 
-import { faFloppyDisk, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
+import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 export function Form({ info }) {
+	const handleChange = () => {
+		console.log('👍🏽👌🏽');
+	};
+
+	const handleSubmit = () => {
+		console.log('👍🏽👌🏽');
+	};
 	return (
 		<>
 			<form
@@ -14,7 +22,7 @@ export function Form({ info }) {
 			>
 				<div className={st.panel}>
 					<Inputs
-						value={basicData?.id}
+						value=""
 						leyend="Identificador"
 						name="id"
 						placeholder="Ingrese el identificador"
