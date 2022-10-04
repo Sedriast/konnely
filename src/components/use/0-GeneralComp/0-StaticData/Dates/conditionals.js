@@ -14,6 +14,19 @@ export const conditionalBasis = (updateState, name, value) => {
     }
 };
 
+export const conditionalBasisEdit = (value, defaultValue) => {
+    if (Date.now() - 43200000 - Date.parse(value) <= 0) {
+        swal({
+            title: 'A ingresado una fecha incorrecta',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return defaultValue;
+    } else {
+        return value;
+    }
+};
+
 export const conditionalLevante = (updateState, name, value, nacimiento) => {
     if (Date.now() - 43200000 - Date.parse(value) <= 0 || Date.parse(value) - Date.parse(nacimiento) <= 0) {
         swal({
@@ -24,6 +37,19 @@ export const conditionalLevante = (updateState, name, value, nacimiento) => {
         return null;
     } else {
         updateState(name, value);
+        return value;
+    }
+};
+
+export const conditionalLevanteEdit = (value, defaultValue, nacimiento) => {
+    if (Date.now() - 43200000 - Date.parse(value) <= 0 || Date.parse(value) - Date.parse(nacimiento) <= 0) {
+        swal({
+            title: 'A ingresado una fecha incorrecta',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return defaultValue;
+    } else {
         return value;
     }
 };
@@ -45,6 +71,26 @@ export const conditionalNext = (updateState, name, value, next) => {
         return null;
     } else {
         updateState(name, value);
+        return value;
+    }
+};
+
+export const conditionalNextEdit = (value, defaultValue, next) => {
+    if (Date.now() - 43200000 - Date.parse(value) <= 0) {
+        swal({
+            title: 'A ingresado una fecha incorrecta',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return defaultValue;
+    } else if (Date.parse(value) - Date.parse(next) <= 0 || !next) {
+        swal({
+            title: 'No se puede asignar esa fecha a la finalización de esta etapa',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return defaultValue;
+    } else {
         return value;
     }
 };
