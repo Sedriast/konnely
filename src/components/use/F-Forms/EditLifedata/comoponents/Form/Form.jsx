@@ -9,21 +9,21 @@ import {
 import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 export function Form({ info, uid, nacimiento }) {
-	const conldicionalInfo = (name, value) => {
-		if (name.includes('Levante') && name.includes('weigth')) {
-			info[1].weigth = value;
-		} else if (name.includes('Levante') && name.includes('date')) {
-			info[1].date = value;
-		} else if (name.includes('Engorde') && name.includes('weigth')) {
-			info[2].date = value;
-		} else if (name.includes('Engorde') && name.includes('date')) {
-			info[2].weigth = value;
-		} else if (name.includes('Ceba') && name.includes('weigth')) {
-			info[3].date = value;
-		} else if (name.includes('Ceba') && name.includes('date')) {
-			info[3].weigth = value;
-		}
-	};
+    const conldicionalInfo = (name, value) => {
+        if (name.includes('Levante') && name.includes('weigth')) {
+            info[1].weigth = value;
+        } else if (name.includes('Levante') && name.includes('date')) {
+            info[1].date = value;
+        } else if (name.includes('Engorde') && name.includes('weigth')) {
+            info[2].weigth = value;
+        } else if (name.includes('Engorde') && name.includes('date')) {
+            info[2].date = value;
+        } else if (name.includes('Ceba') && name.includes('weigth')) {
+            info[3].weigth = value;
+        } else if (name.includes('Ceba') && name.includes('date')) {
+            info[3].date = value;
+        }
+    };
 
 	return (
 		<>

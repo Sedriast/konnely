@@ -85,7 +85,7 @@ export const EditImageAndInfo = (props) => {
 export const EditInfoRabbit = (props) => {
     const funtionEditInfoRabbit = async (datos) => {
         try {
-            await updateDoc(doc(db, 'rabbits', datos.uid), datos.lifecycle);
+            await updateDoc(doc(db, 'rabbits', datos.uid), datos);
         } catch (error) {
             console.log(error);
             swal({
