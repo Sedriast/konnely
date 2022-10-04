@@ -198,7 +198,9 @@
 
 	margin: 2rem;
 }
-.submit div {
+.submit svg {
+	background: transparent;
+
 	font-size: 1.5rem;
 }
 

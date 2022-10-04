@@ -3,6 +3,7 @@ import st from './Form.module.css';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export function Form({ info }) {
 	const handleChange = () => {
 		console.log('👍🏽👌🏽');
@@ -32,14 +33,11 @@ export function Form({ info }) {
 					/>
 				</div>
 				<div className={st.submit}>
-					<Buttons
-						direction="bottom"
-						label="Guardar"
-						btnType="Submit"
-						btnClick={handleSubmit}
-						route="#"
-						btnIconText={faPaperPlane}
-					/>
+					<button type="submit">
+						<figure title="Guardar cambios" tooltip-dir="top">
+							<FontAwesomeIcon icon={faPaperPlane} />
+						</figure>
+					</button>
 				</div>
 			</form>
 		</>

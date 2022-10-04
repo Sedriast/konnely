@@ -10,6 +10,7 @@ import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 import { conditionalBasis } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function FormTrat() {
 	const navigate = useNavigate();
@@ -65,13 +66,11 @@ export function FormTrat() {
 					handleChange={handleChange}
 				/>
 				<div className={st.btn}>
-					<Buttons
-						btnType="Submit"
-						direction="bottom"
-						btnIconText={faPaperPlane}
-						label="Guardar"
-						route="/vitae"
-					/>
+					<button type="submit">
+						<figure title="Guardar cambios" tooltip-dir="top">
+							<FontAwesomeIcon icon={faPaperPlane} />
+						</figure>
+					</button>
 				</div>
 			</form>
 		</div>
