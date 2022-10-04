@@ -2,7 +2,7 @@ import { Inputs } from '../../../../../0-GeneralComp/1-Inputs/Inputs';
 import { basicData } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function DropdownForm({ motivo, handleChange }) {
-	return (
+    return (
         <>
             {basicData?.info?.motivo === motivo ? (
                 <>
@@ -43,7 +43,7 @@ export function DropdownForm({ motivo, handleChange }) {
                             />
                         </>
                     )}
-                    {motivo === 'Nacimiento' && (
+                    {basicData?.info?.motivo === 'Nacimiento' && (
                         <>
                             <Inputs
                                 value={basicData?.info?.idPadre}
@@ -65,7 +65,7 @@ export function DropdownForm({ motivo, handleChange }) {
                             />
                         </>
                     )}
-                    {motivo === 'Compra' && (
+                    {basicData?.info?.motivo === 'Compra' && (
                         <>
                             <Inputs
                                 value={basicData?.info?.proveedor}

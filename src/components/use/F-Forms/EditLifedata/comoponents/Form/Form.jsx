@@ -15,13 +15,13 @@ export function Form({ info, uid, nacimiento }) {
         } else if (name.includes('Levante') && name.includes('date')) {
             info[1].date = value;
         } else if (name.includes('Engorde') && name.includes('weigth')) {
-            info[2].date = value;
-        } else if (name.includes('Engorde') && name.includes('date')) {
             info[2].weigth = value;
+        } else if (name.includes('Engorde') && name.includes('date')) {
+            info[2].date = value;
         } else if (name.includes('Ceba') && name.includes('weigth')) {
-            info[3].date = value;
-        } else if (name.includes('Ceba') && name.includes('date')) {
             info[3].weigth = value;
+        } else if (name.includes('Ceba') && name.includes('date')) {
+            info[3].date = value;
         }
     };
 
@@ -33,7 +33,8 @@ export function Form({ info, uid, nacimiento }) {
                     e.preventDefault();
                     for (const element of e.target) {
                         if (element.value !== '') {
-                            conldicionalInfo(element.name, element.value);
+                            // conldicionalInfo(element.name, element.value);
+                            console.log(element.name + ' : ' + element.value);
                         }
                     }
                     EditInfoRabbit({ lifecycle: info, uid: uid });

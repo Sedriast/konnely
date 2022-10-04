@@ -8,7 +8,7 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 import { useModal } from '../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { EditImageAndInfo } from '../../../../../firebase/funtions/AddInformation';
-import { recuperar, basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { recuperar, basicData, recuperar_ } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 
 import { DropdownForm } from './components/DropdownForm';
 import { Modal } from '../../../../0-GeneralComp/0-StaticData/Modals/Modal';
@@ -19,6 +19,7 @@ import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dat
 import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
 
 export function Form() {
+    recuperar_(basicData.info.id);
     const navigate = useNavigate();
     const genero = ['Género', 'Hembra', 'Macho'];
     const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
@@ -45,7 +46,7 @@ export function Form() {
             idOld: basicData.info.id,
             image: image,
         });
-        recuperar(aux.id);
+        navigate('/vitae');
     };
     useEffect(() => {
         if (basicData.id !== null) {
