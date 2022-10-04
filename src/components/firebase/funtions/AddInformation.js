@@ -82,6 +82,23 @@ export const EditImageAndInfo = (props) => {
     funtionEditImageAndInfo(props);
 };
 
+export const EditInfoRabbit = (props) => {
+    const funtionEditInfoRabbit = async (datos) => {
+        try {
+            await updateDoc(doc(db, 'rabbits', datos.uid), datos.lifecycle);
+        } catch (error) {
+            console.log(error);
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+
+    funtionEditInfoRabbit(props);
+};
+
 export const AddInfoProfile = (props) => {
     const funtionAddInfoProfile = async ({ user, data }) => {
         try {

@@ -15,7 +15,7 @@ import { Modal } from '../../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { Lists } from '../../../../0-GeneralComp/1-List/Lists';
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
-import { conditionalBasis } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
+import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
 
 export function Form() {
@@ -24,32 +24,18 @@ export function Form() {
     const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
     const [reason, setReason] = useState();
     const [image, setImage] = useState(null);
-    const [values, setValues] = useState({});
     const [image_, setImage_] = useState(null);
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
 
-    const updateState = (name, value) => {
-        if (name === 'nacimiento') {
-            setValues({ ...values, [name]: value });
-        } else if (name === 'motivo') {
-            setReason(value);
-            setValues({ ...values, [name]: value });
-        } else {
-            setValues({ ...values, [name]: value });
-        }
-    };
-
     function handleChange(e) {
         const { name, value } = e.target;
         if (name === 'motivo') {
-            updateState(name, value);
+            setReason(value);
         } else if (name === 'nacimiento') {
-            e.target.value = conditionalBasis(updateState, name, value);
+            e.target.value = conditionalBasisEdit(value, basicData.info.nacimiento);
         } else if (name === 'traslado') {
-            e.target.value = conditionalBasis(updateState, name, value);
-        } else {
-            updateState(name, value);
+            e.target.value = conditionalBasisEdit(value, basicData.info.traslado);
         }
     }
     const handleSubmit = (aux) => {
@@ -59,7 +45,7 @@ export function Form() {
             idOld: basicData.info.id,
             image: image,
         });
-        recuperar(values.id);
+        recuperar(aux.id);
     };
     useEffect(() => {
         if (basicData.id !== null) {
@@ -188,7 +174,6 @@ export function Form() {
                                     type='date'
                                     handleChange={handleChange}
                                 />
-                                {/* {date && <DropdownDate date={date} handleChange={handleChange} />} */}
                                 <Lists
                                     value_={basicData?.info?.motivo}
                                     leyend='Motivo de ingreso'

@@ -17,210 +17,212 @@ import { Inputs } from '../../../0-GeneralComp/1-Inputs/Inputs';
 import { Lists } from '../../../0-GeneralComp/1-List/Lists';
 import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
 import {
-	conditionalBasis,
-	conditionalLevante,
-	conditionalNext,
+    conditionalBasis,
+    conditionalLevante,
+    conditionalNext,
 } from '../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { GetDocument } from '../../../../firebase/funtions/GetDocument';
 
 export function SendRabbitData() {
-	const genero = ['Género', 'Hembra', 'Macho'];
-	const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
-	const [date, setDate] = useState();
-	const [reason, setReason] = useState();
-	const [image, setImage] = useState(null);
-	const [values, setValues] = useState({});
-	const [approximate, setApproximate] = useState({});
-	const [image_, setImage_] = useState(null);
-	const [auxImage_, setAuxImage_] = useState(null);
-	const [isOpenModal, openModal, closeModal] = useModal(false);
+    const genero = ['Género', 'Hembra', 'Macho'];
+    const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
+    const [date, setDate] = useState();
+    const [reason, setReason] = useState();
+    const [image, setImage] = useState(null);
+    const [values, setValues] = useState({});
+    const [approximate, setApproximate] = useState({});
+    const [image_, setImage_] = useState(null);
+    const [auxImage_, setAuxImage_] = useState(null);
+    const [isOpenModal, openModal, closeModal] = useModal(false);
 
-	const updateState = (name, value) => {
-		if (name === 'nacimiento') {
-			setApproximate(Approximate(value));
-			setDate(value);
-			setValues({ ...values, [name]: value });
-		} else if (name === 'motivo') {
-			setReason(value);
-			setValues({ ...values, [name]: value });
-		} else {
-			setValues({ ...values, [name]: value });
-		}
-	};
+    const updateState = (name, value) => {
+        if (name === 'nacimiento') {
+            setApproximate(Approximate(value));
+            setDate(value);
+            setValues({ ...values, [name]: value });
+        } else if (name === 'motivo') {
+            setReason(value);
+            setValues({ ...values, [name]: value });
+        } else {
+            setValues({ ...values, [name]: value });
+        }
+    };
 
-	function handleChange(e) {
-		e.preventDefault();
-		const { name, value } = e.target;
-		if (name === 'motivo') {
-			updateState(name, value);
-		} else if (name === 'nacimiento') {
-			e.target.value = conditionalBasis(updateState, name, value);
-		} else if (name === 'traslado') {
-			e.target.value = conditionalBasis(updateState, name, value);
-		} else if (name === 'levantefin') {
-			e.target.value = conditionalLevante(updateState, name, value, values.nacimiento);
-		} else if (name === 'engordefin') {
-			e.target.value = conditionalNext(updateState, name, value, values.levantefin);
-		} else if (name === 'cebafin') {
-			e.target.value = conditionalNext(updateState, name, value, values.engordefin);
-		} else {
-			updateState(name, value);
-		}
-	}
+    function handleChange(e) {
+        e.preventDefault();
+        const { name, value } = e.target;
+        if (name === 'motivo') {
+            updateState(name, value);
+        } else if (name === 'nacimiento') {
+            e.target.value = conditionalBasis(updateState, name, value);
+        } else if (name === 'traslado') {
+            e.target.value = conditionalBasis(updateState, name, value);
+        } else if (name === 'levantefin') {
+            e.target.value = conditionalLevante(updateState, name, value, values.nacimiento);
+        } else if (name === 'engordefin') {
+            e.target.value = conditionalNext(updateState, name, value, values.levantefin);
+        } else if (name === 'cebafin') {
+            e.target.value = conditionalNext(updateState, name, value, values.engordefin);
+        } else {
+            updateState(name, value);
+        }
+    }
 
-	const handleSubmit = () => {
-		addImageAndInfo({
-			...values,
-			image: image,
-			lifecycle: [
-				{
-					stage: 'Nacimiento',
-					state: 'id de la camada',
-					approDate: null,
-					date: values.nacimiento,
-					weigth: 'Sin datos',
-				},
-				{
-					stage: 'Levante',
-					state: null,
-					approDate: approximate.raised,
-					date: 'Sin datos',
-					weigth: 'Sin datos',
-				},
-				{
-					stage: 'Engorde',
-					state: null,
-					approDate: approximate.fattening,
-					date: 'Sin datos',
-					weigth: 'Sin datos',
-				},
-				{
-					stage: 'Ceba',
-					state: null,
-					approDate: approximate.ceba,
-					date: 'Sin datos',
-					weigth: 'Sin datos',
-				},
-			],
-		});
-		recuperar(values.id);
-	};
+    const handleSubmit = () => {
+        addImageAndInfo({
+            ...values,
+            image: image,
+            lifecycle: [
+                {
+                    stage: 'Nacimiento',
+                    state: 'id de la camada',
+                    approDate: null,
+                    date: values.nacimiento,
+                    weigth: 'Sin datos',
+                },
+                {
+                    stage: 'Levante',
+                    state: null,
+                    approDate: approximate.raised,
+                    date: null,
+                    weigth: 'Sin datos',
+                },
+                {
+                    stage: 'Engorde',
+                    state: null,
+                    approDate: approximate.fattening,
+                    date: null,
+                    weigth: 'Sin datos',
+                },
+                {
+                    stage: 'Ceba',
+                    state: null,
+                    approDate: approximate.ceba,
+                    date: null,
+                    weigth: 'Sin datos',
+                },
+            ],
+        });
+        recuperar(values.id);
+    };
 
-	return (
-		<>
-			<div className={st.container}>
-				<div className={st.panelContainer}>
-					<div className={st.panelInpImg}>
-						<div className={st.panelImage}>
-							<Inputs
-								type="file"
-								HaveImage={(e) => {
-									setImage(e);
-									if (e === null) {
-										setImage_(null);
-										setAuxImage_(null);
-									}
-								}}
-								preview={image_}
-							/>
-							<Modal isOpen={isOpenModal} closeModal={closeModal}>
-								{isOpenModal && (
-									<>
-										<Webcam audio={false} height={250} width={330} screenshotFormat="image/jpeg">
-											{({ getScreenshot }) => (
-												<button
-													onClick={() => {
-														const imageSrc = getScreenshot();
-														setAuxImage_(imageSrc);
-													}}
-												>
-													Capturar foto
-												</button>
-											)}
-										</Webcam>
-										<img src={auxImage_} alt=""></img>
-										<button
-											onClick={() => {
-												setImage_(auxImage_);
-												closeModal();
-											}}
-										>
-											Aceptar
-										</button>
-									</>
-								)}
-							</Modal>
-						</div>
-						<div className={st.btnC}>
-							<Buttons
-								direction="bottom"
-								label="Cámara"
-								btnIconText={faCamera}
-								btnClick={openModal}
-								route="#"
-							/>
-						</div>
-					</div>
+    return (
+        <>
+            <div className={st.container}>
+                <div className={st.panelContainer}>
+                    <div className={st.panelInpImg}>
+                        <div className={st.panelImage}>
+                            <Inputs
+                                type='file'
+                                HaveImage={(e) => {
+                                    setImage(e);
+                                    if (e === null) {
+                                        setImage_(null);
+                                        setAuxImage_(null);
+                                    }
+                                }}
+                                preview={image_}
+                            />
+                            <Modal isOpen={isOpenModal} closeModal={closeModal}>
+                                {isOpenModal && (
+                                    <>
+                                        <Webcam
+                                            audio={false}
+                                            height={250}
+                                            width={330}
+                                            screenshotFormat='image/jpeg'>
+                                            {({ getScreenshot }) => (
+                                                <button
+                                                    onClick={() => {
+                                                        const imageSrc = getScreenshot();
+                                                        setAuxImage_(imageSrc);
+                                                    }}>
+                                                    Capturar foto
+                                                </button>
+                                            )}
+                                        </Webcam>
+                                        <img src={auxImage_} alt=''></img>
+                                        <button
+                                            onClick={() => {
+                                                setImage_(auxImage_);
+                                                closeModal();
+                                            }}>
+                                            Aceptar
+                                        </button>
+                                    </>
+                                )}
+                            </Modal>
+                        </div>
+                        <div className={st.btnC}>
+                            <Buttons
+                                direction='bottom'
+                                label='Cámara'
+                                btnIconText={faCamera}
+                                btnClick={openModal}
+                                route='#'
+                            />
+                        </div>
+                    </div>
 
-					<div className={st.panel}>
-						<Inputs
-							leyend="Identificador"
-							name="id"
-							placeholder="Ingrese el identificador"
-							type="number"
-							inputmode="numeric"
-							handleChange={handleChange}
-						/>
-						<Lists leyend="Género" name_="genero" listar={genero} handleChange={handleChange} />
-						<Lists
-							leyend="Raza"
-							name_="raza"
-							listar={GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values}
-							handleChange={handleChange}
-						/>
-						<Inputs
-							leyend="Porcentaje de pureza"
-							name="porcentaje"
-							placeholder="Procentaje de pureza"
-							type="number"
-							inputmode="numeric"
-							min="1"
-							max="100"
-							step="0.1"
-							handleChange={handleChange}
-						/>
-						<Lists
-							leyend="Concepción"
-							name_="concepcion"
-							listar={concepcion}
-							handleChange={handleChange}
-						/>
-						<Inputs
-							leyend="Fecha de nacimiento"
-							name="nacimiento"
-							type="date"
-							handleChange={handleChange}
-						/>
-						{date && <DropdownDate date={date} handleChange={handleChange} />}
-						<Lists
-							leyend="Motivo de ingreso"
-							name_="motivo"
-							listar={GetDocument({ coleccion: 'lists', list: 'reasons' }).props.children[0].values}
-							handleChange={handleChange}
-						/>
-						{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
-					</div>
-					<div className={st.submit}>
-						<Buttons
-							direction="bottom"
-							label="Enviar"
-							btnClick={handleSubmit}
-							route="/vitaeslist"
-							btnIconText={faPaperPlane}
-						/>
-					</div>
-				</div>
-			</div>
-		</>
-	);
+                    <div className={st.panel}>
+                        <Inputs
+                            leyend='Identificador'
+                            name='id'
+                            placeholder='Ingrese el identificador'
+                            type='number'
+                            inputmode='numeric'
+                            handleChange={handleChange}
+                        />
+                        <Lists leyend='Género' name_='genero' listar={genero} handleChange={handleChange} />
+                        <Lists
+                            leyend='Raza'
+                            name_='raza'
+                            listar={GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values}
+                            handleChange={handleChange}
+                        />
+                        <Inputs
+                            leyend='Porcentaje de pureza'
+                            name='porcentaje'
+                            placeholder='Procentaje de pureza'
+                            type='number'
+                            inputmode='numeric'
+                            min='1'
+                            max='100'
+                            step='0.1'
+                            handleChange={handleChange}
+                        />
+                        <Lists
+                            leyend='Concepción'
+                            name_='concepcion'
+                            listar={concepcion}
+                            handleChange={handleChange}
+                        />
+                        <Inputs
+                            leyend='Fecha de nacimiento'
+                            name='nacimiento'
+                            type='date'
+                            handleChange={handleChange}
+                        />
+                        {date && <DropdownDate date={date} handleChange={handleChange} />}
+                        <Lists
+                            leyend='Motivo de ingreso'
+                            name_='motivo'
+                            listar={GetDocument({ coleccion: 'lists', list: 'reasons' }).props.children[0].values}
+                            handleChange={handleChange}
+                        />
+                        {reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
+                    </div>
+                    <div className={st.submit}>
+                        <Buttons
+                            direction='bottom'
+                            label='Enviar'
+                            btnClick={handleSubmit}
+                            route='/vitaeslist'
+                            btnIconText={faPaperPlane}
+                        />
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 }
