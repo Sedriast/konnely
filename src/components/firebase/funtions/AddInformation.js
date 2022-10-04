@@ -33,14 +33,14 @@ export const addImageAndInfo = (props) => {
                 delete datos.cebafin;
                 delete datos.ceba;
             }
-            const refStorage = ref(storage, datos.id);
-            await uploadString(refStorage, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(refStorage);
-            datos.url = urlDescarga;
+
             delete datos.image;
             delete datos.peso;
             const docRef = await addDoc(collection(db, 'rabbits'), datos);
-            await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id });
+            const refStorage = ref(storage, docRef.id);
+            await uploadString(refStorage, auxiliar[1], 'base64');
+            const urlDescarga = await getDownloadURL(refStorage);
+            await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
         } catch (error) {
             console.log(error.message);
             swal({
@@ -59,12 +59,11 @@ export const EditImageAndInfo = (props) => {
         try {
             if (datos.image.includes(',')) {
                 let auxiliar = [];
-                const desertRef = ref(storage, datos.idOld);
-                await deleteObject(desertRef);
+                const Ref = ref(storage, datos.uid);
+                await deleteObject(Ref);
                 auxiliar = datos.image.split(',');
-                const refStorage = ref(storage, datos.id);
-                await uploadString(refStorage, auxiliar[1], 'base64');
-                const urlDescarga = await getDownloadURL(refStorage);
+                await uploadString(Ref, auxiliar[1], 'base64');
+                const urlDescarga = await getDownloadURL(Ref);
                 datos.url = urlDescarga;
                 delete datos.image;
             }
