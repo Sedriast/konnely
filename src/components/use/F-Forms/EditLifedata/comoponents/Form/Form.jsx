@@ -97,13 +97,11 @@ export function Form({ info, uid, nacimiento }) {
 					);
 				})}{' '}
 				<div className={st.btn}>
-					<Buttons
-						btnType="Submit"
-						btnIconText={faFloppyDisk}
-						label="Guardar cambios"
-						direction="top"
-						route="#"
-					/>
+					<button type="submit">
+						<figure title="Guardar cambios" tooltip-dir="top">
+							<FontAwesomeIcon icon={faPaperPlane} />
+						</figure>
+					</button>
 				</div>
 			</form>
 		</>

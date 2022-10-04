@@ -17,6 +17,7 @@ import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function Form() {
 	const navigate = useNavigate();
@@ -190,13 +191,11 @@ export function Form() {
 								{reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
 							</div>
 							<div className={st.submit}>
-								<Buttons
-									direction="bottom"
-									btnType="Submit"
-									label="Guardar"
-									route="#"
-									btnIconText={faPaperPlane}
-								/>
+								<button type="submit">
+									<figure title="Guardar cambios" tooltip-dir="top">
+										<FontAwesomeIcon icon={faPaperPlane} />
+									</figure>
+								</button>
 							</div>
 						</div>
 					</form>
