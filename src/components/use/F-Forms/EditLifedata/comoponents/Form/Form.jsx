@@ -6,6 +6,8 @@ import {
 	conditionalLevanteEdit,
 	conditionalNextEdit,
 } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 export function Form({ info, uid, nacimiento }) {
 	const conldicionalInfo = (name, value) => {
 		if (name.includes('Levante') && name.includes('weigth')) {
@@ -95,17 +97,13 @@ export function Form({ info, uid, nacimiento }) {
 					);
 				})}{' '}
 				<div className={st.btn}>
-					{/* <Buttons
-						route="#"
-						btnType="submit"
+					<Buttons
+						btnType="Submit"
 						btnIconText={faFloppyDisk}
 						label="Guardar cambios"
 						direction="top"
-						btnClick={() => {
-							window.history.back();
-						}}
-					/> */}
-					<button type="Submit">Hola</button>
+						route="#"
+					/>
 				</div>
 			</form>
 		</>

@@ -3,7 +3,7 @@ import Webcam from 'react-webcam';
 
 import { useState } from 'react';
 
-import { faCamera, faBackward } from '@fortawesome/free-solid-svg-icons';
+import { faCamera, faBackward, faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
 import { useModal } from '../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { Modal } from '../../0-GeneralComp/0-StaticData/Modals/Modal';
@@ -113,7 +113,7 @@ export function EditUserData({ dataUser }) {
 							<input name="password" type="password" />
 						</div>
 						<div className={st.submit}>
-							<button type="submit">Guardar</button>
+							<Buttons direction="bottom" label="Guardar" btnIconText={faFloppyDisk} route="#" />
 						</div>
 					</form>
 				</div>

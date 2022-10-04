@@ -37,7 +37,7 @@ export function Form({ info }) {
 						label="Guardar"
 						btnType="Submit"
 						btnClick={handleSubmit}
-						route="/vitaeslist"
+						route="#"
 						btnIconText={faPaperPlane}
 					/>
 				</div>
