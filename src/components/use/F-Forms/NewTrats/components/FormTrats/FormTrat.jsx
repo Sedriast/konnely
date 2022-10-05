@@ -8,7 +8,6 @@ import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
-import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 import { conditionalBasis } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
