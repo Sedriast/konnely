@@ -8,7 +8,7 @@ export const QueriesSimple_ = (props) => {
     const coleccion = props.coleccion;
     const parametro = props.parametro;
     const busqueda = props.busqueda;
-    const [data_, setData_] = useState([{}]);
+    const [data_, setData_] = useState([]);
 
     useEffect(() => {
         const simpleQueries = async () => {

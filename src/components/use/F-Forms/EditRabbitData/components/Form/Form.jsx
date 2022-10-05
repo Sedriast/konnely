@@ -1,3 +1,4 @@
+import swal from 'sweetalert';
 import Webcam from 'react-webcam';
 import st from './Form.module.css';
 
@@ -6,19 +7,18 @@ import { useNavigate } from 'react-router-dom';
 
 import { faCamera, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
+import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { useModal } from '../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { EditImageAndInfo } from '../../../../../firebase/funtions/AddInformation';
-import { recuperar, basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 
 import { DropdownForm } from './components/DropdownForm';
-import { Modal } from '../../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { Lists } from '../../../../0-GeneralComp/1-List/Lists';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
-import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { GetDocument } from '../../../../../firebase/funtions/GetDocument';
-import swal from 'sweetalert';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Modal } from '../../../../0-GeneralComp/0-StaticData/Modals/Modal';
+import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 
 export function Form() {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ export function Form() {
     }
     const handleSubmit = (aux) => {
         swal({
-            title: 'Despues de actualizar la información de este conejo, se debe dirigir a la lista de conejos para ver los cambios. ¿Desea actualizar?',
+            title: 'Despues cambiar la información de este conejo, se debe dirigir a la lista general para ver los cambios. ¿Desea actualizar?',
             icon: 'warning',
             buttons: ['No', 'Si'],
         }).then((respuesta) => {
