@@ -1,17 +1,10 @@
 import st from './Form.module.css';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-export function Form({ info }) {
-	const handleChange = () => {
-		console.log('👍🏽👌🏽');
-	};
 
-	const handleSubmit = () => {
-		console.log('👍🏽👌🏽');
-	};
+export function Form({ info }) {
 	return (
 		<>
 			<form
@@ -28,8 +21,10 @@ export function Form({ info }) {
 						name="id"
 						placeholder="Ingrese el identificador"
 						type="number"
+						step="0.1"
+						min="0"
+						max="100"
 						inputmode="numeric"
-						handleChange={handleChange}
 					/>
 				</div>
 				<div className={st.submit}>

@@ -6,9 +6,11 @@ import {
 	conditionalLevanteEdit,
 	conditionalNextEdit,
 } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
-import { faFloppyDisk, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
+
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
+
 export function Form({ info, uid, nacimiento }) {
 	const conldicionalInfo = (name, value) => {
 		if (name.includes('Levante') && name.includes('weigth')) {
@@ -68,6 +70,9 @@ export function Form({ info, uid, nacimiento }) {
 										<input
 											defaultValue={items.weigth}
 											type="number"
+											step="0.1"
+											min="0"
+											max="100"
 											name={'weigth:' + items.stage}
 										/>
 										<br />
@@ -96,12 +101,18 @@ export function Form({ info, uid, nacimiento }) {
 							)}
 						</div>
 					);
-				})}{' '}
+				})}
 				<div className={st.btn}>
 					<button type="submit">
-						<figure title="Guardar cambios" tooltip-dir="top">
-							<FontAwesomeIcon icon={faPaperPlane} />
-						</figure>
+						<button
+							onClick={() => {
+								window.history.back();
+							}}
+						>
+							<figure title="Guardar cambios" tooltip-dir="top">
+								<FontAwesomeIcon icon={faFloppyDisk} />
+							</figure>
+						</button>
 					</button>
 				</div>
 			</form>

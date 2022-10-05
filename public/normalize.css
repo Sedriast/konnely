@@ -26,13 +26,16 @@ html {
 button {
 	cursor: pointer;
 
-	width: 100%;
-	height: 100%;
+	display: flex;
+	background: transparent;
+	justify-content: center;
+	align-items: center;
 
 	background: transparent;
 }
 figure {
 	height: 100%;
+	width: 100%;
 }
 hr {
 	width: 80%;
