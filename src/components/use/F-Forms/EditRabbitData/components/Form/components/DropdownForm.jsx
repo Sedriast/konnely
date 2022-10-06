@@ -2,18 +2,9 @@ import { Inputs } from '../../../../../0-GeneralComp/1-Inputs/Inputs';
 import { basicData } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function DropdownForm({ motivo, handleChange }) {
-    const inputs_ = () => {
-        if (basicData?.info?.motivo === 'Traslado' || motivo === 'Traslado') {
-            return 1;
-        } else if (basicData?.info?.motivo === 'Nacimiento' || motivo === 'Nacimiento') {
-            return 2;
-        } else if (basicData?.info?.motivo === 'Compra' || motivo === 'Compra') {
-            return 3;
-        }
-    };
     return (
         <>
-            {inputs_() === 1 && (
+            {motivo === 'Traslado' && (
                 <>
                     <Inputs
                         value={basicData?.info?.traslado}
@@ -50,7 +41,7 @@ export function DropdownForm({ motivo, handleChange }) {
                     />
                 </>
             )}
-            {inputs_() === 2 && (
+            {motivo === 'Nacimiento' && (
                 <>
                     <Inputs
                         value={basicData?.info?.idPadre}
@@ -72,7 +63,7 @@ export function DropdownForm({ motivo, handleChange }) {
                     />
                 </>
             )}
-            {inputs_() === 3 && (
+            {motivo === 'Compra' && (
                 <>
                     <Inputs
                         value={basicData?.info?.proveedor}
