@@ -1,14 +1,14 @@
 import st from './EditRepro.module.css';
 
 import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
-import { stages } from '../../0-GeneralComp/2-FakeData/liveCycle';
 
 import { LeftBottomMenu } from '../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
-import { List } from './components/List';
 
 import { litter } from '../../0-GeneralComp/2-FakeData/reproductiveCycle';
+import { Cards } from './components/Cards/Cards';
 
 export function EditRepro() {
+	const opt = litter?.map((item) => (item.state === true ? item : []));
 	return (
 		<>
 			<LeftBottomMenu
@@ -18,7 +18,7 @@ export function EditRepro() {
 				}}
 			/>
 			<div className={st.optionContainer}>
-				<List info={litter} />
+				<Cards id={opt.id} editor={opt.editors} stages={opt.stages} />
 			</div>
 		</>
 	);
