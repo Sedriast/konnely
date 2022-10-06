@@ -66,9 +66,11 @@ export function FormTrat() {
 				/>
 				<div className={st.btn}>
 					<button type="submit">
-						<figure title="Guardar cambios" tooltip-dir="top">
-							<FontAwesomeIcon icon={faPaperPlane} />
-						</figure>
+						<div>
+							<figure title="Guardar cambios" tooltip-dir="top">
+								<FontAwesomeIcon icon={faPaperPlane} />
+							</figure>
+						</div>
 					</button>
 				</div>
 			</form>

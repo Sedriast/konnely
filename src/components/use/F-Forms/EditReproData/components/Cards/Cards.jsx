@@ -1,7 +1,7 @@
 import st from './Cards.module.css';
 
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
+import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 
 import { Ref } from './components/Ref';
 
@@ -23,10 +23,10 @@ export function Cards({ id, editor, stages }) {
 			</div>
 			<br />
 			<div className={st.panelInfo}>
-				{stages?.map((element, index) => {
+				{stages?.map((element) => {
 					return (
 						<>
-							<Ref key={index} stage={element} />
+							<Ref stage={element} />
 							{element.title === 'Destete' ? '' : '>'}
 						</>
 					);

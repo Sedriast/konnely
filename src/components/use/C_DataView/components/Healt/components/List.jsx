@@ -1,12 +1,12 @@
-import st from '../Cards/Cards.module.css';
+import st from './Cards/Cards.module.css';
 
-import { Cards } from '../Cards/Cards';
+import { Cards } from './Cards/Cards';
 
 export function List({ trataments }) {
 	return (
 		<>
 			{trataments ? (
-				trataments.map((item) => (
+				trataments?.map((item) => (
 					<>
 						<Cards
 							key={item.uid}

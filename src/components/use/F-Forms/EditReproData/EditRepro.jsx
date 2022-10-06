@@ -3,8 +3,10 @@ import st from './EditRepro.module.css';
 import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
 import { stages } from '../../0-GeneralComp/2-FakeData/liveCycle';
 
-import { Form } from './components/Form/Form';
 import { LeftBottomMenu } from '../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
+import { List } from './components/List';
+
+import { litter } from '../../0-GeneralComp/2-FakeData/reproductiveCycle';
 
 export function EditRepro() {
 	return (
@@ -16,7 +18,7 @@ export function EditRepro() {
 				}}
 			/>
 			<div className={st.optionContainer}>
-				<Form info={stages} />
+				<List info={litter} />
 			</div>
 		</>
 	);
