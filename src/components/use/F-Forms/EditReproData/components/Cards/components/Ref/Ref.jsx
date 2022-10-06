@@ -10,7 +10,7 @@ export function Ref({ stage }) {
 					<br />
 
 					<div className={st.pt}>
-						<h1>Males: </h1>
+						<h1>Machos: </h1>
 						<h2>{stage.males}</h2>
 					</div>
 
