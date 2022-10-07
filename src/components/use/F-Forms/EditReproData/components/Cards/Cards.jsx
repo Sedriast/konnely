@@ -1,9 +1,7 @@
 import st from './Cards.module.css';
 
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
-
 import { Ref } from './components/Ref/Ref';
+import { Editors } from './components/Editors/Editors';
 
 export function Cards({ id, editor, stages }) {
 	return (
@@ -11,7 +9,7 @@ export function Cards({ id, editor, stages }) {
 			<div className={st.panelId}>
 				{id}
 				<br />
-				Editor: {editor}
+				<Editors />
 			</div>
 			<br />
 			<div className={st.panelInfo}>
