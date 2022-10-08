@@ -18,7 +18,13 @@ export function EditRepro() {
 				}}
 			/>
 			<div className={st.optionContainer}>
-				<Cards id={opt.id} editor={opt.editors} stages={opt.stages} />
+				{litter?.map((item, index) =>
+					item.state === true ? (
+						<Cards key={index} id={item.id} editor={item.editors} stages={item.stages} />
+					) : (
+						<></>
+					)
+				)}
 			</div>
 		</>
 	);
