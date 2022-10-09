@@ -16,12 +16,12 @@ import { Modal } from '../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { Inputs } from '../../../0-GeneralComp/1-Inputs/Inputs';
 import { Lists } from '../../../0-GeneralComp/1-List/Lists';
 import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
+import { GetDocument } from '../../../../firebase/funtions/GetInformation';
 import {
     conditionalBasis,
     conditionalLevante,
     conditionalNext,
 } from '../../../0-GeneralComp/0-StaticData/Dates/conditionals';
-import { GetDocument } from '../../../../firebase/funtions/GetDocument';
 
 export function SendRabbitData() {
     const genero = ['Género', 'Hembra', 'Macho'];
