@@ -1,60 +1,35 @@
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.optionContainer {
+	width: 78%;
+	height: 90%;
+
+	margin-top: auto;
+	margin-bottom: auto;
+
+	border-radius: 10px;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
-.panelSearchBar {
-	height: 2rem;
-	width: 60%;
+.leftMenu {
+	width: 5rem;
+	height: 100%;
 
-	display: flex;
-	margin: 0 0 2rem 0;
-
-	position: fixed;
-
-	z-index: 1;
+	margin-top: 1rem;
 }
-.panelSearchBar input {
-	border-bottom-left-radius: 20px;
-	border-top-left-radius: 20px;
-	padding: 0 1rem;
+.btnBack {
+	width: 3rem;
+	height: 3rem;
 
-	width: auto;
+	font-size: 30px;
 
-	border-left: 1px solid black;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-}
-.panelSearchBar input {
-	width: 100%;
-}
-.btnSearch {
-	border-top-right-radius: 20px;
-	border-bottom-right-radius: 20px;
+	background: rgba(78, 75, 72, 0.9);
 
-	padding: 0 0.5rem;
+	border-radius: 100%;
 
 	cursor: pointer;
 
-	background: white;
-
-	border-right: 1px solid black;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
+	margin-left: 1rem;
 }
-.new {
-	position: fixed;
-	border-radius: 20px;
-	padding: 1em;
-	background: rgb(72 70 67);
-	bottom: 2%;
-	z-index: 0;
-}
-.new button a div {
-	color: white;
-	filter: none;
-}
-.panelItems {
-	color: rgba(251, 226, 34);
-	padding-top: 1.5rem;
+.btnBack div {
+	font-size: 25px;
 }

@@ -54,7 +54,7 @@
 	filter: none;
 }
 .panelInfo {
-	width: 300px;
+	width: 90%;
 	height: fit-content;
 
 	display: flex;
