@@ -136,7 +136,7 @@ export function Layout() {
 						/>
 						<Route
 							exact
-							path="/EditLife"
+							path="/editLife"
 							element={
 								<ProtectedRoute>
 									<div className={st.componentContainer}>
@@ -148,6 +148,17 @@ export function Layout() {
 						<Route
 							exact
 							path="/formEditRepro"
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditRepro />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path="/editTrats"
 							element={
 								<ProtectedRoute>
 									<div className={st.componentContainer}>

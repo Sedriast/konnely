@@ -1,4 +1,4 @@
-import st from './styles/NewTrat.module.css';
+import st from './NewTrat.module.css';
 
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 

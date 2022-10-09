@@ -10,7 +10,7 @@ export function Cards({ id, date, signs, diagnosis, tratament, result, professio
 			<div className={st.panelId}>Tratamiento: {id}</div>
 			<div className={st.btnPanel}>
 				<div>
-					<Buttons route="#" label="Editar" direction="bottom" btnIconText={faPen} />
+					<Buttons route="/EditTrats" label="Editar" direction="bottom" btnIconText={faPen} />
 				</div>
 				<div>
 					<Buttons route="#" label="Eliminar" direction="bottom" btnIconText={faTrash} />
