@@ -26,6 +26,7 @@ import {
 export function SendRabbitData() {
     const genero = ['Género', 'Hembra', 'Macho'];
     const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
+    console.log(GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values);
     const [date, setDate] = useState();
     const [reason, setReason] = useState();
     const [image, setImage] = useState(null);
@@ -173,7 +174,12 @@ export function SendRabbitData() {
                             inputmode='numeric'
                             handleChange={handleChange}
                         />
-                        <Lists leyend='Género' name_='genero' listar={genero} handleChange={handleChange} />
+                        <Lists
+                            leyend='Género'
+                            name_='genero'
+                            listar={GetDocument({ coleccion: 'lists', list: 'gender' }).props.children[0].values}
+                            handleChange={handleChange}
+                        />
                         <Lists
                             leyend='Raza'
                             name_='raza'
