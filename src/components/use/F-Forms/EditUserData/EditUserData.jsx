@@ -1,4 +1,4 @@
-import st from './styles/EditUserData.module.css';
+import st from './EditUserData.module.css';
 import Webcam from 'react-webcam';
 
 import { useState } from 'react';

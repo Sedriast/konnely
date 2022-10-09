@@ -1,4 +1,4 @@
-import st from './styles/VitaeIsList.module.css';
+import st from './VitaeIsList.module.css';
 
 import { viewsListOptions, generalOptions } from '../0-GeneralComp/0-StaticData/options';
 
