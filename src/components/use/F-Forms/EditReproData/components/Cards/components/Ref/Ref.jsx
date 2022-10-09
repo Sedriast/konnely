@@ -1,3 +1,5 @@
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import st from './Ref.module.css';
 
 export function Ref({ stage }) {

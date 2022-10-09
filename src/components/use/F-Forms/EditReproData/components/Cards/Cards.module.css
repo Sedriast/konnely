@@ -71,6 +71,29 @@
 	font-size: 15px;
 	color: white;
 }
+.btn {
+	width: 3rem;
+	height: 3rem;
+
+	background: rgba(0, 0, 0, 0.5);
+
+	margin-top: 1rem;
+	border-radius: 100%;
+
+	display: flex;
+	justify-content: center;
+}
+.btn figure {
+	width: fit-content;
+}
+.btn button {
+	background: transparent;
+
+	border-radius: 100%;
+}
+.btn button a svg {
+	font-size: 1.5rem;
+}
 /*Sub*/
 /*Button´s container*/
 

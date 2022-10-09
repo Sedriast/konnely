@@ -2,6 +2,8 @@ import st from './Cards.module.css';
 
 import { Ref } from './components/Ref/Ref';
 import { Editors } from './components/Editors/Editors';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
 export function Cards({ id, editor, stages }) {
 	return (
@@ -12,7 +14,7 @@ export function Cards({ id, editor, stages }) {
 				<Editors />
 			</div>
 			<br />
-			<div className={st.panelInfo}>
+			<form className={st.panelInfo}>
 				{stages?.map((element) => {
 					return (
 						<>
@@ -21,7 +23,20 @@ export function Cards({ id, editor, stages }) {
 						</>
 					);
 				})}
-			</div>
+				<div className={st.btn}>
+					<button type="submit">
+						<button
+							onClick={() => {
+								window.history.back();
+							}}
+						>
+							<figure title="Guardar cambios" tooltip-dir="top">
+								<FontAwesomeIcon icon={faFloppyDisk} />
+							</figure>
+						</button>
+					</button>
+				</div>
+			</form>
 		</div>
 	);
 }
