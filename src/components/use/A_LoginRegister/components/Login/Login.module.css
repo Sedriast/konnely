@@ -79,6 +79,16 @@
 .submit button {
 	background: transparent;
 }
+.forgot {
+	width: fit-content;
+	margin-right: auto;
+	margin-top: 2rem;
+	margin-left: auto;
+}
+.forgot a {
+	font-size: 15px;
+	color: blue;
+}
 /*Sub*/
 /*Button´s container*/
 

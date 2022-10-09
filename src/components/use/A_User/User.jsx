@@ -1,4 +1,4 @@
-import st from './styles/User.module.css';
+import st from './User.module.css';
 import app from '../../firebase/credentials';
 
 import { useEffect, useState } from 'react';
