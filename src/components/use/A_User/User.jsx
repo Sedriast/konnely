@@ -8,15 +8,19 @@ import { useAuth } from '../../../context/AuthContext';
 
 import { Option } from './components/Option';
 import { UserData } from './components/UserData/UserData';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import { Buttons } from '../0-GeneralComp/1-Buttons/Buttons';
-
-const db = getFirestore(app);
+import { QueriesSimple_ } from '../../firebase/funtions/GetInformation';
 
 export function User() {
 	const { user } = useAuth();
 	const [optionSelect, setOptionSelect] = useState(0);
 	const [rol, setRol] = useState(null);
+
+	const usuario = QueriesSimple_({
+		coleccion: 'users',
+		parametro: 'uid',
+		busqueda: user.uid,
+	}).props.children[0];
 
 	useEffect(() => {
 		async function setSelect() {
@@ -31,20 +35,9 @@ export function User() {
 				}
 			}
 		}
-		const getData = async () => {
-			const query_ = query(collection(db, 'usuarios'), where('uid', '==', user.uid));
-			const querySnapshot = await getDocs(query_);
-
-			querySnapshot.forEach((doc) => {
-				setRol(doc.data());
-			});
-		};
-
-		if (user) {
-			getData();
-		}
+		if (user && usuario !== undefined) setRol(usuario);
 		setSelect();
-	}, [user, optionSelect]);
+	}, [user, optionSelect, usuario]);
 	return (
 		<>
 			{rol !== null && (

@@ -7,6 +7,8 @@ import { getFirestore, collection, addDoc, doc, setDoc, updateDoc } from 'fireba
 const db = getFirestore(app);
 const storage = getStorage(app);
 
+/// Función para enviar un nuevo registro de un conejo a la base de datos
+
 export const addImageAndInfo = (props) => {
     const funtionAddImageAndInfo = async (datos) => {
         try {
@@ -33,7 +35,6 @@ export const addImageAndInfo = (props) => {
                 delete datos.cebafin;
                 delete datos.ceba;
             }
-
             delete datos.image;
             delete datos.peso;
             const docRef = await addDoc(collection(db, 'rabbits'), datos);
@@ -53,6 +54,8 @@ export const addImageAndInfo = (props) => {
 
     funtionAddImageAndInfo(props);
 };
+
+/// Función para editar la información basica de un conejo en la base de datos
 
 export const EditImageAndInfo = (props) => {
     const funtionEditImageAndInfo = async (datos) => {
@@ -81,6 +84,8 @@ export const EditImageAndInfo = (props) => {
     funtionEditImageAndInfo(props);
 };
 
+/// Función para editar el ciclo de vida de un conejo en la base de datos
+
 export const EditInfoRabbit = (props) => {
     const funtionEditInfoRabbit = async (datos) => {
         try {
@@ -98,10 +103,12 @@ export const EditInfoRabbit = (props) => {
     funtionEditInfoRabbit(props);
 };
 
+/// Función para registrar un nuevo usuario en la base de datos
+
 export const AddInfoProfile = (props) => {
-    const funtionAddInfoProfile = async ({ user, data }) => {
+    const funtionAddInfoProfile = async (datos) => {
         try {
-            await setDoc(doc(db, 'users', user), data);
+            await setDoc(doc(db, 'users', datos.user), datos.data);
         } catch (error) {
             swal({
                 title: error,
@@ -112,6 +119,8 @@ export const AddInfoProfile = (props) => {
     };
     funtionAddInfoProfile(props);
 };
+
+/// Función para editar la información de un usuario en la base de datos
 
 export const UpdateInfoProfile = (props) => {
     const funtionUpdateInfoProfile = async (datos) => {
@@ -128,10 +137,12 @@ export const UpdateInfoProfile = (props) => {
     funtionUpdateInfoProfile(props);
 };
 
+/// Función para registrar un nuevo tratamiento en la base de datos
+
 export const AddTratament = (props) => {
-    const funtionAddTratament = async ({ data }) => {
+    const funtionAddTratament = async (datos) => {
         try {
-            const docRef = await addDoc(collection(db, 'trataments'), data);
+            const docRef = await addDoc(collection(db, 'trataments'), datos);
             await updateDoc(doc(db, 'trataments', docRef.id), { uid: docRef.id });
         } catch (error) {
             swal({
