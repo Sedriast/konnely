@@ -70,6 +70,7 @@ export function Form() {
                     <form
                         onSubmit={(e) => {
                             e.preventDefault();
+                            console.log(e);
                             let aux = {};
                             for (const element of e.target) {
                                 if (element.name !== '') {
@@ -102,7 +103,8 @@ export function Form() {
                                                     screenshotFormat='image/jpeg'>
                                                     {({ getScreenshot }) => (
                                                         <button
-                                                            onClick={() => {
+                                                            onClick={(e) => {
+                                                                e.preventDefault();
                                                                 const imageSrc = getScreenshot();
                                                                 setAuxImage_(imageSrc);
                                                             }}>
@@ -112,7 +114,8 @@ export function Form() {
                                                 </Webcam>
                                                 <img src={auxImage_} alt=''></img>
                                                 <button
-                                                    onClick={() => {
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
                                                         setImage_(auxImage_);
                                                         closeModal();
                                                     }}>

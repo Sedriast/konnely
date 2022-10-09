@@ -119,7 +119,7 @@ export function SendRabbitData() {
                                         setAuxImage_(null);
                                     }
                                 }}
-                                preview={image_}
+                                preeview={image_}
                             />
                             <Modal isOpen={isOpenModal} closeModal={closeModal}>
                                 {isOpenModal && (
@@ -131,7 +131,8 @@ export function SendRabbitData() {
                                             screenshotFormat='image/jpeg'>
                                             {({ getScreenshot }) => (
                                                 <button
-                                                    onClick={() => {
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
                                                         const imageSrc = getScreenshot();
                                                         setAuxImage_(imageSrc);
                                                     }}>
@@ -141,7 +142,8 @@ export function SendRabbitData() {
                                         </Webcam>
                                         <img src={auxImage_} alt=''></img>
                                         <button
-                                            onClick={() => {
+                                            onClick={(e) => {
+                                                e.preventDefault();
                                                 setImage_(auxImage_);
                                                 closeModal();
                                             }}>
