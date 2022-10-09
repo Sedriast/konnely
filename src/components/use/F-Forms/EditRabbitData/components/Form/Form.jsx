@@ -22,8 +22,6 @@ import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dat
 
 export function Form() {
     const navigate = useNavigate();
-    const genero = ['Género', 'Hembra', 'Macho'];
-    const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
     const [reason, setReason] = useState();
     const [image, setImage] = useState(null);
     const [image_, setImage_] = useState(null);
@@ -148,7 +146,9 @@ export function Form() {
                                     value_={basicData?.info?.genero}
                                     leyend='Género'
                                     name_='genero'
-                                    listar={genero}
+                                    listar={
+                                        GetDocument({ coleccion: 'lists', list: 'gender' }).props.children[0].values
+                                    }
                                     handleChange={handleChange}
                                 />
                                 <Lists
@@ -173,7 +173,10 @@ export function Form() {
                                     value_={basicData?.info?.concepcion}
                                     leyend='Concepción'
                                     name_='concepcion'
-                                    listar={concepcion}
+                                    listar={
+                                        GetDocument({ coleccion: 'lists', list: 'conception' }).props.children[0]
+                                            .values
+                                    }
                                     handleChange={handleChange}
                                 />
                                 <Inputs
