@@ -24,9 +24,6 @@ import {
 } from '../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 
 export function SendRabbitData() {
-    const genero = ['Género', 'Hembra', 'Macho'];
-    const concepcion = ['Concepción', 'Monta natural', 'Inseminación artificial'];
-    console.log(GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values);
     const [date, setDate] = useState();
     const [reason, setReason] = useState();
     const [image, setImage] = useState(null);
@@ -200,7 +197,9 @@ export function SendRabbitData() {
                         <Lists
                             leyend='Concepción'
                             name_='concepcion'
-                            listar={concepcion}
+                            listar={
+                                GetDocument({ coleccion: 'lists', list: 'conception' }).props.children[0].values
+                            }
                             handleChange={handleChange}
                         />
                         <Inputs
