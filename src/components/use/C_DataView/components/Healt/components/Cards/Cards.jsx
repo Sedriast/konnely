@@ -10,7 +10,7 @@ import { useAuth } from '../../../../../../../context/AuthContext';
 import { useState } from 'react';
 import { AddAudit } from '../../../../../../firebase/funtions/AddInformation';
 
-export function Cards({ id, uid, date, signs, diagnosis, tratament, result, professional }) {
+export function Cards({ id, uid, date, signs, diagnosis, tratament, result, professional, trataments }) {
     const { user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
     const [auditoria, setAuditoria] = useState('');
@@ -20,7 +20,15 @@ export function Cards({ id, uid, date, signs, diagnosis, tratament, result, prof
             <div className={st.panelId}>Tratamiento {id}</div>
             <div className={st.btnPanel}>
                 <div>
-                    <Buttons route='/EditTrats' label='Editar' direction='bottom' btnIconText={faPen} />
+                    <Buttons
+                        route='/EditTrats'
+                        label='Editar'
+                        direction='bottom'
+                        btnIconText={faPen}
+                        btnClick={() => {
+                            console.log(trataments);
+                        }}
+                    />
                 </div>
                 <div>
                     <Buttons
