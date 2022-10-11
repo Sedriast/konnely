@@ -20,6 +20,7 @@ export function List({ trataments }) {
                                     tratament={item.tratament}
                                     result={item.result}
                                     professional={item.professional}
+                                    trataments={trataments[index]}
                                 />
                             </>
                         )

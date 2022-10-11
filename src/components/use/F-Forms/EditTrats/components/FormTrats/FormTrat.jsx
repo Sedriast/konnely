@@ -34,10 +34,9 @@ export function FormTrat() {
     return (
         <div className={st.container}>
             <h1 className={st.d}>
-                Tratamiento:
+                Llene los campos del tratamiento con la nueva información:
                 <br />
                 <br />
-                Mostrar id del tratamiento
             </h1>
             <form
                 onSubmit={(e) => {
