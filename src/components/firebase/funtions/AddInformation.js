@@ -2,7 +2,7 @@ import swal from 'sweetalert';
 import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
-import { getFirestore, collection, addDoc, doc, setDoc, updateDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, doc, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 
 const db = getFirestore(app);
 const storage = getStorage(app);
@@ -143,7 +143,11 @@ export const AddTratament = (props) => {
     const funtionAddTratament = async (datos) => {
         try {
             const docRef = await addDoc(collection(db, 'trataments'), datos);
-            await updateDoc(doc(db, 'trataments', docRef.id), { uid: docRef.id });
+            await updateDoc(doc(db, 'trataments', docRef.id), {
+                uid: docRef.id,
+                state: 'Activo',
+                removalDate: null,
+            });
         } catch (error) {
             swal({
                 title: error,
@@ -155,9 +159,21 @@ export const AddTratament = (props) => {
     funtionAddTratament(props);
 };
 
+/// Función para cambiar el estado de un tratamiento en la base de datos
+
 export const AddAudit = (props) => {
-    const funtionAddAudit = (datos) => {
-        console.log(datos.uidTratament);
+    const funtionAddAudit = async (datos) => {
+        console.log(datos);
+        await updateDoc(doc(db, 'trataments', datos.uidTratament), { state: 'Inactivo', removalDate: Date.now() });
     };
     funtionAddAudit(props);
+};
+
+/// Función para borrar un tratamiento en la base de datos
+
+export const RemovalTratament = (props) => {
+    const functionRemovalTratament = async (datos) => {
+        await deleteDoc(doc(db, 'trataments', datos));
+    };
+    functionRemovalTratament(props);
 };
