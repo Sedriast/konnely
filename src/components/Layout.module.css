@@ -52,7 +52,7 @@
 	flex-wrap: wrap;
 	align-items: stretch;
 	justify-content: space-around;
-	flex-direction: row-reverse;
+	flex-direction: row;
 }
 /*Sub*/
 /*Button´s container*/
