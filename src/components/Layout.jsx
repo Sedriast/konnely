@@ -47,7 +47,7 @@ export function Layout() {
                 const trataments = await getDocs(collection(db, 'trataments'));
                 trataments.forEach((doc) => {
                     if (doc.data().state !== null && Date.now() - Date.parse(doc.data().removalDate) > 5259600000) {
-                        RemovalTratament(doc.data().uid);
+                        RemovalTratament({ uid: doc.data().uid, uidAudit: doc.data().uidAudit });
                     }
                 });
             };

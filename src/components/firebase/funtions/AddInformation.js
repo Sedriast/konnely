@@ -147,6 +147,7 @@ export const AddTratament = (props) => {
                 uid: docRef.id,
                 state: 'Activo',
                 removalDate: null,
+                uidAudit: null,
             });
         } catch (error) {
             swal({
@@ -164,16 +165,23 @@ export const AddTratament = (props) => {
 export const AddAudit = (props) => {
     const funtionAddAudit = async (datos) => {
         console.log(datos);
-        await updateDoc(doc(db, 'trataments', datos.uidTratament), { state: 'Inactivo', removalDate: Date.now() });
+        const docRef = await addDoc(collection(db, 'audit'), datos);
+        await updateDoc(doc(db, 'audit', docRef.id), { uid: docRef.id });
+        await updateDoc(doc(db, 'trataments', datos.uidTratament), {
+            state: 'Inactivo',
+            removalDate: Date.now(),
+            uidAudit: docRef.id,
+        });
     };
     funtionAddAudit(props);
 };
 
-/// Función para borrar un tratamiento en la base de datos
+/// Función para borrar un tratamiento y su documento auditor en la base de datos
 
 export const RemovalTratament = (props) => {
     const functionRemovalTratament = async (datos) => {
-        await deleteDoc(doc(db, 'trataments', datos));
+        await deleteDoc(doc(db, 'trataments', datos.uid));
+        await deleteDoc(doc(db, 'audit', datos.uidAudit));
     };
     functionRemovalTratament(props);
 };

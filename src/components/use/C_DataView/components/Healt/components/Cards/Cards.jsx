@@ -61,6 +61,7 @@ export function Cards({ id, uid, date, signs, diagnosis, tratament, result, prof
                                         uidTratament: uid,
                                         uidProfile: user.uid,
                                         userNameProfile: user.displayName,
+                                        fecha: Date.now(),
                                     });
                                     setAuditoria('');
                                 }
