@@ -1,4 +1,4 @@
-import st from './styles/EditRabbitData.module.css';
+import st from './EditRabbitData.module.css';
 
 import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
 

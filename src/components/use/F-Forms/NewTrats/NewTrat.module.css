@@ -33,3 +33,17 @@
 .btnBack div {
 	font-size: 25px;
 }
+@media (max-width: 700px) {
+	.optionContainer {
+		width: 90%;
+		height: 66%;
+
+		margin-top: auto;
+		margin-bottom: auto;
+
+		border-radius: 10px;
+
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+}
