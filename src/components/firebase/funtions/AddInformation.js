@@ -154,3 +154,10 @@ export const AddTratament = (props) => {
     };
     funtionAddTratament(props);
 };
+
+export const AddAudit = (props) => {
+    const funtionAddAudit = (datos) => {
+        console.log(datos.uidTratament);
+    };
+    funtionAddAudit(props);
+};

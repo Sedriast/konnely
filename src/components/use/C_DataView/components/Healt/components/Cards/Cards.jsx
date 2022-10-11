@@ -6,13 +6,18 @@ import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 import swal from 'sweetalert';
 import { Modal } from '../../../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { useModal } from '../../../../../0-GeneralComp/0-StaticData/Modals/useModal';
+import { useAuth } from '../../../../../../../context/AuthContext';
+import { useState } from 'react';
+import { AddAudit } from '../../../../../../firebase/funtions/AddInformation';
 
-export function Cards({ id, date, signs, diagnosis, tratament, result, professional }) {
+export function Cards({ id, uid, date, signs, diagnosis, tratament, result, professional }) {
+    const { user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
+    const [auditoria, setAuditoria] = useState('');
 
     return (
         <div className={st.container} id={id}>
-            <div className={st.panelId}>Tratamiento: {id}</div>
+            <div className={st.panelId}>Tratamiento {id}</div>
             <div className={st.btnPanel}>
                 <div>
                     <Buttons route='/EditTrats' label='Editar' direction='bottom' btnIconText={faPen} />
@@ -40,7 +45,29 @@ export function Cards({ id, date, signs, diagnosis, tratament, result, professio
             <Modal isOpen={isOpenModal} closeModal={closeModal}>
                 {isOpenModal && (
                     <>
-                        <input type='text' placeholder='Porque desea eliminar este tratamiento'></input>
+                        <input
+                            defaultValue={auditoria}
+                            type='text'
+                            placeholder='Porque desea eliminar este tratamiento'
+                            onChange={(e) => {
+                                setAuditoria(e.target.value);
+                            }}></input>
+                        <button
+                            onClick={(e) => {
+                                e.preventDefault();
+                                if (auditoria !== '') {
+                                    AddAudit({
+                                        razon: auditoria,
+                                        uidTratament: uid,
+                                        uidProfile: user.uid,
+                                        userNameProfile: user.displayName,
+                                    });
+                                    setAuditoria('');
+                                }
+                                closeModal();
+                            }}>
+                            Enviar
+                        </button>
                     </>
                 )}
             </Modal>

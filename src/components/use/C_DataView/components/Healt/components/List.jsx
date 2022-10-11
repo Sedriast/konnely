@@ -11,6 +11,7 @@ export function List({ trataments }) {
                         <Cards
                             key={item.uid}
                             id={index + 1}
+                            uid={item.uid}
                             date={item.date}
                             signs={item.signs}
                             diagnosis={item.diagnosis}
