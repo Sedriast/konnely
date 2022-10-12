@@ -2,7 +2,8 @@ import st from './Cards/Cards.module.css';
 
 import { Cards } from './Cards/Cards';
 
-export function List({ trataments }) {
+export function List({ trataments, tratamientos }) {
+    console.log(tratamientos);
     return (
         <>
             {trataments ? (
