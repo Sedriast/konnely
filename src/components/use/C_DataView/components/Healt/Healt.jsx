@@ -12,16 +12,24 @@ import { basicData } from '../../../0-GeneralComp/0-StaticData/dataProv';
 import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
 
 export function Healt() {
+    let activos = [];
+    let inactivos = [];
     const [cam, setCam] = useState(true);
     const [search, setSearch] = useState('');
     const [search_, setSearch_] = useState('');
-    const [tratamientos, setTratamientos] = useState();
     const navigate = useNavigate();
     const trataments = QueriesSimple_({
         coleccion: 'trataments',
         parametro: 'uidRabbit',
         busqueda: basicData.info.uid,
     }).props.children;
+    trataments.map((items) => {
+        if (items.state === 'Activo') {
+            activos.push(items);
+        } else if (items.state === 'Inactivo') {
+            inactivos.push(items);
+        }
+    });
 
     const buscar = (e) => {
         setSearch(e);
@@ -40,16 +48,8 @@ export function Healt() {
             navigate('/vitaeslist');
             return null;
         }
-        let Activos = [];
-        let Inactivos = [];
-        trataments?.map((items) => {
-            if (items.state === 'Activo' && cam === true) {
-                setTratamientos(items);
-            } else if (items.state === 'Inactivo' && cam === false) {
-                setTratamientos(items);
-            }
-        });
-    }, [navigate, trataments, cam]);
+    }, [navigate, trataments]);
+
     return (
         <div className={st.container}>
             <div className={st.panelSearchBar}>
@@ -69,7 +69,6 @@ export function Healt() {
                         direction='bottom'
                         btnClick={() => {
                             setCam(!cam);
-                            console.log(cam);
                         }}
                     />
                 </div>
@@ -77,9 +76,9 @@ export function Healt() {
 
             <div className={st.panelItems}>
                 {search === '' ? (
-                    <List trataments={trataments} tratamientos={tratamientos} />
+                    <List tratamentsActivos={activos} tratamentsInactivos={inactivos} stateCam={cam} />
                 ) : (
-                    <List trataments={search_} />
+                    <List tratamentsActivos={search_} stateCam={true} />
                 )}
             </div>
             <div className={st.new}>
