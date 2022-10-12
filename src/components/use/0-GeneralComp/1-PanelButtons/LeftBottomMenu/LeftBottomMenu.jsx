@@ -11,7 +11,7 @@ export function LeftBottomMenu({ backCancel, options, additionExtras, click }) {
 						<Buttons
 							btnId={backCancel.id}
 							label={backCancel.label}
-							direction="rigth"
+							direction="bottom"
 							route={backCancel.path}
 							btnName={backCancel.label}
 							btnIconText={backCancel.icon}

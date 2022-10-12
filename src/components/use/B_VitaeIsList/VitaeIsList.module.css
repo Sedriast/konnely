@@ -23,13 +23,9 @@
 /*Containers*/
 /*Master*/
 .optionContainer {
-	width: 83%;
-	height: 90%;
+	width: calc(96% - 6rem);
 
-	margin-top: auto;
-	margin-bottom: auto;
-
-	border-radius: 10px;
+	margin: 1% 0;
 
 	overflow-y: scroll;
 	overflow-x: hidden;
@@ -62,13 +58,10 @@
 /*Resizing */
 @media (max-width: 700px) {
 	.optionContainer {
-		width: 90%;
-		height: 66%;
+		width: calc(99% - 3rem);
+		height: calc(92% - 3rem);
 
-		margin-top: auto;
-		margin-bottom: auto;
-
-		border-radius: 10px;
+		margin: 1% 0;
 
 		overflow-y: scroll;
 		overflow-x: hidden;

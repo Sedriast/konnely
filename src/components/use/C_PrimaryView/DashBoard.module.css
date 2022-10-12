@@ -1,9 +1,7 @@
 .optionContainer {
-	width: 90%;
-	height: 90%;
+	width: calc(96% - 6rem);
 
-	margin-top: auto;
-	margin-bottom: auto;
+	margin: 1% 0;
 
 	border-radius: 10px;
 
@@ -12,15 +10,11 @@
 }
 @media (max-width: 700px) {
 	.optionContainer {
-		width: 90%;
-		height: 66%;
+		width: calc(99% - 3rem);
+		height: calc(92% - 3rem);
 
-		margin-top: auto;
-		margin-bottom: auto;
+		margin: 1% 0;
 
-		border-radius: 10px;
-
-		overflow-y: scroll;
-		overflow-x: hidden;
+		overflow: hidden;
 	}
 }

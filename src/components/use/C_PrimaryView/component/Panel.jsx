@@ -1,3 +1,7 @@
 export function Panel() {
-	return <></>;
+	return (
+		<>
+			<div></div>
+		</>
+	);
 }
