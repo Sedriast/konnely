@@ -26,13 +26,13 @@ export function List({ tratamentsActivos, tratamentsInactivos, stateCam }) {
                             professional={item.professional}
                             trataments={item}
                             uidAudit={item.uidAudit}
-                            cam={stateCam}
+                            state={item.state}
                         />
                     </>
                 ))
             ) : (
                 <div className={st.pan}>
-                    <h1>Cargando porfavor espere...</h1>
+                    <h1>Cargando por favor espere...</h1>
                 </div>
             )}
         </>

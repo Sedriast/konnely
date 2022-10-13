@@ -22,7 +22,7 @@ export function Cards({
     professional,
     trataments,
     uidAudit,
-    cam,
+    state,
 }) {
     const { user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -31,7 +31,7 @@ export function Cards({
     return (
         <div className={st.container} id={id}>
             <div className={st.panelId}>Tratamiento {id} </div>
-            {cam === true ? (
+            {state === 'Activo' ? (
                 <div className={st.btnPanel}>
                     <div>
                         <Buttons
@@ -71,7 +71,7 @@ export function Cards({
                         route='#'
                         label='Activar'
                         direction='bottom'
-                        btnIconText={faTrash}
+                        btnIconText={faPen}
                         btnClick={() => {
                             swal({
                                 title: '¿Desea volver a activar este tratamiento?',
