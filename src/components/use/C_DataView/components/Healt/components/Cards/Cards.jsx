@@ -24,9 +24,9 @@ export function Cards({
     uidAudit,
     state,
 }) {
-	const { user } = useAuth();
-	const [isOpenModal, openModal, closeModal] = useModal(false);
-	const [auditoria, setAuditoria] = useState('');
+    const { user } = useAuth();
+    const [isOpenModal, openModal, closeModal] = useModal(false);
+    const [auditoria, setAuditoria] = useState('');
 
     return (
         <div className={st.container} id={id}>
@@ -71,7 +71,7 @@ export function Cards({
                         route='#'
                         label='Activar'
                         direction='bottom'
-                        btnIconText={faPen}
+                        btnIconText={faCircle}
                         btnClick={() => {
                             swal({
                                 title: '¿Desea volver a activar este tratamiento?',
