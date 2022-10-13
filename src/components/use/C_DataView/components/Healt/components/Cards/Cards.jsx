@@ -1,6 +1,6 @@
 import st from './Cards.module.css';
 
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 import swal from 'sweetalert';
@@ -12,164 +12,166 @@ import { AddAudit, ReactivateTratament } from '../../../../../../firebase/funtio
 import { recuperarTrataments } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function Cards({
-    id,
-    uid,
-    date,
-    signs,
-    diagnosis,
-    tratament,
-    result,
-    professional,
-    trataments,
-    uidAudit,
-    cam,
+	id,
+	uid,
+	date,
+	signs,
+	diagnosis,
+	tratament,
+	result,
+	professional,
+	trataments,
+	uidAudit,
+	cam,
 }) {
-    const { user } = useAuth();
-    const [isOpenModal, openModal, closeModal] = useModal(false);
-    const [auditoria, setAuditoria] = useState('');
+	const { user } = useAuth();
+	const [isOpenModal, openModal, closeModal] = useModal(false);
+	const [auditoria, setAuditoria] = useState('');
 
-    return (
-        <div className={st.container} id={id}>
-            <div className={st.panelId}>Tratamiento {id} </div>
-            {cam === true ? (
-                <div className={st.btnPanel}>
-                    <div>
-                        <Buttons
-                            route='/EditTrats'
-                            label='Editar'
-                            direction='bottom'
-                            btnIconText={faPen}
-                            btnClick={(e) => {
-                                e.preventDefault();
-                                recuperarTrataments(trataments);
-                            }}
-                        />
-                    </div>
-                    <div>
-                        <Buttons
-                            route='#'
-                            label='Eliminar'
-                            direction='bottom'
-                            btnIconText={faTrash}
-                            btnClick={() => {
-                                swal({
-                                    title: '¿Desea eliminar este tratamiento?',
-                                    icon: 'warning',
-                                    buttons: ['No', 'Si'],
-                                }).then((respuesta) => {
-                                    if (respuesta) {
-                                        openModal();
-                                    }
-                                });
-                            }}
-                        />
-                    </div>
-                </div>
-            ) : (
-                <div className={st.btnPanel}>
-                    <Buttons
-                        route='#'
-                        label='Activar'
-                        direction='bottom'
-                        btnIconText={faTrash}
-                        btnClick={() => {
-                            swal({
-                                title: '¿Desea volver a activar este tratamiento?',
-                                icon: 'warning',
-                                buttons: ['No', 'Si'],
-                            }).then((respuesta) => {
-                                if (respuesta) {
-                                    ReactivateTratament({
-                                        coleccion: 'trataments',
-                                        uid: uid,
-                                        uidAudit: uidAudit,
-                                        data: {
-                                            removalDate: null,
-                                            state: 'Activo',
-                                            uidAudit: null,
-                                        },
-                                    });
-                                }
-                            });
-                        }}
-                    />
-                </div>
-            )}
-            <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                {isOpenModal && (
-                    <>
-                        <br />
-                        ¿Porque desea eliminar este tratamiento?
-                        <br />
-                        <br />
-                        <textarea
-                            className={st.inpModal}
-                            defaultValue={auditoria}
-                            type='text'
-                            placeholder='Porque desea eliminar este tratamiento'
-                            onChange={(e) => {
-                                e.preventDefault();
-                                setAuditoria(e.target.value);
-                            }}></textarea>
-                        <button
-                            className={st.btnModal}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                if (auditoria !== '') {
-                                    AddAudit({
-                                        razon: auditoria,
-                                        uidTratament: uid,
-                                        uidProfile: user.uid,
-                                        userNameProfile: user.displayName,
-                                        fecha: Date.now(),
-                                    });
-                                    setAuditoria('');
-                                }
-                                closeModal();
-                            }}>
-                            Enviar
-                        </button>
-                    </>
-                )}
-            </Modal>
-            <br />
-            <br />
-            <hr />
-            <br />
-            <br />
-            <br />
-            <div className={st.panelInfo}>
-                <div className={st.sp}>
-                    Fecha:
-                    <br />
-                    <div>{date}</div>
-                </div>
-                <div className={st.sp}>
-                    Sintomas:
-                    <br />
-                    <div>{signs}</div>
-                </div>
-                <div className={st.sp}>
-                    Diagnostico:
-                    <br />
-                    <div>{diagnosis}</div>
-                </div>
-                <div className={st.sp}>
-                    Tratamiento:
-                    <br />
-                    <div>{tratament}</div>
-                </div>
-                <div className={st.sp}>
-                    Resultados:
-                    <br />
-                    <div>{result}</div>
-                </div>
-                <div className={st.sp}>
-                    Nombre del profecional:
-                    <br />
-                    <div>{professional}</div>
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div className={st.container} id={id}>
+			<div className={st.panelId}>Tratamiento {id} </div>
+			{cam === true ? (
+				<div className={st.btnPanel}>
+					<div>
+						<Buttons
+							route="/EditTrats"
+							label="Editar"
+							direction="bottom"
+							btnIconText={faPen}
+							btnClick={(e) => {
+								e.preventDefault();
+								recuperarTrataments(trataments);
+							}}
+						/>
+					</div>
+					<div>
+						<Buttons
+							route="#"
+							label="Eliminar"
+							direction="bottom"
+							btnIconText={faTrash}
+							btnClick={() => {
+								swal({
+									title: '¿Desea eliminar este tratamiento?',
+									icon: 'warning',
+									buttons: ['No', 'Si'],
+								}).then((respuesta) => {
+									if (respuesta) {
+										openModal();
+									}
+								});
+							}}
+						/>
+					</div>
+				</div>
+			) : (
+				<div className={st.btnPanel}>
+					<Buttons
+						route="#"
+						label="Activar"
+						direction="bottom"
+						btnIconText={faCircle}
+						btnClick={() => {
+							swal({
+								title: '¿Desea volver a activar este tratamiento?',
+								icon: 'warning',
+								buttons: ['No', 'Si'],
+							}).then((respuesta) => {
+								if (respuesta) {
+									ReactivateTratament({
+										coleccion: 'trataments',
+										uid: uid,
+										uidAudit: uidAudit,
+										data: {
+											removalDate: null,
+											state: 'Activo',
+											uidAudit: null,
+										},
+									});
+								}
+							});
+						}}
+					/>
+				</div>
+			)}
+			<Modal isOpen={isOpenModal} closeModal={closeModal}>
+				{isOpenModal && (
+					<>
+						<br />
+						¿Porque desea eliminar este tratamiento?
+						<br />
+						<br />
+						<textarea
+							className={st.inpModal}
+							defaultValue={auditoria}
+							type="text"
+							placeholder="Porque desea eliminar este tratamiento"
+							onChange={(e) => {
+								e.preventDefault();
+								setAuditoria(e.target.value);
+							}}
+						></textarea>
+						<button
+							className={st.btnModal}
+							onClick={(e) => {
+								e.preventDefault();
+								if (auditoria !== '') {
+									AddAudit({
+										razon: auditoria,
+										uidTratament: uid,
+										uidProfile: user.uid,
+										userNameProfile: user.displayName,
+										fecha: Date.now(),
+									});
+									setAuditoria('');
+								}
+								closeModal();
+							}}
+						>
+							Enviar
+						</button>
+					</>
+				)}
+			</Modal>
+			<br />
+			<br />
+			<hr />
+			<br />
+			<br />
+			<br />
+			<div className={st.panelInfo}>
+				<div className={st.sp}>
+					Fecha:
+					<br />
+					<div>{date}</div>
+				</div>
+				<div className={st.sp}>
+					Sintomas:
+					<br />
+					<div>{signs}</div>
+				</div>
+				<div className={st.sp}>
+					Diagnostico:
+					<br />
+					<div>{diagnosis}</div>
+				</div>
+				<div className={st.sp}>
+					Tratamiento:
+					<br />
+					<div>{tratament}</div>
+				</div>
+				<div className={st.sp}>
+					Resultados:
+					<br />
+					<div>{result}</div>
+				</div>
+				<div className={st.sp}>
+					Nombre del profecional:
+					<br />
+					<div>{professional}</div>
+				</div>
+			</div>
+		</div>
+	);
 }

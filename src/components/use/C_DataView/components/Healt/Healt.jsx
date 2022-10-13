@@ -58,7 +58,7 @@ export function Healt() {
 						btnIconText={faFileCirclePlus}
 						route="/addTrat"
 						label="Nuevo tratamiento"
-						direction="bottom"
+						direction="rigth"
 					/>
 				</div>
 				<input
