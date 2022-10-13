@@ -1,31 +1,24 @@
 .container {
-	width: 5rem;
-	height: 100%;
+	padding-left: 1%;
+	padding-top: 1%;
+	padding-bottom: 1%;
 
 	display: flex;
-	flex-wrap: wrap;
 	flex-direction: column;
+	flex-wrap: wrap;
 	justify-content: space-between;
 }
 .backCancelPanel {
-	width: 5rem;
-	height: 6rem;
-
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 }
 .optionsPanel {
-	width: 5rem;
-
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 }
 .additionExtrasPanel {
-	width: 5rem;
-	height: 6rem;
-
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -34,23 +27,11 @@
 	width: 3rem;
 	height: 3rem;
 
-	margin: 0.5rem;
+	margin: 0.5rem 0;
 
 	background: rgba(78, 75, 72, 0.9);
 	border-radius: 100%;
 }
 .option button a div {
 	font-size: 20px;
-}
-@media (max-width: 700px) {
-	.container {
-		width: 100%;
-
-		height: fit-content;
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		align-items: flex-start;
-		justify-content: space-between;
-	}
 }

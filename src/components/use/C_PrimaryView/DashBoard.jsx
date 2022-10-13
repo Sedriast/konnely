@@ -6,6 +6,7 @@ import { RigthTopButtons } from '../0-GeneralComp/1-PanelButtons/RigthTopButtons
 export function DashBoard() {
 	return (
 		<>
+			<div className={st.optionContainer}></div>
 			<RigthTopButtons BTNS={generalOptions} />
 		</>
 	);

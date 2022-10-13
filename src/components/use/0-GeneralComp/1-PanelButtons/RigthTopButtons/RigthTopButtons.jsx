@@ -10,7 +10,7 @@ export function RigthTopButtons({ BTNS }) {
 		<>
 			<div className={st.container}>
 				<div className={st.opUser}>
-					<figure id="photo" title="Preferencias" tooltip-dir="left">
+					<figure id="photo" title="Preferencias" tooltip-dir="top">
 						<Link to="/users">
 							<button className={st.Photo}>
 								<img src={user.photoURL} alt="" />
@@ -24,7 +24,7 @@ export function RigthTopButtons({ BTNS }) {
 							<div className={st.option} key={options.id}>
 								<Buttons
 									label={options.label}
-									direction="left"
+									direction="top"
 									route={options.path}
 									btnId={options.id}
 									btnName={options.label}
