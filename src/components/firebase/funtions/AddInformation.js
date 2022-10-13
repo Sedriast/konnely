@@ -191,8 +191,8 @@ export const RemovalTratament = (props) => {
 export const ReactivateTratament = (props) => {
     const funtionReactivateTratament = async ({ coleccion, uidAudit, uid, data }) => {
         try {
-            await updateDoc(doc(db, coleccion, uid), data);
             await deleteDoc(doc(db, 'audit', uidAudit));
+            await updateDoc(doc(db, coleccion, uid), data);
         } catch (error) {
             console.log(error.message);
             swal({
