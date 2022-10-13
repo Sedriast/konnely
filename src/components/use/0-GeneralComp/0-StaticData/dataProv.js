@@ -7,6 +7,13 @@ export const basicData = {
     info: {},
 };
 
+export const recuperarTrataments = (info) => {
+    tratamentsData.info = info;
+};
+export const tratamentsData = {
+    info: null,
+};
+
 export const reproData = {
     rechazos: '0',
     muertes: '0',

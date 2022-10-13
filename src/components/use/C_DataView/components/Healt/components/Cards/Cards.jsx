@@ -9,8 +9,9 @@ import { useModal } from '../../../../../0-GeneralComp/0-StaticData/Modals/useMo
 import { useAuth } from '../../../../../../../context/AuthContext';
 import { useState } from 'react';
 import { AddAudit } from '../../../../../../firebase/funtions/AddInformation';
+import { recuperarTrataments } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
-export function Cards({ id, uid, date, signs, diagnosis, tratament, result, professional }) {
+export function Cards({ id, uid, date, signs, diagnosis, tratament, result, professional, trataments }) {
     const { user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
     const [auditoria, setAuditoria] = useState('');
@@ -20,7 +21,16 @@ export function Cards({ id, uid, date, signs, diagnosis, tratament, result, prof
             <div className={st.panelId}>Tratamiento {id}</div>
             <div className={st.btnPanel}>
                 <div>
-                    <Buttons route='/EditTrats' label='Editar' direction='bottom' btnIconText={faPen} />
+                    <Buttons
+                        route='/EditTrats'
+                        label='Editar'
+                        direction='bottom'
+                        btnIconText={faPen}
+                        btnClick={(e) => {
+                            e.preventDefault();
+                            recuperarTrataments(trataments);
+                        }}
+                    />
                 </div>
                 <div>
                     <Buttons
@@ -46,7 +56,7 @@ export function Cards({ id, uid, date, signs, diagnosis, tratament, result, prof
                 {isOpenModal && (
                     <>
                         <br />
-                        ¿Porque desea eliminar este tratamiento?:
+                        ¿Porque desea eliminar este tratamiento?
                         <br />
                         <br />
                         <textarea
@@ -55,6 +65,7 @@ export function Cards({ id, uid, date, signs, diagnosis, tratament, result, prof
                             type='text'
                             placeholder='Porque desea eliminar este tratamiento'
                             onChange={(e) => {
+                                e.preventDefault();
                                 setAuditoria(e.target.value);
                             }}></textarea>
                         <button
