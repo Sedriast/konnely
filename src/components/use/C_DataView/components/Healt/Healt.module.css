@@ -58,8 +58,12 @@
 	filter: none;
 }
 .panelItems {
-	color: rgba(251, 226, 34);
 	padding-top: 1.5rem;
+	color: rgba(251, 226, 34);
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 .btnCam {
 	width: 4rem;
