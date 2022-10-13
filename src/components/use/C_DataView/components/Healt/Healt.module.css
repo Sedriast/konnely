@@ -45,11 +45,12 @@
 .new {
 	width: 0.1rem;
 
-	margin: 0 1rem;
+	margin: 0 1rem 0 3rem;
 
 	border-radius: 100%;
+	border: solid black 1px;
 	padding: 1em;
-	background: rgb(72 70 67);
+
 	z-index: 0;
 }
 .new button a div {
