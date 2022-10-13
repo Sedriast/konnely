@@ -26,9 +26,10 @@
 /*Master*/
 .container {
 	width: 3rem;
+	height: 93.5%;
 
 	padding-right: 3%;
-	padding-top: 1%;
+	padding-top: 2.5%;
 	padding-bottom: 1%;
 
 	display: flex;
