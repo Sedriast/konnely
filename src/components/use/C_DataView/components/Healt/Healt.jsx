@@ -50,24 +50,24 @@ export function Healt() {
         }
     }, [navigate, trataments]);
 
-    return (
-        <div className={st.container}>
-            <div className={st.panelSearchBar}>
-                <div className={st.new}>
-                    <Buttons
-                        btnIconText={faFileCirclePlus}
-                        route='/addTrat'
-                        label='Nuevo tratamiento'
-                        direction='bottom'
-                    />
-                </div>
-                <input
-                    placeholder='Buscar'
-                    onChange={(e) => {
-                        buscar(e.target.value);
-                    }}
-                />
-                <button className={st.btnSearch}>🔎</button>
+	return (
+		<div className={st.container}>
+			<div className={st.panelSearchBar}>
+				<div className={st.new}>
+					<Buttons
+						btnIconText={faFileCirclePlus}
+						route="/addTrat"
+						label="Nuevo tratamiento"
+						direction="rigth"
+					/>
+				</div>
+				<input
+					placeholder="Buscar"
+					onChange={(e) => {
+						buscar(e.target.value);
+					}}
+				/>
+				<button className={st.btnSearch}>🔎</button>
 
                 {search === '' && (
                     <div className={st.btnCam}>

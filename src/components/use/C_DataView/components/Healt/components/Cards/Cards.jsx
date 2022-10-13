@@ -1,6 +1,6 @@
 import st from './Cards.module.css';
 
-import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faPen, faCircle, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 import swal from 'sweetalert';
@@ -24,9 +24,9 @@ export function Cards({
     uidAudit,
     state,
 }) {
-    const { user } = useAuth();
-    const [isOpenModal, openModal, closeModal] = useModal(false);
-    const [auditoria, setAuditoria] = useState('');
+	const { user } = useAuth();
+	const [isOpenModal, openModal, closeModal] = useModal(false);
+	const [auditoria, setAuditoria] = useState('');
 
     return (
         <div className={st.container} id={id}>
