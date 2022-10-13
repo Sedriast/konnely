@@ -1,32 +1,28 @@
 import st from './FormTrat.module.css';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
-import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
+import { basicData, recuperarTrataments, tratamentsData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { UpdateInformation } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
-import { conditionalBasis } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
+import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function FormTrat() {
     const navigate = useNavigate();
-    const [values, setValues] = useState({});
 
-    const updateState = (name, value) => {
-        setValues({ ...values, [name]: value });
-    };
     function handleChange(e) {
+        e.preventDefault();
         const { name, value } = e.target;
         if (name === 'date') {
-            e.target.value = conditionalBasis(updateState, name, value);
+            e.target.value = conditionalBasisEdit(value, tratamentsData.info.date);
         }
-        updateState(name, value);
     }
     useEffect(() => {
-        if (basicData.id === null) {
+        if (basicData.id === null && tratamentsData.info === null) {
             navigate('/vitaeslist');
             return null;
         }
@@ -48,15 +44,47 @@ export function FormTrat() {
                         }
                     }
                     aux.uidRabbit = basicData.info.uid;
-                    AddTratament(aux);
+                    UpdateInformation({ coleccion: 'trataments', uid: tratamentsData.info.uid, data: aux });
+                    recuperarTrataments(null);
                 }}
                 action=''>
-                <Inputs name='date' type='date' leyend='Fecha' handleChange={handleChange} />
-                <Inputs name='signs' type='text' leyend='Sintomas' handleChange={handleChange} />
-                <Inputs name='diagnosis' type='text' leyend='Diagnostico' handleChange={handleChange} />
-                <Inputs name='treatment' type='text' leyend='Tratamiento' handleChange={handleChange} />
-                <Inputs name='result' type='text' leyend='Resultados' handleChange={handleChange} />
                 <Inputs
+                    value={tratamentsData.info.date}
+                    name='date'
+                    type='date'
+                    leyend='Fecha'
+                    handleChange={handleChange}
+                />
+                <Inputs
+                    value={tratamentsData.info.signs}
+                    name='signs'
+                    type='text'
+                    leyend='Sintomas'
+                    handleChange={handleChange}
+                />
+                <Inputs
+                    value={tratamentsData.info.diagnosis}
+                    name='diagnosis'
+                    type='text'
+                    leyend='Diagnostico'
+                    handleChange={handleChange}
+                />
+                <Inputs
+                    value={tratamentsData.info.treatment}
+                    name='treatment'
+                    type='text'
+                    leyend='Tratamiento'
+                    handleChange={handleChange}
+                />
+                <Inputs
+                    value={tratamentsData.info.result}
+                    name='result'
+                    type='text'
+                    leyend='Resultados'
+                    handleChange={handleChange}
+                />
+                <Inputs
+                    value={tratamentsData.info.professional}
                     name='professional'
                     type='text'
                     leyend='Nombre del profecional'

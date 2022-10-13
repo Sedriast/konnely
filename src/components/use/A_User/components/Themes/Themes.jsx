@@ -4,15 +4,15 @@ import st from './styles/Theme.module.css';
 import { useState } from 'react';
 import { themesData } from '../../../0-GeneralComp/0-StaticData/customThemeData';
 import { useAuth } from '../../../../../context/AuthContext';
-import { UpdateInfoProfile } from '../../../../firebase/funtions/AddInformation';
+import { UpdateInformation } from '../../../../firebase/funtions/AddInformation';
 
 export function Themes() {
     const { user } = useAuth();
-    const [f, setF] = useState({ user: null, data: {} });
+    const [f, setF] = useState({ uid: null, data: {} });
 
     const ca = (e) => {
         const tema = parseInt(e.target.id);
-        setF({ ...f, user: user.uid, data: { theme: tema } });
+        setF({ ...f, coleccion: 'users', uid: user.uid, data: { theme: tema } });
     };
 
     const c = () => {
@@ -22,7 +22,7 @@ export function Themes() {
             buttons: ['No', 'Si'],
         }).then((respuesta) => {
             if (respuesta) {
-                UpdateInfoProfile(f);
+                UpdateInformation(f);
                 setTimeout(reloadPage, 1000);
             }
         });

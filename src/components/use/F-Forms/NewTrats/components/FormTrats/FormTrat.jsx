@@ -1,6 +1,6 @@
 import st from './FormTrat.module.css';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
@@ -8,22 +8,17 @@ import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
-import { conditionalBasis } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
+import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function FormTrat() {
     const navigate = useNavigate();
-    const [values, setValues] = useState({});
 
-    const updateState = (name, value) => {
-        setValues({ ...values, [name]: value });
-    };
     function handleChange(e) {
         const { name, value } = e.target;
         if (name === 'date') {
-            e.target.value = conditionalBasis(updateState, name, value);
+            e.target.value = conditionalBasisEdit(value, null);
         }
-        updateState(name, value);
     }
     useEffect(() => {
         if (basicData.id === null) {

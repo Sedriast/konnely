@@ -120,13 +120,14 @@ export const AddInfoProfile = (props) => {
     funtionAddInfoProfile(props);
 };
 
-/// Función para editar la información de un usuario en la base de datos
+/// Función para editar la información en la base de datos
 
-export const UpdateInfoProfile = (props) => {
-    const funtionUpdateInfoProfile = async (datos) => {
+export const UpdateInformation = (props) => {
+    const funtionUpdateInformation = async ({ coleccion, uid, data }) => {
         try {
-            await updateDoc(doc(db, 'users', datos.user), datos.data);
+            await updateDoc(doc(db, coleccion, uid), data);
         } catch (error) {
+            console.log(error.message);
             swal({
                 title: error,
                 icon: 'error',
@@ -134,7 +135,7 @@ export const UpdateInfoProfile = (props) => {
             });
         }
     };
-    funtionUpdateInfoProfile(props);
+    funtionUpdateInformation(props);
 };
 
 /// Función para registrar un nuevo tratamiento en la base de datos
@@ -184,4 +185,21 @@ export const RemovalTratament = (props) => {
         await deleteDoc(doc(db, 'audit', datos.uidAudit));
     };
     functionRemovalTratament(props);
+};
+
+/// Función para editar la información de un usuario en la base de datos
+
+export const UpdateTrataments = (props) => {
+    const funtionUpdateInfoProfile = async (datos) => {
+        try {
+            await updateDoc(doc(db, 'users', datos.user), datos.data);
+        } catch (error) {
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+    funtionUpdateInfoProfile(props);
 };

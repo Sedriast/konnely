@@ -21,10 +21,10 @@ export function List({ tratamentsActivos, tratamentsInactivos, stateCam }) {
                             date={item.date}
                             signs={item.signs}
                             diagnosis={item.diagnosis}
-                            tratament={item.tratament}
+                            tratament={item.treatment}
                             result={item.result}
                             professional={item.professional}
-                            trataments={trataments[index]}
+                            trataments={item}
                         />
                     </>
                 ))
