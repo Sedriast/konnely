@@ -8,50 +8,93 @@ import { Modal } from '../../../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { useModal } from '../../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { useAuth } from '../../../../../../../context/AuthContext';
 import { useState } from 'react';
-import { AddAudit } from '../../../../../../firebase/funtions/AddInformation';
+import { AddAudit, ReactivateTratament } from '../../../../../../firebase/funtions/AddInformation';
 import { recuperarTrataments } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
-export function Cards({ id, uid, date, signs, diagnosis, tratament, result, professional, trataments }) {
+export function Cards({
+    id,
+    uid,
+    date,
+    signs,
+    diagnosis,
+    tratament,
+    result,
+    professional,
+    trataments,
+    uidAudit,
+    cam,
+}) {
     const { user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
     const [auditoria, setAuditoria] = useState('');
 
     return (
         <div className={st.container} id={id}>
-            <div className={st.panelId}>Tratamiento {id}</div>
-            <div className={st.btnPanel}>
-                <div>
-                    <Buttons
-                        route='/EditTrats'
-                        label='Editar'
-                        direction='bottom'
-                        btnIconText={faPen}
-                        btnClick={(e) => {
-                            e.preventDefault();
-                            recuperarTrataments(trataments);
-                        }}
-                    />
+            <div className={st.panelId}>Tratamiento {id} </div>
+            {cam === true ? (
+                <div className={st.btnPanel}>
+                    <div>
+                        <Buttons
+                            route='/EditTrats'
+                            label='Editar'
+                            direction='bottom'
+                            btnIconText={faPen}
+                            btnClick={(e) => {
+                                e.preventDefault();
+                                recuperarTrataments(trataments);
+                            }}
+                        />
+                    </div>
+                    <div>
+                        <Buttons
+                            route='#'
+                            label='Eliminar'
+                            direction='bottom'
+                            btnIconText={faTrash}
+                            btnClick={() => {
+                                swal({
+                                    title: '¿Desea eliminar este tratamiento?',
+                                    icon: 'warning',
+                                    buttons: ['No', 'Si'],
+                                }).then((respuesta) => {
+                                    if (respuesta) {
+                                        openModal();
+                                    }
+                                });
+                            }}
+                        />
+                    </div>
                 </div>
-                <div>
+            ) : (
+                <div className={st.btnPanel}>
                     <Buttons
                         route='#'
-                        label='Eliminar'
+                        label='Activar'
                         direction='bottom'
                         btnIconText={faTrash}
                         btnClick={() => {
                             swal({
-                                title: '¿Desea eliminar este tratamiento?',
+                                title: '¿Desea volver a activar este tratamiento?',
                                 icon: 'warning',
                                 buttons: ['No', 'Si'],
                             }).then((respuesta) => {
                                 if (respuesta) {
-                                    openModal();
+                                    ReactivateTratament({
+                                        coleccion: 'trataments',
+                                        uid: uid,
+                                        uidAudit: uidAudit,
+                                        data: {
+                                            removalDate: null,
+                                            state: 'Activo',
+                                            uidAudit: null,
+                                        },
+                                    });
                                 }
                             });
                         }}
                     />
                 </div>
-            </div>
+            )}
             <Modal isOpen={isOpenModal} closeModal={closeModal}>
                 {isOpenModal && (
                     <>

@@ -165,7 +165,6 @@ export const AddTratament = (props) => {
 
 export const AddAudit = (props) => {
     const funtionAddAudit = async (datos) => {
-        console.log(datos);
         const docRef = await addDoc(collection(db, 'audit'), datos);
         await updateDoc(doc(db, 'audit', docRef.id), { uid: docRef.id });
         await updateDoc(doc(db, 'trataments', datos.uidTratament), {
@@ -187,13 +186,15 @@ export const RemovalTratament = (props) => {
     functionRemovalTratament(props);
 };
 
-/// Función para editar la información de un usuario en la base de datos
+/// Función para reactivar un registro en la base de datos
 
-export const UpdateTrataments = (props) => {
-    const funtionUpdateInfoProfile = async (datos) => {
+export const ReactivateTratament = (props) => {
+    const funtionReactivateTratament = async ({ coleccion, uidAudit, uid, data }) => {
         try {
-            await updateDoc(doc(db, 'users', datos.user), datos.data);
+            await updateDoc(doc(db, coleccion, uid), data);
+            await deleteDoc(doc(db, 'audit', uidAudit));
         } catch (error) {
+            console.log(error.message);
             swal({
                 title: error,
                 icon: 'error',
@@ -201,5 +202,5 @@ export const UpdateTrataments = (props) => {
             });
         }
     };
-    funtionUpdateInfoProfile(props);
+    funtionReactivateTratament(props);
 };

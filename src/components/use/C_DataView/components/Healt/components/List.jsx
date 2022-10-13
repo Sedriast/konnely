@@ -25,6 +25,8 @@ export function List({ tratamentsActivos, tratamentsInactivos, stateCam }) {
                             result={item.result}
                             professional={item.professional}
                             trataments={item}
+                            uidAudit={item.uidAudit}
+                            cam={stateCam}
                         />
                     </>
                 ))
