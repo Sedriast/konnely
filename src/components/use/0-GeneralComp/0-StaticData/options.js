@@ -100,3 +100,20 @@ export const generalOptions = [
 		label: 'Historial',
 	},
 ];
+/*###################################################################################
+|																					|
+|									optionsAud										|
+|																					|
+####################################################################################*/
+export const optionsAud = [
+	{
+		id: 0,
+		icon: faWrench,
+		label: 'Configuración',
+	},
+	{
+		id: 1,
+		icon: faUsers,
+		label: 'Administrar usuarios',
+	},
+];
