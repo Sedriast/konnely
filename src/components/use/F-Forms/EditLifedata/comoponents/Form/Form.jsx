@@ -1,4 +1,3 @@
-/* eslint-disable no-loop-func */
 import st from './Form.module.css';
 
 import { EditInfoRabbit } from '../../../../../firebase/funtions/AddInformation';
@@ -9,7 +8,6 @@ import {
 
 import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useNavigate } from 'react-router-dom';
 
 export function Form({ info, uid, nacimiento }) {
 	const conldicionalInfo = (name, value) => {

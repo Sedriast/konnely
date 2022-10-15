@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 import st from './Healt.module.css';
 
 import { useEffect, useState } from 'react';
@@ -25,24 +24,26 @@ export function Healt() {
     }).props.children;
     trataments.map((items) => {
         if (items.state === 'Activo') {
-            activos.push(items);
+            return activos.push(items);
         } else if (items.state === 'Inactivo') {
-            inactivos.push(items);
+            return inactivos.push(items);
         }
+        return null;
     });
 
-    const buscar = (e) => {
+    function buscar(e) {
         setSearch(e);
-        const valor = trataments.filter((element) => {
+        const valor = trataments.filter(function (element) {
             if (
                 element.signs.toString().toLowerCase().includes(e.toLowerCase()) ||
                 element.date.toString().toLowerCase().includes(e.toLowerCase()) ||
                 element.diagnosis.toString().toLowerCase().includes(e.toLowerCase())
             )
                 return element;
+            return null;
         });
         setSearch_(valor);
-    };
+    }
     useEffect(() => {
         if (basicData.id === null) {
             navigate('/vitaeslist');
@@ -50,24 +51,24 @@ export function Healt() {
         }
     }, [navigate, trataments]);
 
-	return (
-		<div className={st.container}>
-			<div className={st.panelSearchBar}>
-				<div className={st.new}>
-					<Buttons
-						btnIconText={faFileCirclePlus}
-						route="/addTrat"
-						label="Nuevo tratamiento"
-						direction="rigth"
-					/>
-				</div>
-				<input
-					placeholder="Buscar"
-					onChange={(e) => {
-						buscar(e.target.value);
-					}}
-				/>
-				<button className={st.btnSearch}>🔎</button>
+    return (
+        <div className={st.container}>
+            <div className={st.panelSearchBar}>
+                <div className={st.new}>
+                    <Buttons
+                        btnIconText={faFileCirclePlus}
+                        route='/addTrat'
+                        label='Nuevo tratamiento'
+                        direction='rigth'
+                    />
+                </div>
+                <input
+                    placeholder='Buscar'
+                    onChange={(e) => {
+                        buscar(e.target.value);
+                    }}
+                />
+                <button className={st.btnSearch}>🔎</button>
 
                 {search === '' && (
                     <div className={st.btnCam}>

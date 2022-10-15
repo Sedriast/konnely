@@ -20,7 +20,6 @@ export function User() {
         parametro: 'uid',
         busqueda: user.uid,
     }).props.children[0];
-    console.log(usuario);
 
     useEffect(() => {
         async function setSelect() {
@@ -35,7 +34,9 @@ export function User() {
                 }
             }
         }
-        if (user && usuario !== undefined) setRol(usuario);
+        if (user && usuario !== undefined) {
+            setRol(usuario);
+        }
         setSelect();
     }, [user, optionSelect, usuario]);
     return (
