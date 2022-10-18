@@ -96,7 +96,7 @@ export const generalOptions = [
 	{
 		id: 2,
 		icon: faFileInvoice,
-		path: '/record',
+		path: '/reco',
 		label: 'Historial',
 	},
 ];

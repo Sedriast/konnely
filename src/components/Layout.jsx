@@ -23,6 +23,7 @@ import { EditRepro } from './use/F-Forms/EditReproData/EditRepro';
 import { EditTrats } from './use/F-Forms/EditTrats/EditTrats';
 import { RemovalTratament } from './firebase/funtions/AddInformation';
 import { DashBoard } from './use/C_PrimaryView/DashBoard';
+import { Record } from './use/C_Record/Record';
 
 const db = getFirestore(app);
 
@@ -195,11 +196,11 @@ export function Layout() {
 						/>
 						<Route
 							exact
-							path="/record"
+							path="/reco"
 							element={
 								<ProtectedRoute>
 									<div className={st.componentContainer}>
-										<DashBoard />
+										<Record />
 									</div>
 								</ProtectedRoute>
 							}
