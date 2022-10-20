@@ -96,7 +96,24 @@ export const generalOptions = [
 	{
 		id: 2,
 		icon: faFileInvoice,
-		path: '/record',
+		path: '/reco',
 		label: 'Historial',
+	},
+];
+/*###################################################################################
+|																					|
+|									optionsAud										|
+|																					|
+####################################################################################*/
+export const optionsAud = [
+	{
+		id: 0,
+		icon: faWrench,
+		label: 'Configuración',
+	},
+	{
+		id: 1,
+		icon: faUsers,
+		label: 'Administrar usuarios',
 	},
 ];
