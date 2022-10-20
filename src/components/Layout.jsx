@@ -23,6 +23,7 @@ import { EditRepro } from './use/F-Forms/EditReproData/EditRepro';
 import { EditTrats } from './use/F-Forms/EditTrats/EditTrats';
 import { RemovalTratament } from './firebase/funtions/AddInformation';
 import { DashBoard } from './use/C_PrimaryView/DashBoard';
+import { NewRepro } from './use/F-Forms/NewReproData copy/NewRepro';
 
 const db = getFirestore(app);
 
@@ -164,6 +165,17 @@ export function Layout() {
                                 <ProtectedRoute>
                                     <div className={st.componentContainer}>
                                         <EditRepro />
+                                    </div>
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            exact
+                            path='/NewRepro'
+                            element={
+                                <ProtectedRoute>
+                                    <div className={st.componentContainer}>
+                                        <NewRepro />
                                     </div>
                                 </ProtectedRoute>
                             }
