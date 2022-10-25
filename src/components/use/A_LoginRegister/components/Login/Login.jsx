@@ -11,9 +11,12 @@ import { useState } from 'react';
 
 export function Login() {
     const navigate = useNavigate();
-    const { login, resetPassword } = useAuth();
+    const { login, resetPassword, user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
     const [reset, setReset] = useState('');
+    if (user) {
+        navigate('/vitaeslist');
+    }
 
     const handleSubmit = async (e) => {
         try {

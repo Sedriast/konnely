@@ -11,37 +11,37 @@ import { LeftBottomMenu } from '../0-GeneralComp/1-PanelButtons/LeftBottomMenu/L
 import { Option } from './components/Option';
 
 export function DataView() {
-	const [optionSelect, setOptionSelect] = useState(false);
-	const fal = () => {
-		setOptionSelect(false);
-	};
-	const tru = () => {
-		setOptionSelect(true);
-	};
-	const dataViewOptions = [
-		{
-			id: 0,
-			state: fal,
-			icon: faCircleInfo,
-			path: '#',
-			label: 'Información general',
-		},
-		{
-			id: 1,
-			state: tru,
-			icon: faSyringe,
-			path: '#',
-			label: 'Tratamientos',
-		},
-	];
+    const [optionSelect, setOptionSelect] = useState(false);
+    const fal = () => {
+        setOptionSelect(false);
+    };
+    const tru = () => {
+        setOptionSelect(true);
+    };
+    const dataViewOptions = [
+        {
+            id: 0,
+            state: fal,
+            icon: faCircleInfo,
+            path: '#',
+            label: 'Información general',
+        },
+        {
+            id: 1,
+            state: tru,
+            icon: faSyringe,
+            path: '#',
+            label: 'Tratamientos',
+        },
+    ];
 
-	return (
-		<>
-			<LeftBottomMenu options={dataViewOptions} />
-			<div className={st.optionContainer}>
-				<Option op={optionSelect} />
-			</div>
-			<RigthTopButtons BTNS={generalOptions} />
-		</>
-	);
+    return (
+        <>
+            <LeftBottomMenu options={dataViewOptions} />
+            <div className={st.optionContainer}>
+                <Option op={optionSelect} />
+            </div>
+            <RigthTopButtons BTNS={generalOptions} />
+        </>
+    );
 }
