@@ -1,22 +1,23 @@
-.optionContainer {
-	width: calc(97% - 3rem);
+@media only screen and (min-width: 701px) {
+	.optionContainer {
+		width: calc(97% - 3rem);
 
-	margin: 1% 0;
+		margin: 1% 0;
 
-	border-radius: 10px;
+		border-radius: 10px;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.panelA {
+		width: 30%;
+		height: 100%;
+		background: black;
+		border-radius: 10px;
+		margin: 0 0 0 3rem;
+	}
 }
-.panelA {
-	width: 30%;
-	height: 100%;
-	background: black;
-	border-radius: 10px;
-	margin: 0 0 0 3rem;
-}
-
-@media (max-width: 700px) {
+@media only screen and (max-width: 700px) {
 	.optionContainer {
 		width: calc(99% - 3rem);
 		height: calc(92% - 3rem);
