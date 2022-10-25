@@ -12,8 +12,11 @@ export function DashBoard() {
 					<div className={st.one}>
 						<PanelData1 />
 					</div>
-					<div className={st.two}></div>
+					<div className={st.two}>
+						<PanelData1 />
+					</div>
 				</div>
+				<div className={st.panelB}></div>
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />
 		</>
