@@ -7,7 +7,7 @@ export function App() {
 	return (
 		<>
 			<AuthProvider>
-				<Layout clsName={st.Layout} />
+				<Layout />
 			</AuthProvider>
 		</>
 	);

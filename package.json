@@ -10,10 +10,13 @@
         "@testing-library/jest-dom": "^5.14.1",
         "@testing-library/react": "^11.2.7",
         "@testing-library/user-event": "^12.8.3",
+        "chart.js": "^3.9.1",
         "concurrently": "^7.2.1",
+        "faker": "^6.6.6",
         "firebase": "^9.8.1",
         "font-awesome": "^4.7.0",
         "react": "^17.0.2",
+        "react-chartjs-2": "^4.3.1",
         "react-dom": "^17.0.2",
         "react-phone-number-input": "^3.2.2",
         "react-router-dom": "^6.2.1",
@@ -51,6 +54,7 @@
         ]
     },
     "devDependencies": {
-        "electron": "^19.0.3"
+        "electron": "^19.0.3",
+        "Faker": "^0.7.2"
     }
 }
