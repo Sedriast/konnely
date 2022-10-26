@@ -1,6 +1,10 @@
+import { conditionalBasisEdit } from '../../../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import st from './Ref.module.css';
 
 export function Ref({ stage }) {
+    function handleChange(e) {
+        e.target.value = conditionalBasisEdit(e.target.value, null);
+    }
     switch (stage.title) {
         case 'Monta':
             return (
@@ -16,7 +20,7 @@ export function Ref({ stage }) {
 
                     <div className={st.pt}>
                         <h1>Fecha: </h1>
-                        <input name='DateInitial' type='date' />
+                        <input name='DateInitial' type='date' onChange={handleChange} />
                     </div>
                 </div>
             );
@@ -30,7 +34,7 @@ export function Ref({ stage }) {
 
                     <div className={st.pt}>
                         <h1>Fecha: </h1>
-                        <input name='DatePalpacion' type='date' />
+                        <input name='DatePalpacion' type='date' onChange={handleChange} />
                     </div>
                 </div>
             );
@@ -44,7 +48,7 @@ export function Ref({ stage }) {
 
                     <div className={st.pt}>
                         <h1>Fecha: </h1>
-                        <input name='DatePreparto' type='date' />
+                        <input name='DatePreparto' type='date' onChange={handleChange} />
                     </div>
                 </div>
             );
@@ -58,24 +62,24 @@ export function Ref({ stage }) {
 
                     <div className={st.pt}>
                         <h1>Crias vivas: </h1>
-                        <input name='LiveYoung' type='text' />
+                        <input name='lives' type='text' />
                     </div>
                     <div className={st.pt}>
                         <h1>Crias muertas: </h1>
-                        <input name='DeadPups' type='text' />
+                        <input name='deaths' type='text' />
                     </div>
                     <div className={st.pt}>
                         <h1>Homogeneizados: </h1>
-                        <input name='Homogenized' type='text' />
+                        <input name='homogen' type='text' />
                     </div>
                     <div className={st.pt}>
                         <h1>Crias totales: </h1>
-                        <input name='total offspring' type='text' />
+                        <input name='total' type='text' />
                     </div>
 
                     <div className={st.pt}>
                         <h1>Fecha: </h1>
-                        <input name='DateParto' type='date' />
+                        <input name='DateParto' type='date' onChange={handleChange} />
                     </div>
                 </div>
             );
@@ -98,7 +102,7 @@ export function Ref({ stage }) {
 
                     <div className={st.pt}>
                         <h1>Fecha: </h1>
-                        <input name='DateDestete' type='date' />
+                        <input name='DateDestete' type='date' onChange={handleChange} />
                     </div>
                 </div>
             );

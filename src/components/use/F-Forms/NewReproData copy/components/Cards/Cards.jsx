@@ -7,6 +7,16 @@ import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
 export function Cards({ id, litterPrueba, stages }) {
     console.log(litterPrueba.stages);
+    const condicionals = (e) => {
+        const inicial = new Date(e.target.DateInitial.value);
+        const Palpacion = Date.parse(inicial) + 864000000;
+        console.log(new Date(Palpacion));
+        if (e.target.DateInitial.value) {
+            litterPrueba.stages[0].state = true;
+            litterPrueba.stages[0].male = e.target.Macho.value;
+            litterPrueba.stages[0].date = e.target.DateInitial.value;
+        }
+    };
     return (
         <div className={st.container}>
             <div className={st.panelId}>
@@ -18,28 +28,29 @@ export function Cards({ id, litterPrueba, stages }) {
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
-                    console.log(e.target.DateInitial.value);
+                    condicionals(e);
+
+                    console.log(litterPrueba.stages);
                 }}
                 className={st.panelInfo}>
                 {stages?.map((element) => {
                     return (
                         <>
                             <Ref stage={element} />
-                            {element.title === 'Destete' ? '' : '⬇'}
                         </>
                     );
                 })}
                 <div className={st.btn}>
                     <button type='submit'>
-                        <button
+                        {/* <button
                             onClick={() => {
                                 window.history.back();
-                            }}>
-                            <figure title='Guardar cambios' tooltip-dir='top'>
-                                <FontAwesomeIcon icon={faFloppyDisk} />
-                            </figure>
-                        </button>
+                            }}> */}
+                        <figure title='Guardar cambios' tooltip-dir='top'>
+                            <FontAwesomeIcon icon={faFloppyDisk} />
+                        </figure>
                     </button>
+                    {/* </button> */}
                 </div>
             </form>
         </div>
