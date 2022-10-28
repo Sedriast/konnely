@@ -86,6 +86,7 @@ export function Inputs({
 					<input
 						className={st.inp}
 						accept="image/*"
+						autoComplete="off"
 						id={name}
 						value={value}
 						required="True"
