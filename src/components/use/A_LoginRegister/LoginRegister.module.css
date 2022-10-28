@@ -2,13 +2,12 @@
 	width: fit-content;
 	height: 85%;
 
-	border-radius: 20px;
+	border-radius: 10px;
 
-	overflow-y: scroll;
 	overflow-x: hidden;
 }
 .panelContainer {
-	width: fit-content;
+	width: 100%;
 	height: fit-content;
 }
 .containerOption {
@@ -17,13 +16,13 @@
 }
 .btns {
 	display: flex;
-	width: 600px;
+	width: 100%;
 }
 .active_1 {
 	width: 300px;
-	height: 3rem;
+	height: 3.1rem;
 
-	border-radius: 20px 0px 0px 0px;
+	border-radius: 10px 0px 0px 0px;
 
 	background: rgba(0, 0, 0, 0.75);
 
@@ -31,9 +30,9 @@
 }
 .inactive_1 {
 	width: 300px;
-	height: 3rem;
+	height: 3.1rem;
 
-	border-radius: 20px 0px 0px 0px;
+	border-radius: 10px 0px 0px 0px;
 
 	background: rgba(0, 0, 0);
 
@@ -41,9 +40,9 @@
 }
 .active_2 {
 	width: 300px;
-	height: 3rem;
+	height: 3.1rem;
 
-	border-radius: 0px 20px 0px 0px;
+	border-radius: 0px 10px 0px 0px;
 
 	background: rgba(0, 0, 0, 0.75);
 
@@ -51,9 +50,9 @@
 }
 .inactive_2 {
 	width: 300px;
-	height: 3rem;
+	height: 3.1rem;
 
-	border-radius: 0px 20px 0px 0px;
+	border-radius: 0px 10px 0px 0px;
 
 	background: rgba(0, 0, 0);
 
