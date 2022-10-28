@@ -180,7 +180,7 @@ export const AddAudit = (props) => {
 
 export const RemovalTratament = (props) => {
     const functionRemovalTratament = async (datos) => {
-		await deleteDoc(doc(db, 'trataments', datos.uid));
+        await deleteDoc(doc(db, 'trataments', datos.uid));
         await deleteDoc(doc(db, 'audit', datos.uidAudit));
     };
     functionRemovalTratament(props);
@@ -203,4 +203,24 @@ export const ReactivateTratament = (props) => {
         }
     };
     funtionReactivateTratament(props);
+};
+
+/// Función para añadir un nuevo ciclo reproductivo a la base de datos
+
+export const AddReproductiveCycle = (props) => {
+    const funtionAddReproductiveCycle = async (datos) => {
+        try {
+            const docRef = await addDoc(collection(db, 'reproductive'), datos);
+            await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+            await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: true });
+        } catch (error) {
+            console.log(error.message);
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+    funtionAddReproductiveCycle(props);
 };

@@ -6,7 +6,7 @@ import { Cards } from '../../../../../../C_ReproView/components/Cards/Cards';
 
 import { litter } from '../../../../../../0-GeneralComp/2-FakeData/reproductiveCycle';
 
-export function Option({ op, click }) {
+export function Option({ op }) {
     switch (op) {
         case false:
             return (

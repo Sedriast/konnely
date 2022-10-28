@@ -101,32 +101,32 @@ export const litter = [
 
 export const litterPrueba = [
     {
-        id: null,
-        editors: [],
+        displayNameEditors: [],
+        uidEditors: [],
         state: true,
-        idMother: null,
+        uidMother: null,
         stages: [
             {
                 title: 'Monta',
-                state: null,
+                state: false,
                 date: null,
                 male: null,
             },
             {
                 title: 'Palpación',
-                state: null,
+                state: false,
                 date: null,
                 approximateDate: null,
             },
             {
                 title: 'Preparto',
-                state: null,
+                state: false,
                 date: null,
                 approximateDate: null,
             },
             {
                 title: 'Parto',
-                state: null,
+                state: false,
                 lives: null,
                 deaths: null,
                 total: null,
@@ -137,7 +137,7 @@ export const litterPrueba = [
             },
             {
                 title: 'Destete',
-                state: null,
+                state: false,
                 approximateDate: null,
                 date: null,
                 WeanedPups: null,
