@@ -24,6 +24,7 @@ import { EditTrats } from './use/F-Forms/EditTrats/EditTrats';
 import { RemovalTratament } from './firebase/funtions/AddInformation';
 import { DashBoard } from './use/C_PrimaryView/DashBoard';
 import { Record } from './use/C_Record/Record';
+import { NewRepro } from './use/F-Forms/NewReproData copy/NewRepro';
 
 const db = getFirestore(app);
 
@@ -48,7 +49,10 @@ export function Layout() {
             const getTrataments = async () => {
                 const trataments = await getDocs(collection(db, 'trataments'));
                 trataments.forEach((doc) => {
-                    if (doc.data().state !== null && Date.now() - Date.parse(doc.data().removalDate) > 5259600000) {
+                    if (
+                        doc.data().state === 'Inactivo' &&
+                        Date.now() - Date.parse(doc.data().removalDate) > 5259600000
+                    ) {
                         RemovalTratament({ uid: doc.data().uid, uidAudit: doc.data().uidAudit });
                     }
                 });

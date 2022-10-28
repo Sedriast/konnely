@@ -1,16 +1,12 @@
-import { conditionalBasisEdit } from '../../../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
+import { ApproximateRepro } from '../../../../../../0-GeneralComp/0-StaticData/Dates/Dates';
 import st from './Ref.module.css';
 
-export function Ref({ stage }) {
-    function handleChange(e) {
-        e.target.value = conditionalBasisEdit(e.target.value, null);
-    }
+export function Ref({ stage, handleChange, date }) {
     switch (stage.title) {
         case 'Monta':
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
-
                     <br />
 
                     <div className={st.pt}>
@@ -29,9 +25,8 @@ export function Ref({ stage }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
-
+                    {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).palpation}</h1>}
                     <br />
-
                     <div className={st.pt}>
                         <h1>Fecha: </h1>
                         <input name='DatePalpacion' type='date' onChange={handleChange} />
@@ -43,7 +38,7 @@ export function Ref({ stage }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
-
+                    {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).prepartum}</h1>}
                     <br />
 
                     <div className={st.pt}>
@@ -57,6 +52,7 @@ export function Ref({ stage }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
+                    {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).birth}</h1>}
 
                     <br />
 
@@ -88,7 +84,7 @@ export function Ref({ stage }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
-
+                    {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).weaning}</h1>}
                     <br />
 
                     <div className={st.pt}>

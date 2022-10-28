@@ -180,7 +180,7 @@ export const AddAudit = (props) => {
 
 export const RemovalTratament = (props) => {
     const functionRemovalTratament = async (datos) => {
-        await deleteDoc(doc(db, 'trataments', datos.uid));
+		await deleteDoc(doc(db, 'trataments', datos.uid));
         await deleteDoc(doc(db, 'audit', datos.uidAudit));
     };
     functionRemovalTratament(props);
