@@ -29,10 +29,8 @@
 	display: contents;
 }
 .panelContainer {
-	height: fit-content;
+	height: 100%;
 	width: initial;
-
-	padding: 0 2rem;
 
 	display: flex;
 	align-content: stretch;
@@ -163,12 +161,15 @@
 	font-size: 75px;
 }
 .panel {
+	width: 75%;
+
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
 .panel div {
+	margin-top: 2rem;
 	width: 350px;
 }
 .cam button {

@@ -113,6 +113,8 @@ export function Login() {
 							}}
 						/>
 					</div>
+					<br />
+					<br />
 					<div className={st.submit}>
 						<button type="submit">Iniciar sesión</button>
 					</div>

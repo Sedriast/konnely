@@ -25,21 +25,10 @@
 
 /*Containers*/
 /*Master*/
-.panelInpImg {
-	display: contents;
+.panelContainer div h1 {
+	color: rgb(255, 255, 255);
 }
-.panelContainer {
-	height: fit-content;
-	width: initial;
 
-	padding: 0 2rem;
-
-	display: flex;
-	align-content: stretch;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column;
-}
 /*Master*/
 /*Sub*/
 .panelInpImg {
@@ -68,9 +57,7 @@
 	justify-content: center;
 	align-items: center;
 }
-.panelContainer div h1 {
-	color: rgb(255, 255, 255);
-}
+
 /*Sub*/
 /*Button´s container*/
 
@@ -106,6 +93,9 @@
 
 /*Other´s Components*/
 /*Master*/
+.panel div {
+	width: 85%;
+}
 .panelImage {
 	width: 100%;
 	height: 250px;
@@ -162,15 +152,7 @@
 	content: '+';
 	font-size: 75px;
 }
-.panel {
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-}
-.panel div {
-	width: 350px;
-}
+
 .cam button {
 	background: radial-gradient(
 		216.67% 100% at 50% 0%,
