@@ -23,7 +23,7 @@ export function ReproductiveCycle() {
                 </div>
             </div>
             <br />
-            <Option op={basicData.info.camada} />
+            <Option op={basicData.info.reproductivecycle} />
         </>
     );
 }
