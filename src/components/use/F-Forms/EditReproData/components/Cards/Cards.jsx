@@ -18,10 +18,16 @@ export function Cards({ id, item, stages }) {
     const [date, setDate] = useState(stages[0].date);
     function handleChange(e) {
         if (e.target.name === 'DateInitial') {
-            e.target.value = conditionalBasisEdit(e.target.value, null);
+            e.target.value = conditionalBasisEdit(e.target.value, stages[0].date);
             setDate(e.target.value);
-        } else {
-            e.target.value = conditionalNextEdit(e.target.value, null, date);
+        } else if (e.target.name === 'DatePalpacion') {
+            e.target.value = conditionalNextEdit(e.target.value, stages[1].date, date);
+        } else if (e.target.name === 'DatePreparto') {
+            e.target.value = conditionalNextEdit(e.target.value, stages[2].date, date);
+        } else if (e.target.name === 'DateParto') {
+            e.target.value = conditionalNextEdit(e.target.value, stages[3].date, date);
+        } else if (e.target.name === 'DateDestete') {
+            e.target.value = conditionalNextEdit(e.target.value, stages[4].date, date);
         }
         if (e.target.name === 'DateInitial' && e.target.value === '') {
             setDate(null);
@@ -40,7 +46,7 @@ export function Cards({ id, item, stages }) {
                 className={st.panelInfo}
                 onSubmit={(e) => {
                     e.preventDefault();
-					UpdateReproductiveCycle(formatCycleReproductive(e, item, user));
+                    UpdateReproductiveCycle(formatCycleReproductive(e, item, user));
                 }}>
                 {stages?.map((element) => {
                     return (
