@@ -22,15 +22,13 @@
 
 /*Containers*/
 /*Master*/
-@media only screen and (min-width: 701px) {
-	.optionContainer {
-		width: calc(96% - 6rem);
 
-		margin: 1% 0;
+.optionContainer {
+	width: calc(96% - 6rem);
+	height: 100%;
 
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 /*Master*/
@@ -63,7 +61,8 @@
 		width: calc(99% - 3rem);
 		height: calc(92% - 3rem);
 
-		margin: 1% 0;
+		margin: 1%;
+		margin-left: 1.3rem;
 
 		overflow-y: scroll;
 		overflow-x: hidden;
@@ -72,25 +71,6 @@
 /*Resizing */
 
 /*Animations*/
-@keyframes btnOP {
-	from {
-		width: 0px;
-	}
-
-	to {
-		width: 100%;
-	}
-}
-
-@keyframes btnOPBack {
-	from {
-		margin-bottom: 0rem;
-	}
-
-	to {
-		margin-bottom: 82vh;
-	}
-}
 
 /*Animations*/
 

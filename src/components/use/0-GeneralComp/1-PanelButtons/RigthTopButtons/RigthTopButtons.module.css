@@ -149,6 +149,33 @@
 	.option:hover svg {
 		font-size: 30px;
 	}
+	.opUser {
+		position: absolute;
+
+		top: 0;
+		right: 0;
+		width: 2.5rem;
+		height: 2.5rem;
+
+		margin: 6px;
+		border: 1px solid black;
+		border-radius: 100%;
+
+		display: flex;
+	}
+	.opUser button {
+		border-radius: 100%;
+
+		display: flex;
+	}
+	.opUser img {
+		width: 2.5rem;
+		height: 2.5rem;
+
+		border-radius: 100%;
+
+		background: rgba(0, 0, 0, 0.5);
+	}
 }
 /*Resizing */
 

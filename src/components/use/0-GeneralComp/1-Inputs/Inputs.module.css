@@ -25,35 +25,51 @@
 /*Containers*/
 /*Master*/
 .container {
-	height: 4rem;
-	margin: 0.5rem 0;
+	position: relative;
+
+	width: 100%;
+	height: 40px;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2rem;
 
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
-	align-content: space-between;
-	justify-content: space-between;
-	align-items: stretch;
 }
 
 /*Master*/
 /*Sub*/
 
 .inp {
-	width: calc(100% - 2rem);
-	height: 100%;
+	position: absolute;
+
+	width: 100%;
 
 	margin: 0.5rem 0;
+	border-bottom: 1px solid black;
+	border-radius: 10px;
+	padding: 8px 1rem;
 
-	border: 1px solid black;
-	border-radius: 20px;
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
-.inp:placeholder {
 	color: black;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.1) 100%);
+}
+.lblInac {
+	width: 100%;
+	margin-left: 1rem;
+
+	transition: margin-bottom 500ms ease-out;
 }
 
+.lblAc {
+	width: 100%;
+	margin-left: 1rem;
+	margin-bottom: 3.5rem;
+
+	transition: margin-bottom 500ms ease-out;
+}
 /*Sub*/
 /*Button´s container*/
 
