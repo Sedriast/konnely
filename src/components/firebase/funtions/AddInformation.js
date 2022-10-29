@@ -210,9 +210,21 @@ export const ReactivateTratament = (props) => {
 export const AddReproductiveCycle = (props) => {
     const funtionAddReproductiveCycle = async (datos) => {
         try {
-            const docRef = await addDoc(collection(db, 'reproductive'), datos);
-            await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
-            await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: true });
+            if (datos.stages[0].date) {
+                const docRef = await addDoc(collection(db, 'reproductive'), datos);
+                await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+                if (datos.stages[4].state === true) {
+                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: false });
+                } else {
+                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: true });
+                }
+            } else {
+                swal({
+                    title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
+                    icon: 'error',
+                    button: 'aceptar',
+                });
+            }
         } catch (error) {
             console.log(error.message);
             swal({
@@ -223,4 +235,35 @@ export const AddReproductiveCycle = (props) => {
         }
     };
     funtionAddReproductiveCycle(props);
+};
+
+/// Función para actualizar un ciclo reproductivo a la base de datos
+
+export const UpdateReproductiveCycle = (props) => {
+    const funtionUpdateReproductiveCycle = async (datos) => {
+        try {
+            if (datos.stages[0].date) {
+                await updateDoc(doc(db, 'reproductive', datos.uid), datos);
+                if (datos.stages[4].state === true) {
+                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: false });
+                } else {
+                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: true });
+                }
+            } else {
+                swal({
+                    title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
+                    icon: 'error',
+                    button: 'aceptar',
+                });
+            }
+        } catch (error) {
+            console.log(error.message);
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+    funtionUpdateReproductiveCycle(props);
 };

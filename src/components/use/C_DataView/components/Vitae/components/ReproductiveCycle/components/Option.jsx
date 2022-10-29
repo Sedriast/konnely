@@ -4,9 +4,15 @@ import { Buttons } from '../../../../../../0-GeneralComp/1-Buttons/Buttons';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Cards } from '../../../../../../C_ReproView/components/Cards/Cards';
 
-import { litter } from '../../../../../../0-GeneralComp/2-FakeData/reproductiveCycle';
+import { basicData } from '../../../../../../0-GeneralComp/0-StaticData/dataProv';
+import { QueriesSimple_ } from '../../../../../../../firebase/funtions/GetInformation';
 
 export function Option({ op }) {
+    const reproductiveCycles = QueriesSimple_({
+        coleccion: 'reproductive',
+        parametro: 'uidMother',
+        busqueda: basicData.info.uid,
+    }).props.children;
     switch (op) {
         case false:
             return (
@@ -17,13 +23,17 @@ export function Option({ op }) {
                 </div>
             );
         case true:
-            return litter?.map((item, index) =>
-                // Esta condicion puede ser sustituid por una busqueda simple
-                item.state === true ? (
-                    <Cards key={index} id={item.id} editor={item.editors} stages={item.stages} />
-                ) : (
-                    <></>
+            return reproductiveCycles !== '[]' ? (
+                reproductiveCycles?.map(
+                    (item, index) =>
+                        item.state === true && (
+                            <Cards key={index} id={item.id} editor={item.editors} stages={item.stages} />
+                        )
                 )
+            ) : (
+                <>
+                    <h1>Cargando, por favor espere</h1>
+                </>
             );
         default:
             return <></>;
