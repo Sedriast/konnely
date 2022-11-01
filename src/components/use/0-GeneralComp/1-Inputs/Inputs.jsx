@@ -12,10 +12,10 @@ export function Inputs({
 	leyend,
 	value,
 	min,
-	focus,
 	max,
 	inputmode,
 	step,
+	pattern,
 }) {
 	const fileInputRef = useRef();
 	const [image, setImage] = useState(false);
@@ -96,6 +96,7 @@ export function Inputs({
 						min={min}
 						max={max}
 						step={step}
+						pattern={pattern}
 						inputMode={inputmode}
 						onChange={action}
 						onFocus={() => {
