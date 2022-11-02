@@ -6,6 +6,8 @@ import {
 	faWrench,
 	faXmark,
 	faPlus,
+	faPersonWalkingDashedLineArrowRight,
+	faHouse,
 } from '@fortawesome/free-solid-svg-icons';
 
 /*##################################################################################|
@@ -115,5 +117,24 @@ export const optionsAud = [
 		id: 1,
 		icon: faUsers,
 		label: 'Administrar usuarios',
+	},
+];
+/*###################################################################################
+|																					|
+|									generalOptionsUSer								|
+|																					|
+####################################################################################*/
+export const generalOptionsUser = [
+	{
+		id: 0,
+		icon: faHouse,
+		path: '/vitaeslist',
+		label: 'Principal',
+	},
+	{
+		id: 1,
+		icon: faPersonWalkingDashedLineArrowRight,
+		path: '#',
+		label: 'Cerrar sesión',
 	},
 ];

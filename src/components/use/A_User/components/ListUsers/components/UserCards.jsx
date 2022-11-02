@@ -1,4 +1,4 @@
-import st from '../styles/UserCards.module.css';
+import st from './UserCards.module.css';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 import { recuperarUser } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 
