@@ -145,7 +145,8 @@ figure:hover:after {
 		padding-bottom: 1%;
 
 		display: flex;
-		align-items: center;
+		flex-direction: column;
+		flex-wrap: wrap;
 		justify-content: center;
 	}
 	.option {
