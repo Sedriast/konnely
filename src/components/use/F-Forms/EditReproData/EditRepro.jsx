@@ -28,7 +28,7 @@ export function EditRepro() {
                         <Cards key={index} id={item.id} item={item} stages={item.stages} />
                     ) : (
                         <>
-                            <h1>Cargando, pro favor espere</h1>
+                            <h1>Cargando, por favor espere</h1>
                         </>
                     )
                 )}

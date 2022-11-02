@@ -3,9 +3,11 @@ import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
 import { getFirestore, collection, addDoc, doc, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { getAuth, updateProfile } from 'firebase/auth';
 
 const db = getFirestore(app);
 const storage = getStorage(app);
+export const auth = getAuth(app);
 
 /// Función para enviar un nuevo registro de un conejo a la base de datos
 
@@ -272,10 +274,10 @@ export const UpdateReproductiveCycle = (props) => {
 export const EditImageAndInfoUser = (props) => {
     const funtionEditImageAndInfoUser = async (datos) => {
         let photo =
-            'https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/0cHIamV5LmotIznS1ud4?alt=media&token=b4b26383-6fbf-4efc-ae61-f62fbce20622';
+            'https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/ImagenDeUsuario.png?alt=media&token=e4b0499b-1ff2-42b3-93f9-e95d11533536';
         try {
+            let auxiliar = [];
             if (datos.image.includes(',') && datos.photoAux === photo) {
-                let auxiliar = [];
                 const Ref = ref(storage, datos.uid);
                 auxiliar = datos.image.split(',');
                 await uploadString(Ref, auxiliar[1], 'base64');
@@ -283,18 +285,29 @@ export const EditImageAndInfoUser = (props) => {
                 datos.photo = urlDescarga;
                 delete datos.image;
             } else if (datos.image.includes(',') && datos.photoAux !== photo) {
-                let auxiliar = [];
-                const Ref = ref(storage, datos.uid);
-                await deleteObject(Ref);
+                const RefUno = ref(storage, datos.uid);
+                await deleteObject(RefUno);
                 auxiliar = datos.image.split(',');
-                await uploadString(Ref, auxiliar[1], 'base64');
-                const urlDescarga = await getDownloadURL(Ref);
+                const RefDos = ref(storage, datos.uid);
+                await uploadString(RefDos, auxiliar[1], 'base64');
+                const urlDescarga = await getDownloadURL(RefDos);
                 datos.photo = urlDescarga;
                 delete datos.image;
             }
-            if (!datos.email.incluides('@ucundinamarca.edu.co')) {
+            if (!datos.email.includes('@ucundinamarca.edu.co')) {
                 datos.email = datos.email + '@ucundinamarca.edu.co';
             }
+            if (datos.perfil === datos.uid) {
+                console.log(datos.photo);
+                await updateProfile(auth.currentUser, {
+                    displayName: datos.user,
+                    photoURL: datos.photo,
+                }).catch((error) => {
+                    console.log(error);
+                });
+            }
+            delete datos.perfil;
+            delete datos.perfilOld;
             delete datos.image;
             delete datos.photoAux;
             await updateDoc(doc(db, 'users', datos.uid), datos);

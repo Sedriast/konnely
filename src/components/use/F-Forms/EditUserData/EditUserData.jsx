@@ -13,8 +13,10 @@ import { userData } from '../../0-GeneralComp/0-StaticData/dataProv';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
 import { EditImageAndInfoUser } from '../../../firebase/funtions/AddInformation';
+import { useAuth } from '../../../../context/AuthContext';
 
 export function EditUserData() {
+    const { user } = useAuth();
     const navigate = useNavigate();
     const [image, setImage] = useState(null);
     const [image_, setImage_] = useState(null);
@@ -29,14 +31,21 @@ export function EditUserData() {
             if (respuesta) {
                 EditImageAndInfoUser({
                     ...aux,
+                    perfil: user.uid,
                     uid: userData.info.uid,
                     photoAux: userData.info.photo,
                     image: image,
                 });
+                if (user.displayName === userData.info.user) {
+                    setTimeout(reloadPage, 1000);
+                }
                 navigate('/vitaeslist');
             }
         });
     };
+    function reloadPage() {
+        window.location.reload(true);
+    }
     useEffect(() => {
         if (userData.info !== null) {
             setImage_(userData.info.photo);
