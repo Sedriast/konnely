@@ -88,7 +88,7 @@ export function Inputs({
 						accept="image/*"
 						autoComplete="off"
 						id={name}
-						value={value}
+						defaultValue={value}
 						required="True"
 						type={type}
 						name={name}
