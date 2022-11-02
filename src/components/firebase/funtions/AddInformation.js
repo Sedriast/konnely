@@ -70,6 +70,7 @@ export const EditImageAndInfo = (props) => {
                 datos.url = urlDescarga;
                 delete datos.image;
             }
+            delete datos.image;
             await updateDoc(doc(db, 'rabbits', datos.uid), datos);
         } catch (error) {
             console.log(error);
@@ -266,4 +267,46 @@ export const UpdateReproductiveCycle = (props) => {
         }
     };
     funtionUpdateReproductiveCycle(props);
+};
+
+export const EditImageAndInfoUser = (props) => {
+    const funtionEditImageAndInfoUser = async (datos) => {
+        let photo =
+            'https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/0cHIamV5LmotIznS1ud4?alt=media&token=b4b26383-6fbf-4efc-ae61-f62fbce20622';
+        try {
+            if (datos.image.includes(',') && datos.photoAux === photo) {
+                let auxiliar = [];
+                const Ref = ref(storage, datos.uid);
+                auxiliar = datos.image.split(',');
+                await uploadString(Ref, auxiliar[1], 'base64');
+                const urlDescarga = await getDownloadURL(Ref);
+                datos.photo = urlDescarga;
+                delete datos.image;
+            } else if (datos.image.includes(',') && datos.photoAux !== photo) {
+                let auxiliar = [];
+                const Ref = ref(storage, datos.uid);
+                await deleteObject(Ref);
+                auxiliar = datos.image.split(',');
+                await uploadString(Ref, auxiliar[1], 'base64');
+                const urlDescarga = await getDownloadURL(Ref);
+                datos.photo = urlDescarga;
+                delete datos.image;
+            }
+            if (!datos.email.incluides('@ucundinamarca.edu.co')) {
+                datos.email = datos.email + '@ucundinamarca.edu.co';
+            }
+            delete datos.image;
+            delete datos.photoAux;
+            await updateDoc(doc(db, 'users', datos.uid), datos);
+        } catch (error) {
+            console.log(error);
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+
+    funtionEditImageAndInfoUser(props);
 };

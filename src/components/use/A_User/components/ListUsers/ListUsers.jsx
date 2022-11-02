@@ -17,7 +17,7 @@ export function ListUsers() {
 					{data[0].uid !== null && (
 						<>
 							{data.map((users, index) => (
-								<UserCards key={index} userName={users.user} userEmail={users.email} />
+								<UserCards key={index} userName={users.user} userEmail={users.email} user={users} />
 							))}
 						</>
 					)}
