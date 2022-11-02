@@ -13,9 +13,11 @@ export function List() {
 	return (
 		<>
 			{reproductiveCycles.length === 1 ? (
-				reproductiveCycles?.map((item, index) => (
-					<Cards key={index} id={item.id} editor={item.editors} stages={item.stages} />
-				))
+				<>
+					{reproductiveCycles?.map((item, index) => (
+						<Cards key={index} id={item.id} editor={item.editors} stages={item.stages} />
+					))}
+				</>
 			) : (
 				<>
 					<div className={st.des}>No existen registros</div>

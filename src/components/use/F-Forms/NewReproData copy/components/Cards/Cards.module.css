@@ -25,7 +25,6 @@
 .container {
 	width: 90%;
 
-	margin: 2rem 0;
 	padding: 1rem;
 	border-radius: 10px;
 
@@ -33,9 +32,6 @@
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
-	flex-direction: column;
-
-	overflow: hidden;
 }
 /*Master*/
 /*Sub*/
@@ -75,7 +71,7 @@
 	width: 3rem;
 	height: 3rem;
 
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.2);
 
 	margin-top: 1rem;
 	border-radius: 100%;
@@ -84,7 +80,9 @@
 	justify-content: center;
 }
 .btn figure {
-	width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .btn button {
 	background: transparent;

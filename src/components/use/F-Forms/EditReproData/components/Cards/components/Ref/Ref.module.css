@@ -18,6 +18,12 @@
 .panel h3 {
 	font-size: 1.5rem;
 }
+.edit {
+	width: 80%;
+}
+.edit h1 {
+	color: chartreuse;
+}
 .pt {
 	width: 100%;
 	height: fit-content;
