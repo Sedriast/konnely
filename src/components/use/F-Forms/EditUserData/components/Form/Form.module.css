@@ -247,7 +247,7 @@
 	align-items: center;
 }
 .inpCont input {
-	width: calc(40% - 2rem);
+	width: calc(50% - 2rem);
 
 	color: white;
 
