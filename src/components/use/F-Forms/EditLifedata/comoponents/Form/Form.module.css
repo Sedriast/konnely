@@ -49,47 +49,36 @@
 .panelStage h2 {
 	color: rgba(251, 225, 34, 1);
 }
-.titles {
-	text-align: end;
+.date1 h1 {
+	margin-left: 0.5rem;
+	margin-bottom: 0.3rem;
 	font-size: 16px;
 	color: rgba(251, 225, 34, 1);
-	margin-right: 0.3rem;
 }
-.ask {
-	width: 20%;
+.date1 {
+	width: 70%;
 	font-size: 16px;
 	color: rgb(255, 255, 255);
 }
-.ask input {
-	width: 130%;
-
-	border-radius: 5px;
-	border: 1px solid black;
-
-	padding: 0 5px;
-
-	text-align: start;
-	font-size: 16px;
-	color: rgb(0, 0, 0);
+.editable {
+	width: 70%;
+}
+.editable h1 {
+	color: rgba(251, 225, 34, 1);
+}
+.editable input {
+	color: rgb(255, 255, 255);
 }
 .idName {
 	width: 100%;
-
-	padding: 2px;
-	font-size: 1.5rem;
-
-	color: white;
-	text-overflow: ellipsis;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
+
 .btn {
 	width: 3rem;
 	height: 3rem;
 
-	background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.2);
 
 	margin-top: 1rem;
 	border-radius: 100%;

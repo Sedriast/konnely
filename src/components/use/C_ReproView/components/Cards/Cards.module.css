@@ -23,29 +23,38 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 90%;
+	margin: 1rem 0;
 
-	background: rgba(0, 0, 0, 0.1);
-
-	margin: 2rem 0;
-	padding: 1rem;
+	background: rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
 
 	display: flex;
-	align-items: center;
 	flex-wrap: wrap;
 	justify-content: center;
-	flex-direction: column;
-
-	overflow: hidden;
 }
 /*Master*/
 /*Sub*/
 .panelId {
+	padding-top: 1rem;
+
 	font-size: 1.5rem;
 	color: rgba(251, 226, 34);
 
 	text-align: center;
+
+	display: flex;
+}
+.btnEdit {
+	margin-left: 1rem;
+}
+.panelInfo {
+	margin: 2rem 1rem;
+
+	display: flex;
+	align-items: center;
+
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 .btnPanel {
 	display: flex;
@@ -55,13 +64,7 @@
 	font-size: 25px;
 	filter: none;
 }
-.panelInfo {
-	height: 180px;
 
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-}
 .sp {
 	color: rgba(251, 226, 34);
 	font-size: 20px;
@@ -95,12 +98,47 @@
 
 /*Resizing */
 @media (max-width: 800px) {
-	.panelInfo {
-		height: fit-content;
+	.container {
+		background: rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
 
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+	}
+	.panelId {
+		font-size: 1.5rem;
+		color: rgba(251, 226, 34);
+
+		text-align: center;
+
+		display: flex;
+	}
+	.panelInfo {
+		display: flex;
+		align-items: center;
+
+		overflow-x: scroll;
+		overflow-y: hidden;
+	}
+
+	.btnPanel {
+		display: flex;
+		margin-left: 0.5rem;
+	}
+	.btnPanel div {
+		font-size: 25px;
+		filter: none;
+	}
+	.sp {
+		color: rgba(251, 226, 34);
+		font-size: 20px;
+		width: 300px;
+		margin: 1rem;
+	}
+	.sp div {
+		font-size: 15px;
+		color: white;
 	}
 }
 /*Resizing */

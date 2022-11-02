@@ -23,19 +23,11 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 90%;
+	width: 95%;
 
-	margin: 2rem 0;
-	padding: 1rem;
 	border-radius: 10px;
 
 	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
-	flex-direction: column;
-
-	overflow: hidden;
 }
 /*Master*/
 /*Sub*/
@@ -54,12 +46,8 @@
 	filter: none;
 }
 .panelInfo {
-	width: 90%;
+	width: 100%;
 	height: fit-content;
-
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
 }
 .sp {
 	color: rgba(251, 226, 34);

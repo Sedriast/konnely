@@ -8,13 +8,15 @@
 	width: 90%;
 
 	display: flex;
-	margin: 0 0 2rem 0;
+	margin: 1rem 0 2rem 0;
 
 	position: fixed;
 
 	z-index: 1;
 }
 .panelSearchBar input {
+	width: 100%;
+
 	border-bottom-left-radius: 20px;
 	border-top-left-radius: 20px;
 	padding: 0 1rem;
@@ -24,9 +26,6 @@
 	border-left: 1px solid black;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
-}
-.panelSearchBar input {
-	width: 100%;
 }
 .btnSearch {
 	border-top-right-radius: 20px;

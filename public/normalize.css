@@ -55,10 +55,10 @@ input[type='date']:required:invalid::-webkit-datetime-edit {
 	color: transparent;
 }
 input[type='date'] {
-	color: black !important;
+	color: rgb(255, 255, 255) !important;
 }
 .active input[type='date'] {
-	color: black !important;
+	color: rgb(255, 255, 255) !important;
 }
 ::-webkit-scrollbar {
 	-webkit-appearance: none;

@@ -6,17 +6,21 @@ import { LeftBottomMenu } from '../0-GeneralComp/1-PanelButtons/LeftBottomMenu/L
 import { List } from './components/List';
 
 export function ReproView() {
-    return (
-        <>
-            <LeftBottomMenu
-                backCancel={newTreats}
-                click={() => {
-                    window.history.back();
-                }}
-            />
-            <div className={st.optionContainer}>
-                <List />
-            </div>
-        </>
-    );
+	return (
+		<>
+			<LeftBottomMenu
+				backCancel={newTreats}
+				click={() => {
+					window.history.back();
+				}}
+			/>
+			<div className={st.panelSearchBar}>
+				<input placeholder="Buscar" onChange={(e) => {}} />
+				<button className={st.btnSearch}>🔎</button>
+			</div>
+			<div className={st.optionContainer}>
+				<List />
+			</div>
+		</>
+	);
 }

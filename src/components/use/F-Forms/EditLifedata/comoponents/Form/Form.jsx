@@ -8,6 +8,7 @@ import {
 
 import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 
 export function Form({ info, uid, nacimiento }) {
 	const conldicionalInfo = (name, value) => {
@@ -25,7 +26,7 @@ export function Form({ info, uid, nacimiento }) {
 			info[3].date = value;
 		}
 	};
-
+	function handleChange(e) {}
 	return (
 		<>
 			<form
@@ -53,31 +54,28 @@ export function Form({ info, uid, nacimiento }) {
 									<br />
 									<br />
 									<br />
-									<div className={st.titles}>
-										Fecha pronosticada:
-										<br />
-										<br />
-										Peso final:
-										<br />
-										Fecha real:
-									</div>
-									<div className={st.ask}>
+									<div className={st.date1}>
+										<h1>Fecha pronosticada:</h1>
+
 										{items.approDate}
-										<br />
-										<br />
-										<input
-											defaultValue={items.weigth}
+									</div>
+
+									<div className={st.editable}>
+										<Inputs
+											name={'weigth:' + items.stage}
 											type="number"
 											step="0.1"
 											min="0"
 											max="100"
-											name={'weigth:' + items.stage}
+											leyend="Peso"
+											value={items.weigth}
+											handleChange={handleChange}
 										/>
-										<br />
-										<input
-											defaultValue={items.date}
-											type="date"
+										<Inputs
 											name={'date:' + items.stage}
+											type="date"
+											leyend="Fecha real"
+											value={items.date}
 											onChange={(e) => {
 												if (items.stage === 'Levante') {
 													e.target.value = conditionalLevanteEdit(
@@ -93,6 +91,7 @@ export function Form({ info, uid, nacimiento }) {
 													);
 												}
 											}}
+											handleChange={handleChange}
 										/>
 									</div>
 								</>

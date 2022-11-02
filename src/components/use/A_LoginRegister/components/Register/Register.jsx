@@ -5,10 +5,12 @@ import { ValidationErrors } from '../../scripts/ValidationErrors';
 import { useAuth } from '../../../../../context/AuthContext';
 import swal from 'sweetalert';
 import { Inputs } from '../../../0-GeneralComp/1-Inputs/Inputs';
+import { useState } from 'react';
 
 export function Register() {
 	const { signup } = useAuth();
 	const navigate = useNavigate();
+	const [cnsST, setCNSST] = useState(true);
 
 	const handleSubmit = async (e) => {
 		try {
@@ -61,9 +63,22 @@ export function Register() {
 					}
 				}}
 			>
-				<div className={st.inpContEm}>
-					<h3>Correo electronico</h3>
-					<input name="email" type="text" /> @ucundinamarca.edu.co
+				<div className={cnsST ? st.inpContInc : st.inpCont}>
+					<h3 className={cnsST ? st.lblInac : st.lblAc}>Correo electronico</h3>
+					<input
+						id="email"
+						name="email"
+						type="text"
+						onFocus={() => {
+							setCNSST(false);
+						}}
+						onBlur={() => {
+							if (document.getElementById('email').value === '') {
+								setCNSST(true);
+							}
+						}}
+					/>
+					{cnsST ? <></> : <>@ucundinamarca.edu.co</>}
 				</div>
 
 				<Inputs
