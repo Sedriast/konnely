@@ -1,10 +1,10 @@
 import { ListUsers } from './ListUsers/ListUsers';
-import { Themes } from './Themes/Themes';
+import { UserData } from './UserData/UserData';
 
 export function Option({ op }) {
 	switch (op) {
 		case 0:
-			return <Themes />;
+			return <UserData />;
 		case 1:
 			return <ListUsers />;
 		default:

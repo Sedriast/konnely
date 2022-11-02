@@ -22,17 +22,16 @@
 
 /*Containers*/
 /*Master*/
-.themePanel {
-	width: fit-content;
+.container {
+	width: 100%;
+
 	height: fit-content;
 
-	padding: 2rem;
-	border-radius: 20px;
+	margin-top: 2rem;
 
 	display: flex;
-	align-content: center;
-	justify-content: space-evenly;
-	align-items: center;
+
+	justify-content: center;
 	flex-wrap: wrap;
 }
 /*Master*/
