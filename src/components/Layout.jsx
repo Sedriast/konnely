@@ -3,7 +3,7 @@ import app from '../components/firebase/credentials';
 
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
+import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
 import { useAuth } from '../context/AuthContext';
 import { ProtectedRoute } from './protectedRoute/ProtectedRoute';
@@ -25,42 +25,58 @@ import { RemovalTratament } from './firebase/funtions/AddInformation';
 import { DashBoard } from './use/C_PrimaryView/DashBoard';
 import { Record } from './use/C_Record/Record';
 import { NewRepro } from './use/F-Forms/NewReproData copy/NewRepro';
+import { getAuth, updateProfile } from 'firebase/auth';
 
 const db = getFirestore(app);
+export const auth = getAuth(app);
 
 export function Layout() {
 	const { user } = useAuth();
 
-	useEffect(() => {
-		if (user) {
-			let u = { theme: 0 };
-			const getData = async () => {
-				const query_ = query(collection(db, 'users'), where('uid', '==', user.uid));
-				const querySnapshot = await getDocs(query_);
-				querySnapshot.forEach((doc) => {
-					u = doc.data();
-				});
-				document
-					.getElementById('lay')
-					.style.setProperty('background-image', `url(${themesData[u.theme].theme})`);
-				document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
-				document.getElementById('lay').style.setProperty('background-size', 'cover');
-			};
-			const getTrataments = async () => {
-				const trataments = await getDocs(collection(db, 'trataments'));
-				trataments.forEach((doc) => {
-					if (
-						doc.data().state === 'Inactivo' &&
-						Date.now() - Date.parse(doc.data().removalDate) > 5259600000
-					) {
-						RemovalTratament({ uid: doc.data().uid, uidAudit: doc.data().uidAudit });
-					}
-				});
-			};
-			getData();
-			getTrataments();
-		}
-	}, [user]);
+    useEffect(() => {
+        if (user) {
+            let u = { theme: 0 };
+            const getData = async () => {
+                const query_ = query(collection(db, 'users'), where('uid', '==', user.uid));
+                const querySnapshot = await getDocs(query_);
+                querySnapshot.forEach((doc) => {
+                    u = doc.data();
+                });
+                document
+                    .getElementById('lay')
+                    .style.setProperty('background-image', `url(${themesData[u.theme].theme})`);
+                document.getElementById('lay').style.setProperty('background-repeat', 'no-repeat');
+                document.getElementById('lay').style.setProperty('background-size', 'cover');
+            };
+            const getTrataments = async () => {
+                const trataments = await getDocs(collection(db, 'trataments'));
+                trataments.forEach((doc) => {
+                    if (
+                        doc.data().state === 'Inactivo' &&
+                        Date.now() - Date.parse(doc.data().removalDate) > 5259600000
+                    ) {
+                        RemovalTratament({ uid: doc.data().uid, uidAudit: doc.data().uidAudit });
+                    }
+                });
+            };
+            async function profileUpdate() {
+                const docRef = doc(db, 'users', user.uid);
+                const docSnap = await getDoc(docRef);
+                if (docSnap.exists()) {
+                    await updateProfile(auth.currentUser, {
+                        photoURL: docSnap.data().photo,
+                    }).catch((error) => {
+                        console.log(error);
+                    });
+                } else {
+                    console.log('No such document!');
+                }
+            }
+            getData();
+            getTrataments();
+            profileUpdate();
+        }
+    }, [user]);
 
 	return (
 		<>
