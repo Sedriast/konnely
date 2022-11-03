@@ -110,6 +110,7 @@ export const EditInfoRabbit = (props) => {
 
 export const AddInfoProfile = (props) => {
     const funtionAddInfoProfile = async (datos) => {
+        console.log(datos);
         try {
             await setDoc(doc(db, 'users', datos.user), datos.data);
         } catch (error) {
@@ -278,6 +279,7 @@ export const EditImageAndInfoUser = (props) => {
         try {
             let auxiliar = [];
             if (datos.image.includes(',') && datos.photoAux === photo) {
+                console.log('Hola');
                 const Ref = ref(storage, datos.uid);
                 auxiliar = datos.image.split(',');
                 await uploadString(Ref, auxiliar[1], 'base64');
@@ -293,10 +295,6 @@ export const EditImageAndInfoUser = (props) => {
                 datos.photo = urlDescarga;
                 delete datos.image;
             }
-            if (!datos.email.includes('@ucundinamarca.edu.co')) {
-                datos.email = datos.email + '@ucundinamarca.edu.co';
-            }
-            console.log(datos.perfil, datos.uid);
             if (datos.perfil === datos.uid) {
                 console.log(datos.photo);
                 await updateProfile(auth.currentUser, {

@@ -41,10 +41,10 @@ export function Form() {
                     photoAux: userData.info.photo,
                     image: image,
                 });
+                navigate('/vitaeslist');
                 if (user.displayName === userData.info.user) {
                     setTimeout(reloadPage, 1000);
                 }
-                navigate('/vitaeslist');
             }
         });
     };
