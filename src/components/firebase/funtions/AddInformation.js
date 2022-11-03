@@ -285,18 +285,18 @@ export const EditImageAndInfoUser = (props) => {
                 datos.photo = urlDescarga;
                 delete datos.image;
             } else if (datos.image.includes(',') && datos.photoAux !== photo) {
-                const RefUno = ref(storage, datos.uid);
-                await deleteObject(RefUno);
+                const Ref = ref(storage, datos.uid);
+                await deleteObject(Ref);
                 auxiliar = datos.image.split(',');
-                const RefDos = ref(storage, datos.uid);
-                await uploadString(RefDos, auxiliar[1], 'base64');
-                const urlDescarga = await getDownloadURL(RefDos);
+                await uploadString(Ref, auxiliar[1], 'base64');
+                const urlDescarga = await getDownloadURL(Ref);
                 datos.photo = urlDescarga;
                 delete datos.image;
             }
             if (!datos.email.includes('@ucundinamarca.edu.co')) {
                 datos.email = datos.email + '@ucundinamarca.edu.co';
             }
+            console.log(datos.perfil, datos.uid);
             if (datos.perfil === datos.uid) {
                 console.log(datos.photo);
                 await updateProfile(auth.currentUser, {
@@ -307,7 +307,6 @@ export const EditImageAndInfoUser = (props) => {
                 });
             }
             delete datos.perfil;
-            delete datos.perfilOld;
             delete datos.image;
             delete datos.photoAux;
             await updateDoc(doc(db, 'users', datos.uid), datos);
