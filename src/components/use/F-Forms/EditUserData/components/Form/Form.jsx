@@ -19,188 +19,191 @@ import { useAuth } from '../../../../../../context/AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function Form() {
-	const { user } = useAuth();
-	const navigate = useNavigate();
-	const [image, setImage] = useState(null);
-	const [image_, setImage_] = useState(null);
-	const [auxImage_, setAuxImage_] = useState(null);
-	const [isOpenModal, openModal, closeModal] = useModal(false);
-	const [cnsST, setCNSST] = useState(false);
-	const hf = () => {};
-	const handleSubmit = (aux) => {
-		swal({
-			title:
-				'Despues cambiar la información de este conejo, se debe dirigir a la lista general para ver los cambios. ¿Desea actualizar?',
-			icon: 'warning',
-			buttons: ['No', 'Si'],
-		}).then((respuesta) => {
-			if (respuesta) {
-				EditImageAndInfoUser({
-					...aux,
-					perfil: user.uid,
-					uid: userData.info.uid,
-					photoAux: userData.info.photo,
-					image: image,
-				});
-				if (user.displayName === userData.info.user) {
-					setTimeout(reloadPage, 1000);
-				}
-				navigate('/vitaeslist');
-			}
-		});
-	};
-	function reloadPage() {
-		window.location.reload(true);
-	}
-	useEffect(() => {
-		if (userData.info !== null) {
-			setImage_(userData.info.photo);
-		} else {
-			navigate('/vitaeslist');
-			return null;
-		}
-	}, [navigate]);
-	return (
-		<>
-			<form
-				onSubmit={(e) => {
-					e.preventDefault();
-					let aux = {};
-					for (const element of e.target) {
-						if (element.name !== '') {
-							aux = { ...aux, [element.name]: element.value };
-						}
-					}
-					handleSubmit(aux);
-				}}
-			>
-				<div className={st.panelContainer}>
-					<div className={st.panelInpImg}>
-						<div className={st.panelImage}>
-							<Inputs
-								type="file"
-								HaveImage={(e) => {
-									setImage(e);
-									if (e === null) {
-										setImage_(null);
-										setAuxImage_(null);
-									}
-								}}
-								preeview={image_}
-							/>
-							<Modal isOpen={isOpenModal} closeModal={closeModal}>
-								{isOpenModal && (
-									<>
-										<Webcam audio={false} height={250} width={330} screenshotFormat="image/jpeg">
-											{({ getScreenshot }) => (
-												<button
-													onClick={(e) => {
-														e.preventDefault();
-														const imageSrc = getScreenshot();
-														setAuxImage_(imageSrc);
-													}}
-												>
-													Capturar foto
-												</button>
-											)}
-										</Webcam>
-										<img src={auxImage_} alt=""></img>
-										<button
-											onClick={(e) => {
-												e.preventDefault();
-												setImage_(auxImage_);
-												closeModal();
-											}}
-										>
-											Aceptar
-										</button>
-									</>
-								)}
-							</Modal>
-						</div>
-						<br />
-						<br />
-						<div className={st.btnC}>
-							<Buttons
-								direction="bottom"
-								label="Cámara"
-								btnIconText={faCamera}
-								btnClick={openModal}
-								route="#"
-							/>
-						</div>
-					</div>
-					<br />
-					<br />
-					<div className={st.panel}>
-						<div className={cnsST ? st.inpContInc : st.inpCont}>
-							<h3 className={cnsST ? st.lblInac : st.lblAc}>Correo electronico</h3>
-							<input
-								id="email"
-								name="email"
-								type="text"
-								defaultValue={userData.info.user}
-								onFocus={() => {
-									setCNSST(false);
-								}}
-								onBlur={() => {
-									if (document.getElementById('email').value === '') {
-										setCNSST(true);
-									}
-								}}
-							/>
-							{cnsST ? <></> : <>@ucundinamarca.edu.co</>}
-						</div>
-						<Inputs
-							name="user"
-							type="text"
-							leyend="Nombre de usuario"
-							value={userData.info.user}
-							handleChange={hf}
-						/>
-						<Inputs
-							name="code"
-							type="number"
-							leyend="Id institucional"
-							min="1"
-							pattern="^[0-9]+"
-							value={userData.info.code}
-							handleChange={hf}
-						/>
-						<Inputs
-							name="names"
-							type="text"
-							leyend="Nombres"
-							value={userData.info.names}
-							handleChange={hf}
-						/>
-						<Inputs
-							name="lastNames"
-							type="text"
-							leyend="Apellidos"
-							value={userData.info.lastNames}
-							handleChange={hf}
-						/>
-						<Inputs
-							name="phone"
-							type="number"
-							leyend="Número telefónico"
-							min="1"
-							pattern="^[0-9]+"
-							value={userData.info.phone}
-							handleChange={hf}
-						/>
-					</div>
+    const { user } = useAuth();
+    const navigate = useNavigate();
+    const [image, setImage] = useState(null);
+    const [image_, setImage_] = useState(null);
+    const [auxImage_, setAuxImage_] = useState(null);
+    const [isOpenModal, openModal, closeModal] = useModal(false);
+    const [cnsST, setCNSST] = useState(false);
+    const hf = () => {};
+    const handleSubmit = (aux) => {
+        swal({
+            title: 'Despues cambiar la información de este conejo, se debe dirigir a la lista general para ver los cambios. ¿Desea actualizar?',
+            icon: 'warning',
+            buttons: ['No', 'Si'],
+        }).then((respuesta) => {
+            if (respuesta) {
+                EditImageAndInfoUser({
+                    ...aux,
+                    perfil: user.uid,
+                    uid: userData.info.uid,
+                    photoAux: userData.info.photo,
+                    image: image,
+                });
+                if (user.displayName === userData.info.user) {
+                    setTimeout(reloadPage, 1000);
+                }
+                navigate('/vitaeslist');
+            }
+        });
+    };
+    function reloadPage() {
+        window.location.reload(true);
+    }
+    useEffect(() => {
+        if (userData.info !== null) {
+            setImage_(userData.info.photo);
+        } else {
+            navigate('/vitaeslist');
+            return null;
+        }
+    }, [navigate]);
+    return (
+        <>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    let aux = {};
+                    for (const element of e.target) {
+                        if (element.name !== '') {
+                            aux = { ...aux, [element.name]: element.value };
+                        }
+                    }
+                    handleSubmit(aux);
+                }}>
+                <div className={st.panelContainer}>
+                    <div className={st.panelInpImg}>
+                        <div className={st.panelImage}>
+                            <Inputs
+                                type='file'
+                                HaveImage={(e) => {
+                                    setImage(e);
+                                    if (e === null) {
+                                        setImage_(null);
+                                        setAuxImage_(null);
+                                    }
+                                }}
+                                preeview={image_}
+                            />
+                            <Modal isOpen={isOpenModal} closeModal={closeModal}>
+                                {isOpenModal && (
+                                    <>
+                                        <Webcam
+                                            audio={false}
+                                            height={250}
+                                            width={330}
+                                            screenshotFormat='image/jpeg'>
+                                            {({ getScreenshot }) => (
+                                                <button
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        const imageSrc = getScreenshot();
+                                                        setAuxImage_(imageSrc);
+                                                    }}>
+                                                    Capturar foto
+                                                </button>
+                                            )}
+                                        </Webcam>
+                                        <img src={auxImage_} alt=''></img>
+                                        <button
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                setImage_(auxImage_);
+                                                closeModal();
+                                            }}>
+                                            Aceptar
+                                        </button>
+                                    </>
+                                )}
+                            </Modal>
+                        </div>
+                        <br />
+                        <br />
+                        <div className={st.btnC}>
+                            <Buttons
+                                direction='bottom'
+                                label='Cámara'
+                                btnIconText={faCamera}
+                                btnClick={openModal}
+                                route='#'
+                            />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div className={st.panel}>
+                        <div className={cnsST ? st.inpContInc : st.inpCont}>
+                            <h3 className={cnsST ? st.lblInac : st.lblAc}>Correo electronico</h3>
+                            <h1>{userData.info.email}</h1>
+                            {/* <input
+                                id='email'
+                                name='email'
+                                type='text'
+                                defaultValue={userData.info.user}
+                                onFocus={() => {
+                                    setCNSST(false);
+                                }}
+                                onBlur={() => {
+                                    if (document.getElementById('email').value === '') {
+                                        setCNSST(true);
+                                    }
+                                }}
+                            />
+                            {cnsST ? <></> : <>@ucundinamarca.edu.co</>} */}
+                        </div>
+                        {/* <Inputs
+                            name='user'
+                            type='text'
+                            leyend='Nombre de usuario'
+                            value={userData.info.user}
+                            handleChange={hf}
+                        /> */}
+                        <h3 className={cnsST ? st.lblInac : st.lblAc}>Nombre de usuario</h3>
+                        <h1>{userData.info.user}</h1>
+                        <Inputs
+                            name='code'
+                            type='number'
+                            leyend='Id institucional'
+                            min='1'
+                            pattern='^[0-9]+'
+                            value={userData.info.code}
+                            handleChange={hf}
+                        />
+                        <Inputs
+                            name='names'
+                            type='text'
+                            leyend='Nombres'
+                            value={userData.info.names}
+                            handleChange={hf}
+                        />
+                        <Inputs
+                            name='lastNames'
+                            type='text'
+                            leyend='Apellidos'
+                            value={userData.info.lastNames}
+                            handleChange={hf}
+                        />
+                        <Inputs
+                            name='phone'
+                            type='number'
+                            leyend='Número telefónico'
+                            min='1'
+                            pattern='^[0-9]+'
+                            value={userData.info.phone}
+                            handleChange={hf}
+                        />
+                    </div>
 
-					<div className={st.submit}>
-						<button type="submit">
-							<figure title="Guardar cambios" tooltip-dir="top">
-								<FontAwesomeIcon icon={faFloppyDisk} />
-							</figure>
-						</button>
-					</div>
-				</div>
-			</form>
-		</>
-	);
+                    <div className={st.submit}>
+                        <button type='submit'>
+                            <figure title='Guardar cambios' tooltip-dir='top'>
+                                <FontAwesomeIcon icon={faFloppyDisk} />
+                            </figure>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </>
+    );
 }
