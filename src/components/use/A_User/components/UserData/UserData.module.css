@@ -26,67 +26,67 @@
 /*Containers*/
 /*Master*/
 .profilePhoto {
-	position: relative;
+  position: relative;
 
-	width: 10rem;
-	height: 10rem;
+  width: 10rem;
+  height: 10rem;
 
-	margin: 1rem;
+  margin: 1rem;
 
-	background: rgba(0, 0, 0, 0.5);
-	background-size: cover;
+  background: rgba(0, 0, 0, 0.5);
+  background-size: cover;
 
-	border-radius: 100%;
-	border: 1px solid black;
+  border-radius: 100%;
+  border: 1px solid black;
 
-	overflow: hidden;
+  overflow: hidden;
 }
 .profilePhoto img {
-	width: -webkit-fill-available;
-	height: -webkit-fill-available;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
 }
 .userData {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 .btnP {
-	width: 80%;
+  width: 80%;
 
-	display: flex;
-	justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 .btnP button {
-	width: 3rem;
-	height: 3rem;
+  width: 3rem;
+  height: 3rem;
 
-	background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
 
-	cursor: pointer;
+  cursor: pointer;
 
-	font-size: 30px;
+  font-size: 30px;
 
-	border-radius: 100%;
-	border: 2px solid black;
+  border-radius: 100%;
+  border: 2px solid black;
 }
 .paragraph {
-	width: 80%;
-	height: 55%;
+  width: 80%;
+  height: 55%;
 
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 .paragraph div {
-	font-size: 12.5px;
-	color: #fff;
+  font-size: 20px;
+  color: #fff;
 }
 .paragraph p {
-	text-align: center;
-	font-size: 12.5px;
-	color: #fff;
+  text-align: center;
+  font-size: 12.5px;
+  color: #fff;
 }
 /*Master*/
 /*Sub*/
