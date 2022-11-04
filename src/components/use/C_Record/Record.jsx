@@ -21,18 +21,18 @@ export function Record() {
   };
   const dataViewOptions = [
     {
-      id: 0,
-      state: fal,
-      icon: faFileInvoice,
-      path: "#",
-      label: "Facturación",
-    },
-    {
       id: 1,
       state: tru,
       icon: faFileWaveform,
       path: "#",
       label: "Cambios",
+    },
+    {
+      id: 0,
+      state: fal,
+      icon: faFileInvoice,
+      path: "#",
+      label: "Facturación",
     },
   ];
 
