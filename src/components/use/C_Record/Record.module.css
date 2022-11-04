@@ -1,10 +1,42 @@
 .optionContainer {
-	width: calc(96% - 6rem);
+  width: calc(94% - 6rem);
 
-	margin: 1% 0;
+  margin: 1% 0;
 
-	border-radius: 10px;
+  border-radius: 10px;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.cards {
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1rem;
+
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 700px) {
+  .optionContainer {
+    width: calc(99% - 3rem);
+    height: calc(92% - 3rem);
+
+    margin: 1% 0;
+
+    overflow: hidden;
+  }
+  .cards {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1rem;
+
+    justify-content: center;
+    align-items: center;
+  }
 }
