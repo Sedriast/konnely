@@ -1,13 +1,13 @@
 import {
-	faGripVertical,
-	faBarcode,
-	faFileInvoice,
-	faUsers,
-	faWrench,
-	faXmark,
-	faPlus,
-	faPersonWalkingDashedLineArrowRight,
-	faHouse,
+    faGripVertical,
+    faBarcode,
+    faFileInvoice,
+    faUsers,
+    faWrench,
+    faXmark,
+    faPlus,
+    faPersonWalkingDashedLineArrowRight,
+    faHouse,
 } from '@fortawesome/free-solid-svg-icons';
 
 /*##################################################################################|
@@ -16,10 +16,10 @@ import {
 |																					|
 ####################################################################################*/
 export const newTreats = {
-	id: 0,
-	icon: faXmark,
-	path: '#',
-	label: 'Cancelar',
+    id: 0,
+    icon: faXmark,
+    path: '#',
+    label: 'Cancelar',
 };
 /*##################################################################################|
 |																					|
@@ -27,18 +27,18 @@ export const newTreats = {
 |																					|
 ####################################################################################*/
 export const viewsListOptions = [
-	{
-		id: 0,
-		icon: faXmark,
-		path: '#',
-		label: 'Cancelar',
-	},
-	{
-		id: 1,
-		icon: faPlus,
-		path: '#',
-		label: 'Nuevo conejo',
-	},
+    {
+        id: 0,
+        icon: faXmark,
+        path: '#',
+        label: 'Cancelar',
+    },
+    {
+        id: 1,
+        icon: faPlus,
+        path: '#',
+        label: 'Nuevo conejo',
+    },
 ];
 /*###################################################################################
 |																					|
@@ -46,36 +46,36 @@ export const viewsListOptions = [
 |																					|
 ####################################################################################*/
 export const optionsData = [
-	{
-		id: 0,
-		icon: faWrench,
-		label: 'Configuración',
-	},
-	{
-		id: 1,
-		icon: faUsers,
-		label: 'Administrar usuarios',
-	},
+    {
+        id: 0,
+        icon: faWrench,
+        label: 'Configuración',
+    },
+    {
+        id: 1,
+        icon: faUsers,
+        label: 'Administrar usuarios',
+    },
 ];
 export const optionsDataUser = [
-	{
-		id: 0,
-		icon: faWrench,
-		label: 'Configuración',
-	},
+    {
+        id: 0,
+        icon: faWrench,
+        label: 'Configuración',
+    },
 ];
 
 export const optionsDataAdmin = [
-	{
-		id: 0,
-		icon: faWrench,
-		label: 'Configuración',
-	},
-	{
-		id: 1,
-		icon: faUsers,
-		label: 'Administrar usuarios',
-	},
+    {
+        id: 0,
+        icon: faWrench,
+        label: 'Configuración',
+    },
+    {
+        id: 1,
+        icon: faUsers,
+        label: 'Administrar usuarios',
+    },
 ];
 /*###################################################################################
 |																					|
@@ -83,24 +83,24 @@ export const optionsDataAdmin = [
 |																					|
 ####################################################################################*/
 export const generalOptions = [
-	{
-		id: 0,
-		icon: faBarcode,
-		path: '/dashboard',
-		label: 'Estadísticas',
-	},
-	{
-		id: 1,
-		icon: faGripVertical,
-		path: '/vitaeslist',
-		label: 'Hojas de vida',
-	},
-	{
-		id: 2,
-		icon: faFileInvoice,
-		path: '/reco',
-		label: 'Historial',
-	},
+    {
+        id: 0,
+        icon: faBarcode,
+        path: '/dashboard',
+        label: 'Estadísticas',
+    },
+    {
+        id: 1,
+        icon: faGripVertical,
+        path: '/vitaeslist',
+        label: 'Hojas de vida',
+    },
+    {
+        id: 2,
+        icon: faFileInvoice,
+        path: '/reco',
+        label: 'Historial',
+    },
 ];
 /*###################################################################################
 |																					|
@@ -108,16 +108,16 @@ export const generalOptions = [
 |																					|
 ####################################################################################*/
 export const optionsAud = [
-	{
-		id: 0,
-		icon: faWrench,
-		label: 'Configuración',
-	},
-	{
-		id: 1,
-		icon: faUsers,
-		label: 'Administrar usuarios',
-	},
+    {
+        id: 0,
+        icon: faWrench,
+        label: 'Configuración',
+    },
+    {
+        id: 1,
+        icon: faUsers,
+        label: 'Administrar usuarios',
+    },
 ];
 /*###################################################################################
 |																					|
@@ -125,16 +125,16 @@ export const optionsAud = [
 |																					|
 ####################################################################################*/
 export const generalOptionsUser = [
-	{
-		id: 0,
-		icon: faHouse,
-		path: '/vitaeslist',
-		label: 'Principal',
-	},
-	{
-		id: 1,
-		icon: faPersonWalkingDashedLineArrowRight,
-		path: '#',
-		label: 'Cerrar sesión',
-	},
+    {
+        id: 0,
+        icon: faHouse,
+        path: '/vitaeslist',
+        label: 'Principal',
+    },
+    {
+        id: 1,
+        icon: faPersonWalkingDashedLineArrowRight,
+        path: '#',
+        label: 'Cerrar sesión',
+    },
 ];

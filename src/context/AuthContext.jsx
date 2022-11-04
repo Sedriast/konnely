@@ -31,25 +31,25 @@ export function AuthProvider({ children }) {
 
     const logout = () => signOut(auth);
     const resetPassword = async (email) => sendPasswordResetEmail(auth, email);
-	const verificarEmail = async (usuario) => sendEmailVerification(usuario);
+    const verificarEmail = async (usuario) => sendEmailVerification(usuario);
     const signup = async (email, idIns, userName, name, lastName, noTel, password) => {
         await createUserWithEmailAndPassword(auth, email, password).then(() => {
-            AddInfoProfile({
-                user: auth.currentUser.uid,
-                data: {
-                    uid: auth.currentUser.uid,
-                    names: name,
-                    lastNames: lastName,
-                    code: idIns,
-                    phone: noTel,
-                    user: userName,
-                    email: auth.currentUser.email,
-                    rol: 'usuario',
-                    theme: tema,
-                    photo: imagenPerfil,
-                },
-            });
             verificarEmail(auth.currentUser);
+        });
+        AddInfoProfile({
+            user: auth.currentUser.uid,
+            data: {
+                uid: auth.currentUser.uid,
+                names: name,
+                lastNames: lastName,
+                code: idIns,
+                phone: noTel,
+                user: userName,
+                email: auth.currentUser.email,
+                rol: 'usuario',
+                theme: tema,
+                photo: imagenPerfil,
+            },
         });
         updateProfile(auth.currentUser, {
             displayName: userName,
@@ -57,6 +57,7 @@ export function AuthProvider({ children }) {
         }).catch((error) => {
             notification_err(error, 'error', 'aceptar');
         });
+
         if (!auth.currentUser.emailVerified) {
             await logout();
         }
