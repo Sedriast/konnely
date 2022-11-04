@@ -1,15 +1,9 @@
-import st from "../Record.module.css";
-
-import { Cards } from "./Cards/Cards";
+import { Panel_ } from "./Panel/Panel_";
 
 export function Option({ op }) {
   switch (op) {
     case false:
-      return (
-        <div className={st.cards}>
-          <Cards />
-        </div>
-      );
+      return <Panel_ />;
     case true:
       return <></>;
     default:

@@ -8,7 +8,7 @@ import { useState } from "react";
 import { generalOptions } from "../0-GeneralComp/0-StaticData/options";
 import { LeftBottomMenu } from "../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu";
 import { RigthTopButtons } from "../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons";
-import { Cards } from "./components/Cards/Cards";
+import { Cards } from "./components/Panel/component/Cards/Cards";
 import { Option } from "./components/Option";
 
 export function Record() {
