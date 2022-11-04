@@ -16,10 +16,16 @@
 }
 .one,
 .two {
+  width: 40%;
+  height: 50%;
+
   border-radius: 10px;
-  height: 40%;
+
+  margin-left: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
+
+  background: rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.5);
 }
 
