@@ -51,11 +51,12 @@ export function Vitae() {
                     <br />
                     <br />
                     <br />
-                    <PanelData1 />
-                    {console.log(LableStadics(stadics))}
-                    {console.log(LivesStadics(stadics))}
-                    {console.log(DeathStadics(stadics))}
-                    {console.log(HomogenStadics(stadics))}
+                    <PanelData1
+                        labels={LableStadics(stadics)}
+                        lives={LivesStadics(stadics)}
+                        deaths={DeathStadics(stadics)}
+                        homogen={HomogenStadics(stadics)}
+                    />
                 </div>
             )}
         </>
