@@ -1,65 +1,72 @@
 .optionContainer {
-	width: calc(97% - 3rem);
+  width: calc(97% - 3rem);
 
-	margin: 1% 0;
+  margin: 1% 0;
 
-	border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .panelA {
-	width: 40%;
-	height: fit-content;
+  height: inherit;
 
-	border-radius: 10px;
-	margin: 0 0 0 3rem;
+  margin-left: 5%;
+
+  width: 45%;
 }
 .one,
 .two {
-	border-radius: 10px;
-	height: 40%;
-	margin-bottom: 1rem;
-	padding: 1rem;
-	background: rgba(255, 255, 255, 0.5);
+  width: 100%;
+
+  margin: 1rem 0;
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.5);
 }
 
 @media only screen and (max-width: 700px) {
-	.optionContainer {
-		width: calc(99% - 3rem);
-		height: calc(92% - 3rem);
+  .optionContainer {
+    width: 98%;
+    height: calc(92% - 3rem);
 
-		margin: 1% 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .one,
+  .two {
+    width: 100%;
 
-		overflow: hidden;
-	}
-	.panelA {
-		width: 100%;
-		height: fit-content;
-		border-radius: 10px;
-	}
-	.one,
-	.two {
-		border-radius: 10px;
-		height: 40%;
-		margin-bottom: 1rem;
-		padding: 1rem;
-		background: rgba(255, 255, 255, 0.5);
-	}
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.5);
+  }
 }
 @media only screen and (max-width: 900px) {
-	.panelA {
-		width: 85%;
-		height: fit-content;
+  .optionContainer {
+    width: 98%;
+    height: calc(92% - 3rem);
 
-		border-radius: 10px;
-	}
-	.one,
-	.two {
-		border-radius: 10px;
-		height: 40%;
-		margin-bottom: 1rem;
-		padding: 1rem;
-		background: rgba(255, 255, 255, 0.5);
-	}
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .panelA {
+    width: 100%;
+    height: inherit;
+
+    margin: 2rem 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .one,
+  .two {
+    width: 100%;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.5);
+  }
 }

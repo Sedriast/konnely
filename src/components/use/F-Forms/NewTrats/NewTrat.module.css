@@ -1,47 +1,43 @@
 .optionContainer {
-	width: calc(99% - 3rem);
-	width: 89%;
+  width: 100%;
+  height: 100%;
 
-	padding: 0 0 0 2rem;
-	border-radius: 10px;
-
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .leftMenu {
-	width: 3rem;
-	height: 100%;
+  position: fixed;
 
-	margin-top: 1rem;
+  left: 0;
+
+  width: 3rem;
+  height: 100%;
+
+  margin-top: 1rem;
 }
 .btnBack {
-	width: 3rem;
-	height: 3rem;
+  width: 2rem;
+  height: 2rem;
 
-	font-size: 30px;
+  font-size: 30px;
 
-	background: rgba(78, 75, 72, 0.9);
+  background: rgba(0, 0, 0, 0.4);
 
-	border-radius: 100%;
+  border-radius: 100%;
 
-	cursor: pointer;
+  cursor: pointer;
 
-	margin-left: 1rem;
+  margin-left: 1rem;
 }
 .btnBack div {
-	font-size: 25px;
+  font-size: 25px;
 }
 @media (max-width: 700px) {
-	.optionContainer {
-		width: calc(89% - 3rem);
-		height: 98%;
+  .optionContainer {
+    width: 100%;
+    height: 100%;
 
-		margin-top: auto;
-		margin-bottom: auto;
-
-		border-radius: 10px;
-
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }

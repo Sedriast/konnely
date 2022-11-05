@@ -1,23 +1,22 @@
 .optionContainer {
-	width: calc(93% - 6rem);
-	height: 98%;
+  width: calc(93% - 6rem);
+  height: 98%;
 
-	margin: 1% 0;
-	margin-right: 3%;
+  margin: 1% 0;
+  margin-right: 3%;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 700px) {
-	.optionContainer {
-		width: calc(99% - 3rem);
-		height: calc(92% - 3rem);
+  .optionContainer {
+    width: 83%;
+    height: calc(92% - 3rem);
 
-		margin: 1%;
-		margin-left: 1.3rem;
+    margin-left: auto;
 
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }

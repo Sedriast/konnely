@@ -1,0 +1,80 @@
+.cards {
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1rem;
+
+  justify-content: center;
+  align-items: center;
+}
+.panelSearchBar {
+  position: fixed;
+
+  width: 80%;
+  height: 2rem;
+
+  margin-top: 0.4rem;
+
+  display: flex;
+}
+.panelSearchBar form {
+  width: 100%;
+  display: flex;
+}
+.panelSearchBar form input {
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 0 1rem;
+
+  width: auto;
+
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.panelSearchBar form input {
+  width: 100%;
+}
+.btnSearch {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  padding: 0 0.5rem;
+
+  cursor: pointer;
+
+  background: white;
+
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+@media only screen and (max-width: 700px) {
+  .panelSearchBar {
+    position: fixed;
+
+    left: 1.5rem;
+
+    width: 70%;
+    height: 2rem;
+
+    margin-top: 0.4rem;
+
+    display: flex;
+  }
+  .cards {
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1rem;
+
+    justify-content: center;
+    align-items: center;
+  }
+}
