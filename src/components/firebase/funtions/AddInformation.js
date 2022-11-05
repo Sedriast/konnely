@@ -273,13 +273,13 @@ export const UpdateReproductiveCycle = (props) => {
 };
 
 export const EditImageAndInfoUser = (props) => {
+    console.log({ props });
     const funtionEditImageAndInfoUser = async (datos) => {
         let photo =
             'https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/ImagenDeUsuario.png?alt=media&token=e4b0499b-1ff2-42b3-93f9-e95d11533536';
         try {
             let auxiliar = [];
             if (datos.image.includes(',') && datos.photoAux === photo) {
-                console.log('Hola');
                 const Ref = ref(storage, datos.uid);
                 auxiliar = datos.image.split(',');
                 await uploadString(Ref, auxiliar[1], 'base64');
@@ -296,7 +296,6 @@ export const EditImageAndInfoUser = (props) => {
                 delete datos.image;
             }
             if (datos.perfil === datos.uid) {
-                console.log(datos.photo);
                 await updateProfile(auth.currentUser, {
                     displayName: datos.user,
                     photoURL: datos.photo,

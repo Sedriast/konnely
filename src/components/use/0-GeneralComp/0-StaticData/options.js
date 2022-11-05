@@ -60,8 +60,6 @@ export const optionsData = [
 export const optionsDataUser = [
     {
         id: 0,
-        icon: faWrench,
-        label: 'Configuración',
     },
 ];
 
