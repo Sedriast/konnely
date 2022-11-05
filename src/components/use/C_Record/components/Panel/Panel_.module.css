@@ -12,8 +12,13 @@
 }
 .panelSearchBar {
   position: fixed;
+
+  width: 80%;
+  height: 2rem;
+
+  margin-top: 0.4rem;
+
   display: flex;
-  margin: 0 0 2rem 0;
 }
 .panelSearchBar form {
   width: 100%;
@@ -46,4 +51,30 @@
   border-right: 1px solid black;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+}
+@media only screen and (max-width: 700px) {
+  .panelSearchBar {
+    position: fixed;
+
+    left: 1.5rem;
+
+    width: 70%;
+    height: 2rem;
+
+    margin-top: 0.4rem;
+
+    display: flex;
+  }
+  .cards {
+    height: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, 350px);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1rem;
+
+    justify-content: center;
+    align-items: center;
+  }
 }

@@ -3,64 +3,70 @@
 
   margin: 1% 0;
 
-  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
 
   overflow-y: scroll;
   overflow-x: hidden;
 }
 .panelA {
-  width: 100%;
-  height: 80%;
+  height: inherit;
 
-  border-radius: 10px;
+  margin-left: 5%;
+
+  width: 45%;
 }
 .one,
 .two {
-  width: 40%;
-  height: 50%;
+  width: 100%;
 
+  margin: 1rem 0;
   border-radius: 10px;
 
-  margin-left: 1rem;
-  margin-bottom: 1rem;
-  padding: 1rem;
-
-  background: rgba(255, 255, 255, 0.5);
   background: rgba(255, 255, 255, 0.5);
 }
 
 @media only screen and (max-width: 700px) {
   .optionContainer {
-    width: 100%;
+    width: 98%;
     height: calc(92% - 3rem);
-
-    margin: 1% 0;
 
     overflow-y: scroll;
     overflow-x: hidden;
   }
   .one,
   .two {
+    width: 100%;
+
     border-radius: 10px;
-    height: 40%;
-    margin-bottom: 1rem;
-    padding: 1rem;
+
     background: rgba(255, 255, 255, 0.5);
   }
 }
 @media only screen and (max-width: 900px) {
+  .optionContainer {
+    width: 98%;
+    height: calc(92% - 3rem);
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
   .panelA {
     width: 100%;
-    height: 80%;
+    height: inherit;
 
-    border-radius: 10px;
+    margin: 2rem 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   .one,
   .two {
+    width: 100%;
+
     border-radius: 10px;
-    height: 45%;
-    margin-bottom: 1rem;
-    padding: 1rem;
+
     background: rgba(255, 255, 255, 0.5);
   }
 }
