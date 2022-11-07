@@ -15,8 +15,6 @@
 
 
 
-
-
 */
 
 /*Const*/
@@ -24,35 +22,62 @@
 
 /*Containers*/
 /*Master*/
-
 .container {
-  position: fixed;
-
-  display: flex;
-  flex-direction: row-reverse;
-
   width: 100%;
   height: 100%;
+
+  background: rgba(0, 0, 0, 0.1);
+  background-size: cover;
+
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow: hidden;
+}
+.container hr {
+  width: 90%;
+  height: 3px;
+  background: white;
 }
 /*Master*/
 /*Sub*/
-.initContainer {
+.panelId {
   width: 100%;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.componentContainer {
-  width: 100%;
-  height: 100%;
 
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
+.idName {
+  width: 50%;
+
+  padding: 2px;
+  font-size: 1.5rem;
+
+  color: white;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+}
+.titles {
+  text-align: end;
+  font-size: 11px;
+  color: rgba(251, 225, 34, 1);
+  margin-right: 0.3rem;
+}
+.ask {
+  text-align: start;
+  font-size: 11px;
+  color: rgb(255, 255, 255);
+}
+
 /*Sub*/
 /*Button´s container*/
 
@@ -75,15 +100,7 @@
 /*Use*/
 
 /*Resizing */
-@media only screen and (max-width: 700px) {
-  .componentContainer {
-    width: 100%;
-    height: 100%;
 
-    display: flex;
-    justify-content: center;
-  }
-}
 /*Resizing */
 
 /*Animations*/

@@ -1,0 +1,215 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+
+
+*/
+
+/*Const*/
+
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+  width: auto;
+  height: 100%;
+
+  padding: 0px 1rem;
+  border-radius: 20px;
+
+  visibility: visible;
+  transition: visibility 500ms ease-in;
+}
+
+/*Master*/
+/*Sub*/
+.panelCards {
+  height: 100%;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.cards {
+  height: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-rows: repeat(auto-fill, 260px);
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 2rem;
+
+  justify-content: center;
+  align-items: center;
+}
+.panelSearchBar {
+  position: fixed;
+
+  width: 80%;
+
+  display: flex;
+  margin: 1rem 0 2rem 0;
+}
+.panelSearchBar form {
+  width: 100%;
+  display: flex;
+}
+.panelSearchBar form input {
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+  padding: 0 1rem;
+
+  width: auto;
+
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.panelSearchBar form input {
+  width: 100%;
+}
+.btnSearch {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  padding: 0 0.5rem;
+
+  cursor: pointer;
+
+  background: white;
+
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.cards * {
+  text-decoration: none;
+}
+.male {
+  width: 2rem;
+  height: 2rem;
+
+  margin: 0 0.2rem;
+
+  border-radius: 100%;
+  border: 1px solid black;
+
+  background: rgb(255, 255, 255);
+}
+.female {
+  width: 2rem;
+  height: 2rem;
+
+  margin: 0 0.2rem;
+
+  border-radius: 100%;
+  border: 1px solid black;
+
+  background: rgb(255, 255, 255);
+}
+.filter {
+  display: flex;
+}
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 100%;
+    height: 100%;
+
+    margin-left: auto;
+
+    visibility: visible;
+    transition: visibility 500ms ease-in;
+  }
+  .cards {
+    height: 100%;
+
+    margin: 3rem 0 0 0;
+
+    grid-template-columns: repeat(auto-fill, 284px);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1rem;
+
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .panelCards {
+    height: 100%;
+  }
+  .panelSearchBar {
+    position: fixed;
+
+    width: 75%;
+
+    left: 1rem;
+
+    display: flex;
+    margin: 0.4rem 0 2rem 0;
+  }
+  .panelSearchBar form {
+    width: 100%;
+    display: flex;
+  }
+  .panelSearchBar form input {
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    padding: 0 1rem;
+
+    width: auto;
+
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+  .panelSearchBar form input {
+    width: 60%;
+  }
+}
+/*Resizing */
+
+/*Animations*/
+
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+
+/*Master*/
+/*Other´s Components */
