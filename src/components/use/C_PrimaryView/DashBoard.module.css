@@ -63,11 +63,9 @@
   }
   .panelA {
     width: 90%;
-    height: 95%;
+    height: 80%;
 
-    margin-left: 5%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 
     display: flex;
     flex-wrap: wrap;
