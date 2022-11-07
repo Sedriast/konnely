@@ -25,10 +25,12 @@ export function Form() {
     const [image_, setImage_] = useState(null);
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
-    const hf = () => {};
+    const hf = () => {
+        console.log('Hola');
+    };
     const handleSubmit = (aux) => {
         swal({
-            title: 'Despues cambiar la información de este conejo, se debe dirigir a la lista general para ver los cambios. ¿Desea actualizar?',
+            title: 'Despues actualizar la información de este usuario, se debe recargar la aplicación para poder observar los cambios. ¿Desea realizar esta acción?',
             icon: 'warning',
             buttons: ['No', 'Si'],
         }).then((respuesta) => {
@@ -40,12 +42,12 @@ export function Form() {
                     photoAux: userData.info.photo,
                     image: image,
                 });
-                if (user.displayName === userData.info.user) {
-                    setTimeout(reloadPage, 1000);
-                }
                 navigate('/vitaeslist');
             }
         });
+        if (user.displayName === userData.info.user) {
+            setTimeout(reloadPage, 2500);
+        }
     };
     function reloadPage() {
         window.location.reload(true);

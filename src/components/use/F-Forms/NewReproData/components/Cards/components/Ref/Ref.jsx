@@ -58,19 +58,19 @@ export function Ref({ stage, handleChange, date }) {
 
                     <div className={st.pt}>
                         <h1>Crias vivas: </h1>
-                        <input name='lives' type='text' />
+                        <input name='lives' type='number' />
                     </div>
                     <div className={st.pt}>
                         <h1>Crias muertas: </h1>
-                        <input name='deaths' type='text' />
+                        <input name='deaths' type='number' />
                     </div>
                     <div className={st.pt}>
                         <h1>Homogeneizados: </h1>
-                        <input name='homogen' type='text' />
+                        <input name='homogen' type='number' />
                     </div>
                     <div className={st.pt}>
                         <h1>Crias totales: </h1>
-                        <input name='total' type='text' />
+                        <input name='total' type='number' />
                     </div>
 
                     <div className={st.pt}>
