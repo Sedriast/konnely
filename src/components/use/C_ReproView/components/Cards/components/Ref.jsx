@@ -1,114 +1,143 @@
-import st from './Ref.module.css';
+import { Inputs } from "../../../../0-GeneralComp/1-Inputs/Inputs";
+import st from "./Ref.module.css";
 
 export function Ref({ stage }) {
-	switch (stage.title) {
-		case 'Monta':
-			return (
-				<div className={st.panel}>
-					<h3>{stage.title}</h3>
-					<br />
-					<hr />
-					<br />
-					<div className={st.pt}>
-						<h1>Males: </h1>
-						<h2>{stage.males}</h2>
-					</div>
-					<div className={st.pt}>
-						<h1>Fecha: </h1>
-						<h2>{stage.date}</h2>
-					</div>
-				</div>
-			);
+  const hf = () => {};
+  switch (stage.title) {
+    case "Monta":
+      return (
+        <div className={st.panel}>
+          <h3>{stage.title}</h3>
+          <br />
+          <hr />
+          <br />
+          <Inputs name="Macho" type="text" leyend="Macho" handleChange={hf} />
+          <Inputs
+            name="DateInitial"
+            type="date"
+            leyend="Fecha"
+            handleChange={hf}
+          />
+        </div>
+      );
 
-		case 'Palpación':
-			return (
-				<div className={st.panel}>
-					<h3>{stage.title}</h3>
+    case "Palpación":
+      return (
+        <div className={st.panel}>
+          <h3>{stage.title}</h3>
 
-					<br />
-					<hr />
-					<br />
+          <br />
+          <hr />
+          <br />
 
-					<div className={st.pt}>
-						<h1>Fecha: </h1>
-						<h2>{stage.date}</h2>
-					</div>
-				</div>
-			);
+          <Inputs
+            name="DatePalpacion"
+            type="date"
+            leyend="Fecha"
+            handleChange={hf}
+          />
+        </div>
+      );
 
-		case 'Preparto':
-			return (
-				<div className={st.panel}>
-					<h3>{stage.title}</h3>
+    case "Preparto":
+      return (
+        <div className={st.panel}>
+          <h3>{stage.title}</h3>
 
-					<br />
-					<hr />
-					<br />
+          <br />
+          <hr />
+          <br />
+          <Inputs
+            name="DatePreparto"
+            type="date"
+            leyend="Fecha"
+            handleChange={hf}
+          />
+        </div>
+      );
 
-					<div className={st.pt}>
-						<h1>Fecha: </h1>
-						<h2>{stage.date}</h2>
-					</div>
-				</div>
-			);
+    case "Parto":
+      return (
+        <div className={st.panel}>
+          <h3>{stage.title}</h3>
 
-		case 'Parto':
-			return (
-				<div className={st.panel}>
-					<h3>{stage.title}</h3>
+          <br />
+          <hr />
+          <br />
+          <Inputs
+            name="lives"
+            type="number"
+            leyend="Crias vivas"
+            min="1"
+            pattern="^[0-9]+"
+            handleChange={hf}
+          />
+          <Inputs
+            name="deaths"
+            type="number"
+            leyend="Crias muertas"
+            min="1"
+            pattern="^[0-9]+"
+            handleChange={hf}
+          />
+          <Inputs
+            name="homogen"
+            type="number"
+            leyend="Homogeneizados"
+            min="1"
+            pattern="^[0-9]+"
+            handleChange={hf}
+          />
+          <Inputs
+            name="total"
+            type="number"
+            leyend="Crias totales"
+            min="1"
+            pattern="^[0-9]+"
+            handleChange={hf}
+          />
+          <Inputs
+            name="DateParto"
+            type="date"
+            leyend="Fecha"
+            handleChange={hf}
+          />
+        </div>
+      );
 
-					<br />
-					<hr />
-					<br />
+    case "Destete":
+      return (
+        <div className={st.panel}>
+          <h3>{stage.title}</h3>
+          <br />
+          <hr />
+          <br />
+          <Inputs
+            name="WeanedPups"
+            type="number"
+            leyend="Crias destetadas"
+            min="1"
+            pattern="^[0-9]+"
+            handleChange={hf}
+          />
+          <Inputs
+            name="LitterWeight"
+            type="number"
+            leyend="Peso camada"
+            min="1"
+            pattern="^[0-9]+"
+            handleChange={hf}
+          />
+          <Inputs
+            name="DateDestete"
+            type="date"
+            leyend="Fecha"
+            handleChange={hf}
+          />
+        </div>
+      );
 
-					<div className={st.pt}>
-						<h1>Crias vivas: </h1>
-						<h2>{stage.lives}</h2>
-					</div>
-					<div className={st.pt}>
-						<h1>Crias muertas: </h1>
-						<h2>{stage.deaths}</h2>
-					</div>
-					<div className={st.pt}>
-						<h1>Homogeneizados: </h1>
-						<h2>{stage.homogen}</h2>
-					</div>
-					<div className={st.pt}>
-						<h1>Crias totales: </h1>
-						<h2>{stage.total}</h2>
-					</div>
-
-					<div className={st.pt}>
-						<h1>Fecha: </h1>
-						<h2>{stage.date}</h2>
-					</div>
-				</div>
-			);
-
-		case 'Destete':
-			return (
-				<div className={st.panel}>
-					<h3>{stage.title}</h3>
-					<br />
-					<hr />
-					<br />
-					<div className={st.pt}>
-						<h1>Crias destetadas: </h1>
-						<h2>{stage.total}</h2>
-					</div>
-					<div className={st.pt}>
-						<h1>Peso de la camada: </h1>
-						<h2>{stage.averageWeight}</h2>
-					</div>
-
-					<div className={st.pt}>
-						<h1>Fecha: </h1>
-						<h2>{stage.date}</h2>
-					</div>
-				</div>
-			);
-
-		default:
-			return <></>;
-	}
+    default:
+      return <></>;
+  }
 }
