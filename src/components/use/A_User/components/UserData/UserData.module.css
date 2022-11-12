@@ -65,7 +65,7 @@
 
   cursor: pointer;
 
-  font-size: 30px;
+  font-size: 0.8rem;
 
   border-radius: 100%;
   border: 2px solid black;
@@ -80,12 +80,12 @@
   align-items: center;
 }
 .paragraph div {
-  font-size: 20px;
+  font-size: 0.8rem;
   color: #fff;
 }
 .paragraph p {
   text-align: center;
-  font-size: 12.5px;
+  font-size: 0.8rem;
   color: #fff;
 }
 /*Master*/
