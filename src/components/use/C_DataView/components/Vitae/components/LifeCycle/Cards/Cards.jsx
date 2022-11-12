@@ -1,6 +1,6 @@
 import st from './Cards.module.css';
 
-export function Cards({ stageId, info }) {
+export function Cards({ info }) {
     function peso(weigth) {
         if (weigth !== 'Sin datos') return weigth + ' kg';
         return weigth;

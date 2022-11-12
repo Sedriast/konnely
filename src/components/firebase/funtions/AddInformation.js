@@ -245,6 +245,7 @@ export const AddReproductiveCycle = (props) => {
 
 export const UpdateReproductiveCycle = (props) => {
     const funtionUpdateReproductiveCycle = async (datos) => {
+        console.log(datos);
         try {
             if (datos.stages[0].date) {
                 await updateDoc(doc(db, 'reproductive', datos.uid), datos);

@@ -48,6 +48,7 @@ export function Cards({ id, litterPrueba, stages }) {
                 })}
                 <div className={st.btn}>
                     <button type='submit'>
+                        Hola
                         <button
                             onClick={() => {
                                 window.history.back();

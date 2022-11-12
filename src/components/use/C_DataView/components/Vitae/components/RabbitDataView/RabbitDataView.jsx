@@ -10,8 +10,9 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 const db = getFirestore(app);
 
-export function RabbitDataView({ stageId }) {
+export function RabbitDataView({ stageId, user_ }) {
     const [data_, setData_] = useState([]);
+
     useEffect(() => {
         const q = query(collection(db, 'rabbits'), where('id', '==', stageId));
         onSnapshot(q, (snapshot) => setData_(snapshot.docs.map((doc) => ({ ...doc.data() }))));
@@ -34,14 +35,16 @@ export function RabbitDataView({ stageId }) {
                     </div>
                     <div className={st.tit}>
                         Datos Básicos
-                        <div>
-                            <Buttons
-                                route='/formEdit'
-                                label='Editar'
-                                direction='bottom'
-                                btnIconText={faPenToSquare}
-                            />
-                        </div>
+                        {user_ !== undefined && user_.rol === 'administrador' && (
+                            <div>
+                                <Buttons
+                                    route='/formEdit'
+                                    label='Editar'
+                                    direction='bottom'
+                                    btnIconText={faPenToSquare}
+                                />
+                            </div>
+                        )}
                     </div>
                     <br />
                     <br />
