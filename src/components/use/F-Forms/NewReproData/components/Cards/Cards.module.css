@@ -23,74 +23,74 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 90%;
+  width: 100%;
 
-	padding: 1rem;
-	border-radius: 10px;
+  padding: 1rem;
+  border-radius: 10px;
 
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 /*Master*/
 /*Sub*/
 .panelId {
-	font-size: 1.5rem;
-	color: rgba(251, 226, 34);
+  font-size: 1.5rem;
+  color: rgba(251, 226, 34);
 
-	text-align: center;
+  text-align: center;
 }
 .btnPanel {
-	display: flex;
-	margin-left: 0.5rem;
+  display: flex;
+  margin-left: 0.5rem;
 }
 .btnPanel div {
-	font-size: 25px;
-	filter: none;
+  font-size: 25px;
+  filter: none;
 }
 .panelInfo {
-	width: 90%;
-	height: fit-content;
+  width: 90%;
+  height: fit-content;
 
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .sp {
-	color: rgba(251, 226, 34);
-	font-size: 20px;
-	width: 300px;
-	margin: 1rem;
+  color: rgba(251, 226, 34);
+  font-size: 20px;
+  width: 300px;
+  margin: 1rem;
 }
 .sp div {
-	font-size: 15px;
-	color: white;
+  font-size: 15px;
+  color: white;
 }
 .btn {
-	width: 3rem;
-	height: 3rem;
+  width: 3rem;
+  height: 3rem;
 
-	background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 
-	margin-top: 1rem;
-	border-radius: 100%;
+  margin-top: 1rem;
+  border-radius: 100%;
 
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .btn figure {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn button {
-	background: transparent;
+  background: transparent;
 
-	border-radius: 100%;
+  border-radius: 100%;
 }
 .btn button a svg {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 /*Sub*/
 /*Button´s container*/
@@ -119,14 +119,14 @@
 
 /*Animations*/
 @keyframes ig {
-	from {
-		width: 2rem;
-		height: 2rem;
-	}
-	to {
-		width: 7.5rem;
-		height: 7.5rem;
-	}
+  from {
+    width: 2rem;
+    height: 2rem;
+  }
+  to {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
 }
 /*Animations*/
 
