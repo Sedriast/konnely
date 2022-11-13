@@ -24,11 +24,11 @@
 /*Master*/
 
 .optionContainer {
-	width: calc(96% - 6rem);
-	height: 100%;
+  width: calc(96% - 9rem);
+  height: 100%;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 /*Master*/
@@ -57,16 +57,15 @@
 
 /*Resizing */
 @media only screen and (max-width: 700px) {
-	.optionContainer {
-		width: calc(99% - 3rem);
-		height: calc(92% - 3rem);
+  .optionContainer {
+    width: 100%;
+    height: calc(92% - 3rem);
 
-		margin: 1%;
-		margin-left: 1.3rem;
+    margin-left: 1.3rem;
 
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
 /*Resizing */
 

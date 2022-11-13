@@ -1,11 +1,12 @@
-import { Panel_ } from "./Panel/Panel_";
+import { PanelChanges } from "./PanelChanges/PanelChanges";
+import { PanelInvoice } from "./PanelInvoices/PanelInvoice";
 
 export function Option({ op }) {
   switch (op) {
     case false:
-      return <Panel_ />;
+      return <PanelChanges />;
     case true:
-      return <></>;
+      return <PanelInvoice />;
     default:
       break;
   }

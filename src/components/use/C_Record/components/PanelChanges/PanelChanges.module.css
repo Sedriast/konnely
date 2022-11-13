@@ -1,30 +1,3 @@
-/*
-	1) Const
-	2) Containers
-		2.1) Master
-		2.2) Button
-		2.3) Input
-	3)Use
-		3.1)Buttons
-		3.2)Inputs
-	4)Rezising
-	5)Animations
-	6)Otre´s components
-		6.1)Master
-		6.2)...
-
-
-
-
-
-*/
-
-/*Const*/
-
-/*Const*/
-
-/*Containers*/
-/*Master*/
 .container {
   width: auto;
   height: 100%;
@@ -36,8 +9,6 @@
   transition: visibility 500ms ease-in;
 }
 
-/*Master*/
-/*Sub*/
 .panelCards {
   height: 100%;
 }
@@ -53,13 +24,18 @@
   justify-content: center;
   align-items: center;
 }
+.cards * {
+  text-decoration: none;
+}
 .panelSearchBar {
   position: fixed;
 
   width: 80%;
+  height: 2rem;
+
+  margin-top: 0.4rem;
 
   display: flex;
-  margin: 1rem 0 2rem 0;
 }
 .panelSearchBar form {
   width: 100%;
@@ -93,9 +69,7 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
-.cards * {
-  text-decoration: none;
-}
+
 .male {
   width: 2rem;
   height: 2rem;
@@ -121,28 +95,7 @@
 .filter {
   display: flex;
 }
-/*Sub*/
-/*Button´s container*/
 
-/*Button´s container*/
-/*Input´s container*/
-
-/*Input´s container*/
-/*Oters*/
-
-/*Oters*/
-/*Containers*/
-
-/*Use*/
-/*Button */
-
-/*Button */
-/*Input */
-
-/*Input */
-/*Use*/
-
-/*Resizing */
 @media only screen and (max-width: 700px) {
   .container {
     width: 100%;
@@ -169,7 +122,7 @@
 
     width: 75%;
 
-    left: 1rem;
+    left: 1.5rem;
 
     display: flex;
     margin: 0.4rem 0 2rem 0;
@@ -193,14 +146,3 @@
     width: 60%;
   }
 }
-/*Resizing */
-
-/*Animations*/
-
-/*Animations*/
-
-/*Other´s Components*/
-/*Master*/
-
-/*Master*/
-/*Other´s Components */
