@@ -26,84 +26,39 @@
 /*Containers*/
 /*Master*/
 .optionContainer {
-	width: calc(94% - 6rem);
-	height: 100%;
+  width: calc(94% - 6rem);
+  height: 100%;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .menuLeft {
-	padding-left: 1%;
-	padding-top: 1%;
-	padding-bottom: 1%;
+  padding-left: 1%;
+  padding-top: 1%;
+  padding-bottom: 1%;
 
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 /*Master*/
 /*Sub*/
 .option {
-	width: 3rem;
-	height: 3rem;
+  width: 3rem;
+  height: 3rem;
 
-	margin: 0.5rem 0;
+  margin: 0.5rem 0;
 
-	background: rgba(78, 75, 72, 0.9);
-	border-radius: 100%;
+  background: rgba(78, 75, 72, 0.9);
+  border-radius: 100%;
 }
 .option button a div {
-	font-size: 20px;
+  font-size: 20px;
 }
 /*Sub*/
 /*Button´s container*/
-figure {
-	position: relative;
-}
 
-figure:after {
-	background-color: rgba(0, 0, 0, 0.75);
-	border-radius: 5px;
-	color: #fff;
-	content: attr(title);
-	opacity: 0;
-	padding: 6px 12px;
-	position: absolute;
-	left: 110%;
-	top: 30px;
-	transition: all 0.25s ease;
-	visibility: hidden;
-	white-space: nowrap;
-}
-
-figure[tooltip-dir='left']:after {
-	left: auto;
-	right: 110%;
-}
-
-figure[tooltip-dir='bottom']:after,
-figure[tooltip-dir='top']:after {
-	left: 50%;
-	right: auto;
-
-	transform: translateX(-50%);
-}
-
-figure[tooltip-dir='bottom']:after {
-	bottom: auto;
-	top: 110%;
-}
-
-figure[tooltip-dir='top']:after {
-	bottom: 110%;
-	top: auto;
-}
-
-figure:hover:after {
-	opacity: 1;
-	visibility: visible;
-}
 /*Button´s container*/
 /*Input´s container*/
 
@@ -124,45 +79,45 @@ figure:hover:after {
 
 /*Resizing */
 @media only screen and (max-width: 700px) {
-	.optionContainer {
-		width: calc(96% - 3rem);
-		height: calc(90% - 3rem);
+  .optionContainer {
+    width: calc(96% - 3rem);
+    height: calc(90% - 3rem);
 
-		margin: 1%;
-		margin-left: 1.3rem;
+    margin: 1%;
+    margin-left: 1.3rem;
 
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-	.menuLeft {
-		height: calc(92% - 3rem);
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .menuLeft {
+    height: calc(92% - 3rem);
 
-		position: absolute;
-		left: 0;
+    position: absolute;
+    left: 0;
 
-		padding-left: 1%;
-		padding-top: 1%;
-		padding-bottom: 1%;
+    padding-left: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
 
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-	.option {
-		width: 2rem;
-		height: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .option {
+    width: 2rem;
+    height: 2rem;
 
-		margin: 5px;
+    margin: 5px;
 
-		background: rgba(78, 75, 72, 0.9);
-		border-radius: 100%;
+    background: rgba(78, 75, 72, 0.9);
+    border-radius: 100%;
 
-		z-index: 1;
-	}
-	.option button a div {
-		font-size: 20px;
-	}
+    z-index: 1;
+  }
+  .option button a div {
+    font-size: 20px;
+  }
 }
 /*Resizing */
 
