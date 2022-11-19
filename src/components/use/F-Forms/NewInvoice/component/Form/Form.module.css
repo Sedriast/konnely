@@ -36,6 +36,11 @@
   display: flex;
   justify-content: space-around;
 }
+.dataInvoice table {
+  width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
 .bodyInvo {
   width: 90%;
 }
@@ -43,6 +48,10 @@
 td {
   padding: 1% 0;
   text-align: center;
+}
+.bodyInvo table th {
+  color: chartreuse;
+  border-bottom: 1px solid rgb(0, 0, 0);
 }
 .nf {
   width: 80%;

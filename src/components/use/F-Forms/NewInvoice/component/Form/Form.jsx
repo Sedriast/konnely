@@ -2,12 +2,13 @@ import st from "./Form.module.css";
 
 import { useState } from "react";
 import { RabitList } from "./RabitLists/RabitList";
+import { TableData } from "./RabitLists/TableData";
 
 export function Form() {
   const [rabitList, setRabitList] = useState([
-    { id: 1, name: "Rabit 1", race: "RabbitNS", weith: 5 },
-    { id: 1, name: "Rabit 1", race: "RabbitNS", weith: 6 },
-    { id: 1, name: "Rabit 1", race: "RabbitNS", weith: 7 },
+    { id: 1, gen: "Rabit1", race: "RabbitNS", weith: 5 },
+    { id: 1, gen: "Hembra", race: "RabbitNS", weith: 6 },
+    { id: 1, gen: "Macho", race: "RabbitNS", weith: 7 },
   ]);
   const cm = (
     <>
@@ -17,8 +18,9 @@ export function Form() {
           e.preventDefault();
           let aux = {};
           for (const element of e.target) {
-            if (element.name !== "") {
+            if (element.id !== "") {
               aux = { ...aux, [element.name]: element.value };
+              aux = { ...aux, rabbits: rabitList };
             }
           }
           console.log(aux);
@@ -55,66 +57,7 @@ export function Form() {
           {/* Lista de los conejos activos existentes */}
           <RabitList />
           <div className={st.dataInvoice}>
-            <table>
-              <tr>
-                <th></th>
-                <th>Id conejo</th>
-                <th>Genero</th>
-                <th>Raza</th>
-                <th>Peso</th>
-                <th>Precio</th>
-              </tr>
-              {rabitList.map((rabit, index) => {
-                return (
-                  <tr>
-                    <th>{index + 1}</th>
-                    <td>
-                      <input
-                        disabled
-                        className={st.nf}
-                        name={"rid_" + index}
-                        id={"rid_" + index}
-                        type="text"
-                        value={rabit.id}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        className={st.nf}
-                        disabled
-                        name={"rgen_" + index}
-                        id={"rgen_" + index}
-                        type="text"
-                        value={rabit.name}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        className={st.nf}
-                        disabled
-                        name={"rrace_" + index}
-                        id={"rrace_" + index}
-                        type="text"
-                        value={rabit.race}
-                      />
-                    </td>
-                    <td>
-                      <input
-                        className={st.nf}
-                        disabled
-                        name={"rweith_" + index}
-                        id={"rweith_" + index}
-                        type="text"
-                        value={rabit.weith}
-                      />
-                    </td>
-                    <td>
-                      <input type="text" />
-                    </td>
-                  </tr>
-                );
-              })}
-            </table>
+            <TableData rabitList={rabitList} />
           </div>
         </div>
 
