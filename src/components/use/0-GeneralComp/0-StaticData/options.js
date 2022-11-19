@@ -1,7 +1,6 @@
 import {
   faGripVertical,
   faBarcode,
-  faFileInvoice,
   faUsers,
   faWrench,
   faXmark,
