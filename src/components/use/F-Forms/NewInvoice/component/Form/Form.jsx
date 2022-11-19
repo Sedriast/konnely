@@ -1,20 +1,43 @@
 import st from "./Form.module.css";
 
 import { useEffect, useState } from "react";
-import { RabitList } from "./RabitLists/RabitList";
-import { TableData } from "./RabitLists/TableData";
-import { RabbitDate } from "../../../../0-GeneralComp/0-StaticData/dataProv";
+import {
+  addInvoice,
+  RabbitDate,
+} from "../../../../0-GeneralComp/0-StaticData/dataProv";
+import { useNavigate } from "react-router-dom";
 
 export function Form() {
+  /**************************************************************************
+   *                                                                            *
+   *                                                                            *
+   *                                                                            *
+   *                  Constantes de uso, para estados o contexteos              */
   const [addr, setAddr] = useState();
-  const [rabitList, setRabitList] = useState([
-    { id: 1, gen: "Rabit1", race: "RabbitNS", weith: 5, price: 1000 },
-    { id: 1, gen: "Hembra", race: "RabbitNS", weith: 6, price: 150 },
-    { id: 1, gen: "Macho", race: "RabbitNS", weith: 7, price: 20 },
-  ]);
+
+  const [rabitList, setRabitList] = useState([{}]);
+
+  const navigate = useNavigate();
+
+  const [aux, setAux] = useState({
+    id: addr?.id,
+    gen: addr?.gen,
+    race: addr?.race,
+    weith: addr?.weith,
+  });
+
   useEffect(() => {
-    console.log(rabitList);
-  }, [rabitList]);
+    if (RabbitDate === null) {
+      navigate("/vitaeslist");
+      return null;
+    }
+  }, [navigate, aux]);
+
+  /******************************************************************************
+   *                                                                            *
+   *                                                                            *
+   *                                                                            *
+   *                  cosntante que encapsula el componente de react           */
   const cm = (
     <>
       <form
@@ -22,14 +45,12 @@ export function Form() {
         onSubmit={(e) => {
           e.preventDefault();
           let aux = {};
-          rabitList.push(RabbitDate.id);
           for (const element of e.target) {
             if (element.id !== "") {
               aux = { ...aux, [element.name]: element.value };
               aux = { ...aux, rabbits: rabitList };
             }
           }
-          console.log(aux);
         }}
       >
         <div className={st.headerInvo}>
@@ -59,10 +80,8 @@ export function Form() {
           </div>
         </div>
         <hr />
-        <div className={st.bodyInvo}>
-          {/* Lista de los conejos activos existentes que en el handleChange hace parte de la magia*/}
-          <div>
-            {/* <Lists
+        <div className={st.setAddr}>
+          {/* <Lists
               leyend="Conejos"
               name="rabbits"
               listar={rabitList}
@@ -70,10 +89,51 @@ export function Form() {
                 setAddr(e.target.value);
               }}
             /> */}
+          <div>
+            <input id="pri" type="number" />
           </div>
-          <RabitList rabbit={addr} />
+          <button
+            onClick={() => {
+              setAux({
+                ...aux,
+                price: parseInt(document.getElementById("pri").value),
+              });
+              addInvoice(aux);
+              rabitList.push(RabbitDate.id);
+            }}
+          >
+            ✔️
+          </button>
+        </div>
+        <div className={st.bodyInvo}>
+          {/* Lista de los conejos activos existentes que en el handleChange hace parte de la magia*/}
+
           <div className={st.dataInvoice}>
-            <TableData rabitList={rabitList} />
+            <table>
+              <thead>
+                <tr>
+                  <th> Id del conejo </th>
+                  <th> Genero </th>
+                  <th> Raza </th>
+                  <th> Peso </th>
+                  <th> Precio </th>
+                </tr>
+              </thead>
+
+              {rabitList.map((rabit, index) => {
+                return (
+                  <tbody key={index}>
+                    <tr>
+                      <td> {rabit.id} </td>
+                      <td> {rabit.gen} </td>
+                      <td> {rabit.race} </td>
+                      <td> {rabit.weith} </td>
+                      <td> {rabit.price} </td>
+                    </tr>
+                  </tbody>
+                );
+              })}
+            </table>
           </div>
         </div>
 
