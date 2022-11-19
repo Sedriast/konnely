@@ -1,5 +1,3 @@
-import st from "../Form.module.css";
-
 export function TableData({ rabitList }) {
   const cm = (
     <>

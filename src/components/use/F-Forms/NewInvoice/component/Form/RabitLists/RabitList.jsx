@@ -1,14 +1,30 @@
-// import { Lists } from "../../../../../0-GeneralComp/1-List/Lists";
+import { useState } from "react";
+import { addInvoice } from "../../../../../0-GeneralComp/0-StaticData/dataProv";
 
-import { Inputs } from "../../../../../0-GeneralComp/1-Inputs/Inputs";
-
-export function RabitList({}) {
+export function RabitList({ rabbit }) {
+  const [aux, setAux] = useState({
+    id: rabbit?.id,
+    gen: rabbit?.gen,
+    race: rabbit?.race,
+    weith: rabbit?.weith,
+  });
   const cm = (
     <>
-      <div>{/* <Lists /> */}</div>
       <div>
-        <Inputs leyend="Precio" type="text" handleChange={() => {}} />
+        <input
+          type="number"
+          onChange={(e) => {
+            setAux({ ...aux, price: parseInt(e.target.value) });
+          }}
+        />
       </div>
+      <button
+        onClick={() => {
+          addInvoice(aux);
+        }}
+      >
+        ✔️
+      </button>
     </>
   );
 
