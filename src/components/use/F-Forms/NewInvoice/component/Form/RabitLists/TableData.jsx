@@ -22,9 +22,7 @@ export function TableData({ rabitList }) {
                 <td> {rabit.gen} </td>
                 <td> {rabit.race} </td>
                 <td> {rabit.weith} </td>
-                <td>
-                  <input type="text" />
-                </td>
+                <td> {rabit.price} </td>
               </tr>
             </tbody>
           );

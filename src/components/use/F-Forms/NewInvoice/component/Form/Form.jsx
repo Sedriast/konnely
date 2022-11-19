@@ -6,9 +6,9 @@ import { TableData } from "./RabitLists/TableData";
 
 export function Form() {
   const [rabitList, setRabitList] = useState([
-    { id: 1, gen: "Rabit1", race: "RabbitNS", weith: 5 },
-    { id: 1, gen: "Hembra", race: "RabbitNS", weith: 6 },
-    { id: 1, gen: "Macho", race: "RabbitNS", weith: 7 },
+    { id: 1, gen: "Rabit1", race: "RabbitNS", weith: 5, price: 1000 },
+    { id: 1, gen: "Hembra", race: "RabbitNS", weith: 6, price: 150 },
+    { id: 1, gen: "Macho", race: "RabbitNS", weith: 7, price: 20 },
   ]);
   const cm = (
     <>
