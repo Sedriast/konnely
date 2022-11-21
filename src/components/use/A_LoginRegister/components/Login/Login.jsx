@@ -3,7 +3,7 @@ import st from './Login.module.css';
 import swal from 'sweetalert';
 
 import { useAuth } from '../../../../../context/AuthContext';
-import { ValidationErrors } from '../../scripts/ValidationErrors';
+import { ValidationErrors } from '../../../0-GeneralComp/0-Scripts/ValidationErrors';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { useModal } from '../../../0-GeneralComp/0-StaticData/Modals/useModal';

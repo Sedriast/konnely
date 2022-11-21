@@ -2,7 +2,7 @@ import swal from 'sweetalert';
 import st from './Register.module.css';
 import { useNavigate } from 'react-router-dom';
 
-import { ValidationErrors } from '../../scripts/ValidationErrors';
+import { ValidationErrors } from '../../../0-GeneralComp/0-Scripts/ValidationErrors';
 import { useAuth } from '../../../../../context/AuthContext';
 import { Inputs } from '../../../0-GeneralComp/1-Inputs/Inputs';
 import { useState } from 'react';

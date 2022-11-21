@@ -3,7 +3,15 @@ import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
 import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { getAuth, updateProfile, deleteUser, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
+import {
+    getAuth,
+    updateProfile,
+    deleteUser,
+    reauthenticateWithCredential,
+    EmailAuthProvider,
+    updatePassword,
+} from 'firebase/auth';
+import { ValidationErrors } from '../../use/0-GeneralComp/0-Scripts/ValidationErrors';
 
 const db = getFirestore(app);
 const storage = getStorage(app);
@@ -350,4 +358,23 @@ export const RemovalUser = (props) => {
         }
     };
     functionRemovalUser(props);
+};
+
+/// Función para cambiar la contraseña de un usuario en la base de datos
+
+export const ChangePassword = async (props) => {
+    try {
+        const credential = EmailAuthProvider.credential(auth.currentUser.email, props.oldpassword);
+        await reauthenticateWithCredential(auth.currentUser, credential).then(async () => {
+            await updatePassword(auth.currentUser, props.newpassword).then(() => {
+                swal({
+                    title: 'Su contraseña se ha cambiado correctamente',
+                    icon: 'warning',
+                    buttons: 'aceptar',
+                });
+            });
+        });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
