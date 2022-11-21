@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 export const ValidationErrors = (props) => {
     const error_message = {
         'auth/user-not-found': 'El usuario no existe',
-        'auth/wrong-password': 'La contraseña es incorrecta',
+        'auth/wrong-password': 'La contraseña ingresada no es la correcta',
         'auth/invalid-email': 'El correo electronico ingresado es incorrecto',
         'auth/email-already-exists': 'El correo electronico ingresado ya esta en uso',
         'auth/too-many-requests':
