@@ -13,8 +13,17 @@ export function UserCards({ userEmail, userName, user }) {
             <div className={st.mid}>{userEmail}</div>
             <div>
                 <Buttons
+                    route='/user'
+                    label='Editar'
+                    direction='bottom'
+                    btnIconText={faPenToSquare}
+                    btnClick={() => {
+                        recuperarUser(user);
+                    }}
+                />
+                <Buttons
                     route='#'
-                    label='editar'
+                    label='Borrar'
                     direction='bottom'
                     btnIconText={faTrash}
                     btnClick={() => {
@@ -27,15 +36,6 @@ export function UserCards({ userEmail, userName, user }) {
                                 InacctiveUser(user);
                             }
                         });
-                    }}
-                />
-                <Buttons
-                    route='/user'
-                    label='editar'
-                    direction='bottom'
-                    btnIconText={faPenToSquare}
-                    btnClick={() => {
-                        recuperarUser(user);
                     }}
                 />
             </div>

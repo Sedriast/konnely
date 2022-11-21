@@ -47,9 +47,12 @@ export function User() {
     const handleSubmit = async () => {
         navigate('/');
         await logout().then(() => {
-            setTimeout(window.location.reload(true), 1500);
+            setTimeout(() => {
+                window.location.reload(true);
+            }, 1500);
         });
     };
+
     const exit = () => {
         try {
             swal({

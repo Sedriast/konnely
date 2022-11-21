@@ -33,9 +33,7 @@ export function ListUsers() {
                             buscar(e.target.value);
                         }}
                     />
-                    <button className={st.btnSearch} type='submit'>
-                        🔎
-                    </button>
+                    <button className={st.btnSearch}>🔎</button>
                 </form>
             </div>
 

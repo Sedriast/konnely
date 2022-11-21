@@ -73,12 +73,7 @@ export const EditImageAndInfo = async (props) => {
         delete props.image;
         await updateDoc(doc(db, 'rabbits', props.uid), props);
     } catch (error) {
-        console.log(error);
-        swal({
-            title: error,
-            icon: 'error',
-            button: 'aceptar',
-        });
+        ValidationErrors(error.code);
     }
 };
 
@@ -98,7 +93,6 @@ export const UpdateInformation = async ({ coleccion, uid, data }) => {
     try {
         await updateDoc(doc(db, coleccion, uid), data);
     } catch (error) {
-        console.log(error.message);
         ValidationErrors(error.code);
     }
 };
