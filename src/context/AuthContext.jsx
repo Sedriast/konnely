@@ -1,7 +1,6 @@
 import swal from 'sweetalert';
 import app from '../components/firebase/credentials';
 import { createContext, useContext, useEffect, useState } from 'react';
-import { AddInfoProfile } from '../components/firebase/funtions/AddInformation';
 import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -12,7 +11,9 @@ import {
     updateProfile,
     sendEmailVerification,
 } from 'firebase/auth';
+import { doc, getFirestore, setDoc } from 'firebase/firestore';
 
+const db = getFirestore(app);
 export const auth = getAuth(app);
 const authContext = createContext();
 
@@ -33,12 +34,9 @@ export function AuthProvider({ children }) {
     const resetPassword = async (email) => sendPasswordResetEmail(auth, email);
     const verificarEmail = async (usuario) => sendEmailVerification(usuario);
     const signup = async (email, idIns, userName, name, lastName, noTel, password) => {
-        await createUserWithEmailAndPassword(auth, email, password).then(() => {
+        await createUserWithEmailAndPassword(auth, email, password).then(async () => {
             verificarEmail(auth.currentUser);
-        });
-        AddInfoProfile({
-            user: auth.currentUser.uid,
-            data: {
+            await setDoc(doc(db, 'users', auth.currentUser.uid), {
                 uid: auth.currentUser.uid,
                 names: name,
                 lastNames: lastName,
@@ -49,7 +47,8 @@ export function AuthProvider({ children }) {
                 rol: 'usuario',
                 theme: tema,
                 photo: imagenPerfil,
-            },
+                state: 'activo',
+            });
         });
         updateProfile(auth.currentUser, {
             displayName: userName,

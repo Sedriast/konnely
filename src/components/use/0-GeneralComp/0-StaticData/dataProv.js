@@ -31,3 +31,10 @@ export const reproData = {
     vivos: '0',
     partos: '0',
 };
+
+export const RetrieveUser = (info) => {
+    RetrieveUserData.info = info;
+};
+export const RetrieveUserData = {
+    info: null,
+};

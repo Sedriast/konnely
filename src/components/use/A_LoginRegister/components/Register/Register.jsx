@@ -1,9 +1,9 @@
+import swal from 'sweetalert';
 import st from './Register.module.css';
 import { useNavigate } from 'react-router-dom';
 
 import { ValidationErrors } from '../../scripts/ValidationErrors';
 import { useAuth } from '../../../../../context/AuthContext';
-import swal from 'sweetalert';
 import { Inputs } from '../../../0-GeneralComp/1-Inputs/Inputs';
 import { useState } from 'react';
 
@@ -25,7 +25,7 @@ export function Register() {
             ).then(() => {
                 swal({
                     title: 'Verifique su cuenta en la bandeja de su correo electronico',
-                    icon: 'error',
+                    icon: 'success',
                     button: 'aceptar',
                 }).then(() => {
                     document.getElementById('formulario').reset();
@@ -39,7 +39,6 @@ export function Register() {
     };
     function handleChange(e) {
         e.preventDefault();
-        console.log(e);
     }
     return (
         <div className={st.container}>

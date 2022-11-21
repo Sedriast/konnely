@@ -2,8 +2,8 @@ import swal from 'sweetalert';
 import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
-import { getFirestore, collection, addDoc, doc, setDoc, updateDoc, deleteDoc } from 'firebase/firestore';
-import { getAuth, updateProfile } from 'firebase/auth';
+import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { getAuth, updateProfile, deleteUser, reauthenticateWithCredential, EmailAuthProvider } from 'firebase/auth';
 
 const db = getFirestore(app);
 const storage = getStorage(app);
@@ -104,24 +104,6 @@ export const EditInfoRabbit = (props) => {
     };
 
     funtionEditInfoRabbit(props);
-};
-
-/// Función para registrar un nuevo usuario en la base de datos
-
-export const AddInfoProfile = (props) => {
-    const funtionAddInfoProfile = async (datos) => {
-        console.log(datos);
-        try {
-            await setDoc(doc(db, 'users', datos.user), datos.data);
-        } catch (error) {
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
-        }
-    };
-    funtionAddInfoProfile(props);
 };
 
 /// Función para editar la información en la base de datos
@@ -319,4 +301,53 @@ export const EditImageAndInfoUser = (props) => {
     };
 
     funtionEditImageAndInfoUser(props);
+};
+
+/// Función para desactivar un usuario en la base de datos
+
+export const InacctiveUser = (props) => {
+    const functionRemovalUser = async (datos) => {
+        try {
+            await updateDoc(doc(db, 'users', datos.uid), { state: 'Inactivo' });
+        } catch (error) {
+            console.log(error.message);
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+    functionRemovalUser(props);
+};
+
+/// Función para borrar un tratamiento y su documento auditor en la base de datos
+
+export const RemovalUser = (props) => {
+    const functionRemovalUser = async (datos) => {
+        try {
+            await updateDoc(doc(db, 'users', datos.data.uid), { state: 'activo' });
+            const docRef = await addDoc(collection(db, 'deleteUsers'), {
+                code: datos.data.code,
+                name: datos.data.names + ' ' + datos.data.lastNames,
+                user: datos.data.user,
+                phone: datos.data.phone,
+                email: datos.data.email,
+            });
+            await updateDoc(doc(db, 'deleteUsers', docRef.id), { uid: docRef.id });
+            await deleteDoc(doc(db, 'users', datos.data.uid));
+            const credential = EmailAuthProvider.credential(auth.currentUser.email, datos.contraseña);
+            await reauthenticateWithCredential(datos.user, credential).then(async () => {
+                await deleteUser(auth.currentUser);
+            });
+        } catch (error) {
+            console.log(error.message);
+            swal({
+                title: error,
+                icon: 'error',
+                button: 'aceptar',
+            });
+        }
+    };
+    functionRemovalUser(props);
 };
