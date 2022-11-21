@@ -29,8 +29,8 @@ export function Form() {
     const [image_, setImage_] = useState(null);
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
-    const hf = () => {
-        closeModal();
+    const hf = (e) => {
+        e.preventDefault();
     };
     const handleSubmit = (aux) => {
         swal({

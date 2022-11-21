@@ -3,13 +3,13 @@ import st from './UserData.module.css';
 import { useAuth } from '../../../../../context/AuthContext';
 import { Themes } from './conponents/Themes/Themes';
 import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
-import { faPassport, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import { faPassport, faPenToSquare, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { recuperarUser } from '../../../0-GeneralComp/0-StaticData/dataProv';
 import { GetDocument } from '../../../../firebase/funtions/GetInformation';
 import { Modal } from '../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { useModal } from '../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { useState } from 'react';
-import { ChangePassword } from '../../../../firebase/funtions/AddInformation';
+import { ChangePassword, RemovalUser } from '../../../../firebase/funtions/AddInformation';
 import swal from 'sweetalert';
 
 export function UserData() {
@@ -30,7 +30,7 @@ export function UserData() {
                 <div>
                     <Buttons
                         route='/user'
-                        label='editar'
+                        label='editar informaciónde usuario'
                         direction='bottom'
                         btnIconText={faPenToSquare}
                         btnClick={() => {
@@ -44,6 +44,38 @@ export function UserData() {
                         btnIconText={faPassport}
                         btnClick={() => {
                             openModal();
+                        }}
+                    />
+                    <Buttons
+                        route='#'
+                        label='Borrar cuenta'
+                        direction='bottom'
+                        btnIconText={faTrash}
+                        btnClick={() => {
+                            swal({
+                                text: '¿Desea borrar su cuenta?',
+                                dangerMode: true,
+                                buttons: ['No', 'Si'],
+                            }).then((respuesta) => {
+                                if (respuesta) {
+                                    swal('Es necesario que escriba su contraseña', {
+                                        dangerMode: true,
+                                        content: {
+                                            element: 'input',
+                                            attributes: {
+                                                placeholder: 'Contraseña',
+                                                type: 'password',
+                                            },
+                                        },
+                                    }).then((value) => {
+                                        RemovalUser({
+                                            data: usuario,
+                                            contraseña: value,
+                                            user: user,
+                                        });
+                                    });
+                                }
+                            });
                         }}
                     />
                 </div>

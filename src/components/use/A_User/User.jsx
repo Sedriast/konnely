@@ -47,9 +47,7 @@ export function User() {
     const handleSubmit = async () => {
         navigate('/');
         await logout().then(() => {
-            setTimeout(() => {
-                window.location.reload(true);
-            }, 1500);
+            window.location.reload(true);
         });
     };
 
