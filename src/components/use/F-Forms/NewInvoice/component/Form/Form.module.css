@@ -1,0 +1,99 @@
+.panelContainer {
+  height: 85%;
+
+  background: rgba(0, 0, 0, 0.05);
+
+  margin-right: 2rem;
+  padding: 2rem 3rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.panelContainer h1 {
+  color: white;
+}
+.headerInvo {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.headerInvo * {
+  font-size: 18px;
+}
+.headerInvoLeft {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+}
+.headerInvoRight {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-end;
+}
+.dataInvoice {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-around;
+}
+.dataInvoice table {
+  width: 100%;
+
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.bodyInvo {
+  width: 90%;
+  height: 65%;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.bodyInvo table th,
+td {
+  padding: 1% 0;
+  text-align: center;
+}
+.bodyInvo table th {
+  color: chartreuse;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.bodyInvo table td {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.nf {
+  width: 80%;
+
+  border-radius: 10px;
+  padding: 0 2.5%;
+
+  background: transparent;
+
+  text-align: center;
+}
+.pa {
+  display: flex;
+  justify-content: flex-end;
+}
+.footerInvo {
+  width: 100%;
+}
+.setAddr {
+  width: 80%;
+  margin-left: auto;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 700px) {
+  .panelContainer {
+    width: 100%;
+  }
+  .headerInvo {
+    flex-direction: column;
+  }
+}

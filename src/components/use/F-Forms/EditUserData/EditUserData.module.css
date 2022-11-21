@@ -1,54 +1,54 @@
 .optionContainer {
-	width: calc(89% - 3rem);
-	height: 98%;
+  width: calc(89% - 3rem);
+  height: 98%;
 
-	margin-top: auto;
-	margin-bottom: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 
-	border-radius: 10px;
+  border-radius: 10px;
 
-	overflow-y: scroll;
-	overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .btn {
-	width: 3rem;
-	height: 3rem;
+  width: 3rem;
+  height: 3rem;
 
-	right: 0;
+  right: 0;
 
-	border-radius: 100%;
-	margin: 0.4rem 0;
-	background: rgb(0 0 0 / 75%);
-	border: 2px solid black;
+  border-radius: 100%;
+  margin: 0.4rem 0;
+  background: rgb(0 0 0 / 75%);
+  border: 2px solid black;
 }
 .btn button a div {
-	font-size: 25px;
+  font-size: 25px;
 }
 @media (max-width: 700px) {
-	.optionContainer {
-		width: calc(100% - 2.5rem);
-		height: 100%;
+  .optionContainer {
+    width: calc(100% - 2.5rem);
+    height: 100%;
 
-		margin-top: auto;
-		margin-bottom: auto;
-		margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
 
-		border-radius: 10px;
-		overflow-y: scroll;
-		overflow-x: hidden;
-	}
-	.btn {
-		width: 3rem;
-		height: 3rem;
+    border-radius: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .btn {
+    width: 3rem;
+    height: 3rem;
 
-		right: 0;
+    right: 0;
 
-		border-radius: 100%;
-		margin: 0.4rem 0;
-		background: rgb(0 0 0 / 75%);
-		border: 2px solid black;
-	}
-	.btn button a div {
-		font-size: 25px;
-	}
+    border-radius: 100%;
+    margin: 0.4rem 0;
+    background: rgb(0 0 0 / 75%);
+    border: 2px solid black;
+  }
+  .btn button a div {
+    font-size: 25px;
+  }
 }
