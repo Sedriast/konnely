@@ -238,11 +238,11 @@ export const EditImageAndInfoUser = async (props) => {
     }
 };
 
-/// Función para desactivar un usuario en la base de datos
+/// Función para desactivar o activar un usuario en la base de datos
 
-export const InacctiveUser = async (props) => {
+export const StateUser = async (props) => {
     try {
-        await updateDoc(doc(db, 'users', props.uid), { state: 'Inactivo' });
+        await updateDoc(doc(db, 'users', props.user.uid), { state: props.state });
     } catch (error) {
         ValidationErrors(error.code);
     }
