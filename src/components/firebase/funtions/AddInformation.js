@@ -3,6 +3,7 @@ import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
 import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { ValidationErrors } from '../../use/0-GeneralComp/0-Scripts/ValidationErrors';
 import {
     getAuth,
     updateProfile,
@@ -11,7 +12,6 @@ import {
     EmailAuthProvider,
     updatePassword,
 } from 'firebase/auth';
-import { ValidationErrors } from '../../use/0-GeneralComp/0-Scripts/ValidationErrors';
 
 const db = getFirestore(app);
 const storage = getStorage(app);
@@ -19,345 +19,262 @@ export const auth = getAuth(app);
 
 /// Función para enviar un nuevo registro de un conejo a la base de datos
 
-export const addImageAndInfo = (props) => {
-    const funtionAddImageAndInfo = async (datos) => {
-        try {
-            let auxiliar = [];
-            auxiliar = datos.image.split(',');
-            if (!datos.origen) {
-                datos.origen = 'Ubaté';
-            }
-            if (datos.levante) {
-                datos.lifecycle[1].date = datos.levantefin;
-                datos.lifecycle[1].weigth = datos.levante;
-                delete datos.levantefin;
-                delete datos.levante;
-            }
-            if (datos.engorde) {
-                datos.lifecycle[2].date = datos.engordefin;
-                datos.lifecycle[2].weigth = datos.engorde;
-                delete datos.engordefin;
-                delete datos.engorde;
-            }
-            if (datos.ceba) {
-                datos.lifecycle[3].date = datos.cebafin;
-                datos.lifecycle[3].weigth = datos.ceba;
-                delete datos.cebafin;
-                delete datos.ceba;
-            }
-            delete datos.image;
-            delete datos.peso;
-            const docRef = await addDoc(collection(db, 'rabbits'), datos);
-            const refStorage = ref(storage, docRef.id);
-            await uploadString(refStorage, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(refStorage);
-            await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
-        } catch (error) {
-            console.log(error.message);
-            swal({
-                title: 'Ha ocurrido un error con su registro',
-                icon: 'error',
-                button: 'aceptar',
-            });
+export const addImageAndInfo = async (props) => {
+    try {
+        let auxiliar = [];
+        auxiliar = props.image.split(',');
+        if (!props.origen) {
+            props.origen = 'Ubaté';
         }
-    };
-
-    funtionAddImageAndInfo(props);
+        if (props.levante) {
+            props.lifecycle[1].date = props.levantefin;
+            props.lifecycle[1].weigth = props.levante;
+            delete props.levantefin;
+            delete props.levante;
+        }
+        if (props.engorde) {
+            props.lifecycle[2].date = props.engordefin;
+            props.lifecycle[2].weigth = props.engorde;
+            delete props.engordefin;
+            delete props.engorde;
+        }
+        if (props.ceba) {
+            props.lifecycle[3].date = props.cebafin;
+            props.lifecycle[3].weigth = props.ceba;
+            delete props.cebafin;
+            delete props.ceba;
+        }
+        delete props.image;
+        delete props.peso;
+        const docRef = await addDoc(collection(db, 'rabbits'), props);
+        const refStorage = ref(storage, docRef.id);
+        await uploadString(refStorage, auxiliar[1], 'base64');
+        const urlDescarga = await getDownloadURL(refStorage);
+        await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para editar la información basica de un conejo en la base de datos
 
-export const EditImageAndInfo = (props) => {
-    const funtionEditImageAndInfo = async (datos) => {
-        try {
-            if (datos.image.includes(',')) {
-                let auxiliar = [];
-                const Ref = ref(storage, datos.uid);
-                await deleteObject(Ref);
-                auxiliar = datos.image.split(',');
-                await uploadString(Ref, auxiliar[1], 'base64');
-                const urlDescarga = await getDownloadURL(Ref);
-                datos.url = urlDescarga;
-                delete datos.image;
-            }
-            delete datos.image;
-            await updateDoc(doc(db, 'rabbits', datos.uid), datos);
-        } catch (error) {
-            console.log(error);
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
+export const EditImageAndInfo = async (props) => {
+    try {
+        if (props.image.includes(',')) {
+            let auxiliar = [];
+            const Ref = ref(storage, props.uid);
+            await deleteObject(Ref);
+            auxiliar = props.image.split(',');
+            await uploadString(Ref, auxiliar[1], 'base64');
+            const urlDescarga = await getDownloadURL(Ref);
+            props.url = urlDescarga;
+            delete props.image;
         }
-    };
-
-    funtionEditImageAndInfo(props);
+        delete props.image;
+        await updateDoc(doc(db, 'rabbits', props.uid), props);
+    } catch (error) {
+        console.log(error);
+        swal({
+            title: error,
+            icon: 'error',
+            button: 'aceptar',
+        });
+    }
 };
 
 /// Función para editar el ciclo de vida de un conejo en la base de datos
 
-export const EditInfoRabbit = (props) => {
-    const funtionEditInfoRabbit = async (datos) => {
-        try {
-            await updateDoc(doc(db, 'rabbits', datos.uid), datos);
-        } catch (error) {
-            console.log(error);
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
-        }
-    };
-
-    funtionEditInfoRabbit(props);
+export const EditInfoRabbit = async (props) => {
+    try {
+        await updateDoc(doc(db, 'rabbits', props.uid), props);
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para editar la información en la base de datos
 
-export const UpdateInformation = (props) => {
-    const funtionUpdateInformation = async ({ coleccion, uid, data }) => {
-        try {
-            await updateDoc(doc(db, coleccion, uid), data);
-        } catch (error) {
-            console.log(error.message);
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
-        }
-    };
-    funtionUpdateInformation(props);
+export const UpdateInformation = async ({ coleccion, uid, data }) => {
+    try {
+        await updateDoc(doc(db, coleccion, uid), data);
+    } catch (error) {
+        console.log(error.message);
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para registrar un nuevo tratamiento en la base de datos
 
-export const AddTratament = (props) => {
-    const funtionAddTratament = async (datos) => {
-        try {
-            const docRef = await addDoc(collection(db, 'trataments'), datos);
-            await updateDoc(doc(db, 'trataments', docRef.id), {
-                uid: docRef.id,
-                state: 'Activo',
-                removalDate: null,
-                uidAudit: null,
-            });
-        } catch (error) {
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
-        }
-    };
-    funtionAddTratament(props);
+export const AddTratament = async (props) => {
+    try {
+        const docRef = await addDoc(collection(db, 'trataments'), props);
+        await updateDoc(doc(db, 'trataments', docRef.id), {
+            uid: docRef.id,
+            state: 'Activo',
+            removalDate: null,
+            uidAudit: null,
+        });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para cambiar el estado de un tratamiento en la base de datos
 
-export const AddAudit = (props) => {
-    const funtionAddAudit = async (datos) => {
-        const docRef = await addDoc(collection(db, 'audit'), datos);
+export const AddAudit = async (props) => {
+    try {
+        const docRef = await addDoc(collection(db, 'audit'), props);
         await updateDoc(doc(db, 'audit', docRef.id), { uid: docRef.id });
-        await updateDoc(doc(db, 'trataments', datos.uidTratament), {
+        await updateDoc(doc(db, 'trataments', props.uidTratament), {
             state: 'Inactivo',
             removalDate: Date.now(),
             uidAudit: docRef.id,
         });
-    };
-    funtionAddAudit(props);
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para borrar un tratamiento y su documento auditor en la base de datos
 
-export const RemovalTratament = (props) => {
-    const functionRemovalTratament = async (datos) => {
-        await deleteDoc(doc(db, 'trataments', datos.uid));
-        await deleteDoc(doc(db, 'audit', datos.uidAudit));
-    };
-    functionRemovalTratament(props);
+export const RemovalTratament = async (props) => {
+    try {
+        await deleteDoc(doc(db, 'trataments', props.uid));
+        await deleteDoc(doc(db, 'audit', props.uidAudit));
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para reactivar un registro en la base de datos
 
-export const ReactivateTratament = (props) => {
-    const funtionReactivateTratament = async ({ coleccion, uidAudit, uid, data }) => {
-        try {
-            await deleteDoc(doc(db, 'audit', uidAudit));
-            await updateDoc(doc(db, coleccion, uid), data);
-        } catch (error) {
-            console.log(error.message);
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
-        }
-    };
-    funtionReactivateTratament(props);
+export const ReactivateTratament = async ({ coleccion, uidAudit, uid, data }) => {
+    try {
+        await deleteDoc(doc(db, 'audit', uidAudit));
+        await updateDoc(doc(db, coleccion, uid), data);
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para añadir un nuevo ciclo reproductivo a la base de datos
 
-export const AddReproductiveCycle = (props) => {
-    const funtionAddReproductiveCycle = async (datos) => {
-        try {
-            if (datos.stages[0].date) {
-                const docRef = await addDoc(collection(db, 'reproductive'), datos);
-                await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
-                if (datos.stages[4].state === true) {
-                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: false });
-                } else {
-                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: true });
-                }
+export const AddReproductiveCycle = async (props) => {
+    try {
+        if (props.stages[0].date) {
+            const docRef = await addDoc(collection(db, 'reproductive'), props);
+            await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+            if (props.stages[4].state === true) {
+                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
             } else {
-                swal({
-                    title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
+                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
             }
-        } catch (error) {
-            console.log(error.message);
+        } else {
             swal({
-                title: error,
+                title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
                 icon: 'error',
                 button: 'aceptar',
             });
         }
-    };
-    funtionAddReproductiveCycle(props);
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para actualizar un ciclo reproductivo a la base de datos
 
-export const UpdateReproductiveCycle = (props) => {
-    const funtionUpdateReproductiveCycle = async (datos) => {
-        console.log(datos);
-        try {
-            if (datos.stages[0].date) {
-                await updateDoc(doc(db, 'reproductive', datos.uid), datos);
-                if (datos.stages[4].state === true) {
-                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: false });
-                } else {
-                    await updateDoc(doc(db, 'rabbits', datos.uidMother), { reproductivecycle: true });
-                }
+export const UpdateReproductiveCycle = async (props) => {
+    try {
+        if (props.stages[0].date) {
+            await updateDoc(doc(db, 'reproductive', props.uid), props);
+            if (props.stages[4].state === true) {
+                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
             } else {
-                swal({
-                    title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
-                    icon: 'error',
-                    button: 'aceptar',
-                });
+                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
             }
-        } catch (error) {
-            console.log(error.message);
+        } else {
             swal({
-                title: error,
+                title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
                 icon: 'error',
                 button: 'aceptar',
             });
         }
-    };
-    funtionUpdateReproductiveCycle(props);
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
-export const EditImageAndInfoUser = (props) => {
-    console.log({ props });
-    const funtionEditImageAndInfoUser = async (datos) => {
-        let photo =
-            'https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/ImagenDeUsuario.png?alt=media&token=e4b0499b-1ff2-42b3-93f9-e95d11533536';
-        try {
-            let auxiliar = [];
-            if (datos.image.includes(',') && datos.photoAux === photo) {
-                const Ref = ref(storage, datos.uid);
-                auxiliar = datos.image.split(',');
-                await uploadString(Ref, auxiliar[1], 'base64');
-                const urlDescarga = await getDownloadURL(Ref);
-                datos.photo = urlDescarga;
-                delete datos.image;
-            } else if (datos.image.includes(',') && datos.photoAux !== photo) {
-                const Ref = ref(storage, datos.uid);
-                await deleteObject(Ref);
-                auxiliar = datos.image.split(',');
-                await uploadString(Ref, auxiliar[1], 'base64');
-                const urlDescarga = await getDownloadURL(Ref);
-                datos.photo = urlDescarga;
-                delete datos.image;
-            }
-            if (datos.perfil === datos.uid) {
-                await updateProfile(auth.currentUser, {
-                    displayName: datos.user,
-                    photoURL: datos.photo,
-                }).catch((error) => {
-                    console.log(error);
-                });
-            }
-            delete datos.perfil;
-            delete datos.image;
-            delete datos.photoAux;
-            await updateDoc(doc(db, 'users', datos.uid), datos);
-        } catch (error) {
-            console.log(error);
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
+/// Función para editar la información e imagen de un usuario
+
+export const EditImageAndInfoUser = async (props) => {
+    let photo =
+        'https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/ImagenDeUsuario.png?alt=media&token=e4b0499b-1ff2-42b3-93f9-e95d11533536';
+    try {
+        let auxiliar = [];
+        if (props.image.includes(',') && props.photoAux === photo) {
+            const Ref = ref(storage, props.uid);
+            auxiliar = props.image.split(',');
+            await uploadString(Ref, auxiliar[1], 'base64');
+            const urlDescarga = await getDownloadURL(Ref);
+            props.photo = urlDescarga;
+            delete props.image;
+        } else if (props.image.includes(',') && props.photoAux !== photo) {
+            const Ref = ref(storage, props.uid);
+            await deleteObject(Ref);
+            auxiliar = props.image.split(',');
+            await uploadString(Ref, auxiliar[1], 'base64');
+            const urlDescarga = await getDownloadURL(Ref);
+            props.photo = urlDescarga;
+            delete props.image;
+        }
+        if (props.perfil === props.uid) {
+            await updateProfile(auth.currentUser, {
+                displayName: props.user,
+                photoURL: props.photo,
+            }).catch((error) => {
+                ValidationErrors(error.code);
             });
         }
-    };
-
-    funtionEditImageAndInfoUser(props);
+        delete props.perfil;
+        delete props.image;
+        delete props.photoAux;
+        await updateDoc(doc(db, 'users', props.uid), props);
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para desactivar un usuario en la base de datos
 
-export const InacctiveUser = (props) => {
-    const functionRemovalUser = async (datos) => {
-        try {
-            await updateDoc(doc(db, 'users', datos.uid), { state: 'Inactivo' });
-        } catch (error) {
-            console.log(error.message);
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
-        }
-    };
-    functionRemovalUser(props);
+export const InacctiveUser = async (props) => {
+    try {
+        await updateDoc(doc(db, 'users', props.uid), { state: 'Inactivo' });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para borrar un tratamiento y su documento auditor en la base de datos
 
-export const RemovalUser = (props) => {
-    const functionRemovalUser = async (datos) => {
-        try {
-            await updateDoc(doc(db, 'users', datos.data.uid), { state: 'activo' });
-            const docRef = await addDoc(collection(db, 'deleteUsers'), {
-                code: datos.data.code,
-                name: datos.data.names + ' ' + datos.data.lastNames,
-                user: datos.data.user,
-                phone: datos.data.phone,
-                email: datos.data.email,
-            });
-            await updateDoc(doc(db, 'deleteUsers', docRef.id), { uid: docRef.id });
-            await deleteDoc(doc(db, 'users', datos.data.uid));
-            const credential = EmailAuthProvider.credential(auth.currentUser.email, datos.contraseña);
-            await reauthenticateWithCredential(datos.user, credential).then(async () => {
-                await deleteUser(auth.currentUser);
-            });
-        } catch (error) {
-            console.log(error.message);
-            swal({
-                title: error,
-                icon: 'error',
-                button: 'aceptar',
-            });
-        }
-    };
-    functionRemovalUser(props);
+export const RemovalUser = async (props) => {
+    try {
+        await updateDoc(doc(db, 'users', props.data.uid), { state: 'activo' });
+        const docRef = await addDoc(collection(db, 'deleteUsers'), {
+            code: props.data.code,
+            name: props.data.names + ' ' + props.data.lastNames,
+            user: props.data.user,
+            phone: props.data.phone,
+            email: props.data.email,
+        });
+        await updateDoc(doc(db, 'deleteUsers', docRef.id), { uid: docRef.id });
+        await deleteDoc(doc(db, 'users', props.data.uid));
+        const credential = EmailAuthProvider.credential(auth.currentUser.email, props.contraseña);
+        await reauthenticateWithCredential(props.user, credential).then(async () => {
+            await deleteUser(auth.currentUser);
+        });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
 };
 
 /// Función para cambiar la contraseña de un usuario en la base de datos
