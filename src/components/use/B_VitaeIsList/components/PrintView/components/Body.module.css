@@ -1,0 +1,22 @@
+.container {
+  width: 100%;
+}
+.container * {
+  font-size: 15px;
+}
+.container * h3 {
+  font-size: 13px;
+}
+.container table {
+  width: 100%;
+}
+.container table * {
+  text-align: center;
+}
+.container thead {
+  background: rgb(18, 108, 114);
+}
+.container tbody td {
+  padding: 0;
+  background: rgba(255, 255, 255, 0.5);
+}

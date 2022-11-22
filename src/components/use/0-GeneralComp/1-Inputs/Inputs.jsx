@@ -1,74 +1,74 @@
-import swal from 'sweetalert';
-import st from './Inputs.module.css';
+import swal from "sweetalert";
+import st from "./Inputs.module.css";
 
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from "react";
 
 export function Inputs({
-    name,
-    type,
-    handleChange,
-    preeview,
-    HaveImage,
-    leyend,
-    value,
-    min,
-    max,
-    inputmode,
-    step,
-    pattern,
+  name,
+  type,
+  handleChange,
+  preeview,
+  HaveImage,
+  leyend,
+  value,
+  min,
+  max,
+  inputmode,
+  step,
+  pattern,
 }) {
-    const fileInputRef = useRef();
-    const [image, setImage] = useState(false);
-    const [preview, setPreview] = useState(null);
-    const [cnsST, setCNSST] = useState(true);
+  const fileInputRef = useRef();
+  const [image, setImage] = useState(false);
+  const [preview, setPreview] = useState(null);
+  const [cnsST, setCNSST] = useState(true);
 
-    const action = (e) => {
-        if (type === 'file') {
-            const file = e.target.files[0];
-            if (file && file.type.substring(0, 5) === 'image') {
-                setImage(file);
-            } else {
-                setImage(null);
-            }
-        } else if (type !== 'image') {
-            handleChange(e);
-        }
-    };
+  const action = (e) => {
+    if (type === "file") {
+      const file = e.target.files[0];
+      if (file && file.type.substring(0, 5) === "image") {
+        setImage(file);
+      } else {
+        setImage(null);
+      }
+    } else if (type !== "image") {
+      handleChange(e);
+    }
+  };
 
-    // Configuracion para input tipo imagen
-    useEffect(() => {
-        value ? setCNSST(false) : setCNSST(true);
-        if (image) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setPreview(reader.result);
-            };
-            reader.readAsDataURL(image);
-        } else if (preeview !== null) {
-            setPreview(preeview);
-        } else {
-            setPreview(null);
-        }
-        if (type === 'file') {
-            if (preview) {
-                HaveImage(preview);
-            }
-        }
-    }, [image, preview, preeview, HaveImage, type, value]);
+  // Configuracion para input tipo imagen
+  useEffect(() => {
+    value ? setCNSST(false) : setCNSST(true);
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(image);
+    } else if (preeview !== null) {
+      setPreview(preeview);
+    } else {
+      setPreview(null);
+    }
+    if (type === "file") {
+      if (preview) {
+        HaveImage(preview);
+      }
+    }
+  }, [image, preview, preeview, HaveImage, type, value]);
 
-    const changeImage = () => {
-        swal({
-            title: '¿Desea eliminar la imagen?',
-            icon: 'warning',
-            buttons: ['No', 'Si'],
-        }).then((respuesta) => {
-            if (respuesta) {
-                setImage(null);
-                setPreview(null);
-                HaveImage(null);
-            }
-        });
-    };
+  const changeImage = () => {
+    swal({
+      title: "¿Desea eliminar la imagen?",
+      icon: "warning",
+      buttons: ["No", "Si"],
+    }).then((respuesta) => {
+      if (respuesta) {
+        setImage(null);
+        setPreview(null);
+        HaveImage(null);
+      }
+    });
+  };
 
     return (
         <>
