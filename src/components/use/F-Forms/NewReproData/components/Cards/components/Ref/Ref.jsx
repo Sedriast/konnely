@@ -49,7 +49,7 @@ export function Ref({ stage, handleChange, date }) {
                         name='lives'
                         type='number'
                         leyend='Crias vivas'
-                        min='1'
+                        min='0'
                         pattern='^[0-9]+'
                         handleChange={hf}
                     />
@@ -57,7 +57,7 @@ export function Ref({ stage, handleChange, date }) {
                         name='deaths'
                         type='number'
                         leyend='Crias muertas'
-                        min='1'
+                        min='0'
                         pattern='^[0-9]+'
                         handleChange={hf}
                     />
@@ -65,7 +65,7 @@ export function Ref({ stage, handleChange, date }) {
                         name='homogen'
                         type='number'
                         leyend='Homogeneizados'
-                        min='1'
+                        min='0'
                         pattern='^[0-9]+'
                         handleChange={hf}
                     />
@@ -73,7 +73,7 @@ export function Ref({ stage, handleChange, date }) {
                         name='total'
                         type='number'
                         leyend='Crias totales'
-                        min='1'
+                        min='0'
                         pattern='^[0-9]+'
                         handleChange={hf}
                     />
@@ -91,7 +91,7 @@ export function Ref({ stage, handleChange, date }) {
                         name='WeanedPups'
                         type='number'
                         leyend='Crias destetadas'
-                        min='1'
+                        min='0'
                         pattern='^[0-9]+'
                         handleChange={hf}
                     />
@@ -99,7 +99,7 @@ export function Ref({ stage, handleChange, date }) {
                         name='LitterWeight'
                         type='number'
                         leyend='Peso camada'
-                        min='1'
+                        min='0'
                         pattern='^[0-9]+'
                         handleChange={hf}
                     />

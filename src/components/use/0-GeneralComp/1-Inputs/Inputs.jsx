@@ -89,13 +89,13 @@ export function Inputs({
                         autoComplete='off'
                         id={name}
                         defaultValue={value}
-                        required='True'
                         type={type}
                         name={name}
+                        required={true}
                         ref={fileInputRef}
                         min={min}
                         max={max}
-                        step={step}
+                        step='0.1'
                         pattern={pattern}
                         inputMode={inputmode}
                         onChange={action}

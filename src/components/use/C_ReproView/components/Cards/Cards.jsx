@@ -8,7 +8,7 @@ import { Ref } from './components/Ref';
 export function Cards({ editor, stages }) {
     return (
         <div className={st.container}>
-            {editor.length === 1 ? (
+            {editor?.length === 1 ? (
                 <>
                     <div className={st.panelId}>Editor: {editor}</div>
                 </>
@@ -16,7 +16,7 @@ export function Cards({ editor, stages }) {
                 <>
                     <div className={st.panelId}>
                         Editores:
-                        {editor.map((u) => (
+                        {editor?.map((u) => (
                             <h1> {'* ' + u}</h1>
                         ))}
                     </div>
