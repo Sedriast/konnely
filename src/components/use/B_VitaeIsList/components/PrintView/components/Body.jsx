@@ -113,7 +113,7 @@ export function Body({ cicles, trataments }) {
         </table>
       </div>
 
-      {trataments.length > 0 && (
+      {trataments?.length > 0 && (
         <div className={st.carac}>
           <table>
             <thead>
