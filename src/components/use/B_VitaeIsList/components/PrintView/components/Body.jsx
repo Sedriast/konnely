@@ -42,6 +42,8 @@ export function Body({ cicles }) {
                 <th>Edad</th>
                 <th>Peso</th>
                 <th>Procedencia</th>
+                <th>Padre</th>
+                <th>Madre</th>
               </thead>
               <tbody>
                 <td>{basicData?.info?.id}</td>
@@ -49,6 +51,8 @@ export function Body({ cicles }) {
                 <td>{basicData?.info?.raza}</td>
                 <td>23</td>
                 <td>{basicData?.info?.weigth}</td>
+                <td>{basicData?.info?.origen}</td>
+                <td>{basicData?.info?.origen}</td>
                 <td>{basicData?.info?.origen}</td>
               </tbody>
             </table>
