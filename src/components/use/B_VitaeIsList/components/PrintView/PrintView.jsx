@@ -1,12 +1,5 @@
 import st from "./PrintView.module.css";
 
-import {
-  dataMonta,
-  dataPalpa,
-  dataParto,
-  dataDestete,
-} from "../../../0-GeneralComp/2-FakeData/reproductiveCycle";
-
 import { newTreats } from "../../../0-GeneralComp/0-StaticData/options";
 
 import { Body } from "./components/Body";
@@ -15,15 +8,23 @@ import { basicData } from "../../../0-GeneralComp/0-StaticData/dataProv";
 import { QueriesSimple_ } from "../../../../firebase/funtions/GetInformation";
 
 import s from "../../../../img/ed.png";
-import { signInWithEmailAndPassword } from "firebase/auth";
+
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
 
 export function PrintView() {
+  const componentRef = useRef();
   const cicles = QueriesSimple_({
     coleccion: "reproductive",
     parametro: "uidMother",
     busqueda: basicData.info.uid,
   }).props.children;
-  console.log(cicles);
+
+  const print = useReactToPrint({
+    content: () => componentRef.current,
+    documentTitle: "New paper",
+  });
+
   const cm = (
     <>
       <LeftBottomMenu
@@ -32,56 +33,63 @@ export function PrintView() {
           window.history.back();
         }}
       />
-      <div className={st.optionContainer}>
+      <button className={st.btnPrint} onClick={print}>
+        Imprimir
+      </button>
+      <div className={st.optionContainer} ref={componentRef}>
         <div className={st.headPi}>
-          <table>
-            <thead>
-              <tr>
+          <div className={st.con}>
+            <div>
+              <img src={s} alt="" />
+            </div>
+            <table>
+              <thead>
                 <tr>
-                  <th>MARCO PROCESO DE APOYO</th>
-                </tr>
-                <tr>
-                  <th>PROCESO GÉSTION DE PROCESO ACADÉMICO</th>
-                </tr>
-                <tr>
-                  <th>HOJA DE VIDA SEMOVIENTE HEMBRA</th>
-                </tr>
-                <th>
                   <tr>
-                    <th>CÓDIGO: AAAr031</th>
+                    <th>MARCO PROCESO DE APOYO</th>
                   </tr>
                   <tr>
-                    <th>VERSIÓN: 7</th>
+                    <th>PROCESO GÉSTION DE PROCESO ACADÉMICO</th>
+                  </tr>
+                  <tr>
+                    <th>HOJA DE VIDA SEMOVIENTE HEMBRA</th>
                   </tr>
                   <th>
-                    FECHA:{" "}
-                    {window
-                      .Date()
-                      .replace(" GMT-0500 (hora estándar de Colombia)", "")}
+                    <tr>
+                      <th>CÓDIGO: AAAr031</th>
+                    </tr>
+                    <tr>
+                      <th>VERSIÓN: 7</th>
+                    </tr>
+                    <th>
+                      FECHA:
+                      {window
+                        .Date()
+                        .replace(" GMT-0500 (hora estándar de Colombia)", "")}
+                    </th>
                   </th>
-                </th>
-              </tr>
-            </thead>
-          </table>{" "}
+                </tr>
+              </thead>
+            </table>
+          </div>
+
           <br />
           <hr />
           <br />
           <br />
         </div>
-
         <Body cicles={cicles} />
-
         <div className={st.foot}>
           <br />
           <br />
           <hr />
           <br />
+          <br />
+          <br />
           <p>
             Calle 6 N° 9-80 Ubate – Cundinamarca Teléfono (091) 855 3055/3056
           </p>
-          <br />
           <p>Ext.127 Línea Gratuita 018000180414</p>
-          <br />
           <p>
             {" "}
             <a href="www.ucundinamarca.edu.co">
@@ -90,7 +98,6 @@ export function PrintView() {
             E-mail:{" "}
             <a href="info@ucundinamarca.edu.co">info@ucundinamarca.edu.co</a>
           </p>
-          <br />
           <p>NIT: 890.680.062-2</p>
         </div>
       </div>
