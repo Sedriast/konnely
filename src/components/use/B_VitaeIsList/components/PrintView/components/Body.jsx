@@ -15,7 +15,7 @@ export function Body({ dataFemale }) {
                 <th>
                   Identificador
                   <br />
-                  de la hembras
+                  de la hembra
                 </th>
                 <th>Fecha nacimiento</th>
                 <th>Raza</th>
@@ -32,7 +32,7 @@ export function Body({ dataFemale }) {
                 <td>{dataFemale?.id}</td>
                 <td>{dataFemale?.id}</td>
               </tbody>
-            </table>{" "}
+            </table>
           </tbody>
         </table>
       </div>

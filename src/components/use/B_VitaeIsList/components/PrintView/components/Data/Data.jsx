@@ -1,12 +1,10 @@
 export function Data({ data }) {
   const cm = (
-    <>
+    <tr>
       {data?.map((e) => (
-        <tr>
-          <td>{e}</td>
-        </tr>
+        <td>{e}</td>
       ))}
-    </>
+    </tr>
   );
   return cm;
 }
