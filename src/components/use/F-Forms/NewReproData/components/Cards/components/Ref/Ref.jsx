@@ -12,7 +12,6 @@ export function Ref({ stage, handleChange, date }) {
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
                     <br />
-					
                     <Inputs value={null} name='Macho' type='text' leyend='Macho' handleChange={hf} />
                     <Inputs name='DateInitial' type='date' leyend='Fecha' handleChange={handleChange} />
                 </div>
