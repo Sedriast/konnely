@@ -79,8 +79,8 @@
 }
 .opUser {
   display: flex;
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
   margin: 6px;
   border: 1px solid black;
   border-radius: 100%;
@@ -90,8 +90,8 @@
   display: flex;
 }
 .opUser img {
-  width: 5rem;
-  height: 5rem;
+  width: 3rem;
+  height: 3rem;
 
   border-radius: 100%;
 

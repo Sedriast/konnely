@@ -4,6 +4,9 @@ import swal from "sweetalert";
 import { useState } from "react";
 
 import { DropdownList } from "./components/DropdownList";
+import { Buttons } from "../../../0-GeneralComp/1-Buttons/Buttons";
+
+import { faPrint } from "@fortawesome/free-solid-svg-icons";
 
 export function List() {
   let search = { vieja: "init" };
@@ -82,11 +85,21 @@ export function List() {
         <div className={st.panelCards}>
           <div className={st.cards}>
             {filter === "Hembra" && (
-              <DropdownList
-                coleccion="rabbits"
-                parametro="genero"
-                busqueda={filter}
-              />
+              <>
+                <DropdownList
+                  coleccion="rabbits"
+                  parametro="genero"
+                  busqueda={filter}
+                />
+                <div className="btnPrint">
+                  <Buttons
+                    direction="top"
+                    label="Imprimir ciclos reproductivos"
+                    route="/test"
+                    btnIconText={faPrint}
+                  />
+                </div>
+              </>
             )}
             {filter === "Macho" && (
               <DropdownList
