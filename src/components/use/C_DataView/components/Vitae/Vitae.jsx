@@ -28,6 +28,8 @@ export function Vitae() {
         busqueda: basicData.info.uid,
     }).props.children;
     const user_ = QueriesSimple_({ coleccion: 'users', parametro: 'uid', busqueda: user.uid }).props.children[0];
+    const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'uid', busqueda: basicData.info.uid }).props
+        .children[0];
 
     useEffect(() => {
         if (basicData.id === null) {
@@ -46,12 +48,16 @@ export function Vitae() {
                     <LifeCycle info={basicData.info} user_={user_} />
                     <br />
                     <br />
-                    <hr />
-                    <br />
-                    <br />
-                    <ReproductiveCycle />
-                    <br />
-                    <br />
+                    {rabbit?.genero === 'Hembra' && (
+                        <>
+                            <hr />
+                            <br />
+                            <br />
+                            <ReproductiveCycle />
+                            <br />
+                            <br />
+                        </>
+                    )}
                     <hr />
                     <br />
                     <br />
