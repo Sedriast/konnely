@@ -85,21 +85,11 @@ export function List() {
         <div className={st.panelCards}>
           <div className={st.cards}>
             {filter === "Hembra" && (
-              <>
-                <DropdownList
-                  coleccion="rabbits"
-                  parametro="genero"
-                  busqueda={filter}
-                />
-                <div className="btnPrint">
-                  <Buttons
-                    direction="top"
-                    label="Imprimir ciclos reproductivos"
-                    route="/test"
-                    btnIconText={faPrint}
-                  />
-                </div>
-              </>
+              <DropdownList
+                coleccion="rabbits"
+                parametro="genero"
+                busqueda={filter}
+              />
             )}
             {filter === "Macho" && (
               <DropdownList
