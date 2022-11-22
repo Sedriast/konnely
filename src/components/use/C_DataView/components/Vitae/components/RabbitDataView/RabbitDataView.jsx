@@ -31,6 +31,14 @@ export function RabbitDataView({ stageId, user_ }) {
       {basicData.id !== null && (
         <>
           <div className={st.initInfo}>
+            <div className={st.btnPrint}>
+              <Buttons
+                direction="bottom"
+                label="Imprimir hoja de vida"
+                route="/test"
+                btnIconText={faPrint}
+              />
+            </div>
             <div className={st.rabbitImg}>
               <img src={data_[0]?.url} alt="" />
             </div>
@@ -39,15 +47,6 @@ export function RabbitDataView({ stageId, user_ }) {
             <br />
             <br />
 
-            <div className={st.btnPrint}>
-              <Buttons
-                direction="bottom"
-                label="Imprimir hoja de vida"
-                route="/test"
-                btnIconText={faPrint}
-              />
-              Imprimir hoja de vida
-            </div>
             <hr />
             <br />
           </div>
