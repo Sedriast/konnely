@@ -3,7 +3,25 @@ import { Data } from './Data/Data';
 import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function Body({ cicles }) {
-    console.log(basicData);
+    const dataCicle = (cicle) => {
+        console.log(cicle);
+        const data = [
+            cicle?.stages[0]?.date,
+            cicle?.stages[0]?.male,
+            cicle?.stages[1]?.date,
+            cicle?.stages[3]?.approximateDate,
+            cicle?.stages[2]?.date,
+            cicle?.stages[3]?.date,
+            cicle?.stages[3]?.lives,
+            cicle?.stages[3]?.deaths,
+            '--------',
+            cicle?.stages[4]?.date,
+            cicle?.stages[4]?.FemaleHatchlings,
+            cicle?.stages[4]?.MaleHatchlings,
+            cicle?.stages[4]?.LitterWeight,
+        ];
+        return data;
+    };
     const cm = (
         <div className={st.container}>
             <div className={st.carac}>
@@ -27,12 +45,11 @@ export function Body({ cicles }) {
                             </thead>
                             <tbody>
                                 <td>{basicData?.info?.id}</td>
-                                <td>{basicData?.info?.date}</td>
-                                <td>{basicData?.info?.race}</td>
+                                <td>{basicData?.info?.nacimiento}</td>
+                                <td>{basicData?.info?.raza}</td>
                                 <td>23</td>
                                 <td>{basicData?.info?.weigth}</td>
-                                <td>{basicData?.info?.id}</td>
-                                <td>{basicData?.info?.id}</td>
+                                <td>{basicData?.info?.origen}</td>
                             </tbody>
                         </table>
                     </tbody>
@@ -71,7 +88,10 @@ export function Body({ cicles }) {
                     <th>Peso destete</th>
                 </thead>
                 <tbody>
-                    <Data data={cicles} />
+                    {cicles?.map((e) => {
+                        if (e.state === false) return <Data data={dataCicle(e)} />;
+                        return <></>;
+                    })}
                 </tbody>
             </table>
         </div>

@@ -15,6 +15,7 @@ export function PrintView() {
         parametro: 'uidMother',
         busqueda: basicData.info.uid,
     }).props.children;
+    console.log(cicles);
     const cm = (
         <>
             <LeftBottomMenu
