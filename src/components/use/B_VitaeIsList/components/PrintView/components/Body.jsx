@@ -1,4 +1,5 @@
 import st from "./Body.module.css";
+import { Data } from "./Data/Data";
 
 export function Body({ dataFemale }) {
   const cm = (
@@ -67,7 +68,9 @@ export function Body({ dataFemale }) {
           <th>Crias machos</th>
           <th>Peso destete</th>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          <Data data={dataFemale?.reproductive} />
+        </tbody>
       </table>
     </div>
   );
