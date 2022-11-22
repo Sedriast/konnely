@@ -1,24 +1,10 @@
 export function Data({ data }) {
   const cm = (
-    <>
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </>
+    <tr>
+      {data?.map((e) => (
+        <td>{e}</td>
+      ))}
+    </tr>
   );
   return cm;
 }
