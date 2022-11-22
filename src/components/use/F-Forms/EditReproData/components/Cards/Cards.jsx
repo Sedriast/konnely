@@ -39,7 +39,6 @@ export function Cards({ item, stages }) {
                 className={st.panelInfo}
                 onSubmit={(e) => {
                     e.preventDefault();
-                    console.log('Hola');
                     UpdateReproductiveCycle(formatCycleReproductive(e, item, user));
                 }}>
                 {stages?.map((element) => {
