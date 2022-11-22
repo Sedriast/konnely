@@ -313,3 +313,14 @@ export const ChangePassword = async (props) => {
         ValidationErrors(error.code);
     }
 };
+
+/// Función para borrar una camada de la base de datos
+
+export const RemovalCamada = async (props) => {
+    try {
+        await deleteDoc(doc(db, 'reproductive', props.uid));
+        await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
+};

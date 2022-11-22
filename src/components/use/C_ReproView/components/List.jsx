@@ -22,6 +22,8 @@ export function List() {
                                     id={item.id}
                                     editor={item.displayNameEditors}
                                     stages={item.stages}
+                                    uidMother={item.uidMother}
+                                    item={item}
                                 />
                             )
                     )}
