@@ -5,15 +5,11 @@ import swal from 'sweetalert';
 import { useAuth } from '../../../../../context/AuthContext';
 import { ValidationErrors } from '../../../0-GeneralComp/0-Scripts/ValidationErrors';
 import { useNavigate } from 'react-router-dom';
-import { Modal } from '../../../0-GeneralComp/0-StaticData/Modals/Modal';
-import { useModal } from '../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { useState } from 'react';
 
 export function Login() {
     const navigate = useNavigate();
     const { login, resetPassword, user } = useAuth();
-    const [isOpenModal, openModal, closeModal] = useModal(false);
-    const [reset, setReset] = useState('');
     const [cnsST1, setCNSST1] = useState(true);
     const [cnsST2, setCNSST2] = useState(true);
     if (user) {
@@ -38,46 +34,6 @@ export function Login() {
                         e.preventDefault();
                         handleSubmit({ email: e.target.email.value, password: e.target.password.value });
                     }}>
-                    <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                        {isOpenModal && (
-                            <>
-                                <input
-                                    type='email'
-                                    defaultValue={reset}
-                                    placeholder='Digite su correo electronico'
-                                    onChange={(e) => {
-                                        e.preventDefault();
-                                        setReset(e.target.value);
-                                    }}
-                                />
-                                <button
-                                    onClick={async (e) => {
-                                        e.preventDefault();
-                                        if (reset.includes('@') && reset !== '') {
-                                            await resetPassword(reset);
-                                            setReset('');
-                                            closeModal();
-                                            swal({
-                                                title: 'A su correo electronico se ha enviado un enlace con el que puede cambiar su contraseña',
-                                                icon: 'error',
-                                                button: 'aceptar',
-                                            });
-                                        } else if (reset === '') {
-                                            closeModal();
-                                        } else {
-                                            setReset('');
-                                            swal({
-                                                title: 'Digite un correo electronico valido',
-                                                icon: 'error',
-                                                button: 'aceptar',
-                                            });
-                                        }
-                                    }}>
-                                    Enviar
-                                </button>
-                            </>
-                        )}
-                    </Modal>
                     <div className={st.inpCont}>
                         <h3 className={cnsST1 ? st.lblInac : st.lblAc}>Usuario institucional</h3>
                         <input
@@ -116,7 +72,45 @@ export function Login() {
                         <button type='submit'>Iniciar sesión</button>
                     </div>
                     <div className={st.forgot}>
-                        <a href='/#' onClick={() => openModal()}>
+                        <a
+                            href='/#'
+                            onClick={() => {
+                                swal('Ingrese su correo electronico', {
+                                    content: {
+                                        element: 'input',
+                                        attributes: {
+                                            placeholder: 'Email',
+                                            type: 'text',
+                                        },
+                                    },
+                                    button: {
+                                        text: 'Aceptar',
+                                    },
+                                }).then(async (value) => {
+                                    if (value !== null || value !== '') {
+                                        console.log(value);
+                                        if (value?.includes('@')) {
+                                            try {
+                                                await resetPassword(value).then(() => {
+                                                    swal({
+                                                        title: 'A su correo electronico se ha enviado un enlace con el que puede cambiar su contraseña',
+                                                        icon: 'success',
+                                                        button: 'aceptar',
+                                                    });
+                                                });
+                                            } catch (error) {
+                                                ValidationErrors(error.code);
+                                            }
+                                        } else {
+                                            swal({
+                                                title: 'Digite un correo electronico valido',
+                                                icon: 'error',
+                                                button: 'aceptar',
+                                            });
+                                        }
+                                    }
+                                });
+                            }}>
                             Olvide mi contraseña
                         </a>
                     </div>

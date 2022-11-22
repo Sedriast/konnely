@@ -34,7 +34,6 @@ export function Register() {
             });
         } catch (error) {
             ValidationErrors(error.code);
-            console.log(error);
         }
     };
     function handleChange(e) {
