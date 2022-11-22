@@ -1,6 +1,8 @@
 .optionContainer {
-  width: calc(89% - 3rem);
+  width: calc(100% - 6rem);
   height: 98%;
+
+  padding: 1rem;
 
   margin-top: auto;
   margin-bottom: auto;
