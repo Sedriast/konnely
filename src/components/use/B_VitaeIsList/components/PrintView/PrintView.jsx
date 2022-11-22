@@ -63,16 +63,16 @@ export function PrintView() {
                     </tr>
                     <th>
                       FECHA:
-                      {window
-                        .Date()
-                        .replace(" GMT-0500 (hora estándar de Colombia)", "")}
+                      {Date().replace(
+                        " GMT-0500 (hora estándar de Colombia)",
+                        ""
+                      )}
                     </th>
                   </th>
                 </tr>
               </thead>
             </table>
           </div>
-
           <br />
           <hr />
           <br />
