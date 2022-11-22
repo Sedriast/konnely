@@ -252,22 +252,46 @@ export const StateUser = async (props) => {
 
 export const RemovalUser = async (props) => {
     try {
-        await updateDoc(doc(db, 'users', props.data.uid), { state: 'activo' });
-        const docRef = await addDoc(collection(db, 'deleteUsers'), {
-            code: props.data.code,
-            name: props.data.names + ' ' + props.data.lastNames,
-            user: props.data.user,
-            phone: props.data.phone,
-            email: props.data.email,
-        });
-        await updateDoc(doc(db, 'deleteUsers', docRef.id), { uid: docRef.id });
-        await deleteDoc(doc(db, 'users', props.data.uid));
         const credential = EmailAuthProvider.credential(auth.currentUser.email, props.contraseña);
         await reauthenticateWithCredential(props.user, credential).then(async () => {
+            await updateDoc(doc(db, 'users', props.data.uid), { state: 'activo' });
+            const docRef = await addDoc(collection(db, 'deleteUsers'), {
+                code: props.data.code,
+                name: props.data.names + ' ' + props.data.lastNames,
+                user: props.data.user,
+                phone: props.data.phone,
+                email: props.data.email,
+            });
+            await updateDoc(doc(db, 'deleteUsers', docRef.id), { uid: docRef.id });
+            await deleteDoc(doc(db, 'users', props.data.uid));
             await deleteUser(auth.currentUser);
         });
     } catch (error) {
+        console.log(error.code);
         ValidationErrors(error.code);
+    }
+};
+
+/// Función para borrar un tratamiento y su documento auditor en la base de datos
+
+export const RemovalUserAdmin = async (props) => {
+    try {
+        const credential = EmailAuthProvider.credential(auth.currentUser.email, props.contraseña);
+        await reauthenticateWithCredential(props.user, credential).then(async () => {
+            await updateDoc(doc(db, 'users', props.data.uid), { state: 'activo' });
+            const docRef = await addDoc(collection(db, 'deleteUsers'), {
+                code: props.data.code,
+                name: props.data.names + ' ' + props.data.lastNames,
+                user: props.data.user,
+                phone: props.data.phone,
+                email: props.data.email,
+            });
+            await updateDoc(doc(db, 'deleteUsers', docRef.id), { uid: docRef.id });
+            await deleteDoc(doc(db, 'users', props.data.uid));
+            await deleteUser(auth.currentUser);
+        });
+    } catch (error) {
+        window.location.reload(true);
     }
 };
 

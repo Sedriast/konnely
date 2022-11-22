@@ -47,7 +47,7 @@ export function AuthProvider({ children }) {
                 rol: 'usuario',
                 theme: tema,
                 photo: imagenPerfil,
-                state: 'activo',
+                state: 'Activo',
             });
         });
         updateProfile(auth.currentUser, {

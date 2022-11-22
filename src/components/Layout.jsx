@@ -1,7 +1,7 @@
 import st from './Layout.module.css';
 import app from '../components/firebase/credentials';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
 
@@ -21,23 +21,20 @@ import { ReproView } from './use/C_ReproView/ReproView';
 import { EditLife } from './use/F-Forms/EditLifedata/EditLife';
 import { EditRepro } from './use/F-Forms/EditReproData/EditRepro';
 import { EditTrats } from './use/F-Forms/EditTrats/EditTrats';
-import { RemovalTratament, RemovalUser } from './firebase/funtions/AddInformation';
+import { RemovalTratament, RemovalUserAdmin } from './firebase/funtions/AddInformation';
 import { DashBoard } from './use/C_PrimaryView/DashBoard';
 import { Record } from './use/C_Record/Record';
 import { NewRepro } from './use/F-Forms/NewReproData/NewRepro';
 import { getAuth, updateProfile } from 'firebase/auth';
 import { Invoice } from './use/F-Forms/NewInvoice/Invoice';
-import { useModal } from './use/0-GeneralComp/0-StaticData/Modals/useModal';
-import { Modal } from './use/0-GeneralComp/0-StaticData/Modals/Modal';
-import { RetrieveUser, RetrieveUserData } from './use/0-GeneralComp/0-StaticData/dataProv';
+
+import swal from 'sweetalert';
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
 
 export function Layout() {
     const { user } = useAuth();
-    const [isOpenModal, openModal, closeModal] = useModal(false);
-    const [credencial, setCredencial] = useState('');
 
     useEffect(() => {
         if (user) {
@@ -77,16 +74,37 @@ export function Layout() {
                     }).catch((error) => {
                         console.log(error);
                     });
-                } else {
-                    console.log('No such document!');
                 }
             }
             async function profileDelete() {
                 const docRef = doc(db, 'users', user.uid);
                 const docSnap = await getDoc(docRef);
-                if (docSnap.data().state === 'Inactivo') {
-                    RetrieveUser(docSnap.data());
-                    openModal();
+                if (docSnap.exists() && docSnap.data().state === 'Inactivo') {
+                    swal(
+                        'El administrador a desactivado su cuenta, ingrese su contraseña para verificar su estado',
+                        {
+                            closeOnEsc: false,
+                            closeOnClickOutside: false,
+                            dangerMode: true,
+                            content: {
+                                element: 'input',
+                                attributes: {
+                                    placeholder: 'Contraseña',
+                                    type: 'password',
+                                },
+                            },
+                            button: {
+                                text: 'Aceptar',
+                                closeModal: false,
+                            },
+                        }
+                    ).then((value) => {
+                        RemovalUserAdmin({
+                            data: docSnap.data(),
+                            contraseña: value,
+                            user: user,
+                        });
+                    });
                 }
             }
             getData();
@@ -94,37 +112,11 @@ export function Layout() {
             profileUpdate();
             profileDelete();
         }
-    }, [user, openModal]);
+    }, [user]);
 
     return (
         <>
             <div className={st.container} id='lay'>
-                <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                    {isOpenModal && (
-                        <>
-                            <input
-                                type='password'
-                                placeholder='Digite su contraseña'
-                                onChange={(e) => {
-                                    e.preventDefault();
-                                    setCredencial(e.target.value);
-                                }}
-                            />
-                            <button
-                                onClick={async (e) => {
-                                    e.preventDefault();
-                                    closeModal();
-                                    RemovalUser({
-                                        data: RetrieveUserData.info,
-                                        contraseña: credencial,
-                                        user: user,
-                                    });
-                                }}>
-                                Enviar
-                            </button>
-                        </>
-                    )}
-                </Modal>
                 <Router>
                     <Routes>
                         <Route

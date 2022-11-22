@@ -21,7 +21,7 @@ export function UserCards({ userEmail, userName, user }) {
                         recuperarUser(user);
                     }}
                 />
-                {user.state === 'activo' ? (
+                {user.state === 'Activo' ? (
                     <Buttons
                         route='#'
                         label='Borrar'
@@ -34,7 +34,7 @@ export function UserCards({ userEmail, userName, user }) {
                                 buttons: ['No', 'Si'],
                             }).then((respuesta) => {
                                 if (respuesta) {
-                                    StateUser({ user: user, state: 'inactivo' });
+                                    StateUser({ user: user, state: 'Inactivo' });
                                 }
                             });
                         }}
@@ -52,7 +52,7 @@ export function UserCards({ userEmail, userName, user }) {
                                 buttons: ['No', 'Si'],
                             }).then((respuesta) => {
                                 if (respuesta) {
-                                    StateUser({ user: user, state: 'activo' });
+                                    StateUser({ user: user, state: 'Activo' });
                                 }
                             });
                         }}
