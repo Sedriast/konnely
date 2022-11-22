@@ -15,6 +15,7 @@ export function Inputs({
     max,
     inputmode,
     pattern,
+    required_,
 }) {
     const fileInputRef = useRef();
     const [image, setImage] = useState(false);
@@ -90,7 +91,7 @@ export function Inputs({
                         defaultValue={value}
                         type={type}
                         name={name}
-                        required={true}
+                        required={value === null ? true : false}
                         ref={fileInputRef}
                         min={min}
                         max={max}
