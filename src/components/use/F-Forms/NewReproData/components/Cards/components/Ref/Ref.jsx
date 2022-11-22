@@ -12,8 +12,8 @@ export function Ref({ stage, handleChange, date }) {
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
                     <br />
-
-                    <Inputs name='Macho' type='text' leyend='Macho' handleChange={hf} />
+					
+                    <Inputs value={null} name='Macho' type='text' leyend='Macho' handleChange={hf} />
                     <Inputs name='DateInitial' type='date' leyend='Fecha' handleChange={handleChange} />
                 </div>
             );
@@ -24,7 +24,13 @@ export function Ref({ stage, handleChange, date }) {
                     <h3>{stage.title}</h3>
                     {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).palpation}</h1>}
                     <br />
-                    <Inputs name='DatePalpacion' type='date' leyend='Fecha' handleChange={handleChange} />
+                    <Inputs
+                        required_={false}
+                        name='DatePalpacion'
+                        type='date'
+                        leyend='Fecha'
+                        handleChange={handleChange}
+                    />
                 </div>
             );
 
