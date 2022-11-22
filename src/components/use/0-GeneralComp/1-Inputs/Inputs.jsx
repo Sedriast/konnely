@@ -14,7 +14,6 @@ export function Inputs({
     min,
     max,
     inputmode,
-    step,
     pattern,
 }) {
     const fileInputRef = useRef();
@@ -37,7 +36,6 @@ export function Inputs({
 
     // Configuracion para input tipo imagen
     useEffect(() => {
-        value ? setCNSST(false) : setCNSST(true);
         if (image) {
             const reader = new FileReader();
             reader.onloadend = () => {
@@ -54,6 +52,7 @@ export function Inputs({
                 HaveImage(preview);
             }
         }
+        value ? setCNSST(false) : setCNSST(true);
     }, [image, preview, preeview, HaveImage, type, value]);
 
     const changeImage = () => {

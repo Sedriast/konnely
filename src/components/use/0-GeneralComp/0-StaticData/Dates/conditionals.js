@@ -94,3 +94,44 @@ export const conditionalNextEdit = (value, defaultValue, next) => {
         return value;
     }
 };
+
+export const conditionalLast = (updateState, name, value, last) => {
+    if (Date.now() - 43200000 - Date.parse(value) <= 0) {
+        swal({
+            title: 'A ingresado una fecha incorrecta',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return null;
+    } else if (Date.parse(value) - Date.parse(last) >= 0 || !last) {
+        swal({
+            title: 'No se puede asignar esa fecha a la finalización de esta etapa',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return null;
+    } else {
+        updateState(name, value);
+        return value;
+    }
+};
+
+export const conditionalLastEdit = (value, defaultValue, last) => {
+    if (Date.now() - 43200000 - Date.parse(value) <= 0) {
+        swal({
+            title: 'A ingresado una fecha incorrecta',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return defaultValue;
+    } else if (Date.parse(value) - Date.parse(last) >= 0 || !last) {
+        swal({
+            title: 'No se puede asignar esa fecha a la finalización de esta etapa',
+            icon: 'error',
+            button: 'aceptar',
+        });
+        return defaultValue;
+    } else {
+        return value;
+    }
+};
