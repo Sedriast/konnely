@@ -60,6 +60,9 @@ export function SendRabbitData() {
       updateState(name, value);
     } else if (name === "nacimiento") {
       e.target.value = conditionalBasis(updateState, name, value);
+            if (values.levantefin !== undefined) {
+                e.target.value = conditionalNext(updateState, name, value, values.levantefin);
+            }
     } else if (name === "traslado") {
       e.target.value = conditionalBasis(updateState, name, value);
     } else if (name === "levantefin") {
