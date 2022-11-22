@@ -14,9 +14,15 @@
   text-align: center;
 }
 .container thead {
-  background: rgb(18, 108, 114);
+  background: #72b509;
 }
 .container tbody td {
   padding: 0;
   background: rgba(255, 255, 255, 0.5);
+}
+.carac {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3%;
 }
