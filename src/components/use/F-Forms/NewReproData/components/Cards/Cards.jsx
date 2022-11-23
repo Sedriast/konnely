@@ -14,6 +14,7 @@ import { formatCycleReproductive } from "../../../../0-GeneralComp/0-StaticData/
 import { QueriesSimple_ } from "../../../../../firebase/funtions/GetInformation";
 import { basicData } from "../../../../0-GeneralComp/0-StaticData/dataProv";
 import swal from "sweetalert";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Cards({ id, litterPrueba, stages }) {
   const { user } = useAuth();
