@@ -15,5 +15,5 @@ export const ValidationMonth = (props) => {
     };
     const month_message_default = 'Sin Datos';
 
-    return <>{month_message[props] || month_message_default}</>;
+  return <>{month_message[props] || month_message_default}</>;
 };

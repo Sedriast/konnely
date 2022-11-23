@@ -1,5 +1,18 @@
 import {
-    Chart as ChartJS,
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+import { Line } from "react-chartjs-2";
+
+export function PanelData1({ labels, lives, deaths, homogen }) {
+  ChartJS.register(
     CategoryScale,
     LinearScale,
     PointElement,
@@ -49,5 +62,7 @@ export function PanelData({ stadics }) {
         ],
         labels,
     };
-    return <Line data={data} options={options} />;
+      const cm = <Line data={data} options={options} />;
+
+  return cm;
 }
