@@ -44,11 +44,13 @@
 .panelSearchBar {
   position: fixed;
 
-  width: 85%;
+  width: 100%;
   height: 2rem;
 
+  left: 15%;
+
   display: flex;
-  margin: 1rem 0 2rem 0;
+  margin: 0.4rem 0 2rem 0;
 }
 .panelSearchBar form {
   width: 100%;
@@ -66,7 +68,7 @@
   border-bottom: 1px solid black;
 }
 .panelSearchBar form input {
-  width: 100%;
+  width: 60%;
 }
 .btnSearch {
   border-top-right-radius: 20px;
