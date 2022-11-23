@@ -27,7 +27,7 @@
 /*Master*/
 
 .panelContainer div h1 {
-  color: rgb(0, 0, 0);
+  color: white
 }
 
 /*Master*/
@@ -215,8 +215,6 @@
 
   width: 100%;
 
-  color: white;
-
   margin: 0.5rem 0;
   border-bottom: 1px solid black;
   border-radius: 10px;
@@ -230,9 +228,6 @@
   );
 
   transition: width 150ms ease-out;
-}
-.inpContInc select {
-  color: white;
 }
 .inpContInc h3 {
   width: 100%;
@@ -252,8 +247,6 @@
 }
 .inpCont input {
   width: calc(50% - 2rem);
-
-  color: white;
 
   margin: 0.5rem 0;
   margin-right: 0.5rem;
@@ -288,9 +281,6 @@
   width: 92%;
 }
 
-.er select {
-  color: white;
-}
 .er h1 {
   margin-left: -2rem;
 }
