@@ -51,7 +51,7 @@ export function Ref({ stage }) {
           <hr />
           <div> Fecha: {stage.date}</div>
           <br />
-          Crias
+          <h3>Crias</h3>
           <hr />
           <div> Vivos: {stage.lives}</div>
           <div> Muertos: {stage.deaths}</div>
