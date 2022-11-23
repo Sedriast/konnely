@@ -1,99 +1,109 @@
 .container {
-	width: 90%;
+  width: 90%;
 
-	padding: 1.5rem 0.5rem;
-	margin: 1rem;
-	border-radius: 10px;
+  padding: 1.5rem 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
 
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-	justify-content: center;
-	flex-direction: column;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .panel {
-	background: rgba(0, 0, 0, 0.1);
-	background-size: cover;
+  background: rgba(0, 0, 0, 0.1);
+  background-size: cover;
 
-	padding: 1.5rem 0.5rem;
-	margin: 1rem;
-	border-radius: 10px;
+  padding: 1.5rem 0.5rem;
+  margin: 1rem;
+  border-radius: 10px;
 }
 .bird {
-	width: 75%;
-	height: 1px;
+  width: 75%;
+  height: 1px;
 }
 .panel {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .panelStage {
-	margin: 0.5rem;
+  margin: 0.5rem;
 
-	padding: 1rem;
+  padding: 1rem;
 
-	background: rgba(0, 0, 0, 0.25);
-	font-size: 1rem;
-	color: white;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 1rem;
+  color: white;
 
-	border-radius: 20px;
+  border-radius: 20px;
 
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
 }
 .panelStage h2 {
-	color: rgba(251, 225, 34, 1);
+  color: rgb(255, 255, 255);
 }
 .date1 h1 {
-	margin-left: 0.5rem;
-	margin-bottom: 0.3rem;
-	font-size: 16px;
-	color: rgba(251, 225, 34, 1);
+  margin-left: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
 }
 .date1 {
-	width: 70%;
-	font-size: 16px;
-	color: rgb(255, 255, 255);
+  width: 70%;
+  font-size: 16px;
+  color: rgb(0, 0, 0, 0.5);
 }
 .editable {
-	width: 70%;
+  width: 70%;
 }
 .editable h1 {
-	color: rgba(251, 225, 34, 1);
+  color: rgb(255, 255, 255);
 }
 .editable input {
-	color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0, 0.5);
 }
 .idName {
-	width: 100%;
-	text-align: center;
+  width: 100%;
+  text-align: center;
 }
-
 .btn {
-	width: 3rem;
-	height: 3rem;
+  width: 3rem;
+  height: 3rem;
 
-	background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.2);
 
-	margin-top: 1rem;
-	border-radius: 100%;
+  margin-top: 1rem;
+  border-radius: 100%;
 
-	display: flex;
-	justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 .btn figure {
-	width: fit-content;
+  width: fit-content;
 }
 .btn button {
-	background: transparent;
+  background: transparent;
 
-	border-radius: 100%;
+  border-radius: 100%;
 }
 .btn button a svg {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
+}
+@media (max-width: 700px) {
+  .container {
+    margin: auto;
+    padding: 0 2rem 0 0;
+  }
+  .panel {
+    width: 100%;
+  }
 }

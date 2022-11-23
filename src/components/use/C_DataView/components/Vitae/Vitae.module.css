@@ -8,10 +8,19 @@
   background: white;
 }
 .stad {
-  width: 80%;
+  width: 100%;
+  height: 180px;
 
   background: rgba(255, 255, 255, 0.3);
   padding: 1rem;
-
   border-radius: 10px;
+}
+.stad canvas {
+  height: 182px !important;
+  width: 315px !important;
+
+  display: block !important;
+  box-sizing: border-box !important;
+
+  font-size: 1px !important;
 }

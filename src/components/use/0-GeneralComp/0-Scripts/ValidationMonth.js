@@ -1,19 +1,19 @@
 export const ValidationMonth = (props) => {
-    const month_message = {
-        0: 'enero',
-        1: 'Febrero',
-        2: 'Marzo',
-        3: 'Abril',
-        4: 'Mayo',
-        5: 'Junio',
-        6: 'Julio',
-        7: 'Agosto',
-        8: 'Septiembre',
-        9: 'Octubre',
-        10: 'Noviembre',
-        11: 'Diciembre',
-    };
-    const month_message_default = 'Sin Datos';
+  const month_message = {
+    0: "Ene",
+    1: "Feb",
+    2: "Mar",
+    3: "Abr",
+    4: "May",
+    5: "Jun",
+    6: "Jul",
+    7: "Ago",
+    8: "Sep",
+    9: "Oct",
+    10: "Nov",
+    11: "Dic",
+  };
+  const month_message_default = "Sin Datos";
 
-    return <>{month_message[props] || month_message_default}</>;
+  return <>{month_message[props] || month_message_default}</>;
 };
