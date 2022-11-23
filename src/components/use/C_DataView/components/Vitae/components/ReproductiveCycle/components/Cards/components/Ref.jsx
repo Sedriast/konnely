@@ -2,9 +2,6 @@
 import st from "./Ref.module.css";
 
 export function Ref({ stage }) {
-  const hf = (e) => {
-    e.preventDefault();
-  };
   switch (stage.title) {
     case "Monta":
       return (

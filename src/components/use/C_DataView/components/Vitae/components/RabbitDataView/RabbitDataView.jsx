@@ -26,7 +26,7 @@ export function RabbitDataView({ stageId, user_ }) {
     );
   }, [stageId]);
 
-  return (
+  const cm = (
     <>
       {basicData.id !== null && (
         <>
@@ -35,7 +35,7 @@ export function RabbitDataView({ stageId, user_ }) {
               <Buttons
                 direction="bottom"
                 label="Imprimir hoja de vida"
-                route="/test"
+                route="/print1"
                 btnIconText={faPrint}
               />
             </div>
@@ -115,4 +115,6 @@ export function RabbitDataView({ stageId, user_ }) {
       )}
     </>
   );
+
+  return cm;
 }

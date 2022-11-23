@@ -7,7 +7,7 @@ import { LeftBottomMenu } from "../../../0-GeneralComp/1-PanelButtons/LeftBottom
 import { basicData } from "../../../0-GeneralComp/0-StaticData/dataProv";
 import { QueriesSimple_ } from "../../../../firebase/funtions/GetInformation";
 
-import s from "../../../../img/ed.png";
+import s from "../../../../img/LogoUDEC.png";
 
 import { useReactToPrint } from "react-to-print";
 import { useRef } from "react";

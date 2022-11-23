@@ -3,7 +3,6 @@ import st from "./Cards.module.css";
 import { useState } from "react";
 
 import { Ref } from "./components/Ref/Ref";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 import {
   conditionalBasisEdit,

@@ -8,7 +8,7 @@ import swal from "sweetalert";
 import { RemovalCamada } from "../../../../../../../../firebase/funtions/AddInformation";
 
 export function Cards({ editor, stages, item }) {
-  return (
+  const cm = (
     <div className={st.container}>
       {editor?.length === 1 ? (
         <>
@@ -68,4 +68,5 @@ export function Cards({ editor, stages, item }) {
       <br />
     </div>
   );
+  return cm;
 }
