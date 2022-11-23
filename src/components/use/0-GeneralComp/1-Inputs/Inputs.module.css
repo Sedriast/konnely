@@ -53,7 +53,7 @@
   border-radius: 10px;
   padding: 8px 1rem;
 
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0, 0.5);
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 5%,
@@ -71,10 +71,11 @@
   padding: 8px 1rem;
 
   color: transparent;
+
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 5%,
-    rgba(255, 255, 255, 0.1) 100%
+    rgba(255, 255, 255, 0.2) 100%
   );
 }
 

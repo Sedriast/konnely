@@ -18,6 +18,9 @@
 .panel h3 {
   font-size: 1.5rem;
 }
+.panel h1{
+  color: white;
+}
 .pt {
   width: 100%;
   height: fit-content;
@@ -51,9 +54,4 @@
   margin-left: 10px;
 
   font-size: 12px;
-}
-@media (max-width: 700px) {
-  .panel{
-    
-  }
 }

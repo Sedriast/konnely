@@ -54,14 +54,14 @@
 	padding-left: 1rem;
 	padding-right: 1rem;
 
-	color: black;
+	color: rgb(0, 0, 0, 0.5);
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.1) 100%);
 }
 .list_ option:disabled {
 	color: rgb(107, 107, 107);
 }
 .list_ option {
-	color: black;
+	color: rgb(0, 0, 0, 0.75);
 }
 .lblInac {
 	width: 100%;
