@@ -17,7 +17,7 @@ export function Ref({ stage, handleChange, date }) {
                         <Inputs
                             value={stage.male}
                             name='Macho'
-                            type='text'
+                            type='number'
                             leyend='Macho'
                             handleChange={handleChange}
                         />
