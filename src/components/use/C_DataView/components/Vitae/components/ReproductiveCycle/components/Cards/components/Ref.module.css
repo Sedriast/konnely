@@ -1,22 +1,31 @@
 .panel {
-  width: 68%;
-  height: 70%;
+  width: 8.2rem;
+  height: 48%;
 
-  margin: 1rem;
+  margin: 0 0.5rem;
+  padding: 2rem 0.5rem;
+
   background: rgba(255, 255, 255, 0.15);
 
-  padding: 2rem;
   border-radius: 10px;
+  font-size: 5px;
 
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
+.panel hr {
+  height: 2px;
+}
+.panel div {
+  font-size: 10px;
+  margin: 5px 0;
+}
 .panel h3 {
   width: 10rem;
 
-  font-size: 1.5rem;
+  font-size: 20px;
 
   display: flex;
   justify-content: center;
@@ -28,7 +37,7 @@
   text-align: right;
   color: white;
 
-  font-size: 12px;
+  font-size: 10px;
 }
 .pt h2 {
   width: fit-content;
@@ -37,11 +46,13 @@
   color: rgb(0, 255, 0);
   margin-left: 10px;
 
-  font-size: 12px;
+  font-size: 10px;
 }
 .pt {
   width: 100%;
   height: fit-content;
+
+  font-size: 10px;
 
   display: flex;
   flex-direction: row;

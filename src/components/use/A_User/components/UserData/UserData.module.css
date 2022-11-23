@@ -100,6 +100,17 @@
   margin: 1rem;
   border-radius: 100%;
 }
+.model div input {
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+  border-radius: 10px;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  margin-left: auto;
+}
+
 /*Master*/
 /*Sub*/
 

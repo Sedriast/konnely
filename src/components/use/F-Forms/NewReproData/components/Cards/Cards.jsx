@@ -1,10 +1,9 @@
-import st from './Cards.module.css';
+import st from "./Cards.module.css";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { Ref } from './components/Ref/Ref';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import { Ref } from "./components/Ref/Ref";
+import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 import {
     conditionalBasisEdit,
     conditionalNextEdit,
@@ -65,6 +64,7 @@ export function Cards({ id, litterPrueba, stages }) {
             e.target.value = null;
         }
     }
+  }
 
     return (
         <div className={st.container}>
@@ -112,5 +112,7 @@ export function Cards({ id, litterPrueba, stages }) {
                 </div>
             </form>
         </div>
-    );
+      </form>
+    </div>
+  );
 }
