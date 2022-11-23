@@ -5,15 +5,24 @@ import { newTreats } from '../../0-GeneralComp/0-StaticData/options';
 import { LeftBottomMenu } from '../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
 import { Cards } from './components/Cards/Cards';
-import { basicData } from '../../0-GeneralComp/0-StaticData/dataProv';
+import { CamadaData } from '../../0-GeneralComp/0-StaticData/dataProv';
 import { QueriesSimple_ } from '../../../firebase/funtions/GetInformation';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function EditRepro() {
+    const navigate = useNavigate();
     const reproductiveCycles = QueriesSimple_({
         coleccion: 'reproductive',
-        parametro: 'uidMother',
-        busqueda: basicData.info.uid,
+        parametro: 'uid',
+        busqueda: CamadaData.uid,
     }).props.children;
+    useEffect(() => {
+        if (CamadaData.uid === null) {
+            navigate('/vitaeslist');
+            return null;
+        }
+    }, [navigate]);
     return (
         <>
             <LeftBottomMenu
@@ -23,10 +32,9 @@ export function EditRepro() {
                 }}
             />
             <div className={st.optionContainer}>
-                {reproductiveCycles?.map(
-                    (item, index) =>
-                        item.state === true && <Cards key={index} id={item.id} item={item} stages={item.stages} />
-                )}
+                {reproductiveCycles?.map((item, index) => (
+                    <Cards key={index} id={item.id} item={item} stages={item.stages} />
+                ))}
             </div>
         </>
     );

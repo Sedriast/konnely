@@ -180,6 +180,24 @@ export function Ref({ stage, handleChange, date }) {
                             handleChange={handleChange}
                         />
                         <Inputs
+                            value={stage.MaleHatchlings}
+                            name='MaleHatchlings'
+                            type='number'
+                            leyend='Crias machos'
+                            min='0'
+                            pattern='^[0-9]+'
+                            handleChange={handleChange}
+                        />
+                        <Inputs
+                            value={stage.FemaleHatchlings}
+                            name='FemaleHatchlings'
+                            type='number'
+                            leyend='Crias hembras'
+                            min='0'
+                            pattern='^[0-9]+'
+                            handleChange={handleChange}
+                        />
+                        <Inputs
                             value={stage.DateDestete}
                             name='DateDestete'
                             type='date'
