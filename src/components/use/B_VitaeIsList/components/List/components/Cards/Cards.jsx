@@ -5,9 +5,11 @@ import { recuperar } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function Cards({ rabitID, rabitInfo }) {
     const etapa = () => {
-        if (rabitInfo.lifecycle[3].date) {
+        if (rabitInfo.reproductivecycle === true) {
+            return 'Camada Activa';
+        } else if (rabitInfo.lifecycle[3].date && rabitInfo.reproductivecycle === false) {
             return 'Se puede reproducir';
-        } else if (rabitInfo.lifecycle[2].date) {
+        } else if (rabitInfo.lifecycle[2].date && rabitInfo.reproductivecycle === false) {
             return 'En Engorde';
         } else {
             return 'En Levante';
