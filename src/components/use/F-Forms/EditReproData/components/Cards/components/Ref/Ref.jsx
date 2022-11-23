@@ -15,6 +15,13 @@ export function Ref({ stage, handleChange, date }) {
 
                     <div className={st.edit}>
                         <Inputs
+                            value={stage.id}
+                            name='id'
+                            type='text'
+                            leyend='Identificador de la camada'
+                            handleChange={handleChange}
+                        />
+                        <Inputs
                             value={stage.male}
                             name='Macho'
                             type='number'

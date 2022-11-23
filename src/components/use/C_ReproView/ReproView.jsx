@@ -19,9 +19,9 @@ export function ReproView() {
     function buscar(e) {
         const valor = reproductiveCycles.filter(function (element) {
             if (
-                element.signs.toString().toLowerCase().includes(e.toLowerCase()) ||
-                element.date.toString().toLowerCase().includes(e.toLowerCase()) ||
-                element.diagnosis.toString().toLowerCase().includes(e.toLowerCase())
+                element.stages[0].date.toString().toLowerCase().includes(e.toLowerCase()) ||
+                element.stages[0].male.toString().toLowerCase().includes(e.toLowerCase()) ||
+                element.stages[0].id.toString().toLowerCase().includes(e.toLowerCase())
             )
                 return element;
             return null;
@@ -46,7 +46,7 @@ export function ReproView() {
                 <button className={st.btnSearch}>🔎</button>
             </div>
             <div className={st.optionContainer}>
-                {search !== '' ? (
+                {search === '' ? (
                     <List reproductiveCycles={reproductiveCycles} />
                 ) : (
                     <List reproductiveCycles={search} />
