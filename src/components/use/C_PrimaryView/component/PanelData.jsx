@@ -11,9 +11,12 @@ import {
 
 import { Line } from 'react-chartjs-2';
 
-export function PanelData1({ labels, lives, deaths, homogen }) {
+export function PanelData({ stadics }) {
     ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-
+    let labels = stadics.Labels;
+    let lives = stadics.Lives;
+    let deaths = stadics.Deaths;
+    let homogen = stadics.Homogen;
     const options = {
         responsive: true,
         scales: {
@@ -31,14 +34,14 @@ export function PanelData1({ labels, lives, deaths, homogen }) {
             },
             {
                 label: 'Homogenizados',
-                data: deaths,
-                borderColor: 'gray',
-                backgroundColor: 'gray',
+                data: homogen,
+                borderColor: 'black',
+                backgroundColor: 'black',
                 tension: 0.4,
             },
             {
                 label: 'Muertos',
-                data: homogen,
+                data: deaths,
                 borderColor: 'red',
                 backgroundColor: 'red',
                 tension: 0.4,

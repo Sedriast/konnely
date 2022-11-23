@@ -9,14 +9,9 @@ import { basicData } from '../../../0-GeneralComp/0-StaticData/dataProv';
 import { LifeCycle } from './components/LifeCycle/LifeCycle';
 import { RabbitDataView } from './components/RabbitDataView/RabbitDataView';
 import { ReproductiveCycle } from './components/ReproductiveCycle/ReproductiveCycle';
-import { PanelData1 } from '../../../C_PrimaryView/component/PanelData1';
+import { PanelData } from '../../../C_PrimaryView/component/PanelData';
 import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
-import {
-    DeathStadics,
-    HomogenStadics,
-    LableStadics,
-    LivesStadics,
-} from '../../../0-GeneralComp/0-Scripts/FormatStadics';
+import { Stadics } from '../../../0-GeneralComp/0-Scripts/FormatStadics';
 import { useAuth } from '../../../../../context/AuthContext';
 
 export function Vitae() {
@@ -27,6 +22,7 @@ export function Vitae() {
         parametro: 'uidMother',
         busqueda: basicData.info.uid,
     }).props.children;
+    console.log(stadics);
     const user_ = QueriesSimple_({ coleccion: 'users', parametro: 'uid', busqueda: user.uid }).props.children[0];
     const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'uid', busqueda: basicData.info.uid }).props
         .children[0];
@@ -55,19 +51,19 @@ export function Vitae() {
                             <ReproductiveCycle />
                             <br />
                             <br />
+                            <hr />
+                            <br />
+                            <br />
+                            <div className={st.stad}>
+                                <PanelData stadics={Stadics(stadics)} />
+                            </div>
+                            <br />
+                            <br />
                         </>
                     )}
                     <hr />
                     <br />
                     <br />
-                    <div className={st.stad}>
-                        <PanelData1
-                            labels={LableStadics(stadics)}
-                            lives={LivesStadics(stadics)}
-                            deaths={DeathStadics(stadics)}
-                            homogen={HomogenStadics(stadics)}
-                        />
-                    </div>
                 </div>
             )}
         </>

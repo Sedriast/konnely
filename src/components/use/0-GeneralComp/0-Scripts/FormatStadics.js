@@ -1,47 +1,26 @@
 import { ValidationMonth } from './ValidationMonth';
 
-export const LableStadics = (props) => {
-    let values = [];
+export const Stadics = (props) => {
+    let Labels = [];
+    let Lives = [];
+    let Deaths = [];
+    let Homogen = [];
+    props.sort((a, b) => {
+        if (Date.parse(a.stages[3].date) > Date.parse(b.stages[3].date)) return 1;
+        if (Date.parse(a.stages[3].date) < Date.parse(b.stages[3].date)) return -1;
+        return 0;
+    });
     props.map((e) => {
         if (e.stages[3].state === true) {
             let fecha = new Date(e.stages[3].date);
             let mes = fecha.getMonth();
             let year = fecha.getFullYear();
-            values.push(ValidationMonth(mes).props.children + ' ' + year);
+            Labels.push(ValidationMonth(mes).props.children + ' ' + year);
+            Lives.push(e.stages[3].lives);
+            Deaths.push(e.stages[3].deaths);
+            Homogen.push(e.stages[3].homogen);
         }
-        return values;
+        return null;
     });
-    return values;
-};
-export const LivesStadics = (props) => {
-    let values = [];
-    props.map((e) => {
-        if (e.stages[3].state === true) {
-            values.push(e.stages[3].lives);
-        }
-        return values;
-    });
-    return values;
-};
-
-export const DeathStadics = (props) => {
-    let values = [];
-    props.map((e) => {
-        if (e.stages[3].state === true) {
-            values.push(e.stages[3].deaths);
-        }
-        return values;
-    });
-    return values;
-};
-
-export const HomogenStadics = (props) => {
-    let values = [];
-    props.map((e) => {
-        if (e.stages[3].state === true) {
-            values.push(e.stages[3].homogen);
-        }
-        return values;
-    });
-    return values;
+    return { Labels, Lives, Deaths, Homogen };
 };
