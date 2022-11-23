@@ -9,6 +9,15 @@ export const basicData = {
     info: {},
 };
 
+// Contexto improvisado de la información de un conejo
+
+export const recuperarCamada = (uid) => {
+    CamadaData.uid = uid;
+};
+export const CamadaData = {
+    uid: null,
+};
+
 // Contexto improvisado de la información de un tratamiento
 
 export const recuperarTrataments = (info) => {

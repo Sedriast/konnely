@@ -165,7 +165,7 @@ export const AddReproductiveCycle = async (props) => {
             }
         } else {
             swal({
-                title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
+                title: 'Debe ingresar la fecha en que inicio el ciclo reproductivo',
                 icon: 'error',
                 button: 'aceptar',
             });
@@ -188,7 +188,7 @@ export const UpdateReproductiveCycle = async (props) => {
             }
         } else {
             swal({
-                title: 'Debe ingresar una la fecha en que inicio el ciclo reproductivo',
+                title: 'Debe ingresar la fecha en que inicio el ciclo reproductivo',
                 icon: 'error',
                 button: 'aceptar',
             });

@@ -33,13 +33,16 @@ export function Cards({ item, stages }) {
             e.target.value = null;
         }
     }
+
     return (
         <div className={st.container}>
             <form
                 className={st.panelInfo}
-                onSubmit={(e) => {
+                onSubmit={async (e) => {
                     e.preventDefault();
-                    UpdateReproductiveCycle(formatCycleReproductive(e, item, user));
+                    await UpdateReproductiveCycle(formatCycleReproductive(e, item, user)).then(() => {
+                        window.history.back();
+                    });
                 }}>
                 {stages?.map((element) => {
                     return (
@@ -50,14 +53,9 @@ export function Cards({ item, stages }) {
                 })}
                 <div className={st.btn}>
                     <button type='submit'>
-                        {/* <button
-                            onClick={() => {
-                                window.history.back();
-                            }}> */}
                         <figure title='Guardar cambios' tooltip-dir='top'>
                             <FontAwesomeIcon icon={faFloppyDisk} />
                         </figure>
-                        {/* </button> */}
                     </button>
                 </div>
             </form>

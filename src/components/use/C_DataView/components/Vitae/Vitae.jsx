@@ -1,10 +1,10 @@
 /* eslint-disable array-callback-return */
-import st from "./Vitae.module.css";
+import st from './Vitae.module.css';
 
-import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { basicData } from "../../../0-GeneralComp/0-StaticData/dataProv";
+import { basicData } from '../../../0-GeneralComp/0-StaticData/dataProv';
 
 import { LifeCycle } from './components/LifeCycle/LifeCycle';
 import { RabbitDataView } from './components/RabbitDataView/RabbitDataView';
@@ -22,7 +22,6 @@ export function Vitae() {
         parametro: 'uidMother',
         busqueda: basicData.info.uid,
     }).props.children;
-    console.log(stadics);
     const user_ = QueriesSimple_({ coleccion: 'users', parametro: 'uid', busqueda: user.uid }).props.children[0];
     const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'uid', busqueda: basicData.info.uid }).props
         .children[0];
