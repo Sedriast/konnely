@@ -17,3 +17,11 @@
 .btn button a div {
   font-size: 25px;
 }
+
+@media (max-width: 700px) {
+  .optionContainer { 
+    width: 100%;
+
+    padding-bottom: 1rem;
+  }
+}
