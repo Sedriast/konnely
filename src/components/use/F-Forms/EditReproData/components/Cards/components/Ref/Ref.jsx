@@ -58,6 +58,7 @@ export function Ref({ stage, handleChange, date }) {
 
                     <div className={st.edit}>
                         <Inputs
+                            required_={false}
                             value={stage.date}
                             name='DatePalpacion'
                             type='date'

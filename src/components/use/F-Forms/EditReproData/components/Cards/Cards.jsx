@@ -40,7 +40,13 @@ export function Cards({ item, stages }) {
                 }).then(async (respuesta) => {
                     if (respuesta) {
                         await UpdateReproductiveCycle(formatCycleReproductive(e, item, user)).then(() => {
-                            window.history.back();
+                            swal({
+                                title: 'Ciclo reproductivo actualizado con exito',
+                                icon: 'success',
+                                button: 'Aceptar',
+                            }).then(() => {
+                                window.history.back();
+                            });
                         });
                     }
                 });
@@ -54,7 +60,13 @@ export function Cards({ item, stages }) {
             }).then(async (respuesta) => {
                 if (respuesta) {
                     await UpdateReproductiveCycle(formatCycleReproductive(e, item, user)).then(() => {
-                        window.history.back();
+                        swal({
+                            title: 'Ciclo reproductivo actualizado con exito',
+                            icon: 'success',
+                            button: 'Aceptar',
+                        }).then(() => {
+                            window.history.back();
+                        });
                     });
                 }
             });
@@ -92,11 +104,11 @@ export function Cards({ item, stages }) {
                             return null;
                         }
                     });
-                    if (e.target.DateInitial.value) {
+                    if (e.target.DateInitial.value && e.target.id.value) {
                         autentication(e, valor);
                     } else {
                         swal({
-                            title: 'Debe ingresar una fecha inicial',
+                            title: 'Debe ingresar una fecha inicial o un identidicador de la camada',
                             dangerMode: true,
                             icon: 'error',
                             button: 'aceptar',
@@ -104,10 +116,17 @@ export function Cards({ item, stages }) {
                     }
                 }}>
                 {stages?.map((element) => {
-                    return (<Ref stage={element} handleChange={handleChange} date={date} />);
+                    return <Ref stage={element} handleChange={handleChange} date={date} />;
                 })}
                 <div className={st.btn}>
-                    <Buttons label="Guardar" direction="top" btnType="submit" route = "#" btnIconText={faFloppyDisk}/>
+                    {/* <Buttons
+                        label='Guardar'
+                        direction='top'
+                        btnType='submit'
+                        route='#'
+                        btnIconText={faFloppyDisk}
+                    /> */}
+                    <button type='submit'>Hola</button>
                 </div>
             </form>
         </div>

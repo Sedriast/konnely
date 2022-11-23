@@ -38,9 +38,17 @@ export function Cards({ id, litterPrueba, stages }) {
                     title: '¿Esta segura o seguro de guardar este ciclo reproductivo?',
                     icon: 'success',
                     buttons: ['Cancelar', 'Aceptar'],
-                }).then((respuesta) => {
+                }).then(async (respuesta) => {
                     if (respuesta) {
-                        AddReproductiveCycle(formatCycleReproductive(e, litterPrueba, user));
+                        await AddReproductiveCycle(formatCycleReproductive(e, litterPrueba, user)).then(() => {
+                            swal({
+                                title: 'Ciclo reproductivo creado con exito',
+                                icon: 'success',
+                                button: 'Aceptar',
+                            }).then(() => {
+                                window.history.back();
+                            });
+                        });
                     }
                 });
             }
@@ -52,7 +60,15 @@ export function Cards({ id, litterPrueba, stages }) {
                 buttons: ['Cancelar', 'Aceptar'],
             }).then((respuesta) => {
                 if (respuesta) {
-                    AddReproductiveCycle(formatCycleReproductive(e, litterPrueba, user));
+                    AddReproductiveCycle(formatCycleReproductive(e, litterPrueba, user)).then(() => {
+                        swal({
+                            title: 'Ciclo reproductivo creado con exito',
+                            icon: 'success',
+                            button: 'Aceptar',
+                        }).then(() => {
+                            window.history.back();
+                        });
+                    });
                 }
             });
         }
@@ -84,11 +100,11 @@ export function Cards({ id, litterPrueba, stages }) {
                             return null;
                         }
                     });
-                    if (e.target.DateInitial.value) {
+                    if (e.target.DateInitial.value && e.target.id.value) {
                         autentication(e, valor);
                     } else {
                         swal({
-                            title: 'Debe ingresar una fecha inicial',
+                            title: 'Debe ingresar una fecha inicial o un identidicador de la camada',
                             dangerMode: true,
                             icon: 'error',
                             button: 'aceptar',
