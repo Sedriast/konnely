@@ -11,10 +11,55 @@ import { useState } from 'react';
 import { useAuth } from '../../../../../../context/AuthContext';
 import { formatCycleReproductive } from '../../../../0-GeneralComp/0-StaticData/Dates/format';
 import { UpdateReproductiveCycle } from '../../../../../firebase/funtions/AddInformation';
+import { QueriesSimple_ } from '../../../../../firebase/funtions/GetInformation';
+import swal from 'sweetalert';
+import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function Cards({ item, stages }) {
     const { user } = useAuth();
     const [date, setDate] = useState(stages[0].date);
+    const males = QueriesSimple_({
+        coleccion: 'rabbits',
+        parametro: 'genero',
+        busqueda: 'Macho',
+    }).props.children;
+    const autentication = (e, valor) => {
+        if (valor[0] !== undefined) {
+            if (valor[0].idPadre === basicData.info.idPadre || valor[0].idMadre === basicData.info.idMadre) {
+                swal({
+                    title: 'Estos conejos son hermanos, no puede reproducirlos entre si',
+                    dangerMode: true,
+                    icon: 'error',
+                    button: 'aceptar',
+                });
+            } else {
+                swal({
+                    title: '¿Esta segura o seguro de actualizar este ciclo reproductivo?',
+                    icon: 'success',
+                    buttons: ['Cancelar', 'Aceptar'],
+                }).then(async (respuesta) => {
+                    if (respuesta) {
+                        await UpdateReproductiveCycle(formatCycleReproductive(e, item, user)).then(() => {
+                            window.history.back();
+                        });
+                    }
+                });
+            }
+        } else {
+            swal({
+                title: 'No existe un registro de este conejo, ¿segura o seguro que desea actualizar este ciclo reproductivo?',
+                dangerMode: true,
+                icon: 'warning',
+                buttons: ['Cancelar', 'Aceptar'],
+            }).then(async (respuesta) => {
+                if (respuesta) {
+                    await UpdateReproductiveCycle(formatCycleReproductive(e, item, user)).then(() => {
+                        window.history.back();
+                    });
+                }
+            });
+        }
+    };
     function handleChange(e) {
         if (e.target.name === 'DateInitial') {
             e.target.value = conditionalBasisEdit(e.target.value, stages[0].date);
@@ -40,9 +85,23 @@ export function Cards({ item, stages }) {
                 className={st.panelInfo}
                 onSubmit={async (e) => {
                     e.preventDefault();
-                    await UpdateReproductiveCycle(formatCycleReproductive(e, item, user)).then(() => {
-                        window.history.back();
+                    const valor = males.filter(function (element) {
+                        if (element.id.toString().toLowerCase().includes(e.target.Macho.value.toLowerCase())) {
+                            return element;
+                        } else {
+                            return null;
+                        }
                     });
+                    if (e.target.DateInitial.value) {
+                        autentication(e, valor);
+                    } else {
+                        swal({
+                            title: 'Debe ingresar una fecha inicial',
+                            dangerMode: true,
+                            icon: 'error',
+                            button: 'aceptar',
+                        });
+                    }
                 }}>
                 {stages?.map((element) => {
                     return (

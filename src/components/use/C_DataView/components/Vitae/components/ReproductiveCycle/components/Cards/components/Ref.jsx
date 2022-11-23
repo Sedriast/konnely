@@ -65,6 +65,8 @@ export function Ref({ stage }) {
                     <br />
                     <div> Crias destetadas: {stage.WeanedPups}</div>
                     <div> Peso de la camada: {stage.WeanedPups}</div>
+                    <div> Crias Hembras: {stage.FemaleHatchlings}</div>
+                    <div> Crias Machos: {stage.MaleHatchlings}</div>
                     <div> Fecha: {stage.date}</div>
                 </div>
             );

@@ -1,4 +1,3 @@
-import swal from 'sweetalert';
 import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
@@ -155,20 +154,12 @@ export const ReactivateTratament = async ({ coleccion, uidAudit, uid, data }) =>
 
 export const AddReproductiveCycle = async (props) => {
     try {
-        if (props.stages[0].date) {
-            const docRef = await addDoc(collection(db, 'reproductive'), props);
-            await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
-            if (props.stages[4].state === true) {
-                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
-            } else {
-                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
-            }
+        const docRef = await addDoc(collection(db, 'reproductive'), props);
+        await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+        if (props.stages[4].state === true) {
+            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
         } else {
-            swal({
-                title: 'Debe ingresar la fecha en que inicio el ciclo reproductivo',
-                icon: 'error',
-                button: 'aceptar',
-            });
+            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
         }
     } catch (error) {
         ValidationErrors(error.code);
@@ -179,19 +170,11 @@ export const AddReproductiveCycle = async (props) => {
 
 export const UpdateReproductiveCycle = async (props) => {
     try {
-        if (props.stages[0].date) {
-            await updateDoc(doc(db, 'reproductive', props.uid), props);
-            if (props.stages[4].state === true) {
-                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
-            } else {
-                await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
-            }
+        await updateDoc(doc(db, 'reproductive', props.uid), props);
+        if (props.stages[4].state === true) {
+            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
         } else {
-            swal({
-                title: 'Debe ingresar la fecha en que inicio el ciclo reproductivo',
-                icon: 'error',
-                button: 'aceptar',
-            });
+            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
         }
     } catch (error) {
         ValidationErrors(error.code);
@@ -301,13 +284,7 @@ export const ChangePassword = async (props) => {
     try {
         const credential = EmailAuthProvider.credential(auth.currentUser.email, props.oldpassword);
         await reauthenticateWithCredential(auth.currentUser, credential).then(async () => {
-            await updatePassword(auth.currentUser, props.newpassword).then(() => {
-                swal({
-                    title: 'Su contraseña se ha cambiado correctamente',
-                    icon: 'warning',
-                    buttons: 'aceptar',
-                });
-            });
+            await updatePassword(auth.currentUser, props.newpassword);
         });
     } catch (error) {
         ValidationErrors(error.code);
