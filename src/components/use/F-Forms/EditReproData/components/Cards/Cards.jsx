@@ -1,7 +1,6 @@
 import st from './Cards.module.css';
 
 import { Ref } from './components/Ref/Ref';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 import {
     conditionalBasisEdit,
@@ -14,6 +13,7 @@ import { UpdateReproductiveCycle } from '../../../../../firebase/funtions/AddInf
 import { QueriesSimple_ } from '../../../../../firebase/funtions/GetInformation';
 import swal from 'sweetalert';
 import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
 
 export function Cards({ item, stages }) {
     const { user } = useAuth();
@@ -104,18 +104,10 @@ export function Cards({ item, stages }) {
                     }
                 }}>
                 {stages?.map((element) => {
-                    return (
-                        <>
-                            <Ref stage={element} handleChange={handleChange} date={date} />
-                        </>
-                    );
+                    return (<Ref stage={element} handleChange={handleChange} date={date} />);
                 })}
                 <div className={st.btn}>
-                    <button type='submit'>
-                        <figure title='Guardar cambios' tooltip-dir='top'>
-                            <FontAwesomeIcon icon={faFloppyDisk} />
-                        </figure>
-                    </button>
+                    <Buttons label="Guardar" direction="top" btnType="submit" route = "#" btnIconText={faFloppyDisk}/>
                 </div>
             </form>
         </div>

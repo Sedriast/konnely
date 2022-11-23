@@ -32,8 +32,8 @@ export function EditRepro() {
                 }}
             />
             <div className={st.optionContainer}>
-                {reproductiveCycles?.map((item, index) => (
-                    <Cards key={index} id={item.id} item={item} stages={item.stages} />
+                {reproductiveCycles?.map((item, i) => (
+                    <Cards key={i} id={item.id} item={item} stages={item.stages} />
                 ))}
             </div>
         </>
