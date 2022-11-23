@@ -13,6 +13,7 @@ export const formatCycleReproductive = (e, format, user) => {
     if (e.target.DateInitial.value) {
         format.stages[0].state = true;
         format.stages[0].male = e.target.Macho.value;
+        format.stages[0].id = e.target.id.value;
         format.stages[0].date = e.target.DateInitial.value;
     }
     if (e.target.DatePalpacion.value && e.target.DateInitial.value) {
@@ -36,6 +37,8 @@ export const formatCycleReproductive = (e, format, user) => {
         format.stages[4].state = true;
         format.stages[4].date = e.target.DateDestete.value;
         format.stages[4].WeanedPups = e.target.WeanedPups.value;
+        format.stages[4].MaleHatchlings = e.target.MaleHatchlings.value;
+        format.stages[4].FemaleHatchlings = e.target.FemaleHatchlings.value;
         format.stages[4].LitterWeight = e.target.LitterWeight.value;
     }
     format.stages[1].approximateDate = ApproximateRepro(e.target.DateInitial.value).palpation;
