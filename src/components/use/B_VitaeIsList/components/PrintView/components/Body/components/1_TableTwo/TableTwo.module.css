@@ -1,0 +1,15 @@
+.oneContainer {
+	width: fit-content;
+	height: fit-content;
+
+	margin: 1rem;
+
+	border-radius: 5px;
+	border: solid black 1px;
+}
+.oneContainer th {
+	font-size: 12px;
+	padding: 0 0.2rem;
+	border-bottom: solid black 1px;
+	border-right: solid black 1px;
+}

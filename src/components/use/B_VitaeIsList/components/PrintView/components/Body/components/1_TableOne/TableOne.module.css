@@ -1,0 +1,16 @@
+.col table th {
+	background: #348b00;
+}
+.oneContainer {
+	width: fit-content;
+	height: fit-content;
+
+	margin: 1rem;
+
+	border-radius: 5px;
+	border: solid black 1px;
+}
+.oneContainer table th {
+	font-size: 12px;
+	border: solid black 1px;
+}
