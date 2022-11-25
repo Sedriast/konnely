@@ -1,0 +1,22 @@
+.oneContainer {
+	width: fit-content;
+	height: fit-content;
+
+	margin: 1rem;
+
+	border-radius: 5px;
+}
+.oneContainer table th {
+	background: #348b00;
+
+	font-size: 12px;
+	border: solid black 1px;
+}
+.oneContainer table td {
+	font-size: 12px;
+	border: solid black 1px;
+}
+#i {
+	background: transparent;
+	border: none;
+}
