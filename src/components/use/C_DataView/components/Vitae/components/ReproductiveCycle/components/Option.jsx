@@ -4,15 +4,14 @@ import { Buttons } from '../../../../../../0-GeneralComp/1-Buttons/Buttons';
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { Cards } from './Cards/Cards';
 
-import { basicData } from '../../../../../../0-GeneralComp/0-StaticData/dataProv';
 import { QueriesSimple_ } from '../../../../../../../firebase/funtions/GetInformation';
 import { Loading } from '../../../../../../0-GeneralComp/1-Loading/Loading';
 
-export function Option({ op }) {
+export function Option({ op, uid }) {
     const reproductiveCycles = QueriesSimple_({
         coleccion: 'reproductive',
         parametro: 'uidMother',
-        busqueda: basicData.info.uid,
+        busqueda: uid,
     }).props.children;
     switch (op) {
         case false:
