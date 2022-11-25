@@ -10,7 +10,7 @@ export function Head({ marc, proces, title, code, version, dateValidity }) {
 			</div>
 			<table>
 				<tbody className={st.metaData}>
-					<tr className={st.metaCenter}>
+					<th className={st.metaCenter}>
 						<tr>
 							<th>{marc}</th>
 						</tr>
@@ -20,8 +20,8 @@ export function Head({ marc, proces, title, code, version, dateValidity }) {
 						<tr>
 							<th>{title}</th>
 						</tr>
-					</tr>
-					<tr className={st.metaEnd}>
+					</th>
+					<th className={st.metaEnd}>
 						<tr>
 							<th>CÓDIGO: {code}</th>
 						</tr>
@@ -37,7 +37,7 @@ export function Head({ marc, proces, title, code, version, dateValidity }) {
 								{Date().replace(" GMT-0500 (hora estándar de Colombia)", "")}
 							</th>
 						</tr>
-					</tr>
+					</th>
 				</tbody>
 			</table>
 		</div>
