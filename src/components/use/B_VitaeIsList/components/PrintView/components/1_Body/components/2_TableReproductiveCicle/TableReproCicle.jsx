@@ -1,4 +1,4 @@
-import { Data } from "../0_Data/Data";
+import { Data } from "./0_Data/Data";
 import st from "./TableReproCicle.module.css";
 
 export function TableReproCicle({ cicles }) {
@@ -21,47 +21,94 @@ export function TableReproCicle({ cicles }) {
 		return data;
 	};
 	const cm = (
-		<div className={st.complete}>
-			<table className={st.tableTop}>
-				<thead>
-					<th>Fecha servicio</th>
+		<table className={st.tableTop}>
+			<thead>
+				<tr id={st.date}>
+					<tr className={st.b}>
+						<table>
+							<thead>
+								<tr>
+									<th>
+										Fecha <br /> servicio
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<table id={st.t3}>
+										<thead>
+											<tr>
+												<th id={st.r}>Año</th>
+												<th id={st.r}>Mes</th>
+												<th id={st.l}>Dia</th>
+											</tr>
+										</thead>
+									</table>
+								</tr>
+							</tbody>
+						</table>
+					</tr>
 					<th>Placa macho</th>
-					<th>
-						Fecha detección
-						<br />
-						de preñes
-					</th>
-					<th>
-						Fecha
-						<br />
-						posible parto
-					</th>
-					<th>
-						Fecha
-						<br />
-						atención de parto
-					</th>
-					<th>
-						Fecha real
-						<br />
-						de parto
-					</th>
-					<th>Crias vivas</th>
-					<th>Crias muertas</th>
+					<th>Fecha detección de preñes</th>
+					<th>Fecha posible parto</th>
+					<th>Fecha atención de parto</th>
+					<th>Fecha real de parto</th>
+					<tr className={st.b}>
+						<table>
+							<thead>
+								<tr>
+									<th>N° Animales</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<table id={st.t3}>
+										<thead>
+											<tr>
+												<th id={st.r}>V</th>
+												<th id={st.l}>M</th>
+											</tr>
+										</thead>
+									</table>
+								</tr>
+							</tbody>
+						</table>
+					</tr>
 					<th>Peso nacimiento (gr)</th>
 					<th>Fecha destete</th>
-					<th>Crias hembras</th>
-					<th>Crias machos</th>
+					<tr className={st.b}>
+						<table>
+							<thead>
+								<tr>
+									<th>N° Animales</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<table id={st.t3}>
+										<thead>
+											<tr>
+												<th id={st.r}>H</th>
+												<th id={st.l}>M</th>
+											</tr>
+										</thead>
+									</table>
+								</tr>
+							</tbody>
+						</table>
+					</tr>
 					<th>Peso destete</th>
-				</thead>
-				<tbody>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id={st.br}>
 					{cicles?.map((e) => {
 						if (e.state === false) return <Data data={dataCicle(e)} />;
 						return <></>;
 					})}
-				</tbody>
-			</table>
-		</div>
+				</tr>
+			</tbody>
+		</table>
 	);
 	return cm;
 }

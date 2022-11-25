@@ -1,5 +1,5 @@
 import st from "./Body.module.css";
-import { Data } from "./components/0_Data/Data";
+import { Data } from "./components/2_TableReproductiveCicle/0_Data/Data";
 import { basicData } from "../../../../../0-GeneralComp/0-StaticData/dataProv";
 import { TableOne } from "./components/1_TableOne/TableOne";
 import { TableTwo } from "./components/1_TableTwo/TableTwo";

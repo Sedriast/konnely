@@ -1,4 +1,4 @@
-import { Data } from "../0_Data/Data";
+import { Data } from "../2_TableReproductiveCicle/0_Data/Data";
 import st from "./TableTrataments.module.css";
 
 export function TableTrataments({ trataments }) {
