@@ -20,7 +20,7 @@ export function Healt() {
     const trataments = QueriesSimple_({
         coleccion: 'trataments',
         parametro: 'uidRabbit',
-        busqueda: basicData.info.uid,
+        busqueda: basicData?.info?.uid,
     }).props.children;
     trataments.map((items) => {
         if (items.state === 'Activo') {

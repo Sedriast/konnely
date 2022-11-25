@@ -1,8 +1,11 @@
+import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
 import { basicData } from '../dataProv';
 import { ApproximateRepro } from './Dates';
 
 export const formatCycleReproductive = (e, format, user) => {
-    format.uidMother = basicData.info.uid;
+    const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'id', busqueda: basicData.uid }).props
+        .children[0];
+    format.uidMother = rabbit.uid;
 
     if (!format.displayNameEditors.includes(user.displayName)) {
         format.displayNameEditors.push(user.displayName);
