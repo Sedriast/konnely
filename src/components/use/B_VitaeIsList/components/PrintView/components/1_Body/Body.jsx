@@ -5,6 +5,8 @@ import { TableOne } from "./components/1_TableOne/TableOne";
 import { TableTwo } from "./components/1_TableTwo/TableTwo";
 import { TableThree } from "./components/1_TableThree/TableThree";
 import { TableFour } from "./components/1_TableFour/TableFour";
+import { TableReproCicle } from "./components/2_TableReproductiveCicle/TableReproCicle";
+import { TableTrataments } from "./components/3_TableTrataments/TableTrataments";
 
 export function Body({ cicles, trataments }) {
 	const edad = (Date.now() - Date.parse(basicData?.info?.nacimiento)) * (3.8 * Math.pow(10, -10));
@@ -27,18 +29,6 @@ export function Body({ cicles, trataments }) {
 		return data;
 	};
 
-	const dataTrataments = (tratament) => {
-		const data = [
-			tratament?.date,
-			tratament?.signs,
-			tratament?.diagnosis,
-			tratament?.route,
-			tratament?.responsible,
-			tratament?.result,
-			tratament?.professional,
-		];
-		return data;
-	};
 	const dateborn = { year: "0000", month: "00", day: "00", born: basicData?.info?.nacimiento };
 	const cm = (
 		<div className={st.container}>
@@ -52,73 +42,11 @@ export function Body({ cicles, trataments }) {
 				grandFatherM=''
 			/>
 			<TableThree data1={basicData?.info?.weigth} />
-			<TableFour ageDestete='0000 00 00' criterion='Translado dela unidad agroambiental la esperanza ' />
+			<TableFour ageDestete={edad} criterion='Translado dela unidad agroambiental la esperanza ' />
 
-			<div className={st.complete}>
-				<table className={st.tableTop}>
-					<thead>
-						<th>Fecha servicio</th>
-						<th>Placa macho</th>
-						<th>
-							Fecha detección
-							<br />
-							de preñes
-						</th>
-						<th>
-							Fecha
-							<br />
-							posible parto
-						</th>
-						<th>
-							Fecha
-							<br />
-							atención de parto
-						</th>
-						<th>
-							Fecha real
-							<br />
-							de parto
-						</th>
-						<th>Crias vivas</th>
-						<th>Crias muertas</th>
-						<th>Peso nacimiento (gr)</th>
-						<th>Fecha destete</th>
-						<th>Crias hembras</th>
-						<th>Crias machos</th>
-						<th>Peso destete</th>
-					</thead>
-					<tbody>
-						{cicles?.map((e) => {
-							if (e.state === false) return <Data data={dataCicle(e)} />;
-							return <></>;
-						})}
-					</tbody>
-				</table>
-			</div>
+			<TableReproCicle cicles={cicles} />
 
-			{trataments?.length > 0 && (
-				<div className={st.carac}>
-					<table>
-						<thead>
-							<tr>
-								<th>Fecha</th>
-								<th>sintomas,signos,vacunas </th>
-								<th>Diagnostico</th>
-								<th>Medicamento</th>
-								<th>Dosis</th>
-								<th>Redultados</th>
-								<th>Nombre del profecional</th>
-							</tr>
-						</thead>
-						<tbody>
-							{trataments?.map((e) => {
-								if (e.state !== "Inactivo") return <Data data={dataTrataments(e)} />;
-								return <></>;
-							})}
-						</tbody>
-					</table>
-				</div>
-			)}
+			<TableTrataments trataments={trataments} />
 		</div>
 	);
 	return cm;
