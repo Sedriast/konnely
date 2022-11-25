@@ -2,7 +2,7 @@ import st from "./PrintView.module.css";
 
 import { newTreats } from "../../../0-GeneralComp/0-StaticData/options";
 
-import { Body } from "./components/Body/Body";
+import { Body } from "./components/1_Body/Body";
 import { LeftBottomMenu } from "../../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu";
 import { basicData } from "../../../0-GeneralComp/0-StaticData/dataProv";
 import { QueriesSimple_ } from "../../../../firebase/funtions/GetInformation";
@@ -13,6 +13,7 @@ import { Buttons } from "../../../0-GeneralComp/1-Buttons/Buttons";
 
 import { faPrint } from "@fortawesome/free-solid-svg-icons";
 import { Head } from "./components/0_Head/Head";
+import { Foot } from "./components/2_Foot/Foot";
 
 export function PrintView() {
 	const componentRef = useRef();
@@ -68,22 +69,9 @@ export function PrintView() {
 					<br />
 					<br />
 					<Body cicles={cicles} trataments={trataments} />
-					<div className={st.foot}>
-						<br />
-						<br />
-						<hr />
-						<br />
-						<br />
-						<br />
-						<p>Calle 6 N° 9-80 Ubate – Cundinamarca Teléfono (091) 855 3055/3056</p>
-						<p>Ext.127 Línea Gratuita 018000180414</p>
-						<p>
-							{" "}
-							<a href='www.ucundinamarca.edu.co'>www.ucundinamarca.edu.co </a> E-mail:{" "}
-							<a href='info@ucundinamarca.edu.co'>info@ucundinamarca.edu.co</a>
-						</p>
-						<p>NIT: 890.680.062-2</p>
-					</div>
+					<br />
+					<br />
+					<Foot />
 				</div>
 			</div>
 		</>

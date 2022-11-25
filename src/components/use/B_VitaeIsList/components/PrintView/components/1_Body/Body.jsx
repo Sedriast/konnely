@@ -1,5 +1,5 @@
 import st from "./Body.module.css";
-import { Data } from "../Data/Data";
+import { Data } from "./components/0_Data/Data";
 import { basicData } from "../../../../../0-GeneralComp/0-StaticData/dataProv";
 import { TableOne } from "./components/1_TableOne/TableOne";
 import { TableTwo } from "./components/1_TableTwo/TableTwo";
@@ -52,7 +52,7 @@ export function Body({ cicles, trataments }) {
 				grandFatherM=''
 			/>
 			<TableThree data1={basicData?.info?.weigth} />
-			<TableFour />
+			<TableFour ageDestete='0000 00 00' criterion='Translado dela unidad agroambiental la esperanza ' />
 
 			<div className={st.complete}>
 				<table className={st.tableTop}>
