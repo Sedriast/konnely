@@ -3,6 +3,11 @@ import st from "./Head.module.css";
 import s from "../../../../../../img/LogoUDEC.png";
 
 export function Head({ marc, proces, title, code, version, dateValidity }) {
+	const d = new Date().toLocaleDateString("en-us", {
+		year: "numeric",
+		month: "short",
+		day: "numeric",
+	});
 	const cm = (
 		<div className={st.headContainer}>
 			<div className={st.logoUDEC}>
@@ -32,10 +37,7 @@ export function Head({ marc, proces, title, code, version, dateValidity }) {
 							<th>VIGENCIA: {dateValidity}</th>
 						</tr>
 						<tr>
-							<th>
-								FECHA:
-								{Date().replace(" GMT-0500 (hora estándar de Colombia)", "")}
-							</th>
+							<th>FECHA: {d}</th>
 						</tr>
 					</th>
 				</tbody>
