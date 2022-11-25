@@ -122,151 +122,144 @@ export function SendRabbitData() {
 
     const cm = (
         <>
-            <form
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    const { name, value } = e.target;
-                    console.log(value);
-                    console.log(name);
-                }}>
-                <div className={st.panelContainer}>
-                    <div className={st.panelInpImg}>
-                        <div className={st.panelImage}>
-                            <Inputs
-                                type='file'
-                                HaveImage={(e) => {
-                                    setImage(e);
-                                    if (e === null) {
-                                        setImage_(null);
-                                        setAuxImage_(null);
-                                    }
-                                }}
-                                preeview={image_}
-                            />
-                            <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                                {isOpenModal && (
-                                    <>
-                                        <Webcam
-                                            audio={false}
-                                            height={250}
-                                            width={330}
-                                            screenshotFormat='image/jpeg'>
-                                            {({ getScreenshot }) => (
-                                                <button
-                                                    onClick={(e) => {
-                                                        e.preventDefault();
-                                                        const imageSrc = getScreenshot();
-                                                        setAuxImage_(imageSrc);
-                                                    }}>
-                                                    Capturar foto
-                                                </button>
-                                            )}
-                                        </Webcam>
-                                        <img src={auxImage_} alt=''></img>
-                                        <button
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                setImage_(auxImage_);
-                                                closeModal();
-                                            }}>
-                                            Aceptar
-                                        </button>
-                                    </>
-                                )}
-                            </Modal>
-                        </div>
-                        <br />
-                        <br />
-                        <div className={st.btnC}>
-                            <Buttons
-                                direction='bottom'
-                                label='Cámara'
-                                btnIconText={faCamera}
-                                btnClick={openModal}
-                                route='#'
-                            />
-                        </div>
-                    </div>
-                    <br />
-                    <br />
-                    <div className={st.panel}>
+            <div className={st.panelContainer}>
+                <div className={st.panelInpImg}>
+                    <div className={st.panelImage}>
                         <Inputs
-                            leyend='Identificador'
-                            name='id'
-                            placeholder='Ingrese el identificador'
-                            type='number'
-                            inputmode='numeric'
-                            handleChange={handleChange}
-                        />
-                        <Lists
-                            leyend='Género'
-                            name_='genero'
-                            listar={GetDocument({ coleccion: 'lists', list: 'gender' }).props.children[0].values}
-                            handleChange={handleChange}
-                        />
-                        <Lists
-                            placeholder='Raza'
-                            leyend='Raza'
-                            name_='raza'
-                            listar={GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values}
-                            handleChange={handleChange}
-                        />
-                        <Inputs
-                            leyend='Porcentaje de pureza'
-                            name='porcentaje'
-                            placeholder='Procentaje de pureza'
-                            type='number'
-                            inputmode='numeric'
-                            min='1'
-                            max='100'
-                            step='0.1'
-                            handleChange={handleChange}
-                        />
-                        <Lists
-                            leyend='Concepción'
-                            name_='concepcion'
-                            listar={
-                                GetDocument({ coleccion: 'lists', list: 'conception' }).props.children[0].values
-                            }
-                            handleChange={handleChange}
-                        />
-                        <Inputs
-                            leyend='Fecha de nacimiento'
-                            name='nacimiento'
-                            type='date'
-                            handleChange={handleChange}
-                        />
-                        {date && <DropdownDate date={date} handleChange={handleChange} />}
-                        <Lists
-                            leyend='Motivo de ingreso'
-                            name_='motivo'
-                            listar={GetDocument({ coleccion: 'lists', list: 'reasons' }).props.children[0].values}
-                            handleChange={handleChange}
-                        />
-                        {reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
-                    </div>
-                    <div className={st.submit}>
-                        <Buttons
-                            label='Guardar'
-                            direction='top'
-                            btnClick={() => {
-                                swal({
-                                    title: '¿Desea enviar esta información?',
-                                    icon: 'info',
-                                    buttons: ['No', 'Si'],
-                                }).then((respuesta) => {
-                                    if (respuesta) {
-                                        handleSubmit();
-                                    }
-                                });
+                            type='file'
+                            HaveImage={(e) => {
+                                setImage(e);
+                                if (e === null) {
+                                    setImage_(null);
+                                    setAuxImage_(null);
+                                }
                             }}
-                            btnIconText={faPaperPlane}
+                            preeview={image_}
+                        />
+                        <Modal isOpen={isOpenModal} closeModal={closeModal}>
+                            {isOpenModal && (
+                                <>
+                                    <Webcam audio={false} height={250} width={330} screenshotFormat='image/jpeg'>
+                                        {({ getScreenshot }) => (
+                                            <button
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    const imageSrc = getScreenshot();
+                                                    setAuxImage_(imageSrc);
+                                                }}>
+                                                Capturar foto
+                                            </button>
+                                        )}
+                                    </Webcam>
+                                    <img src={auxImage_} alt=''></img>
+                                    <button
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            setImage_(auxImage_);
+                                            closeModal();
+                                        }}>
+                                        Aceptar
+                                    </button>
+                                </>
+                            )}
+                        </Modal>
+                    </div>
+                    <br />
+                    <br />
+                    <div className={st.btnC}>
+                        <Buttons
+                            direction='bottom'
+                            label='Cámara'
+                            btnIconText={faCamera}
+                            btnClick={openModal}
                             route='#'
                         />
-                        <button type='submit'>Hola</button>
                     </div>
                 </div>
-            </form>
+                <br />
+                <br />
+                <div className={st.panel}>
+                    <Inputs
+                        leyend='Identificador del conejo'
+                        name='id'
+                        placeholder='Ingrese el identificador'
+                        type='number'
+                        inputmode='numeric'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        leyend='Identificador de la camada'
+                        name='idCamada'
+                        placeholder='Ingrese el identificador'
+                        type='text'
+                        handleChange={handleChange}
+                    />
+                    <Lists
+                        leyend='Género'
+                        name_='genero'
+                        listar={GetDocument({ coleccion: 'lists', list: 'gender' }).props.children[0].values}
+                        handleChange={handleChange}
+                    />
+                    <Lists
+                        placeholder='Raza'
+                        leyend='Raza'
+                        name_='raza'
+                        listar={GetDocument({ coleccion: 'lists', list: 'races' }).props.children[0].values}
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        leyend='Porcentaje de pureza'
+                        name='porcentaje'
+                        placeholder='Procentaje de pureza'
+                        type='number'
+                        inputmode='numeric'
+                        min='1'
+                        max='100'
+                        step='0.1'
+                        handleChange={handleChange}
+                    />
+                    <Lists
+                        leyend='Concepción'
+                        name_='concepcion'
+                        listar={GetDocument({ coleccion: 'lists', list: 'conception' }).props.children[0].values}
+                        handleChange={handleChange}
+                    />
+                    <Inputs
+                        leyend='Fecha de nacimiento'
+                        name='nacimiento'
+                        type='date'
+                        handleChange={handleChange}
+                    />
+                    {date && <DropdownDate date={date} handleChange={handleChange} />}
+                    <Lists
+                        leyend='Motivo de ingreso'
+                        name_='motivo'
+                        listar={GetDocument({ coleccion: 'lists', list: 'reasons' }).props.children[0].values}
+                        handleChange={handleChange}
+                    />
+                    {reason && <DropdownForm motivo={reason} handleChange={handleChange} />}
+                </div>
+                <div className={st.submit}>
+                    <Buttons
+                        label='Guardar'
+                        direction='top'
+                        btnClick={() => {
+                            swal({
+                                title: '¿Desea enviar esta información?',
+                                icon: 'info',
+                                buttons: ['No', 'Si'],
+                            }).then((respuesta) => {
+                                if (respuesta) {
+                                    handleSubmit();
+                                }
+                            });
+                        }}
+                        btnIconText={faPaperPlane}
+                        route='#'
+                    />
+                    <button type='submit'>Hola</button>
+                </div>
+            </div>
         </>
     );
     return cm;

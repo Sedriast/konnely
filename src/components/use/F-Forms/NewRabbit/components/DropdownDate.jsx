@@ -17,6 +17,14 @@ export function DropdownDate(props) {
             {phase() === 1 && (
                 <>
                     <Inputs
+                        leyend='Peso al destete'
+                        name='destete'
+                        placeholder='Ingrese el peso'
+                        type='number'
+                        inputmode='numeric'
+                        handleChange={handleChange}
+                    />
+                    <Inputs
                         leyend='Fecha de finalización de levante'
                         name='levantefin'
                         placeholder='Ingrese el peso'
@@ -36,6 +44,14 @@ export function DropdownDate(props) {
             )}
             {phase() === 2 && (
                 <>
+                    <Inputs
+                        leyend='Peso al destete'
+                        name='destetefin'
+                        placeholder='Ingrese el peso'
+                        type='number'
+                        inputmode='numeric'
+                        handleChange={handleChange}
+                    />
                     <Inputs
                         leyend='Fecha de finalización de levante'
                         name='levantefin'
@@ -72,6 +88,14 @@ export function DropdownDate(props) {
             )}
             {phase() === 3 && (
                 <>
+                    <Inputs
+                        leyend='Peso al destete'
+                        name='destetefin'
+                        placeholder='Ingrese el peso'
+                        type='number'
+                        inputmode='numeric'
+                        handleChange={handleChange}
+                    />
                     <Inputs
                         leyend='Fecha de finalización de levante'
                         name='levantefin'

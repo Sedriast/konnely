@@ -38,7 +38,7 @@ export function Vitae() {
         <>
             {basicData?.id !== null && (
                 <div className={st.panel}>
-                    <RabbitDataView stageId={basicData?.id} user_={user_} />
+                    <RabbitDataView user_={user_} rabbit={rabbit} />
                     <hr />
                     <br />
                     <LifeCycle info={rabbit} user_={user_} />

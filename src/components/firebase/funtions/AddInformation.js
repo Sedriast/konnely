@@ -43,6 +43,8 @@ export const addImageAndInfo = async (props) => {
             delete props.cebafin;
             delete props.ceba;
         }
+        props.lifecycle[0].weigth = props.destete;
+        delete props.destete;
         delete props.image;
         delete props.peso;
         const docRef = await addDoc(collection(db, 'rabbits'), props);

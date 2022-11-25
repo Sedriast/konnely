@@ -1,120 +1,105 @@
-import st from "./RabbitDataView.module.css";
+import st from './RabbitDataView.module.css';
 
-import app from "../../../../../../firebase/credentials";
+import { basicData } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
-import { useEffect, useState } from "react";
-import { basicData } from "../../../../../0-GeneralComp/0-StaticData/dataProv";
-import {
-  collection,
-  getFirestore,
-  onSnapshot,
-  query,
-  where,
-} from "firebase/firestore";
-import { Buttons } from "../../../../../0-GeneralComp/1-Buttons/Buttons";
-import { faPenToSquare, faPrint } from "@fortawesome/free-solid-svg-icons";
+import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
+import { faPenToSquare, faPrint } from '@fortawesome/free-solid-svg-icons';
+import { estadoRabbit } from '../../../../../0-GeneralComp/0-Scripts/EstadoRabbit';
 
-const db = getFirestore(app);
-
-export function RabbitDataView({ stageId, user_ }) {
-  const [data_, setData_] = useState([]);
-
-  useEffect(() => {
-    const q = query(collection(db, "rabbits"), where("id", "==", stageId));
-    onSnapshot(q, (snapshot) =>
-      setData_(snapshot.docs.map((doc) => ({ ...doc.data() })))
-    );
-  }, [stageId]);
-
-  const cm = (
-    <>
-      {basicData.id !== null && (
+export function RabbitDataView({ user_, rabbit }) {
+    const cm = (
         <>
-          <div className={st.initInfo}>
-            <div className={st.btnPrint}>
-              <Buttons
-                direction="bottom"
-                label="Imprimir hoja de vida"
-                route="/print1"
-                btnIconText={faPrint}
-              />
-            </div>
-            <div className={st.rabbitImg}>
-              <img src={data_[0]?.url} alt="" />
-            </div>
-            <br />
-            {data_[0]?.id}
-            <br />
-            <br />
+            {basicData.id !== null && (
+                <>
+                    <div className={st.initInfo}>
+                        <div className={st.btnPrint}>
+                            <Buttons
+                                direction='bottom'
+                                label='Imprimir hoja de vida'
+                                route='/print1'
+                                btnIconText={faPrint}
+                            />
+                        </div>
+                        <div className={st.rabbitImg}>
+                            <img src={rabbit?.url} alt='' />
+                        </div>
+                        <br />
+                        {rabbit?.id}
+                        <br />
+                        <br />
 
-            <hr />
-            <br />
-          </div>
-          <div className={st.tit}>
-            Datos Básicos
-            {user_ !== undefined && user_.rol === "administrador" && (
-              <div>
-                <Buttons
-                  route="/formEdit"
-                  label="Editar"
-                  direction="bottom"
-                  btnIconText={faPenToSquare}
-                />
-              </div>
+                        <hr />
+                        <br />
+                    </div>
+                    <div className={st.tit}>
+                        Datos Básicos
+                        {user_ !== undefined && user_.rol === 'administrador' && (
+                            <div>
+                                <Buttons
+                                    route='/formEdit'
+                                    label='Editar'
+                                    direction='bottom'
+                                    btnIconText={faPenToSquare}
+                                />
+                            </div>
+                        )}
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div className={st.panelData}>
+                        <div className={st.titles}>
+                            Estado:
+                            <br />
+                            <br />
+                            Raza:
+                            <br />
+                            Genero:
+                            <br />
+                            <br />
+                            Fecha de nacimiento:
+                            <br />
+                            Concepción:
+                            <br />
+                            Procedencia:
+                            <br />
+                            <br />
+                            ID. Madre:
+                            <br />
+                            ID. Padre:
+                        </div>
+                        <div className={st.ask}>
+                            {rabbit !== undefined &&
+                                estadoRabbit({
+                                    reproductivecycle: rabbit?.reproductivecycle,
+                                    lifecycle: rabbit?.lifecycle,
+                                })}
+                            <br />
+                            <br />
+                            {rabbit?.raza} ({rabbit?.porcentaje}%)
+                            <br />
+                            {rabbit?.genero}
+                            <br />
+                            <br />
+                            {rabbit?.nacimiento}
+                            <br />
+                            {rabbit?.concepcion}
+                            <br />
+                            {rabbit?.origen}
+                            <br />
+                            <br />
+                            {rabbit?.idMadre}
+                            <br />
+                            {rabbit?.idPadre}
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                </>
             )}
-          </div>
-          <br />
-          <br />
-          <br />
-          <div className={st.panelData}>
-            <div className={st.titles}>
-              Estado:
-              <br />
-              <br />
-              Raza:
-              <br />
-              Genero:
-              <br />
-              <br />
-              Concepción:
-              <br />
-              Fecha:
-              <br />
-              Procedencia:
-              <br />
-              <br />
-              ID. Madre:
-              <br />
-              ID. Padre:
-            </div>
-            <div className={st.ask}>
-              ----------------------------
-              <br />
-              <br />
-              {data_[0]?.raza} ({data_[0]?.porcentaje}%)
-              <br />
-              {data_[0]?.genero}
-              <br />
-              <br />
-              {data_[0]?.concepcion}
-              <br />
-              {data_[0]?.nacimiento}
-              <br />
-              {data_[0]?.origen}
-              <br />
-              <br />
-              {data_[0]?.idMadre}
-              <br />
-              {data_[0]?.idPadre}
-            </div>
-          </div>
-          <br />
-          <br />
-          <br />
         </>
-      )}
-    </>
-  );
+    );
 
-  return cm;
+    return cm;
 }
