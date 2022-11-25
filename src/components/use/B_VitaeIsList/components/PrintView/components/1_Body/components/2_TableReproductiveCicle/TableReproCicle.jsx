@@ -81,7 +81,7 @@ export function TableReproCicle({ cicles }) {
 							<table>
 								<thead>
 									<tr>
-										<th>N° Animales</th>
+										<th>N° ANIMALES</th>
 									</tr>
 								</thead>
 								<tbody>
