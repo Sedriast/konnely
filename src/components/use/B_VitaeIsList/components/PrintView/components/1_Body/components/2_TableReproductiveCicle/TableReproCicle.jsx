@@ -21,94 +21,94 @@ export function TableReproCicle({ cicles }) {
 		return data;
 	};
 	const cm = (
-		<table className={st.tableTop}>
-			<thead>
-				<tr id={st.date}>
-					<tr className={st.b}>
-						<table>
-							<thead>
-								<tr>
-									<th>
-										Fecha <br /> servicio
-									</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<table id={st.t3}>
-										<thead>
-											<tr>
-												<th id={st.r}>Año</th>
-												<th id={st.r}>Mes</th>
-												<th id={st.l}>Dia</th>
-											</tr>
-										</thead>
-									</table>
-								</tr>
-							</tbody>
-						</table>
+		<div className={st.oneContainer}>
+			<table className={st.tableTop}>
+				<thead>
+					<tr id={st.date}>
+						<tr className={st.b}>
+							<table>
+								<thead>
+									<tr>
+										<th>
+											Fecha <br /> servicio
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<table id={st.t3}>
+											<thead>
+												<tr>
+													<th id={st.r}>Año</th>
+													<th id={st.r}>Mes</th>
+													<th id={st.l}>Dia</th>
+												</tr>
+											</thead>
+										</table>
+									</tr>
+								</tbody>
+							</table>
+						</tr>
+						<th>Placa macho</th>
+						<th>Fecha detección de preñes</th>
+						<th>Fecha posible parto</th>
+						<th>Fecha atención de parto</th>
+						<th>Fecha real de parto</th>
+						<tr className={st.b}>
+							<table>
+								<thead>
+									<tr>
+										<th>N° Animales</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<table id={st.t3}>
+											<thead>
+												<tr>
+													<th id={st.r}>V</th>
+													<th id={st.l}>M</th>
+												</tr>
+											</thead>
+										</table>
+									</tr>
+								</tbody>
+							</table>
+						</tr>
+						<th>Peso nacimiento (gr)</th>
+						<th>Fecha destete</th>
+						<tr className={st.b}>
+							<table>
+								<thead>
+									<tr>
+										<th>N° Animales</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<table id={st.t3}>
+											<thead>
+												<tr>
+													<th id={st.r}>H</th>
+													<th id={st.l}>M</th>
+												</tr>
+											</thead>
+										</table>
+									</tr>
+								</tbody>
+							</table>
+						</tr>
+						<th>Peso destete</th>
 					</tr>
-					<th>Placa macho</th>
-					<th>Fecha detección de preñes</th>
-					<th>Fecha posible parto</th>
-					<th>Fecha atención de parto</th>
-					<th>Fecha real de parto</th>
-					<tr className={st.b}>
-						<table>
-							<thead>
-								<tr>
-									<th>N° Animales</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<table id={st.t3}>
-										<thead>
-											<tr>
-												<th id={st.r}>V</th>
-												<th id={st.l}>M</th>
-											</tr>
-										</thead>
-									</table>
-								</tr>
-							</tbody>
-						</table>
-					</tr>
-					<th>Peso nacimiento (gr)</th>
-					<th>Fecha destete</th>
-					<tr className={st.b}>
-						<table>
-							<thead>
-								<tr>
-									<th>N° Animales</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<table id={st.t3}>
-										<thead>
-											<tr>
-												<th id={st.r}>H</th>
-												<th id={st.l}>M</th>
-											</tr>
-										</thead>
-									</table>
-								</tr>
-							</tbody>
-						</table>
-					</tr>
-					<th>Peso destete</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr id={st.br}>
+				</thead>
+				<tbody>
 					{cicles?.map((e) => {
 						if (e.state === false) return <Data data={dataCicle(e)} />;
 						return <></>;
 					})}
-				</tr>
-			</tbody>
-		</table>
+				</tbody>
+			</table>
+		</div>
 	);
 	return cm;
 }

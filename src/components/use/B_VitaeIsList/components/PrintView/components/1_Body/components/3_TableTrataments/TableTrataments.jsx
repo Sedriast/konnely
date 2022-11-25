@@ -1,4 +1,4 @@
-import { Data } from "../2_TableReproductiveCicle/0_Data/Data";
+import { Data } from "./0_Data/Data";
 import st from "./TableTrataments.module.css";
 
 export function TableTrataments({ trataments }) {
@@ -21,13 +21,14 @@ export function TableTrataments({ trataments }) {
 					<table>
 						<thead>
 							<tr>
-								<th>Fecha</th>
-								<th>sintomas,signos,vacunas </th>
-								<th>Diagnostico</th>
+								<th>FECHA</th>
+								<th>SINTOMAS, SIGNOS, VACUNAS </th>
+								<th>DIACNOSTICO</th>
+								<tr></tr>
 								<th>Medicamento</th>
 								<th>Dosis</th>
-								<th>Redultados</th>
-								<th>Nombre del profecional</th>
+								<th>RESULTADOS</th>
+								<th>NOMBRE DEL PROFECIONAL</th>
 							</tr>
 						</thead>
 						<tbody>

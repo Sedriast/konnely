@@ -1,19 +1,24 @@
+.oneContainer {
+	width: fit-content;
+	height: fit-content;
+
+	margin: 1rem;
+
+	border-radius: 5px;
+}
+.tableTop * {
+	font-size: 10px !important;
+}
+
 .tableTop th {
 	border-radius: 3px;
 	border: solid black 1px;
 }
-.tableTop tbody #br {
-	border: solid rgba(0, 0, 0, 0.25) 1px !important;
-}
-.tableTop tbody tr td {
-	border: solid rgba(0, 0, 0, 0.25) 1px;
-}
 .tableTop thead {
 	background: #348b00;
-
-	border: solid black 1px;
 }
 .b table {
+	margin: auto;
 	border-radius: 3px;
 
 	border: solid black 1px;

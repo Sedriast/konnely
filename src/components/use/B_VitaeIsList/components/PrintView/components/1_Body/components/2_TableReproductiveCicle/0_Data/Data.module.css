@@ -1,10 +1,33 @@
-.b table td {
-	padding: 0 10px;
-	border: none !important;
+#y {
+	border: solid rgba(0, 0, 0, 0.25) 1px !important;
 }
-.b .r {
+.b table {
+	width: 132px;
+	height: 28px;
+
+	border: solid rgba(0, 0, 0, 0.25) 1px !important;
+}
+.b table td {
+	padding: 0 11.5px;
+}
+.r {
 	border-right: solid rgba(0, 0, 0, 0.25) 1px !important;
 }
-.b .l {
+.l {
+	border-left: solid rgba(0, 0, 0, 0.25) 1px !important;
+}
+.b2 table {
+	width: 84px;
+	height: 28px;
+
+	border: solid rgba(0, 0, 0, 0.25) 1px !important;
+}
+.b2 table td {
+	padding: 0 11.5px;
+}
+.r2 {
+	border-right: solid rgba(0, 0, 0, 0.25) 1px !important;
+}
+.l2 {
 	border-left: solid rgba(0, 0, 0, 0.25) 1px !important;
 }
