@@ -34,5 +34,9 @@
 	padding: 1.05rem 6rem !important;
 }
 .metaEnd {
+	border: solid black 1px;
+
 	padding: 0.5rem 0.5rem !important;
+
+	font-size: 10px !important;
 }
