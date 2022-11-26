@@ -18,9 +18,15 @@ export function Login() {
 
     const handleSubmit = async (e) => {
         try {
-            await login(e.email + '@ucundinamarca.edu.co', e.password).then(() => {
-                navigate('/vitaeslist');
-            });
+            if (e.email.includes('@ucundinamarca.edu.co')) {
+                await login(e.email, e.password).then(() => {
+                    navigate('/vitaeslist');
+                });
+            } else {
+                await login(e.email + '@ucundinamarca.edu.co', e.password).then(() => {
+                    navigate('/vitaeslist');
+                });
+            }
         } catch (error) {
             ValidationErrors(error.code);
         }
