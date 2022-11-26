@@ -8,26 +8,33 @@
 	background: white;
 }
 .stad {
-	width: 70%;
-	height: 70%;
+	width: 700px;
+	height: 350px;
 
 	background: rgba(0, 0, 0, 0.7);
 	padding: 1rem;
 	border-radius: 10px;
 }
+.stad canvas {
+	width: 100% !important;
+	height: 100% !important;
+
+	display: flex !important;
+	color: rgba(0, 0, 0, 0.3) !important;
+
+	font-size: 1px !important;
+	justify-content: center;
+	align-items: center;
+}
 
 @media (max-width: 700px) {
 	.stad {
-		width: 85%;
-		height: 85%;
+		height: 250px;
+		width: 300px;
 
 		background: rgba(0, 0, 0, 0.7);
-		padding: 1rem;
+
 		border-radius: 10px;
-
-		color: white !important;
-
-		font-size: 1px !important;
 	}
 	.stad canvas {
 		height: 250px !important;

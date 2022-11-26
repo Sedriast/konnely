@@ -18,11 +18,16 @@ export function PanelData({ stadics }) {
 	let deaths = stadics.Deaths;
 	let homogen = stadics.Homogen;
 	const options = {
-		responsive: false,
+		responsive: true,
+		maintainAspectRatio: false,
+		animation: {
+			animateScale: true,
+		},
+		fontSize: 10,
 		scales: {
 			xAxes: [
 				{
-					ticks: { display: false },
+					ticks: { display: false, fontSize: 10 },
 					gridLines: {
 						display: false,
 						drawBorder: false,
@@ -31,7 +36,7 @@ export function PanelData({ stadics }) {
 			],
 			yAxes: [
 				{
-					ticks: { display: false },
+					ticks: { display: false, fontSize: 10 },
 					stacked: true,
 					ticks: {
 						beginAtZero: true,
