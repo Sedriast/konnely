@@ -1,6 +1,6 @@
 import Webcam from 'react-webcam';
 import st from './SendRabbitData.module.css';
-import { useAuth } from '../../../context/AuthContext';
+import { useAuth } from '../../../../context/AuthContext';
 
 import { useState } from 'react';
 
