@@ -16,7 +16,7 @@ export const formatCycleReproductive = (e, format, user) => {
     if (e.target.DateInitial.value) {
         format.stages[0].state = true;
         format.stages[0].male = e.target.Macho.value;
-        format.stages[0].id = e.target.id.value;
+        format.stages[0].idCamada = e.target.idCamada.value;
         format.stages[0].date = e.target.DateInitial.value;
     }
     if (e.target.DatePalpacion.value && e.target.DateInitial.value) {

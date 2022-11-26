@@ -77,7 +77,7 @@ export function Cards({ id, litterPrueba, stages }) {
         if (e.target.name === 'DateInitial') {
             e.target.value = conditionalBasisEdit(e.target.value, null);
             setDate(e.target.value);
-        } else {
+        } else if (e.target.type === 'date') {
             e.target.value = conditionalNextEdit(e.target.value, null, date);
         }
         if (e.target.name === 'DateInitial' && e.target.value === '') {
@@ -100,7 +100,7 @@ export function Cards({ id, litterPrueba, stages }) {
                             return null;
                         }
                     });
-                    if (e.target.DateInitial.value && e.target.id.value) {
+                    if (e.target.DateInitial.value && e.target.idCamada.value && e.target.Macho.value) {
                         autentication(e, valor);
                     } else {
                         swal({

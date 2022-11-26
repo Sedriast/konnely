@@ -12,7 +12,12 @@ export function Ref({ stage, handleChange, date }) {
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
                     <br />
-                    <Inputs name='id' type='text' leyend='Identificador de la camada' handleChange={handleChange} />
+                    <Inputs
+                        name='idCamada'
+                        type='text'
+                        leyend='Identificador de la camada'
+                        handleChange={handleChange}
+                    />
                     <Inputs name='Macho' type='number' leyend='Macho' handleChange={hf} />
                     <Inputs name='DateInitial' type='date' leyend='Fecha' handleChange={handleChange} />
                 </div>
