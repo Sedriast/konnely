@@ -16,7 +16,7 @@ import { Modal } from '../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { Inputs } from '../../0-GeneralComp/1-Inputs/Inputs';
 import { Lists } from '../../0-GeneralComp/1-List/Lists';
 import { Buttons } from '../../0-GeneralComp/1-Buttons/Buttons';
-import { GetDocument, QueriesSimple_, SearchAll } from '../../../firebase/funtions/GetInformation';
+import { GetDocument, SearchAll } from '../../../firebase/funtions/GetInformation';
 import {
     conditionalBasis,
     conditionalLast,
@@ -25,6 +25,7 @@ import {
 } from '../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { useNavigate } from 'react-router-dom';
 import swal from 'sweetalert';
+import { ValidationFormSend } from '../../0-GeneralComp/0-Scripts/ValidationFormSend';
 
 export function SendRabbitData() {
     const navigate = useNavigate();
@@ -48,6 +49,18 @@ export function SendRabbitData() {
             setValues({ ...values, [name]: value });
         } else {
             setValues({ ...values, [name]: value });
+        }
+    };
+    const buscar = (e) => {
+        let valor = false;
+        if (e !== '' && e !== null && e !== undefined) {
+            coleccionInfo.filter(function (element) {
+                if (element.id.toLowerCase().includes(e.toLowerCase())) {
+                    valor = true;
+                }
+                return false;
+            });
+            return valor;
         }
     };
 
@@ -74,50 +87,90 @@ export function SendRabbitData() {
         }
     }
 
-    const handleSubmit = async () => {
-        await addImageAndInfo({
-            ...values,
-            image: image,
-            reproductivecycle: false,
-            lifecycle: [
-                {
-                    stage: 'Nacimiento',
-                    state: 'id de la camada',
-                    approDate: null,
-                    date: values.nacimiento,
-                    weigth: 'Sin datos',
-                },
-                {
-                    stage: 'Levante',
-                    state: null,
-                    approDate: approximate.raised,
-                    date: null,
-                    weigth: 'Sin datos',
-                },
-                {
-                    stage: 'Engorde',
-                    state: null,
-                    approDate: approximate.fattening,
-                    date: null,
-                    weigth: 'Sin datos',
-                },
-                {
-                    stage: 'Ceba',
-                    state: null,
-                    approDate: approximate.ceba,
-                    date: null,
-                    weigth: 'Sin datos',
-                },
-            ],
-        }).then(() => {
-            recuperar(values.id);
-            navigate('/vitae');
+    const handleSubmit = () => {
+        if (!values.origen) {
+            values.origen = 'Ubaté';
+        }
+        if (
+            ValidationFormSend({ values_: values, image_: image }).props.children[0] === false &&
+            ValidationFormSend({ values_: values, image_: image }).props.children[1] === false &&
+            ValidationFormSend({ values_: values, image_: image }).props.children[2] === false
+        ) {
+            if (buscar(values.id)) {
+                swal({
+                    title: 'Un conejo con ese identificador ya esta registrado',
+                    dangerMode: true,
+                    icon: 'error',
+                    button: 'Aceptar',
+                });
+            } else if (values.idMadre === values.idPadre) {
+                swal({
+                    title: 'El registro no puede ser enviado, el padre y la madre no pueden ser el mismo conejo',
+                    dangerMode: true,
+                    icon: 'error',
+                    button: 'Aceptar',
+                });
+            } else {
+                swal({
+                    title: '¿Desea enviar esta información?',
+                    icon: 'info',
+                    buttons: ['No', 'Si'],
+                }).then(async (respuesta) => {
+                    if (respuesta) {
+                        await addImageAndInfo({
+                            ...values,
+                            image: image,
+                            reproductivecycle: false,
+                            lifecycle: [
+                                {
+                                    stage: 'Nacimiento',
+                                    state: 'id de la camada',
+                                    approDate: null,
+                                    date: values.nacimiento,
+                                    weigth: 'Sin datos',
+                                },
+                                {
+                                    stage: 'Levante',
+                                    state: null,
+                                    approDate: approximate.raised,
+                                    date: null,
+                                    weigth: 'Sin datos',
+                                },
+                                {
+                                    stage: 'Engorde',
+                                    state: null,
+                                    approDate: approximate.fattening,
+                                    date: null,
+                                    weigth: 'Sin datos',
+                                },
+                                {
+                                    stage: 'Ceba',
+                                    state: null,
+                                    approDate: approximate.ceba,
+                                    date: null,
+                                    weigth: 'Sin datos',
+                                },
+                            ],
+                        }).then(() => {
+                            recuperar(values.id);
+                            navigate('/vitae');
+                            swal({
+                                title: 'El registro se ha realizado con éxito',
+                                icon: 'success',
+                                button: 'Aceptar',
+                            });
+                        });
+                    }
+                });
+            }
+        } else {
             swal({
-                title: 'El registro se ha realizado con éxito',
-                icon: 'success',
+                title: 'Algunos campos obligatorios no han sido diligenciados',
+                dangerMode: true,
+                icon: 'error',
                 button: 'Aceptar',
             });
-        });
+        }
     };
 
     const cm = (
@@ -244,20 +297,11 @@ export function SendRabbitData() {
                         label='Guardar'
                         direction='top'
                         btnClick={() => {
-                            swal({
-                                title: '¿Desea enviar esta información?',
-                                icon: 'info',
-                                buttons: ['No', 'Si'],
-                            }).then((respuesta) => {
-                                if (respuesta) {
-                                    handleSubmit();
-                                }
-                            });
+                            handleSubmit();
                         }}
                         btnIconText={faPaperPlane}
                         route='#'
                     />
-                    <button type='submit'>Hola</button>
                 </div>
             </div>
         </>

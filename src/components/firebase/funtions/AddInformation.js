@@ -22,9 +22,6 @@ export const addImageAndInfo = async (props) => {
     try {
         let auxiliar = [];
         auxiliar = props.image.split(',');
-        if (!props.origen) {
-            props.origen = 'Ubaté';
-        }
         if (props.levante) {
             props.lifecycle[1].date = props.levantefin;
             props.lifecycle[1].weigth = props.levante;

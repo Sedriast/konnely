@@ -9,7 +9,6 @@ export function Cards({ info }) {
         if (date === null) return 'Sin datos';
         return date;
     }
-    console.log(info?.lifecycle[0]?.weigth);
     return (
         <>
             {info !== undefined &&

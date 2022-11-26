@@ -70,7 +70,7 @@ export function Inputs({
         });
     };
 
-    const cm = (
+    return (
         <>
             <div className={st.container}>
                 <h1 className={cnsST ? st.lblInac : st.lblAc}>{leyend}</h1>
@@ -114,6 +114,4 @@ export function Inputs({
             </div>
         </>
     );
-
-    return cm;
 }
