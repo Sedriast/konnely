@@ -155,6 +155,20 @@ export const AddReproductiveCycle = async (props) => {
     try {
         const docRef = await addDoc(collection(db, 'reproductive'), props);
         await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+        if (props.stages[3].state === true) {
+            const ref = await addDoc(collection(db, 'reproductiveMale'), {
+                idFather: props.idFather,
+                uidFather: props.uidFather,
+                montaDate: props.stages[0].date,
+                idMother: props.idMother,
+                uidMother: props.uidMother,
+                partoDate: props.stages[3].date,
+                lives: props.stages[3].lives,
+                deaths: props.stages[3].deaths,
+                news: props.stages[3].news,
+            });
+            await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
+        }
         if (props.stages[4].state === true) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
         } else {

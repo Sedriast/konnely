@@ -2,13 +2,16 @@ export const litterPrueba = [
     {
         displayNameEditors: [],
         uidEditors: [],
+        idMother: null,
         uidMother: null,
+        idFather: null,
+        uidFather: null,
         stages: [
             {
                 title: 'Monta',
                 state: false,
                 date: null,
-                male: [],
+                male: null,
             },
             {
                 title: 'Palpación',
@@ -30,7 +33,7 @@ export const litterPrueba = [
                 total: null,
                 homogen: null,
                 date: null,
-                stageWeigth: null,
+                news: null,
                 approximateDate: null,
             },
             {
@@ -39,6 +42,8 @@ export const litterPrueba = [
                 approximateDate: null,
                 date: null,
                 WeanedPups: null,
+                MaleHatchlings: null,
+                FemaleHatchlings: null,
                 LitterWeight: null,
             },
         ],

@@ -78,6 +78,7 @@ export function Healt() {
                 <form>
                     <input
                         name='buscar'
+                        type='search'
                         placeholder='Buscar'
                         onChange={(e) => {
                             buscar(e.target.value);

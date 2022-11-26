@@ -88,6 +88,7 @@ export function Ref({ stage, handleChange, date }) {
                         pattern='^[0-9]+'
                         handleChange={hf}
                     />
+                    <Inputs name='novedades' type='text' leyend='Novedades' handleChange={hf} />
                     <Inputs name='DateParto' type='date' leyend='Fecha' handleChange={handleChange} />
                 </div>
             );
