@@ -1,5 +1,6 @@
 import Webcam from 'react-webcam';
 import st from './SendRabbitData.module.css';
+import { useAuth } from '../../../context/AuthContext';
 
 import { useState } from 'react';
 
@@ -28,6 +29,7 @@ import swal from 'sweetalert';
 import { ValidationFormSend } from '../../0-GeneralComp/0-Scripts/ValidationFormSend';
 
 export function SendRabbitData() {
+    const { user } = useAuth();
     const navigate = useNavigate();
     const [date, setDate] = useState();
     const [reason, setReason] = useState();
@@ -120,6 +122,8 @@ export function SendRabbitData() {
                         await addImageAndInfo({
                             ...values,
                             image: image,
+                            displayName: user.displayName,
+                            uidUser: user.uid,
                             reproductivecycle: false,
                             lifecycle: [
                                 {

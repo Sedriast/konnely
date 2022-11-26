@@ -17,7 +17,7 @@ export function DropdownDate(props) {
             {phase() === 1 && (
                 <>
                     <Inputs
-                        leyend='Peso al destete'
+                        leyend='Peso al destete en gramos (gr)'
                         name='destete'
                         placeholder='Ingrese el peso'
                         type='number'
