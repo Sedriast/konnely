@@ -17,8 +17,29 @@ export function Option({ op, rep }) {
 				</div>
 			);
 		case true:
-			return <>{<Cards stages={rep[0]?.stages} item={rep[0]} />}</>;
+			return rep !== "[]" ? (
+				rep?.map(
+					(item, index) =>
+						item.state === true && (
+							<>
+								<div className={st.con}>
+									<Cards
+										key={index}
+										id={item.id}
+										editor={item.displayNameEditors}
+										stages={item.stages}
+										item={item}
+									/>
+								</div>
+							</>
+						)
+				)
+			) : (
+				<>
+					<Loading />
+				</>
+			);
 		default:
-			return <>Nope</>;
+			return <>Def</>;
 	}
 }
