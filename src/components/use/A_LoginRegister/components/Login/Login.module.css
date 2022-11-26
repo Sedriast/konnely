@@ -71,7 +71,7 @@
 	padding: 8px 1rem;
 
 	color: black;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.1) 100%);
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 5%, rgba(255, 255, 255, 0.4) 100%);
 }
 .submit {
 	width: fit-content;
