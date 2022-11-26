@@ -1,64 +1,21 @@
-.panel {
-  width: 8.2rem;
-  height: 48%;
+.tableIn thead th {
+	font-size: 20px;
+	color: rgba(251, 225, 34, 1);
 
-  margin: 0 0.5rem;
-  padding: 2rem 0.5rem;
-
-  background: rgba(255, 255, 255, 0.15);
-
-  border-radius: 10px;
-  font-size: 5px;
-
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
+	border-bottom: solid 1px rgb(255, 255, 255);
 }
-.panel hr {
-  height: 2px;
+.tableIn tbody th {
+	border-left: solid black 1px;
+	padding: 0.1rem;
+	text-align: end;
 }
-.panel div {
-  font-size: 10px;
-  margin: 5px 0;
+.tableIn tbody td {
+	color: black;
+	border-radius: 10px;
+	background: rgb(255, 255, 255, 0.75);
 }
-.panel h3 {
-  width: 10rem;
-
-  font-size: 20px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.pt h1 {
-  width: fit-content;
-
-  text-align: right;
-  color: white;
-
-  font-size: 10px;
-}
-.pt h2 {
-  width: fit-content;
-
-  text-align: left;
-  color: rgb(0, 255, 0);
-  margin-left: 10px;
-
-  font-size: 10px;
-}
-.pt {
-  width: 100%;
-  height: fit-content;
-
-  font-size: 10px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  visibility: visible;
-
-  transition: height 1s;
+#ask {
+	background: rgba(0, 0, 0, 0.1);
+	padding: 0;
+	border-radius: 10px;
 }

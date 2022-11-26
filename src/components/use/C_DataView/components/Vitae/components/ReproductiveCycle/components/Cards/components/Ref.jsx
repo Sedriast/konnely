@@ -1,77 +1,123 @@
-import st from './Ref.module.css';
+import st from "./Ref.module.css";
 
 export function Ref({ stage }) {
-    switch (stage.title) {
-        case 'Monta':
-            return (
-                <div className={st.panel}>
-                    <h3>{stage.title}</h3>
-                    <br />
-                    <hr />
-                    <br />
-                    <div>Macho: {stage.male}</div>
-                    <div>Macho: {stage.date}</div>
-                </div>
-            );
+	switch (stage.title) {
+		case "Monta":
+			return (
+				<tbody>
+					<table>
+						<tr>
+							<th>FECHA</th>
+							<td>{stage.date}</td>
+						</tr>
+						<tr>
+							<th>MACHO</th>
+							<td>{stage.male}</td>
+						</tr>
+					</table>
+				</tbody>
+			);
 
-        case 'Palpación':
-            return (
-                <div className={st.panel}>
-                    <h3>{stage.title}</h3>
+		case "Palpación":
+			return (
+				<tbody>
+					<table>
+						<tr>
+							<th>FECHA</th>
+							<td>{stage.date}</td>
+						</tr>
+					</table>
+				</tbody>
+			);
 
-                    <br />
-                    <hr />
-                    <br />
+		case "Preparto":
+			return (
+				<tbody>
+					<table>
+						<tr>
+							<th>FECHA</th>
+							<td>{stage.date}</td>
+						</tr>
+					</table>
+				</tbody>
+			);
 
-                    <div> Fecha: {stage.date} </div>
-                </div>
-            );
+		case "Parto":
+			return (
+				<tbody>
+					<table>
+						<tr>
+							<th>FECHA</th>
+							<td>{stage.date}</td>
+						</tr>
+						<tr>
+							<th>CRIAS</th>
 
-        case 'Preparto':
-            return (
-                <div className={st.panel}>
-                    <h3>{stage.title}</h3>
+							<td id={st.ask}>
+								<table className={st.tableIn}>
+									<thead></thead>
+									<tbody>
+										<tr>
+											<th>VIVOS</th>
+											<td>{stage.lives}</td>
+										</tr>
+										<tr>
+											<th>MUERTOS</th>
+											<td>{stage.deaths}</td>
+										</tr>
+										<tr>
+											<th>HOMOG.</th>
+											<td>{stage.homo}</td>
+										</tr>
+										<tr>
+											<th>TOTAL</th>
+											<td>{stage.total}</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</tbody>
+			);
 
-                    <br />
-                    <hr />
-                    <br />
-                    <div> Fecha: {stage.date}</div>
-                </div>
-            );
+		case "Destete":
+			return (
+				<tbody>
+					<table>
+						<tr>
+							<th>FECHA</th>
+							<td>{stage.date}</td>
+						</tr>
 
-        case 'Parto':
-            return (
-                <div className={st.panel}>
-                    <h3>{stage.title}</h3>
-                    <br />
-                    <hr />
-                    <div> Fecha: {stage.date}</div>
-                    <br />
-                    Crias
-                    <hr />
-                    <div> Vivos: {stage.lives}</div>
-                    <div> Muertos: {stage.deaths}</div>
-                    <div> Homog.: {stage.homo}</div>
-                    <div> Total: {stage.total}</div>
-                </div>
-            );
+						<tr>
+							<th>CRIAS</th>
 
-        case 'Destete':
-            return (
-                <div className={st.panel}>
-                    <h3>{stage.title}</h3>
-                    <br />
-                    <hr />
-                    <br />
-                    <div> Crias destetadas: {stage.WeanedPups}</div>
-                    <div> Peso de la camada: {stage.WeanedPups}</div>
-                    <div> Crias Hembras: {stage.FemaleHatchlings}</div>
-                    <div> Crias Machos: {stage.MaleHatchlings}</div>
-                    <div> Fecha: {stage.date}</div>
-                </div>
-            );
+							<td id={st.ask}>
+								<table className={st.tableIn}>
+									<thead></thead>
+									<tbody>
+										<tr>
+											<th>MACHOS</th>
+											<td>{stage.MaleHatchlings}</td>
+										</tr>
+										<tr>
+											<th>HEMBRAS</th>
+											<td>{stage.FemaleHatchlings}</td>
+										</tr>
+										<tr>
+											<th>DESTETADOS</th>
+											<td>{stage.WeanedPups}</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</tbody>
+			);
 
-        default:
-            return <></>;
-    }
+		default:
+			return <></>;
+	}
 }

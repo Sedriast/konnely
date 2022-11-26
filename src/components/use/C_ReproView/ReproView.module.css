@@ -1,103 +1,103 @@
 .optionContainer {
-  width: 85%;
-  height: 100%;
+	width: 85%;
+	height: 100%;
 
-  padding: 5% 4%;
-  border-radius: 10px;
+	padding: 5% 4%;
+	border-radius: 10px;
 
-  overflow-y: scroll;
-  overflow-x: hidden;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .des {
-  width: 100%;
-  height: 100%;
+	width: 100%;
+	height: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .panelSearchBar {
-  height: 2rem;
-  width: 80%;
+	height: 2rem;
+	width: 80%;
 
-  display: flex;
-  margin: 1rem 0 2rem 0;
+	display: flex;
+	margin: 1rem 0 2rem 0;
 
-  position: fixed;
+	position: fixed;
 
-  left: 10%;
+	left: 10%;
 
-  z-index: 1;
+	z-index: 1;
 }
 .panelSearchBar input {
-  width: 100%;
+	width: 100%;
 
-  border-bottom-left-radius: 20px;
-  border-top-left-radius: 20px;
-  padding: 0 1rem;
+	border-bottom-left-radius: 20px;
+	border-top-left-radius: 20px;
+	padding: 0 1rem;
 }
 .btnSearch {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
 
-  padding: 0 0.5rem;
+	padding: 0 0.5rem;
 
-  cursor: pointer;
+	cursor: pointer;
 
-  background: white;
+	background: white;
 }
 @media only screen and (max-width: 700px) {
-  .optionContainer {
-    width: 88%;
-    height: 93%;
+	.optionContainer {
+		width: 88%;
+		height: 93%;
 
-    margin-left: auto;
+		margin-left: auto;
 
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
-  .des {
-    width: 100%;
-    height: 100%;
+		overflow-y: scroll;
+		overflow-x: hidden;
+	}
+	.des {
+		width: 100%;
+		height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .panelSearchBar {
-    height: 2rem;
-    width: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.panelSearchBar {
+		height: 2rem;
+		width: 90%;
 
-    display: flex;
-    margin: 0.5rem 0 2rem 10%;
+		display: flex;
+		margin: 0.5rem 0 2rem 10%;
 
-    position: fixed;
+		position: fixed;
 
-    z-index: 1;
-  }
-  .panelSearchBar input {
-    width: 60%;
+		z-index: 1;
+	}
+	.panelSearchBar input {
+		width: 60%;
 
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
-    padding: 0 1rem;
+		border-bottom-left-radius: 20px;
+		border-top-left-radius: 20px;
+		padding: 0 1rem;
 
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
-  .btnSearch {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+		border-left: 1px solid black;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+	}
+	.btnSearch {
+		border-top-right-radius: 20px;
+		border-bottom-right-radius: 20px;
 
-    padding: 0 0.5rem;
+		padding: 0 0.5rem;
 
-    cursor: pointer;
+		cursor: pointer;
 
-    background: white;
+		background: white;
 
-    border-right: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-  }
+		border-right: 1px solid black;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+	}
 }

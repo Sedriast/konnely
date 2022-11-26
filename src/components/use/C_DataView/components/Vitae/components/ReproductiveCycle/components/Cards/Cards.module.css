@@ -23,74 +23,91 @@
 /*Containers*/
 /*Master*/
 .container {
-  margin: 1rem 0;
+	width: fit-content;
 
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+	margin: 1rem 0;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	background: rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: row-reverse;
 }
 /*Master*/
 /*Sub*/
-.panelId {
-  padding-top: 1rem;
+/*TABLES*/
+.pi {
+	width: fit-content;
 
-  font-size: 1.5rem;
-  color: rgba(251, 226, 34);
-
-  text-align: center;
-
-  display: flex;
-}
-.btnEdit {
-  width: 70px;
-  height: fit-content;
-
-  margin-left: 1rem;
-  margin-top: 1.5rem;
-
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
 }
 .panelInfo {
-  width: 88%;
-  height: 13rem rem;
-
-  margin: 0.5rem 1rem;
-
-  display: flex;
-  align-items: center;
-
-  overflow-x: scroll;
-  overflow-y: hidden;
+	margin: 0.5rem 0;
+	overflow-x: scroll !important;
+	overflow-y: hidden;
 }
-.pi {
-  width: fit-content;
+.panelcontainer {
+	width: 156px;
 
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+	border-radius: 10px;
+	padding: 0.4rem 0.6rem;
+	background: rgba(0, 0, 0, 0.1);
+
+	margin: 0.4rem;
+
+	display: flex;
+	justify-content: center;
 }
+.panelcontainer * {
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 11px;
+}
+.tableOut thead th {
+	font-size: 20px;
+	color: rgba(251, 225, 34, 1);
+
+	border-bottom: solid 1px rgb(255, 255, 255);
+}
+.tableOut tbody th {
+	padding: 0.1rem;
+	text-align: end;
+}
+.tableOut tbody td {
+	padding: 0 0.4rem;
+	color: black;
+	border-radius: 10px;
+	background: rgba(255, 255, 255, 0.75);
+}
+.btnEdit {
+	width: 50px;
+	height: fit-content;
+
+	margin: 1rem;
+
+	display: flex;
+	justify-content: space-between;
+}
+/*TABLES*/
+
 .btnPanel {
-  display: flex;
-  margin-left: 0.5rem;
+	display: flex;
+	margin-left: 0.5rem;
 }
 .btnPanel div {
-  font-size: 25px;
-  filter: none;
+	font-size: 25px;
+	filter: none;
 }
-
 .sp {
-  color: rgba(251, 226, 34);
-  font-size: 20px;
-  width: 300px;
-  margin: 1rem;
+	color: rgba(251, 226, 34);
+	font-size: 20px;
+	width: 300px;
+	margin: 1rem;
 }
 .sp div {
-  font-size: 15px;
-  color: white;
+	font-size: 15px;
+	color: white;
 }
 /*Sub*/
 /*Button´s container*/
@@ -115,61 +132,62 @@
 
 /*Resizing */
 @media (max-width: 800px) {
-  .container {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+	.container {
+		width: fit-content;
 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .panelId {
-    font-size: 1.5rem;
-    color: rgba(251, 226, 34);
+		margin: 1rem 0;
 
-    text-align: center;
+		background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 40.63%);
+		border-radius: 10px;
 
-    display: flex;
-  }
-  .panelInfo {
-    display: flex;
-    align-items: center;
+		display: flex;
+		flex-direction: row-reverse;
+	}
+	.btnEdit {
+		width: 70px;
+		margin-top: 1rem;
 
-    overflow-x: scroll;
-    overflow-y: hidden;
-  }
+		display: flex;
+		justify-content: space-between;
+	}
+	.panelInfo {
+		width: 60vw;
 
-  .btnPanel {
-    display: flex;
-    margin-left: 0.5rem;
-  }
-  .btnPanel div {
-    font-size: 25px;
-    filter: none;
-  }
-  .sp {
-    color: rgba(251, 226, 34);
-    font-size: 20px;
-    width: 300px;
-    margin: 1rem;
-  }
-  .sp div {
-    font-size: 15px;
-    color: white;
-  }
+		overflow-x: scroll !important;
+		overflow-y: hidden;
+	}
+
+	.btnPanel {
+		display: flex;
+		margin-left: 0.5rem;
+	}
+	.btnPanel div {
+		font-size: 25px;
+		filter: none;
+	}
+	.sp {
+		color: rgba(251, 226, 34);
+		font-size: 20px;
+		width: 300px;
+		margin: 1rem;
+	}
+	.sp div {
+		font-size: 15px;
+		color: white;
+	}
 }
 /*Resizing */
 
 /*Animations*/
 @keyframes ig {
-  from {
-    width: 2rem;
-    height: 2rem;
-  }
-  to {
-    width: 7.5rem;
-    height: 7.5rem;
-  }
+	from {
+		width: 2rem;
+		height: 2rem;
+	}
+	to {
+		width: 7.5rem;
+		height: 7.5rem;
+	}
 }
 /*Animations*/
 

@@ -1,43 +1,43 @@
 .panel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
 }
 .panel hr {
-  background: white;
+	background: white;
 }
 .stad {
-  width: 70%;
-  height: 70%;
+	width: 70%;
+	height: 70%;
 
-  background: rgba(255, 255, 255, 0.3);
-  padding: 1rem;
-  border-radius: 10px;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 1rem;
+	border-radius: 10px;
 }
 
 @media (max-width: 700px) {
-  .stad {
-    width: 85%;
-    height: 85%;
+	.stad {
+		width: 85%;
+		height: 85%;
 
-    background: rgba(255, 255, 255, 0.3);
-    padding: 1rem;
-    border-radius: 10px;
+		background: rgba(0, 0, 0, 0.7);
+		padding: 1rem;
+		border-radius: 10px;
 
-    color: white !important;
+		color: white !important;
 
-    font-size: 1px !important;
-  }
-  .stad canvas {
-    height: 250px !important;
-    width: 300px!important;
+		font-size: 1px !important;
+	}
+	.stad canvas {
+		height: 250px !important;
+		width: 300px !important;
 
-    display: flex !important;
-    color: white !important;
-    
-    font-size: 1px !important;
-    justify-content: center;
-    align-items: center;
-  }
+		display: flex !important;
+		color: rgba(0, 0, 0, 0.3) !important;
+
+		font-size: 1px !important;
+		justify-content: center;
+		align-items: center;
+	}
 }

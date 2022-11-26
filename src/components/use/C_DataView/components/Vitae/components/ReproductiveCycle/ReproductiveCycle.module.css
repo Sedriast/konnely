@@ -1,18 +1,18 @@
 .tit {
-  color: rgba(251, 225, 34, 1);
-  font-size: 30px;
+	color: rgba(251, 225, 34, 1);
+	font-size: 30px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .tit div {
-  font-size: 25px;
-  margin-left: 0.5rem;
+	font-size: 25px;
+	margin-left: 0.5rem;
 }
 .act svg {
-  font-size: 5rem;
+	font-size: 5rem;
 }
 .con {
-  width: 105%;
+	width: 100%;
 }
