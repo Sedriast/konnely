@@ -6,7 +6,7 @@ export function TableOne({ dateBorn, race, rabbitId }) {
 			<table>
 				<thead>
 					<tr>
-						<th>Especie Cunicola</th>
+						<th>ESPECIE: CUNICOLA</th>
 						<th>
 							<div className={st.col}>
 								<table>

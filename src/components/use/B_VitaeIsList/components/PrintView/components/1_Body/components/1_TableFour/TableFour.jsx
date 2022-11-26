@@ -7,7 +7,7 @@ export function TableFour({ ageDestete, criterion }) {
 				<tr>
 					<th>
 						<tr>
-							<th>Edad destete:</th>
+							<th id={st.i}>Edad destete (meses):</th>
 						</tr>
 						<tr>
 							<th>{ageDestete}</th>

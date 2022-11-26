@@ -1,4 +1,4 @@
-import { Data } from "../0_Data/Data";
+import { Data } from "./0_Data/Data";
 import st from "./TableTrataments.module.css";
 
 export function TableTrataments({ trataments }) {
@@ -17,17 +17,37 @@ export function TableTrataments({ trataments }) {
 	const cm = (
 		<>
 			{trataments?.length > 0 && (
-				<div className={st.carac}>
-					<table>
+				<div className={st.oneContainer}>
+					<table className={st.tableTop}>
 						<thead>
 							<tr>
-								<th>Fecha</th>
-								<th>sintomas,signos,vacunas </th>
-								<th>Diagnostico</th>
-								<th>Medicamento</th>
-								<th>Dosis</th>
-								<th>Redultados</th>
-								<th>Nombre del profecional</th>
+								<th>FECHA</th>
+								<th>SINTOMAS, SIGNOS, VACUNAS </th>
+								<th>DIACNOSTICO</th>
+								<tr className={st.b}>
+									<table>
+										<thead>
+											<tr>
+												<th>N° ANIMALES</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<table id={st.t3}>
+													<thead>
+														<tr>
+															<th id={st.r}>MEDICAMENTO</th>
+															<th id={st.l}>DOSIS</th>
+														</tr>
+													</thead>
+												</table>
+											</tr>
+										</tbody>
+									</table>
+								</tr>
+
+								<th>RESULTADOS</th>
+								<th>NOMBRE DEL PROFECIONAL</th>
 							</tr>
 						</thead>
 						<tbody>
