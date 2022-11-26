@@ -1,17 +1,22 @@
-import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
-import { basicData } from '../dataProv';
 import { ApproximateRepro } from './Dates';
 
-export const formatCycleReproductive = (e, format, user) => {
-    const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'id', busqueda: basicData.uid }).props
-        .children[0];
-    format.uidMother = rabbit.uid;
-
+export const formatCycleReproductive = ({ e, format, user, rabbitMother, rabbitFather }) => {
     if (!format.displayNameEditors.includes(user.displayName)) {
         format.displayNameEditors.push(user.displayName);
     }
     if (!format.uidEditors.includes(user.uid)) {
         format.uidEditors.push(user.uid);
+    }
+    if (rabbitMother !== undefined) {
+        format.idMother = rabbitMother.id;
+        format.uidMother = rabbitMother.uid;
+    }
+    if (rabbitFather !== undefined) {
+        format.idFather = rabbitFather.id;
+        format.uidFather = rabbitFather.uid;
+    } else {
+        format.idFather = e.target.Macho.value;
+        format.uidFather = 'Sin datos';
     }
     if (e.target.DateInitial.value) {
         format.stages[0].state = true;
@@ -32,6 +37,7 @@ export const formatCycleReproductive = (e, format, user) => {
         format.stages[3].date = e.target.DateParto.value;
         format.stages[3].lives = e.target.lives.value;
         format.stages[3].deaths = e.target.deaths.value;
+        format.stages[3].news = e.target.novedades.value;
         format.stages[3].total = e.target.total.value;
         format.stages[3].homogen = e.target.homogen.value;
     }

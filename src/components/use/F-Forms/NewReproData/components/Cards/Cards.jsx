@@ -24,6 +24,9 @@ export function Cards({ id, litterPrueba, stages }) {
         parametro: 'genero',
         busqueda: 'Macho',
     }).props.children;
+    const rabbitMother = QueriesSimple_({ coleccion: 'rabbits', parametro: 'uid', busqueda: basicData.info.uid })
+        .props.children[0];
+
     const autentication = (e, valor) => {
         if (valor[0] !== undefined) {
             if (valor[0].idPadre === basicData.info.idPadre || valor[0].idMadre === basicData.info.idMadre) {
@@ -40,7 +43,15 @@ export function Cards({ id, litterPrueba, stages }) {
                     buttons: ['Cancelar', 'Aceptar'],
                 }).then(async (respuesta) => {
                     if (respuesta) {
-                        await AddReproductiveCycle(formatCycleReproductive(e, litterPrueba, user)).then(() => {
+                        await AddReproductiveCycle(
+                            formatCycleReproductive({
+                                e: e,
+                                format: litterPrueba,
+                                user: user,
+                                rabbitMother: rabbitMother,
+                                rabbitFather: valor[0],
+                            })
+                        ).then(() => {
                             swal({
                                 title: 'Ciclo reproductivo creado con exito',
                                 icon: 'success',
@@ -60,7 +71,15 @@ export function Cards({ id, litterPrueba, stages }) {
                 buttons: ['Cancelar', 'Aceptar'],
             }).then((respuesta) => {
                 if (respuesta) {
-                    AddReproductiveCycle(formatCycleReproductive(e, litterPrueba, user)).then(() => {
+                    AddReproductiveCycle(
+                        formatCycleReproductive({
+                            e: e,
+                            format: litterPrueba,
+                            user: user,
+                            rabbitMother: rabbitMother,
+                            rabbitFather: undefined,
+                        })
+                    ).then(() => {
                         swal({
                             title: 'Ciclo reproductivo creado con exito',
                             icon: 'success',
@@ -104,7 +123,7 @@ export function Cards({ id, litterPrueba, stages }) {
                         autentication(e, valor);
                     } else {
                         swal({
-                            title: 'Debe ingresar una fecha inicial o un identidicador de la camada',
+                            title: 'Debe ingresar una fecha inicial un identidicador de la camada y un macho',
                             dangerMode: true,
                             icon: 'error',
                             button: 'aceptar',
