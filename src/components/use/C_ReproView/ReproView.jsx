@@ -39,6 +39,7 @@ export function ReproView() {
             <div className={st.panelSearchBar}>
                 <input
                     placeholder='Buscar'
+                    type='search'
                     onChange={(e) => {
                         buscar(e.target.value);
                     }}

@@ -65,6 +65,7 @@ export function List() {
                         <input
                             name='buscar'
                             value={parametro}
+                            type='search'
                             placeholder='Buscar'
                             onChange={(e) => {
                                 setAuxsearch_(e.target.value);

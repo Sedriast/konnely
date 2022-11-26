@@ -12,14 +12,16 @@ export function RabbitDataView({ user_, rabbit }) {
             {basicData.id !== null && (
                 <>
                     <div className={st.initInfo}>
-                        <div className={st.btnPrint}>
-                            <Buttons
-                                direction='bottom'
-                                label='Imprimir hoja de vida'
-                                route='/print1'
-                                btnIconText={faPrint}
-                            />
-                        </div>
+                        {user_ !== undefined && user_.rol === 'administrador' && (
+                            <div className={st.btnPrint}>
+                                <Buttons
+                                    direction='bottom'
+                                    label='Imprimir hoja de vida'
+                                    route='/print1'
+                                    btnIconText={faPrint}
+                                />
+                            </div>
+                        )}
                         <div className={st.rabbitImg}>
                             <img src={rabbit?.url} alt='' />
                         </div>
