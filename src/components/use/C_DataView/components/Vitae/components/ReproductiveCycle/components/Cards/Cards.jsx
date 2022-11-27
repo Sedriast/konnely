@@ -31,8 +31,8 @@ export function Cards({ stages, item }) {
                         btnIconText={faTrash}
                         btnClick={() => {
                             swal({
-                                title: '¿Esta seguro que desea eliminar esta cuenta?',
-                                text: 'Una vez eliminada no podrá recuperarla',
+                                title: '¿Esta seguro que desea eliminar este registro?',
+                                text: 'Una vez eliminado no podrá recuperarlo',
                                 dangerMode: true,
                                 icon: 'warning',
                                 buttons: ['No', 'Si'],
