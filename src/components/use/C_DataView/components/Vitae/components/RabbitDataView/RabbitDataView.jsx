@@ -14,7 +14,7 @@ export function RabbitDataView({ user_, rabbit }) {
 					<div className={st.initInfo}>
 						{user_ !== undefined &&
 							user_.rol === "administrador" &&
-							(rabbit.genero === "Hembra" ? (
+							(rabbit?.genero === "Hembra" ? (
 								<div className={st.btnPrint}>
 									<Buttons
 										direction='bottom'

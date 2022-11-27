@@ -1,22 +1,22 @@
 import { Data } from "./0_Data/Data";
-import st from "./TableSemen.module.css";
+import st from "./TableTrataments.module.css";
 
-export function TableSemen({ semens }) {
-	const dataTrataments = (semens) => {
+export function TableTrataments({ trataments }) {
+	const dataTrataments = (tratament) => {
 		const data = [
-			semens?.date,
-			semens?.signs,
-			semens?.diagnosis,
-			semens?.route,
-			semens?.responsible,
-			semens?.result,
-			semens?.professional,
+			tratament?.date,
+			tratament?.signs,
+			tratament?.diagnosis,
+			tratament?.route,
+			tratament?.responsible,
+			tratament?.result,
+			tratament?.professional,
 		];
 		return data;
 	};
 	const cm = (
 		<>
-			{semens?.length > 0 && (
+			{trataments?.length > 0 && (
 				<div className={st.oneContainer}>
 					<table className={st.tableTop}>
 						<thead>
@@ -51,7 +51,7 @@ export function TableSemen({ semens }) {
 							</tr>
 						</thead>
 						<tbody>
-							{semens?.map((e) => {
+							{trataments?.map((e) => {
 								if (e.state !== "Inactivo") return <Data data={dataTrataments(e)} />;
 								return <></>;
 							})}

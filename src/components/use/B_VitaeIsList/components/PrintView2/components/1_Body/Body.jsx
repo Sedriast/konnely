@@ -1,13 +1,13 @@
 import st from "./Body.module.css";
-import { Data } from "./components/2_TableReproductiveCicle/0_Data/Data";
 import { basicData } from "../../../../../0-GeneralComp/0-StaticData/dataProv";
 import { TableOne } from "./components/1_TableOne/TableOne";
 import { TableTwo } from "./components/1_TableTwo/TableTwo";
 import { TableThree } from "./components/1_TableThree/TableThree";
 import { TableFour } from "./components/1_TableFour/TableFour";
 import { TableSemen } from "./components/2_TableSemen/TableSemen";
+import { TableTrataments } from "./components/3_TableTrataments/TableTrataments";
 
-export function Body({ cicles, trataments }) {
+export function Body({ semens, trataments }) {
 	const edad = (Date.now() - Date.parse(basicData?.info?.nacimiento)) * (3.8 * Math.pow(10, -10));
 	const dataCicle = (cicle) => {
 		const data = [
@@ -28,7 +28,12 @@ export function Body({ cicles, trataments }) {
 		return data;
 	};
 
+	if (dataCicle === null) {
+		console.log("LOL");
+	}
+
 	const dateborn = { year: "0000", month: "00", day: "00", born: basicData?.info?.nacimiento };
+
 	const cm = (
 		<div className={st.container}>
 			<TableOne dateBorn={dateborn} race={basicData?.info?.raza} rabbitId={basicData?.info?.id} />
@@ -43,7 +48,9 @@ export function Body({ cicles, trataments }) {
 			<TableThree data1={basicData?.info?.weigth} />
 			<TableFour ageDestete={edad} criterion='Translado dela unidad agroambiental la esperanza ' />
 
-			<TableSemen trataments={trataments} />
+			<TableSemen semen={semens} />
+
+			<TableTrataments trataments={trataments} />
 		</div>
 	);
 	return cm;

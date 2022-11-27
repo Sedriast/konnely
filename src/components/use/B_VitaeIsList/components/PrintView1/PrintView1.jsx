@@ -1,4 +1,4 @@
-import st from "./PrintView.module.css";
+import st from "./PrintView1.module.css";
 
 import { newTreats } from "../../../0-GeneralComp/0-StaticData/options";
 
@@ -6,8 +6,6 @@ import { Body } from "./components/1_Body/Body";
 import { LeftBottomMenu } from "../../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu";
 import { basicData } from "../../../0-GeneralComp/0-StaticData/dataProv";
 import { QueriesSimple_ } from "../../../../firebase/funtions/GetInformation";
-
-import s from "../../../../img/LogoUDEC.png";
 
 import { useReactToPrint } from "react-to-print";
 import { useRef } from "react";

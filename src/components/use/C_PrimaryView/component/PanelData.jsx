@@ -27,7 +27,6 @@ export function PanelData({ stadics }) {
 		scales: {
 			xAxes: [
 				{
-					ticks: { display: false, fontSize: 10 },
 					gridLines: {
 						display: false,
 						drawBorder: false,
@@ -36,7 +35,6 @@ export function PanelData({ stadics }) {
 			],
 			yAxes: [
 				{
-					ticks: { display: false, fontSize: 10 },
 					stacked: true,
 					ticks: {
 						beginAtZero: true,

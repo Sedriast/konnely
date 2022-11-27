@@ -23,7 +23,7 @@ export function DataView() {
 		} else if (basicData?.info === undefined && basicData?.id !== null) {
 			recuperar(basicData?.id, rabbit);
 		}
-	}, [rabbit]);
+	}, [navigate, rabbit]);
 
 	const [optionSelect, setOptionSelect] = useState(0);
 	const fal = () => {
