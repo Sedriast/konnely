@@ -3,9 +3,7 @@ export const litterPrueba = [
         displayNameEditors: [],
         uidEditors: [],
         idMother: null,
-        uidMother: null,
         idFather: null,
-        uidFather: null,
         stages: [
             {
                 title: 'Monta',

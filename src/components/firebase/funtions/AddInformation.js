@@ -157,11 +157,9 @@ export const AddReproductiveCycle = async (props) => {
         await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
         if (props.stages[3].state === true) {
             const ref = await addDoc(collection(db, 'reproductiveMale'), {
-                idFather: props.idFather,
                 uidFather: props.uidFather,
                 montaDate: props.stages[0].date,
                 idMother: props.idMother,
-                uidMother: props.uidMother,
                 partoDate: props.stages[3].date,
                 lives: props.stages[3].lives,
                 deaths: props.stages[3].deaths,

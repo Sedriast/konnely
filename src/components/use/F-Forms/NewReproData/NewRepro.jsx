@@ -4,7 +4,7 @@ import { newTreats } from "../../0-GeneralComp/0-StaticData/options";
 
 import { LeftBottomMenu } from "../../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu";
 
-import { litterPrueba } from "../../0-GeneralComp/2-FakeData/reproductiveCycle";
+import { litterPrueba } from "../../0-GeneralComp/0-Format/reproductiveCycle";
 import { Cards } from "./components/Cards/Cards";
 
 export function NewRepro() {
