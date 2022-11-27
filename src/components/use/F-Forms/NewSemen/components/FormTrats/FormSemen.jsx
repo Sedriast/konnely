@@ -1,18 +1,20 @@
-import st from './FormTrat.module.css';
+import st from './FormSemen.module.css';
 
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
-import { AddTratament } from '../../../../../firebase/funtions/AddInformation';
+import { AddExtraction } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import swal from 'sweetalert';
+import { Lists } from '../../../../0-GeneralComp/1-List/Lists';
+import { GetDocument } from '../../../../../firebase/funtions/GetInformation';
 
-export function FormTrat() {
+export function FormSemen() {
     const navigate = useNavigate();
 
     function handleChange(e) {
@@ -30,11 +32,12 @@ export function FormTrat() {
     return (
         <div className={st.container}>
             <h1 className={st.d}>
-                Nuevo tratamiento
+                Recoleción de semen
                 <br />
                 <br />
             </h1>
             <form
+                className={st.form}
                 onSubmit={async (e) => {
                     e.preventDefault();
                     let aux = {};
@@ -44,9 +47,9 @@ export function FormTrat() {
                         }
                     }
                     aux.uidRabbit = basicData.info.uid;
-                    await AddTratament(aux).then(() => {
+                    await AddExtraction(aux).then(() => {
                         swal({
-                            title: 'El nuevo tratamiento se ha añadido correctamente',
+                            title: 'La nueva extracción de semen se ha añadido correctamente',
                             icon: 'success',
                             button: 'aceptar',
                         }).then(() => {
@@ -56,10 +59,15 @@ export function FormTrat() {
                 }}
                 action=''>
                 <Inputs name='date' type='date' leyend='Fecha' handleChange={handleChange} />
-                <Inputs name='signs' type='text' leyend='Sintomas' handleChange={handleChange} />
-                <Inputs name='diagnosis' type='text' leyend='Diagnostico' handleChange={handleChange} />
-                <Inputs name='treatment' type='text' leyend='Tratamiento' handleChange={handleChange} />
-                <Inputs name='result' type='text' leyend='Resultados' handleChange={handleChange} />
+                <Lists
+                    name_='methods'
+                    leyend='Metodo de extracción'
+                    listar={GetDocument({ coleccion: 'lists', list: 'semenMethods' }).props.children[0].values}
+                    handleChange={handleChange}
+                />
+                <Inputs name='volume' type='number' leyend='Volumen (mL)' handleChange={handleChange} />
+                <Inputs name='pajillas' type='number' leyend='Número de Pajillas' handleChange={handleChange} />
+                <Inputs name='observations' type='text' leyend='Observaciones' handleChange={handleChange} />
                 <Inputs
                     name='professional'
                     type='text'

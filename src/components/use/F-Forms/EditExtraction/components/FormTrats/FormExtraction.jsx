@@ -1,29 +1,31 @@
-import swal from 'sweetalert';
 import st from './FormTrat.module.css';
 
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { basicData, recuperarTrataments, tratamentsData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { basicData, recuperarExtraction, extractionData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { UpdateInformation } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Lists } from '../../../../0-GeneralComp/1-List/Lists';
+import { GetDocument } from '../../../../../firebase/funtions/GetInformation';
+import swal from 'sweetalert';
 
-export function FormTrat() {
+export function FormExtraction() {
     const navigate = useNavigate();
 
     function handleChange(e) {
         e.preventDefault();
         const { name, value } = e.target;
         if (name === 'date') {
-            e.target.value = conditionalBasisEdit(value, tratamentsData.info.date);
+            e.target.value = conditionalBasisEdit(value, extractionData.info.date);
         }
     }
     useEffect(() => {
-        if (basicData.id === null && tratamentsData.info === null) {
+        if (basicData.id === null && extractionData.info === null) {
             navigate('/vitaeslist');
             return null;
         }
@@ -31,7 +33,7 @@ export function FormTrat() {
     return (
         <div className={st.container}>
             <h1 className={st.d}>
-                Diligencie los campos del tratamiento con la nueva información:
+                Diligencie los campos de la extracción de semen con la nueva información:
                 <br />
                 <br />
             </h1>
@@ -46,8 +48,8 @@ export function FormTrat() {
                     }
                     aux.uidRabbit = basicData.info.uid;
                     await UpdateInformation({
-                        coleccion: 'trataments',
-                        uid: tratamentsData.info.uid,
+                        coleccion: 'extraction',
+                        uid: extractionData.info.uid,
                         data: aux,
                     }).then(() => {
                         swal({
@@ -56,48 +58,48 @@ export function FormTrat() {
                             button: 'aceptar',
                         }).then(() => {
                             window.history.back();
-                            recuperarTrataments(null);
+                            recuperarExtraction(null);
                         });
                     });
                 }}
                 action=''>
                 <Inputs
-                    value={tratamentsData.info.date}
+                    value={extractionData.info.date}
                     name='date'
                     type='date'
                     leyend='Fecha'
                     handleChange={handleChange}
                 />
-                <Inputs
-                    value={tratamentsData.info.signs}
-                    name='signs'
-                    type='text'
-                    leyend='Sintomas'
+                <Lists
+                    value_={extractionData.info.methods}
+                    name_='methods'
+                    leyend='Metodo de extracción'
+                    listar={GetDocument({ coleccion: 'lists', list: 'semenMethods' }).props.children[0].values}
                     handleChange={handleChange}
                 />
                 <Inputs
-                    value={tratamentsData.info.diagnosis}
-                    name='diagnosis'
-                    type='text'
-                    leyend='Diagnostico'
+                    value={extractionData.info.volume}
+                    name='volume'
+                    type='number'
+                    leyend='Volumen (mL)'
                     handleChange={handleChange}
                 />
                 <Inputs
-                    value={tratamentsData.info.treatment}
-                    name='treatment'
-                    type='text'
-                    leyend='Tratamiento'
+                    value={extractionData.info.pajillas}
+                    name='pajillas'
+                    type='number'
+                    leyend='Número de Pajillas'
                     handleChange={handleChange}
                 />
                 <Inputs
-                    value={tratamentsData.info.result}
-                    name='result'
+                    value={extractionData.info.observations}
+                    name='observations'
                     type='text'
-                    leyend='Resultados'
+                    leyend='Observaciones'
                     handleChange={handleChange}
                 />
                 <Inputs
-                    value={tratamentsData.info.professional}
+                    value={extractionData.info.professional}
                     name='professional'
                     type='text'
                     leyend='Nombre del profecional'

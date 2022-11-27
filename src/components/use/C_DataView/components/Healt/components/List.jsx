@@ -2,7 +2,7 @@ import st from './Cards/Cards.module.css';
 
 import { Cards } from './Cards/Cards';
 
-export function List({ tratamentsActivos, tratamentsInactivos, stateCam }) {
+export function List({ setOptionSelect, tratamentsActivos, tratamentsInactivos, stateCam }) {
     let trataments = [];
     if (stateCam === true) {
         trataments = tratamentsActivos;
@@ -27,6 +27,7 @@ export function List({ tratamentsActivos, tratamentsInactivos, stateCam }) {
                             trataments={item}
                             uidAudit={item.uidAudit}
                             state={item.state}
+                            setOptionSelect={setOptionSelect}
                         />
                     </>
                 ))

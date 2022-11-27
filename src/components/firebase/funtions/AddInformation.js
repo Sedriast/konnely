@@ -113,16 +113,17 @@ export const AddTratament = async (props) => {
 
 /// Función para cambiar el estado de un tratamiento en la base de datos
 
-export const AddAudit = async (props) => {
+export const AddAudit = async ({ coleccion, props }) => {
     try {
         const docRef = await addDoc(collection(db, 'audit'), props);
         await updateDoc(doc(db, 'audit', docRef.id), { uid: docRef.id });
-        await updateDoc(doc(db, 'trataments', props.uidTratament), {
+        await updateDoc(doc(db, coleccion, props.uidTratament), {
             state: 'Inactivo',
             removalDate: Date.now(),
             uidAudit: docRef.id,
         });
     } catch (error) {
+        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
@@ -140,7 +141,7 @@ export const RemovalTratament = async (props) => {
 
 /// Función para reactivar un registro en la base de datos
 
-export const ReactivateTratament = async ({ coleccion, uidAudit, uid, data }) => {
+export const ReactivateRegistration = async ({ coleccion, uidAudit, uid, data }) => {
     try {
         await deleteDoc(doc(db, 'audit', uidAudit));
         await updateDoc(doc(db, coleccion, uid), data);
@@ -309,6 +310,32 @@ export const RemovalCamada = async (props) => {
     try {
         await deleteDoc(doc(db, 'reproductive', props.uid));
         await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
+};
+/// Función para registrar un nueva extracción en la base de datos
+
+export const AddExtraction = async (props) => {
+    try {
+        const docRef = await addDoc(collection(db, 'extraction'), props);
+        await updateDoc(doc(db, 'extraction', docRef.id), {
+            uid: docRef.id,
+            state: 'Activo',
+            removalDate: null,
+            uidAudit: null,
+        });
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
+};
+
+/// Función para borrar una extracción y su documento auditor en la base de datos
+
+export const RemovalExtraction = async (props) => {
+    try {
+        await deleteDoc(doc(db, 'extraction', props.uid));
+        await deleteDoc(doc(db, 'audit', props.uidAudit));
     } catch (error) {
         ValidationErrors(error.code);
     }

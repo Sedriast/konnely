@@ -26,6 +26,14 @@ export const recuperarTrataments = (info) => {
 export const tratamentsData = {
     info: null,
 };
+// Contexto improvisado de la información de un tratamiento
+
+export const recuperarExtraction = (info) => {
+    extractionData.info = info;
+};
+export const extractionData = {
+    info: null,
+};
 
 export const recuperarUser = (info) => {
     userData.info = info;

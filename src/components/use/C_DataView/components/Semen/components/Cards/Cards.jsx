@@ -8,21 +8,22 @@ import { Modal } from '../../../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { useModal } from '../../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { useAuth } from '../../../../../../../context/AuthContext';
 import { useState } from 'react';
-import { AddAudit, ReactivateTratament } from '../../../../../../firebase/funtions/AddInformation';
-import { recuperarTrataments } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
+import { AddAudit, ReactivateRegistration } from '../../../../../../firebase/funtions/AddInformation';
+import { recuperarExtraction } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function Cards({
     id,
     uid,
     date,
-    signs,
-    diagnosis,
-    tratament,
-    result,
+    methods,
+    volume,
+    observations,
     professional,
-    trataments,
+    pajillas,
+    extraction,
     uidAudit,
     state,
+    setOptionSelect,
 }) {
     const { user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -30,18 +31,18 @@ export function Cards({
 
     return (
         <div className={st.container} id={id}>
-            <div className={st.panelId}>Tratamiento {id} </div>
+            <div className={st.panelId}>Extracción de semen {id} </div>
             {state === 'Activo' ? (
                 <div className={st.btnPanel}>
                     <div>
                         <Buttons
-                            route='/EditTrats'
+                            route='/editExtraction'
                             label='Editar'
                             direction='bottom'
                             btnIconText={faPen}
                             btnClick={(e) => {
                                 e.preventDefault();
-                                recuperarTrataments(trataments);
+                                recuperarExtraction(extraction);
                             }}
                         />
                     </div>
@@ -53,7 +54,8 @@ export function Cards({
                             btnIconText={faTrash}
                             btnClick={() => {
                                 swal({
-                                    title: '¿Desea eliminar este tratamiento?',
+                                    title: '¿Desea eliminar esta extracción de semen?',
+                                    dangerMode: true,
                                     icon: 'warning',
                                     buttons: ['No', 'Si'],
                                 }).then((respuesta) => {
@@ -74,13 +76,13 @@ export function Cards({
                         btnIconText={faCircle}
                         btnClick={() => {
                             swal({
-                                title: '¿Desea volver a activar este tratamiento?',
+                                title: '¿Desea volver a activar esta extracción de semen?',
                                 icon: 'warning',
                                 buttons: ['No', 'Si'],
-                            }).then((respuesta) => {
+                            }).then(async (respuesta) => {
                                 if (respuesta) {
-                                    ReactivateTratament({
-                                        coleccion: 'trataments',
+                                    await ReactivateRegistration({
+                                        coleccion: 'extraction',
                                         uid: uid,
                                         uidAudit: uidAudit,
                                         data: {
@@ -88,6 +90,14 @@ export function Cards({
                                             state: 'Activo',
                                             uidAudit: null,
                                         },
+                                    }).then(() => {
+                                        swal({
+                                            title: 'La extracción se ha reactivado correctamente',
+                                            icon: 'success',
+                                            button: 'Aceptar',
+                                        }).then(() => {
+                                            setOptionSelect(0);
+                                        });
                                     });
                                 }
                             });
@@ -99,31 +109,43 @@ export function Cards({
                 {isOpenModal && (
                     <>
                         <br />
-                        ¿Porque desea eliminar este tratamiento?
+                        ¿Porque desea eliminar esta extracción de semen?
                         <br />
                         <br />
                         <textarea
                             className={st.inpModal}
                             defaultValue={auditoria}
                             type='text'
-                            placeholder='Porque desea eliminar este tratamiento'
+                            placeholder='¿Porque desea eliminar esta extracción de semen?'
                             onChange={(e) => {
                                 e.preventDefault();
                                 setAuditoria(e.target.value);
                             }}></textarea>
                         <button
                             className={st.btnModal}
-                            onClick={(e) => {
+                            onClick={async (e) => {
                                 e.preventDefault();
                                 if (auditoria !== '') {
-                                    AddAudit({
-                                        razon: auditoria,
-                                        uidTratament: uid,
-                                        uidProfile: user.uid,
-                                        userNameProfile: user.displayName,
-                                        fecha: Date.now(),
+                                    await AddAudit({
+                                        coleccion: 'extraction',
+                                        props: {
+                                            razon: auditoria,
+                                            uidTratament: uid,
+                                            uidProfile: user.uid,
+                                            userNameProfile: user.displayName,
+                                            fecha: Date.now(),
+                                        },
+                                    }).then(() => {
+                                        swal({
+                                            title: 'La extracción se ha eliminado temporalmente',
+                                            text: 'Puede volver a activarla en un periodo de 2 meses',
+                                            icon: 'success',
+                                            button: 'Aceptar',
+                                        }).then(() => {
+                                            setAuditoria('');
+                                            setOptionSelect(0);
+                                        });
                                     });
-                                    setAuditoria('');
                                 }
                                 closeModal();
                             }}>
@@ -145,27 +167,27 @@ export function Cards({
                     <div>{date}</div>
                 </div>
                 <div className={st.sp}>
-                    Sintomas:
+                    Método de extracción:
                     <br />
-                    <div>{signs}</div>
+                    <div>{methods}</div>
                 </div>
                 <div className={st.sp}>
-                    Diagnostico:
+                    Volumen extraído (ml):
                     <br />
-                    <div>{diagnosis}</div>
+                    <div>{volume}</div>
                 </div>
                 <div className={st.sp}>
-                    Tratamiento:
+                    Observaciones:
                     <br />
-                    <div>{tratament}</div>
+                    <div>{observations}</div>
                 </div>
                 <div className={st.sp}>
-                    Resultados:
+                    Número de pajillas:
                     <br />
-                    <div>{result}</div>
+                    <div>{pajillas}</div>
                 </div>
                 <div className={st.sp}>
-                    Nombre del profecional:
+                    Nombre del profesional:
                     <br />
                     <div>{professional}</div>
                 </div>
