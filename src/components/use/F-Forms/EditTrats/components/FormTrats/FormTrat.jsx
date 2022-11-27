@@ -97,6 +97,20 @@ export function FormTrat() {
                     handleChange={handleChange}
                 />
                 <Inputs
+                    value={tratamentsData.info.medicine}
+                    name='medicine'
+                    type='text'
+                    leyend='Medicamento'
+                    handleChange={handleChange}
+                />
+                <Inputs
+                    value={tratamentsData.info.dose}
+                    name='dose'
+                    type='text'
+                    leyend='Dosis'
+                    handleChange={handleChange}
+                />
+                <Inputs
                     value={tratamentsData.info.professional}
                     name='professional'
                     type='text'
