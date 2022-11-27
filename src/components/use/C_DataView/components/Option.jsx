@@ -1,12 +1,15 @@
-import { Healt } from './Healt/Healt';
-import { Vitae } from './Vitae/Vitae';
+import { Healt } from "./Healt/Healt";
+import { Semen } from "./Semen/Semen";
+import { Vitae } from "./Vitae/Vitae";
 
-export function Option({ op }) {
+export function Option({ op, rabbit }) {
 	switch (op) {
-		case false:
-			return <Vitae />;
-		case true:
+		case 0:
+			return <Vitae rabbit={rabbit} />;
+		case 1:
 			return <Healt />;
+		case 3:
+			return <Semen />;
 		default:
 			break;
 	}

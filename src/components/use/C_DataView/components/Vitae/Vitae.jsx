@@ -14,11 +14,10 @@ import { QueriesSimple_ } from "../../../../firebase/funtions/GetInformation";
 import { Stadics } from "../../../0-GeneralComp/0-Scripts/FormatStadics";
 import { useAuth } from "../../../../../context/AuthContext";
 
-export function Vitae() {
+export function Vitae({ rabbit }) {
 	const { user } = useAuth();
 	const navigate = useNavigate();
-	const rabbit = QueriesSimple_({ coleccion: "rabbits", parametro: "id", busqueda: basicData?.id }).props
-		.children[0];
+
 	const stadics = QueriesSimple_({
 		coleccion: "reproductive",
 		parametro: "uidMother",
@@ -30,9 +29,9 @@ export function Vitae() {
 		if (basicData.id === null) {
 			navigate("/vitaeslist");
 		} else if (basicData?.info === undefined && basicData?.id !== null) {
-			recuperar(basicData?.id, rabbit);
+			recuperar(basicData?.id);
 		}
-	}, [navigate, stadics, rabbit]);
+	}, [navigate, stadics]);
 
 	return (
 		<>
