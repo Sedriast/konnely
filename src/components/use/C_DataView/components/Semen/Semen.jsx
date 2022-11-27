@@ -70,7 +70,7 @@ export function Semen() {
 				<div className={st.new}>
 					<Buttons
 						btnIconText={faFileCirclePlus}
-						route='/addTrat'
+						route='/addSemen'
 						label='Nuevo tratamiento'
 						direction='rigth'
 					/>

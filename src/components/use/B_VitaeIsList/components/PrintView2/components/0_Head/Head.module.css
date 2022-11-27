@@ -1,0 +1,42 @@
+.headContainer {
+	width: fit-content;
+	height: fit-content;
+
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.logoUDEC {
+	width: 55px;
+	height: 90px;
+
+	padding: 0.5rem;
+	border: solid black 1px;
+}
+.logoUDEC img {
+	width: 55px;
+	height: 90px;
+}
+.metaData {
+	display: contents;
+}
+
+.metaData th {
+	border-bottom: solid black 1px;
+	padding: 0.1rem;
+	font-size: 12px;
+}
+.metaCenter {
+	border: solid black 1px;
+
+	padding: 1.05rem 6rem !important;
+}
+.metaEnd {
+	border: solid black 1px;
+
+	padding: 0.5rem 0.5rem !important;
+
+	font-size: 10px !important;
+}

@@ -23,6 +23,7 @@ export function Vitae({ rabbit }) {
 		parametro: "uidMother",
 		busqueda: rabbit?.uid,
 	}).props.children;
+
 	const user_ = QueriesSimple_({ coleccion: "users", parametro: "uid", busqueda: user.uid }).props.children[0];
 
 	useEffect(() => {
