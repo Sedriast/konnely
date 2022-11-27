@@ -1,8 +1,10 @@
 export const litterPrueba = [
     {
+        state: true,
         displayNameEditors: [],
         uidEditors: [],
         idMother: null,
+        uidMother: null,
         idFather: null,
         stages: [
             {
