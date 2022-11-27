@@ -1,6 +1,20 @@
 import st from './Ref.module.css';
 
 export function Ref({ stage }) {
+    const descriptionDate = (date) => {
+        if (date === null || date === undefined || date === '') {
+            return 'Sin fecha';
+        } else {
+            return date;
+        }
+    };
+    const descriptionItem = (item) => {
+        if (item === null || item === undefined || item === '') {
+            return 'Sin datos';
+        } else {
+            return item;
+        }
+    };
     switch (stage.title) {
         case 'Monta':
             return (
@@ -8,11 +22,11 @@ export function Ref({ stage }) {
                     <table>
                         <tr>
                             <th>FECHA</th>
-                            <td>{stage.date}</td>
+                            <td>{descriptionDate(stage.date)}</td>
                         </tr>
                         <tr>
                             <th>MACHO</th>
-                            <td>{stage.male}</td>
+                            <td>{descriptionItem(stage.male)}</td>
                         </tr>
                     </table>
                 </tbody>
@@ -24,7 +38,7 @@ export function Ref({ stage }) {
                     <table>
                         <tr>
                             <th>FECHA</th>
-                            <td>{stage.date}</td>
+                            <td>{descriptionDate(stage.date)}</td>
                         </tr>
                     </table>
                 </tbody>
@@ -36,7 +50,7 @@ export function Ref({ stage }) {
                     <table>
                         <tr>
                             <th>FECHA</th>
-                            <td>{stage.date}</td>
+                            <td>{descriptionDate(stage.date)}</td>
                         </tr>
                         <tr></tr>
                     </table>
@@ -49,7 +63,7 @@ export function Ref({ stage }) {
                     <table>
                         <tr>
                             <th>FECHA</th>
-                            <td>{stage.date}</td>
+                            <td>{descriptionDate(stage.date)}</td>
                         </tr>
                         <tr>
                             <th>CRIAS</th>
@@ -60,19 +74,19 @@ export function Ref({ stage }) {
                                     <tbody>
                                         <tr>
                                             <th>VIVOS</th>
-                                            <td>{stage.lives}</td>
+                                            <td>{descriptionItem(stage.lives)}</td>
                                         </tr>
                                         <tr>
                                             <th>MUERTOS</th>
-                                            <td>{stage.deaths}</td>
+                                            <td>{descriptionItem(stage.deaths)}</td>
                                         </tr>
                                         <tr>
                                             <th>HOMOG.</th>
-                                            <td>{stage.homo}</td>
+                                            <td>{descriptionItem(stage.homogen)}</td>
                                         </tr>
                                         <tr>
                                             <th>TOTAL</th>
-                                            <td>{stage.total}</td>
+                                            <td>{descriptionItem(stage.total)}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -88,7 +102,7 @@ export function Ref({ stage }) {
                     <table>
                         <tr>
                             <th>FECHA</th>
-                            <td>{stage.date}</td>
+                            <td>{descriptionDate(stage.date)}</td>
                         </tr>
 
                         <tr>
@@ -100,15 +114,15 @@ export function Ref({ stage }) {
                                     <tbody>
                                         <tr>
                                             <th>MACHOS</th>
-                                            <td>{stage.MaleHatchlings}</td>
+                                            <td>{descriptionItem(stage.MaleHatchlings)}</td>
                                         </tr>
                                         <tr>
                                             <th>HEMBRAS</th>
-                                            <td>{stage.FemaleHatchlings}</td>
+                                            <td>{descriptionItem(stage.FemaleHatchlings)}</td>
                                         </tr>
                                         <tr>
                                             <th>DESTETADOS</th>
-                                            <td>{stage.WeanedPups}</td>
+                                            <td>{descriptionItem(stage.WeanedPups)}</td>
                                         </tr>
                                     </tbody>
                                 </table>
