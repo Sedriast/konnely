@@ -226,6 +226,13 @@ export function SendRabbitData() {
                     <div className={st.btnC}>
                         <Buttons
                             direction='bottom'
+                            label='Video'
+                            btnIconText={faCamera}
+                            btnClick={openModal}
+                            route='/video'
+                        />
+                        <Buttons
+                            direction='bottom'
                             label='Cámara'
                             btnIconText={faCamera}
                             btnClick={openModal}
