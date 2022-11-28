@@ -75,6 +75,8 @@
 	width: 100%;
 	margin-left: 1rem;
 
+	font-size: 15px !important;
+
 	transition: margin-bottom 500ms ease-out;
 }
 
@@ -83,6 +85,8 @@
 
 	margin-left: 1rem;
 	margin-bottom: 3.5rem;
+
+	font-size: 10px !important;
 
 	transition: margin-bottom 500ms ease-out;
 }

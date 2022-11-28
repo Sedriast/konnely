@@ -1,39 +1,37 @@
 .container {
-  width: auto;
-  height: 100%;
-
-  padding: 0px 1rem;
-  border-radius: 20px;
-
-  visibility: visible;
-  transition: visibility 500ms ease-in;
-}
-
-.panelCards {
-  height: 100%;
-}
-.cards {
-  padding: 8% 0 4% 0;
-
-  display: grid;
-
-  grid-template-columns: repeat(auto-fill, 284px);
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 1rem;
-
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
-.cards * {
-  text-decoration: none;
+.new {
+  width: 2.5rem;
+  height: 2rem;
+
+  margin: 0 0.4rem;
+
+  background: white;
+  border-radius: 100%;
+}
+.btnCam {
+  width: 2.5rem;
+  height: 2rem;
+
+  margin: 0 0.4rem;
+
+  background: white;
+  border-radius: 100%;
 }
 .panelSearchBar {
   position: fixed;
+
+  left: 3rem;
 
   width: 80%;
   height: 2rem;
 
   margin-top: 0.4rem;
+
+  z-index: 1;
 
   display: flex;
 }
@@ -70,62 +68,52 @@
   border-bottom: 1px solid black;
 }
 
-.male {
-  width: 2rem;
-  height: 2rem;
+.panelItems {
+  padding-top: 1.5rem;
+  color: rgba(251, 226, 34);
 
-  margin: 0 0.2rem;
-
-  border-radius: 100%;
-  border: 1px solid black;
-
-  background: rgb(255, 255, 255);
-}
-.female {
-  width: 2rem;
-  height: 2rem;
-
-  margin: 0 0.2rem;
-
-  border-radius: 100%;
-  border: 1px solid black;
-
-  background: rgb(255, 255, 255);
-}
-.filter {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (max-width: 700px) {
   .container {
-    width: 100%;
-    height: 100%;
-
-    margin-left: auto;
-  }
-  .cards {
-    padding: 25% 0 10% 0;
-
-    grid-template-columns: repeat(auto-fill, 284px);
-    grid-column-gap: 1.5rem;
-    grid-row-gap: 1rem;
-
-    display: grid;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
   }
-  .panelCards {
-    height: 100%;
+  .new {
+    width: 2.5rem;
+    height: 2rem;
+
+    margin: 0 0.4rem;
+
+    background: white;
+    border-radius: 100%;
+  }
+  .btnCam {
+    width: 2.5rem;
+    height: 2rem;
+
+    margin: 0 0.4rem;
+
+    background: white;
+    border-radius: 100%;
   }
   .panelSearchBar {
     position: fixed;
 
-    width: 75%;
+    left: 0.5rem;
 
-    left: 1.5rem;
+    width: 80%;
+    height: 2rem;
+
+    margin-top: 0.4rem;
+
+    z-index: 1;
 
     display: flex;
-    margin: 0.4rem 0 2rem 0;
   }
   .panelSearchBar form {
     width: 100%;
@@ -143,6 +131,29 @@
     border-bottom: 1px solid black;
   }
   .panelSearchBar form input {
-    width: 60%;
+    width: 100%;
+  }
+  .btnSearch {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    padding: 0 0.5rem;
+
+    cursor: pointer;
+
+    background: white;
+
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  .panelItems {
+    padding-top: 1.5rem;
+    color: rgba(251, 226, 34);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

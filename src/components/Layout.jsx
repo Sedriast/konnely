@@ -30,6 +30,7 @@ import { Invoice } from "./use/F-Forms/NewInvoice/Invoice";
 import swal from "sweetalert";
 import { PrintView1 } from "./use/B_VitaeIsList/components/PrintView1/PrintView1";
 import { PrintView2 } from "./use/B_VitaeIsList/components/PrintView2/PrintView2";
+import { NewHistory } from "./use/F-Forms/NewHistory/NewHistory";
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -314,6 +315,17 @@ export function Layout() {
 								<ProtectedRoute>
 									<div className={st.componentContainer}>
 										<PrintView2 />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/addHis'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<NewHistory />
 									</div>
 								</ProtectedRoute>
 							}
