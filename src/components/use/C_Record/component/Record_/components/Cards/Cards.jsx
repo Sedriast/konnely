@@ -8,7 +8,6 @@ import swal from "sweetalert";
 import { useModal } from "../../../../../0-GeneralComp/0-StaticData/Modals/useModal";
 import { useAuth } from "../../../../../../../context/AuthContext";
 import { useState } from "react";
-import { AddAudit, ReactivateTratament } from "../../../../../../firebase/funtions/AddInformation";
 import { recuperarTrataments } from "../../../../../0-GeneralComp/0-StaticData/dataProv";
 
 export function Cards({
@@ -35,7 +34,7 @@ export function Cards({
 				<div className={st.btnPanel}>
 					<div>
 						<Buttons
-							route='/EditTrats'
+							route='/#'
 							label='Editar'
 							direction='bottom'
 							btnIconText={faPen}
@@ -79,16 +78,7 @@ export function Cards({
 								buttons: ["No", "Si"],
 							}).then((respuesta) => {
 								if (respuesta) {
-									ReactivateTratament({
-										coleccion: "trataments",
-										uid: uid,
-										uidAudit: uidAudit,
-										data: {
-											removalDate: null,
-											state: "Activo",
-											uidAudit: null,
-										},
-									});
+									console.log("asdaf");
 								}
 							});
 						}}

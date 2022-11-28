@@ -70,12 +70,7 @@ export function Record_() {
 					</div>
 				)}
 				<div className={st.new}>
-					<Buttons
-						btnIconText={faFileCirclePlus}
-						route='/addHis'
-						label='Nuevo tratamiento'
-						direction='rigth'
-					/>
+					<Buttons label='Nueva venta' direction='rigth' route='/addHis' btnIconText={faFileCirclePlus} />
 				</div>
 				<form>
 					<input
