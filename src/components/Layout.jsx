@@ -32,6 +32,8 @@ import { PrintView1 } from './use/B_VitaeIsList/components/PrintView1/PrintView1
 import { PrintView2 } from './use/B_VitaeIsList/components/PrintView2/PrintView2';
 import { NewSemen } from './use/F-Forms/NewSemen/NewSemen';
 import { EditExtraction } from './use/F-Forms/EditExtraction/EditExtraction';
+import { Loading } from './use/0-GeneralComp/1-Loading/Loading';
+import { CameraK } from './use/G-Camera/CameraK';
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -327,6 +329,28 @@ export function Layout() {
                                 <ProtectedRoute>
                                     <div className={st.componentContainer}>
                                         <PrintView2 />
+                                    </div>
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            exact
+                            path='/load'
+                            element={
+                                <ProtectedRoute>
+                                    <div className={st.componentContainer}>
+                                        <Loading />
+                                    </div>
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            exact
+                            path='/video'
+                            element={
+                                <ProtectedRoute>
+                                    <div className={st.componentContainer}>
+                                        <CameraK />
                                     </div>
                                 </ProtectedRoute>
                             }
