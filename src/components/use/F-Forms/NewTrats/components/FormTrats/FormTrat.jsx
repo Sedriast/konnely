@@ -59,6 +59,8 @@ export function FormTrat() {
                 <Inputs name='signs' type='text' leyend='Sintomas' handleChange={handleChange} />
                 <Inputs name='diagnosis' type='text' leyend='Diagnostico' handleChange={handleChange} />
                 <Inputs name='treatment' type='text' leyend='Tratamiento' handleChange={handleChange} />
+                <Inputs name='medicine' type='text' leyend='Medicamento' handleChange={handleChange} />
+                <Inputs name='dose' type='text' leyend='Dosis' handleChange={handleChange} />
                 <Inputs name='result' type='text' leyend='Resultados' handleChange={handleChange} />
                 <Inputs
                     name='professional'

@@ -1,11 +1,11 @@
-import st from './NewSemen.module.css';
+import st from './EditTrats.module.css';
 
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { Buttons } from '../../0-GeneralComp/1-Buttons/Buttons';
-import { FormSemen } from './components/FormTrats/FormSemen';
+import { FormExtraction } from './components/FormTrats/FormExtraction';
 
-export function NewSemen() {
+export function EditExtraction() {
     return (
         <>
             <div className={st.leftMenu}>
@@ -15,7 +15,7 @@ export function NewSemen() {
                 </div>
             </div>
             <div className={st.optionContainer}>
-                <FormSemen />
+                <FormExtraction />
             </div>
         </>
     );

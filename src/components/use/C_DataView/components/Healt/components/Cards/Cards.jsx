@@ -8,7 +8,7 @@ import { Modal } from '../../../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { useModal } from '../../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { useAuth } from '../../../../../../../context/AuthContext';
 import { useState } from 'react';
-import { AddAudit, ReactivateTratament } from '../../../../../../firebase/funtions/AddInformation';
+import { AddAudit, ReactivateRegistration } from '../../../../../../firebase/funtions/AddInformation';
 import { recuperarTrataments } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function Cards({
@@ -23,6 +23,7 @@ export function Cards({
     trataments,
     uidAudit,
     state,
+    setOptionSelect,
 }) {
     const { user } = useAuth();
     const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -54,6 +55,7 @@ export function Cards({
                             btnClick={() => {
                                 swal({
                                     title: '¿Desea eliminar este tratamiento?',
+                                    dangerMode: true,
                                     icon: 'warning',
                                     buttons: ['No', 'Si'],
                                 }).then((respuesta) => {
@@ -77,9 +79,9 @@ export function Cards({
                                 title: '¿Desea volver a activar este tratamiento?',
                                 icon: 'warning',
                                 buttons: ['No', 'Si'],
-                            }).then((respuesta) => {
+                            }).then(async (respuesta) => {
                                 if (respuesta) {
-                                    ReactivateTratament({
+                                    await ReactivateRegistration({
                                         coleccion: 'trataments',
                                         uid: uid,
                                         uidAudit: uidAudit,
@@ -88,6 +90,14 @@ export function Cards({
                                             state: 'Activo',
                                             uidAudit: null,
                                         },
+                                    }).then(() => {
+                                        swal({
+                                            title: 'El tratamiento se ha reactivado correctamente',
+                                            icon: 'success',
+                                            button: 'Aceptar',
+                                        }).then(() => {
+                                            setOptionSelect(0);
+                                        });
                                     });
                                 }
                             });
@@ -113,17 +123,29 @@ export function Cards({
                             }}></textarea>
                         <button
                             className={st.btnModal}
-                            onClick={(e) => {
+                            onClick={async (e) => {
                                 e.preventDefault();
                                 if (auditoria !== '') {
-                                    AddAudit({
-                                        razon: auditoria,
-                                        uidTratament: uid,
-                                        uidProfile: user.uid,
-                                        userNameProfile: user.displayName,
-                                        fecha: Date.now(),
+                                    await AddAudit({
+                                        coleccion: 'trataments',
+                                        props: {
+                                            razon: auditoria,
+                                            uidTratament: uid,
+                                            uidProfile: user.uid,
+                                            userNameProfile: user.displayName,
+                                            fecha: Date.now(),
+                                        },
+                                    }).then(() => {
+                                        swal({
+                                            title: 'El tratamiento se ha eliminado temporalmente',
+                                            text: 'Puede volver a activarla en un periodo de 2 meses',
+                                            icon: 'success',
+                                            button: 'Aceptar',
+                                        }).then(() => {
+                                            setAuditoria('');
+                                            setOptionSelect(0);
+                                        });
                                     });
-                                    setAuditoria('');
                                 }
                                 closeModal();
                             }}>
@@ -145,12 +167,12 @@ export function Cards({
                     <div>{date}</div>
                 </div>
                 <div className={st.sp}>
-                    Sintomas:
+                    Síntomas:
                     <br />
                     <div>{signs}</div>
                 </div>
                 <div className={st.sp}>
-                    Diagnostico:
+                    Diagnóstico:
                     <br />
                     <div>{diagnosis}</div>
                 </div>
@@ -165,7 +187,7 @@ export function Cards({
                     <div>{result}</div>
                 </div>
                 <div className={st.sp}>
-                    Nombre del profecional:
+                    Nombre del profesional:
                     <br />
                     <div>{professional}</div>
                 </div>

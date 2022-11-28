@@ -2,31 +2,32 @@ import st from './Cards/Cards.module.css';
 
 import { Cards } from './Cards/Cards';
 
-export function List({ tratamentsActivos, tratamentsInactivos, stateCam }) {
-    let trataments = [];
+export function List({ setOptionSelect, extractionsActivos, extractionsInactivos, stateCam }) {
+    let extraction = [];
     if (stateCam === true) {
-        trataments = tratamentsActivos;
+        extraction = extractionsActivos;
     } else if (stateCam === false) {
-        trataments = tratamentsInactivos;
+        extraction = extractionsInactivos;
     }
     return (
         <>
-            {trataments !== [] ? (
-                trataments.map((item, index) => (
+            {extraction !== [] ? (
+                extraction.map((item, index) => (
                     <>
                         <Cards
                             key={item.uid}
                             id={index + 1}
                             uid={item.uid}
                             date={item.date}
-                            signs={item.signs}
-                            diagnosis={item.diagnosis}
-                            tratament={item.treatment}
-                            result={item.result}
+                            methods={item.methods}
+                            volume={item.volume}
+                            observations={item.observations}
                             professional={item.professional}
-                            trataments={item}
+                            pajillas={item.pajillas}
+                            extraction={item}
                             uidAudit={item.uidAudit}
                             state={item.state}
+                            setOptionSelect={setOptionSelect}
                         />
                     </>
                 ))

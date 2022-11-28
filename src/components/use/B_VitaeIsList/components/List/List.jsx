@@ -4,6 +4,8 @@ import swal from 'sweetalert';
 import { useState } from 'react';
 
 import { DropdownList } from './components/DropdownList';
+import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
+import { faCamera } from '@fortawesome/free-solid-svg-icons';
 
 export function List() {
     let search = { vieja: 'init' };
@@ -22,6 +24,7 @@ export function List() {
                 <div className={st.panelSearchBar}>
                     <div className={st.filter}>
                         <figure title='Filtrar machos' tooltip-dir='bottom'>
+                            <Buttons direction='bottom' label='Video' btnIconText={faCamera} route='/video' />
                             <button
                                 id='b'
                                 className={st.male}

@@ -33,7 +33,7 @@ export function DataView() {
         setOptionSelect(1);
     };
     const def = () => {
-        setOptionSelect(3);
+        setOptionSelect(2);
     };
     const dataViewOptions = [
         {
@@ -79,7 +79,7 @@ export function DataView() {
         <>
             <LeftBottomMenu options={rabbit?.genero === 'Macho' ? dataViewOptions_ : dataViewOptions} />
             <div className={st.optionContainer}>
-                <Option op={optionSelect} rabbit={rabbit} />
+                <Option setOptionSelect={setOptionSelect} op={optionSelect} rabbit={rabbit} />
             </div>
             <RigthTopButtons BTNS={generalOptions} />
         </>

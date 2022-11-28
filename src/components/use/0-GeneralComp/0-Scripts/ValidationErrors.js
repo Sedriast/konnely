@@ -25,6 +25,7 @@ export const ValidationErrors = (props) => {
         'auth/missing-email': 'El correo electrónico no se ha proporcionado.',
         'auth/missing-password': 'La contraseña no se ha proporcionado.',
         'auth/missing-phone-number': 'El número de teléfono no se ha proporcionado.',
+        'not-found': 'No se encontró el recurso solicitado',
     };
     const error_message_default = 'Se produjo un error interno, intente nuevamente mas tarde';
 

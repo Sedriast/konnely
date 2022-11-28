@@ -10,7 +10,7 @@ import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
 import { basicData } from '../../../0-GeneralComp/0-StaticData/dataProv';
 import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
 
-export function Healt() {
+export function Healt({ setOptionSelect }) {
     let activos = [];
     let inactivos = [];
     const [cam, setCam] = useState(true);
@@ -91,9 +91,19 @@ export function Healt() {
             </div>
             <div className={st.panelItems}>
                 {search === '' ? (
-                    <List tratamentsActivos={activos} tratamentsInactivos={inactivos} stateCam={cam} />
+                    <List
+                        setOptionSelect={setOptionSelect}
+                        tratamentsActivos={activos}
+                        tratamentsInactivos={inactivos}
+                        stateCam={cam}
+                    />
                 ) : (
-                    <List tratamentsActivos={search_} tratamentsInactivos={search_} stateCam={cam} />
+                    <List
+                        setOptionSelect={setOptionSelect}
+                        tratamentsActivos={search_}
+                        tratamentsInactivos={search_}
+                        stateCam={cam}
+                    />
                 )}
                 {search_.length === 0 && <h1>No hay resultados</h1>}
             </div>
