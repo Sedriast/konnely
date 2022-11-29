@@ -30,6 +30,8 @@ import swal from "sweetalert";
 import { PrintView1 } from "./use/B_VitaeIsList/components/PrintView1/PrintView1";
 import { PrintView2 } from "./use/B_VitaeIsList/components/PrintView2/PrintView2";
 import { NewHistory } from "./use/F-Forms/NewHistory/NewHistory";
+import { NewSemen } from "./use/F-Forms/NewSemen/NewSemen";
+import { EditExtraction } from "./use/F-Forms/EditExtraction/EditExtraction";
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -291,7 +293,18 @@ export function Layout() {
 							element={
 								<ProtectedRoute>
 									<div className={st.componentContainer}>
-										<NewTrat />
+										<NewSemen />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/editExtraction'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditExtraction />
 									</div>
 								</ProtectedRoute>
 							}

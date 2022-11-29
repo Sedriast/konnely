@@ -1,4 +1,4 @@
-import st from "./NewRepro.module.css";
+import st from "../../0-GeneralComp/OpContainers.module.css";
 
 import { newTreats } from "../../0-GeneralComp/0-StaticData/options";
 
@@ -8,24 +8,19 @@ import { litterPrueba } from "../../0-GeneralComp/0-Format/reproductiveCycle";
 import { Cards } from "./components/Cards/Cards";
 
 export function NewRepro() {
-  return (
-    <>
-      <LeftBottomMenu
-        backCancel={newTreats}
-        click={() => {
-          window.history.back();
-        }}
-      />
-      <div className={st.optionContainer}>
-        {litterPrueba?.map((item, i) => (
-          <Cards
-            key={i}
-            id={item.id}
-            litterPrueba={litterPrueba[0]}
-            stages={item.stages}
-          />
-        ))}
-      </div>
-    </>
-  );
+	return (
+		<>
+			<LeftBottomMenu
+				backCancel={newTreats}
+				click={() => {
+					window.history.back();
+				}}
+			/>
+			<div className={st.optionContainer}>
+				{litterPrueba?.map((item, i) => (
+					<Cards key={i} id={item.id} litterPrueba={litterPrueba[0]} stages={item.stages} />
+				))}
+			</div>
+		</>
+	);
 }
