@@ -1,14 +1,19 @@
 .container {
-	background: rgba(0, 0, 0, 0.05);
+	width: 82%;
 
-	padding: 2rem 3rem;
+	margin-left: auto;
+	padding: 2rem;
 
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
 }
 .container h1 {
 	color: white;
+}
+.container hr {
+	width: 100%;
+	margin: 1rem 0;
 }
 .d {
 	display: flex;
@@ -20,11 +25,12 @@
 }
 .container form {
 	width: 100%;
+
 	text-align: left;
 }
 .btn {
-	width: 4rem;
-	height: 4rem;
+	width: 3rem;
+	height: 3rem;
 
 	background: rgba(78, 75, 72, 0.9);
 
@@ -48,4 +54,12 @@
 .imgs div {
 	width: 263px;
 	height: 100%;
+}
+@media (max-width: 700px) {
+	.container form {
+		width: 100%;
+
+		padding-left: 0.5rem;
+		text-align: left;
+	}
 }

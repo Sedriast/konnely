@@ -1,24 +1,19 @@
-import st from "./Record_.module.css";
+import st from "./ViewRecord.module.css";
 
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import { faFileCirclePlus, faXmark, faCheck } from "@fortawesome/free-solid-svg-icons";
 
-import { List } from "./components/List";
-import { Buttons } from "../../../0-GeneralComp/1-Buttons/Buttons";
-import { basicData } from "../../../0-GeneralComp/0-StaticData/dataProv";
-import { QueriesSimple_ } from "../../../../firebase/funtions/GetInformation";
+import { Buttons } from "../../0-GeneralComp/1-Buttons/Buttons";
+import { basicData } from "../../0-GeneralComp/0-StaticData/dataProv";
+import { QueriesSimple_ } from "../../../firebase/funtions/GetInformation";
 
-export function Record_() {
+export function ViewRecord() {
 	let activos = [];
 	let inactivos = [];
-
 	const [cam, setCam] = useState(true);
 	const [search, setSearch] = useState("");
 	const [search_, setSearch_] = useState([""]);
-	const navigate = useNavigate();
-
 	const trataments = QueriesSimple_({
 		coleccion: "trataments",
 		parametro: "uidRabbit",
@@ -46,31 +41,17 @@ export function Record_() {
 		});
 		setSearch_(valor);
 	}
-	useEffect(() => {
-		if (basicData.id === null) {
-			navigate("/reco");
-			return null;
-		}
-	}, [navigate, trataments]);
 
 	return (
 		<div className={st.container}>
 			<div className={st.panelSearchBar}>
-				{search === "" && (
-					<div className={st.btnCam}>
-						<Buttons
-							btnIconText={cam ? faCheck : faXmark}
-							route='#'
-							label={cam ? "Borrados" : "Activos"}
-							direction='bottom'
-							btnClick={() => {
-								setCam(!cam);
-							}}
-						/>
-					</div>
-				)}
 				<div className={st.new}>
-					<Buttons label='Nueva venta' direction='rigth' route='/addHis' btnIconText={faFileCirclePlus} />
+					<Buttons
+						btnIconText={faFileCirclePlus}
+						route='/addHis'
+						label='Nuevo registro'
+						direction='rigth'
+					/>
 				</div>
 				<form>
 					<input
@@ -86,14 +67,7 @@ export function Record_() {
 					</button>
 				</form>
 			</div>
-			<div className={st.panelItems}>
-				{search === "" ? (
-					<List tratamentsActivos={activos} tratamentsInactivos={inactivos} stateCam={cam} />
-				) : (
-					<List tratamentsActivos={search_} tratamentsInactivos={search_} stateCam={cam} />
-				)}
-				{search_.length === 0 && <h1>No hay resultados</h1>}
-			</div>
+			<div className={st.panelItems}></div>
 		</div>
 	);
 }

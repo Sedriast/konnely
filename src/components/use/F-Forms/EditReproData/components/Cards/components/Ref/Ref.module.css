@@ -18,11 +18,11 @@
 .panel h3 {
 	font-size: 1.5rem;
 }
+.panel h1 {
+	color: white;
+}
 .edit {
 	width: 80%;
-}
-.edit h1 {
-	color: rgb(0, 0, 0);
 }
 .pt {
 	width: 100%;

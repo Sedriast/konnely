@@ -21,8 +21,8 @@ import { EditLife } from "./use/F-Forms/EditLifedata/EditLife";
 import { EditRepro } from "./use/F-Forms/EditReproData/EditRepro";
 import { EditTrats } from "./use/F-Forms/EditTrats/EditTrats";
 import { RemovalTratament, RemovalUserAdmin } from "./firebase/funtions/AddInformation";
-import { DashBoard } from "./use/C_PrimaryView/DashBoard";
-import { Record } from "./use/C_Record/Record";
+import { DashBoard } from "./use/B_DashBoard/DashBoard";
+import { Record } from "./use/B_Record/Record";
 import { NewRepro } from "./use/F-Forms/NewReproData/NewRepro";
 import { getAuth, updateProfile } from "firebase/auth";
 
@@ -30,6 +30,8 @@ import swal from "sweetalert";
 import { PrintView1 } from "./use/B_VitaeIsList/components/PrintView1/PrintView1";
 import { PrintView2 } from "./use/B_VitaeIsList/components/PrintView2/PrintView2";
 import { NewHistory } from "./use/F-Forms/NewHistory/NewHistory";
+import { NewSemen } from "./use/F-Forms/NewSemen/NewSemen";
+import { EditExtraction } from "./use/F-Forms/EditExtraction/EditExtraction";
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -291,7 +293,18 @@ export function Layout() {
 							element={
 								<ProtectedRoute>
 									<div className={st.componentContainer}>
-										<NewTrat />
+										<NewSemen />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/editExtraction'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditExtraction />
 									</div>
 								</ProtectedRoute>
 							}

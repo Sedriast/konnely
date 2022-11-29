@@ -25,9 +25,8 @@
 .container {
 	width: fit-content;
 
-	margin: 1rem auto;
+	margin: 1rem 1px 1rem auto;
 
-	background: rgba(0, 0, 0, 0.2);
 	border-radius: 10px;
 
 	display: flex;
@@ -53,7 +52,7 @@
 
 	border-radius: 10px;
 	padding: 0.4rem 0.6rem;
-	background: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.4);
 
 	margin: 0.4rem;
 
@@ -135,19 +134,21 @@
 	.container {
 		width: fit-content;
 
-		margin: 1rem auto;
+		margin: 1rem 1px 1rem auto;
 
-		background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 40.63%);
+		background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.01) 40.63%);
 		border-radius: 10px;
 
 		display: flex;
 		flex-direction: row-reverse;
 	}
 	.btnEdit {
-		width: 70px;
-		margin-top: 1rem;
+		height: auto;
+
+		margin: 1rem 0.5rem;
 
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
 	}
 	.panelInfo {

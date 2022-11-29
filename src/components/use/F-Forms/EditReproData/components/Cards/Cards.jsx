@@ -12,6 +12,8 @@ import { UpdateReproductiveCycle } from "../../../../../firebase/funtions/AddInf
 import { QueriesSimple_ } from "../../../../../firebase/funtions/GetInformation";
 import swal from "sweetalert";
 import { basicData } from "../../../../0-GeneralComp/0-StaticData/dataProv";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFloppyDisk } from "@fortawesome/free-solid-svg-icons";
 
 export function Cards({ item, stages }) {
 	const { user } = useAuth();
@@ -116,8 +118,17 @@ export function Cards({ item, stages }) {
 				{stages?.map((element) => {
 					return <Ref stage={element} handleChange={handleChange} date={date} />;
 				})}
+				<hr />
 				<div className={st.btn}>
-					<button type='submit'>💾</button>
+					<button
+						type='submit'
+						onChange={() => {
+							window.history.back();
+						}}>
+						<figure title='Guardar cambios' tooltip-dir='top'>
+							<FontAwesomeIcon icon={faFloppyDisk} />
+						</figure>
+					</button>
 				</div>
 			</form>
 		</div>

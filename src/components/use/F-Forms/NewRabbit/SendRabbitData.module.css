@@ -37,13 +37,6 @@
 }
 /*Master*/
 /*Sub*/
-.panelInpImg {
-	display: flex;
-	align-content: stretch;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column;
-}
 .btnC {
 	width: 3rem;
 	height: 3rem;
@@ -92,7 +85,26 @@
 /*Use*/
 
 /*Resizing */
+@media (max-width: 700px) {
+	.panelImage img {
+		width: 280px !important;
+		height: 280px !important;
 
+		padding: 0;
+
+		border-radius: 100%;
+
+		object-fit: cover;
+		border-radius: 100%;
+	}
+	.panelImage input {
+		width: 280px !important;
+		height: 280px !important;
+		padding: 0;
+		border-radius: 100%;
+		border: none;
+	}
+}
 /*Resizing */
 
 /*Animations*/
@@ -117,9 +129,6 @@
 	width: 100%;
 	height: 368px;
 
-	margin-bottom: 2rem;
-	margin-top: 2rem;
-
 	display: flex;
 	justify-content: center;
 }
@@ -136,8 +145,8 @@
 	align-items: center;
 }
 .panelImage img {
-	width: 16rem;
-	height: 14rem;
+	width: 320px;
+	height: 320px;
 
 	padding: 0;
 
@@ -147,8 +156,8 @@
 	border-radius: 100%;
 }
 .panelImage input {
-	width: 16rem;
-	height: 14rem;
+	width: 320px;
+	height: 320px;
 
 	padding: 0;
 

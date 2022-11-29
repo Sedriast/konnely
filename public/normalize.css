@@ -124,10 +124,33 @@ input[type="date"]:required:invalid::-webkit-datetime-edit {
 	height: 1%;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: rgba(255, 255, 255, 0.25);
+	background-color: rgba(255, 255, 255, 0.05);
 	border-radius: 20px;
 	border: none;
 }
 ::-webkit-scrollbar-track {
 	border-radius: 10px;
+}
+@media (max-width: 700px) {
+	::-webkit-scrollbar {
+		scroll-behavior: smooth;
+	}
+	::-webkit-scrollbar:vertical {
+		width: 0.4rem;
+	}
+	::-webkit-scrollbar-button:increment,
+	::-webkit-scrollbar-button {
+		display: none;
+	}
+	::-webkit-scrollbar:horizontal {
+		height: 1%;
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: transparent;
+		border-radius: 20px;
+		border: none;
+	}
+	::-webkit-scrollbar-track {
+		border-radius: 10px;
+	}
 }

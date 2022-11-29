@@ -1,14 +1,14 @@
-import st from "./Record.module.css";
+import st from "../0-GeneralComp/OpContainers.module.css";
 
 import { RigthTopButtons } from "../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons";
 import { generalOptions } from "../0-GeneralComp/0-StaticData/options";
-import { Record_ } from "./component/Record_/Record_";
+import { ViewRecord } from "./components/ViewRecord";
 
 export function Record() {
 	return (
 		<>
 			<div className={st.optionContainer}>
-				<Record_ />
+				<ViewRecord />
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />
 		</>

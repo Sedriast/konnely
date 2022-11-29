@@ -9,7 +9,7 @@ import { basicData, recuperar } from "../../../0-GeneralComp/0-StaticData/dataPr
 import { LifeCycle } from "./components/LifeCycle/LifeCycle";
 import { RabbitDataView } from "./components/RabbitDataView/RabbitDataView";
 import { ReproductiveCycle } from "./components/ReproductiveCycle/ReproductiveCycle";
-import { PanelData } from "../../../C_PrimaryView/component/PanelData";
+import { PanelData } from "../../../B_DashBoard/component/PanelData";
 import { QueriesSimple_ } from "../../../../firebase/funtions/GetInformation";
 import { Stadics } from "../../../0-GeneralComp/0-Scripts/FormatStadics";
 import { useAuth } from "../../../../../context/AuthContext";
