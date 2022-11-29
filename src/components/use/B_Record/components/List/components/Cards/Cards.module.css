@@ -1,0 +1,143 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+*/
+
+/*Const*/
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.1);
+  background-size: cover;
+
+  padding: 2rem 0.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow: hidden;
+}
+.container hr {
+  width: 90%;
+  height: 3px;
+  background: white;
+}
+.container:hover .rabitImg {
+  width: 7rem;
+  height: 7rem;
+
+  margin: 0 1rem;
+
+  transition-property: width, height, margin;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.55, 1.4, 1, 1.35);
+}
+/*Master*/
+/*Sub*/
+.rabitImg {
+  width: 2rem;
+  height: 2rem;
+
+  border-radius: 100%;
+
+  transition-property: width, height;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.55, 1.4, 1, 1.35);
+}
+.panelId {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.idName {
+  width: 50%;
+
+  padding: 2px;
+  font-size: 1.5rem;
+
+  color: white;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+}
+.titles {
+  text-align: end;
+  font-size: 11px;
+  color: rgba(251, 225, 34, 1);
+  margin-right: 0.3rem;
+}
+.ask {
+  text-align: start;
+  font-size: 11px;
+  color: rgb(255, 255, 255);
+}
+
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+
+/*Resizing */
+
+/*Animations*/
+@keyframes ig {
+  from {
+    width: 2rem;
+    height: 2rem;
+  }
+  to {
+    width: 7.5rem;
+    height: 7.5rem;
+  }
+}
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+
+/*Master*/
+/*Other´s Components */
