@@ -21,8 +21,8 @@ import { EditLife } from "./use/F-Forms/EditLifedata/EditLife";
 import { EditRepro } from "./use/F-Forms/EditReproData/EditRepro";
 import { EditTrats } from "./use/F-Forms/EditTrats/EditTrats";
 import { RemovalTratament, RemovalUserAdmin } from "./firebase/funtions/AddInformation";
-import { DashBoard } from "./use/C_PrimaryView/DashBoard";
-import { Record } from "./use/C_Record/Record";
+import { DashBoard } from "./use/B_DashBoard/DashBoard";
+import { Record } from "./use/B_Record/Record";
 import { NewRepro } from "./use/F-Forms/NewReproData/NewRepro";
 import { getAuth, updateProfile } from "firebase/auth";
 

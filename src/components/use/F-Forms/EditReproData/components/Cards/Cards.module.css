@@ -23,17 +23,21 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 95%;
+	width: 100%;
 
+	padding: 1rem;
 	border-radius: 10px;
 
 	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 /*Master*/
 /*Sub*/
 .panelId {
 	font-size: 1.5rem;
-	color: rgb(0, 0, 0);
+	color: rgba(251, 226, 34);
 
 	text-align: center;
 }
@@ -46,8 +50,16 @@
 	filter: none;
 }
 .panelInfo {
-	width: 100%;
+	width: 90%;
 	height: fit-content;
+
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.panelInfo hr {
+	width: 100%;
+	margin: 1rem 0;
 }
 .sp {
 	color: rgba(251, 226, 34);
@@ -65,18 +77,15 @@
 
 	background: rgba(0, 0, 0, 0.2);
 
-	margin-top: 1rem;
-	margin-bottom: 1rem;
-	margin-left: auto;
-	margin-right: auto;
-
 	border-radius: 100%;
 
 	display: flex;
 	justify-content: center;
 }
 .btn figure {
-	width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .btn button {
 	background: transparent;
@@ -110,7 +119,15 @@
 /*Resizing */
 
 /*Resizing */
-
+@media (max-width: 700px) {
+	.container {
+		width: 100%;
+		padding: 0;
+	}
+	.panelInfo {
+		width: 100%;
+	}
+}
 /*Animations*/
 @keyframes ig {
 	from {

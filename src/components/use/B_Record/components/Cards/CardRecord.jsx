@@ -4,13 +4,14 @@ import { faPen, faCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { Buttons } from "../../../../../0-GeneralComp/1-Buttons/Buttons";
 import swal from "sweetalert";
-// import { Modal } from '../../../0-GeneralComp/0-StaticData/Modals/Modal';
+import { Modal } from "../../../../../0-GeneralComp/0-StaticData/Modals/Modal";
 import { useModal } from "../../../../../0-GeneralComp/0-StaticData/Modals/useModal";
 import { useAuth } from "../../../../../../../context/AuthContext";
 import { useState } from "react";
+import { AddAudit, ReactivateRegistration } from "../../../../../../firebase/funtions/AddInformation";
 import { recuperarTrataments } from "../../../../../0-GeneralComp/0-StaticData/dataProv";
 
-export function Cards({
+export function CardRecord({
 	id,
 	uid,
 	date,
@@ -22,6 +23,7 @@ export function Cards({
 	trataments,
 	uidAudit,
 	state,
+	setOptionSelect,
 }) {
 	const { user } = useAuth();
 	const [isOpenModal, openModal, closeModal] = useModal(false);
@@ -34,7 +36,7 @@ export function Cards({
 				<div className={st.btnPanel}>
 					<div>
 						<Buttons
-							route='/#'
+							route='/EditTrats'
 							label='Editar'
 							direction='bottom'
 							btnIconText={faPen}
@@ -53,6 +55,7 @@ export function Cards({
 							btnClick={() => {
 								swal({
 									title: "¿Desea eliminar este tratamiento?",
+									dangerMode: true,
 									icon: "warning",
 									buttons: ["No", "Si"],
 								}).then((respuesta) => {
@@ -76,52 +79,81 @@ export function Cards({
 								title: "¿Desea volver a activar este tratamiento?",
 								icon: "warning",
 								buttons: ["No", "Si"],
-							}).then((respuesta) => {
+							}).then(async (respuesta) => {
 								if (respuesta) {
-									console.log("asdaf");
+									await ReactivateRegistration({
+										coleccion: "trataments",
+										uid: uid,
+										uidAudit: uidAudit,
+										data: {
+											removalDate: null,
+											state: "Activo",
+											uidAudit: null,
+										},
+									}).then(() => {
+										swal({
+											title: "El tratamiento se ha reactivado correctamente",
+											icon: "success",
+											button: "Aceptar",
+										}).then(() => {
+											setOptionSelect(0);
+										});
+									});
 								}
 							});
 						}}
 					/>
 				</div>
 			)}
-			{/* <Modal isOpen={isOpenModal} closeModal={closeModal}>
-                {isOpenModal && (
-                    <>
-                        <br />
-                        ¿Porque desea eliminar este tratamiento?
-                        <br />
-                        <br />
-                        <textarea
-                            className={st.inpModal}
-                            defaultValue={auditoria}
-                            type='text'
-                            placeholder='Porque desea eliminar este tratamiento'
-                            onChange={(e) => {
-                                e.preventDefault();
-                                setAuditoria(e.target.value);
-                            }}></textarea>
-                        <button
-                            className={st.btnModal}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                if (auditoria !== '') {
-                                    AddAudit({
-                                        razon: auditoria,
-                                        uidTratament: uid,
-                                        uidProfile: user.uid,
-                                        userNameProfile: user.displayName,
-                                        fecha: Date.now(),
-                                    });
-                                    setAuditoria('');
-                                }
-                                closeModal();
-                            }}>
-                            Enviar
-                        </button>
-                    </>
-                )}
-            </Modal> */}
+			<Modal isOpen={isOpenModal} closeModal={closeModal}>
+				{isOpenModal && (
+					<>
+						<br />
+						¿Porque desea eliminar este tratamiento?
+						<br />
+						<br />
+						<textarea
+							className={st.inpModal}
+							defaultValue={auditoria}
+							type='text'
+							placeholder='Porque desea eliminar este tratamiento'
+							onChange={(e) => {
+								e.preventDefault();
+								setAuditoria(e.target.value);
+							}}></textarea>
+						<button
+							className={st.btnModal}
+							onClick={async (e) => {
+								e.preventDefault();
+								if (auditoria !== "") {
+									await AddAudit({
+										coleccion: "trataments",
+										props: {
+											razon: auditoria,
+											uidTratament: uid,
+											uidProfile: user.uid,
+											userNameProfile: user.displayName,
+											fecha: Date.now(),
+										},
+									}).then(() => {
+										swal({
+											title: "El tratamiento se ha eliminado temporalmente",
+											text: "Puede volver a activarla en un periodo de 2 meses",
+											icon: "success",
+											button: "Aceptar",
+										}).then(() => {
+											setAuditoria("");
+											setOptionSelect(0);
+										});
+									});
+								}
+								closeModal();
+							}}>
+							Enviar
+						</button>
+					</>
+				)}
+			</Modal>
 			<br />
 			<br />
 			<hr />
@@ -135,12 +167,12 @@ export function Cards({
 					<div>{date}</div>
 				</div>
 				<div className={st.sp}>
-					Sintomas:
+					Síntomas:
 					<br />
 					<div>{signs}</div>
 				</div>
 				<div className={st.sp}>
-					Diagnostico:
+					Diagnóstico:
 					<br />
 					<div>{diagnosis}</div>
 				</div>
@@ -155,7 +187,7 @@ export function Cards({
 					<div>{result}</div>
 				</div>
 				<div className={st.sp}>
-					Nombre del profecional:
+					Nombre del profesional:
 					<br />
 					<div>{professional}</div>
 				</div>
