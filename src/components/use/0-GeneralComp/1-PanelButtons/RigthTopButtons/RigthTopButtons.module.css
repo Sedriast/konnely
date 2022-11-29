@@ -94,7 +94,7 @@
 
 	display: flex;
 
-	z-index: 9;
+	z-index: 11;
 }
 
 .opUser button {
@@ -198,7 +198,7 @@
 
 		overflow: hidden;
 
-		z-index: 9;
+		z-index: 11;
 	}
 	.opUser button {
 		width: 2.5rem;
