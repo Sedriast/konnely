@@ -3,7 +3,7 @@ import st from "./List.module.css";
 import { Cards } from "./components/Cards/Cards";
 
 export function List() {
-	const re = [{}, {}, {}];
+	const re = [{}, {}, {}, {}];
 
 	return (
 		<>

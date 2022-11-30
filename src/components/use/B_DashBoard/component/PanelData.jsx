@@ -24,28 +24,6 @@ export function PanelData({ stadics }) {
 			animateScale: true,
 		},
 		fontSize: 10,
-		scales: {
-			xAxes: [
-				{
-					gridLines: {
-						display: false,
-						drawBorder: false,
-					},
-				},
-			],
-			yAxes: [
-				{
-					stacked: true,
-					ticks: {
-						beginAtZero: true,
-					},
-					gridLines: {
-						display: false,
-						drawBorder: false,
-					},
-				},
-			],
-		},
 		color: "white",
 		zise: 10,
 	};

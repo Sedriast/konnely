@@ -1,114 +1,26 @@
-/*
-	1) Const
-	2) Containers
-		2.1) Master
-		2.2) Button
-		2.3) Input
-	3)Use
-		3.1)Buttons
-		3.2)Inputs
-	4)Rezising
-	5)Animations
-	6)Otre´s components
-		6.1)Master
-		6.2)...
-
-
-
-*/
-
-/*Const*/
-/*Const*/
-
-/*Containers*/
-/*Master*/
 .container {
-  width: 100%;
-  height: 100%;
+	width: calc(100% - 1rem);
+	height: fit-content;
 
-  background: rgba(0, 0, 0, 0.1);
-  background-size: cover;
+	padding: 0.5rem;
 
-  padding: 0.5rem;
-  cursor: pointer;
-  border-radius: 10px;
-
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  overflow: hidden;
+	border-radius: 10px;
+	background: rgba(0, 0, 0, 0.5);
 }
-.container hr {
-  width: 90%;
-  height: 3px;
-  background: white;
+.container table th img {
+	width: 40px;
+	height: 40px;
+
+	border-radius: 100%;
+
+	border: solid black 1px;
+	background: rgba(0, 0, 0, 0.5);
 }
-/*Master*/
-/*Sub*/
-.panelId {
-  width: 100%;
+.container table td p {
+	width: 250px;
+	height: fit-content;
 
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+	font-size: 0.8rem;
+	color: greenyellow;
+	word-wrap: break-word;
 }
-.idName {
-  width: 50%;
-
-  padding: 2px;
-  font-size: 1.5rem;
-
-  color: white;
-  text-overflow: ellipsis;
-
-  overflow: hidden;
-}
-.titles {
-  text-align: end;
-  font-size: 11px;
-  color: rgba(251, 225, 34, 1);
-  margin-right: 0.3rem;
-}
-.ask {
-  text-align: start;
-  font-size: 11px;
-  color: rgb(255, 255, 255);
-}
-
-/*Sub*/
-/*Button´s container*/
-
-/*Button´s container*/
-/*Input´s container*/
-
-/*Input´s container*/
-/*Oters*/
-
-/*Oters*/
-/*Containers*/
-
-/*Use*/
-/*Button */
-
-/*Button */
-/*Input */
-
-/*Input */
-/*Use*/
-
-/*Resizing */
-
-/*Resizing */
-
-/*Animations*/
-
-/*Animations*/
-
-/*Other´s Components*/
-/*Master*/
-
-/*Master*/
-/*Other´s Components */
