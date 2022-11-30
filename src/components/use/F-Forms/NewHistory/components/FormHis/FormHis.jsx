@@ -9,6 +9,7 @@ import { AddTratament } from "../../../../../firebase/funtions/AddInformation";
 import { Inputs } from "../../../../0-GeneralComp/1-Inputs/Inputs";
 import { conditionalBasisEdit } from "../../../../0-GeneralComp/0-StaticData/Dates/conditionals";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import swal from "sweetalert";
 
 export function FormHis() {
@@ -26,11 +27,8 @@ export function FormHis() {
 
 	return (
 		<div className={st.container}>
-			<h1 className={st.d}>
-				Nuevo tratamiento
-				<br />
-				<br />
-			</h1>
+			<h1 className={st.d}>Nueva venta</h1>
+			<hr />
 			<form
 				onSubmit={async (e) => {
 					e.preventDefault();
@@ -63,8 +61,7 @@ export function FormHis() {
 					leyend='Nombre del profecional'
 					handleChange={handleChange}
 				/>
-				<br />
-				<br />
+				<hr />
 				<div className={st.btn}>
 					<button type='submit'>
 						<div>

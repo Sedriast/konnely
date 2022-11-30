@@ -1,0 +1,45 @@
+[debug] [2022-11-30T01:21:48.214Z] ----------------------------------------------------------------------
+[debug] [2022-11-30T01:21:48.216Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sebas\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-11-30T01:21:48.217Z] CLI Version:   10.6.0
+[debug] [2022-11-30T01:21:48.217Z] Platform:      win32
+[debug] [2022-11-30T01:21:48.217Z] Node Version:  v16.10.0
+[debug] [2022-11-30T01:21:48.218Z] Time:          Tue Nov 29 2022 20:21:48 GMT-0500 (hora estándar de Colombia)
+[debug] [2022-11-30T01:21:48.218Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-30T01:21:48.282Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-30T01:21:48.282Z] > authorizing via signed-in user (sedriast@gmail.com)
+[debug] [2022-11-30T01:21:48.282Z] [iam] checking project konnely-67d6a for permissions ["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]
+[debug] [2022-11-30T01:21:48.284Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/konnely-67d6a:testIamPermissions [none]
+[debug] [2022-11-30T01:21:48.284Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/konnely-67d6a:testIamPermissions {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-30T01:21:48.947Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/konnely-67d6a:testIamPermissions 200
+[debug] [2022-11-30T01:21:48.948Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/konnely-67d6a:testIamPermissions {"permissions":["firebase.projects.get","firebasedatabase.instances.update","firebasehosting.sites.update","firebaserules.releases.create","firebaserules.releases.update","firebaserules.rulesets.create"]}
+[debug] [2022-11-30T01:21:48.949Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/konnely-67d6a [none]
+[debug] [2022-11-30T01:21:50.435Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/konnely-67d6a 200
+[debug] [2022-11-30T01:21:50.435Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/konnely-67d6a {"projectId":"konnely-67d6a","projectNumber":"168142494376","displayName":"Konnely","name":"projects/konnely-67d6a","resources":{"hostingSite":"konnely-67d6a","realtimeDatabaseInstance":"konnely-67d6a-default-rtdb","storageBucket":"konnely-67d6a.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_d9430c58-9c7f-4bd1-b5a4-f1269be46b20"}
+[debug] [2022-11-30T01:21:50.437Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/konnely-67d6a [none]
+[debug] [2022-11-30T01:21:50.863Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/konnely-67d6a 200
+[debug] [2022-11-30T01:21:50.863Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/konnely-67d6a {"projectId":"konnely-67d6a","projectNumber":"168142494376","displayName":"Konnely","name":"projects/konnely-67d6a","resources":{"hostingSite":"konnely-67d6a","realtimeDatabaseInstance":"konnely-67d6a-default-rtdb","storageBucket":"konnely-67d6a.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_d9430c58-9c7f-4bd1-b5a4-f1269be46b20"}
+[info] 
+[info] === Deploying to 'konnely-67d6a'...
+[info] 
+[info] i  deploying database, storage, hosting 
+[info] i  database: checking rules syntax... 
+[debug] [2022-11-30T01:21:50.875Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-11-30T01:21:50.875Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-11-30T01:21:51.153Z] <<< HTTP RESPONSE 200 {"date":"Wed, 30 Nov 2022 01:21:50 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-11-30T01:21:51.178Z] >>> HTTP REQUEST GET https://firebasedatabase.googleapis.com/v1beta/projects/konnely-67d6a/locations/-/instances/konnely-67d6a-default-rtdb  
+ 
+[debug] [2022-11-30T01:21:51.755Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 30 Nov 2022 01:21:50 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-11-30T01:21:51.763Z] >>> HTTP REQUEST PUT https://konnely-67d6a-default-rtdb.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": false,
+    ".write": false
+  }
+}
+[debug] [2022-11-30T01:22:23.872Z] Error: connect ETIMEDOUT 2600:1901:0:4d00:::443
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1146:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 2600:1901:0:4d00:::443

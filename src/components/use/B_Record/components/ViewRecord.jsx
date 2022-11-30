@@ -2,16 +2,16 @@ import st from "./ViewRecord.module.css";
 
 import { useState } from "react";
 
-import { faFileCirclePlus, faXmark, faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faFileCirclePlus } from "@fortawesome/free-solid-svg-icons";
 
 import { Buttons } from "../../0-GeneralComp/1-Buttons/Buttons";
 import { basicData } from "../../0-GeneralComp/0-StaticData/dataProv";
 import { QueriesSimple_ } from "../../../firebase/funtions/GetInformation";
+import { Loading } from "../../0-GeneralComp/1-Loading/Loading";
 
 export function ViewRecord() {
 	let activos = [];
 	let inactivos = [];
-	const [cam, setCam] = useState(true);
 	const [search, setSearch] = useState("");
 	const [search_, setSearch_] = useState([""]);
 	const trataments = QueriesSimple_({
@@ -67,7 +67,9 @@ export function ViewRecord() {
 					</button>
 				</form>
 			</div>
-			<div className={st.panelItems}></div>
+			<div className={st.panelItems}>
+				<Loading />
+			</div>
 		</div>
 	);
 }
