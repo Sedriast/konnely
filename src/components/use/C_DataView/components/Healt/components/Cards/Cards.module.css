@@ -43,7 +43,30 @@
 .container hr {
 	width: 90%;
 	height: 3px;
+
 	background: white;
+
+	margin: 1rem 0;
+}
+.container table th {
+	color: rgba(251, 226, 34);
+
+	text-align: end;
+
+	padding: 0.5rem;
+
+	font-size: 15px;
+	border-bottom: solid black 1px;
+}
+.container table td {
+	color: rgb(255, 255, 255);
+
+	text-align: inherit;
+
+	padding: 0.5rem;
+
+	font-size: 15px;
+	border-bottom: solid black 1px;
 }
 /*Master*/
 /*Sub*/

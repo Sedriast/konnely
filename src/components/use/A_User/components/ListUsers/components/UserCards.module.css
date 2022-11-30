@@ -1,47 +1,47 @@
 .container {
-  width: 70%;
-  height: fit-content;
+	width: 90%;
+	height: fit-content;
 
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 0;
+	padding: 0.5rem 1rem;
+	margin: 0.5rem 0;
 
-  background: hsla(0, 0%, 100%, 0.5);
-  border-radius: 20px;
+	background: hsla(0, 0%, 100%, 0.5);
+	border-radius: 20px;
 
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
 }
 .mid {
-  font-size: 15px;
-  margin: 0.5rem 0;
+	font-size: 15px;
+	margin: 0.5rem 0;
 }
 .btnEdit {
-  width: 2.5rem;
-  height: 2.5rem;
+	width: 2.5rem;
+	height: 2.5rem;
 
-  margin: 1rem;
+	margin: 1rem;
 
-  border-radius: 100%;
-  border: 2px solid black;
+	border-radius: 100%;
+	border: 2px solid black;
 
-  text-align: center;
+	text-align: center;
 
-  background: rgba(0, 0, 0, 0.5);
+	background: rgba(0, 0, 0, 0.5);
 }
 .btnEdit button a div {
-  font-size: 10px;
+	font-size: 10px;
 }
 .btn {
-  width: 100px;
+	width: 100px;
 
-  display: flex;
-  justify-content: space-around;
+	display: flex;
+	justify-content: space-around;
 }
 @media (max-width: 700px) {
-  .mid {
-    font-size: 10px;
-    margin: 0.5rem 0;
-  }
+	.mid {
+		font-size: 13px;
+		margin: 0.5rem 0;
+	}
 }
