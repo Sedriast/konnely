@@ -13,10 +13,10 @@ import { Line } from "react-chartjs-2";
 
 export function PanelData({ stadics }) {
 	ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-	let labels = stadics.Labels;
-	let lives = stadics.Lives;
-	let deaths = stadics.Deaths;
-	let homogen = stadics.Homogen;
+	let labels = stadics?.Labels;
+	let lives = stadics?.Lives;
+	let deaths = stadics?.Deaths;
+	let homogen = stadics?.Homogen;
 	const options = {
 		responsive: true,
 		maintainAspectRatio: false,

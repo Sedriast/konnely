@@ -67,9 +67,7 @@ export function ViewRecord() {
 					</button>
 				</form>
 			</div>
-			<div className={st.panelItems}>
-				<Loading />
-			</div>
+			<div className={st.panelItems}></div>
 		</div>
 	);
 }

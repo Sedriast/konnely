@@ -10,18 +10,17 @@ export function DashBoard() {
 	return (
 		<>
 			<div className={st.optionContainer}>
-				<Loading />
-				{/* <div className={st.panelA}>
-                    <div className={st.one}>
-                        <PanelData />
-                    </div>
-                    <div className={st.two}>
-                        <PanelData />
-                    </div>
-                </div>
-                <div className={st.panelB}>
-                    <List />
-                </div> */}
+				<div className={st.panelA}>
+					<div className={st.one}>
+						<PanelData />
+					</div>
+					<div className={st.two}>
+						<PanelData />
+					</div>
+				</div>
+				<div className={st.panelB}>
+					<List />
+				</div>
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />
 		</>
