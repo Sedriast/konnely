@@ -1,7 +1,6 @@
 import st from "./FormHis.module.css";
 
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { basicData } from "../../../../0-GeneralComp/0-StaticData/dataProv";
@@ -14,7 +13,6 @@ import swal from "sweetalert";
 
 export function FormHis() {
 	const [value1, setValue1] = useState(0);
-	const navigate = useNavigate();
 
 	function handleChange(e) {
 		const { name, value } = e.target;
@@ -25,12 +23,7 @@ export function FormHis() {
 			setValue1(parseInt(e.target.value));
 		}
 	}
-	useEffect(() => {
-		if (basicData.id === null) {
-			navigate("/vitaeslist");
-			return null;
-		}
-	}, [navigate]);
+
 	return (
 		<div className={st.container}>
 			<h1 className={st.d}>
