@@ -43,7 +43,6 @@ export function FormHis() {
                     for (const element of e.target) {
                         if (element.value !== '' && element.value !== null && element.value !== undefined) {
                             if (!element.name.includes('Conejo') && !element.name.includes('Precio')) {
-                                console.log(element.name);
                                 aux = { ...aux, [element.name]: element.value };
                             }
                         }
@@ -62,7 +61,7 @@ export function FormHis() {
                         });
                     } else {
                         swal({
-                            title: 'No se ha podido añadir la nueva venta, porque no se ha  todos los campos',
+                            title: 'No se ha podido añadir la nueva venta, porque no se ha diligenciado todos los campos',
                             icon: 'error',
                             button: 'aceptar',
                         });
@@ -100,15 +99,6 @@ export function FormHis() {
                         <div>
                             <figure title='Guardar cambios' tooltip-dir='top'>
                                 <FontAwesomeIcon icon={faPaperPlane} />
-                                <form action=''>
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </form>
                             </figure>
                         </div>
                     </button>
