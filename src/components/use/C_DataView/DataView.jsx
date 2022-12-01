@@ -28,6 +28,8 @@ export function DataView() {
     const navigate = useNavigate();
     const usuario = QueriesSimple_({ coleccion: 'users', parametro: 'uid', busqueda: user?.uid }).props.children[0];
     const coleccionInfo = SearchAll({ coleccion: 'rabbits' }).props.children;
+    const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'id', busqueda: basicData?.id }).props
+        .children[0];
     const buscar = (e) => {
         let valor = false;
         if (e !== '' && e !== null && e !== undefined) {
@@ -269,9 +271,9 @@ export function DataView() {
         if (basicData.id === null) {
             navigate('/vitaeslist');
         } else if (basicData?.info === undefined && basicData?.id !== null) {
-            recuperar(basicData?.id);
+            recuperar(basicData?.id, rabbit);
         }
-    }, [navigate]);
+    }, [navigate, rabbit]);
 
     return (
         <>
