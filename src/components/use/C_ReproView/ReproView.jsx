@@ -13,9 +13,8 @@ export function ReproView() {
     const reproductiveCycles = QueriesSimple_({
         coleccion: 'reproductive',
         parametro: 'uidMother',
-        busqueda: basicData.info.uid,
+        busqueda: basicData?.info?.uid,
     }).props.children;
-    console.log(reproductiveCycles);
     function buscar(e) {
         const valor = reproductiveCycles.filter(function (element) {
             if (

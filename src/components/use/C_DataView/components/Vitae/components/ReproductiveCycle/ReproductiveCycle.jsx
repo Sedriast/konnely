@@ -15,7 +15,7 @@ export function ReproductiveCycle({ reproductivecycle, uid }) {
     }).props.children;
     const cm = (
         <>
-            {basicData?.info?.estate !== 'Inactivo' ? (
+            {basicData?.info?.estado !== 'Inactivo' ? (
                 <>
                     <div className={st.tit}>
                         Camada
@@ -28,23 +28,14 @@ export function ReproductiveCycle({ reproductivecycle, uid }) {
                             />
                         </div>
                     </div>
-                    <br />
-                    <Option op={reproductivecycle} uid={uid} rep={reproductiveCycles} />
                 </>
             ) : (
                 <>
-                    <div className={st.act}>
-                        <Buttons
-                            route='/litterList'
-                            label='Lista de camadas'
-                            direction='bottom'
-                            btnIconText={faRectangleList}
-                        />
-                        <br />
-                        Lista de camadas
-                    </div>
+                    <div className={st.tit}>Camadas registradas</div>
                 </>
             )}
+            <br />
+            <Option op={reproductivecycle} uid={uid} rep={reproductiveCycles} />
         </>
     );
     return cm;
