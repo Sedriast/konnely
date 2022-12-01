@@ -2,7 +2,13 @@ import st from '../0-GeneralComp/OpContainers.module.css';
 
 import { useEffect, useState } from 'react';
 
-import { faCircleInfo, faSyringe, faWandMagicSparkles, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+    faCircleInfo,
+    faSyringe,
+    faWandMagicSparkles,
+    faTrashAlt,
+    faSquareCheck,
+} from '@fortawesome/free-solid-svg-icons';
 
 import { generalOptions } from '../0-GeneralComp/0-StaticData/options';
 import { RigthTopButtons } from '../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons';
@@ -152,7 +158,60 @@ export function DataView() {
             state: delet,
             icon: faTrashAlt,
             path: '#',
-            label: 'Eliminar',
+            label: 'Inactivar',
+        },
+    ];
+    const dataViewOptionsInactivo = [
+        {
+            id: 0,
+            state: fal,
+            icon: faCircleInfo,
+            path: '#',
+            label: 'Información general',
+        },
+        {
+            id: 1,
+            state: tru,
+            icon: faSyringe,
+            path: '#',
+            label: 'Tratamientos',
+        },
+        {
+            id: 2,
+            state: delet,
+            icon: faSquareCheck,
+            path: '#',
+            label: 'Activar',
+        },
+    ];
+    const dataViewOptionsInactivo_ = [
+        {
+            id: 0,
+            state: fal,
+            icon: faCircleInfo,
+            path: '#',
+            label: 'Información general',
+        },
+        {
+            id: 1,
+            state: tru,
+            icon: faSyringe,
+            path: '#',
+            label: 'Tratamientos',
+        },
+        {
+            id: 2,
+            state: def,
+            icon: faWandMagicSparkles,
+            path: '#',
+            label: 'Recolección de semen',
+        },
+        {
+            id: 3,
+            state: delet,
+            icon: faSquareCheck,
+            path: '#',
+            label: 'Activar',
         },
     ];
 
@@ -160,7 +219,21 @@ export function DataView() {
         <>
             {usuario !== undefined && usuario.rol === 'administrador' ? (
                 <>
-                    <LeftBottomMenu options={rabbit?.genero === 'Macho' ? dataViewOptions_ : dataViewOptions} />
+                    {basicData?.info?.estado === 'Activo' ? (
+                        <>
+                            <LeftBottomMenu
+                                options={rabbit?.genero === 'Macho' ? dataViewOptions_ : dataViewOptions}
+                            />
+                        </>
+                    ) : (
+                        <>
+                            <LeftBottomMenu
+                                options={
+                                    rabbit?.genero === 'Macho' ? dataViewOptionsInactivo_ : dataViewOptionsInactivo
+                                }
+                            />
+                        </>
+                    )}
                 </>
             ) : (
                 <>

@@ -39,8 +39,9 @@ export function Cards({ rabitID, rabitInfo }) {
                     </div>
                     <div className={st.ask}>
                         {estadoRabbit({
-                            reproductivecycle: rabitInfo.reproductivecycle,
-                            lifecycle: rabitInfo.lifecycle,
+                            reproductivecycle: rabitInfo?.reproductivecycle,
+                            lifecycle: rabitInfo?.lifecycle,
+                            estado: rabitInfo?.estado,
                         })}
                         <br />
                         {rabitInfo.raza}
