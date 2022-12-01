@@ -124,6 +124,7 @@ export function SendRabbitData() {
                             ...values,
                             estado: 'Activo',
                             InactiveDate: null,
+                            ReactiveDate: null,
                             image: image,
                             displayName: user.displayName,
                             uidUser: user.uid,

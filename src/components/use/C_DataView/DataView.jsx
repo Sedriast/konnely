@@ -19,7 +19,7 @@ import { basicData, recuperar } from '../0-GeneralComp/0-StaticData/dataProv';
 import { QueriesSimple_ } from '../../firebase/funtions/GetInformation';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
-import { InactiveRabbit } from '../../firebase/funtions/AddInformation';
+import { StateRabbit } from '../../firebase/funtions/AddInformation';
 import swal from 'sweetalert';
 
 export function DataView() {
@@ -46,7 +46,7 @@ export function DataView() {
     const def = () => {
         setOptionSelect(2);
     };
-    const delet = () => {
+    const inactiveRabbit = () => {
         swal({
             title: '¿Estás seguro?',
             text: 'Una vez inactivado, no podrás recuperar este conejo',
@@ -55,7 +55,7 @@ export function DataView() {
             dangerMode: true,
         }).then(async (willDelete) => {
             if (willDelete) {
-                await InactiveRabbit({ coleccion: 'rabbits', props: basicData?.info }).then(() => {
+                await StateRabbit({ coleccion: 'rabbits', props: basicData?.info, estado: 'Inactivo' }).then(() => {
                     swal({
                         title: 'El conejo ha sido inactivado',
                         text: 'Puedes encontrarlo en la sección de conejos inactivos',
@@ -65,6 +65,42 @@ export function DataView() {
                     }).then(() => {
                         navigate('/vitaeslist');
                     });
+                });
+            } else {
+                swal({
+                    title: 'Cancelado',
+                    icon: 'error',
+                    timer: 2500,
+                    dangerMode: true,
+                });
+            }
+        });
+    };
+    const activeRabbit = () => {
+        swal({
+            title: '¿Estás seguro?',
+            text: 'Si ya existe un conejo con este identificador, no se podra activar',
+            icon: 'info',
+            buttons: ['Cancelar', 'Activar'],
+            dangerMode: true,
+        }).then(async (willDelete) => {
+            if (willDelete) {
+                await StateRabbit({ coleccion: 'rabbits', props: basicData?.info, estado: 'Activo' }).then(() => {
+                    swal({
+                        title: 'El conejo ha sido activado corectamente',
+                        icon: 'success',
+                        button: 'Aceptar',
+                        dangerMode: true,
+                    }).then(() => {
+                        navigate('/vitaeslist');
+                    });
+                });
+            } else {
+                swal({
+                    title: 'Cancelado',
+                    icon: 'error',
+                    timer: 2500,
+                    dangerMode: true,
                 });
             }
         });
@@ -125,7 +161,7 @@ export function DataView() {
         },
         {
             id: 2,
-            state: delet,
+            state: inactiveRabbit,
             icon: faTrashAlt,
             path: '#',
             label: 'Inactivar',
@@ -155,7 +191,7 @@ export function DataView() {
         },
         {
             id: 3,
-            state: delet,
+            state: inactiveRabbit,
             icon: faTrashAlt,
             path: '#',
             label: 'Inactivar',
@@ -178,7 +214,7 @@ export function DataView() {
         },
         {
             id: 2,
-            state: delet,
+            state: activeRabbit,
             icon: faSquareCheck,
             path: '#',
             label: 'Activar',
@@ -208,7 +244,7 @@ export function DataView() {
         },
         {
             id: 3,
-            state: delet,
+            state: activeRabbit,
             icon: faSquareCheck,
             path: '#',
             label: 'Activar',

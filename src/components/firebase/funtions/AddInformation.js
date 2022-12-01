@@ -357,14 +357,23 @@ export const AddSales = async (props) => {
     }
 };
 
-/// Función para cambiar el estado de un tratamiento en la base de datos
+/// Función para cambiar el estado de un conejo en la base de datos
 
-export const InactiveRabbit = async ({ coleccion, props }) => {
+export const StateRabbit = async ({ coleccion, props, estado }) => {
     try {
-        await updateDoc(doc(db, coleccion, props.uid), {
-            estado: 'Inactivo',
-            InactiveDate: Date.now(),
-        });
+        if (estado === 'Inactivo') {
+            await updateDoc(doc(db, coleccion, props.uid), {
+                estado: estado,
+                InactiveDate: Date.now(),
+                ReactiveDate: null,
+            });
+        } else {
+            await updateDoc(doc(db, coleccion, props.uid), {
+                estado: estado,
+                InactiveDate: null,
+                ReactiveDate: Date.now(),
+            });
+        }
     } catch (error) {
         console.log(error.code);
         ValidationErrors(error.code);
