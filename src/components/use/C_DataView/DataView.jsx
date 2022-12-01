@@ -35,7 +35,7 @@ export function DataView() {
 	const def = () => {
 		setOptionSelect(2);
 	};
-	const delete = () => {}
+	const delet = () => {}
 	const dataViewOptions = [
 		{
 			id: 0,
@@ -53,7 +53,7 @@ export function DataView() {
 		},
 		{
 			id: 2,
-			state: {delete},
+			state: delet,
 			icon: {faTrashAlt},
 			path: "#",
 			label: "Eliminar",
@@ -83,7 +83,7 @@ export function DataView() {
 		},
 		{
 			id: 2,
-			state: {delete},
+			state: delet,
 			icon: {faTrashAlt},
 			path: "#",
 			label: "Eliminar",
