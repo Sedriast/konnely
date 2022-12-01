@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { faCamera, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 
-import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { basicData, recuperar } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { useModal } from '../../../../0-GeneralComp/0-StaticData/Modals/useModal';
 import { EditImageAndInfo } from '../../../../../firebase/funtions/AddInformation';
 
@@ -16,7 +16,7 @@ import { Lists } from '../../../../0-GeneralComp/1-List/Lists';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { Buttons } from '../../../../0-GeneralComp/1-Buttons/Buttons';
-import { GetDocument } from '../../../../../firebase/funtions/GetInformation';
+import { GetDocument, SearchAll } from '../../../../../firebase/funtions/GetInformation';
 import { Modal } from '../../../../0-GeneralComp/0-StaticData/Modals/Modal';
 import { conditionalBasisEdit } from '../../../../0-GeneralComp/0-StaticData/Dates/conditionals';
 
@@ -27,37 +27,67 @@ export function Form() {
     const [image_, setImage_] = useState(null);
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
+    const coleccionInfo = SearchAll({ coleccion: 'rabbits' }).props.children;
+
+    const buscar = (e) => {
+        let valor = false;
+        if (e !== '' && e !== null && e !== undefined && e !== basicData?.id) {
+            coleccionInfo.filter(function (element) {
+                if (element.id.toLowerCase().includes(e.toLowerCase()) && element.estado !== 'Inactivo') {
+                    valor = true;
+                }
+                return false;
+            });
+            return valor;
+        }
+    };
 
     function handleChange(e) {
         const { name, value } = e.target;
         if (name === 'motivo') {
             setReason(value);
         } else if (name === 'nacimiento') {
-            e.target.value = conditionalBasisEdit(value, basicData.info.nacimiento);
+            e.target.value = conditionalBasisEdit(value, basicData?.info?.nacimiento);
         } else if (name === 'traslado') {
-            e.target.value = conditionalBasisEdit(value, basicData.info.traslado);
+            e.target.value = conditionalBasisEdit(value, basicData?.info?.traslado);
         }
     }
     const handleSubmit = (aux) => {
-        swal({
-            title: 'Despues cambiar la información de este conejo, se debe dirigir a la lista general para ver los cambios. ¿Desea actualizar?',
-            icon: 'warning',
-            buttons: ['No', 'Si'],
-        }).then((respuesta) => {
-            if (respuesta) {
-                EditImageAndInfo({
-                    ...aux,
-                    uid: basicData.info.uid,
-                    image: image,
-                });
-                navigate('/vitaeslist');
-            }
-        });
+        if (!buscar(aux.id)) {
+            swal({
+                title: 'Despues cambiar la información de este conejo, se debe dirigir a la lista general para ver los cambios. ¿Desea actualizar?',
+                icon: 'warning',
+                buttons: ['No', 'Si'],
+            }).then(async (respuesta) => {
+                if (respuesta) {
+                    await EditImageAndInfo({
+                        ...aux,
+                        uid: basicData?.info?.uid,
+                        image: image,
+                    }).then(() => {
+                        recuperar(aux.id);
+                        swal({
+                            title: 'Se ha actualizado la información con éxito',
+                            icon: 'success',
+                            button: 'Aceptar',
+                        }).then(() => {
+                            window.history.back();
+                        });
+                    });
+                }
+            });
+        } else {
+            swal({
+                title: 'Ya existe un conejo con este identificador',
+                icon: 'error',
+                button: 'Aceptar',
+            });
+        }
     };
     useEffect(() => {
         if (basicData.id !== null) {
-            setImage_(basicData.info.url);
-            setReason(basicData.info.motivo);
+            setImage_(basicData?.info?.url);
+            setReason(basicData?.info?.motivo);
         } else {
             navigate('/vitaeslist');
             return null;

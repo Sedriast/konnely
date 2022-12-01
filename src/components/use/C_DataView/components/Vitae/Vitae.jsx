@@ -26,13 +26,16 @@ export function Vitae({ rabbit }) {
 
     const user_ = QueriesSimple_({ coleccion: 'users', parametro: 'uid', busqueda: user.uid }).props.children[0];
 
+    const rabbit_ = QueriesSimple_({ coleccion: 'rabbits', parametro: 'id', busqueda: basicData?.id }).props
+        .children[0];
+
     useEffect(() => {
         if (basicData.id === null) {
             navigate('/vitaeslist');
         } else if (basicData?.info === undefined && basicData?.id !== null) {
-            recuperar(basicData?.id);
+            recuperar(basicData?.id, rabbit_);
         }
-    }, [navigate, stadics]);
+    }, [navigate, stadics, rabbit_]);
 
     return (
         <>

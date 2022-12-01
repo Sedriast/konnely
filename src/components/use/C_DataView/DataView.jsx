@@ -269,7 +269,7 @@ export function DataView() {
         if (basicData.id === null) {
             navigate('/vitaeslist');
         } else if (basicData?.info === undefined && basicData?.id !== null) {
-            recuperar(basicData?.id, basicData?.info);
+            recuperar(basicData?.id);
         }
     }, [navigate]);
 
