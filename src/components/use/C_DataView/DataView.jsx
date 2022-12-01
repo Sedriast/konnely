@@ -36,7 +36,6 @@ export function DataView() {
 		setOptionSelect(2);
 	};
 	const delet = () => {};
-	const delet = () => {}
 	const dataViewOptions = [
 		{
 			id: 0,
