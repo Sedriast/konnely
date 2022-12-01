@@ -97,10 +97,10 @@ export const UpdateInformation = async ({ coleccion, uid, data }) => {
 
 /// Función para registrar un nuevo tratamiento en la base de datos
 
-export const AddTratament = async (props) => {
+export const addRegisters = async ({ coleccion, props }) => {
     try {
-        const docRef = await addDoc(collection(db, 'trataments'), props);
-        await updateDoc(doc(db, 'trataments', docRef.id), {
+        const docRef = await addDoc(collection(db, coleccion), props);
+        await updateDoc(doc(db, coleccion, docRef.id), {
             uid: docRef.id,
             state: 'Activo',
             removalDate: null,
@@ -336,6 +336,22 @@ export const RemovalExtraction = async (props) => {
     try {
         await deleteDoc(doc(db, 'extraction', props.uid));
         await deleteDoc(doc(db, 'audit', props.uidAudit));
+    } catch (error) {
+        ValidationErrors(error.code);
+    }
+};
+
+/// Función para registrar un nuevo tratamiento en la base de datos
+
+export const AddSales = async (props) => {
+    try {
+        const docRef = await addDoc(collection(db, 'trataments'), props);
+        await updateDoc(doc(db, 'trataments', docRef.id), {
+            uid: docRef.id,
+            state: 'Activo',
+            removalDate: null,
+            uidAudit: null,
+        });
     } catch (error) {
         ValidationErrors(error.code);
     }

@@ -1,0 +1,108 @@
+/*
+	1) Const
+	2) Containers
+		2.1) Master
+		2.2) Button
+		2.3) Input
+	3)Use
+		3.1)Buttons
+		3.2)Inputs
+	4)Rezising
+	5)Animations
+	6)Otre´s components
+		6.1)Master
+		6.2)...
+
+
+
+*/
+
+/*Const*/
+/*Const*/
+
+/*Containers*/
+/*Master*/
+.container {
+	width: 444px;
+
+	margin: 0.5rem;
+	padding: 0.5rem;
+
+	border-radius: 10px;
+
+	background: rgba(0, 0, 0, 0.2);
+}
+
+.tablee th {
+	color: greenyellow;
+	text-align: end;
+}
+
+.tablee td {
+	color: rgb(255, 255, 255);
+	text-align: inherit;
+}
+
+.tablee2 thead th {
+	padding: 0 1rem;
+}
+
+.tablee2 thead td {
+	width: 320px;
+
+	padding: 0 1rem;
+}
+
+/*Sub*/
+/*Button´s container*/
+
+/*Button´s container*/
+/*Input´s container*/
+
+/*Input´s container*/
+/*Oters*/
+
+/*Oters*/
+/*Containers*/
+
+/*Use*/
+/*Button */
+
+/*Button */
+/*Input */
+
+/*Input */
+/*Use*/
+
+/*Resizing */
+@media (max-width: 700px) {
+	.tablee2 {
+		width: 75%;
+		margin: 0 auto;
+	}
+
+	.tablee2 thead th {
+		width: 70vw;
+
+		padding: 0 1rem;
+	}
+
+	.tablee2 thead td {
+		width: 30%;
+
+		padding: 0 1rem;
+	}
+}
+
+/*Resizing */
+
+/*Animations*/
+
+
+/*Animations*/
+
+/*Other´s Components*/
+/*Master*/
+
+/*Master*/
+/*Other´s Components */
