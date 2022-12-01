@@ -1,107 +1,103 @@
-import st from "../0-GeneralComp/OpContainers.module.css";
+import st from '../0-GeneralComp/OpContainers.module.css';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { faCircleInfo, faSyringe, faWandMagicSparkles, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faSyringe, faWandMagicSparkles, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
-import { generalOptions } from "../0-GeneralComp/0-StaticData/options";
-import { RigthTopButtons } from "../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons";
-import { LeftBottomMenu } from "../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu";
+import { generalOptions } from '../0-GeneralComp/0-StaticData/options';
+import { RigthTopButtons } from '../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons';
+import { LeftBottomMenu } from '../0-GeneralComp/1-PanelButtons/LeftBottomMenu/LeftBottomMenu';
 
-import { Option } from "./components/Option";
-import { basicData, recuperar } from "../0-GeneralComp/0-StaticData/dataProv";
-import { QueriesSimple_ } from "../../firebase/funtions/GetInformation";
-import { useNavigate } from "react-router-dom";
+import { Option } from './components/Option';
+import { basicData, recuperar } from '../0-GeneralComp/0-StaticData/dataProv';
+import { QueriesSimple_ } from '../../firebase/funtions/GetInformation';
+import { useNavigate } from 'react-router-dom';
 
 export function DataView() {
-	const navigate = useNavigate();
-	const rabbit = QueriesSimple_({ coleccion: "rabbits", parametro: "id", busqueda: basicData?.id }).props
-		.children[0];
-	useEffect(() => {
-		if (basicData.id === null) {
-			navigate("/vitaeslist");
-		} else if (basicData?.info === undefined && basicData?.id !== null) {
-			recuperar(basicData?.id, rabbit);
-		}
-	}, [navigate, rabbit]);
+    const navigate = useNavigate();
+    const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'id', busqueda: basicData?.id }).props
+        .children[0];
+    useEffect(() => {
+        if (basicData.id === null) {
+            navigate('/vitaeslist');
+        } else if (basicData?.info === undefined && basicData?.id !== null) {
+            recuperar(basicData?.id, rabbit);
+        }
+    }, [navigate, rabbit]);
 
-	const [optionSelect, setOptionSelect] = useState(0);
-	const fal = () => {
-		setOptionSelect(0);
-	};
-	const tru = () => {
-		setOptionSelect(1);
-	};
-	const def = () => {
-		setOptionSelect(2);
-	};
-	const delet = () => {};
-	const dataViewOptions = [
-		{
-			id: 0,
-			state: fal,
-			icon: faCircleInfo,
-			path: "#",
-			label: "Información general",
-		},
-		{
-			id: 1,
-			state: tru,
-			icon: faSyringe,
-			path: "#",
-			label: "Tratamientos",
-		},
-		{
-			id: 2,
-			state: delet,
-			icon: faTrashAlt,
-			state: delet,
-			icon: {faTrashAlt},
-			path: "#",
-			label: "Eliminar",
-		},
-	];
-	const dataViewOptions_ = [
-		{
-			id: 0,
-			state: fal,
-			icon: faCircleInfo,
-			path: "#",
-			label: "Información general",
-		},
-		{
-			id: 1,
-			state: tru,
-			icon: faSyringe,
-			path: "#",
-			label: "Tratamientos",
-		},
-		{
-			id: 2,
-			state: def,
-			icon: faWandMagicSparkles,
-			path: "#",
-			label: "Recolección de semen",
-		},
-		{
-			id: 3,
-			state: delet,
-			icon: faTrashAlt,
-			id: 2,
-			state: delet,
-			icon: {faTrashAlt},
-			path: "#",
-			label: "Eliminar",
-		},
-	];
+    const [optionSelect, setOptionSelect] = useState(0);
+    const fal = () => {
+        setOptionSelect(0);
+    };
+    const tru = () => {
+        setOptionSelect(1);
+    };
+    const def = () => {
+        setOptionSelect(2);
+    };
+    const delet = () => {};
+    const dataViewOptions = [
+        {
+            id: 0,
+            state: fal,
+            icon: faCircleInfo,
+            path: '#',
+            label: 'Información general',
+        },
+        {
+            id: 1,
+            state: tru,
+            icon: faSyringe,
+            path: '#',
+            label: 'Tratamientos',
+        },
+        {
+            id: 2,
+            state: delet,
+            icon: faTrashAlt,
+            path: '#',
+            label: 'Eliminar',
+        },
+    ];
+    const dataViewOptions_ = [
+        {
+            id: 0,
+            state: fal,
+            icon: faCircleInfo,
+            path: '#',
+            label: 'Información general',
+        },
+        {
+            id: 1,
+            state: tru,
+            icon: faSyringe,
+            path: '#',
+            label: 'Tratamientos',
+        },
+        {
+            id: 2,
+            state: def,
+            icon: faWandMagicSparkles,
+            path: '#',
+            label: 'Recolección de semen',
+        },
+        {
+            id: 3,
+            state: delet,
+            icon: faTrashAlt,
 
-	return (
-		<>
-			<LeftBottomMenu options={rabbit?.genero === "Macho" ? dataViewOptions_ : dataViewOptions} />
-			<div className={st.optionContainer}>
-				<Option setOptionSelect={setOptionSelect} op={optionSelect} rabbit={rabbit} />
-			</div>
-			<RigthTopButtons BTNS={generalOptions} />
-		</>
-	);
+            path: '#',
+            label: 'Eliminar',
+        },
+    ];
+
+    return (
+        <>
+            <LeftBottomMenu options={rabbit?.genero === 'Macho' ? dataViewOptions_ : dataViewOptions} />
+            <div className={st.optionContainer}>
+                <Option setOptionSelect={setOptionSelect} op={optionSelect} rabbit={rabbit} />
+            </div>
+            <RigthTopButtons BTNS={generalOptions} />
+        </>
+    );
 }
