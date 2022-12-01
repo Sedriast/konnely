@@ -38,7 +38,7 @@ export function Cards({ info }) {
                                         Peso al destete:
                                     </div>
                                     <div className={st.ask}>
-                                        {items.idCamada}
+                                        {info?.idCamada}
                                         <br />
                                         {fecha(items.date)}
                                         <br />
