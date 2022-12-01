@@ -89,6 +89,17 @@
 
 	background: rgb(255, 255, 255);
 }
+.inac {
+	width: 2rem;
+	height: 2rem;
+
+	margin: 0 0.2rem;
+
+	border-radius: 100%;
+	border: 1px solid black;
+
+	background: rgb(255, 255, 255);
+}
 .female {
 	width: 2rem;
 	height: 2rem;
