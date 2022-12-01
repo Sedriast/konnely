@@ -30,3 +30,7 @@ export const ApproximateRepro = (props) => {
     days.weaning = weaningDate.getFullYear() + '-' + monthWeaning + '-' + weaningDate.getDate();
     return days;
 };
+
+export const DateInactive = (props) => {
+    return Date.now() - props > 15778800000;
+};

@@ -7,7 +7,6 @@ import { Cards } from './Cards/Cards';
 import { Loading } from '../../../../../../0-GeneralComp/1-Loading/Loading';
 
 export function Option({ op, rep }) {
-    console.log(rep);
     switch (op) {
         case false:
             return (

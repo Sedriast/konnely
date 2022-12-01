@@ -18,20 +18,17 @@ export function Themes() {
     const c = () => {
         swal({
             title: '¿Desea cambiar el tema predeterminado?',
+            text: 'El tema predeterminado se aplicará a toda la aplicaión',
             icon: 'warning',
             buttons: ['No', 'Si'],
         }).then(async (respuesta) => {
             if (respuesta) {
                 await UpdateInformation(f).then(() => {
-                    reloadPage();
+                    window.location.reload(true);
                 });
             }
         });
     };
-
-    function reloadPage() {
-        window.location.reload(true);
-    }
 
     return (
         <>

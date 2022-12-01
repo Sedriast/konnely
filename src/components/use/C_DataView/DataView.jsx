@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
 import { StateRabbit } from '../../firebase/funtions/AddInformation';
 import swal from 'sweetalert';
+import { DateInactive } from '../0-GeneralComp/0-StaticData/Dates/Dates';
 
 export function DataView() {
     const { user } = useAuth();
@@ -82,13 +83,13 @@ export function DataView() {
     const activeRabbit = () => {
         swal({
             title: '¿Estás seguro?',
-            text: 'Si ya existe un conejo con este identificador, no se podra activar',
+            text: 'Si ya existe un conejo con este identificador o si este conejo se inactivo hace mas de 6 meses, no se podra activar',
             icon: 'info',
             buttons: ['Cancelar', 'Activar'],
             dangerMode: true,
         }).then(async (willDelete) => {
             if (willDelete) {
-                if (!buscar(basicData?.info.id)) {
+                if (!buscar(basicData?.info.id) && !DateInactive(basicData?.info?.InactiveDate)) {
                     await StateRabbit({ coleccion: 'rabbits', props: basicData?.info, estado: 'Activo' }).then(
                         () => {
                             swal({
@@ -104,7 +105,6 @@ export function DataView() {
                 } else {
                     swal({
                         title: 'No se puede activar',
-                        text: 'Ya existe un conejo con este identificador',
                         icon: 'error',
                         button: 'Aceptar',
                         dangerMode: true,
