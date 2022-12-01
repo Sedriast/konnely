@@ -356,3 +356,17 @@ export const AddSales = async (props) => {
         ValidationErrors(error.code);
     }
 };
+
+/// Función para cambiar el estado de un tratamiento en la base de datos
+
+export const InactiveRabbit = async ({ coleccion, props }) => {
+    try {
+        await updateDoc(doc(db, coleccion, props.uid), {
+            estado: 'Inactivo',
+            InactiveDate: Date.now(),
+        });
+    } catch (error) {
+        console.log(error.code);
+        ValidationErrors(error.code);
+    }
+};

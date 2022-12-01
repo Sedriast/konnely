@@ -9,7 +9,8 @@ export function ProtectedRoute({ children }) {
     if (loading) return <Loading />;
     if (!user) {
         swal({
-            title: 'Puede estar viendo este mensaje por las siguientes razones: el administrador ha eliminado su cuenta de la plataforma, esta intentado acceder a una ruta protegida sin iniciar sesión o no ha verificado su correo electronico',
+            title: 'No tienes permisos para acceder a Konnely.',
+            text: 'Puede estar viendo este mensaje por las siguientes razones: el administrador ha eliminado su cuenta de la plataforma, esta intentado acceder a una ruta protegida sin iniciar sesión o no ha verificado su correo electronico',
             icon: 'warning',
             button: 'aceptar',
         });

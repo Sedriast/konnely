@@ -123,6 +123,7 @@ export function SendRabbitData() {
                         await addImageAndInfo({
                             ...values,
                             estado: 'Activo',
+                            InactiveDate: null,
                             image: image,
                             displayName: user.displayName,
                             uidUser: user.uid,
