@@ -45,7 +45,7 @@ export function DropdownDate(props) {
             {phase() === 2 && (
                 <>
                     <Inputs
-                        leyend='Peso al destete'
+                        leyend='Peso al destete en gramos (gr)'
                         name='destetefin'
                         placeholder='Ingrese el peso'
                         type='number'
@@ -77,7 +77,7 @@ export function DropdownDate(props) {
                         handleChange={handleChange}
                     />
                     <Inputs
-                        leyend='Peso final en engorde'
+                        leyend='Peso al destete en gramos (gr)'
                         name='engorde'
                         placeholder='Ingrese el peso'
                         type='number'
@@ -89,7 +89,7 @@ export function DropdownDate(props) {
             {phase() === 3 && (
                 <>
                     <Inputs
-                        leyend='Peso al destete'
+                        leyend='Peso al destete en gramos (gr)'
                         name='destetefin'
                         placeholder='Ingrese el peso'
                         type='number'

@@ -122,6 +122,7 @@ export function SendRabbitData() {
                     if (respuesta) {
                         await addImageAndInfo({
                             ...values,
+                            estado: 'Activo',
                             image: image,
                             displayName: user.displayName,
                             uidUser: user.uid,
@@ -158,12 +159,12 @@ export function SendRabbitData() {
                             ],
                         }).then(() => {
                             recuperar(values.id);
-                            navigate('/vitae');
                             swal({
                                 title: 'El registro se ha realizado con éxito',
                                 icon: 'success',
                                 button: 'Aceptar',
                             });
+                            navigate('/vitae');
                         });
                     }
                 });
