@@ -3,7 +3,7 @@ import st from './FormHis.module.css';
 import { useState } from 'react';
 
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
-import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { basicData, recuperarSales, SalesData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { addRegisters } from '../../../../../firebase/funtions/AddInformation';
 
 import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
@@ -12,10 +12,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import swal from 'sweetalert';
 import { GenerateInputs } from '../../../../0-GeneralComp/0-Scripts/GenerateInputs';
+import { SearchAll } from '../../../../../firebase/funtions/GetInformation';
 
 export function FormHis() {
     const [rabbits, setRabbits] = useState(0);
-    const [inforabbits, setInforabbits] = useState([]);
+    const coleccionInfo = SearchAll({ coleccion: 'rabbits' }).props.children;
 
     function handleChange(e) {
         const { name, value } = e.target;
@@ -26,9 +27,22 @@ export function FormHis() {
             setRabbits(parseInt(e.target.value));
         }
     }
+
     const info = (e) => {
         if (e.length !== 0) {
-            setInforabbits(e);
+            recuperarSales(e);
+        }
+    };
+    const buscar = (e) => {
+        let valor = false;
+        if (e !== '' && e !== null && e !== undefined) {
+            coleccionInfo.filter(function (element) {
+                if (element.id.toLowerCase().includes(e.toLowerCase())) {
+                    valor = true;
+                }
+                return false;
+            });
+            return valor;
         }
     };
 
@@ -47,9 +61,9 @@ export function FormHis() {
                             }
                         }
                     }
-                    if (Object.keys(aux).length !== 0 && inforabbits.length !== 0) {
-                        aux.uidRabbit = basicData.info.uid;
-                        aux.rabbits = inforabbits;
+                    if (Object.keys(aux).length === 6 && SalesData?.info.length === rabbits) {
+                        aux.uidRabbit = basicData?.info?.uid;
+                        aux.rabbits = SalesData?.info;
                         await addRegisters({ coleccion: 'sales', props: aux }).then(() => {
                             swal({
                                 title: 'La nueva venta se ha añadido correctamente',
