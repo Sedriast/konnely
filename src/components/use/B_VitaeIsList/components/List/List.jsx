@@ -21,6 +21,11 @@ export function List() {
 			<div className={st.container}>
 				<div className={st.panelSearchBar}>
 					<div className={st.filter}>
+						<figure title='Inactivos' tooltip-dir='bottom'>
+							<button id='inac' className={st.inac} onClick={() => {}}>
+								♻️
+							</button>
+						</figure>
 						<figure title='Filtrar machos' tooltip-dir='bottom'>
 							<button
 								id='b'

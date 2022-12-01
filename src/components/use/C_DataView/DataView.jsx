@@ -35,7 +35,7 @@ export function DataView() {
 	const def = () => {
 		setOptionSelect(2);
 	};
-	const delete = () => {}
+	const delet = () => {};
 	const dataViewOptions = [
 		{
 			id: 0,
@@ -53,8 +53,8 @@ export function DataView() {
 		},
 		{
 			id: 2,
-			state: {delete},
-			icon: {faTrashAlt},
+			state: delet,
+			icon: faTrashAlt,
 			path: "#",
 			label: "Eliminar",
 		},
@@ -82,9 +82,9 @@ export function DataView() {
 			label: "Recolección de semen",
 		},
 		{
-			id: 2,
-			state: {delete},
-			icon: {faTrashAlt},
+			id: 3,
+			state: delet,
+			icon: faTrashAlt,
 			path: "#",
 			label: "Eliminar",
 		},
