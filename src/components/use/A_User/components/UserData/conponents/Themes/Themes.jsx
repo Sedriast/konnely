@@ -20,12 +20,11 @@ export function Themes() {
             title: '¿Desea cambiar el tema predeterminado?',
             icon: 'warning',
             buttons: ['No', 'Si'],
-        }).then((respuesta) => {
+        }).then(async (respuesta) => {
             if (respuesta) {
-                UpdateInformation(f);
-                setTimeout(() => {
+                await UpdateInformation(f).then(() => {
                     reloadPage();
-                }, 1000);
+                });
             }
         });
     };
