@@ -58,7 +58,7 @@ export function SendRabbitData() {
         let valor = false;
         if (e !== '' && e !== null && e !== undefined) {
             coleccionInfo.filter(function (element) {
-                if (element.id.toLowerCase().includes(e.toLowerCase())) {
+                if (element.id.toLowerCase().includes(e.toLowerCase()) && element.estado !== 'Inactivo') {
                     valor = true;
                 }
                 return false;

@@ -16,7 +16,7 @@ import { LeftBottomMenu } from '../0-GeneralComp/1-PanelButtons/LeftBottomMenu/L
 
 import { Option } from './components/Option';
 import { basicData, recuperar } from '../0-GeneralComp/0-StaticData/dataProv';
-import { QueriesSimple_ } from '../../firebase/funtions/GetInformation';
+import { QueriesSimple_, SearchAll } from '../../firebase/funtions/GetInformation';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
 import { StateRabbit } from '../../firebase/funtions/AddInformation';
@@ -26,16 +26,19 @@ export function DataView() {
     const { user } = useAuth();
     const navigate = useNavigate();
     const usuario = QueriesSimple_({ coleccion: 'users', parametro: 'uid', busqueda: user?.uid }).props.children[0];
-    const rabbit = QueriesSimple_({ coleccion: 'rabbits', parametro: 'id', busqueda: basicData?.id }).props
-        .children[0];
-    useEffect(() => {
-        if (basicData.id === null) {
-            navigate('/vitaeslist');
-        } else if (basicData?.info === undefined && basicData?.id !== null) {
-            recuperar(basicData?.id, rabbit);
+    const coleccionInfo = SearchAll({ coleccion: 'rabbits' }).props.children;
+    const buscar = (e) => {
+        let valor = false;
+        if (e !== '' && e !== null && e !== undefined) {
+            coleccionInfo.filter(function (element) {
+                if (element.id.toLowerCase().includes(e.toLowerCase())) {
+                    valor = true;
+                }
+                return false;
+            });
+            return valor;
         }
-    }, [navigate, rabbit]);
-
+    };
     const [optionSelect, setOptionSelect] = useState(0);
     const fal = () => {
         setOptionSelect(0);
@@ -85,16 +88,28 @@ export function DataView() {
             dangerMode: true,
         }).then(async (willDelete) => {
             if (willDelete) {
-                await StateRabbit({ coleccion: 'rabbits', props: basicData?.info, estado: 'Activo' }).then(() => {
+                if (!buscar(basicData?.info.id)) {
+                    await StateRabbit({ coleccion: 'rabbits', props: basicData?.info, estado: 'Activo' }).then(
+                        () => {
+                            swal({
+                                title: 'El conejo ha sido activado corectamente',
+                                icon: 'success',
+                                button: 'Aceptar',
+                                dangerMode: true,
+                            }).then(() => {
+                                navigate('/vitaeslist');
+                            });
+                        }
+                    );
+                } else {
                     swal({
-                        title: 'El conejo ha sido activado corectamente',
-                        icon: 'success',
+                        title: 'No se puede activar',
+                        text: 'Ya existe un conejo con este identificador',
+                        icon: 'error',
                         button: 'Aceptar',
                         dangerMode: true,
-                    }).then(() => {
-                        navigate('/vitaeslist');
                     });
-                });
+                }
             } else {
                 swal({
                     title: 'Cancelado',
@@ -250,6 +265,13 @@ export function DataView() {
             label: 'Activar',
         },
     ];
+    useEffect(() => {
+        if (basicData.id === null) {
+            navigate('/vitaeslist');
+        } else if (basicData?.info === undefined && basicData?.id !== null) {
+            recuperar(basicData?.id, basicData?.info);
+        }
+    }, [navigate]);
 
     return (
         <>
@@ -258,14 +280,16 @@ export function DataView() {
                     {basicData?.info?.estado === 'Activo' ? (
                         <>
                             <LeftBottomMenu
-                                options={rabbit?.genero === 'Macho' ? dataViewOptions_ : dataViewOptions}
+                                options={basicData?.info?.genero === 'Macho' ? dataViewOptions_ : dataViewOptions}
                             />
                         </>
                     ) : (
                         <>
                             <LeftBottomMenu
                                 options={
-                                    rabbit?.genero === 'Macho' ? dataViewOptionsInactivo_ : dataViewOptionsInactivo
+                                    basicData?.info?.genero === 'Macho'
+                                        ? dataViewOptionsInactivo_
+                                        : dataViewOptionsInactivo
                                 }
                             />
                         </>
@@ -274,12 +298,12 @@ export function DataView() {
             ) : (
                 <>
                     <LeftBottomMenu
-                        options={rabbit?.genero === 'Macho' ? dataViewOptionsUser_ : dataViewOptionsUser}
+                        options={basicData?.info?.genero === 'Macho' ? dataViewOptionsUser_ : dataViewOptionsUser}
                     />
                 </>
             )}
             <div className={st.optionContainer}>
-                <Option setOptionSelect={setOptionSelect} op={optionSelect} rabbit={rabbit} />
+                <Option setOptionSelect={setOptionSelect} op={optionSelect} rabbit={basicData?.info} />
             </div>
             <RigthTopButtons BTNS={generalOptions} />
         </>
