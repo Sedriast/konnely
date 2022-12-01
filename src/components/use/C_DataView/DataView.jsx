@@ -2,7 +2,7 @@ import st from "../0-GeneralComp/OpContainers.module.css";
 
 import { useEffect, useState } from "react";
 
-import { faCircleInfo, faSyringe, faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faSyringe, faWandMagicSparkles, faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 
 import { generalOptions } from "../0-GeneralComp/0-StaticData/options";
 import { RigthTopButtons } from "../0-GeneralComp/1-PanelButtons/RigthTopButtons/RigthTopButtons";
@@ -35,6 +35,7 @@ export function DataView() {
 	const def = () => {
 		setOptionSelect(2);
 	};
+	const delete = () => {}
 	const dataViewOptions = [
 		{
 			id: 0,
@@ -49,6 +50,13 @@ export function DataView() {
 			icon: faSyringe,
 			path: "#",
 			label: "Tratamientos",
+		},
+		{
+			id: 2,
+			state: {delete},
+			icon: {faTrashAlt},
+			path: "#",
+			label: "Eliminar",
 		},
 	];
 	const dataViewOptions_ = [
@@ -72,6 +80,13 @@ export function DataView() {
 			icon: faWandMagicSparkles,
 			path: "#",
 			label: "Recolección de semen",
+		},
+		{
+			id: 2,
+			state: {delete},
+			icon: {faTrashAlt},
+			path: "#",
+			label: "Eliminar",
 		},
 	];
 
