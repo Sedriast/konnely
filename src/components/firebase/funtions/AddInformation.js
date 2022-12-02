@@ -154,25 +154,11 @@ export const ReactivateRegistration = async ({ coleccion, uidAudit, uid, data })
 
 export const AddReproductiveCycle = async (props) => {
     try {
-        const docRef = await addDoc(collection(db, 'reproductive'), props);
-        await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
-        if (props.stages[3].state === true) {
-            const ref = await addDoc(collection(db, 'reproductiveMale'), {
-                uidFather: props.uidFather,
-                montaDate: props.stages[0].date,
-                idMother: props.idMother,
-                uidMother: props.uidMother,
-                partoDate: props.stages[3].date,
-                lives: props.stages[3].lives,
-                deaths: props.stages[3].deaths,
-                news: props.stages[3].news,
-            });
-            await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
-        }
-        if (props.stages[4].state === true) {
-            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
+        console.log(props.includes('null'));
+        if (props.includes('null')) {
+            console.log('No se puede añadir un ciclo reproductivo con campos vacios');
         } else {
-            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
+            console.log('No funciona');
         }
     } catch (error) {
         ValidationErrors(error.code);

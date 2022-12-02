@@ -27,6 +27,7 @@ export function Ref({ stage, handleChange, date }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
+                    <br />
                     {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).palpation}</h1>}
                     <br />
                     <Inputs
@@ -43,6 +44,8 @@ export function Ref({ stage, handleChange, date }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
+                    <h2>Segunda palpación y creación de nido</h2>
+                    <br />
                     {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).prepartum}</h1>}
                     <br />
                     <Inputs name='DatePreparto' type='date' leyend='Fecha' handleChange={handleChange} />
@@ -53,6 +56,7 @@ export function Ref({ stage, handleChange, date }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
+                    <br />
                     {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).birth}</h1>}
 
                     <br />
@@ -97,6 +101,7 @@ export function Ref({ stage, handleChange, date }) {
             return (
                 <div className={st.panel}>
                     <h3>{stage.title}</h3>
+                    <br />
                     {date !== null && <h1>Fecha aproximada: {ApproximateRepro(date).weaning}</h1>}
                     <br />
                     <Inputs
