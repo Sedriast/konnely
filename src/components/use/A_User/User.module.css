@@ -36,9 +36,14 @@
 	overflow-x: hidden;
 }
 .menuLeft {
+	height: 100%;
+
+	position: absolute;
 	padding-left: 1%;
-	padding-top: 1%;
-	padding-bottom: 1%;
+	left: 0;
+
+	margin-top: auto;
+	margin-bottom: auto;
 
 	display: flex;
 	flex-direction: column;

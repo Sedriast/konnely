@@ -23,7 +23,7 @@
 /*Containers*/
 /*Master*/
 .container {
-	width: 444px;
+	width: 320px;
 
 	margin: 0.5rem;
 	padding: 0.5rem;
@@ -33,23 +33,40 @@
 	background: rgba(0, 0, 0, 0.2);
 }
 
+.container * {
+	font-size: 15px;
+}
+
 .tablee th {
 	color: greenyellow;
 	text-align: end;
+	padding-right: 10px;
 }
 
 .tablee td {
 	color: rgb(255, 255, 255);
 	text-align: inherit;
 }
+.tablee2 {
+	width: min-content;
+	margin: 0 auto;
+}
 
+.tablee2 tbody th {
+	padding: 0 1rem;
+	border-right: solid black 1px;
+}
 .tablee2 thead th {
 	padding: 0 1rem;
+	border-right: solid black 1px;
+	border-bottom: solid black 1px;
 }
 
 .tablee2 thead td {
 	width: 320px;
-
+	border-left: solid black 1px;
+	border-bottom: solid black 1px;
+	font-size: 15px !important;
 	padding: 0 1rem;
 }
 
@@ -76,6 +93,12 @@
 
 /*Resizing */
 @media (max-width: 700px) {
+	.container {
+		width: 320px;
+	}
+	.container * {
+		font-size: 15px;
+	}
 	.tablee2 {
 		width: 75%;
 		margin: 0 auto;
@@ -97,7 +120,6 @@
 /*Resizing */
 
 /*Animations*/
-
 
 /*Animations*/
 
