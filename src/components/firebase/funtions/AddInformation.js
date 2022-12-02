@@ -98,8 +98,17 @@ export const UpdateInformation = async ({ coleccion, uid, data }) => {
 
 /// Función para registrar un nuevo tratamiento en la base de datos
 
-export const addRegisters = async ({ coleccion, props }) => {
+export const addRegisters = async ({ coleccion, props, conejos }) => {
     try {
+        if (coleccion === 'sales') {
+            conejos.map(async (rabbit) => {
+                await updateDoc(doc(db, 'rabbits', rabbit.uid), {
+                    estado: 'Inactivo',
+                    InactiveDate: Date.now(),
+                    ReactiveDate: null,
+                });
+            });
+        }
         const docRef = await addDoc(collection(db, coleccion), props);
         await updateDoc(doc(db, coleccion, docRef.id), {
             uid: docRef.id,

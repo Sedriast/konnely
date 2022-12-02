@@ -35,17 +35,36 @@ export function FormHis() {
     };
     const buscar = (e) => {
         let valor = false;
+        let elemento = {};
         if (e !== '' && e !== null && e !== undefined) {
             coleccionInfo.filter(function (element) {
-                if (element.id.toLowerCase().includes(e.toLowerCase())) {
+                if (element.id.toLowerCase().includes(e.toLowerCase()) && element.estado === 'Activo') {
                     valor = true;
+                    elemento = element;
                 }
                 return false;
             });
-            return valor;
+            return { valor: valor, elemento: elemento };
         }
     };
-
+    const VerificationSearch = () => {
+        let SearchVerification = [];
+        let informacion = [];
+        SalesData?.info?.map((e) => {
+            if (e.id === '' || e.id === undefined || e.id === null) {
+                SearchVerification.push(false);
+            } else if (e.valor === '' || e.valor === undefined || e.valor === null) {
+                SearchVerification.push(false);
+            } else if (buscar(e.id).valor) {
+                SearchVerification.push(true);
+                informacion.push(buscar(e.id).elemento);
+            } else {
+                SearchVerification.push(false);
+            }
+            return false;
+        });
+        return { verificacion: SearchVerification, informacion: informacion };
+    };
     return (
         <div className={st.container}>
             <h1 className={st.d}>Nueva venta</h1>
@@ -54,6 +73,7 @@ export function FormHis() {
                 onSubmit={async (e) => {
                     e.preventDefault();
                     let aux = {};
+
                     for (const element of e.target) {
                         if (element.value !== '' && element.value !== null && element.value !== undefined) {
                             if (!element.name.includes('Conejo') && !element.name.includes('Precio')) {
@@ -61,10 +81,18 @@ export function FormHis() {
                             }
                         }
                     }
-                    if (Object.keys(aux).length === 6 && SalesData?.info.length === rabbits) {
+                    if (
+                        Object.keys(aux).length === 6 &&
+                        SalesData?.info.length === rabbits &&
+                        VerificationSearch().verificacion.every((e) => e === true)
+                    ) {
                         aux.uidRabbit = basicData?.info?.uid;
                         aux.rabbits = SalesData?.info;
-                        await addRegisters({ coleccion: 'sales', props: aux }).then(() => {
+                        await addRegisters({
+                            coleccion: 'sales',
+                            props: aux,
+                            conejos: VerificationSearch().informacion,
+                        }).then(() => {
                             swal({
                                 title: 'La nueva venta se ha añadido correctamente',
                                 icon: 'success',
@@ -75,7 +103,8 @@ export function FormHis() {
                         });
                     } else {
                         swal({
-                            title: 'No se ha podido añadir la nueva venta, porque no se ha diligenciado todos los campos',
+                            title: 'No se ha podido añadir la nueva venta',
+                            text: 'Esto puede pasar porque no se ha diligenciado todos los campos y/o no existen registros de conejos con esos identificadores',
                             icon: 'error',
                             button: 'aceptar',
                         });
@@ -87,26 +116,30 @@ export function FormHis() {
                 <Inputs name='transaction' type='text' leyend='Tipo de transacción' handleChange={handleChange} />
                 <Inputs name='manager' type='text' leyend='Nombre del administrador' handleChange={handleChange} />
                 <Inputs name='rabbits' type='number' leyend='Número de conejos' handleChange={handleChange} />
-                {rabbits !== 0 && rabbits !== null && rabbits !== '' && rabbits !== undefined && !isNaN(rabbits) && (
-                    <>
-                        <hr id={st.line} />
-                        <div className={st.container_}>
-                            <div className={st.creator}>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Identificadres</th>
-                                            <td>Valor ($)</td>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <GenerateInputs numero={rabbits} info={info} />
-                                    </tbody>
-                                </table>
+                {rabbits !== 0 &&
+                    rabbits !== null &&
+                    rabbits !== '' &&
+                    rabbits !== undefined &&
+                    !isNaN(rabbits) && (
+                        <>
+                            <hr id={st.line} />
+                            <div className={st.container_}>
+                                <div className={st.creator}>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Identificadres</th>
+                                                <td>Valor ($)</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <GenerateInputs numero={rabbits} info={info} />
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
-                        </div>
-                    </>
-                )}
+                        </>
+                    )}
                 <hr />
                 <div className={st.btn}>
                     <button type='submit'>

@@ -34,7 +34,7 @@ export function DataView() {
         let valor = false;
         if (e !== '' && e !== null && e !== undefined) {
             coleccionInfo.filter(function (element) {
-                if (element.id.toLowerCase().includes(e.toLowerCase())) {
+                if (element.id.toLowerCase().includes(e.toLowerCase()) && element.estado === 'Activo') {
                     valor = true;
                 }
                 return false;
@@ -91,7 +91,9 @@ export function DataView() {
             dangerMode: true,
         }).then(async (willDelete) => {
             if (willDelete) {
-                if (!buscar(basicData?.info.id) && !DateInactive(basicData?.info?.InactiveDate)) {
+                console.log(buscar(basicData?.info?.id));
+                console.log(DateInactive(basicData?.info?.InactiveDate));
+                if (!buscar(basicData?.info?.id) && !DateInactive(basicData?.info?.InactiveDate)) {
                     await StateRabbit({ coleccion: 'rabbits', props: basicData?.info, estado: 'Activo' }).then(
                         () => {
                             swal({

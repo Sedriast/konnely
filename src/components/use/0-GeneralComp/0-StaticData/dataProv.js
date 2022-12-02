@@ -70,5 +70,5 @@ export const recuperarSales = (info) => {
     SalesData.info = info;
 };
 export const SalesData = {
-    info: null,
+    info: {},
 };

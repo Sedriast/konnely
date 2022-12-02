@@ -93,14 +93,9 @@ export const SearchAll = ({ coleccion }) => {
 
     return (
         <>
-            {coleccion === 'rabbits' || coleccion === 'users'
-                ? data_?.map((Object) => {
-                      return Object;
-                  })
-                : coleccion !== 'rabbits' &&
-                  data_?.map((Object) => {
-                      return Object.name;
-                  })}
+            {data_?.map((Object) => {
+                return Object;
+            })}
         </>
     );
 };

@@ -6,7 +6,7 @@ import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 import { Buttons } from '../../0-GeneralComp/1-Buttons/Buttons';
 import { basicData } from '../../0-GeneralComp/0-StaticData/dataProv';
-import { QueriesSimple_ } from '../../../firebase/funtions/GetInformation';
+import { QueriesSimple_, SearchAll } from '../../../firebase/funtions/GetInformation';
 import { CardRecord_ } from './Cards/CardRecord_';
 
 export function ViewRecord() {
@@ -14,15 +14,11 @@ export function ViewRecord() {
     let inactivos = [];
     const [search, setSearch] = useState('');
     const [search_, setSearch_] = useState(['']);
-    const trataments = QueriesSimple_({
-        coleccion: 'trataments',
-        parametro: 'uidRabbit',
-        busqueda: basicData?.info?.uid,
-    }).props.children;
-
+    const sales = SearchAll({ coleccion: 'sales' }).props.children;
+    console.log(sales);
     function buscar(e) {
         setSearch(e);
-        const valor = trataments.filter(function (element) {
+        const valor = sales.filter(function (element) {
             if (
                 element.signs.toString().toLowerCase().includes(e.toLowerCase()) ||
                 element.date.toString().toLowerCase().includes(e.toLowerCase()) ||
@@ -61,7 +57,11 @@ export function ViewRecord() {
             </div>
             <div className={st.panelItems}>
                 {tr.map((e, i) => {
-                    return <CardRecord_ />;
+                    return (
+                        <>
+                            <CardRecord_ />
+                        </>
+                    );
                 })}
             </div>
         </div>

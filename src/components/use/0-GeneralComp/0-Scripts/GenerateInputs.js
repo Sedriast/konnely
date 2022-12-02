@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import st from '../../F-Forms/NewHistory/components/FormHis/FormHis.module.css';
 
 import { Inputs } from '../1-Inputs/Inputs';
 
 export const GenerateInputs = ({ numero, info }) => {
     const [messyinformation, setMessyinformation] = useState([]);
-    const [information, setInformation] = useState([]);
     const handleChange = (e) => {
         e.preventDefault();
         const { name, value } = e.target;
