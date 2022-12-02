@@ -91,6 +91,7 @@ export const UpdateInformation = async ({ coleccion, uid, data }) => {
     try {
         await updateDoc(doc(db, coleccion, uid), data);
     } catch (error) {
+        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
