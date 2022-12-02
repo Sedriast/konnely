@@ -5,31 +5,27 @@ import { useState } from 'react';
 import { faFileCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 import { Buttons } from '../../0-GeneralComp/1-Buttons/Buttons';
-import { basicData } from '../../0-GeneralComp/0-StaticData/dataProv';
-import { QueriesSimple_, SearchAll } from '../../../firebase/funtions/GetInformation';
-import { CardRecord_ } from './Cards/CardRecord_';
+import { SearchAll } from '../../../firebase/funtions/GetInformation';
+import { CardRecord } from './Cards/CardRecord';
 
 export function ViewRecord() {
-    let activos = [];
-    let inactivos = [];
     const [search, setSearch] = useState('');
     const [search_, setSearch_] = useState(['']);
     const sales = SearchAll({ coleccion: 'sales' }).props.children;
-    console.log(sales);
     function buscar(e) {
         setSearch(e);
         const valor = sales.filter(function (element) {
             if (
-                element.signs.toString().toLowerCase().includes(e.toLowerCase()) ||
                 element.date.toString().toLowerCase().includes(e.toLowerCase()) ||
-                element.diagnosis.toString().toLowerCase().includes(e.toLowerCase())
+                element.seller.toString().toLowerCase().includes(e.toLowerCase()) ||
+                element.transaction.toString().toLowerCase().includes(e.toLowerCase()) ||
+                element.buyer.toString().toLowerCase().includes(e.toLowerCase())
             )
                 return element;
             return null;
         });
         setSearch_(valor);
     }
-    const tr = [{}, {}, {}];
     return (
         <div className={st.container}>
             <div className={st.panelSearchBar}>
@@ -56,13 +52,18 @@ export function ViewRecord() {
                 </form>
             </div>
             <div className={st.panelItems}>
-                {tr.map((e, i) => {
-                    return (
-                        <>
-                            <CardRecord_ />
-                        </>
-                    );
-                })}
+                {sales[0] !== null && sales[0] !== undefined && sales[0] !== '' && (
+                    <>
+                        {search === ''
+                            ? sales.map((e) => {
+                                  return <CardRecord Info={e} />;
+                              })
+                            : search_.map((e) => {
+                                  return <CardRecord Info={e} />;
+                              })}
+                        {search_.length === 0 && <h1>No hay resultados</h1>}
+                    </>
+                )}
             </div>
         </div>
     );

@@ -40,7 +40,7 @@ export function ListUsers() {
 
             <div className={st.container}>
                 <div className={st.panelList}>
-                    {data[0].uid !== null && (
+                    {data[0].uid !== null && data[0].uid !== undefined && data[0].uid !== '' && (
                         <>
                             {search === ''
                                 ? data.map((users, index) => (
