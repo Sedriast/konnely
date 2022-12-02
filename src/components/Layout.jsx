@@ -32,6 +32,7 @@ import { PrintView2 } from './use/B_VitaeIsList/components/PrintView2/PrintView2
 import { NewHistory } from './use/F-Forms/NewHistory/NewHistory';
 import { NewSemen } from './use/F-Forms/NewSemen/NewSemen';
 import { EditExtraction } from './use/F-Forms/EditExtraction/EditExtraction';
+import { Loading } from './use/0-GeneralComp/1-Loading/Loading';
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -260,7 +261,8 @@ export function Layout() {
                             element={
                                 <ProtectedRoute>
                                     <div className={st.componentContainer}>
-                                        <DashBoard />
+                                        {/* <DashBoard /> */}
+                                        <Loading />
                                     </div>
                                 </ProtectedRoute>
                             }
@@ -271,7 +273,8 @@ export function Layout() {
                             element={
                                 <ProtectedRoute>
                                     <div className={st.componentContainer}>
-                                        <Record />
+                                        {/* <Record /> */}
+                                        <Loading />
                                     </div>
                                 </ProtectedRoute>
                             }
