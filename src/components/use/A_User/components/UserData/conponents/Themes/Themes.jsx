@@ -10,7 +10,7 @@ export function Themes() {
     const c = (e) => {
         swal({
             title: '¿Desea cambiar el tema predeterminado?',
-            text: 'El tema predeterminado se aplicará a toda la aplicaión',
+            text: 'Recuerde que el tema se aplicará a toda la aplicación',
             icon: 'warning',
             buttons: ['No', 'Si'],
         }).then(async (respuesta) => {
