@@ -22,8 +22,27 @@ export function Cards({ id, litterPrueba, stages }) {
     const males = SearchAll({ coleccion: 'rabbits' }).props.children;
     const rabbitMother = QueriesSimple_({ coleccion: 'rabbits', parametro: 'uid', busqueda: basicData?.info?.uid })
         .props.children[0];
-
-    const autentication = (e, valor) => {
+    const Valor = (e) => {
+        return males.filter(function (element) {
+            if (
+                element.id.toString().toLowerCase().includes(e.target.Macho.value.toLowerCase()) &&
+                element.genero === 'Macho' &&
+                element.estado !== 'Inactivo'
+            ) {
+                return element;
+            } else {
+                swal({
+                    title: 'El identificador ingresado no corresponde a un macho activo o es de otra hembra',
+                    dangerMode: true,
+                    icon: 'warning',
+                    button: 'Aceptar',
+                });
+                return null;
+            }
+        });
+    };
+    const autentication = (e) => {
+        const valor = Valor(e);
         if (valor[0] !== undefined) {
             if (valor[0].idPadre === basicData?.info?.idPadre || valor[0].idMadre === basicData?.info?.idMadre) {
                 swal({
@@ -114,35 +133,18 @@ export function Cards({ id, litterPrueba, stages }) {
                             aux = { ...aux, [element.name]: element.value };
                         }
                     }
-                    const valor = males.filter(function (element) {
-                        if (
-                            element.id.toString().toLowerCase().includes(e.target.Macho.value.toLowerCase()) &&
-                            element.genero === 'Macho' &&
-                            element.estado !== 'Inactivo'
-                        ) {
-                            return element;
-                        } else {
-                            swal({
-                                title: 'El identificador ingresado no corresponde a un macho activo o es de otra hembra',
-                                dangerMode: true,
-                                icon: 'warning',
-                                button: 'Aceptar',
-                            });
-                            return null;
-                        }
-                    });
 
                     if (
                         e.target.DateInitial.value &&
                         e.target.idCamada.value &&
                         e.target.Macho.value &&
-                        valor !== null
+                        Valor(e) !== null
                     ) {
                         if (basicData?.info?.estado === 'Activo') {
-                            autentication(e, valor);
+                            autentication(e);
                         } else {
                             if (Object.keys(aux).length === 16) {
-                                autentication(e, valor);
+                                autentication(e);
                             } else {
                                 swal({
                                     title: 'Por favor, verifique que todos los campos esten llenos',
