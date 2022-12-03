@@ -70,9 +70,7 @@ export function Form({ info, uid, nacimiento }) {
                     return (
                         <div key={index} className={items.stage === 'Nacimiento' ? st.bird : st.panel}>
                             {items?.stage === 'Nacimiento' ? (
-                                <>
-                                    <h1>Fecha de Nacimiento: {nacimiento}</h1>
-                                </>
+                                <>{/* <h1>Fecha de Nacimiento: {nacimiento}</h1> */}</>
                             ) : (
                                 <>
                                     <div className={st.idName}>{items.stage}</div>
