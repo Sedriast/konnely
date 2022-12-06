@@ -23,10 +23,27 @@ export function DropdownList({ coleccion, parametro, busqueda, reset }) {
     }, [resultado, parametro, reset]);
     return (
         <>
-            {JSON.stringify(resultado) !== '[{}]' &&
-                resultado.map((item, index) => {
-                    return item.estado === 'Activo' && <Cards key={index} rabitID={item.id} rabitInfo={item} />;
-                })}
+            {JSON.stringify(resultado) !== '[{}]' && (
+                <>
+                    {parametro !== 'id' ? (
+                        <>
+                            {resultado.map((item, index) => {
+                                return (
+                                    item.estado === 'Activo' && (
+                                        <Cards key={index} rabitID={item.id} rabitInfo={item} />
+                                    )
+                                );
+                            })}
+                        </>
+                    ) : (
+                        <>
+                            {resultado.map((item, index) => {
+                                return <Cards key={index} rabitID={item.id} rabitInfo={item} />;
+                            })}
+                        </>
+                    )}
+                </>
+            )}
         </>
     );
 }
