@@ -61,12 +61,12 @@ export const EditImageAndInfo = async (props) => {
         if (props.image.includes(',')) {
             let auxiliar = [];
             const Ref = ref(storage, props.uid);
-            await deleteObject(Ref);
-            auxiliar = props.image.split(',');
-            await uploadString(Ref, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(Ref);
-            props.url = urlDescarga;
-            delete props.image;
+            await deleteObject(Ref).then(async () => {
+                auxiliar = props.image.split(',');
+                await uploadString(Ref, auxiliar[1], 'base64');
+                const urlDescarga = await getDownloadURL(Ref);
+                props.url = urlDescarga;
+            });
         }
         delete props.image;
         await updateDoc(doc(db, 'rabbits', props.uid), props);
@@ -91,7 +91,6 @@ export const UpdateInformation = async ({ coleccion, uid, data }) => {
     try {
         await updateDoc(doc(db, coleccion, uid), data);
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
@@ -133,7 +132,6 @@ export const AddAudit = async ({ coleccion, props }) => {
             uidAudit: docRef.id,
         });
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
@@ -214,18 +212,24 @@ export const EditImageAndInfoUser = async (props) => {
         if (props.image.includes(',') && props.photoAux === photo) {
             const Ref = ref(storage, props.uid);
             auxiliar = props.image.split(',');
-            await uploadString(Ref, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(Ref);
-            props.photo = urlDescarga;
-            delete props.image;
+            await uploadString(Ref, auxiliar[1], 'base64').then(async () => {
+                const urlDescarga = await getDownloadURL(Ref);
+                props.photo = urlDescarga;
+                delete props.image;
+            });
         } else if (props.image.includes(',') && props.photoAux !== photo) {
             const Ref = ref(storage, props.uid);
-            await deleteObject(Ref);
             auxiliar = props.image.split(',');
-            await uploadString(Ref, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(Ref);
-            props.photo = urlDescarga;
-            delete props.image;
+            await deleteObject(Ref)
+                .then(async () => {
+                    await uploadString(Ref, auxiliar[1], 'base64');
+                    const urlDescarga = await getDownloadURL(Ref);
+                    props.photo = urlDescarga;
+                    delete props.image;
+                })
+                .catch((error) => {
+                    ValidationErrors(error.code);
+                });
         }
         if (props.perfil === props.uid) {
             await updateProfile(auth.currentUser, {
@@ -273,7 +277,6 @@ export const RemovalUser = async (props) => {
             await deleteUser(auth.currentUser);
         });
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
@@ -385,7 +388,6 @@ export const StateRabbit = async ({ coleccion, props, estado }) => {
             });
         }
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
