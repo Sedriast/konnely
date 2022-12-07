@@ -46,9 +46,10 @@ export const addImageAndInfo = async (props) => {
         delete props.peso;
         const docRef = await addDoc(collection(db, 'rabbits'), props);
         const refStorage = ref(storage, docRef.id);
-        await uploadString(refStorage, auxiliar[1], 'base64');
-        const urlDescarga = await getDownloadURL(refStorage);
-        await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
+        await uploadString(refStorage, auxiliar[1], 'base64').then(async () => {
+            const urlDescarga = await getDownloadURL(refStorage);
+            await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
+        });
     } catch (error) {
         ValidationErrors(error.code);
     }
@@ -58,15 +59,16 @@ export const addImageAndInfo = async (props) => {
 
 export const EditImageAndInfo = async (props) => {
     try {
+        let auxiliar = [];
         if (props.image.includes(',')) {
-            let auxiliar = [];
             const Ref = ref(storage, props.uid);
-            await deleteObject(Ref);
-            auxiliar = props.image.split(',');
-            await uploadString(Ref, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(Ref);
-            props.url = urlDescarga;
-            delete props.image;
+            await deleteObject(Ref).then(async () => {
+                auxiliar = props.image.split(',');
+                await uploadString(Ref, auxiliar[1], 'base64').then(async () => {
+                    const urlDescarga = await getDownloadURL(Ref);
+                    props.url = urlDescarga;
+                });
+            });
         }
         delete props.image;
         await updateDoc(doc(db, 'rabbits', props.uid), props);
@@ -91,7 +93,6 @@ export const UpdateInformation = async ({ coleccion, uid, data }) => {
     try {
         await updateDoc(doc(db, coleccion, uid), data);
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
@@ -109,12 +110,13 @@ export const addRegisters = async ({ coleccion, props, conejos }) => {
                 });
             });
         }
-        const docRef = await addDoc(collection(db, coleccion), props);
-        await updateDoc(doc(db, coleccion, docRef.id), {
-            uid: docRef.id,
-            state: 'Activo',
-            removalDate: null,
-            uidAudit: null,
+        const docRef = await addDoc(collection(db, coleccion), props).then(async () => {
+            await updateDoc(doc(db, coleccion, docRef.id), {
+                uid: docRef.id,
+                state: 'Activo',
+                removalDate: null,
+                uidAudit: null,
+            });
         });
     } catch (error) {
         ValidationErrors(error.code);
@@ -125,15 +127,15 @@ export const addRegisters = async ({ coleccion, props, conejos }) => {
 
 export const AddAudit = async ({ coleccion, props }) => {
     try {
-        const docRef = await addDoc(collection(db, 'audit'), props);
-        await updateDoc(doc(db, 'audit', docRef.id), { uid: docRef.id });
+        const docRef = await addDoc(collection(db, 'audit'), props).then(async () => {
+            await updateDoc(doc(db, 'audit', docRef.id), { uid: docRef.id });
+        });
         await updateDoc(doc(db, coleccion, props.uidTratament), {
             state: 'Inactivo',
             removalDate: Date.now(),
             uidAudit: docRef.id,
         });
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
@@ -164,8 +166,9 @@ export const ReactivateRegistration = async ({ coleccion, uidAudit, uid, data })
 
 export const AddReproductiveCycle = async (props) => {
     try {
-        const docRef = await addDoc(collection(db, 'reproductive'), props);
-        await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+        const docRef = await addDoc(collection(db, 'reproductive'), props).then(async () => {
+            await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+        });
         if (props.stages[3].state === true) {
             const ref = await addDoc(collection(db, 'reproductiveMale'), {
                 uidFather: props.uidFather,
@@ -176,8 +179,9 @@ export const AddReproductiveCycle = async (props) => {
                 lives: props.stages[3].lives,
                 deaths: props.stages[3].deaths,
                 news: props.stages[3].news,
+            }).then(async () => {
+                await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
             });
-            await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
         }
         if (props.stages[4].state === true) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
@@ -214,18 +218,28 @@ export const EditImageAndInfoUser = async (props) => {
         if (props.image.includes(',') && props.photoAux === photo) {
             const Ref = ref(storage, props.uid);
             auxiliar = props.image.split(',');
-            await uploadString(Ref, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(Ref);
-            props.photo = urlDescarga;
-            delete props.image;
+            await uploadString(Ref, auxiliar[1], 'base64')
+                .then(async () => {
+                    const urlDescarga = await getDownloadURL(Ref);
+                    props.photo = urlDescarga;
+                    delete props.image;
+                })
+                .catch((error) => {
+                    ValidationErrors(error.code);
+                });
         } else if (props.image.includes(',') && props.photoAux !== photo) {
             const Ref = ref(storage, props.uid);
-            await deleteObject(Ref);
             auxiliar = props.image.split(',');
-            await uploadString(Ref, auxiliar[1], 'base64');
-            const urlDescarga = await getDownloadURL(Ref);
-            props.photo = urlDescarga;
-            delete props.image;
+            await deleteObject(Ref)
+                .then(async () => {
+                    await uploadString(Ref, auxiliar[1], 'base64');
+                    const urlDescarga = await getDownloadURL(Ref);
+                    props.photo = urlDescarga;
+                    delete props.image;
+                })
+                .catch((error) => {
+                    ValidationErrors(error.code);
+                });
         }
         if (props.perfil === props.uid) {
             await updateProfile(auth.currentUser, {
@@ -273,7 +287,6 @@ export const RemovalUser = async (props) => {
             await deleteUser(auth.currentUser);
         });
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
@@ -328,12 +341,13 @@ export const RemovalCamada = async (props) => {
 
 export const AddExtraction = async (props) => {
     try {
-        const docRef = await addDoc(collection(db, 'extraction'), props);
-        await updateDoc(doc(db, 'extraction', docRef.id), {
-            uid: docRef.id,
-            state: 'Activo',
-            removalDate: null,
-            uidAudit: null,
+        const docRef = await addDoc(collection(db, 'extraction'), props).then(async () => {
+            await updateDoc(doc(db, 'extraction', docRef.id), {
+                uid: docRef.id,
+                state: 'Activo',
+                removalDate: null,
+                uidAudit: null,
+            });
         });
     } catch (error) {
         ValidationErrors(error.code);
@@ -355,12 +369,13 @@ export const RemovalExtraction = async (props) => {
 
 export const AddSales = async (props) => {
     try {
-        const docRef = await addDoc(collection(db, 'trataments'), props);
-        await updateDoc(doc(db, 'trataments', docRef.id), {
-            uid: docRef.id,
-            state: 'Activo',
-            removalDate: null,
-            uidAudit: null,
+        const docRef = await addDoc(collection(db, 'trataments'), props).then(async () => {
+            await updateDoc(doc(db, 'trataments', docRef.id), {
+                uid: docRef.id,
+                state: 'Activo',
+                removalDate: null,
+                uidAudit: null,
+            });
         });
     } catch (error) {
         ValidationErrors(error.code);
@@ -385,7 +400,6 @@ export const StateRabbit = async ({ coleccion, props, estado }) => {
             });
         }
     } catch (error) {
-        console.log(error.code);
         ValidationErrors(error.code);
     }
 };
