@@ -1,115 +1,115 @@
 .rabbitImg {
-  width: 30vw;
-  height: 30vw;
+	width: 30vw;
+	height: 30vw;
 
-  padding: 0;
+	padding: 0;
 
-  border-radius: 100%;
+	border-radius: 100%;
 
-  overflow: hidden;
+	overflow: hidden;
 
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 
-  transition: width, height 500ms ease;
+	transition: width, height 500ms ease;
 }
 .rabbitImg img {
-  width: auto;
-  height: auto;
+	width: auto;
+	height: auto;
 }
 .initInfo {
-  width: 100%;
+	width: 100%;
 
-  font-size: 40px;
-  color: white;
+	font-size: 40px;
+	color: white;
 
-  padding-top: 2rem;
+	padding-top: 2rem;
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 .initInfo hr {
-  background: white;
+	background: white;
 }
 .panelData {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
 }
 .tit {
-  color: rgba(251, 225, 34, 1);
-  font-size: 30px;
+	color: rgba(251, 225, 34, 1);
+	font-size: 30px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .tit div {
-  font-size: 25px;
-  margin-left: 0.5rem;
+	font-size: 25px;
+	margin-left: 0.5rem;
 }
 .titles {
-  margin-right: 0.5rem;
-  font-size: 20px;
-  text-align: end;
-  color: rgba(251, 225, 34, 1);
+	margin-right: 0.5rem;
+	font-size: 20px;
+	text-align: end;
+	color: rgba(251, 225, 34, 1);
 }
 .ask {
-  font-size: 20px;
-  color: white;
+	font-size: 20px;
+	color: white;
 }
 .btnPrint {
-  position: fixed;
+	position: fixed;
 
-  width: 2rem;
-  height: 2rem;
+	width: 2rem;
+	height: 2rem;
 
-  margin-bottom: 1rem;
+	margin-bottom: 1rem;
 
-  top: 1rem;
-  left: 1rem;
-  border: solid black 1px;
+	top: 1rem;
+	left: 1rem;
+	border: solid black 1px;
 
-  background: rgba(251, 225, 34, 1);
+	background: rgb(0, 255, 0);
 
-  color: black;
-  font-size: 20px;
-  border-radius: 10px;
+	color: black;
+	font-size: 20px;
+	border-radius: 10px;
 
-  border: none;
-  cursor: pointer;
-  transition: background 500ms ease;
+	border: none;
+	cursor: pointer;
+	transition: background 500ms ease;
 }
 @media only screen and (max-width: 700px) {
-  .rabbitImg {
-    width: 60vw;
-    height: 60vw;
+	.rabbitImg {
+		width: 60vw;
+		height: 60vw;
 
-    padding: 0;
+		padding: 0;
 
-    border-radius: 100%;
+		border-radius: 100%;
 
-    overflow: hidden;
+		overflow: hidden;
 
-    display: flex;
-    justify-content: center;
+		display: flex;
+		justify-content: center;
 
-    transition: width, height 500ms ease;
-  }
-  .titles {
-    margin-right: 0.5rem;
-    font-size: 15px;
-    text-align: end;
-    color: rgba(251, 225, 34, 1);
+		transition: width, height 500ms ease;
+	}
+	.titles {
+		margin-right: 0.5rem;
+		font-size: 15px;
+		text-align: end;
+		color: rgba(251, 225, 34, 1);
 
-    transition: font-size 500ms ease;
-  }
-  .ask {
-    font-size: 15px;
-    color: white;
-  }
+		transition: font-size 500ms ease;
+	}
+	.ask {
+		font-size: 15px;
+		color: white;
+	}
 }

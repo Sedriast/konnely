@@ -262,7 +262,6 @@ export function Layout() {
 								<ProtectedRoute>
 									<div className={st.componentContainer}>
 										<DashBoard />
-										{/* <Loading /> */}
 									</div>
 								</ProtectedRoute>
 							}
