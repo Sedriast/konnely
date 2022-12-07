@@ -1,6 +1,7 @@
+import swal from 'sweetalert';
 import st from './Form.module.css';
 
-import { EditInfoRabbit } from '../../../../../firebase/funtions/AddInformation';
+import { UpdateInformation } from '../../../../../firebase/funtions/AddInformation';
 import {
     conditionalLevanteEdit,
     conditionalNextEdit,
@@ -12,7 +13,9 @@ import { Inputs } from '../../../../0-GeneralComp/1-Inputs/Inputs';
 import { useState } from 'react';
 
 export function Form({ info, uid, nacimiento }) {
-    const [date, setDate] = useState({});
+    console.log(info);
+    const [date, setDate] = useState({ levante: info[1].date, engorde: info[2].date, ceba: info[3].date });
+
     const conldicionalInfo = (name, value) => {
         if (name.includes('Levante') && name.includes('weigth')) {
             info[1].weigth = value;
@@ -28,6 +31,7 @@ export function Form({ info, uid, nacimiento }) {
             info[3].date = value;
         }
     };
+
     function handleChange(e) {
         e.preventDefault();
         const { name, value } = e.target;
@@ -35,6 +39,7 @@ export function Form({ info, uid, nacimiento }) {
             e.target.value = conditionalLevanteEdit(value, info[1].date, nacimiento);
             setDate({ ...date, levante: e.target.value });
         } else if (name === 'date:Engorde') {
+            console.log(date.levante);
             e.target.value = conditionalNextEdit(value, info[2].date, date.levante);
             setDate({ ...date, engorde: e.target.value });
         } else if (name === 'date:Ceba') {
@@ -42,6 +47,7 @@ export function Form({ info, uid, nacimiento }) {
             setDate({ ...date, ceba: e.target.value });
         }
     }
+
     const peso = (e) => {
         if (e === 'Sin datos') {
             return null;
@@ -49,7 +55,6 @@ export function Form({ info, uid, nacimiento }) {
             return e;
         }
     };
-    console.log(info);
     return (
         <>
             <form
@@ -61,11 +66,20 @@ export function Form({ info, uid, nacimiento }) {
                             conldicionalInfo(element.name, element.value);
                         }
                     }
-                    await EditInfoRabbit({ lifecycle: info, uid: uid }).then(() => {
-                        window.history.back();
+                    await UpdateInformation({
+                        coleccion: 'rabbits',
+                        uid: uid,
+                        data: { lifecycle: info },
+                    }).then(() => {
+                        swal({
+                            title: '¡Datos actualizados!',
+                            icon: 'success',
+                            button: 'Aceptar',
+                        }).then(() => {
+                            window.history.back();
+                        });
                     });
-                }}
-                action=''>
+                }}>
                 {info?.map((items, index) => {
                     return (
                         <div key={index} className={items.stage === 'Nacimiento' ? st.bird : st.panel}>
