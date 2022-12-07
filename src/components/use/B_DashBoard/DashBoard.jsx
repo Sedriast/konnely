@@ -4,12 +4,14 @@ import { RigthTopButtons } from "../0-GeneralComp/1-PanelButtons/RigthTopButtons
 import { generalOptions } from "../0-GeneralComp/0-StaticData/options";
 import { List } from "./component/List/List";
 import { PanelData } from "./component/PanelData";
+import { Loading } from "../0-GeneralComp/1-Loading/Loading";
 
 export function DashBoard() {
 	return (
 		<>
 			<div className={st.optionContainer}>
-				<div className={st.panelA}>
+				<Loading />
+				{/* <div className={st.panelA}>
 					<div className={st.one}>
 						<PanelData />
 					</div>
@@ -19,7 +21,7 @@ export function DashBoard() {
 					<div className={st.three}>
 						<PanelData />
 					</div>
-				</div>
+				</div> */}
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />
 		</>

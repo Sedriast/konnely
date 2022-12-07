@@ -118,224 +118,223 @@ export function Layout() {
         }
     }, [user]);
 
-    return (
-        <>
-            <div className={st.container} id='lay'>
-                <Router>
-                    <Routes>
-                        <Route
-                            exact
-                            path='/'
-                            element={
-                                <div className={st.initContainer}>
-                                    <LoginRegister />
-                                </div>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/users'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <User />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/vitaeslist'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <ViewIsList />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/vitae'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <DataView />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/user'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <EditUserData />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/formEdit'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <EditRabbitData />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route exact path='/analitics' element={<ProtectedRoute></ProtectedRoute>} />
-                        <Route exact path='/record' element={<ProtectedRoute></ProtectedRoute>} />
-                        <Route
-                            exact
-                            path='/addTrat'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <NewTrat />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/litterList'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <ReproView />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/editLife'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <EditLife />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/formEditRepro'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <EditRepro />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/NewRepro'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <NewRepro />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/editTrats'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <EditTrats />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/dashboard'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <Loading />
-                                        {/* <Loading /> */}
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/reco'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <Record />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/print1'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <PrintView1 />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/addSemen'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <NewSemen />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/editExtraction'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <EditExtraction />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/print2'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <PrintView2 />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                        <Route
-                            exact
-                            path='/addHis'
-                            element={
-                                <ProtectedRoute>
-                                    <div className={st.componentContainer}>
-                                        <NewHistory />
-                                    </div>
-                                </ProtectedRoute>
-                            }
-                        />
-                    </Routes>
-                </Router>
-            </div>
-        </>
-    );
+	return (
+		<>
+			<div className={st.container} id='lay'>
+				<Router>
+					<Routes>
+						<Route
+							exact
+							path='/'
+							element={
+								<div className={st.initContainer}>
+									<LoginRegister />
+								</div>
+							}
+						/>
+						<Route
+							exact
+							path='/users'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<User />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/vitaeslist'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<ViewIsList />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/vitae'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<DataView />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/user'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditUserData />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/formEdit'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditRabbitData />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route exact path='/analitics' element={<ProtectedRoute></ProtectedRoute>} />
+						<Route exact path='/record' element={<ProtectedRoute></ProtectedRoute>} />
+						<Route
+							exact
+							path='/addTrat'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<NewTrat />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/litterList'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<ReproView />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/editLife'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditLife />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/formEditRepro'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditRepro />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/NewRepro'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<NewRepro />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/editTrats'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditTrats />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/dashboard'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<DashBoard />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/reco'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<Record />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/print1'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<PrintView1 />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/addSemen'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<NewSemen />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/editExtraction'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<EditExtraction />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/print2'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<PrintView2 />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+						<Route
+							exact
+							path='/addHis'
+							element={
+								<ProtectedRoute>
+									<div className={st.componentContainer}>
+										<NewHistory />
+									</div>
+								</ProtectedRoute>
+							}
+						/>
+					</Routes>
+				</Router>
+			</div>
+		</>
+	);
 }
