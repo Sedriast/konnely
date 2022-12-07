@@ -39,7 +39,6 @@ export function Form({ info, uid, nacimiento }) {
             e.target.value = conditionalLevanteEdit(value, info[1].date, nacimiento);
             setDate({ ...date, levante: e.target.value });
         } else if (name === 'date:Engorde') {
-            console.log(date.levante);
             e.target.value = conditionalNextEdit(value, info[2].date, date.levante);
             setDate({ ...date, engorde: e.target.value });
         } else if (name === 'date:Ceba') {

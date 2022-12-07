@@ -166,9 +166,8 @@ export const ReactivateRegistration = async ({ coleccion, uidAudit, uid, data })
 
 export const AddReproductiveCycle = async (props) => {
     try {
-        const docRef = await addDoc(collection(db, 'reproductive'), props).then(async () => {
-            await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
-        });
+        const docRef = await addDoc(collection(db, 'reproductive'), props);
+        await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
         if (props.stages[3].state === true) {
             const ref = await addDoc(collection(db, 'reproductiveMale'), {
                 uidFather: props.uidFather,
@@ -183,9 +182,9 @@ export const AddReproductiveCycle = async (props) => {
                 await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
             });
         }
-        if (props.stages[4].state === true) {
+        if (props.stages[4].state) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
-        } else {
+        } else if (!props.stages[4].state) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
         }
     } catch (error) {

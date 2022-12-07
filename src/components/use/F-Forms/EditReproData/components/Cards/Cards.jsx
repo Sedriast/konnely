@@ -1,3 +1,4 @@
+import swal from 'sweetalert';
 import st from './Cards.module.css';
 
 import { Ref } from './components/Ref/Ref';
@@ -10,14 +11,15 @@ import { useAuth } from '../../../../../../context/AuthContext';
 import { formatCycleReproductive } from '../../../../0-GeneralComp/0-StaticData/Dates/format';
 import { UpdateReproductiveCycle } from '../../../../../firebase/funtions/AddInformation';
 import { QueriesSimple_ } from '../../../../../firebase/funtions/GetInformation';
-import swal from 'sweetalert';
 import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFloppyDisk } from '@fortawesome/free-solid-svg-icons';
 
 export function Cards({ item, stages }) {
+    console.log(stages);
     const { user } = useAuth();
     const [date, setDate] = useState(stages[0].date);
+    const [date_, setDate_] = useState({});
     const males = QueriesSimple_({
         coleccion: 'rabbits',
         parametro: 'genero',
@@ -76,6 +78,7 @@ export function Cards({ item, stages }) {
         if (e.target.name === 'DateInitial') {
             e.target.value = conditionalBasisEdit(e.target.value, stages[0].date);
             setDate(e.target.value);
+            setDate({ DateInitial: e.target.value });
         } else if (e.target.name === 'DatePalpacion') {
             e.target.value = conditionalNextEdit(e.target.value, stages[1].date, date);
         } else if (e.target.name === 'DatePreparto') {

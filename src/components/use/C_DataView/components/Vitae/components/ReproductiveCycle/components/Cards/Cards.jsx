@@ -9,6 +9,7 @@ import { RemovalCamada } from '../../../../../../../../firebase/funtions/AddInfo
 import { recuperarCamada } from '../../../../../../../0-GeneralComp/0-StaticData/dataProv';
 
 export function Cards({ stages, item }) {
+    console.log(item);
     const cm = (
         <div className={st.container}>
             <div className={st.btnEdit}>
@@ -36,9 +37,9 @@ export function Cards({ stages, item }) {
                                 dangerMode: true,
                                 icon: 'warning',
                                 buttons: ['No', 'Si'],
-                            }).then((respuesta) => {
+                            }).then(async (respuesta) => {
                                 if (respuesta) {
-                                    RemovalCamada({ uid: item.uid, uidMother: item.uidMother });
+                                    await RemovalCamada({ uid: item.uid, uidMother: item.uidMother });
                                 }
                             });
                         }}
