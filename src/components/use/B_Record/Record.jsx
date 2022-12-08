@@ -9,6 +9,7 @@ export function Record() {
 		<>
 			<div className={st.optionContainer}>
 				<ViewRecord />
+				Simon
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />
 		</>
