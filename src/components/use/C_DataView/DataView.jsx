@@ -91,8 +91,6 @@ export function DataView() {
             dangerMode: true,
         }).then(async (willDelete) => {
             if (willDelete) {
-                console.log(buscar(basicData?.info?.id));
-                console.log(DateInactive(basicData?.info?.InactiveDate));
                 if (!buscar(basicData?.info?.id) && !DateInactive(basicData?.info?.InactiveDate)) {
                     await StateRabbit({ coleccion: 'rabbits', props: basicData?.info, estado: 'Activo' }).then(
                         () => {

@@ -4,7 +4,7 @@ export const ValidationMonth = (props) => {
     1: "Febr",
     2: "Mzo",
     3: "Abr",
-    4: "My",
+    4: "Myo",
     5: "Jun",
     6: "Jul",
     7: "Agto",

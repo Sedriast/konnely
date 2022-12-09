@@ -1,5 +1,6 @@
 {
     "name": "konnely",
+    "productName": "konnely",
     "version": "0.1.0",
     "private": true,
     "main": "main.js",
@@ -29,7 +30,8 @@
         "web-vitals": "^1.1.2"
     },
     "scripts": {
-        "electron": "concurrently \"SET BROWSER=none && npm start\" \"wait-on http://localhost:3000 && electron .\"",
+        "electron": "concurrently \"SET BROWSER=none && npm start\" \"wait-on https://konnely-67d6a.firebaseapp.com && electron .\"",
+        "package-win": "electron-packager . konnely --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"konnely\"",
         "felips": "react-scripts --openssl-legacy-provider start",
         "start": "react-scripts start",
         "build": "react-scripts build",
@@ -56,6 +58,7 @@
     },
     "devDependencies": {
         "electron": "^19.0.3",
+        "electron-packager": "^17.1.1",
         "Faker": "^0.7.2",
         "jest": "^26.6.0"
     }

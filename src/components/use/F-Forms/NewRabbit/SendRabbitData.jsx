@@ -79,6 +79,7 @@ export function SendRabbitData() {
             }
         } else if (name === 'traslado') {
             e.target.value = conditionalBasis(updateState, name, value);
+            console.log(value);
         } else if (name === 'levantefin') {
             e.target.value = conditionalLevante(updateState, name, value, values.nacimiento);
         } else if (name === 'engordefin') {

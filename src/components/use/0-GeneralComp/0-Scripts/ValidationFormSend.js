@@ -1,6 +1,8 @@
 export const ValidationFormSend = ({ values_, image_ }) => {
     const comparationUndefined = () => {
-        if (values_?.concepcion === undefined) {
+        if (image_ === undefined) {
+            return true;
+        } else if (values_?.concepcion === undefined) {
             return true;
         } else if (values_?.genero === undefined) {
             return true;
@@ -20,14 +22,14 @@ export const ValidationFormSend = ({ values_, image_ }) => {
             return true;
         } else if (values_?.raza === undefined) {
             return true;
-        } else if (image_ === undefined) {
-            return true;
         } else {
             return false;
         }
     };
     const comparationNull = () => {
-        if (values_?.concepcion === null) {
+        if (image_ === null) {
+            return true;
+        } else if (values_?.concepcion === null) {
             return true;
         } else if (values_?.genero === null) {
             return true;
@@ -47,14 +49,14 @@ export const ValidationFormSend = ({ values_, image_ }) => {
             return true;
         } else if (values_?.raza === null) {
             return true;
-        } else if (image_ === null) {
-            return true;
         } else {
             return false;
         }
     };
     const comparationVacio = () => {
-        if (values_?.concepcion === '') {
+        if (image_ === '') {
+            return true;
+        } else if (values_?.concepcion === '') {
             return true;
         } else if (values_?.genero === '') {
             return true;
@@ -73,8 +75,6 @@ export const ValidationFormSend = ({ values_, image_ }) => {
         } else if (values_?.porcentaje === '') {
             return true;
         } else if (values_?.raza === '') {
-            return true;
-        } else if (image_ === '') {
             return true;
         } else {
             return false;

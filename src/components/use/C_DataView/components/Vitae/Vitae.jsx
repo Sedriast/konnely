@@ -36,7 +36,6 @@ export function Vitae({ rabbit }) {
             recuperar(basicData?.id, rabbit_);
         }
     }, [navigate, stadics, rabbit_]);
-
     return (
         <>
             {basicData?.id !== null && (

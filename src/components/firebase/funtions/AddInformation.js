@@ -46,10 +46,9 @@ export const addImageAndInfo = async (props) => {
         delete props.peso;
         const docRef = await addDoc(collection(db, 'rabbits'), props);
         const refStorage = ref(storage, docRef.id);
-        await uploadString(refStorage, auxiliar[1], 'base64').then(async () => {
-            const urlDescarga = await getDownloadURL(refStorage);
-            await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
-        });
+        await uploadString(refStorage, auxiliar[1], 'base64');
+        const urlDescarga = await getDownloadURL(refStorage);
+        await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
     } catch (error) {
         ValidationErrors(error.code);
     }
@@ -178,9 +177,8 @@ export const AddReproductiveCycle = async (props) => {
                 lives: props.stages[3].lives,
                 deaths: props.stages[3].deaths,
                 news: props.stages[3].news,
-            }).then(async () => {
-                await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
             });
+            await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
         }
         if (props.stages[4].state) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
