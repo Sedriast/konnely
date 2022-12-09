@@ -9,7 +9,7 @@ export const Modal = ({ children, isOpen, closeModal }) => {
 					className={st.close}
 					onClick={(e) => {
 						e.preventDefault();
-						closeModal;
+						closeModal();
 					}}>
 					❌
 				</button>
