@@ -22,7 +22,6 @@ export function DashBoard() {
 						<PanelData />
 					</div>
 				</div> */}
-				Simon
 			</div>
 			<RigthTopButtons BTNS={generalOptions} />
 		</>

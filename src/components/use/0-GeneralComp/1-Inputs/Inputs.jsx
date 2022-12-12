@@ -83,7 +83,6 @@ export function Inputs({
 							onClick={changeImage}
 							alt=''
 						/>
-						Simon
 					</>
 				) : (
 					<input

@@ -51,7 +51,6 @@ export function UserData() {
                         />
                     </div>
                     <div>
-                        {' '}
                         <Buttons
                             route='#'
                             label='Borrar cuenta'
@@ -121,7 +120,6 @@ export function UserData() {
                             />
                         </div>
                         <div>
-                            {' '}
                             <input
                                 type={inputstate}
                                 placeholder='Confirme nueva contraseña'
@@ -130,7 +128,7 @@ export function UserData() {
                                     setAuxpassword(e.target.value);
                                 }}
                             />
-                        </div>{' '}
+                        </div>
                         {inputstate === 'password' && (
                             <button
                                 className={st.btn}
