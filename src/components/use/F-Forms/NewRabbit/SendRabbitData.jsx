@@ -166,8 +166,9 @@ export function SendRabbitData() {
                                 title: 'El registro se ha realizado con éxito',
                                 icon: 'success',
                                 button: 'Aceptar',
+                            }).then(() => {
+                                navigate('/vitae');
                             });
-                            navigate('/vitae');
                         });
                     }
                 });

@@ -46,7 +46,7 @@ export function DropdownDate(props) {
                 <>
                     <Inputs
                         leyend='Peso al destete en gramos (gr)'
-                        name='destetefin'
+                        name='destete'
                         placeholder='Ingrese el peso'
                         type='number'
                         inputmode='numeric'
@@ -90,7 +90,7 @@ export function DropdownDate(props) {
                 <>
                     <Inputs
                         leyend='Peso al destete en gramos (gr)'
-                        name='destetefin'
+                        name='destete'
                         placeholder='Ingrese el peso'
                         type='number'
                         inputmode='numeric'
