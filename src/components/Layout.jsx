@@ -34,6 +34,7 @@ import { NewSemen } from './use/F-Forms/NewSemen/NewSemen';
 import { EditExtraction } from './use/F-Forms/EditExtraction/EditExtraction';
 import { Loading } from './use/0-GeneralComp/1-Loading/Loading';
 import { UserTest } from './use/A_User/UserTest';
+import { Tuto } from './use/0-GeneralComp/1-Tuto/Tuto';
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -135,6 +136,15 @@ export function Layout() {
                         />
                         <Route
                             exact
+                            path='/tuto'
+                            element={
+                                <div className={st.initContainer}>
+                                    <Tuto />
+                                </div>
+                            }
+                        />
+                        <Route
+                            exact
                             path='/users'
                             element={
                                 <ProtectedRoute>
@@ -143,7 +153,7 @@ export function Layout() {
                                     </div>
                                 </ProtectedRoute>
                             }
-                        />
+                        /> 
                         <Route
                             exact
                             path='/userstest'

@@ -1,6 +1,6 @@
 import swal from 'sweetalert';
 import st from './Register.module.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { ValidationErrors } from '../../../0-GeneralComp/0-Scripts/ValidationErrors';
 import { useAuth } from '../../../../../context/AuthContext';
@@ -41,6 +41,8 @@ export function Register() {
     }
     return (
         <div className={st.container}>
+            <Link to='/tuto'><button>¡ LEEME ANTES DEL REGISTRO !</button></Link>
+            <br />
             <form
                 id='formulario'
                 onSubmit={(e) => {
