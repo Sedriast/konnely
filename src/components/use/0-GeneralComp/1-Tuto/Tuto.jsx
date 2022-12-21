@@ -95,6 +95,7 @@ export function Tuto() {
                     {/* <button onclick={copyToClipboard}>📎</button> */}
                 </div>
                 <div className={st.paso}></div>
+                <div></div>
             </div>
         </div>
     )
