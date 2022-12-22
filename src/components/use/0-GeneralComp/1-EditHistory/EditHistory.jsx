@@ -13,7 +13,6 @@ export function EditHistory({userList}) {
 				}}
 			/>
             <div className={st.optionContainer}>
-                <EditUserCard />
                 {userList?.map((user, i) => {
                     <EditUserCard key={i} user={user}/>
                 })}
