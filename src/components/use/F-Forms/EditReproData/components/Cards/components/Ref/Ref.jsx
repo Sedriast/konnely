@@ -209,7 +209,7 @@ export function Ref({ stage, handleChange, date }) {
                             handleChange={handleChange}
                         />
                         <Inputs
-                            value={stage.DateDestete}
+                            value={stage.date}
                             name='DateDestete'
                             type='date'
                             leyend='Fecha'
