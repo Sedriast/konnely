@@ -34,52 +34,60 @@ export function Tuto() {
                 <ol>
                     <div className={st.paso}>
                         <img src={u} alt="" />
-                        <li>  
-                            Como primer paso, se debe abrir el correo institucional.
-                        </li>
-                        <br />
-                        <li> 
-                            Una vez abierto, debemos buscar la esquina superior derecha 
-                            del correo.
-                        </li>
-                        <br />
-                        <li>
-                            Aquí buscaremos el icono de configuración (⚙️), como se muestra en la imagen
-                        </li>
-                </div>
-                <div className={st.paso_}>
-                        <li>  
-                            Al dar clic en el icono de configuración, se desplegará el menu de preferencias.
-                        </li>
-                        <br />
-                        <li>
-                            Y, en el debemos dar clic en el texto: ‘Ver toda la configuración de Outlook’. 
-                            Generalmente este texto está ubicado al final del menú. 
-                        </li>
+                        <div className={st.ol}>
+                            <li>  
+                                Como primer paso, se debe abrir el correo institucional.
+                            </li>
+                            <br />
+                            <li> 
+                                Una vez abierto, debemos buscar la esquina superior derecha 
+                                del correo.
+                            </li>
+                            <br />
+                            <li>
+                                Aquí buscaremos el icono de configuración (⚙️), como se muestra en la imagen
+                            </li>
+                        </div>
+                    </div>
+                    <div className={st.paso_}>
+                        <div className={st.ol_}>
+                            <li>  
+                                Al dar clic en el icono de configuración, se desplegará el menu de preferencias.
+                            </li>
+                            <br />
+                            <li>
+                                Y, en el debemos dar clic en el texto: ‘Ver toda la configuración de Outlook’. 
+                                Generalmente este texto está ubicado al final del menú. 
+                            </li>
+                        </div>
                         <img src={d} alt="" />
                     </div>
                     <div className={st.paso}>
                         <img className={st.t} src={t} alt="" />
-                        <li>  
-                        Al dar clic en el texto descrito, veremos
-                        un menú con opciones primarias y secundarias.
-                        </li>
-                        <br />
-                        <li> 
-                            Dentro del primer menú buscaremos la opción de ‘Correo’
-                        </li>
-                        <br />
-                        <li>
-                            Y dentro de este menú, buscaremos la opción de ‘Correo electronico no deseado’ 
-                        </li>
+                        <div className={st.ol}>
+                            <li>  
+                            Al dar clic en el texto descrito, veremos
+                            un menú con opciones primarias y secundarias.
+                            </li>
+                            <br />
+                            <li> 
+                                Dentro del primer menú buscaremos la opción de ‘Correo’
+                            </li>
+                            <br />
+                            <li>
+                                Y dentro de este menú, buscaremos la opción de ‘Correo electronico no deseado’ 
+                            </li>
+                        </div>
                     </div>           
                      <div className={st.paso_}>
-                        <li>  
-                            Y aquí, buscaremos en la parte inferior el apartado que dice ‘Remitentes y dominios seguros’
-                        </li>
-                        <li>  
-                            Aquí, debemos dar clic en ‘Agregar’, donde se copiará y pegará la siguiente dirección.
-                        </li>
+                        <div className={st.ol_}>
+                            <li>  
+                                Y aquí, buscaremos en la parte inferior el apartado que dice ‘Remitentes y dominios seguros’
+                            </li>
+                            <li>  
+                                Aquí, debemos dar clic en ‘Agregar’, donde se copiará y pegará la siguiente dirección.
+                            </li>
+                        </div>
                         <img className={st.c} src={c} alt="" />
                     </div>
                     <div className={st.lin}>
