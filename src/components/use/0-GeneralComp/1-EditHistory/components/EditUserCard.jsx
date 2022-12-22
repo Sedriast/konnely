@@ -33,7 +33,7 @@ export function EditUserCard({user}) {
                         </th>
                         <td>
                             <tr>
-                                <td>{user?.name}dasfasdfasf</td>
+                                <td>{user?.name}</td>
                             </tr>
                             <tr>
                                 <td>{user?.email}</td>

@@ -7,6 +7,12 @@
     padding: 1rem;
     
     border-radius: 10px;
+
+    margin: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .container th{
     text-align: end;
