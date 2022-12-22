@@ -13,6 +13,9 @@ import { PanelData } from '../../../B_DashBoard/component/PanelData';
 import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
 import { Stadics } from '../../../0-GeneralComp/0-Scripts/FormatStadics';
 import { useAuth } from '../../../../../context/AuthContext';
+import { DataStadicsMale } from '../../../0-GeneralComp/0-Scripts/DataStadicsMale';
+import { StadicsMale } from '../../../0-GeneralComp/0-Scripts/FormatStadicsMale';
+import { DataStadicsFemale } from '../../../0-GeneralComp/0-Scripts/DataStadicsFemale';
 
 export function Vitae({ rabbit }) {
     const { user } = useAuth();
@@ -21,6 +24,12 @@ export function Vitae({ rabbit }) {
     const stadics = QueriesSimple_({
         coleccion: 'reproductive',
         parametro: 'uidMother',
+        busqueda: rabbit?.uid,
+    }).props.children;
+
+    const stadicsMale = QueriesSimple_({
+        coleccion: 'extraction',
+        parametro: 'uidRabbit',
         busqueda: rabbit?.uid,
     }).props.children;
 
@@ -58,13 +67,22 @@ export function Vitae({ rabbit }) {
                             <br />
                             <br />
                             <div className={st.stad}>
-                                <PanelData stadics={Stadics(stadics)} />
+                                <PanelData stadics={DataStadicsFemale({ stadics: Stadics(stadics) })} />
                             </div>
                             <br />
                             <br />
                         </>
                     ) : (
-                        <></>
+                        <>
+                            <hr />
+                            <br />
+                            <br />
+                            <div className={st.stad}>
+                                <PanelData stadics={DataStadicsMale({ stadics: StadicsMale(stadicsMale) })} />
+                            </div>
+                            <br />
+                            <br />
+                        </>
                     )}
                     <hr />
                     <br />
