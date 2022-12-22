@@ -31,10 +31,9 @@ export function Tuto() {
 				}}
 			/>
             <div className={st.cont1}>
-            
-                <div className={st.paso}>
-                    <img src={u} alt="" />
-                    <ol>
+                <ol>
+                    <div className={st.paso}>
+                        <img src={u} alt="" />
                         <li>  
                             Como primer paso, se debe abrir el correo institucional.
                         </li>
@@ -47,10 +46,8 @@ export function Tuto() {
                         <li>
                             Aquí buscaremos el icono de configuración (⚙️), como se muestra en la imagen
                         </li>
-                    </ol>
                 </div>
                 <div className={st.paso_}>
-                    <ol>
                         <li>  
                             Al dar clic en el icono de configuración, se desplegará el menu de preferencias.
                         </li>
@@ -59,12 +56,10 @@ export function Tuto() {
                             Y, en el debemos dar clic en el texto: ‘Ver toda la configuración de Outlook’. 
                             Generalmente este texto está ubicado al final del menú. 
                         </li>
-                    </ol>
-                    <img src={d} alt="" />
-                </div>
-                <div className={st.paso}>
-                    <img className={st.t} src={t} alt="" />
-                    <ol>
+                        <img src={d} alt="" />
+                    </div>
+                    <div className={st.paso}>
+                        <img className={st.t} src={t} alt="" />
                         <li>  
                         Al dar clic en el texto descrito, veremos
                         un menú con opciones primarias y secundarias.
@@ -77,25 +72,23 @@ export function Tuto() {
                         <li>
                             Y dentro de este menú, buscaremos la opción de ‘Correo electronico no deseado’ 
                         </li>
-                    </ol>
-                </div>
-                <div className={st.paso_}>
-                    <ol>
+                    </div>           
+                     <div className={st.paso_}>
                         <li>  
                             Y aquí, buscaremos en la parte inferior el apartado que dice ‘Remitentes y dominios seguros’
                         </li>
                         <li>  
                             Aquí, debemos dar clic en ‘Agregar’, donde se copiará y pegará la siguiente dirección.
                         </li>
-                    </ol>
-                    <img className={st.c} src={c} alt="" />
-                </div>
-                <div className={st.lin}>
-                    <p id="p" className={st.p}>Konnely@konnely-67d6a.firebaseapp.com</p>
-                    {/* <button onclick={copyToClipboard}>📎</button> */}
-                </div>
-                <div className={st.paso}></div>
-                <div></div>
+                        <img className={st.c} src={c} alt="" />
+                    </div>
+                    <div className={st.lin}>
+                        <p id="p" className={st.p}>Konnely@konnely-67d6a.firebaseapp.com</p>
+                        {/* <button onclick={copyToClipboard}>📎</button> */}
+                    </div>
+                    <div className={st.paso}></div>
+                    <div></div>
+                </ol>
             </div>
         </div>
     )
