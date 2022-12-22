@@ -67,7 +67,11 @@ export function Vitae({ rabbit }) {
                             <br />
                             <br />
                             <div className={st.stad}>
-                                <PanelData stadics={DataStadicsFemale({ stadics: Stadics(stadics) })} />
+                                {stadics.length > 0 ? (
+                                    <PanelData stadics={DataStadicsFemale({ stadics: Stadics(stadics) })} />
+                                ) : (
+                                    <h1>No hay datos</h1>
+                                )}
                             </div>
                             <br />
                             <br />
@@ -78,7 +82,11 @@ export function Vitae({ rabbit }) {
                             <br />
                             <br />
                             <div className={st.stad}>
-                                <PanelData stadics={DataStadicsMale({ stadics: StadicsMale(stadicsMale) })} />
+                                {stadicsMale.length > 0 ? (
+                                    <PanelData stadics={DataStadicsMale({ stadics: StadicsMale(stadicsMale) })} />
+                                ) : (
+                                    <h1>No hay datos</h1>
+                                )}
                             </div>
                             <br />
                             <br />
