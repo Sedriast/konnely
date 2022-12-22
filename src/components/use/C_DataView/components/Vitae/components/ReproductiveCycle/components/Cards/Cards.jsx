@@ -7,9 +7,10 @@ import { Ref } from './components/Ref';
 import swal from 'sweetalert';
 import { RemovalCamada } from '../../../../../../../../firebase/funtions/AddInformation';
 import { recuperarCamada } from '../../../../../../../0-GeneralComp/0-StaticData/dataProv';
+import { useNavigate } from 'react-router-dom';
 
 export function Cards({ stages, item }) {
-    console.log(item);
+    const navigate = useNavigate();
     const cm = (
         <div className={st.container}>
             <div className={st.btnEdit}>
@@ -39,7 +40,15 @@ export function Cards({ stages, item }) {
                                 buttons: ['No', 'Si'],
                             }).then(async (respuesta) => {
                                 if (respuesta) {
-                                    await RemovalCamada({ uid: item.uid, uidMother: item.uidMother });
+                                    await RemovalCamada({ uid: item.uid, uidMother: item.uidMother }).then(() => {
+                                        swal({
+                                            title: 'El registro ha sido eliminado correctamente, para visualizar los cambios debe ingresar nuevamente a la hoja de vida de este conejo',
+                                            icon: 'success',
+                                            button: 'Aceptar',
+                                        }).then(async () => {
+                                            navigate('/vitaeslist');
+                                        });
+                                    });
                                 }
                             });
                         }}

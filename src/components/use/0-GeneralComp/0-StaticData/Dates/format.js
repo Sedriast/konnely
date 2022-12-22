@@ -13,8 +13,10 @@ export const formatCycleReproductive = ({ e, format, user, rabbitMother, rabbitF
     }
     if (rabbitFather !== undefined) {
         format.idFather = rabbitFather.id;
+        format.uidFather = rabbitFather.uid;
     } else {
         format.idFather = e.target.Macho.value;
+        format.uidFather = e.target.Macho.value;
     }
     if (e.target.DateInitial.value) {
         format.stages[0].state = true;

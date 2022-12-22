@@ -11,7 +11,6 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 export function EditRepro() {
-    console.log(CamadaData);
     const navigate = useNavigate();
     const reproductiveCycles = QueriesSimple_({
         coleccion: 'reproductive',

@@ -1,7 +1,7 @@
 import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
-import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, setDoc } from 'firebase/firestore';
 import { ValidationErrors } from '../../use/0-GeneralComp/0-Scripts/ValidationErrors';
 import {
     getAuth,
@@ -163,12 +163,19 @@ export const ReactivateRegistration = async ({ coleccion, uidAudit, uid, data })
 
 /// Función para añadir un nuevo ciclo reproductivo a la base de datos
 
-export const AddReproductiveCycle = async (props) => {
+export const AddReproductiveCycle = async ({ props, reproductivecycle }) => {
     try {
+        if (props.stages[4].state) {
+            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
+        } else if (!props.stages[4].state && !reproductivecycle) {
+            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
+        }
         const docRef = await addDoc(collection(db, 'reproductive'), props);
         await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
-        if (props.stages[3].state === true) {
-            const ref = await addDoc(collection(db, 'reproductiveMale'), {
+        if (props.stages[3].state) {
+            await setDoc(doc(db, 'reproductiveMale', docRef.id), {
+                uid: docRef.id,
+                idCamada: props.stages[0].idCamada,
                 uidFather: props.uidFather,
                 montaDate: props.stages[0].date,
                 idMother: props.idMother,
@@ -176,14 +183,9 @@ export const AddReproductiveCycle = async (props) => {
                 partoDate: props.stages[3].date,
                 lives: props.stages[3].lives,
                 deaths: props.stages[3].deaths,
+                homogen: props.stages[3].homogen,
                 news: props.stages[3].news,
             });
-            await updateDoc(doc(db, 'reproductiveMale', ref.id), { uid: ref.id });
-        }
-        if (props.stages[4].state) {
-            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
-        } else if (!props.stages[4].state) {
-            await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
         }
     } catch (error) {
         ValidationErrors(error.code);
@@ -192,14 +194,26 @@ export const AddReproductiveCycle = async (props) => {
 
 /// Función para actualizar un ciclo reproductivo a la base de datos
 
-export const UpdateReproductiveCycle = async (props) => {
+export const UpdateReproductiveCycle = async ({ props, reproductivecycle }) => {
     try {
-        await updateDoc(doc(db, 'reproductive', props.uid), props);
-        if (props.stages[4].state === true) {
+        if (props.stages[4].state) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
-        } else {
+        } else if (!props.stages[4].state && !reproductivecycle) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
         }
+        await updateDoc(doc(db, 'reproductive', props.uid), props);
+        await updateDoc(doc(db, 'reproductiveMale', props.uid), {
+            idCamada: props.stages[0].idCamada,
+            uidFather: props.uidFather,
+            montaDate: props.stages[0].date,
+            idMother: props.idMother,
+            uidMother: props.uidMother,
+            partoDate: props.stages[3].date,
+            lives: props.stages[3].lives,
+            deaths: props.stages[3].deaths,
+            homogen: props.stages[3].homogen,
+            news: props.stages[3].news,
+        });
     } catch (error) {
         ValidationErrors(error.code);
     }
@@ -329,6 +343,7 @@ export const ChangePassword = async (props) => {
 export const RemovalCamada = async (props) => {
     try {
         await deleteDoc(doc(db, 'reproductive', props.uid));
+        await deleteDoc(doc(db, 'reproductiveMale', props.uid));
         await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
     } catch (error) {
         ValidationErrors(error.code);

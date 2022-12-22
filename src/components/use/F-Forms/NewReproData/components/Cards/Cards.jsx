@@ -11,17 +11,17 @@ import {
 import { useAuth } from '../../../../../../context/AuthContext';
 import { AddReproductiveCycle } from '../../../../../firebase/funtions/AddInformation';
 import { formatCycleReproductive } from '../../../../0-GeneralComp/0-StaticData/Dates/format';
-import { QueriesSimple_, SearchAll } from '../../../../../firebase/funtions/GetInformation';
-import { basicData } from '../../../../0-GeneralComp/0-StaticData/dataProv';
+import { SearchAll } from '../../../../../firebase/funtions/GetInformation';
+import { basicData, recuperar } from '../../../../0-GeneralComp/0-StaticData/dataProv';
 import swal from 'sweetalert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useNavigate } from 'react-router-dom';
 
-export function Cards({ id, litterPrueba, stages }) {
+export function Cards({ litterPrueba, stages }) {
     const { user } = useAuth();
+    const navigate = useNavigate();
     const [date, setDate] = useState(null);
     const males = SearchAll({ coleccion: 'rabbits' }).props.children;
-    const rabbitMother = QueriesSimple_({ coleccion: 'rabbits', parametro: 'uid', busqueda: basicData?.info?.uid })
-        .props.children[0];
     const Valor = (e) => {
         return males.filter(function (element) {
             if (
@@ -58,21 +58,23 @@ export function Cards({ id, litterPrueba, stages }) {
                     buttons: ['Cancelar', 'Aceptar'],
                 }).then(async (respuesta) => {
                     if (respuesta) {
-                        await AddReproductiveCycle(
-                            formatCycleReproductive({
+                        await AddReproductiveCycle({
+                            props: formatCycleReproductive({
                                 e: e,
                                 format: litterPrueba,
                                 user: user,
-                                rabbitMother: rabbitMother,
+                                rabbitMother: basicData?.info,
                                 rabbitFather: valor[0],
-                            })
-                        ).then(() => {
+                            }),
+                            reproductivecycle: basicData?.info?.reproductivecycle,
+                        }).then(() => {
+                            recuperar(basicData?.info?.id);
                             swal({
                                 title: 'Ciclo reproductivo creado con exito',
                                 icon: 'success',
                                 button: 'Aceptar',
                             }).then(() => {
-                                window.history.back();
+                                navigate('/vitae');
                             });
                         });
                     }
@@ -86,21 +88,23 @@ export function Cards({ id, litterPrueba, stages }) {
                 buttons: ['Cancelar', 'Aceptar'],
             }).then(async (respuesta) => {
                 if (respuesta) {
-                    await AddReproductiveCycle(
-                        formatCycleReproductive({
+                    await AddReproductiveCycle({
+                        props: formatCycleReproductive({
                             e: e,
                             format: litterPrueba,
                             user: user,
-                            rabbitMother: rabbitMother,
+                            rabbitMother: basicData?.info,
                             rabbitFather: undefined,
-                        })
-                    ).then(() => {
+                        }),
+                        reproductivecycle: basicData?.info?.reproductivecycle,
+                    }).then(() => {
+                        recuperar(basicData?.info?.id);
                         swal({
                             title: 'Ciclo reproductivo creado con exito',
                             icon: 'success',
                             button: 'Aceptar',
                         }).then(() => {
-                            window.history.back();
+                            navigate('/vitae');
                         });
                     });
                 }
@@ -122,8 +126,6 @@ export function Cards({ id, litterPrueba, stages }) {
 
     const cm = (
         <div className={st.container}>
-            <div className={st.panelId}>{id}</div>
-            <br />
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -133,7 +135,6 @@ export function Cards({ id, litterPrueba, stages }) {
                             aux = { ...aux, [element.name]: element.value };
                         }
                     }
-
                     if (
                         e.target.DateInitial.value &&
                         e.target.idCamada.value &&
@@ -156,7 +157,7 @@ export function Cards({ id, litterPrueba, stages }) {
                         }
                     } else {
                         swal({
-                            title: 'Debe ingresar una fecha inicial un identidicador de la camada y un macho',
+                            title: 'Debe ingresar un identidicador de la camada, una fecha inicial y un macho',
                             dangerMode: true,
                             icon: 'error',
                             button: 'aceptar',
@@ -164,9 +165,9 @@ export function Cards({ id, litterPrueba, stages }) {
                     }
                 }}
                 className={st.panelInfo}>
-                {stages?.map((element) => {
-                    return <Ref stage={element} handleChange={handleChange} date={date} />;
-                })}
+                {stages?.map((element) => (
+                    <Ref key={element.title} stage={element} handleChange={handleChange} date={date} />
+                ))}
                 <hr />
                 <div className={st.btn}>
                     <button type='submit'>

@@ -46,7 +46,7 @@ export function Vitae({ rabbit }) {
                     <LifeCycle info={rabbit} user_={user_} />
                     <br />
                     <br />
-                    {rabbit?.genero === 'Hembra' && rabbit?.lifecycle[3]?.date !== null && (
+                    {rabbit?.genero === 'Hembra' && rabbit?.lifecycle[3]?.date !== null ? (
                         <>
                             <hr />
                             <br />
@@ -63,6 +63,8 @@ export function Vitae({ rabbit }) {
                             <br />
                             <br />
                         </>
+                    ) : (
+                        <></>
                     )}
                     <hr />
                     <br />

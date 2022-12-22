@@ -1,5 +1,6 @@
 export const litterPrueba = [
     {
+        idCamada: null,
         state: true,
         displayNameEditors: [],
         uidEditors: [],
