@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 import st from './Vitae.module.css';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { basicData, recuperar } from '../../../0-GeneralComp/0-StaticData/dataProv';
@@ -20,6 +20,7 @@ import { DataStadicsFemale } from '../../../0-GeneralComp/0-Scripts/DataStadicsF
 export function Vitae({ rabbit }) {
     const { user } = useAuth();
     const navigate = useNavigate();
+    const [grup, setGrup] = useState('poblacion');
 
     const stadics = QueriesSimple_({
         coleccion: 'reproductive',
@@ -66,9 +67,30 @@ export function Vitae({ rabbit }) {
                             <hr />
                             <br />
                             <br />
+                            <button
+                                onClick={() => {
+                                    setGrup('poblacion');
+                                }}>
+                                Población
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setGrup('genero');
+                                }}>
+                                Género
+                            </button>
+                            <br />
+                            <br />
                             <div className={st.stad}>
                                 {stadics.length > 0 ? (
-                                    <PanelData stadics={DataStadicsFemale({ stadics: Stadics(stadics) })} />
+                                    <PanelData
+                                        stadics={
+                                            DataStadicsFemale({
+                                                stadics: Stadics({ data: stadics, grupo: grup }).props.children,
+                                                grupo: grup,
+                                            }).props.children
+                                        }
+                                    />
                                 ) : (
                                     <h1>No hay datos</h1>
                                 )}
