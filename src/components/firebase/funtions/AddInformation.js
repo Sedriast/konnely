@@ -1,7 +1,7 @@
 import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
-import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, setDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { ValidationErrors } from '../../use/0-GeneralComp/0-Scripts/ValidationErrors';
 import {
     getAuth,
@@ -109,7 +109,7 @@ export const addRegisters = async ({ coleccion, props, conejos }) => {
                 });
             });
         }
-        const docRef = await addDoc(collection(db, coleccion), props).then(async () => {
+        await addDoc(collection(db, coleccion), props).then(async (docRef) => {
             await updateDoc(doc(db, coleccion, docRef.id), {
                 uid: docRef.id,
                 state: 'Activo',
@@ -126,7 +126,7 @@ export const addRegisters = async ({ coleccion, props, conejos }) => {
 
 export const AddAudit = async ({ coleccion, props }) => {
     try {
-        const docRef = await addDoc(collection(db, 'audit'), props).then(async () => {
+        const docRef = await addDoc(collection(db, 'audit'), props).then(async (docRef) => {
             await updateDoc(doc(db, 'audit', docRef.id), { uid: docRef.id });
         });
         await updateDoc(doc(db, coleccion, props.uidTratament), {
@@ -170,23 +170,9 @@ export const AddReproductiveCycle = async ({ props, reproductivecycle }) => {
         } else if (!props.stages[4].state && !reproductivecycle) {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
         }
-        const docRef = await addDoc(collection(db, 'reproductive'), props);
-        await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
-        if (props.stages[3].state) {
-            await setDoc(doc(db, 'reproductiveMale', docRef.id), {
-                uid: docRef.id,
-                idCamada: props.stages[0].idCamada,
-                uidFather: props.uidFather,
-                montaDate: props.stages[0].date,
-                idMother: props.idMother,
-                uidMother: props.uidMother,
-                partoDate: props.stages[3].date,
-                lives: props.stages[3].lives,
-                deaths: props.stages[3].deaths,
-                homogen: props.stages[3].homogen,
-                news: props.stages[3].news,
-            });
-        }
+        await addDoc(collection(db, 'reproductive'), props).then(async (docRef) => {
+            await updateDoc(doc(db, 'reproductive', docRef.id), { uid: docRef.id });
+        });
     } catch (error) {
         ValidationErrors(error.code);
     }
@@ -202,18 +188,6 @@ export const UpdateReproductiveCycle = async ({ props, reproductivecycle }) => {
             await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: true });
         }
         await updateDoc(doc(db, 'reproductive', props.uid), props);
-        await updateDoc(doc(db, 'reproductiveMale', props.uid), {
-            idCamada: props.stages[0].idCamada,
-            uidFather: props.uidFather,
-            montaDate: props.stages[0].date,
-            idMother: props.idMother,
-            uidMother: props.uidMother,
-            partoDate: props.stages[3].date,
-            lives: props.stages[3].lives,
-            deaths: props.stages[3].deaths,
-            homogen: props.stages[3].homogen,
-            news: props.stages[3].news,
-        });
     } catch (error) {
         ValidationErrors(error.code);
     }
@@ -343,7 +317,6 @@ export const ChangePassword = async (props) => {
 export const RemovalCamada = async (props) => {
     try {
         await deleteDoc(doc(db, 'reproductive', props.uid));
-        await deleteDoc(doc(db, 'reproductiveMale', props.uid));
         await updateDoc(doc(db, 'rabbits', props.uidMother), { reproductivecycle: false });
     } catch (error) {
         ValidationErrors(error.code);
@@ -353,7 +326,7 @@ export const RemovalCamada = async (props) => {
 
 export const AddExtraction = async (props) => {
     try {
-        const docRef = await addDoc(collection(db, 'extraction'), props).then(async () => {
+        await addDoc(collection(db, 'extraction'), props).then(async (docRef) => {
             await updateDoc(doc(db, 'extraction', docRef.id), {
                 uid: docRef.id,
                 state: 'Activo',
@@ -381,7 +354,7 @@ export const RemovalExtraction = async (props) => {
 
 export const AddSales = async (props) => {
     try {
-        const docRef = await addDoc(collection(db, 'trataments'), props).then(async () => {
+        await addDoc(collection(db, 'trataments'), props).then(async (docRef) => {
             await updateDoc(doc(db, 'trataments', docRef.id), {
                 uid: docRef.id,
                 state: 'Activo',

@@ -50,6 +50,22 @@ export const QueriesSimple_ = ({ coleccion, parametro, busqueda }) => {
     );
 };
 
+/// Función para obtener uno o varios documentos especificos de la base de datos
+
+export const QueriesSimple_2 = async ({ coleccion, parametro, busqueda }) => {
+    let data_ = [];
+    const q = query(collection(db, coleccion), where(parametro, '==', busqueda));
+    const querySnapshot = await getDocs(q);
+    querySnapshot.docs.map((doc) => data_.push({ ...doc.data() }));
+    return (
+        <>
+            {data_?.map((Object) => {
+                return Object;
+            })}
+        </>
+    );
+};
+
 /// Función para obtener un documento especifico en tiempo real de la base de datos
 
 export const RealTime = ({ coleccion, parametro, busqueda }) => {

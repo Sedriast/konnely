@@ -5,8 +5,12 @@ import { basicData } from '../../../../../0-GeneralComp/0-StaticData/dataProv';
 import { Buttons } from '../../../../../0-GeneralComp/1-Buttons/Buttons';
 import { faPenToSquare, faPrint } from '@fortawesome/free-solid-svg-icons';
 import { estadoRabbit } from '../../../../../0-GeneralComp/0-Scripts/EstadoRabbit';
+import { QueriesSimple_ } from '../../../../../../firebase/funtions/GetInformation';
+import { useAuth } from '../../../../../../../context/AuthContext';
 
-export function RabbitDataView({ user_, rabbit }) {
+export function RabbitDataView({ rabbit }) {
+    const { user } = useAuth();
+    const user_ = QueriesSimple_({ coleccion: 'users', parametro: 'uid', busqueda: user.uid }).props.children[0];
     const cm = (
         <>
             {basicData.id !== null && (
