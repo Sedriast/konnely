@@ -14,6 +14,8 @@ import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
 import { Stadics } from '../../../0-GeneralComp/0-Scripts/FormatStadics';
 import { useAuth } from '../../../../../context/AuthContext';
 
+import { Carousel } from 'nuka-carousel/lib/carousel';
+
 export function Vitae({ rabbit }) {
     const { user } = useAuth();
     const navigate = useNavigate();
@@ -58,7 +60,11 @@ export function Vitae({ rabbit }) {
                             <br />
                             <br />
                             <div className={st.stad}>
-                                <PanelData stadics={Stadics(stadics)} />
+                                <Carousel> 
+                                    <PanelData stadics={Stadics(stadics)} />
+                                    <PanelData stadics={Stadics(stadics)} />
+                                    <PanelData stadics={Stadics(stadics)} />
+                                </Carousel>
                             </div>
                             <br />
                             <br />
