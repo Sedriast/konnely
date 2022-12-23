@@ -97,13 +97,27 @@ export function Vitae({ rabbit }) {
                             <br />
                             <br />
                             <div className={st.stad}>
-                                <Carousel> 
+                                <Carousel>
                                     {stadics.length > 0 ? (
                                         <PanelData
                                             stadics={
                                                 DataStadicsFemale({
-                                                    stadics: Stadics({ data: stadics, grupo: grup }).props.children,
-                                                    grupo: grup,
+                                                    stadics: Stadics({ data: stadics, grupo: 'poblacion' }).props
+                                                        .children,
+                                                    grupo: 'poblacion',
+                                                }).props.children
+                                            }
+                                        />
+                                    ) : (
+                                        <h1>No hay datos</h1>
+                                    )}
+                                    {stadics.length > 0 ? (
+                                        <PanelData
+                                            stadics={
+                                                DataStadicsFemale({
+                                                    stadics: Stadics({ data: stadics, grupo: 'genero' }).props
+                                                        .children,
+                                                    grupo: 'genero',
                                                 }).props.children
                                             }
                                         />
