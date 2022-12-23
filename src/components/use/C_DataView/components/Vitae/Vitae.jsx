@@ -1,7 +1,7 @@
 /* eslint-disable array-callback-return */
 import st from './Vitae.module.css';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { basicData, recuperar } from '../../../0-GeneralComp/0-StaticData/dataProv';
@@ -13,16 +13,26 @@ import { PanelData } from '../../../B_DashBoard/component/PanelData';
 import { QueriesSimple_ } from '../../../../firebase/funtions/GetInformation';
 import { Stadics } from '../../../0-GeneralComp/0-Scripts/FormatStadics';
 import { useAuth } from '../../../../../context/AuthContext';
+import { DataStadicsMale } from '../../../0-GeneralComp/0-Scripts/DataStadicsMale';
+import { StadicsMale } from '../../../0-GeneralComp/0-Scripts/FormatStadicsMale';
+import { DataStadicsFemale } from '../../../0-GeneralComp/0-Scripts/DataStadicsFemale';
 
 import { Carousel } from 'nuka-carousel/lib/carousel';
 
 export function Vitae({ rabbit }) {
     const { user } = useAuth();
     const navigate = useNavigate();
+    const [grup, setGrup] = useState('poblacion');
 
     const stadics = QueriesSimple_({
         coleccion: 'reproductive',
         parametro: 'uidMother',
+        busqueda: rabbit?.uid,
+    }).props.children;
+
+    const stadicsMale = QueriesSimple_({
+        coleccion: 'extraction',
+        parametro: 'uidRabbit',
         busqueda: rabbit?.uid,
     }).props.children;
 
@@ -59,9 +69,34 @@ export function Vitae({ rabbit }) {
                             <hr />
                             <br />
                             <br />
+                            <button
+                                onClick={() => {
+                                    setGrup('poblacion');
+                                }}>
+                                Población
+                            </button>
+                            <button
+                                onClick={() => {
+                                    setGrup('genero');
+                                }}>
+                                Género
+                            </button>
+                            <br />
+                            <br />
                             <div className={st.stad}>
                                 <Carousel> 
-                                    <PanelData stadics={Stadics(stadics)} />
+                                    {stadics.length > 0 ? (
+                                        <PanelData
+                                            stadics={
+                                                DataStadicsFemale({
+                                                    stadics: Stadics({ data: stadics, grupo: grup }).props.children,
+                                                    grupo: grup,
+                                                }).props.children
+                                            }
+                                        />
+                                    ) : (
+                                        <h1>No hay datos</h1>
+                                    )}
                                     <PanelData stadics={Stadics(stadics)} />
                                     <PanelData stadics={Stadics(stadics)} />
                                 </Carousel>
@@ -70,7 +105,20 @@ export function Vitae({ rabbit }) {
                             <br />
                         </>
                     ) : (
-                        <></>
+                        <>
+                            <hr />
+                            <br />
+                            <br />
+                            <div className={st.stad}>
+                                {stadicsMale.length > 0 ? (
+                                    <PanelData stadics={DataStadicsMale({ stadics: StadicsMale(stadicsMale) })} />
+                                ) : (
+                                    <h1>No hay datos</h1>
+                                )}
+                            </div>
+                            <br />
+                            <br />
+                        </>
                     )}
                     <hr />
                     <br />
