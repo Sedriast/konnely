@@ -97,8 +97,6 @@ export function Vitae({ rabbit }) {
                                     ) : (
                                         <h1>No hay datos</h1>
                                     )}
-                                    <PanelData stadics={Stadics(stadics)} />
-                                    <PanelData stadics={Stadics(stadics)} />
                                 </Carousel>
                             </div>
                             <br />
