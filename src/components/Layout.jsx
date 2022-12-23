@@ -36,6 +36,7 @@ import { Loading } from './use/0-GeneralComp/1-Loading/Loading';
 import { UserTest } from './use/A_User/UserTest';
 import { Tuto } from './use/0-GeneralComp/1-Tuto/Tuto';
 import { EditHistory } from './use/0-GeneralComp/1-EditHistory/EditHistory';
+import { EditRecord } from './use/F-Forms/EditRecord/EditRecord';
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -351,6 +352,17 @@ export function Layout() {
                                 <ProtectedRoute>
                                     <div className={st.componentContainer}>
                                         <NewHistory />
+                                    </div>
+                                </ProtectedRoute>
+                            }
+                        />
+                        <Route
+                            exact
+                            path='/editReco'
+                            element={
+                                <ProtectedRoute>
+                                    <div className={st.componentContainer}>
+                                        <EditRecord />
                                     </div>
                                 </ProtectedRoute>
                             }

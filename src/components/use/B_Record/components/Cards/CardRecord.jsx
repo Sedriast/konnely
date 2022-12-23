@@ -1,4 +1,8 @@
-import st from './CardRecord_.module.css';
+import st from './CardRecord.module.css';
+
+import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
+
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
 
 export function CardRecord({ Info }) {
     console.log(Info);
@@ -18,6 +22,10 @@ export function CardRecord({ Info }) {
         Info !== '' && (
             <>
                 <div className={st.container}>
+                    <div className={st.editbtn}>
+                        <Buttons direction="bottom" label="Editar" route="/editReco" btnIconText={faPencil} />
+                    </div>
+                    
                     <table>
                         <thead>
                             <tr>
