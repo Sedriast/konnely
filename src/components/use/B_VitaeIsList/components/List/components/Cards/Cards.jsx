@@ -23,38 +23,21 @@ export function Cards({ rabitID, rabitInfo }) {
                     <br />
                     <br />
                     <br />
-                    <div className={st.titles}>
-                        Estado:
-                        <br />
-                        Raza:
-                        <br />
-                        Genero:
-                        <br />
-                        <br />
-                        Concepción:
-                        <br />
-                        Fecha:
-                        <br />
-                        Procedencia:
-                    </div>
-                    <div className={st.ask}>
-                        {estadoRabbit({
+                    <table className={st.table}>
+                        <tr>
+                            <th>Estado: </th>
+                            <td>  {estadoRabbit({
                             reproductivecycle: rabitInfo?.reproductivecycle,
                             lifecycle: rabitInfo?.lifecycle,
                             estado: rabitInfo?.estado,
-                        })}
-                        <br />
-                        {rabitInfo.raza}
-                        <br />
-                        {rabitInfo.genero}
-                        <br />
-                        <br />
-                        {rabitInfo.concepcion}
-                        <br />
-                        {rabitInfo.nacimiento}
-                        <br />
-                        {rabitInfo.origen}
-                    </div>
+                            })}</td>
+                        </tr>
+                        <tr><th>Raza: </th><td>  {rabitInfo.raza}</td></tr>
+                        <tr><th>Genero: </th><td>  {rabitInfo.genero}</td></tr>
+                        <tr><th>Concepción: </th><td>  {rabitInfo.concepcion}</td></tr>
+                        <tr><th>Fecha: </th><td>  {rabitInfo.nacimiento}</td></tr>
+                        <tr><th>Procedencia: </th><td>  {rabitInfo.origen}</td></tr>
+                    </table>
                 </button>
             </Link>
         </>
