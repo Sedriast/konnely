@@ -25,18 +25,33 @@ export function Cards({ rabitID, rabitInfo }) {
                     <br />
                     <table className={st.table}>
                         <tr>
-                            <th>Estado: </th>
+                            <th>Estado:  </th>
                             <td>  {estadoRabbit({
                             reproductivecycle: rabitInfo?.reproductivecycle,
                             lifecycle: rabitInfo?.lifecycle,
                             estado: rabitInfo?.estado,
                             })}</td>
                         </tr>
-                        <tr><th>Raza: </th><td>  {rabitInfo.raza}</td></tr>
-                        <tr><th>Genero: </th><td>  {rabitInfo.genero}</td></tr>
-                        <tr><th>Concepción: </th><td>  {rabitInfo.concepcion}</td></tr>
-                        <tr><th>Fecha: </th><td>  {rabitInfo.nacimiento}</td></tr>
-                        <tr><th>Procedencia: </th><td>  {rabitInfo.origen}</td></tr>
+                        <tr>
+                            <th>Raza:  </th>
+                            <td>  {rabitInfo.raza}</td>
+                        </tr>
+                        <tr>
+                            <th>Genero:  </th>
+                            <td>  {rabitInfo.genero}</td>
+                        </tr>
+                        <tr>
+                            <th>Concepción:  </th>
+                            <td>  {rabitInfo.concepcion}</td>
+                        </tr>
+                        <tr>
+                            <th>Fecha:  </th>
+                            <td>  {rabitInfo.nacimiento}</td>
+                        </tr>
+                        <tr>
+                            <th>Procedencia:  </th>
+                            <td>  {rabitInfo.origen}</td>
+                        </tr>
                     </table>
                 </button>
             </Link>
