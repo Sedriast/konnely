@@ -1,12 +1,13 @@
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyDaXr88lIYVyNuoXFRPitCBAWh0JwwRaxI',
-    authDomain: 'konnely-67d6a.firebaseapp.com',
-    projectId: 'konnely-67d6a',
-    storageBucket: 'konnely-67d6a.appspot.com',
-    messagingSenderId: '168142494376',
-    appId: '1:168142494376:web:dc32f5d9ffede5afa4009d',
+    apiKey: 'AIzaSyDEkudVm0yVDUoxjahRNWTDOVBumd1CJvQ',
+    authDomain: 'konnely-e4041.firebaseapp.com',
+    projectId: 'konnely-e4041',
+    storageBucket: 'konnely-e4041.appspot.com',
+    messagingSenderId: '1041352313579',
+    appId: '1:1041352313579:web:6c0541ab544a5bd3b38cae',
+    measurementId: 'G-7S34NTVHPL',
 };
 
 // Initialize Firebase

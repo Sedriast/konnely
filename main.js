@@ -14,7 +14,7 @@ const createWindow = () => {
     });
 
     // and load the index.html of the app.
-    mainWindow.loadURL('https://konnely-67d6a.firebaseapp.com');
+    mainWindow.loadURL('https://konnely-e4041.firebaseapp.com/');
 
     // Open the DevTools.
     // mainWindow.webContents.openDevTools()

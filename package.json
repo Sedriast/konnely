@@ -32,7 +32,7 @@
         "web-vitals": "^1.1.2"
     },
     "scripts": {
-        "electron": "concurrently \"SET BROWSER=none && npm start\" \"wait-on https://konnely-67d6a.firebaseapp.com && electron .\"",
+        "electron": "concurrently \"SET BROWSER=none && npm start\" \"wait-on https://konnely-e4041.firebaseapp.com && electron .\"",
         "package-win": "electron-packager . konnely --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"konnely\"",
         "felips": "react-scripts --openssl-legacy-provider start",
         "start": "react-scripts start",
