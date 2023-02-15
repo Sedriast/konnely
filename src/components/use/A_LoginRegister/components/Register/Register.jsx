@@ -41,7 +41,9 @@ export function Register() {
     }
     return (
         <div className={st.container}>
-            <Link to='/tuto'><button>¡ LEEME ANTES DEL REGISTRO !</button></Link>
+            <Link to='/tuto'>
+                <button>¡ LEEME ANTES DEL REGISTRO !</button>
+            </Link>
             <br />
             <form
                 id='formulario'

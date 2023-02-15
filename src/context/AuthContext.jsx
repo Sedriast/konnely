@@ -35,7 +35,9 @@ export function AuthProvider({ children }) {
     const verificarEmail = async (usuario) => sendEmailVerification(usuario);
     const signup = async (email, idIns, userName, name, lastName, noTel, password) => {
         await createUserWithEmailAndPassword(auth, email, password).then(async () => {
-            verificarEmail(auth.currentUser);
+            verificarEmail(auth.currentUser).catch((error) => {
+                notification_err(error, 'error', 'aceptar');
+            });
             await setDoc(doc(db, 'users', auth.currentUser.uid), {
                 uid: auth.currentUser.uid,
                 names: name,
@@ -48,6 +50,8 @@ export function AuthProvider({ children }) {
                 theme: tema,
                 photo: imagenPerfil,
                 state: 'Activo',
+            }).catch((error) => {
+                notification_err(error, 'error', 'aceptar');
             });
         });
         updateProfile(auth.currentUser, {
@@ -56,7 +60,6 @@ export function AuthProvider({ children }) {
         }).catch((error) => {
             notification_err(error, 'error', 'aceptar');
         });
-
         if (!auth.currentUser.emailVerified) {
             await logout();
         }
