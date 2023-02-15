@@ -94,7 +94,6 @@ export function Login() {
                                     },
                                 }).then(async (value) => {
                                     if (value !== null || value !== '') {
-                                        console.log(value);
                                         if (value?.includes('@')) {
                                             try {
                                                 await resetPassword(value).then(() => {

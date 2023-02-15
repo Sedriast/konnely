@@ -37,6 +37,7 @@ import { UserTest } from './use/A_User/UserTest';
 import { Tuto } from './use/0-GeneralComp/1-Tuto/Tuto';
 import { EditHistory } from './use/0-GeneralComp/1-EditHistory/EditHistory';
 import { EditRecord } from './use/F-Forms/EditRecord/EditRecord';
+import { ValidationErrors } from './use/0-GeneralComp/0-Scripts/ValidationErrors';
 
 const db = getFirestore(app);
 export const auth = getAuth(app);
@@ -80,7 +81,7 @@ export function Layout() {
                     await updateProfile(auth.currentUser, {
                         photoURL: docSnap.data().photo,
                     }).catch((error) => {
-                        console.log(error);
+                        ValidationErrors(error.code);
                     });
                 }
             }
@@ -155,7 +156,7 @@ export function Layout() {
                                     </div>
                                 </ProtectedRoute>
                             }
-                        /> 
+                        />
                         <Route
                             exact
                             path='/userstest'

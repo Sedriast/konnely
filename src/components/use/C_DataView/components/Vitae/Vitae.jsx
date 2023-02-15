@@ -16,8 +16,6 @@ import { DataStadicsMale } from '../../../0-GeneralComp/0-Scripts/DataStadicsMal
 import { StadicsMale } from '../../../0-GeneralComp/0-Scripts/FormatStadicsMale';
 import { DataStadicsFemale } from '../../../0-GeneralComp/0-Scripts/DataStadicsFemale';
 
-import { Carousel } from 'nuka-carousel/lib/carousel';
-
 export function Vitae({ rabbit }) {
     const navigate = useNavigate();
     const [grup, setGrup] = useState('poblacion');
@@ -97,34 +95,18 @@ export function Vitae({ rabbit }) {
                             <br />
                             <br />
                             <div className={st.stad}>
-                                <Carousel>
-                                    {stadics.length > 0 ? (
-                                        <PanelData
-                                            stadics={
-                                                DataStadicsFemale({
-                                                    stadics: Stadics({ data: stadics, grupo: 'poblacion' }).props
-                                                        .children,
-                                                    grupo: 'poblacion',
-                                                }).props.children
-                                            }
-                                        />
-                                    ) : (
-                                        <h1>No hay datos</h1>
-                                    )}
-                                    {stadics.length > 0 ? (
-                                        <PanelData
-                                            stadics={
-                                                DataStadicsFemale({
-                                                    stadics: Stadics({ data: stadics, grupo: 'genero' }).props
-                                                        .children,
-                                                    grupo: 'genero',
-                                                }).props.children
-                                            }
-                                        />
-                                    ) : (
-                                        <h1>No hay datos</h1>
-                                    )}
-                                </Carousel>
+                                {stadics.length > 0 ? (
+                                    <PanelData
+                                        stadics={
+                                            DataStadicsFemale({
+                                                stadics: Stadics({ data: stadics, grupo: grup }).props.children,
+                                                grupo: grup,
+                                            }).props.children
+                                        }
+                                    />
+                                ) : (
+                                    <h1>No hay datos</h1>
+                                )}
                             </div>
                             <br />
                             <br />

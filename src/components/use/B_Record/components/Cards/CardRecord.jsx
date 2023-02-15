@@ -5,8 +5,6 @@ import { Buttons } from '../../../0-GeneralComp/1-Buttons/Buttons';
 import { faPencil } from '@fortawesome/free-solid-svg-icons';
 
 export function CardRecord({ Info }) {
-    console.log(Info);
-
     const ValorTotal = () => {
         let total = 0;
         Info?.rabbits?.map((e) => {
@@ -23,9 +21,9 @@ export function CardRecord({ Info }) {
             <>
                 <div className={st.container}>
                     <div className={st.editbtn}>
-                        <Buttons direction="bottom" label="Editar" route="/editReco" btnIconText={faPencil} />
+                        <Buttons direction='bottom' label='Editar' route='/editReco' btnIconText={faPencil} />
                     </div>
-                    
+
                     <table>
                         <thead>
                             <tr>

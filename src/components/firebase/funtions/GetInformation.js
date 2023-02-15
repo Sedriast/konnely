@@ -110,18 +110,3 @@ export const SearchAll = ({ coleccion }) => {
         </>
     );
 };
-
-/// Función para realizar pruebas (Se puede borrar en cualquier momento)
-
-export const QueriesArray = () => {
-    useEffect(() => {
-        const simpleQueries = async () => {
-            const q = query(collection(db, 'Prueba'), where('Pruebas_2', 'array-contains-any', [1]));
-            const querySnapshot = await getDocs(q);
-            console.log(querySnapshot.docs.map((doc) => ({ ...doc.data() })));
-        };
-        simpleQueries();
-    }, []);
-
-    return <></>;
-};

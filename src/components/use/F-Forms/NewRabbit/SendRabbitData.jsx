@@ -41,6 +41,7 @@ export function SendRabbitData() {
     const [auxImage_, setAuxImage_] = useState(null);
     const [isOpenModal, openModal, closeModal] = useModal(false);
     const coleccionInfo = SearchAll({ coleccion: 'rabbits' }).props.children;
+    console.log(coleccionInfo.length);
 
     const updateState = (name, value) => {
         if (name === 'nacimiento') {
