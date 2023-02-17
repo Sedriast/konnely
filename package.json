@@ -13,10 +13,11 @@
         "@testing-library/user-event": "^12.8.3",
         "chart.js": "^3.9.1",
         "concurrently": "^7.2.1",
-        "dotenv": "^16.0.3",
         "faker": "^6.6.6",
         "firebase": "^9.8.1",
         "font-awesome": "^4.7.0",
+        "install": "^0.13.0",
+        "npm": "^9.4.2",
         "nuka-carousel": "^5.4.1",
         "react": "^17.0.2",
         "react-chartjs-2": "^4.3.1",
@@ -62,6 +63,7 @@
     "devDependencies": {
         "electron": "^19.0.3",
         "electron-packager": "^17.1.1",
+        "env-cmd": "^10.1.0",
         "Faker": "^0.7.2",
         "jest": "^26.6.0"
     }
