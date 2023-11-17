@@ -1,9 +1,9 @@
 <h1 align="center">Desarrollo de software multiplataforma para la administración de los datos del proceso cunícola en la unidad agroambiental El Tíbar</h1>
 
 <h2 align="center">
-  Konnely
-  .
-  Juan Felipe Alonso Robayo y Sebastián Blanco Castañeda
+> Konnely
+>
+> Juan Felipe Alonso Robayo y Sebastián Blanco Castañeda
 </h2>
 <h3 align="left">
 
@@ -11,14 +11,14 @@
 
 <img alt="Decoration" src="" width="100%" align="center">
 <table align="center">
-    <td>Waterfall Methodology</td>
+    <td>Kanban Based Methodology</td>
 </table>
 
 <table align="center">
         <tr>
             <td>
-                <img alt="Icon_React_Native" src="https://firebasestorage.googleapis.com/v0/b/port-e39af.appspot.com/o/ProgramLanguageIcons%2Freact_0811235.svg?alt=media&token=13080b02-e479-4a70-9e47-6a85355c4418" width="80"/>
-                <h6>React Native</h6>
+                <img alt="Icon_React" src="https://firebasestorage.googleapis.com/v0/b/port-e39af.appspot.com/o/ProgramLanguageIcons%2Freact_0811235.svg?alt=media&token=13080b02-e479-4a70-9e47-6a85355c4418" width="80"/>
+                <h6>React</h6>
             </td>
         </tr>
 </table>
