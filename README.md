@@ -18,8 +18,15 @@ In doing so, tools are created from the field of systems engineering to provide 
 <table align="center">
     <td>Kanban Based Methodology</td>
 </table>
-<img alt="Graphic_metodological" src="https://firebasestorage.googleapis.com/v0/b/port-e39af.appspot.com/o/Pictures%2FKONNELY%2FKONNELY_methodology.png?alt=media&token=0411e442-9abe-49c6-916f-23eb1db1519d" width="350" align="center">
 
+<table align="center">
+        <tr>
+            <td>
+                <img alt="Graphic_metodological" src="https://firebasestorage.googleapis.com/v0/b/port-e39af.appspot.com/o/Pictures%2FKONNELY%2FKONNELY_methodology.png?alt=media&token=0411e442-9abe-49c6-916f-23eb1db1519d" width="350" align="center">      
+            <td>
+        <tr>
+<table />
+    
 <table align="center">
         <tr>
             <td>
