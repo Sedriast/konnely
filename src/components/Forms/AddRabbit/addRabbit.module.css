@@ -1,0 +1,502 @@
+.panelNatural {
+    position: fixed;
+
+    width: 585px;
+    height: 80%;
+
+    top: 1em;
+
+    padding: 2em;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-areas:
+        "a1 a1"
+        "a2 a3"
+        "a4 a5";
+    grid-column-gap: 1em;
+    grid-auto-rows: min-content;
+
+    background: rgb(144, 197, 170);
+    overflow-y: auto;
+}
+
+.panelNatural> :nth-child(1) {
+    grid-area: a1;
+}
+
+.panelNatural> :nth-child(2) {
+    grid-area: a2;
+}
+
+.panelNatural> :nth-child(3) {
+    grid-area: a3;
+}
+
+.panelNatural> :nth-child(4) {
+    grid-area: a4;
+}
+
+.panelNatural> :nth-child(5) {
+    grid-area: a5;
+}
+
+@media screen and (width < 768px) {
+    .panelNatural {
+        width: 300px;
+        height: 80%;
+
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a5";
+    }
+}
+
+@media screen and (width < 361px) {
+    .panelNatural {
+        height: 66%;
+        align-content: normal;
+    }
+}
+
+.panelNatural label {
+    width: 250px;
+
+    font-weight: bold;
+    margin: 1em auto;
+    color: rgb(245, 248, 246);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.panelNatural label input {
+    width: 250px;
+    height: 40px;
+
+    box-sizing: border-box;
+
+    border: none;
+    background: rgb(245, 248, 246);
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+}
+
+.panelNatural label select {
+    width: 250px;
+    height: 40px;
+
+    border: none;
+    background: rgb(245, 248, 246);
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+}
+
+.panelNatural label button {
+    width: fit-content;
+    height: 40px;
+
+    color: rgb(245, 248, 246);
+    border: none;
+    padding: 0 2em;
+    font-weight: bold;
+    margin: 0.5em auto;
+    border-radius: 20px;
+    background: rgb(63, 138, 105);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panelNatural label div {
+    display: grid;
+    grid-template-areas: "a2 a1 a1 a1"
+        "a3 a1 a1 a1"
+        "a4 a1 a1 a1";
+}
+
+.panelNatural label div :nth-child(1) {
+    width: 90%;
+    height: 30px;
+    font-size: 30px;
+    background: transparent;
+    margin: 0 1em 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    grid-area: a2;
+    text-align: center;
+}
+
+.panelNatural label div :nth-child(2) {
+    width: 50px;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    margin-right: 1em;
+    grid-area: a3;
+}
+
+.panelNatural label div :nth-child(3) {
+    width: 90%;
+    height: 30px;
+    font-size: 30px;
+    background: transparent;
+    margin: 0 1em 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    grid-area: a4;
+    text-align: center;
+}
+
+.panelNatural label div :nth-child(4) {
+    width: calc(200px - 1em);
+    grid-area: a1;
+    margin: auto;
+}
+
+.panelNatural>button {
+    position: fixed;
+
+    width: 150px;
+    height: 40px;
+
+    font-weight: bold;
+    color: rgb(245, 248, 246);
+
+    bottom: 9%;
+    right: calc(50% - 75px);
+
+    border-radius: 20px;
+    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
+}
+
+.panelNatural hr {
+    width: 100%;
+    height: px;
+
+    margin: 1em auto;
+    background-color: white;
+}
+
+@media screen and (width < 431px) {
+    .panelNatural>button {
+        bottom: 10%;
+    }
+}
+
+@media screen and (width < 361px) {
+    .panelNatural>button {
+        bottom: 13%;
+    }
+
+}
+
+.panelTransferred {
+    position: fixed;
+
+    width: 585px;
+    height: 80%;
+
+    top: 1em;
+
+    padding: 2em;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-areas:
+        "a1 a1"
+        "a2 a3"
+        "a4 a5"
+        "a6 a5"
+        "a7 a5"
+        "a8 a5"
+        "a9 a5"
+        "a10 a5";
+    grid-column-gap: 1em;
+    grid-auto-rows: min-content;
+
+    background: rgb(144, 197, 170);
+    overflow-y: auto;
+}
+
+.panelTransferred> :nth-child(1) {
+    grid-area: a1;
+}
+
+.panelTransferred> :nth-child(2) {
+    grid-area: a2;
+}
+
+.panelTransferred> :nth-child(3) {
+    grid-area: a3;
+}
+
+.panelTransferred> :nth-child(4) {
+    grid-area: a4;
+}
+
+.panelTransferred> :nth-child(5) {
+    grid-area: a5;
+}
+
+.panelTransferred> :nth-child(6) {
+    grid-area: a6;
+}
+
+.panelTransferred> :nth-child(7) {
+    grid-area: a7;
+}
+
+.panelTransferred> :nth-child(8) {
+    grid-area: a8;
+}
+
+.panelTransferred> :nth-child(9) {
+    grid-area: a9;
+}
+
+@media screen and (width < 768px) {
+    .panelTransferred {
+        width: 300px;
+        height: 80%;
+
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a6"
+            "a7"
+            "a8"
+            "a9"
+            "a10"
+            "a5";
+    }
+}
+
+@media screen and (width < 361px) {
+    .panelTransferred {
+        height: 66%;
+        align-content: normal;
+    }
+}
+
+.panelTransferred label {
+    width: 250px;
+
+    font-weight: bold;
+    margin: 1em auto;
+    color: rgb(245, 248, 246);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.panelTransferred label input {
+    width: 250px;
+    height: 40px;
+
+    box-sizing: border-box;
+
+    border: none;
+    background: rgb(245, 248, 246);
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+}
+
+.panelTransferred label select {
+    width: 250px;
+    height: 40px;
+
+    border: none;
+    background: rgb(245, 248, 246);
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+}
+
+.panelTransferred label button {
+    width: fit-content;
+    height: 40px;
+
+    color: rgb(245, 248, 246);
+    border: none;
+    padding: 0 2em;
+    font-weight: bold;
+    margin: 0.5em auto;
+    border-radius: 20px;
+    background: rgb(63, 138, 105);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panelTransferred label div {
+    display: grid;
+    grid-template-areas: "a2 a1 a1 a1"
+        "a3 a1 a1 a1"
+        "a4 a1 a1 a1";
+}
+
+.panelTransferred label div :nth-child(1) {
+    width: 90%;
+    height: 30px;
+    font-size: 30px;
+    background: transparent;
+    margin: 0 1em 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    grid-area: a2;
+    text-align: center;
+}
+
+.panelTransferred label div :nth-child(2) {
+    width: 50px;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    margin-right: 1em;
+    grid-area: a3;
+}
+
+.panelTransferred label div :nth-child(3) {
+    width: 90%;
+    height: 30px;
+    font-size: 30px;
+    background: transparent;
+    margin: 0 1em 0 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    grid-area: a4;
+    text-align: center;
+}
+
+.panelTransferred label div :nth-child(4) {
+    width: calc(200px - 1em);
+    grid-area: a1;
+    margin: auto;
+}
+
+.panelTransferred>button {
+    position: fixed;
+
+    width: 150px;
+    height: 40px;
+
+    font-weight: bold;
+    color: rgb(245, 248, 246);
+
+    bottom: 9%;
+    right: calc(50% - 75px);
+
+    border-radius: 20px;
+    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
+}
+
+.panelTransferred hr {
+    width: 100%;
+    height: px;
+
+    margin: 1em auto;
+    background-color: white;
+}
+
+@media screen and (width < 431px) {
+    .panelTransferred>button {
+        bottom: 10%;
+    }
+}
+
+@media screen and (width < 361px) {
+    .panelTransferred>button {
+        bottom: 13%;
+    }
+
+}
+
+.image input[type="file"] {
+    display: none;
+}
+
+.image label {
+    width: 150px;
+    height: 150px;
+    padding: 0;
+
+    background: white;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border: 1px solid #000;
+    border-radius: 2em;
+    cursor: pointer;
+    color: #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image button {
+    width: 40px;
+    height: 40px;
+
+    padding: 1em;
+    margin: 0.5em auto;
+    border-radius: 100%;
+    background: rgb(63, 138, 105);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gender {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gender label {
+    width: auto;
+    height: 40px;
+
+    padding: 0 2em;
+    font-weight: bold;
+    margin: 0.5em auto;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid rgb(245, 248, 246);
+    color: rgb(245, 248, 246);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gender input[type="radio"] {
+    display: none;
+}
+
+.gender input[type="radio"]:checked+label {
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    background: rgb(245, 248, 246);
+}

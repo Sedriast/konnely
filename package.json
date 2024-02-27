@@ -1,70 +1,41 @@
 {
-    "name": "konnely",
-    "productName": "konnely",
-    "version": "4.0.10",
-    "private": true,
-    "main": "main.js",
-    "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.2.0",
-        "@fortawesome/free-solid-svg-icons": "^6.2.0",
-        "@fortawesome/react-fontawesome": "^0.2.0",
-        "@testing-library/jest-dom": "^5.16.5",
-        "@testing-library/react": "^11.2.7",
-        "@testing-library/user-event": "^12.8.3",
-        "chart.js": "^3.9.1",
-        "concurrently": "^7.2.1",
-        "faker": "^6.6.6",
-        "firebase": "^9.8.1",
-        "font-awesome": "^4.7.0",
-        "install": "^0.13.0",
-        "npm": "^9.4.2",
-        "nuka-carousel": "^5.4.1",
-        "react": "^17.0.2",
-        "react-chartjs-2": "^4.3.1",
-        "react-copy-to-clipboard": "^5.1.0",
-        "react-dom": "^17.0.2",
-        "react-phone-number-input": "^3.2.2",
-        "react-router-dom": "^6.2.1",
-        "react-scripts": "^5.0.1",
-        "react-to-print": "^2.14.10",
-        "react-webcam": "^7.0.1",
-        "reactstrap": "^9.0.1",
-        "sweetalert": "^2.1.2",
-        "wait-on": "^6.0.1",
-        "web-vitals": "^1.1.2"
-    },
-    "scripts": {
-        "electron": "concurrently \"SET BROWSER=none && npm start\" \"wait-on https://konnely-e4041.firebaseapp.com && electron .\"",
-        "package-win": "electron-packager . konnely --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"konnely\"",
-        "felips": "react-scripts --openssl-legacy-provider start",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "devDependencies": {
-        "electron": "^19.0.3",
-        "electron-packager": "^17.1.1",
-        "env-cmd": "^10.1.0",
-        "Faker": "^0.7.2",
-        "jest": "^26.6.0"
-    }
+  "name": "konnely",
+  "version": "5.3.1",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "firebase": "^10.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "react-scripts": "5.0.1",
+    "sweetalert2": "^11.10.5",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }

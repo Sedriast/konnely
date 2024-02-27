@@ -1,0 +1,71 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
+
+    animation: fadeIn 0.5s ease-in;
+}
+
+.container>div {
+    position: relative;
+
+    width: fit-content;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container>div>button {
+    position: fixed;
+    top: 8%;
+    right: calc(50% - 310px);
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 100%;
+    background: rgb(63, 138, 105);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (width < 768px) {
+    .container>div {
+        width: 310px;
+        height: 85%;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .container>div>button {
+        right: 5%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
