@@ -16,35 +16,41 @@ export function RabbitList({ language }) {
 		BTN_addRabbit,
 		BTN_Transferred,
 	} = language;
-	const { setRabbit, rabbitsList, filterRabbits, searchRabbits } = useRabbits();
+	const { setRabbit, rabbits, filterRabbits, searchRabbits } = useRabbits();
 	const navigate = useNavigate();
 
 	function fillGrid() {
-		if (rabbitsList.length === 0) {
-			return (
-				<>
-					<CardsS />
-					<CardsS />
-					<CardsS />
-					<CardsS />
-					<CardsS />
-					<CardsS />
-				</>
-			);
-		} else {
-			return (
-				<>
-					{rabbitsList?.map((rabbit_, index) => (
-						<Cards
-							key={index}
-							rabbit={rabbit_}
-							language={CARDS}
-							setRabbit={setRabbit}
-						/>
-					))}
-				</>
-			);
-		}
+		const arr = new Array(12).fill(0);
+		return (
+			<>
+				{arr.map((_, index) => (
+					<CardsS key={index} />
+				))}
+			</>
+		);
+		// if (rabbits.length === 0) {
+		// 	const arr = new Array(12).fill(0);
+		// 	return (
+		// 		<>
+		// 			{arr.map((_, index) => (
+		// 				<CardsS key={index} />
+		// 			))}
+		// 		</>
+		// 	);
+		// } else {
+		// 	return (
+		// 		<>
+		// 			{rabbits?.map((rabbit_, index) => (
+		// 				<Cards
+		// 					key={index}
+		// 					rabbit={rabbit_}
+		// 					language={CARDS}
+		// 					setRabbit={setRabbit}
+		// 				/>
+		// 			))}
+		// 		</>
+		// 	);
+		// }
 	}
 
 	return (

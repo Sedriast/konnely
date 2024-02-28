@@ -231,25 +231,57 @@ export { useAuth, AuthProvider };
  *
  ********************************************************/
 
-// camadaID: {
-// 	id: "000000000",
-// 	mom_id: "0000",
-// 	dad_id: "0000",
-// 	startDate: "00-00-00",
-// 	finishDate: "00-00-00",
-// 	averangeWeigthOnWeaning: "000",
-//	type: "Monta Natural", // Monta Natural, Inseminación Artificial
-// },
+const litterDataSkeleton = {
+	id: "-007",
+	stages: {
+		goofballs: {
+			alive: 1,
+			dead: 1,
+			homogenized: 1,
+		},
+		palpation: {
+			date: "00-00-00",
+		},
+		partum: {
+			date: "00-00-00",
+		},
+		prepartum: {
+			date: "00-00-00",
+		},
+		ride: {
+			date: "00-00-00",
+			female: "-053",
+			isNatural: true,
+			male: "-065",
+		},
+		weaning: {
+			date: "00-00-00",
+			females: 1,
+			males: 1,
+			averangeWeight: "200",
+		},
+	},
+};
 
 const rabbitDataSkeleton = {
 	id: "000000000",
 	litter: "false",
 	isFemale: true,
 	origin: "Ubaté",
-	status: { changeDate: "00-00-00", active: false },
-	userSignature: { name: "admin", uid: "000000000" },
 	pictureURL:
 		"https//:www.**********************************************************.com",
+	userSignature: { name: "admin", uid: "000000000" },
+	status: {
+		transferred: {
+			mom_id: "",
+			dad_id: "",
+			status: false,
+			date: "00-00-00",
+		},
+		changeDate: "00-00-00",
+		active: false,
+	},
+
 	lifecycle: {
 		birth: {
 			litter: "000",
@@ -262,13 +294,11 @@ const rabbitDataSkeleton = {
 		weaning: {
 			weight: "000",
 			finish: false,
-			name: "Destete",
 			date: "00-00-00",
 		},
 		fattening: {
 			weight: "000",
 			finish: false,
-			name: "Engorde",
 			date: "00-00-00",
 		},
 	},
@@ -284,8 +314,9 @@ const useRabbits = () => {
 
 function RabbitListProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, {
-		litters: [],
+		littersList: [],
 		rabbitsList: [],
+		litter: litterDataSkeleton,
 		rabbit: rabbitDataSkeleton,
 	});
 	const setRabbit = (rabbitData) => {
@@ -328,19 +359,20 @@ function RabbitListProvider({ children }) {
 	useEffect(() => {
 		state.rabbitsList?.length === 0 &&
 			getAllCollection("bunnies").then((res) => setRabbitsList(res));
-		state.litters?.length === 0 &&
+		state.littersList?.length === 0 &&
 			getAllCollection("litters").then((res) => setLitters(res));
-	}, [state.rabbitsList, state.litters]);
+	}, [state.rabbitsList, state.littersList]);
 
 	return (
 		<RabbitListContext.Provider
 			value={{
 				setRabbit,
 				filterRabbits,
-				searchRabbits: searchRabbit,
 				rabbit: state.rabbit,
-				litters: state.litters,
-				rabbitsList: state.rabbitsList,
+				litter: state.litter,
+				litters: state.littersList,
+				searchRabbits: searchRabbit,
+				rabbits: state.rabbitsList,
 			}}>
 			{children}
 		</RabbitListContext.Provider>

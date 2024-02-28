@@ -1,0 +1,161 @@
+.vitae_panel {
+    position: fixed;
+
+    width: 585px;
+    height: 80%;
+
+    top: 1em;
+
+    padding: 2em;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-areas:
+        "a1 a2"
+        "a3 a3"
+        "a4 a4"
+        "a5 a5";
+    grid-column-gap: 1em;
+    grid-auto-rows: min-content;
+
+    background: rgb(144, 197, 170);
+    overflow-y: auto;
+}
+
+.vitae_panel> :nth-child(1) {
+    grid-area: a1;
+}
+
+.vitae_panel> :nth-child(2) {
+    grid-area: a2;
+}
+
+.vitae_panel> :nth-child(3) {
+    grid-area: a3;
+}
+
+.vitae_panel> :nth-child(4) {
+    grid-area: a4;
+}
+
+.vitae_panel> :nth-child(5) {
+    grid-area: a5;
+}
+
+@media screen and (width < 768px) {
+    .vitae_panel {
+        width: 300px;
+        height: 80%;
+
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a5";
+    }
+}
+
+@media screen and (width < 361px) {
+    .vitae_panel {
+        height: 66%;
+        align-content: normal;
+    }
+}
+
+.vitae_panel :nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    width: 280px;
+    height: auto;
+
+    border-radius: 15px;
+    padding: 20px;
+    background: linear-gradient(175deg, rgb(144, 197, 170), rgb(45, 110, 83));
+}
+
+.vitae_panel table:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.vitae_panel table * {
+    box-sizing: border-box;
+}
+
+.vitae_panel table tbody hr {
+    width: 230px;
+    height: 0.5em;
+
+    margin: 1em 0;
+    background-color: rgb(144, 197, 170);
+}
+
+.vitae_panel table tbody tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 260px;
+
+    margin: 0.5em 0;
+}
+
+.vitae_panel table tbody img {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 100%;
+    transition: all 0.5s ease-out;
+}
+
+.vitae_panel table tbody th {
+    width: 70px;
+    height: auto;
+    text-align: end;
+
+    margin-right: 10px;
+    font-size: 12px;
+
+    color: rgb(0, 255, 149);
+}
+
+.vitae_panel table tbody td {
+    width: 130px;
+    height: auto;
+
+    font-size: 12px;
+
+    color: white;
+    margin-left: 10px;
+}
+
+.vitae_panel table tbody :nth-child(1) td {
+    width: 140px;
+
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.vitae_panel table tbody :nth-child(1) th {
+    width: auto;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.vitae_panel:hover table tbody img {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 20px;
+    transition: all 0.5s ease-in;
+}

@@ -1,7 +1,7 @@
 import { addImageAndInfo } from "../../../../hooks/firebase/functions/AddInformation";
 import { errorAlert, useRabbits } from "../../../../hooks/useContexts";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import st from "../addRabbit.module.css";
 import Swal from "sweetalert2";
 
@@ -12,7 +12,7 @@ export function Natural({ language, user }) {
 	const [image, setImage] = useState(null);
 	const [addRaces, setAddRaces] = useState([]);
 
-	const { litters, rabbits } = useRabbits();
+	const { litters, rabbits, setRabbit } = useRabbits();
 	const {
 		L_id,
 		race,
@@ -20,6 +20,7 @@ export function Natural({ language, user }) {
 		image_,
 		gender,
 		Q_submit,
+		BTN_back,
 		L_LitterID,
 		BTN_submit,
 	} = language;
@@ -52,19 +53,21 @@ export function Natural({ language, user }) {
 
 	function handleSubmit(document) {
 		Swal.fire({
-			icon: "info",
+			title: Q_submit[0],
+			icon: "question",
 			showCancelButton: true,
-			text: Q_submit[0],
+			confirmButtonText: Q_submit[1],
+			cancelButtonText: Q_submit[2],
 		}).then(
 			async (res) =>
 				res &&
 				(await addImageAndInfo(document).then(() =>
 					Swal.fire({
-						text: Q_submit[3],
+						title: Q_submit[3],
 						icon: "success",
 					}).then(() => {
-						//navigate(`/rabbit/${document.id}`);
-						navigate("/rabbitList");
+						setRabbit(document);
+						navigate(`/vitae/${document.id}`);
 					})
 				))
 		);
@@ -106,131 +109,140 @@ export function Natural({ language, user }) {
 	}, []);
 
 	return (
-		<form
-			className={st.panelNatural}
-			onSubmit={(event) => {
-				event.preventDefault();
-				const fecha = new Date();
-				const selectedGender = document.querySelector(
-					'input[name="gender"]:checked'
-				).value;
-				let racesAdded = [];
-				for (let index = 0; index < addRaces.length; index++) {
-					racesAdded.push({
-						name: event.target.elements.race[index]?.value,
-						percentage: `${event.target.elements.numerator[index]?.value}/${event.target.elements.denominator[index]?.value}`,
+		<>
+			<Link className={st.BTN_back} to="/#">
+				{BTN_back}
+			</Link>
+			<form
+				className={st.panelNatural}
+				onSubmit={(event) => {
+					event.preventDefault();
+					const fecha = new Date();
+					const selectedGender = document.querySelector(
+						'input[name="gender"]:checked'
+					).value;
+					let racesAdded = [];
+					for (let index = 0; index < addRaces.length; index++) {
+						racesAdded.push({
+							name: event.target.elements.race[index]?.value,
+							percentage: `${event.target.elements.numerator[index]?.value}/${event.target.elements.denominator[index]?.value}`,
+						});
+					}
+					handleSubmit({
+						id: event.target.elements.id.value,
+						litter: "false",
+						isFemale: selectedGender === "true" ? true : false,
+						origin: place,
+						status: {
+							transferred: {
+								status: false,
+								date: "00-00-00",
+								mom_id: event.target.elements.id_mom,
+								dad_id: event.target.elements.id_dad,
+							},
+
+							changeDate: `${String(fecha.getDate()).padStart(2, "0")}-${String(
+								fecha.getMonth() + 1
+							).padStart(2, "0")}-${String(fecha.getFullYear()).substr(-2)}`,
+							active: true,
+						},
+						userSignature: { name: user.displayName, uid: user.uid },
+						pictureURL: image,
+						lifecycle: {
+							birth: {
+								litter: event.target.elements.litter.value,
+								race: racesAdded,
+							},
+							weaning: {
+								weight: "000",
+								finish: false,
+								date: "00-00-00",
+							},
+							fattening: {
+								weight: "000",
+								finish: false,
+								date: "00-00-00",
+							},
+						},
 					});
-				}
-				handleSubmit({
-					id: event.target.elements.id.value,
-					litter: "false",
-					isFemale: selectedGender === "true" ? true : false,
-					origin: place,
-					status: {
-						changeDate: `${String(fecha.getDate()).padStart(2, "0")}-${String(
-							fecha.getMonth() + 1
-						).padStart(2, "0")}-${String(fecha.getFullYear()).substr(-2)}`,
-						active: true,
-					},
-					userSignature: { name: user.displayName, uid: user.uid },
-					pictureURL: image,
-					lifecycle: {
-						birth: {
-							litter: event.target.elements.litter.value,
-							race: racesAdded,
-							name: "Nacimiento",
-						},
-						weaning: {
-							weight: "000",
-							finish: false,
-							name: "Destete",
-							date: "00-00-00",
-						},
-						fattening: {
-							weight: "000",
-							finish: false,
-							name: "Engorde",
-							date: "00-00-00",
-						},
-					},
-				});
-			}}>
-			<section className={st.image} title="image_section">
-				<input
-					id="image"
-					type="file"
-					name="image"
-					onChange={handleImageChange}
-				/>
-				<label htmlFor="image" style={{ backgroundImage: `url(${image})` }}>
-					{image === null && image_}
-				</label>
-				<hr />
-			</section>
-
-			<label title="id_label">
-				{L_id}
-				<input
-					required
-					name="id"
-					type="number"
-					placeholder={L_id}
-					inputMode="numeric"
-					onBlur={(event) => {
-						validateRabbitID(event.target.value);
-					}}
-				/>
-			</label>
-
-			<label title="id_camada_label">
-				{L_LitterID}
-				<Lists
-					required
-					name={"litter"}
-					options={litters_id}
-					placeholder={L_LitterID}
-				/>
-			</label>
-
-			<label title="gender">
-				{gender.label}
-				<section className={st.gender}>
+				}}>
+				<section className={st.image} title="image_section">
 					<input
-						id="gender_female"
-						name="gender"
-						type="radio"
-						value={true}
-						defaultChecked
+						id="image"
+						type="file"
+						name="image"
+						onChange={handleImageChange}
 					/>
-					<label htmlFor="gender_female">{gender.female}</label>
-					<input type="radio" id="gender_male" name="gender" value={false} />
-					<label htmlFor="gender_male">{gender.male}</label>
+					<label htmlFor="image" style={{ backgroundImage: `url(${image})` }}>
+						{image === null && image_}
+					</label>
+					<hr />
 				</section>
-			</label>
 
-			<label className={st.races} title="race">
-				{race.label}
-				{addRaces.map((element) => element)}
-				{addRaces.length < races_.length && (
-					<button
-						name="addRisessBTN"
-						type="button"
-						onClick={() =>
-							setAddRaces([
-								...addRaces,
-								<React.Fragment key={addRaces.length}>
-									<Racee index={addRaces.length} /> <hr />
-								</React.Fragment>,
-							])
-						}>
-						{race.BTN_label}
-					</button>
-				)}
-			</label>
+				<label title="id_label">
+					{L_id}
+					<input
+						required
+						name="id"
+						type="number"
+						placeholder={L_id}
+						inputMode="numeric"
+						onBlur={(event) => {
+							validateRabbitID(event.target.value);
+						}}
+					/>
+				</label>
 
-			<button title="addRabbit" type="submit">
-				{BTN_submit}
-			</button>
-		</form>
+				<label title="id_camada_label">
+					{L_LitterID}
+					<Lists
+						required
+						name={"litter"}
+						options={litters_id}
+						placeholder={L_LitterID}
+					/>
+				</label>
+
+				<label title="gender">
+					{gender.label}
+					<section className={st.gender}>
+						<input
+							id="gender_female"
+							name="gender"
+							type="radio"
+							value={true}
+							defaultChecked
+						/>
+						<label htmlFor="gender_female">{gender.female}</label>
+						<input type="radio" id="gender_male" name="gender" value={false} />
+						<label htmlFor="gender_male">{gender.male}</label>
+					</section>
+				</label>
+
+				<label className={st.races} title="race">
+					{race.label}
+					{addRaces.map((element) => element)}
+					{addRaces.length < races_.length && (
+						<button
+							name="addRisessBTN"
+							type="button"
+							onClick={() =>
+								setAddRaces([
+									...addRaces,
+									<React.Fragment key={addRaces.length}>
+										<Racee index={addRaces.length} /> <hr />
+									</React.Fragment>,
+								])
+							}>
+							{race.BTN_label}
+						</button>
+					)}
+				</label>
+
+				<button title="addRabbit" type="submit">
+					{BTN_submit}
+				</button>
+			</form>
+		</>
 	);
 }

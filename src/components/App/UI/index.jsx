@@ -9,6 +9,7 @@ import { RabbitList } from "../../RabbitList";
 import { Register } from "../../LRaccount/Register";
 import { Natural } from "../../Forms/AddRabbit/Natural";
 import { Transferred } from "../../Forms/AddRabbit/Transferred";
+import { Vitae } from "../../Vitae";
 
 export function UI() {
 	const {
@@ -18,6 +19,7 @@ export function UI() {
 		register,
 		language,
 		setEmail,
+		setRabbit,
 		forgotPassword,
 		isEmailRegistered,
 	} = useAuth();
@@ -91,6 +93,18 @@ export function UI() {
 										user={user}
 										language={language[language_keys.ADDRABBIT]}
 									/>
+								</RabbitListProvider>
+							</ProtectedRoute>
+						}
+					/>
+
+					<Route
+						exact
+						path="/rabbitList/vitae/:id"
+						element={
+							<ProtectedRoute>
+								<RabbitListProvider>
+									<Vitae user={user} language={language[language_keys.VITAE]} />
 								</RabbitListProvider>
 							</ProtectedRoute>
 						}

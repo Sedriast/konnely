@@ -65,6 +65,7 @@ const es = {
     },
     [language_keys.ADDRABBIT]: {
         L_id: "Id",
+        BTN_back: "Atras",
         image_: "Añadir Imagen",
         L_LitterID: "Id de camada",
         BTN_submit: "Agregar conejo",
@@ -77,6 +78,25 @@ const es = {
         gender: { label: "Genero", male: "Macho", female: "Hembra" },
         conception: { label: "Concepción", natural: "Monta Natural", artificial: "Inseminación Artificial" },
         race: { label: "Raza", BTN_label: "Añadir raza", values: ["Nueva Zelanda", "Chinchilla", "Leonardo de Borgoña", "Californiano", "Azul de Viena", "F1"] },
+    },
+    [language_keys.VITAE]: {
+        titles: {
+            stadistics: "Estadisticas",
+            isTransfered: "Trasferido",
+            litter_: ["Camada", "Monta", "Palpación", "Preparto", "Parto", "Destete"],
+            basicData: ["Información básica:", "Estado:", "Raza:", "Genero:", "Fecha de nacimiento:", "Tipo de concepción:", "Procedencia:", "Id. Madre", "Id. Padre"],
+            lifecycle: ["Ciclo de vida", "Destete", "Engorde", ["Fecha:", "Peso:"]],
+            states: {
+                male: "Macho",
+                female: "Hembra",
+                inactive: "Inactivo",
+                litter: "Camada Activa",
+                fattening: "En engorde",
+                reproductive: "Próximo a destete",
+                Pre_reproductive: "Preparandose para reproducción",
+            },
+        },
+
     },
     [language_keys.ERRORS]: {
         "default": "Se produjo un error interno, intente nuevamente mas tarde",
@@ -121,7 +141,6 @@ const es = {
         "invalid-credentials": "Credenciales inválidas",
         "invalid-params": "Parámetros inválidos",
     },
-
 };
 
 export { es };

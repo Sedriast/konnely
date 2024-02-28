@@ -1,4 +1,5 @@
 const language_keys = {
+    VITAE: 'vitae_lang',
     ERRORS: 'errors_lang',
     LOADING: 'loading_lang',
     ACCOUNT: 'account_lang',

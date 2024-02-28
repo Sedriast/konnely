@@ -16,39 +16,18 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 export const auth = getAuth(app);
 
-/// Función para enviar un nuevo registro de un conejo a la base de datos
+/// Function to send a new record of a rabbit to the database
 
-export const addImageAndInfo = async (props) => {
+export const addImageAndInfo = async (doc) => {
     try {
         let auxiliar = [];
-        auxiliar = props.image.split(',');
-        if (props.levante) {
-            props.lifecycle[1].date = props.levantefin;
-            props.lifecycle[1].weigth = props.levante;
-            delete props.levantefin;
-            delete props.levante;
-        }
-        if (props.engorde) {
-            props.lifecycle[2].date = props.engordefin;
-            props.lifecycle[2].weigth = props.engorde;
-            delete props.engordefin;
-            delete props.engorde;
-        }
-        if (props.ceba) {
-            props.lifecycle[3].date = props.cebafin;
-            props.lifecycle[3].weigth = props.ceba;
-            delete props.cebafin;
-            delete props.ceba;
-        }
-        props.lifecycle[0].weigth = props.destete;
-        delete props.destete;
-        delete props.image;
-        delete props.peso;
-        const docRef = await addDoc(collection(db, 'rabbits'), props);
+        auxiliar = doc.pictureURL.split(',');
+        delete doc.pictureURL;
+        const docRef = await addDoc(collection(db, 'bunnies'), doc);
         const refStorage = ref(storage, docRef.id);
         await uploadString(refStorage, auxiliar[1], 'base64');
         const urlDescarga = await getDownloadURL(refStorage);
-        await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
+        await updateDoc(doc(db, 'bunnies', docRef.id), { uid: docRef.id, url: urlDescarga });
     } catch (error) {
         errorAlert(error.code);
     }

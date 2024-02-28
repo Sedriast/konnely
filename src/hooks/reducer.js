@@ -21,7 +21,7 @@ const object_reducer = (state, payload) => ({
     },
     [reducer_keys.setLitters]: {
         ...state,
-        litters: payload,
+        littersList: payload,
     },
 });
 
