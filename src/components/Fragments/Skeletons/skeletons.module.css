@@ -1,0 +1,191 @@
+.cards_panel {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    width: 280px;
+    height: 275px;
+
+    border-radius: 15px;
+    padding: 20px;
+    background: linear-gradient(175deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    background-size: 200% 200%;
+
+    animation: cardAnimationONE 0.5s infinite;
+}
+
+.cards_panel table:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards_panel table * {
+    box-sizing: border-box;
+}
+
+.cards_panel table tbody hr {
+    width: 230px;
+    height: 0.5em;
+
+    margin: 1em 0;
+    background-color: rgb(144, 197, 170);
+}
+
+.cards_panel table tbody tr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 260px;
+
+    margin: 0.5em 0;
+}
+
+.cards_panel table tbody div {
+    width: 75px;
+    height: 75px;
+
+    border-radius: 100%;
+    transition: all 0.5s ease-out;
+
+    animation: cardAnimationTWO 2s infinite;
+}
+
+.cards_panel table tbody td {
+    width: 130px;
+    height: 15px;
+
+    border-radius: 10px;
+    font-size: 12px;
+
+    color: white;
+    margin-left: 10pxpx;
+
+    animation: cardAnimationTWO 2s infinite;
+}
+
+
+.cards_panel table tbody th {
+    width: 70px;
+    height: 15px;
+    text-align: end;
+
+    margin-right: 10px;
+    font-size: 12px;
+
+    color: rgb(0, 255, 149);
+}
+
+.cards_panel table tbody :nth-child(1) td {
+    width: 100px;
+
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 1.5em;
+    margin-left: 1em;
+}
+
+.cards_panel table tbody :nth-child(1) th {
+    width: auto;
+    height: auto;
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+@keyframes cardAnimationONE {
+    0% {
+        background: linear-gradient(90deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    10% {
+        background: linear-gradient(117deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    20% {
+        background: linear-gradient(144deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    30% {
+        background: linear-gradient(171deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    40% {
+        background: linear-gradient(198deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    50% {
+        background: linear-gradient(225deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    60% {
+        background: linear-gradient(252deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    70% {
+        background: linear-gradient(279deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    80% {
+        background: linear-gradient(306deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    90% {
+        background: linear-gradient(333deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+
+    100% {
+        background: linear-gradient(370deg, rgb(144, 197, 170), rgb(45, 110, 83));
+    }
+}
+
+@keyframes cardAnimationTWO {
+    0% {
+        background: linear-gradient(90deg, rgb(96, 167, 133), rgb(45, 110, 83));
+    }
+
+    10% {
+        background: linear-gradient(90deg, rgb(86, 157, 123), rgb(45, 110, 83));
+    }
+
+    20% {
+        background: linear-gradient(90deg, rgb(76, 147, 113), rgb(45, 110, 83));
+    }
+
+    30% {
+        background: linear-gradient(90deg, rgb(66, 137, 103), rgb(45, 110, 83));
+    }
+
+    40% {
+        background: linear-gradient(90deg, rgb(56, 127, 93), rgb(45, 110, 83));
+    }
+
+    50% {
+        background: linear-gradient(90deg, rgb(45, 110, 83), rgb(96, 167, 133));
+    }
+
+    60% {
+        background: linear-gradient(90deg, rgb(56, 127, 93), rgb(96, 167, 133));
+    }
+
+    70% {
+        background: linear-gradient(90deg, rgb(66, 137, 103), rgb(96, 167, 133));
+    }
+
+    80% {
+        background: linear-gradient(90deg, rgb(76, 147, 113), rgb(96, 167, 133));
+    }
+
+    90% {
+        background: linear-gradient(90deg, rgb(86, 157, 123), rgb(96, 167, 133));
+    }
+
+    100% {
+        background: linear-gradient(90deg, rgb(96, 167, 133), rgb(45, 110, 83));
+    }
+}

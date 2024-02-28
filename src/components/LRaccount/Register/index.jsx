@@ -1,6 +1,6 @@
 import { errorAlert } from "../../../hooks/useContexts";
 import st from "../acountLR.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import { Tutorial } from "./Tutorial";
@@ -25,6 +25,7 @@ export function Register({
 	},
 }) {
 	const [isOpen, setOpen] = useState(true);
+	const { navigate } = useNavigate();
 	return (
 		<>
 			{isOpen && (
@@ -47,11 +48,10 @@ export function Register({
 					event.preventDefault();
 					register(event.target).then(() => {
 						Swal.fire({
-							title: { MGG_success },
+							title: MGG_success,
 							icon: "success",
 						}).then(() => {
-							document.getElementsByClassName(st.register_panel).reset();
-							<Link to="/" />;
+							navigate("./");
 						});
 					});
 				}}>

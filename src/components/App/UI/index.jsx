@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "../../../hooks/ProtectedRoute";
 import { language_keys } from "../../../constants/keys";
-import { useAuth, useRabbits } from "../../../hooks/useContexts";
+import { RabbitListProvider, useAuth } from "../../../hooks/useContexts";
 import "../app.module.css";
 
 import { Login } from "../../LRaccount/Login";
@@ -21,7 +21,6 @@ export function UI() {
 		forgotPassword,
 		isEmailRegistered,
 	} = useAuth();
-	const { refreshData, litters, rabbitsList } = useRabbits();
 
 	return (
 		<main id="lay">
@@ -60,7 +59,9 @@ export function UI() {
 						path="/rabbitList"
 						element={
 							<ProtectedRoute>
-								<RabbitList language={language[language_keys.RABBITLIST]} />
+								<RabbitListProvider>
+									<RabbitList language={language[language_keys.RABBITLIST]} />
+								</RabbitListProvider>
 							</ProtectedRoute>
 						}
 					/>
@@ -69,13 +70,14 @@ export function UI() {
 						exact
 						path="/rabbitList/addRabbitNatural"
 						element={
-							<Natural
-								user={user}
-								litters={litters}
-								rabbits={rabbitsList}
-								refreshData={refreshData}
-								language={language[language_keys.ADDRABBIT]}
-							/>
+							<ProtectedRoute>
+								<RabbitListProvider>
+									<Natural
+										user={user}
+										language={language[language_keys.ADDRABBIT]}
+									/>
+								</RabbitListProvider>
+							</ProtectedRoute>
 						}
 					/>
 
@@ -83,13 +85,14 @@ export function UI() {
 						exact
 						path="/rabbitList/addRabbitTransferred"
 						element={
-							<Transferred
-								user={user}
-								litters={litters}
-								rabbits={rabbitsList}
-								refreshData={refreshData}
-								language={language[language_keys.ADDRABBIT]}
-							/>
+							<ProtectedRoute>
+								<RabbitListProvider>
+									<Transferred
+										user={user}
+										language={language[language_keys.ADDRABBIT]}
+									/>
+								</RabbitListProvider>
+							</ProtectedRoute>
 						}
 					/>
 				</Routes>

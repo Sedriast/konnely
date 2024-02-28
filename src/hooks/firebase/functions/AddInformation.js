@@ -2,6 +2,7 @@ import app from '../credentials';
 
 import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
 import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { errorAlert } from '../../useContexts';
 import {
     getAuth,
     deleteUser,
@@ -10,26 +11,43 @@ import {
     EmailAuthProvider,
     reauthenticateWithCredential,
 } from 'firebase/auth';
-import { errorAlert } from '../../useContexts';
 
 const db = getFirestore(app);
 const storage = getStorage(app);
 export const auth = getAuth(app);
 
-/// funtion to add a new rabbit register to the database
+/// Función para enviar un nuevo registro de un conejo a la base de datos
 
-export async function addRabbitData(data) {
+export const addImageAndInfo = async (props) => {
     try {
-        let IMG_aux = [];
-        IMG_aux = data.pictureURL.split(',');
-
-        delete data.image;
-
-        const docRef = await addDoc(collection(db, 'bunnies'), data);
+        let auxiliar = [];
+        auxiliar = props.image.split(',');
+        if (props.levante) {
+            props.lifecycle[1].date = props.levantefin;
+            props.lifecycle[1].weigth = props.levante;
+            delete props.levantefin;
+            delete props.levante;
+        }
+        if (props.engorde) {
+            props.lifecycle[2].date = props.engordefin;
+            props.lifecycle[2].weigth = props.engorde;
+            delete props.engordefin;
+            delete props.engorde;
+        }
+        if (props.ceba) {
+            props.lifecycle[3].date = props.cebafin;
+            props.lifecycle[3].weigth = props.ceba;
+            delete props.cebafin;
+            delete props.ceba;
+        }
+        props.lifecycle[0].weigth = props.destete;
+        delete props.destete;
+        delete props.image;
+        delete props.peso;
+        const docRef = await addDoc(collection(db, 'rabbits'), props);
         const refStorage = ref(storage, docRef.id);
+        await uploadString(refStorage, auxiliar[1], 'base64');
         const urlDescarga = await getDownloadURL(refStorage);
-
-        await uploadString(refStorage, IMG_aux[1], 'base64');
         await updateDoc(doc(db, 'rabbits', docRef.id), { uid: docRef.id, url: urlDescarga });
     } catch (error) {
         errorAlert(error.code);

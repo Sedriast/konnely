@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import st from "../rabbitlist.module.css";
 
-export default function Cards({ language, rabbit, setRabbit }) {
+export function Cards({ language, rabbit, setRabbit }) {
 	const {
 		id,
 		origin,
@@ -29,7 +29,6 @@ export default function Cards({ language, rabbit, setRabbit }) {
 
 					<tr>
 						<th>{state_}</th>
-						{console.log(rabbit)}
 						<td>
 							{!active
 								? stages_.inactive

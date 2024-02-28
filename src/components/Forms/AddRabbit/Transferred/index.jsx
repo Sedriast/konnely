@@ -1,5 +1,5 @@
-import { addRabbitData } from "../../../../hooks/firebase/functions/AddInformation";
-import { errorAlert } from "../../../../hooks/useContexts";
+import { addImageAndInfo } from "../../../../hooks/firebase/functions/AddInformation";
+import { errorAlert, useRabbits } from "../../../../hooks/useContexts";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import st from "../addRabbit.module.css";
@@ -7,7 +7,8 @@ import Swal from "sweetalert2";
 
 import { Lists } from "../../../Fragments/Lists";
 
-export function Transferred({ refreshData, language, litters, rabbits, user }) {
+export function Transferred({ language, user }) {
+	const { litters, rabbits } = useRabbits();
 	const navigate = useNavigate();
 	const [image, setImage] = useState(null);
 	const [addRaces, setAddRaces] = useState([]);
@@ -60,12 +61,11 @@ export function Transferred({ refreshData, language, litters, rabbits, user }) {
 		}).then(
 			async (res) =>
 				res &&
-				(await addRabbitData(document).then(() =>
+				(await addImageAndInfo(document).then(() =>
 					Swal.fire({
 						title: Q_submit[3],
 						icon: "success",
 					}).then(() => {
-						refreshData();
 						//navigate(`/rabbit/${document.id}`);
 						navigate("/rabbitList");
 					})

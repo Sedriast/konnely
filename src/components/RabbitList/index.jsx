@@ -1,10 +1,11 @@
 import { errorAlert, useRabbits } from "../../hooks/useContexts";
 import { SearchFilters } from "./SearchFilters";
-import st from "./rabbitlist.module.css";
 import { useNavigate } from "react-router-dom";
-
-import Cards from "./Cards";
+import st from "./rabbitlist.module.css";
 import Swal from "sweetalert2";
+
+import { Cards } from "./Cards";
+import { CardsS } from "../Fragments/Skeletons/CardsS";
 
 export function RabbitList({ language }) {
 	const {
@@ -18,6 +19,34 @@ export function RabbitList({ language }) {
 	const { setRabbit, rabbitsList, filterRabbits, searchRabbits } = useRabbits();
 	const navigate = useNavigate();
 
+	function fillGrid() {
+		if (rabbitsList.length === 0) {
+			return (
+				<>
+					<CardsS />
+					<CardsS />
+					<CardsS />
+					<CardsS />
+					<CardsS />
+					<CardsS />
+				</>
+			);
+		} else {
+			return (
+				<>
+					{rabbitsList?.map((rabbit_, index) => (
+						<Cards
+							key={index}
+							rabbit={rabbit_}
+							language={CARDS}
+							setRabbit={setRabbit}
+						/>
+					))}
+				</>
+			);
+		}
+	}
+
 	return (
 		<section className={st.rabbitList_panel}>
 			<SearchFilters
@@ -26,16 +55,7 @@ export function RabbitList({ language }) {
 				searchs={searchRabbits}
 				filterFN={filterRabbits}
 			/>
-			<section>
-				{rabbitsList?.map((rabbit_) => (
-					<Cards
-						rabbit={rabbit_}
-						key={rabbit_.id}
-						language={CARDS}
-						setRabbit={setRabbit}
-					/>
-				))}
-			</section>
+			<section>{fillGrid()}</section>
 			<figure title={BTN_addRabbit} tooltip-dir="rigth">
 				<button
 					title={BTN_addRabbit}

@@ -16,12 +16,13 @@ import {
 } from "firebase/auth";
 import { doc, setDoc, getFirestore } from "firebase/firestore";
 import { reducer_keys, language_keys } from "../constants/keys";
-import { GetAllCollection } from "./firebase/functions/GetInformation";
+import { getAllCollection } from "./firebase/functions/GetInformation";
 
 const picture_ =
 	"https://firebasestorage.googleapis.com/v0/b/konnely-67d6a.appspot.com/o/ImagenDeUsuario.png?alt=media&token=e4b0499b-1ff2-42b3-93f9-e95d11533536";
 const db = getFirestore(app);
 export const auth = getAuth(app);
+
 /********************************************************
  *
  *
@@ -293,16 +294,12 @@ function RabbitListProvider({ children }) {
 	const setRabbitsList = (newRabbitsList) => {
 		dispatch({ type: reducer_keys.setRabbitsList, payload: newRabbitsList });
 	};
+
 	const setLitters = (newLitter) => {
 		dispatch({ type: reducer_keys.setLitters, payload: newLitter });
 	};
 
-	async function refreshData() {
-		setRabbitsList(await GetAllCollection("bunnies"));
-		setLitters(await GetAllCollection("litters"));
-	}
-
-	function searchRabbits(id_) {
+	function searchRabbit(id_) {
 		setRabbitsList(state.rabbitsList.find((rabbit_) => rabbit_.id === id_));
 	}
 
@@ -310,7 +307,7 @@ function RabbitListProvider({ children }) {
 		switch (filter_) {
 			case "inactive":
 				setRabbitsList(
-					state.rabbitsList.filter((rabbit_) => rabbit_.status.state === false)
+					state.rabbitsList.filter((rabbit_) => rabbit_.status.active === false)
 				);
 				break;
 			case "female":
@@ -324,20 +321,23 @@ function RabbitListProvider({ children }) {
 				);
 				break;
 			default:
-				refreshData();
 				break;
 		}
 	}
+
 	useEffect(() => {
-		refreshData();
-	});
+		state.rabbitsList?.length === 0 &&
+			getAllCollection("bunnies").then((res) => setRabbitsList(res));
+		state.litters?.length === 0 &&
+			getAllCollection("litters").then((res) => setLitters(res));
+	}, [state.rabbitsList, state.litters]);
+
 	return (
 		<RabbitListContext.Provider
 			value={{
 				setRabbit,
-				refreshData,
 				filterRabbits,
-				searchRabbits,
+				searchRabbits: searchRabbit,
 				rabbit: state.rabbit,
 				litters: state.litters,
 				rabbitsList: state.rabbitsList,
