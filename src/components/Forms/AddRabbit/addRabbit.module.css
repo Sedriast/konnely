@@ -21,24 +21,30 @@
     overflow-y: auto;
 }
 
-.panelNatural> :nth-child(1) {
+.panelNatural :nth-child(1) {
     grid-area: a1;
 }
 
-.panelNatural> :nth-child(2) {
+.panelNatural :nth-child(2) {
     grid-area: a2;
 }
 
-.panelNatural> :nth-child(3) {
+.panelNatural :nth-child(3) {
     grid-area: a3;
 }
 
-.panelNatural> :nth-child(4) {
+.panelNatural :nth-child(4) {
     grid-area: a4;
 }
 
-.panelNatural> :nth-child(5) {
+.panelNatural :nth-child(5) {
     grid-area: a5;
+}
+
+.panelTransferred :nth-child(5) label {
+    text-align: center;
+    font-weight: normal;
+    color: black;
 }
 
 @media screen and (width < 768px) {
@@ -228,39 +234,45 @@
     overflow-y: auto;
 }
 
-.panelTransferred> :nth-child(1) {
+.panelTransferred :nth-child(1) {
     grid-area: a1;
 }
 
-.panelTransferred> :nth-child(2) {
+.panelTransferred :nth-child(2) {
     grid-area: a2;
 }
 
-.panelTransferred> :nth-child(3) {
+.panelTransferred :nth-child(3) {
     grid-area: a3;
 }
 
-.panelTransferred> :nth-child(4) {
+.panelTransferred :nth-child(4) {
     grid-area: a4;
 }
 
-.panelTransferred> :nth-child(5) {
+.panelTransferred :nth-child(5) {
     grid-area: a5;
 }
 
-.panelTransferred> :nth-child(6) {
+.panelTransferred :nth-child(5) label {
+    text-align: center;
+    font-weight: normal;
+    color: black;
+}
+
+.panelTransferred :nth-child(6) {
     grid-area: a6;
 }
 
-.panelTransferred> :nth-child(7) {
+.panelTransferred :nth-child(7) {
     grid-area: a7;
 }
 
-.panelTransferred> :nth-child(8) {
+.panelTransferred :nth-child(8) {
     grid-area: a8;
 }
 
-.panelTransferred> :nth-child(9) {
+.panelTransferred :nth-child(9) {
     grid-area: a9;
 }
 
@@ -428,8 +440,18 @@
 
 }
 
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
 .image input[type="file"] {
-    display: none;
+
+    height: 1px;
+    width: 1px;
+
 }
 
 .image label {

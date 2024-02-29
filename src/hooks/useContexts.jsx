@@ -265,6 +265,7 @@ const litterDataSkeleton = {
 
 const rabbitDataSkeleton = {
 	id: "000000000",
+	uid: "000000000",
 	litter: "false",
 	isFemale: true,
 	origin: "Ubaté",
@@ -281,7 +282,6 @@ const rabbitDataSkeleton = {
 		changeDate: "00-00-00",
 		active: false,
 	},
-
 	lifecycle: {
 		birth: {
 			litter: "000",

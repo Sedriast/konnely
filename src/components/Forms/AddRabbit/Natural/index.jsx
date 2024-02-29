@@ -1,7 +1,7 @@
 import { addImageAndInfo } from "../../../../hooks/firebase/functions/AddInformation";
 import { errorAlert, useRabbits } from "../../../../hooks/useContexts";
-import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import st from "../addRabbit.module.css";
 import Swal from "sweetalert2";
 
@@ -25,23 +25,30 @@ export function Natural({ language, user }) {
 		BTN_submit,
 	} = language;
 
-	let litters_id = [];
-	litters.map((element) =>
-		litters_id.push({ label_: element.id, value: element.id })
-	);
+	const litters_id = litters.map((element) => ({
+		label_: element.id,
+		value: element.id,
+	}));
 
-	let races_ = [];
-	race.values.map((element) =>
-		races_.push({ label_: element, value: element })
-	);
+	const races_ = race.values.map((element) => ({
+		label_: element,
+		value: element,
+	}));
 
 	function validateRabbitID(rabbitID) {
-		if (rabbitID !== "" && rabbitID !== null && rabbitID !== undefined) {
-			rabbits.filter(({ id, status: { active } }) =>
-				`${id}`.toLowerCase().includes(`${rabbitID}`.toLowerCase()) && active
-					? errorAlert("id-already-exists")
-					: true
-			);
+		if (!rabbitID) {
+			throw new Error("Invalid rabbit ID");
+		}
+
+		const doesRabbitIDExist = rabbits.some(
+			({ id, status: { active } }) =>
+				id.toLowerCase().includes(rabbitID.toLowerCase()) && active
+		);
+
+		if (doesRabbitIDExist) {
+			errorAlert("id-already-exists");
+		} else {
+			return true;
 		}
 	}
 
@@ -53,24 +60,27 @@ export function Natural({ language, user }) {
 
 	function handleSubmit(document) {
 		Swal.fire({
-			title: Q_submit[0],
 			icon: "question",
+			title: Q_submit[0],
 			showCancelButton: true,
 			confirmButtonText: Q_submit[1],
 			cancelButtonText: Q_submit[2],
-		}).then(
-			async (res) =>
-				res &&
-				(await addImageAndInfo(document).then(() =>
+		}).then(async (result) => {
+			if (result.isConfirmed) {
+				try {
+					await addImageAndInfo(document);
 					Swal.fire({
 						title: Q_submit[3],
 						icon: "success",
 					}).then(() => {
 						setRabbit(document);
-						navigate(`/vitae/${document.id}`);
-					})
-				))
-		);
+						navigate("/vitae");
+					});
+				} catch (error) {
+					alert(error);
+				}
+			}
+		});
 	}
 
 	function Racee({ index }) {
@@ -104,13 +114,14 @@ export function Natural({ language, user }) {
 		);
 	}
 
+	// this use effect is to activate the first race input when the component is mounted
 	useEffect(() => {
 		document.getElementsByName("addRisessBTN")[0]?.click();
 	}, []);
 
 	return (
 		<>
-			<Link className={st.BTN_back} to="/#">
+			<Link className={st.BTN_back} to="/rabbitList">
 				{BTN_back}
 			</Link>
 			<form
@@ -122,14 +133,22 @@ export function Natural({ language, user }) {
 						'input[name="gender"]:checked'
 					).value;
 					let racesAdded = [];
-					for (let index = 0; index < addRaces.length; index++) {
+					if (addRaces.length > 1) {
+						for (let index = 0; index < addRaces.length; index++) {
+							racesAdded.push({
+								name: event.target.elements.race[index]?.value,
+								percentage: `${event.target.elements.numerator[index]?.value}/${event.target.elements.denominator[index]?.value}`,
+							});
+						}
+					} else {
 						racesAdded.push({
-							name: event.target.elements.race[index]?.value,
-							percentage: `${event.target.elements.numerator[index]?.value}/${event.target.elements.denominator[index]?.value}`,
+							name: event.target.elements.race.value,
+							percentage: `${event.target.elements.numerator.value}/${event.target.elements.denominator.value}`,
 						});
 					}
 					handleSubmit({
 						id: event.target.elements.id.value,
+						uid: "0",
 						litter: "false",
 						isFemale: selectedGender === "true" ? true : false,
 						origin: place,
@@ -137,10 +156,9 @@ export function Natural({ language, user }) {
 							transferred: {
 								status: false,
 								date: "00-00-00",
-								mom_id: event.target.elements.id_mom,
-								dad_id: event.target.elements.id_dad,
+								mom_id: "0",
+								dad_id: "0",
 							},
-
 							changeDate: `${String(fecha.getDate()).padStart(2, "0")}-${String(
 								fecha.getMonth() + 1
 							).padStart(2, "0")}-${String(fecha.getFullYear()).substr(-2)}`,
@@ -167,7 +185,9 @@ export function Natural({ language, user }) {
 					});
 				}}>
 				<section className={st.image} title="image_section">
+					<hr />
 					<input
+						required
 						id="image"
 						type="file"
 						name="image"
@@ -176,7 +196,6 @@ export function Natural({ language, user }) {
 					<label htmlFor="image" style={{ backgroundImage: `url(${image})` }}>
 						{image === null && image_}
 					</label>
-					<hr />
 				</section>
 
 				<label title="id_label">

@@ -20,37 +20,29 @@ export function RabbitList({ language }) {
 	const navigate = useNavigate();
 
 	function fillGrid() {
-		const arr = new Array(12).fill(0);
-		return (
-			<>
-				{arr.map((_, index) => (
-					<CardsS key={index} />
-				))}
-			</>
-		);
-		// if (rabbits.length === 0) {
-		// 	const arr = new Array(12).fill(0);
-		// 	return (
-		// 		<>
-		// 			{arr.map((_, index) => (
-		// 				<CardsS key={index} />
-		// 			))}
-		// 		</>
-		// 	);
-		// } else {
-		// 	return (
-		// 		<>
-		// 			{rabbits?.map((rabbit_, index) => (
-		// 				<Cards
-		// 					key={index}
-		// 					rabbit={rabbit_}
-		// 					language={CARDS}
-		// 					setRabbit={setRabbit}
-		// 				/>
-		// 			))}
-		// 		</>
-		// 	);
-		// }
+		if (rabbits.length === 0) {
+			const arr = new Array(12).fill(0);
+			return (
+				<>
+					{arr.map((_, index) => (
+						<CardsS key={index} />
+					))}
+				</>
+			);
+		} else {
+			return (
+				<>
+					{rabbits?.map((rabbit_, index) => (
+						<Cards
+							key={index}
+							rabbit={rabbit_}
+							language={CARDS}
+							setRabbit={setRabbit}
+						/>
+					))}
+				</>
+			);
+		}
 	}
 
 	return (

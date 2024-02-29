@@ -18,16 +18,16 @@ export const auth = getAuth(app);
 
 /// Function to send a new record of a rabbit to the database
 
-export const addImageAndInfo = async (doc) => {
+export async function addImageAndInfo(doc) {
     try {
-        let auxiliar = [];
-        auxiliar = doc.pictureURL.split(',');
-        delete doc.pictureURL;
+        const { pictureURL } = doc;
+        const base64Image = pictureURL.split(',');
+
         const docRef = await addDoc(collection(db, 'bunnies'), doc);
-        const refStorage = ref(storage, docRef.id);
-        await uploadString(refStorage, auxiliar[1], 'base64');
-        const urlDescarga = await getDownloadURL(refStorage);
-        await updateDoc(doc(db, 'bunnies', docRef.id), { uid: docRef.id, url: urlDescarga });
+        const storageRef = ref(storage, docRef.id); await uploadString(storageRef, base64Image[1], 'base64');
+        const downloadUrl = await getDownloadURL(storageRef);
+
+        await updateDoc(doc(db, 'bunnies', docRef.id), { uid: docRef.id, pictureURL: downloadUrl });
     } catch (error) {
         errorAlert(error.code);
     }

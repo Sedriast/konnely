@@ -86,7 +86,7 @@ const es = {
             litter_: ["Camada", "Monta", "Palpación", "Preparto", "Parto", "Destete"],
             basicData: ["Información básica:", "Estado:", "Raza:", "Genero:", "Fecha de nacimiento:", "Tipo de concepción:", "Procedencia:", "Id. Madre", "Id. Padre"],
             lifecycle: ["Ciclo de vida", "Destete", "Engorde", ["Fecha:", "Peso:"]],
-            states: {
+            stages_: {
                 male: "Macho",
                 female: "Hembra",
                 inactive: "Inactivo",

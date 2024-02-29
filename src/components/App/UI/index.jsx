@@ -19,7 +19,6 @@ export function UI() {
 		register,
 		language,
 		setEmail,
-		setRabbit,
 		forgotPassword,
 		isEmailRegistered,
 	} = useAuth();
@@ -100,7 +99,7 @@ export function UI() {
 
 					<Route
 						exact
-						path="/rabbitList/vitae/:id"
+						path="/vitae"
 						element={
 							<ProtectedRoute>
 								<RabbitListProvider>

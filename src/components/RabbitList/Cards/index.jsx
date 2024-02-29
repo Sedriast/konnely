@@ -17,7 +17,7 @@ export function Cards({ language, rabbit, setRabbit }) {
 		<Link
 			onClick={() => setRabbit(rabbit)}
 			className={st.cards_panel}
-			to={`/vitae/${id}`}>
+			to={"/vitae"}>
 			<table>
 				<tbody>
 					<tr>

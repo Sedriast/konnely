@@ -3,12 +3,18 @@ import st from "./vitae.module.css";
 
 export function Vitae({ language, user }) {
 	const {
-		titles: { basicData, lifecycle, litter_, stadistics, isTransfered },
+		titles: {
+			litter_,
+			stages_,
+			basicData,
+			lifecycle,
+			stadistics,
+			isTransfered,
+		},
 	} = language;
 	const {
 		rabbit: {
 			id,
-			states,
 			litter,
 			origin,
 			isFemale,
@@ -50,17 +56,17 @@ export function Vitae({ language, user }) {
 							<th>{basicData[1]}</th>
 							<td>
 								{!active
-									? states.inactive
+									? stages_.inactive
 									: !weaning.finish
-									? states.reproductive
+									? stages_.reproductive
 									: !fattening.finish
-									? states.fattening
-									: litter !== "false" && isFemale && states.litter}
+									? stages_.fattening
+									: litter !== "false" && isFemale && stages_.litter}
 							</td>
 						</tr>
 						<tr>
 							<th>{basicData[3]}</th>
-							<td>{isFemale ? states.female : states.male}</td>
+							<td>{isFemale ? stages_.female : stages_.male}</td>
 						</tr>
 						<tr>
 							<th>{basicData[4]}</th>
