@@ -6,6 +6,7 @@ import st from "../addRabbit.module.css";
 import Swal from "sweetalert2";
 
 import { Lists } from "../../../Fragments/Lists";
+import { Racee } from "../../../Fragments/Racee";
 
 export function Transferred({ language, user }) {
 	const { litters, rabbits, setRabbit } = useRabbits();
@@ -89,39 +90,6 @@ export function Transferred({ language, user }) {
 		});
 	}
 
-	function Racee({ index }) {
-		return (
-			<div>
-				<input
-					required
-					name="numerator"
-					type="number"
-					max="100"
-					min="-100"
-					pattern="^[0-9]+"
-				/>
-				<hr />
-
-				<input
-					required
-					name="denominator"
-					type="number"
-					max="100"
-					min="1"
-					pattern="^[0-9]+"
-				/>
-
-				<Lists
-					required
-					name="race"
-					options={races_}
-					placeholder={races_[index].value}
-					defaultValue={races_[index].value}
-				/>
-			</div>
-		);
-	}
-
 	// this use effect is to activate the first race input when the component is mounted
 	useEffect(() => {
 		document.getElementsByName("addRisessBTN")[0]?.click();
@@ -176,10 +144,10 @@ export function Transferred({ language, user }) {
 						pictureURL: image,
 						lifecycle: {
 							birth: {
-								dad: event.target.elements.id_dad.value,
-								mom: event.target.elements.id_mom.value,
+								litter: "000",
 								race: racesAdded,
 							},
+
 							weaning: {
 								weight: "000",
 								finish: false,
@@ -258,7 +226,7 @@ export function Transferred({ language, user }) {
 								setAddRaces([
 									...addRaces,
 									<React.Fragment key={addRaces.length}>
-										<Racee index={addRaces.length} /> <hr />
+										<Racee index={addRaces.length} races_={races_} /> <hr />
 									</React.Fragment>,
 								])
 							}>

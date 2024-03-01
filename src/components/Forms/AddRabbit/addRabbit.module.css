@@ -547,3 +547,10 @@
 
     z-index: 1;
 }
+
+@media screen and (width < 768px) {
+    .BTN_back {
+        border-radius: 0 20px 20px 0;
+        left: 0;
+    }
+}

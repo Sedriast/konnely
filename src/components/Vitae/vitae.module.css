@@ -11,11 +11,10 @@
 
     display: grid;
     grid-template-areas:
-        "a1 a2"
+        "a2 a1"
         "a3 a3"
         "a4 a4"
         "a5 a5";
-    grid-column-gap: 1em;
     grid-auto-rows: min-content;
 
     background: rgb(144, 197, 170);
@@ -42,43 +41,185 @@
     grid-area: a5;
 }
 
-@media screen and (width < 768px) {
-    .vitae_panel {
-        width: 300px;
-        height: 80%;
-
-        grid-template-areas:
-            "a1"
-            "a2"
-            "a3"
-            "a4"
-            "a5";
-    }
-}
-
-@media screen and (width < 361px) {
-    .vitae_panel {
-        height: 66%;
-        align-content: normal;
-    }
-}
-
-.vitae_panel :nth-child(2) {
+.vitae_panel div {
     display: flex;
-    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
     box-sizing: border-box;
 
-    width: 280px;
+    border-width: 0 0 4px 0;
+    border-color: aquamarine;
+    border-style: solid;
+
+    width: 100%;
     height: auto;
 
-    border-radius: 15px;
     padding: 20px;
-    background: linear-gradient(175deg, rgb(144, 197, 170), rgb(45, 110, 83));
+
+    view-timeline-name: --ter;
+    view-timeline-axis: block;
+    view-timeline: --ter 0.5s ease-in;
+    animation-name: show;
+    animation-range: entry 25% cover 30%;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
 }
+
+.vitae_panel div span {
+    width: 250px;
+    height: 150px;
+    box-sizing: border-box;
+}
+
+.vitae_panel div span div {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+}
+
+.vitae_panel div span div div svg {
+    width: 75% !important;
+    height: 75% !important;
+    overflow: initial;
+}
+
+.vitae_panel div span div div svg g g g g :first-child {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.vitae_panel div span div div svg g g g g :last-child {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.vitae_panel div h1 {
+    width: 100%;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 0 auto 1em auto;
+}
+
+.vitae_panel div h2 {
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 1em;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.vitae_panel div>h3 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.vitae_panel div>hr {
+    width: 100%;
+    margin-top: 1em;
+    background: aquamarine;
+}
+
+.vitae_panel div img {
+    width: 150px;
+    height: 100px;
+
+    background-color: rgb(255, 255, 255);
+
+    border-radius: 15px
+}
+
+.vitae_panel div section {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    width: 260px;
+    height: auto;
+
+    border-radius: 0 10px 10px 0;
+    background: rgb(96, 167, 133);
+    border-left: 4px solid rgb(45, 110, 83);
+    margin: 5px;
+    padding: 10px 0;
+
+    overflow: hidden;
+
+    animation: expandRight 1s ease-in;
+}
+
+.vitae_panel div section section {
+    width: auto;
+    flex-direction: column;
+}
+
+.vitae_panel div section img {
+    width: 50px;
+    height: 50px;
+
+    background-color: transparent;
+
+    border-radius: 0;
+}
+
+.vitae_panel div section h3 {
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.vitae_panel div section section {
+    background: transparent;
+    border-radius: 0;
+    border-left: none;
+    border-right: 2px solid rgb(255, 255, 255);
+    padding-right: 1em;
+}
+
+.vitae_panel div section section table tbody td {
+    color: rgb(0, 0, 0);
+}
+
+.vitae_panel div section table {
+    width: auto;
+    background: transparent;
+}
+
+.vitae_panel div table tbody :nth-child(3) {
+    margin-bottom: 2em;
+}
+
+.vitae_panel div table tbody :nth-child(4) td {
+    margin: auto;
+}
+
+.vitae_panel div section table tr {
+    margin: 0 0.5em;
+}
+
+.vitae_panel div section table th {
+    width: fit-content;
+}
+
+.vitae_panel table {
+    display: flex;
+    justify-content: flex-start;
+
+    box-sizing: border-box;
+
+    width: 275px;
+    height: auto;
+
+    padding: 1.5em 0;
+    font-size: 15px;
+    border-radius: 15px;
+    background: linear-gradient(175deg, rgb(144, 197, 170) 10%, rgb(96, 167, 133));
+}
+
 
 .vitae_panel table:first-child {
     display: flex;
@@ -91,30 +232,12 @@
     box-sizing: border-box;
 }
 
-.vitae_panel table tbody hr {
-    width: 230px;
-    height: 0.5em;
-
-    margin: 1em 0;
-    background-color: rgb(144, 197, 170);
-}
-
 .vitae_panel table tbody tr {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
 
-    width: 260px;
-
-    margin: 0.5em 0;
-}
-
-.vitae_panel table tbody img {
-    width: 75px;
-    height: 75px;
-
-    border-radius: 100%;
-    transition: all 0.5s ease-out;
+    margin: 0.5em 2em;
 }
 
 .vitae_panel table tbody th {
@@ -122,33 +245,27 @@
     height: auto;
     text-align: end;
 
-    margin-right: 10px;
+    margin-right: 1em;
     font-size: 12px;
 
     color: rgb(0, 255, 149);
 }
 
 .vitae_panel table tbody td {
-    width: 130px;
+    width: auto;
     height: auto;
 
     font-size: 12px;
 
-    color: white;
-    margin-left: 10px;
+    color: rgb(255, 255, 255);
 }
 
-.vitae_panel table tbody :nth-child(1) td {
-    width: 140px;
 
-    font-size: 20px;
-    text-align: center;
+.vitae_panel table tbody :nth-child(1) td {
     margin-bottom: 1.5em;
 }
 
 .vitae_panel table tbody :nth-child(1) th {
-    width: auto;
-    text-align: center;
     margin-bottom: 1.5em;
 }
 
@@ -158,4 +275,87 @@
 
     border-radius: 20px;
     transition: all 0.5s ease-in;
+}
+
+.BTN_back {
+    position: absolute;
+    top: 0;
+    right: calc(50% + 300px);
+
+    width: fit-content;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(245, 248, 246);
+
+    box-sizing: border-box;
+
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border-radius: 20px;
+    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
+
+    animation: slideIn 0.5s ease-in;
+
+    z-index: 1;
+}
+
+@media screen and (width < 768px) {
+    .BTN_back {
+        border-radius: 0 20px 20px 0;
+        left: 0;
+    }
+
+    .vitae_panel {
+        width: 300px;
+        height: 80%;
+
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a5";
+    }
+
+    .vitae_panel div {
+        width: 290px;
+    }
+
+    .vitae_panel div section {
+        width: 300px;
+    }
+}
+
+@media screen and (width < 361px) {
+    .vitae_panel {
+        height: 66%;
+        align-content: normal;
+    }
+}
+
+@keyframes expandRight {
+    0% {
+        width: 0;
+        transform-origin: left;
+    }
+
+    100% {
+        width: 220px;
+        transform-origin: left;
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+        scale: 25%;
+    }
+
+    to {
+        opacity: 1;
+        scale: 100%;
+    }
 }

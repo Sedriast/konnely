@@ -16,11 +16,11 @@ export function RabbitList({ language }) {
 		BTN_addRabbit,
 		BTN_Transferred,
 	} = language;
-	const { setRabbit, rabbits, filterRabbits, searchRabbits } = useRabbits();
+	const { setRabbit, rabbits_, setFilter, searchRabbits } = useRabbits();
 	const navigate = useNavigate();
 
 	function fillGrid() {
-		if (rabbits.length === 0) {
+		if (rabbits_.length === 0) {
 			const arr = new Array(12).fill(0);
 			return (
 				<>
@@ -32,7 +32,7 @@ export function RabbitList({ language }) {
 		} else {
 			return (
 				<>
-					{rabbits?.map((rabbit_, index) => (
+					{rabbits_?.map((rabbit_, index) => (
 						<Cards
 							key={index}
 							rabbit={rabbit_}
@@ -51,7 +51,7 @@ export function RabbitList({ language }) {
 				st={st}
 				language={FILTERS}
 				searchs={searchRabbits}
-				filterFN={filterRabbits}
+				filterFN={setFilter}
 			/>
 			<section>{fillGrid()}</section>
 			<figure title={BTN_addRabbit} tooltip-dir="rigth">

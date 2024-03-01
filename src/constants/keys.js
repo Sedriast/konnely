@@ -14,10 +14,18 @@ const icon_keys = {
 
 const reducer_keys = {
     setUser: 'SET_USER',
+    setFilter: 'SET_FILTER',
     setRabbit: 'SET_RABBIT',
+    setRabbits: 'SET_RABBITS',
     newEmail: 'CURRENT_EMAIL',
     setLitters: 'SET_LITTERS',
     setRabbitsList: 'SET_RABBITS_LIST',
 };
+const filters_keys = {
+    INACTIVE: "inactive",
+    FEMALE: "female",
+    MALE: "male",
+    SEARCH: "search",
+};
 
-export { language_keys, reducer_keys, icon_keys }
+export { language_keys, reducer_keys, icon_keys, filters_keys }

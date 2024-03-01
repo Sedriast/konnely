@@ -23,6 +23,14 @@ const object_reducer = (state, payload) => ({
         ...state,
         littersList: payload,
     },
+    [reducer_keys.setFilter]: {
+        ...state,
+        filter: payload,
+    },
+    [reducer_keys.setRabbits]: {
+        ...state,
+        rabbits: payload,
+    },
 });
 
 function reducer(state, { type, payload }) {

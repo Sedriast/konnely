@@ -49,6 +49,7 @@ const es = {
         BTN_addRabbit: "Agregar conejo",
         FILTERS: { male: "Macho", female: "Hembra", inactive: "Inactivo", search: "Buscar" },
         CARDS: {
+            transferenceDate: "Fecha de transferencia:",
             state_: "Estado:",
             gender_: ["Genero:", "Hembra", "Macho"],
             birthType_: "Concepción:",
@@ -80,12 +81,16 @@ const es = {
         race: { label: "Raza", BTN_label: "Añadir raza", values: ["Nueva Zelanda", "Chinchilla", "Leonardo de Borgoña", "Californiano", "Azul de Viena", "F1"] },
     },
     [language_keys.VITAE]: {
+        buttons: {
+            BTN_back: "Atras",
+        },
         titles: {
-            stadistics: "Estadisticas",
+            race: "RAZA",
+            stadistics: "ESTADISTICAS",
             isTransfered: "Trasferido",
-            litter_: ["Camada", "Monta", "Palpación", "Preparto", "Parto", "Destete"],
-            basicData: ["Información básica:", "Estado:", "Raza:", "Genero:", "Fecha de nacimiento:", "Tipo de concepción:", "Procedencia:", "Id. Madre", "Id. Padre"],
-            lifecycle: ["Ciclo de vida", "Destete", "Engorde", ["Fecha:", "Peso:"]],
+            litter_: ["CAMADA", "Monta", "Palpación", "Preparto", "Parto", "Destete"],
+            basicData: ["INFORMACIÓN BÁSICA", "Estado:", "Raza:", "Genero:", "Fecha de traslado", "Camada de nacimiento:", "Tipo de concepción:", "Procedencia:", "Id. Madre", "Id. Padre"],
+            lifecycle: ["CICLO DE VIDA", "Destete", "Engorde", ["Fecha:", "Peso:"]],
             stages_: {
                 male: "Macho",
                 female: "Hembra",
@@ -94,6 +99,8 @@ const es = {
                 fattening: "En engorde",
                 reproductive: "Próximo a destete",
                 Pre_reproductive: "Preparandose para reproducción",
+                natural: "Monta Natural",
+                artificial: "Inseminación Artificial",
             },
         },
 

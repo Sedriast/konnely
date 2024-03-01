@@ -15,7 +15,7 @@ import {
 	createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { doc, setDoc, getFirestore } from "firebase/firestore";
-import { reducer_keys, language_keys } from "../constants/keys";
+import { reducer_keys, language_keys, filters_keys } from "../constants/keys";
 import { getAllCollection } from "./firebase/functions/GetInformation";
 
 const picture_ =
@@ -285,7 +285,6 @@ const rabbitDataSkeleton = {
 	lifecycle: {
 		birth: {
 			litter: "000",
-			name: "Nacimiento",
 			race: [
 				{ name: "Californiano", percentage: "50" },
 				{ name: "Azul de viena", percentage: "50" },
@@ -314,13 +313,18 @@ const useRabbits = () => {
 
 function RabbitListProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, {
+		rabbits: [],
 		littersList: [],
 		rabbitsList: [],
+		filter: ["female", ""],
 		litter: litterDataSkeleton,
 		rabbit: rabbitDataSkeleton,
 	});
 	const setRabbit = (rabbitData) => {
 		dispatch({ type: reducer_keys.setRabbit, payload: rabbitData });
+	};
+	const setRabbits = (rabbits) => {
+		dispatch({ type: reducer_keys.setRabbits, payload: rabbits });
 	};
 	const setRabbitsList = (newRabbitsList) => {
 		dispatch({ type: reducer_keys.setRabbitsList, payload: newRabbitsList });
@@ -329,50 +333,56 @@ function RabbitListProvider({ children }) {
 	const setLitters = (newLitter) => {
 		dispatch({ type: reducer_keys.setLitters, payload: newLitter });
 	};
+	const setFilter = (newFilter) => {
+		dispatch({ type: reducer_keys.setFilter, payload: newFilter });
+	};
 
-	function searchRabbit(id_) {
-		setRabbitsList(state.rabbitsList.find((rabbit_) => rabbit_.id === id_));
-	}
+	const filterBy = (property, value) => (rabbit__) =>
+		rabbit__[property] === value && rabbit__.status.active;
 
 	function filterRabbits(filter_) {
-		switch (filter_) {
-			case "inactive":
-				setRabbitsList(
-					state.rabbitsList.filter((rabbit_) => rabbit_.status.active === false)
+		let filteredList;
+		switch (filter_[0]) {
+			case filters_keys.INACTIVE:
+				filteredList = state.rabbits.filter(
+					(rabbit__) => !rabbit__.status.active
 				);
 				break;
-			case "female":
-				setRabbitsList(
-					state.rabbitsList.filter((rabbit_) => rabbit_.isFemale === true)
-				);
+			case filters_keys.FEMALE:
+				filteredList = state.rabbits.filter(filterBy("isFemale", true));
 				break;
-			case "male":
-				setRabbitsList(
-					state.rabbitsList.filter((rabbit_) => rabbit_.isFemale === false)
+			case filters_keys.MALE:
+				filteredList = state.rabbits.filter(filterBy("isFemale", false));
+				break;
+			case filters_keys.SEARCH:
+				filteredList = state.rabbits.filter(
+					(rabbit_) => rabbit_.id === filter_[1]
 				);
 				break;
 			default:
+				filteredList = state.rabbits;
 				break;
 		}
+		setRabbitsList(filteredList);
 	}
 
 	useEffect(() => {
-		state.rabbitsList?.length === 0 &&
-			getAllCollection("bunnies").then((res) => setRabbitsList(res));
+		filterRabbits(state.filter);
+		state.rabbits?.length === 0 &&
+			getAllCollection("bunnies").then((res) => setRabbits(res));
+
 		state.littersList?.length === 0 &&
 			getAllCollection("litters").then((res) => setLitters(res));
-	}, [state.rabbitsList, state.littersList]);
+	}, [state.filter, state.rabbits]);
 
 	return (
 		<RabbitListContext.Provider
 			value={{
+				setFilter,
 				setRabbit,
-				filterRabbits,
 				rabbit: state.rabbit,
-				litter: state.litter,
 				litters: state.littersList,
-				searchRabbits: searchRabbit,
-				rabbits: state.rabbitsList,
+				rabbits_: state.rabbitsList,
 			}}>
 			{children}
 		</RabbitListContext.Provider>

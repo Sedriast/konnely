@@ -8,10 +8,14 @@ export function Cards({ language, rabbit, setRabbit }) {
 		isFemale,
 		litter,
 		pictureURL,
-		status: { active },
+		status: {
+			active,
+			transferred: { status, date },
+		},
 		lifecycle: { birth, weaning, fattening },
 	} = rabbit;
-	const { state_, gender_, birthDate_, origin_, stages_ } = language;
+	const { state_, gender_, birthDate_, origin_, stages_, transferenceDate } =
+		language;
 
 	return (
 		<Link
@@ -43,10 +47,18 @@ export function Cards({ language, rabbit, setRabbit }) {
 						<th>{gender_[0]}</th>
 						<td> {isFemale ? gender_[1] : gender_[2]}</td>
 					</tr>
-					<tr>
-						<th>{birthDate_}</th>
-						<td> {birth.litter}</td>
-					</tr>
+					{status ? (
+						<tr>
+							<th>{transferenceDate}</th>
+							<td> {date}</td>
+						</tr>
+					) : (
+						<tr>
+							<th>{birthDate_}</th>
+							<td> {birth.litter}</td>
+						</tr>
+					)}
+
 					<tr>
 						<th>{origin_}</th>
 						<td> {origin}</td>
