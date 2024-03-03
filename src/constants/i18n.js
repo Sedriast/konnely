@@ -130,6 +130,12 @@ const es = {
                 labels: ["CUNICOLA"],
                 titles: ["ESPECIE", ["FECHA DE NACIMIENTO", "FECHA DE TRASLADO", "DIA", "MES", "AÑO"], "N°. IDENT. HEMBRA", "N°. IDENT. MACHO", "RAZA"],
             },
+            table_two: {
+                titles: ["Padre", "Madre"]
+            },
+            table_three: {
+                titles: ["PESO", "ACTUAL", "NACIMIENTO", "TRASLADO", "DESTETE"]
+            },
         },
         footer: {
             address_: ["Calle 6 N° 9-80 Ubate – Cundinamarca", "Teléfono:", "Ext.127 Línea Gratuita"],

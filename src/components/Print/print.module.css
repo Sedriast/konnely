@@ -38,6 +38,7 @@
 
 .print_panel>div h4 {
 
+    font-size: 10px;
     width: fit-content;
     height: fit-content;
 
@@ -163,17 +164,32 @@ HEADER
 /*
 
 
-FOOTER
+BODYS
 
 
 
 */
 
-.print_panel>div>section {
+.bodyS {
     margin: 0 auto;
+
+    display: grid;
+    grid-template-areas: "a1 a2"
+        "a3 a3"
+        "a4 a4"
+        "a5 a5";
+
+    row-gap: 1em;
 }
 
-.print_panel>div>section>div {
+.bodyS * {
+    font-size: 10px;
+}
+
+
+.bodyS>div {
+    height: fit-content;
+
     font-size: 10px;
     border-radius: 2px;
     border: 1px solid black;
@@ -188,12 +204,12 @@ FOOTER
 }
 
 
-.print_panel>div>section>div span {
+.bodyS>div span {
     border-radius: 5px;
     border: 1px solid black;
 }
 
-.print_panel>div>section div h1 {
+.bodyS div h1 {
     font-size: 10px;
     border-radius: 2px;
     border: 1px solid black;
@@ -203,13 +219,13 @@ FOOTER
     margin: 1px;
 }
 
-.print_panel>div>section div p {
+.bodyS div p {
     font-size: 10px;
     text-align: center;
     margin: 0;
 }
 
-.print_panel>div>section>div> :nth-child(1) {
+.bodyS>div> :nth-child(1) {
     display: flex;
     align-items: center;
 
@@ -217,7 +233,7 @@ FOOTER
     grid-area: "a1";
 }
 
-.print_panel>div>section>div> :nth-child(2) {
+.bodyS>div> :nth-child(2) {
     display: grid;
     grid-template-areas:
         "a1 a1 a1"
@@ -227,40 +243,100 @@ FOOTER
     grid-area: a2;
 }
 
-.print_panel>div>section>div> :nth-child(2)> :nth-child(1) {
+.bodyS>div> :nth-child(2)> :nth-child(1) {
     grid-area: a1;
 }
 
-.print_panel>div>section>div> :nth-child(2)> :nth-child(2) {
+.bodyS>div> :nth-child(2)> :nth-child(2) {
     grid-area: a2;
 }
 
-.print_panel>div>section>div> :nth-child(2)> :nth-child(3) {
+.bodyS>div> :nth-child(2)> :nth-child(3) {
     grid-area: a3;
 }
 
-.print_panel>div>section>div> :nth-child(2)> :nth-child(4) {
+.bodyS>div> :nth-child(2)> :nth-child(4) {
     grid-area: a4;
 }
 
-.print_panel>div>section>div> :nth-child(2)> :nth-child(5) {
+.bodyS>div> :nth-child(2)> :nth-child(5) {
     grid-area: a5;
 }
 
-.print_panel>div>section>div> :nth-child(2)> :nth-child(6) {
+.bodyS>div> :nth-child(2)> :nth-child(6) {
     grid-area: a6;
 }
 
-.print_panel>div>section>div> :nth-child(2)> :nth-child(7) {
+.bodyS>div> :nth-child(2)> :nth-child(7) {
     grid-area: a7;
 }
 
-.print_panel>div>section>div> :nth-child(3) {
+.bodyS>div> :nth-child(3) {
     grid-area: "a3";
 }
 
-.print_panel>div>section>div> :nth-child(4) {
+.bodyS>div> :nth-child(4) {
     grid-area: "a4";
+}
+
+.bodyS> :nth-child(2) {
+    margin: auto 1em;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bodyS :nth-child(2) span {
+    width: 100%;
+    padding: 0 0.5em;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.bodyS> :nth-child(3) {
+    border: none;
+
+    display: grid;
+    grid-template-areas:
+        "a1 a2 a3 a4"
+        "a5 a6 a7 a8";
+
+    grid-area: a3;
+}
+
+.bodyS> :nth-child(3) p {
+    border: 1px solid black;
+    border-radius: 2.5px;
+}
+
+.bodyS> :nth-child(3) :nth-child(1) {
+    grid-area: a5;
+}
+
+.bodyS> :nth-child(3) :nth-child(2) {
+    grid-area: a2;
+}
+
+.bodyS> :nth-child(3) :nth-child(3) {
+    grid-area: a3;
+}
+
+.bodyS> :nth-child(3) :nth-child(4) {
+    grid-area: a4;
+}
+
+.bodyS> :nth-child(3) :nth-child(5) {
+    grid-area: a6;
+}
+
+.bodyS> :nth-child(3) :nth-child(6) {
+    grid-area: a7;
+}
+
+.bodyS> :nth-child(3) :nth-child(7) {
+    grid-area: a8;
 }
 
 /*
