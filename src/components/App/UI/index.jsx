@@ -10,6 +10,7 @@ import { Register } from "../../LRaccount/Register";
 import { Natural } from "../../Forms/AddRabbit/Natural";
 import { Transferred } from "../../Forms/AddRabbit/Transferred";
 import { Vitae } from "../../Vitae";
+import { Print } from "../../Print";
 
 export function UI() {
 	const {
@@ -106,6 +107,16 @@ export function UI() {
 									<Vitae user={user} language={language[language_keys.VITAE]} />
 								</RabbitListProvider>
 							</ProtectedRoute>
+						}
+					/>
+
+					<Route
+						exact
+						path="/vitae/print"
+						element={
+							<RabbitListProvider>
+								<Print user={user} language={language[language_keys.PRINT]} />
+							</RabbitListProvider>
 						}
 					/>
 				</Routes>

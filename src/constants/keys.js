@@ -1,4 +1,5 @@
 const language_keys = {
+    PRINT: 'print_lang',
     VITAE: 'vitae_lang',
     ERRORS: 'errors_lang',
     LOADING: 'loading_lang',

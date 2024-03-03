@@ -234,17 +234,10 @@ export { useAuth, AuthProvider };
 const litterDataSkeleton = {
 	id: "-007",
 	stages: {
-		goofballs: {
-			alive: 1,
-			dead: 1,
-			homogenized: 1,
-		},
 		palpation: {
 			date: "00-00-00",
 		},
-		partum: {
-			date: "00-00-00",
-		},
+		partum: { alive: 1, dead: 1, homogenized: 1, date: "00-00-00" },
 		prepartum: {
 			date: "00-00-00",
 		},

@@ -107,13 +107,21 @@ export function Natural({ language, user }) {
 						for (let index = 0; index < addRaces.length; index++) {
 							racesAdded.push({
 								name: event.target.elements.race[index]?.value,
-								percentage: `${event.target.elements.numerator[index]?.value}/${event.target.elements.denominator[index]?.value}`,
+								value:
+									(parseFloat(event.target.elements.numerator[index]?.value) /
+										parseFloat(
+											event.target.elements.denominator[index]?.value
+										)) *
+									100,
 							});
 						}
 					} else {
 						racesAdded.push({
 							name: event.target.elements.race.value,
-							percentage: `${event.target.elements.numerator.value}/${event.target.elements.denominator.value}`,
+							value:
+								(parseFloat(event.target.elements.numerator.value) /
+									parseFloat(event.target.elements.denominator.value)) *
+								100,
 						});
 					}
 					handleSubmit({

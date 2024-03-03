@@ -3,10 +3,12 @@ import { useRabbits } from "../../hooks/useContexts";
 import { PieChartS } from "../Fragments/Stadistics/PieChartS";
 import st from "./vitae.module.css";
 import Litter from "./Litter";
+import BasicData from "./BasicData";
+import Lifecycle from "./Lifecycle";
 
 export function Vitae({ language, user }) {
 	const {
-		buttons: { BTN_back },
+		buttons: { BTN_back, BTN_print },
 		titles: {
 			race,
 			litter_,
@@ -35,148 +37,62 @@ export function Vitae({ language, user }) {
 
 	const birdLitter = () => litters.find((doc) => doc.id === birth.litter);
 
-	function raceDataStadistics(data) {
-		return data?.map((doc) => {
-			const value_ = () => {
-				const fraction = doc.percentage.split("/");
-				return parseFloat(fraction[0]) / parseFloat(fraction[1]);
-			};
-			return { name: doc.name, value: value_() * 100 };
-		});
-	}
-
 	return (
 		<>
 			<Link className={st.BTN_back} to="/rabbitList">
 				{BTN_back}
 			</Link>
+			<Link className={st.BTN_print} to="/vitae/print">
+				{BTN_print}
+			</Link>
 			<section className={st.vitae_panel}>
 				<div>
-					<h2>{id}</h2>
-					<img src={pictureURL} alt="" />
+					<div className={st.picture}>
+						<h2>{id}</h2>
+						<img src={pictureURL} alt="" />
+					</div>
 					<hr />
 					<h3>{race}</h3>
-					<span>
-						<PieChartS data={raceDataStadistics(birth.race)} />
-					</span>
+					<div>
+						<PieChartS data={birth.race} />
+					</div>
 				</div>
-				<div>
-					<h1>{basicData[0]}</h1>
-					<table>
-						<tbody>
-							<tr>
-								<th>{basicData[1]}</th>
-								<td>
-									{!active
-										? stages_.inactive
-										: !weaning.finish
-										? stages_.reproductive
-										: !fattening.finish
-										? stages_.fattening
-										: litter !== "false" && isFemale && stages_.litter}
-								</td>
-							</tr>
-							<tr>
-								<th>{basicData[3]}</th>
-								<td>{isFemale ? stages_.female : stages_.male}</td>
-							</tr>
-							<tr>
-								<th>{basicData[7]}</th>
-								<td>{origin}</td>
-							</tr>
-							{status ? (
-								<>
-									<tr>
-										<td>
-											<h1>{isTransfered}</h1>
-										</td>
-									</tr>
-									<tr>
-										<th>{basicData[4]}</th>
-										<td>{date}</td>
-									</tr>
-									<tr>
-										<th>{basicData[8]}</th>
-										<td>{mom_id}</td>
-									</tr>
-									<tr>
-										<th>{basicData[9]}</th>
-										<td>{dad_id}</td>
-									</tr>
-								</>
-							) : (
-								<>
-									<tr>
-										<td>
-											<h1>
-												{birdLitter().stages.ride.male.isNatural
-													? stages_.natural
-													: stages_.artificial}
-											</h1>
-										</td>
-									</tr>
-									<tr>
-										<th>{basicData[4]}</th>
-										<td>{date}</td>
-									</tr>
-									<tr>
-										<th>{basicData[8]}</th>
-										<td>{birdLitter().stages.ride.female}</td>
-									</tr>
-									<tr>
-										<th>{basicData[9]}</th>
-										<td>{birdLitter().stages.ride.male}</td>
-									</tr>
-								</>
-							)}
-						</tbody>
-					</table>
-				</div>
-				<div>
-					<h1>{lifecycle[0]}</h1>
-					<section>
-						<section>
-							<img src="" alt="" />
-							<h3>{lifecycle[1]}</h3>
-						</section>
-						<table>
-							<tbody>
-								<tr></tr>
-								<tr>
-									<th>{lifecycle[3][0]}</th>
-									<td>{weaning.date}</td>
-								</tr>
-								<tr>
-									<th>{lifecycle[3][1]}</th>
-									<td>{weaning.weight}</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-					<section>
-						<section>
-							<img src="" alt="" />
-							<h3>{lifecycle[2]}</h3>
-						</section>
-						<table>
-							<tbody>
-								<tr></tr>
-								<tr>
-									<th>{lifecycle[3][0]}</th>
-									<td>{fattening.date}</td>
-								</tr>
-								<tr>
-									<th>{lifecycle[3][1]}</th>
-									<td>{fattening.weight}</td>
-								</tr>
-							</tbody>
-						</table>
-					</section>
-				</div>
-				<Litter litter_={litter_} />
-				<div>
-					<h1>{stadistics}</h1>
-				</div>
+				<BasicData
+					date={date}
+					mom_id={mom_id}
+					dad_id={dad_id}
+					active={active}
+					status={status}
+					litter={litter}
+					origin={origin}
+					weaning={weaning}
+					stages_={stages_}
+					isFemale={isFemale}
+					fattening={fattening}
+					basicData={basicData}
+					birdLitter={birdLitter}
+					isTransfered={isTransfered}
+				/>
+				<Lifecycle
+					lifecycle={lifecycle}
+					weaning={weaning}
+					fattening={fattening}
+				/>
+				{litter !== "false" && (
+					<Litter
+						litter_={{
+							...litter_,
+							natural: stages_.natural,
+							artificial: stages_.artificial,
+						}}
+						litterData={litters.find((doc) => doc.id === litter)}
+					/>
+				)}
+				{isFemale && (
+					<div>
+						<h1>{stadistics}</h1>
+					</div>
+				)}
 			</section>
 		</>
 	);

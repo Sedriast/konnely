@@ -7,7 +7,6 @@ const renderActiveShape = (props) => {
 		cx,
 		cy,
 		fill,
-		value,
 		payload,
 		percent,
 		endAngle,
@@ -33,13 +32,7 @@ const renderActiveShape = (props) => {
 				: payload.name;
 
 		return (
-			<text
-				x={cx}
-				y={cy}
-				dy={8}
-				textLength="100"
-				textAnchor="middle"
-				fill={fill}>
+			<text x={cx} y={cy} dy={8} textAnchor="middle" fill={fill}>
 				<title>{payload.name}</title>
 				{text}
 			</text>
@@ -77,14 +70,16 @@ const renderActiveShape = (props) => {
 				x={ex + (cos >= 0 ? 1 : -1) * 12}
 				y={ey}
 				textAnchor={textAnchor}
-				fill="#333">{`PV ${value}`}</text>
+				fill="#333">
+				{`${(percent * 100).toFixed(2)}%`}
+			</text>
 			<text
 				x={ex + (cos >= 0 ? 1 : -1) * 12}
 				y={ey}
 				dy={18}
 				textAnchor={textAnchor}
 				fill="#999">
-				{`(Rate ${(percent * 100).toFixed(2)}%)`}
+				{`1/${(1 / percent).toFixed(1)}`}
 			</text>
 		</g>
 	);

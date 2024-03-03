@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import st from "../rabbitlist.module.css";
+import { useEffect } from "react";
 
 export function Cards({ language, rabbit, setRabbit }) {
 	const {
@@ -17,11 +18,12 @@ export function Cards({ language, rabbit, setRabbit }) {
 	const { state_, gender_, birthDate_, origin_, stages_, transferenceDate } =
 		language;
 
+	useEffect(() => {
+		setRabbit(rabbit);
+	});
+
 	return (
-		<Link
-			onClick={() => setRabbit(rabbit)}
-			className={st.cards_panel}
-			to={"/vitae"}>
+		<Link className={st.cards_panel} to={"/vitae"}>
 			<table>
 				<tbody>
 					<tr>

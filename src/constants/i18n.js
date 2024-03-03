@@ -43,11 +43,11 @@ const es = {
         },
     },
     [language_keys.RABBITLIST]: {
-        BTN_Natural: "local",
-        BTN_Transferred: "transferido",
-        L_addRabbit: "El nuevo conejo es:",
+        BTN_Natural: "nacimiento",
+        BTN_Transferred: "traslado",
+        L_addRabbit: "El nuevo conejo es de:",
         BTN_addRabbit: "Agregar conejo",
-        FILTERS: { male: "Macho", female: "Hembra", inactive: "Inactivo", search: "Buscar" },
+        FILTERS: { male: "Macho", female: "Hembra", inactive: "Inactivo", search: "Buscar id del conejo" },
         CARDS: {
             transferenceDate: "Fecha de transferencia:",
             state_: "Estado:",
@@ -83,12 +83,13 @@ const es = {
     [language_keys.VITAE]: {
         buttons: {
             BTN_back: "Atras",
+            BTN_print: "Imprimir",
         },
         titles: {
             race: "RAZA",
             stadistics: "ESTADISTICAS",
             isTransfered: "Trasferido",
-            litter_: ["CAMADA", "Monta", "Palpación", "Preparto", "Parto", "Destete"],
+            litter_: ["CAMADA", ["Monta", "Fecha:", "Macho:", "Tipo:"], "Palpación", "Preparto", ["Parto", "Vivos:", "Muertos:", "Homogenizados:"], ["Destete", "Peso camada:", "Hembras", "Machos"]],
             basicData: ["INFORMACIÓN BÁSICA", "Estado:", "Raza:", "Genero:", "Fecha de traslado", "Camada de nacimiento:", "Tipo de concepción:", "Procedencia:", "Id. Madre", "Id. Padre"],
             lifecycle: ["CICLO DE VIDA", "Destete", "Engorde", ["Fecha:", "Peso:"]],
             stages_: {
@@ -104,6 +105,36 @@ const es = {
             },
         },
 
+    },
+    [language_keys.PRINT]: {
+        codes: "16",
+        header: {
+            code: "Código:",
+            vertion: "Versión:",
+            validity: "Vigencia:",
+            date: "Fecha:",
+            format: {
+                code_: "AAAr031",
+                vertion_: "7",
+                validityDate_: "Mar 3, 2025",
+                titles: {
+                    sizeProject: "MACROPROCESO DE APOYO",
+                    process: "PROCESO DE GESTIÓN DE APOYO ACADÉMICO",
+                    type: ["HOJA DE VIDA SEMOVIENTE HEMBRA", "HOJA DE VIDA SEMOVIENTE MACHO"],
+                },
+            },
+
+        },
+        bodyS: {
+            table_one: {
+                labels: ["CUNICOLA"],
+                titles: ["ESPECIE", ["FECHA DE NACIMIENTO", "FECHA DE TRASLADO", "DIA", "MES", "AÑO"], "N°. IDENT. HEMBRA", "N°. IDENT. MACHO", "RAZA"],
+            },
+        },
+        footer: {
+            address_: ["Calle 6 N° 9-80 Ubate – Cundinamarca", "Teléfono:", "Ext.127 Línea Gratuita"],
+            web: "E-mail: ",
+        },
     },
     [language_keys.ERRORS]: {
         "default": "Se produjo un error interno, intente nuevamente mas tarde",
