@@ -114,9 +114,11 @@ export function UI() {
 						exact
 						path="/vitae/print"
 						element={
-							<RabbitListProvider>
-								<Print user={user} language={language[language_keys.PRINT]} />
-							</RabbitListProvider>
+							<ProtectedRoute>
+								<RabbitListProvider>
+									<Print user={user} language={language[language_keys.PRINT]} />
+								</RabbitListProvider>
+							</ProtectedRoute>
 						}
 					/>
 				</Routes>

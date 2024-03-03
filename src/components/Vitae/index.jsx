@@ -32,19 +32,22 @@ export function Vitae({ language, user }) {
 			},
 			lifecycle: { birth, weaning, fattening },
 		},
-		litters,
+		litters_,
 	} = useRabbits();
 
-	const birdLitter = () => litters.find((doc) => doc.id === birth.litter);
+	const birdLitter = litters_.find((doc) => doc.id === birth.litter);
 
 	return (
 		<>
 			<Link className={st.BTN_back} to="/rabbitList">
 				{BTN_back}
 			</Link>
-			<Link className={st.BTN_print} to="/vitae/print">
-				{BTN_print}
-			</Link>
+			{isFemale && (
+				<Link className={st.BTN_print} to="/vitae/print">
+					{BTN_print}
+				</Link>
+			)}
+
 			<section className={st.vitae_panel}>
 				<div>
 					<div className={st.picture}>
@@ -85,7 +88,7 @@ export function Vitae({ language, user }) {
 							natural: stages_.natural,
 							artificial: stages_.artificial,
 						}}
-						litterData={litters.find((doc) => doc.id === litter)}
+						litterData={litters_.find((doc) => doc.id === litter)}
 					/>
 				)}
 				{isFemale && (

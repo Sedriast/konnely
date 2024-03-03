@@ -374,7 +374,7 @@ function RabbitListProvider({ children }) {
 				setFilter,
 				setRabbit,
 				rabbit: state.rabbit,
-				litters: state.littersList,
+				litters_: state.littersList,
 				rabbits_: state.rabbitsList,
 			}}>
 			{children}

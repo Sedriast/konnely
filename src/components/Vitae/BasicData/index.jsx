@@ -68,19 +68,19 @@ export default function BasicData({
 							</tr>
 							<tr>
 								<th>{basicData[5]}</th>
-								<td>{birdLitter().id}</td>
+								<td>{birdLitter.id}</td>
 							</tr>
 							<tr>
 								<th>{basicData[8]}</th>
-								<td>{birdLitter().stages.ride.female}</td>
+								<td>{birdLitter.stages.ride.female}</td>
 							</tr>
 							<tr>
 								<th>{basicData[9]}</th>
-								<td>{birdLitter().stages.ride.male}</td>
+								<td>{birdLitter.stages.ride.male}</td>
 							</tr>
 							<tr>
 								<td>
-									{birdLitter().stages.ride.male.isNatural
+									{birdLitter.stages.ride.male.isNatural
 										? stages_.natural
 										: stages_.artificial}
 								</td>

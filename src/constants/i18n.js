@@ -136,6 +136,13 @@ const es = {
             table_three: {
                 titles: ["PESO", "ACTUAL", "NACIMIENTO", "TRASLADO", "DESTETE"]
             },
+            table_four: {
+                labels: ["monta natural", "inseminación artificial"],
+                titles: ["EDAD DESTETE (meses)", "CRITERIO PARA LA SELECCIÓN", "trasladado desde ", "nacido por "],
+            },
+            table_five: {
+                titles: [["FECHA SERVICIO", "MES", "DIA", "AÑO"], "PLACA MACHO", "FECHA DETECCIÓN DE PREÑES", "FECHA POSIBLE PARTO", "FECHA ATENCIÓN PARTO", "FECHA REAL DE PARTO", ["N°. ANIMALES", "V", "M"], " PESO DE NACIMIENTO (gr)", "FECHA DESTETE", ["N°. ANIMALES", "H", "M"], "PESO DESTETE"],
+            },
         },
         footer: {
             address_: ["Calle 6 N° 9-80 Ubate – Cundinamarca", "Teléfono:", "Ext.127 Línea Gratuita"],

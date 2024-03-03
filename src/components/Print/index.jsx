@@ -7,8 +7,23 @@ import { Header } from "./Header";
 
 export function Print({ language, user }) {
 	const {
-		rabbit: { isFemale },
+		rabbit: {
+			id,
+			origin,
+			isFemale,
+			status: {
+				transferred: { status, date, mom_id, dad_id },
+			},
+			lifecycle: { birth, weaning, fattening },
+		},
+		litters_,
 	} = useRabbits();
+
+	const birthLitter = litters_.filter((litter) => litter.id === birth.litter);
+	const litterRecord = litters_.filter(
+		(litter) => litter.stages.ride.female === id
+	);
+
 	return (
 		<section className={st.print_panel}>
 			<div>
@@ -18,21 +33,30 @@ export function Print({ language, user }) {
 					st={st}
 					language={language}
 					table_one={{
-						isFemale: true,
-						isTransfered: false,
-						rabbitID: "000",
-						BoT_Date: ["Mar", "00", "2024"],
-						races: [
-							{ name: "Nueva Zelanda", value: 80 },
-							{ name: "Chinchilla", value: 20 },
-						],
+						rabbitID: id,
+						races: birth.race,
+						isFemale: isFemale,
+						isTransfered: status,
+						BoT_Date: status ? date : birthLitter[0].stages.partum.date,
 					}}
-					table_two={{ dad_id: "000", mom_id: "000" }}
+					table_two={{
+						dad_id: status ? dad_id : birthLitter[0].stages.ride.male,
+						mom_id: status ? mom_id : birthLitter[0].stages.ride.female,
+					}}
 					table_three={{
-						currentWeight: "000",
-						weaningWeight: "000",
-						birthORTrans: "000",
+						weaningWeight: weaning.weight,
+						currentWeight: fattening.weight,
+						birthORTrans: status ? weaning.weight : "00",
 					}}
+					table_four={{
+						place: origin,
+						isTransfered: status,
+						weaningAge: "000.000",
+						birthType: birthLitter[0].stages.ride.isNatural
+							? language.bodyS.table_four.labels[0]
+							: language.bodyS.table_four.labels[1],
+					}}
+					table_five={{ litterRecord: litterRecord }}
 				/>
 				<Footer language={language.footer} />
 			</div>
