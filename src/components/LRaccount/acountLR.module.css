@@ -11,12 +11,12 @@ Login
     position: absolute;
     right: 10%;
 
-    width: 350px;
+    width: fit-content;
     height: min-content;
 
-    padding: 2em;
+    padding: 1em 3em;
     border-radius: 10px;
-    background: url(../../../public/waterMark.png), linear-gradient(145deg, rgb(145, 183, 166) 0%, rgb(106, 151, 133) 50%);
+    background: url(../../../public/waterMark.png), linear-gradient(145deg, rgb(184, 162, 129), rgb(129, 100, 77) 75%);
 
     animation: slideIn 0.5s ease-in;
 }
@@ -52,7 +52,7 @@ Login
     padding: 1em;
     margin: 0.5em auto;
     border-radius: 20px;
-    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
+    background: rgb(152, 175, 108);
 }
 
 .login_panel h1 {
@@ -102,8 +102,7 @@ Login
     padding: 0.5em 1em;
     margin: 0.5em 0;
     border-radius: 20px;
-    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
-
+    background: rgb(95, 116, 60);
     animation: slideIn 0.5s ease-in;
 
     z-index: 1;
@@ -123,7 +122,7 @@ Login
     padding: 0.5em 1em;
     margin: 0.5em auto;
     border-radius: 20px;
-    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
+    background: rgb(95, 116, 60);
 
     animation: slideIn 0.5s ease-in;
 
@@ -139,7 +138,7 @@ Login
 
     padding: 2em;
     border-radius: 10px;
-    background: url(../../../public/waterMark.png), linear-gradient(145deg, rgb(145, 183, 166) 0%, rgb(106, 151, 133) 50%);
+    background: url(../../../public/waterMark.png), linear-gradient(145deg, rgb(184, 162, 129), rgb(129, 100, 77) 75%);
 
     overflow-y: auto;
     overflow-x: hidden;
@@ -178,7 +177,7 @@ Login
     padding: 1em;
     margin: 0.5em auto;
     border-radius: 20px;
-    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
+    background: rgb(152, 175, 108);
 }
 
 .register_panel h1 {

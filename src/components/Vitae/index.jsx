@@ -1,14 +1,16 @@
-import { Link } from "react-router-dom";
 import { useRabbits } from "../../hooks/useContexts";
-import { PieChartS } from "../Fragments/Stadistics/PieChartS";
+import { Link } from "react-router-dom";
 import st from "./vitae.module.css";
+
 import Litter from "./Litter";
 import BasicData from "./BasicData";
 import Lifecycle from "./Lifecycle";
+import PictureRaces from "./PictureRaces";
 
 export function Vitae({ language, user }) {
 	const {
 		buttons: { BTN_back, BTN_print },
+		labels: { rabbit },
 		titles: {
 			race,
 			litter_,
@@ -39,7 +41,7 @@ export function Vitae({ language, user }) {
 
 	return (
 		<>
-			<Link className={st.BTN_back} to="/rabbitList">
+			<Link className="BTN_back" to="/rabbitList">
 				{BTN_back}
 			</Link>
 			{isFemale && (
@@ -47,19 +49,7 @@ export function Vitae({ language, user }) {
 					{BTN_print}
 				</Link>
 			)}
-
 			<section className={st.vitae_panel}>
-				<div>
-					<div className={st.picture}>
-						<h2>{id}</h2>
-						<img src={pictureURL} alt="" />
-					</div>
-					<hr />
-					<h3>{race}</h3>
-					<div>
-						<PieChartS data={birth.race} />
-					</div>
-				</div>
 				<BasicData
 					date={date}
 					mom_id={mom_id}
@@ -76,9 +66,16 @@ export function Vitae({ language, user }) {
 					birdLitter={birdLitter}
 					isTransfered={isTransfered}
 				/>
+				<PictureRaces
+					id={id}
+					race={race}
+					birth={birth}
+					L_rabbit={rabbit}
+					pictureURL={pictureURL}
+				/>
 				<Lifecycle
-					lifecycle={lifecycle}
 					weaning={weaning}
+					lifecycle={lifecycle}
 					fattening={fattening}
 				/>
 				{litter !== "false" && (

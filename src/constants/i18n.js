@@ -43,6 +43,29 @@ const es = {
         },
     },
     [language_keys.RABBITLIST]: {
+
+        BTN_Natural: "nacimiento",
+        BTN_Transferred: "traslado",
+        L_addRabbit: "El nuevo conejo es de:",
+        BTN_addRabbit: "Agregar conejo",
+        FILTERS: { male: "Macho", female: "Hembra", inactive: "Inactivo", search: "Buscar id del conejo" },
+        CARDS: {
+            transferenceDate: "Fecha de transferencia:",
+            state_: "Estado:",
+            gender_: ["Genero:", "Hembra", "Macho"],
+            birthType_: "Concepción:",
+            birthDate_: "Camada de nacimiento:",
+            origin_: "Procedencia:",
+            stages_: {
+                inactive: "Inactivo",
+                litter: "Camada Activa",
+                fattening: "En engorde",
+                reproductive: "Próximo a destete",
+                Pre_reproductive: "Preparandose para reproducción",
+            },
+        }
+    },
+    [language_keys.LITTERLIST]: {
         BTN_Natural: "nacimiento",
         BTN_Transferred: "traslado",
         L_addRabbit: "El nuevo conejo es de:",
@@ -85,6 +108,9 @@ const es = {
             BTN_back: "Atras",
             BTN_print: "Imprimir",
         },
+        labels: {
+            rabbit: "Conejo",
+        },
         titles: {
             race: "RAZA",
             stadistics: "ESTADISTICAS",
@@ -107,6 +133,9 @@ const es = {
 
     },
     [language_keys.PRINT]: {
+        buttons: {
+            BTN_back: "Atras",
+        },
         codes: "16",
         header: {
             code: "Código:",
@@ -116,7 +145,7 @@ const es = {
             format: {
                 code_: "AAAr031",
                 vertion_: "7",
-                validityDate_: "Mar 3, 2025",
+                validityDate_: "Mar 3, 2020",
                 titles: {
                     sizeProject: "MACROPROCESO DE APOYO",
                     process: "PROCESO DE GESTIÓN DE APOYO ACADÉMICO",
@@ -156,6 +185,7 @@ const es = {
         "register-empty-email": "El correo electronico no puede estar vacio",
         "tittle-permises-denied": "Permisos denegados",
         "permises-denied": "¡Acceso denegado!. Puede que: 1> No ha verificado su correo electronico, 2> No se ha iniciado sesión por error, 3> Su cuenta fue eliminada por un administrador",
+        "id-invalid": "El id ingresado no es valido",
         "id-already-exists": "El id ingresado ya existe",
         "auth/user-not-found": "El usuario o la contraseña ingresada no es correcta",
         "auth/wrong-password": "El usuario o la contraseña ingresada no es correcta",

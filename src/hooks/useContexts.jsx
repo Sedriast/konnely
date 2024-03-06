@@ -59,8 +59,8 @@ const useAuth = () => {
 
 function AuthProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, {
-		email: "",
 		theme: 0,
+		email: "",
 		user: null,
 		loading: true,
 		picture: picture_,

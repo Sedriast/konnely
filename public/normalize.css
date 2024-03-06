@@ -6,10 +6,12 @@
     text-decoration: none;
     font-size: 15px;
 
+    box-sizing: border-box;
+
     margin: 0%;
     padding: 0%;
     border: none;
-    color: rgb(14, 32, 26);
+    color: rgb(30, 38, 13);
 }
 
 h1,
@@ -32,7 +34,7 @@ html {
     width: 100%;
     height: 100%;
 
-    background: url(./waterMark.png), linear-gradient(rgb(145, 183, 166) 0%, rgb(221, 234, 227) 50%);
+    background: url(./waterMark.png), linear-gradient(135deg, rgb(220, 231, 175), rgb(247, 249, 236) 75%);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -78,6 +80,10 @@ figure:after {
 path {
     color: rgb(0, 0, 0);
     filter: drop-shadow(0px 0px 40px #ffffff);
+}
+
+figure {
+    font-size: 12px;
 }
 
 figure[tooltip-dir="left"]:after {
@@ -132,7 +138,39 @@ input[type="date"]:required:invalid::-webkit-datetime-edit {
 }
 
 .active input[type="date"] {
-    color: rgb(255, 255, 255) !important;
+    color: rgb(30, 38, 13) !important;
+}
+
+.BTN_back {
+    position: absolute;
+    top: 0;
+    right: calc(50% + 325px);
+
+    width: fit-content;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(244, 247, 238);
+
+    box-sizing: border-box;
+
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgb(152, 175, 108) 0%, rgb(95, 116, 60) 50%);
+
+    animation: slideIn 0.5s ease-in;
+
+    z-index: 1;
+}
+
+@media screen and (width < 768px) {
+    .BTN_back {
+        border-radius: 0 20px 20px 0;
+        left: 0;
+    }
 }
 
 ::-webkit-scrollbar {

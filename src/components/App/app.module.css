@@ -4,7 +4,7 @@ main {
   width: 100%;
   height: 100%;
 
-  background: url(../../../public/waterMark.png), linear-gradient(rgb(145, 183, 166) 0%, rgb(221, 234, 227) 50%);
+  background: url(../../../public/waterMark.png), linear-gradient(135deg, rgb(220, 231, 175), rgb(247, 249, 236) 75%);
   background-repeat: no-repeat;
   background-size: cover;
 

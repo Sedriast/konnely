@@ -4,6 +4,7 @@ import st from "./print.module.css";
 import { Footer } from "./Footer";
 import { BodyS } from "./BodyS";
 import { Header } from "./Header";
+import { Link } from "react-router-dom";
 
 export function Print({ language, user }) {
 	const {
@@ -26,6 +27,9 @@ export function Print({ language, user }) {
 
 	return (
 		<section className={st.print_panel}>
+			<Link className="BTN_back" to="/vitae">
+				{language.buttons.BTN_back}
+			</Link>
 			<div>
 				<h1>{language.codes}</h1>
 				<Header languaje={language.header} isFemale={isFemale} />

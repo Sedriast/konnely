@@ -8,7 +8,7 @@ import { ReactComponent as Partum } from "./assets/logos/partum_13329.svg";
 import { ReactComponent as UDEC } from "./assets/logos/UDEC_103633.svg";
 import { ReactComponent as Close } from "./assets/close_0911320.svg";
 
-import { icon_keys } from "./keys"; s
+import { icon_keys } from "./keys";
 
 const type_ = {
     [icon_keys.FATTENING]: <Fattening />,

@@ -6,6 +6,7 @@ const language_keys = {
     ACCOUNT: 'account_lang',
     ADDRABBIT: 'addrabbit_lang',
     RABBITLIST: 'rabbitlist_lang',
+    LITTERLIST: 'litterlist_lang',
 };
 
 const icon_keys = {

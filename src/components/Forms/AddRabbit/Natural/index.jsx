@@ -13,7 +13,7 @@ export function Natural({ language, user }) {
 	const [image, setImage] = useState(null);
 	const [addRaces, setAddRaces] = useState([]);
 
-	const { litters, rabbits, setRabbit } = useRabbits();
+	const { litters_, rabbits_, setRabbit } = useRabbits();
 	const {
 		L_id,
 		race,
@@ -26,30 +26,35 @@ export function Natural({ language, user }) {
 		BTN_submit,
 	} = language;
 
-	const litters_id = litters.map((element) => ({
+	const litters_id = litters_?.map((element) => ({
 		label_: element.id,
 		value: element.id,
 	}));
 
-	const races_ = race.values.map((element) => ({
+	const races_ = race.values?.map((element) => ({
 		label_: element,
 		value: element,
 	}));
 
 	function validateRabbitID(rabbitID) {
-		if (!rabbitID) {
-			throw new Error("Invalid rabbit ID");
-		}
+		if (rabbitID.length > 0 && rabbitID !== null && rabbitID !== undefined) {
+			if (!rabbitID) {
+				throw new Error("Invalid rabbit ID");
+			}
 
-		const doesRabbitIDExist = rabbits.some(
-			({ id, status: { active } }) =>
-				id.toLowerCase().includes(rabbitID.toLowerCase()) && active
-		);
+			const doesRabbitIDExist = rabbits_?.some(
+				({ id, status: { active } }) =>
+					id.toLowerCase().includes(rabbitID.toLowerCase()) && active
+			);
 
-		if (doesRabbitIDExist) {
-			errorAlert("id-already-exists");
+			if (doesRabbitIDExist) {
+				document.getElementsByName("id")[0].value = "";
+				errorAlert("id-already-exists");
+			} else {
+				return true;
+			}
 		} else {
-			return true;
+			errorAlert("id-invalid");
 		}
 	}
 
@@ -91,7 +96,7 @@ export function Natural({ language, user }) {
 
 	return (
 		<>
-			<Link className={st.BTN_back} to="/rabbitList">
+			<Link className="BTN_back" to="/rabbitList">
 				{BTN_back}
 			</Link>
 			<form

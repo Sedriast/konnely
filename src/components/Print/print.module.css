@@ -537,10 +537,16 @@ BODYS
     margin: 0 1px;
 }
 
-.bodyS> :nth-child(5)>span:not(:first-child) p>p {
-    border: ;
-    margin: 0 auto;
+.bodyS> :nth-child(5)>span:not(:first-child) p :nth-child(1) {
+    width: 100%;
     border: none;
+    border-right: 1px solid black;
+}
+
+.bodyS> :nth-child(5)>span:not(:first-child) p :nth-child(2) {
+    width: 100%;
+    border: none;
+    border-left: 1px solid black;
 }
 
 .bodyS> :nth-child(5)>span:not(:first-child)> :nth-child(1) {
@@ -588,6 +594,37 @@ BODYS
     width: 42.69px;
 }
 
+.BTN_back {
+    position: absolute;
+    top: 0;
+    right: calc(50% + 300px);
+
+    width: fit-content;
+
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(245, 248, 246);
+
+    box-sizing: border-box;
+
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    border-radius: 20px;
+    background: linear-gradient(rgb(62, 99, 85) 0%, rgb(52, 81, 70) 50%);
+
+    animation: slideIn 0.5s ease-in;
+
+    z-index: 1;
+}
+
+@media screen and (width < 768px) {
+    .BTN_back {
+        border-radius: 0 20px 20px 0;
+        left: 0;
+    }
+}
 
 /*
 
