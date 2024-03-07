@@ -12,6 +12,7 @@ import { Transferred } from "../../Forms/AddRabbit/Transferred";
 import { Vitae } from "../../Vitae";
 import { Print } from "../../Print";
 import { LitterList } from "../../LitterList";
+import { AddLitter } from "../../Forms/AddLitter";
 
 export function UI() {
 	const {
@@ -130,6 +131,18 @@ export function UI() {
 							<ProtectedRoute>
 								<RabbitListProvider>
 									<LitterList language={language[language_keys.LITTERLIST]} />
+								</RabbitListProvider>
+							</ProtectedRoute>
+						}
+					/>
+
+					<Route
+						exact
+						path="/litterList/addLitter"
+						element={
+							<ProtectedRoute>
+								<RabbitListProvider>
+									<AddLitter language={language[language_keys.ADDLITTER]} />
 								</RabbitListProvider>
 							</ProtectedRoute>
 						}

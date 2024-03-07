@@ -1,5 +1,4 @@
 .panelNatural {
-
     position: fixed;
 
     width: 750px;
@@ -389,10 +388,8 @@
 }
 
 .image input[type="file"] {
-
     height: 1px;
     width: 1px;
-
 }
 
 .image label {

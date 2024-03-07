@@ -7,6 +7,7 @@ const language_keys = {
     ADDRABBIT: 'addrabbit_lang',
     RABBITLIST: 'rabbitlist_lang',
     LITTERLIST: 'litterlist_lang',
+    ADDLITTER: 'addlitter_lang',
 };
 
 const icon_keys = {

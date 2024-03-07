@@ -1,0 +1,191 @@
+.switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+}
+
+.switch>input {
+    width: 1px;
+    height: 1px;
+}
+
+.switch>input:checked+span {
+    background-color: rgb(194, 213, 129);
+}
+
+.switch>input:checked+span:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.switch>span {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    background-color: rgb(237, 242, 213);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.switch>span:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: rgb(146, 158, 153);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.panelLitter {
+    position: fixed;
+
+    width: 700px;
+    height: 95%;
+
+    top: 1%;
+
+    padding: 2em;
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-areas: "a1 a1"
+        "a2 a3"
+        "a4 a5"
+        "a6 a7";
+    grid-column-gap: 1em;
+    grid-auto-rows: min-content;
+    justify-content: center;
+
+    background: rgba(139, 167, 59, 0.3);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.panelLitter :first-child {
+    grid-area: a1;
+}
+
+.panelLitter>div {
+    width: fit-content;
+    padding: 2em;
+    border-radius: 10px;
+    margin: 1em auto;
+    background: rgba(68, 82, 34, 0.5);
+}
+
+.panelLitter>div hr {
+    width: 100%;
+}
+
+.panelLitter>div>label {
+    width: 250px;
+
+    font-weight: bold;
+    margin: 1em auto;
+    color: rgb(30, 38, 13);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.panelLitter>div>label>input {
+    width: 250px;
+    height: 40px;
+
+    box-sizing: border-box;
+
+    border: none;
+    background: white;
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+}
+
+
+.panelLitter section>label {
+    width: 250px;
+
+    font-weight: bold;
+    margin: 1em auto;
+    color: rgb(30, 38, 13);
+
+    display: flex;
+    flex-direction: column;
+}
+
+.panelLitter section>label>input {
+    width: 250px;
+    height: 40px;
+
+    box-sizing: border-box;
+
+    border: none;
+    background: white;
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+}
+
+.isNatural {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.isNatural label {
+    width: auto;
+    height: 40px;
+
+    padding: 0.5em;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0.5em 0.5em;
+    border-radius: 20px;
+    background: transparent;
+    border: 3px solid white;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.isNatural input[type="radio"] {
+    display: none;
+}
+
+.isNatural input[type="radio"]:checked+label {
+    color: rgb(0, 0, 0);
+    box-sizing: border-box;
+    background: rgb(245, 248, 246);
+}
+
+@media screen and (width < 768px) {
+    .panelLitter {
+        width: 300px;
+
+        grid-template-areas:
+            "a1"
+            "a2"
+            "a3"
+            "a4"
+            "a5"
+            "a6";
+    }
+
+}
