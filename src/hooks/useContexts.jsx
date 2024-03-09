@@ -258,8 +258,7 @@ const litterDataSkeleton = {
 
 const rabbitDataSkeleton = {
 	id: "000000000",
-	uid: "000000000",
-	litter: "false",
+	litters: [],
 	isFemale: true,
 	origin: "Ubaté",
 	pictureURL:

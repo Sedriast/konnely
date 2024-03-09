@@ -1,32 +1,35 @@
 import { Lists } from "../Lists";
+import st from "./race.module.css";
 
 export function Racee({ index, races_ }) {
 	return (
-		<div>
+		<section className={st.race}>
 			<input
 				required
-				name="numerator"
 				type="number"
+				name="numerator"
+				inputMode="numeric"
+				step="0.01"
 				min="-100"
 				max="100"
-				step="0.01"
 			/>
-			<hr />
+			<span>/</span>
 			<input
 				required
-				name="denominator"
 				type="number"
+				name="denominator"
+				inputMode="numeric"
+				step="0.01"
 				max="100"
 				min="1"
-				step="0.01"
 			/>
 			<Lists
 				required
 				name="race"
 				options={races_}
-				placeholder={races_[index].value}
-				defaultValue={races_[index].value}
+				placeholder={races_[index]}
+				defaultValue={races_[index]}
 			/>
-		</div>
+		</section>
 	);
 }

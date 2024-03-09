@@ -103,7 +103,7 @@ export function Natural({ language, user }) {
 				className={st.panelNatural}
 				onSubmit={(event) => {
 					event.preventDefault();
-					const fecha = new Date();
+					const date = new Date();
 					const selectedGender = document.querySelector(
 						'input[name="gender"]:checked'
 					).value;
@@ -130,57 +130,37 @@ export function Natural({ language, user }) {
 						});
 					}
 					handleSubmit({
-						id: event.target.elements.id.value,
-						uid: "0",
-						litter: "false",
-						isFemale: selectedGender === "true" ? true : false,
-						origin: place,
-						status: {
+					-	id: event.target.elements.id.value,
+					-	isFemale: selectedGender === "true" ? true : false,	
+					-	states: {
 							transferred: {
-								status: false,
-								date: "00-00-00",
-								mom_id: "0",
-								dad_id: "0",
+						-	status: false,
+						-		origin: place,
+						-		date: "00-00-00",
+						-		mom_id: "0",
+						-		dad_id: "0",
 							},
-							changeDate: `${String(fecha.getDate()).padStart(2, "0")}-${String(
-								fecha.getMonth() + 1
-							).padStart(2, "0")}-${String(fecha.getFullYear()).substr(-2)}`,
-							active: true,
+						-	changeDate: date,
+						-	isAlive: true,
 						},
-						userSignature: { name: user.displayName, uid: user.uid },
-						pictureURL: image,
-						lifecycle: {
+						- userSignature: { name: user.displayName, uid: user.uid },
+						- pictureURL: image,
+						- lifecycle: {
 							birth: {
-								litter: event.target.elements.litter.value,
-								race: racesAdded,
+						-		litter: event.target.elements.litter.value,
+						-		race: racesAdded,
 							},
-							weaning: {
-								weight: "000",
-								finish: false,
-								date: "00-00-00",
+						-	weaning: {
+						-		weight: "000",
+						-		date: "00-00-00",
 							},
-							fattening: {
-								weight: "000",
-								finish: false,
-								date: "00-00-00",
+						-	fattening: {
+						-		weight: "000",
+						-		date: "00-00-00",
 							},
 						},
 					});
 				}}>
-				<section className={st.image} title="image_section">
-					<hr />
-					<input
-						required
-						id="image"
-						type="file"
-						name="image"
-						onChange={handleImageChange}
-					/>
-					<label htmlFor="image" style={{ backgroundImage: `url(${image})` }}>
-						{image === null && image_}
-					</label>
-				</section>
-
 				<label title="id_label">
 					{L_id}
 					<input
@@ -221,25 +201,7 @@ export function Natural({ language, user }) {
 					</section>
 				</label>
 
-				<label className={st.races} title="race">
-					{race.label}
-					{addRaces.map((element) => element)}
-					{addRaces.length < races_.length && (
-						<button
-							name="addRisessBTN"
-							type="button"
-							onClick={() =>
-								setAddRaces([
-									...addRaces,
-									<React.Fragment key={addRaces.length}>
-										<Racee index={addRaces.length} races_={races_} /> <hr />
-									</React.Fragment>,
-								])
-							}>
-							{race.BTN_label}
-						</button>
-					)}
-				</label>
+
 
 				<button title="addRabbit" type="submit">
 					{BTN_submit}
