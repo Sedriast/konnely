@@ -2,14 +2,10 @@ export default function BasicData({
 	date,
 	mom_id,
 	dad_id,
-	active,
 	status,
-	litter,
 	origin,
-	weaning,
 	stages_,
 	isFemale,
-	fattening,
 	basicData,
 	birdLitter,
 	isTransfered,
@@ -19,19 +15,6 @@ export default function BasicData({
 			<h1>{basicData[0]}</h1>
 			<table>
 				<tbody>
-					<tr>
-						<td>
-							<h1>
-								{!active
-									? stages_.inactive
-									: !weaning.finish
-									? stages_.reproductive
-									: !fattening.finish
-									? stages_.fattening
-									: litter !== "false" && isFemale && stages_.litter}
-							</h1>
-						</td>
-					</tr>
 					<tr>
 						<th>{basicData[3]}</th>
 						<td>{isFemale ? stages_.female : stages_.male}</td>

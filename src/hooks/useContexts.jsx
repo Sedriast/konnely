@@ -40,6 +40,16 @@ export function errorAlert(error) {
 	Swal.fire({ text: response, icon: "error" });
 }
 
+export function yesNotAlert(MSG, FN) {
+	Swal.fire({
+		text: MSG,
+		icon: "question",
+		showCancelButton: true,
+		confirmButtonText: "Sí",
+		cancelButtonText: "No",
+	}).then(FN);
+}
+
 /********************************************************
  *
  *
@@ -324,14 +334,14 @@ function RabbitListProvider({ children }) {
 	};
 
 	const filterBy = (property, value) => (rabbit__) =>
-		rabbit__[property] === value && rabbit__.status.active;
+		rabbit__[property] === value && rabbit__.states.isAlive;
 
 	function filterRabbits(filter_) {
 		let filteredList;
 		switch (filter_[0]) {
 			case filters_keys.INACTIVE:
 				filteredList = state.rabbits.filter(
-					(rabbit__) => !rabbit__.status.active
+					(rabbit__) => !rabbit__.states.isAlive
 				);
 				break;
 			case filters_keys.FEMALE:
@@ -352,18 +362,29 @@ function RabbitListProvider({ children }) {
 		setRabbitsList(filteredList);
 	}
 
+	function fetchData(case_) {
+		switch (case_) {
+			case "rabbits":
+				getAllCollection("bunnies").then((res) => setRabbits(res));
+				break;
+			case "litters":
+				getAllCollection("litters").then((res) => setLitters(res));
+				break;
+			default:
+				break;
+		}
+	}
+
 	useEffect(() => {
 		filterRabbits(state.filter);
-		state.rabbits?.length === 0 &&
-			getAllCollection("bunnies").then((res) => setRabbits(res));
-
-		state.littersList?.length === 0 &&
-			getAllCollection("litters").then((res) => setLitters(res));
+		fetchData("rabbits");
+		fetchData("litters");
 	}, [state.filter, state.rabbits]);
 
 	return (
 		<RabbitListContext.Provider
 			value={{
+				fetchData,
 				setFilter,
 				setRabbit,
 				rabbit: state.rabbit,

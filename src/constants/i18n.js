@@ -88,6 +88,7 @@ const es = {
         }
     },
     [language_keys.ADDRABBIT]: {
+        MSG: "¿Desea añadir este conejo?",
         defaultOrigin: "Unidad Agroambiental El Tibar - Ubaté",
         races_: ["Nueva Zelanda", "Chinchilla", "Leonardo de Borgoña", "Californiano", "Azul de Viena", "F1"],
         labels: {

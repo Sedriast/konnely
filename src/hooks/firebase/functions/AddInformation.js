@@ -17,40 +17,19 @@ const storage = getStorage(app);
 export const auth = getAuth(app);
 
 /// Function to send a new record of a rabbit to the database
-export async function addImageAndInfo(doc) {
-    try {
-        if (doc.pictureURL && doc.pictureURL.type.startsWith('image/')) {
-            const storage = getStorage();
-            const storageRef = ref(storage, `bunnies/${doc.pictureURL.name}`);
-            await uploadBytesResumable(storageRef, doc.pictureURL);
 
-            const downloadUrl = await getDownloadURL(storageRef);
-            const docWithPictureURL = { ...doc, pictureURL: downloadUrl };
-            await addDoc(collection(db, 'bunnies'), docWithPictureURL);
-        } else {
-            throw new Error('Invalid pictureURL');
-        }
+export async function addRabbits(doc) {
+    try {
+        await addDoc(collection(db, 'bunnies'), doc);
     } catch (error) {
         errorAlert(error.code);
     }
 };
 
-/// Función para editar la información basica de un conejo en la base de datos
-export const EditImageAndInfo = async (props) => {
+/// Function to edit a record of a rabbit to the database
+export async function editRabbits(doc) {
     try {
-        let auxiliar = [];
-        if (props.image.includes(',')) {
-            const Ref = ref(storage, props.uid);
-            await deleteObject(Ref).then(async () => {
-                auxiliar = props.image.split(',');
-                await uploadString(Ref, auxiliar[1], 'base64').then(async () => {
-                    const urlDescarga = await getDownloadURL(Ref);
-                    props.url = urlDescarga;
-                });
-            });
-        }
-        delete props.image;
-        await updateDoc(doc(db, 'rabbits', props.uid), props);
+        await updateDoc(doc(db, 'bunnies',), doc);
     } catch (error) {
         errorAlert(error.code);
     }

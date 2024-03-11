@@ -10,8 +10,8 @@ export function Cards({ language, rabbit, setRabbit }) {
 		isFemale,
 		litter,
 		pictureURL,
-		status: {
-			active,
+		states: {
+			isAlive,
 			transferred: { status, date },
 		},
 		lifecycle: { birth, weaning, fattening },
@@ -42,7 +42,7 @@ export function Cards({ language, rabbit, setRabbit }) {
 					<tr>
 						<th>{state_}</th>
 						<td>
-							{!active
+							{!isAlive
 								? stages_.inactive
 								: !weaning.finish
 								? stages_.reproductive

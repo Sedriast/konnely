@@ -1,11 +1,19 @@
-import React, { useEffect, useState } from "react";
-import st from "../addRabbit.module.css";
-import { Link } from "react-router-dom";
-import { Racee } from "../../../Fragments/Racee";
-import { Cards } from "../../../LitterList/Cards";
 import { errorAlert } from "../../../../hooks/useContexts";
+import imageCompression from "browser-image-compression";
+import React, { useEffect, useState } from "react";
+import { Cards } from "../../../LitterList/Cards";
+import { Racee } from "../../../Fragments/Racee";
+import { useNavigate } from "react-router-dom";
+import st from "../addRabbit.module.css";
 
-export function UI({ language, litter, submitFN, racesFN, validateIDFN }) {
+export function UI({
+	language,
+	litter,
+	submitFN,
+	racesFN,
+	validateIDFN,
+	filterFN,
+}) {
 	const [state, setState] = useState({
 		image: null,
 		litters: [],
@@ -39,6 +47,8 @@ export function UI({ language, litter, submitFN, racesFN, validateIDFN }) {
 		card,
 	} = language;
 
+	const navigate = useNavigate();
+
 	// this use effect is to activate the first race input the component is mounted
 	useEffect(() => {
 		document.getElementsByName("add_race_btn")[0]?.click();
@@ -46,9 +56,14 @@ export function UI({ language, litter, submitFN, racesFN, validateIDFN }) {
 
 	return (
 		<>
-			<Link className="BTN_back" to="/rabbitList">
+			<button
+				className="BTN_back"
+				onClick={() => {
+					filterFN("Female");
+					navigate("/rabbitList");
+				}}>
 				{back_b}
-			</Link>
+			</button>
 			<form
 				className={st.panel}
 				onSubmit={(event) => {
@@ -75,13 +90,29 @@ export function UI({ language, litter, submitFN, racesFN, validateIDFN }) {
 						type="file"
 						id="rabbit_Picture"
 						name="rabbit_Picture"
-						onChange={(event) => {
+						onChange={async (event) => {
 							const file = event.target.files[0];
 							if (file && file.type.startsWith("image/")) {
-								setState({
-									...state,
-									image: file,
-								});
+								try {
+									const options = {
+										maxSizeMB: 1,
+										maxWidthOrHeight: 1920,
+										useWebWorker: true,
+									};
+									const compressedFile = await imageCompression(file, options);
+
+									const reader = new FileReader();
+									reader.onloadend = () => {
+										const base64String = reader.result;
+										setState({
+											...state,
+											image: base64String,
+										});
+									};
+									reader.readAsDataURL(compressedFile);
+								} catch (error) {
+									console.error("Failed to compress image:", error);
+								}
 							} else {
 								errorAlert("image-invalid");
 							}
@@ -100,7 +131,7 @@ export function UI({ language, litter, submitFN, racesFN, validateIDFN }) {
 							type="number"
 							placeholder={rabbitID_p}
 							inputMode="numeric"
-							onBlur={(event) => validateIDFN(event.target.value)}
+							onBlur={(event) => validateIDFN(parseFloat(event.target.value))}
 						/>
 					</label>
 				</section>

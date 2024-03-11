@@ -9,7 +9,7 @@ export function Racee({ index, races_ }) {
 				type="number"
 				name="numerators"
 				inputMode="numeric"
-				step="0.01"
+				step="0.1"
 				min="-100"
 				max="100"
 			/>
@@ -19,7 +19,7 @@ export function Racee({ index, races_ }) {
 				type="number"
 				name="denominators"
 				inputMode="numeric"
-				step="0.01"
+				step="0.1"
 				max="100"
 				min="1"
 			/>

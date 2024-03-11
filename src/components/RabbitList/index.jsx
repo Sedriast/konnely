@@ -47,7 +47,12 @@ export function RabbitList({ language }) {
 			/>
 			<section>{fillGrid()}</section>
 			<figure title={BTN_addRabbit} tooltip-dir="rigth">
-				<button title={BTN_addRabbit} onClick={() => navigate("./addRabbit")}>
+				<button
+					title={BTN_addRabbit}
+					onClick={() => {
+						setFilter("default");
+						navigate("./addRabbit");
+					}}>
 					{"➕"}
 				</button>
 			</figure>

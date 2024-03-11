@@ -1,4 +1,4 @@
-import { addImageAndInfo } from "../../../hooks/firebase/functions/AddInformation";
+import { addRabbits } from "../../../hooks/firebase/functions/AddInformation";
 import { errorAlert, useAuth, useRabbits } from "../../../hooks/useContexts";
 
 import { UI } from "./UI";
@@ -8,24 +8,17 @@ export function AddRabbit({ language, litter }) {
 	const { user } = useAuth();
 
 	function validateRabbitID(rabbitID) {
-		if (rabbitID.length > 0 && rabbitID !== null && rabbitID !== undefined) {
-			if (!rabbitID) {
-				throw new Error("Invalid rabbit ID");
-			}
-
-			const doesRabbitIDExist = rabbits_?.some(
-				({ id, state: { isAlive } }) =>
-					id.toLowerCase().includes(rabbitID.toLowerCase()) && isAlive
-			);
-
-			if (doesRabbitIDExist) {
-				document.getElementsByName("id")[0].value = "";
-				errorAlert("id-already-exists");
-			} else {
-				return true;
-			}
-		} else {
+		if (!rabbitID) {
 			errorAlert("id-invalid");
+			return;
+		}
+		const doesRabbitIDExist = rabbits_.some(
+			({ id, states: { isAlive } }) => id === rabbitID && isAlive
+		);
+
+		if (doesRabbitIDExist) {
+			document.getElementsByName("id")[0].value = "";
+			errorAlert("id-already-exists");
 		}
 	}
 
@@ -35,11 +28,13 @@ export function AddRabbit({ language, litter }) {
 			for (let index = 0; index < long; index++) {
 				racesAdded.push({
 					name: racesNames[index]?.value,
-					value: (
-						(parseFloat(numerators[index]?.value) /
-							parseFloat(denominators[index]?.value)) *
-						100
-					).toFixed(3),
+					value: parseFloat(
+						(
+							(parseFloat(numerators[index]?.value) /
+								parseFloat(denominators[index]?.value)) *
+							100
+						).toFixed(3)
+					),
 				});
 			}
 		} else {
@@ -58,7 +53,7 @@ export function AddRabbit({ language, litter }) {
 			date.getMonth() + 1
 		).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
 
-		addImageAndInfo({
+		addRabbits({
 			id: parseInt(elements.id.value),
 			isFemale: gender,
 			pictureURL: image,

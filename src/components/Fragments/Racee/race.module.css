@@ -8,19 +8,23 @@
 }
 
 .race> :nth-child(1) {
-    width: 20%;
+    background: transparent;
+    width: 40px;
     height: 30px;
-    padding: 0 0.5em;
     border-radius: 20px 0 0 20px;
-    text-align: center;
+    border-left: 1px black solid;
+    font-weight: bold;
+    text-align: end;
 }
 
 .race> :nth-child(3) {
-    width: 20%;
+    background: transparent;
+    width: 40px;
     height: 30px;
-    padding: 0 0.5em;
     border-radius: 0 20px 20px 0;
-    text-align: center;
+    border-right: 1px black solid;
+    font-weight: bold;
+    text-align: start;
 }
 
 .race>span {
@@ -33,6 +37,5 @@
     height: 40px;
     padding: 0 0.5em;
     margin-left: 0.5em;
-
     border-radius: 20px;
 }
