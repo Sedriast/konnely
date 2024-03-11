@@ -84,13 +84,6 @@
     background: rgb(245, 248, 246);
 }
 
-.transference> :first-child {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
 .transference>section {
     display: flex;
     flex-direction: column;
@@ -110,7 +103,7 @@
     width: 225px;
 
     font-weight: bold;
-    margin: 1em auto;
+    margin: 1em 0;
     color: rgb(30, 38, 13);
 
     display: flex;
@@ -156,6 +149,7 @@
         "a4 a6";
     grid-column-gap: 1em;
     grid-auto-rows: min-content;
+    justify-content: center;
 
     background: rgba(139, 167, 59, 0.3);
     overflow-y: auto;
@@ -192,7 +186,7 @@
     width: 250px;
 
     font-weight: bold;
-    margin: 1em auto;
+    margin: 1em 0;
     color: rgb(30, 38, 13);
 
     display: flex;
@@ -276,32 +270,16 @@
     font-weight: bold;
     color: white;
 
-    bottom: 2%;
+    bottom: 1%;
     right: calc(50% - 75px);
 
     border-radius: 20px;
     background: rgb(83, 102, 37);
 }
 
-@media screen and (width < 431px) {
-    .panel>section>button {
-        bottom: 10%;
-    }
-}
-
-@media screen and (width < 361px) {
-    .panel {
-        align-content: normal;
-    }
-
-    .panel>section>button {
-        bottom: 13%;
-    }
-}
-
 @media screen and (width < 768px) {
     .panel {
-        width: 300px;
+        width: 350px;
 
         grid-template-areas:
             "a1"

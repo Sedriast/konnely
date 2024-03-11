@@ -1,30 +1,28 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-//import { ProtectedRoute } from "../../../hooks/ProtectedRoute";
+import { ProtectedRoute } from "../../../hooks/ProtectedRoute";
 import { language_keys } from "../../../constants/keys";
 import { RabbitListProvider, useAuth } from "../../../hooks/useContexts";
 import "../app.module.css";
 
-// import { Login } from "../../LRaccount/Login";
-// import { RabbitList } from "../../RabbitList";
-// import { Register } from "../../LRaccount/Register";
-// import { Natural } from "../../Forms/AddRabbit/Natural";
-// import { Transferred } from "../../Forms/AddRabbit/Transferred";
-// import { Vitae } from "../../Vitae";
-// import { Print } from "../../Print";
+import { Login } from "../../LRaccount/Login";
+import { RabbitList } from "../../RabbitList";
+import { Register } from "../../LRaccount/Register";
+import { Vitae } from "../../Vitae";
+import { Print } from "../../Print";
 // import { LitterList } from "../../LitterList";
 // import { AddLitter } from "../../Forms/AddLitter";
 import { AddRabbit } from "../../Forms/AddRabbit";
 
 export function UI() {
 	const {
-		// user,
-		// email,
-		// login,
-		// register,
+		user,
+		email,
+		login,
+		register,
 		language,
-		// setEmail,
-		// forgotPassword,
-		// isEmailRegistered,
+		setEmail,
+		forgotPassword,
+		isEmailRegistered,
 	} = useAuth();
 
 	return (
@@ -32,16 +30,6 @@ export function UI() {
 			<BrowserRouter>
 				<Routes>
 					<Route
-						exact
-						path="/"
-						element={
-							<RabbitListProvider>
-								<AddRabbit language={language[language_keys.ADDRABBIT]} />
-							</RabbitListProvider>
-						}
-					/>
-
-					{/* <Route
 						exact
 						path="/"
 						element={
@@ -83,29 +71,11 @@ export function UI() {
 
 					<Route
 						exact
-						path="/rabbitList/addRabbitNatural"
+						path="/rabbitList/addRabbit"
 						element={
 							<ProtectedRoute>
 								<RabbitListProvider>
-									<Natural
-										user={user}
-										language={language[language_keys.ADDRABBIT]}
-									/>
-								</RabbitListProvider>
-							</ProtectedRoute>
-						}
-					/>
-
-					<Route
-						exact
-						path="/rabbitList/addRabbitTransferred"
-						element={
-							<ProtectedRoute>
-								<RabbitListProvider>
-									<Transferred
-										user={user}
-										language={language[language_keys.ADDRABBIT]}
-									/>
+									<AddRabbit language={language[language_keys.ADDRABBIT]} />
 								</RabbitListProvider>
 							</ProtectedRoute>
 						}
@@ -135,7 +105,7 @@ export function UI() {
 						}
 					/>
 
-					<Route
+					{/* <Route
 						exact
 						path="/litterList"
 						element={

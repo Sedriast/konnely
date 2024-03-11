@@ -1,7 +1,7 @@
 import { filters_keys } from "../../../constants/keys";
 
 export function SearchFilters({ st, language, filterFN }) {
-	const { male, female, inactive, search } = language;
+	const { search } = language;
 	return (
 		<form
 			className={st.searchFilters}
@@ -15,33 +15,6 @@ export function SearchFilters({ st, language, filterFN }) {
 					🔎
 				</button>
 			</section>
-			<figure name="" title={female} tooltip-dir="bottom">
-				<button
-					title={female}
-					name="female"
-					type="button"
-					onClick={() => filterFN([filters_keys.FEMALE, ""])}>
-					♀️
-				</button>
-			</figure>
-			<figure name="" title={male} tooltip-dir="bottom">
-				<button
-					title={male}
-					name="male"
-					type="button"
-					onClick={() => filterFN([filters_keys.MALE, ""])}>
-					♂️
-				</button>
-			</figure>
-			<figure name="" title={inactive} tooltip-dir="bottom">
-				<button
-					title={inactive}
-					name="inactive"
-					type="button"
-					onClick={() => filterFN([filters_keys.INACTIVE, ""])}>
-					♻️
-				</button>
-			</figure>
 		</form>
 	);
 }

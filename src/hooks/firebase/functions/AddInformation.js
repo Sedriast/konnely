@@ -1,6 +1,6 @@
 import app from '../credentials';
 
-import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
+import { getStorage, ref, getDownloadURL, uploadString, deleteObject, uploadBytesResumable } from 'firebase/storage';
 import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
 import { errorAlert } from '../../useContexts';
 import {
@@ -17,24 +17,25 @@ const storage = getStorage(app);
 export const auth = getAuth(app);
 
 /// Function to send a new record of a rabbit to the database
-
 export async function addImageAndInfo(doc) {
     try {
-        const { pictureURL } = doc;
-        const base64Image = pictureURL.split(',');
+        if (doc.pictureURL && doc.pictureURL.type.startsWith('image/')) {
+            const storage = getStorage();
+            const storageRef = ref(storage, `bunnies/${doc.pictureURL.name}`);
+            await uploadBytesResumable(storageRef, doc.pictureURL);
 
-        const docRef = await addDoc(collection(db, 'bunnies'), doc);
-        const storageRef = ref(storage, docRef.id); await uploadString(storageRef, base64Image[1], 'base64');
-        const downloadUrl = await getDownloadURL(storageRef);
-
-        await updateDoc(doc(db, 'bunnies', docRef.id), { uid: docRef.id, pictureURL: downloadUrl });
+            const downloadUrl = await getDownloadURL(storageRef);
+            const docWithPictureURL = { ...doc, pictureURL: downloadUrl };
+            await addDoc(collection(db, 'bunnies'), docWithPictureURL);
+        } else {
+            throw new Error('Invalid pictureURL');
+        }
     } catch (error) {
         errorAlert(error.code);
     }
 };
 
 /// Función para editar la información basica de un conejo en la base de datos
-
 export const EditImageAndInfo = async (props) => {
     try {
         let auxiliar = [];

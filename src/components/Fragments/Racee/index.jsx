@@ -7,7 +7,7 @@ export function Racee({ index, races_ }) {
 			<input
 				required
 				type="number"
-				name="numerator"
+				name="numerators"
 				inputMode="numeric"
 				step="0.01"
 				min="-100"
@@ -17,7 +17,7 @@ export function Racee({ index, races_ }) {
 			<input
 				required
 				type="number"
-				name="denominator"
+				name="denominators"
 				inputMode="numeric"
 				step="0.01"
 				max="100"
@@ -25,7 +25,7 @@ export function Racee({ index, races_ }) {
 			/>
 			<Lists
 				required
-				name="race"
+				name="raceNames"
 				options={races_}
 				placeholder={races_[index]}
 				defaultValue={races_[index]}

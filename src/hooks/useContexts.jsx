@@ -232,47 +232,46 @@ export { useAuth, AuthProvider };
  ********************************************************/
 
 const litterDataSkeleton = {
-	id: "-007",
+	id: 0,
 	stages: {
 		palpation: {
-			date: "00-00-00",
+			date: "0000-00-00",
 		},
-		partum: { alive: 1, dead: 1, homogenized: 1, date: "00-00-00" },
+		partum: { alive: 1, dead: 1, homogenized: 1, date: "0000-00-00" },
 		prepartum: {
-			date: "00-00-00",
+			date: "0000-00-00",
 		},
 		ride: {
-			date: "00-00-00",
-			female: "-053",
+			date: "0000-00-00",
+			female: -3,
 			isNatural: true,
-			male: "-065",
+			male: -2,
 		},
 		weaning: {
-			date: "00-00-00",
+			date: "0000-00-00",
 			females: 1,
 			males: 1,
-			averangeWeight: "200",
+			averageWeight: 100,
 		},
 	},
 };
 
 const rabbitDataSkeleton = {
-	id: "000000000",
-	litters: [],
+	id: 1,
 	isFemale: true,
-	origin: "Ubaté",
 	pictureURL:
 		"https//:www.**********************************************************.com",
 	userSignature: { name: "admin", uid: "000000000" },
-	status: {
+	states: {
 		transferred: {
 			mom_id: "",
 			dad_id: "",
 			status: false,
+			origin: "Ubaté",
 			date: "00-00-00",
 		},
 		changeDate: "00-00-00",
-		active: false,
+		isAlive: false,
 	},
 	lifecycle: {
 		birth: {
@@ -283,11 +282,6 @@ const rabbitDataSkeleton = {
 			],
 		},
 		weaning: {
-			weight: "000",
-			finish: false,
-			date: "00-00-00",
-		},
-		fattening: {
 			weight: "000",
 			finish: false,
 			date: "00-00-00",

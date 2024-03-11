@@ -38,7 +38,7 @@ export function LitterList({ language }) {
 	}
 
 	return (
-		<section className={st.rabbitList_panel}>
+		<section className={st.litterList_panel}>
 			<SearchFilters
 				st={st}
 				language={FILTERS}

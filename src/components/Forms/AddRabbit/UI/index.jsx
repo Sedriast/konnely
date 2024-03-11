@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import st from "../addRabbit.module.css";
 import { Link } from "react-router-dom";
-import { useRabbits } from "../../../../hooks/useContexts";
 import { Racee } from "../../../Fragments/Racee";
+import { Cards } from "../../../LitterList/Cards";
+import { errorAlert } from "../../../../hooks/useContexts";
 
-export function UI({ language }) {
-	const { litters_ } = useRabbits();
+export function UI({ language, litter, submitFN, racesFN, validateIDFN }) {
+	const [state, setState] = useState({
+		image: null,
+		litters: [],
+		inputRaces: [],
+		isTransferred: <></>,
+	});
 
 	const {
 		races_,
@@ -16,53 +22,24 @@ export function UI({ language }) {
 			momID,
 			origin,
 			female,
-			litterID_l,
 			rabbitID_l,
 			weaningDate,
 			rabbitGender,
-			isTransferred,
 			transferenceDate,
 			weaningAverageWeight,
 			currentAverageWeight,
 		},
 		placeholders: {
 			origin_p,
-			litterID_p,
 			rabbitID_p,
 			weaningAverangeWeight_p,
 			currentAverangeWeight_p,
 		},
 		buttons: { submit_b, back_b, addRaces_b, deleteRaces_b },
+		card,
 	} = language;
 
-	const [state, setState] = useState({
-		image: null,
-		inputRaces: [],
-		isTransferred: (
-			<label title="id_camada_label">
-				{litterID_l}
-				<select
-					required
-					name="litterID"
-					onChange={(event) => {
-						console.log(litters_);
-						setLitter(event.target.value);
-					}}>
-					<option hidden value="">
-						{litterID_p}
-					</option>
-					{litters_?.map((option_, index) => (
-						<option key={index} value={option_}>
-							{option_.id}
-						</option>
-					))}
-				</select>
-			</label>
-		),
-	});
-	const [birthLittter, setLitter] = useState({});
-
-	// this use effect is to activate the first race input and simulate the transferece check when the component is mounted
+	// this use effect is to activate the first race input the component is mounted
 	useEffect(() => {
 		document.getElementsByName("add_race_btn")[0]?.click();
 	}, []);
@@ -72,7 +49,25 @@ export function UI({ language }) {
 			<Link className="BTN_back" to="/rabbitList">
 				{back_b}
 			</Link>
-			<form className={st.panel}>
+			<form
+				className={st.panel}
+				onSubmit={(event) => {
+					event.preventDefault();
+					const genderInput = Array.from(
+						event.target.elements.rabbit_gender
+					).find((input) => input.checked);
+					submitFN({
+						elements: event.target.elements,
+						races: racesFN(
+							state.inputRaces.length,
+							event.target.elements.numerators,
+							event.target.elements.denominators,
+							event.target.elements.raceNames
+						),
+						gender: genderInput && genderInput.value === "true" ? true : false,
+						image: state.image,
+					});
+				}}>
 				<section className={st.image}>
 					<hr />
 					<input
@@ -81,11 +76,14 @@ export function UI({ language }) {
 						id="rabbit_Picture"
 						name="rabbit_Picture"
 						onChange={(event) => {
-							if (event.target.files && event.target.files[0]) {
+							const file = event.target.files[0];
+							if (file && file.type.startsWith("image/")) {
 								setState({
 									...state,
-									image: URL.createObjectURL(event.target.files[0]),
+									image: file,
 								});
+							} else {
+								errorAlert("image-invalid");
 							}
 						}}
 					/>
@@ -102,7 +100,7 @@ export function UI({ language }) {
 							type="number"
 							placeholder={rabbitID_p}
 							inputMode="numeric"
-							onBlur={(event) => {}}
+							onBlur={(event) => validateIDFN(event.target.value)}
 						/>
 					</label>
 				</section>
@@ -126,143 +124,74 @@ export function UI({ language }) {
 						<label htmlFor="rabbit_gender_m">{male}</label>
 					</section>
 				</section>
-				<section className={st.transference}>
-					<label>
-						{isTransferred}
-						<div className="switch">
+
+				{litter ? (
+					<Cards language={card} litter={litter} />
+				) : (
+					<section className={st.transference}>
+						<label>
+							{origin}
 							<input
-								type="checkbox"
-								name="originObserver"
-								onChange={(event) =>
-									event.target.checked
-										? setState({
-												...state,
-												isTransferred: (
-													<>
-														<label>
-															{origin}
-															<input
-																required
-																type="text"
-																placeholder={origin_p}
-																name="origin"
-															/>
-														</label>
-														<label>
-															{transferenceDate}
-															<input
-																required
-																type="date"
-																name="transference_date"
-															/>
-														</label>
-														<label>
-															{momID}
-															<input
-																required
-																placeholder={momID}
-																name="momID"
-																type="number"
-																inputMode="numeric"
-															/>
-														</label>
-														<label>
-															{dadID}
-															<input
-																required
-																name="dadID"
-																placeholder={dadID}
-																type="number"
-																inputMode="numeric"
-															/>
-														</label>
-														<section>
-															<label>
-																{weaningDate}
-																<input
-																	required
-																	type="date"
-																	name="weaning_date"
-																/>
-															</label>
-															<label>
-																{weaningAverageWeight}
-																<input
-																	required
-																	placeholder={weaningAverangeWeight_p}
-																	type="number"
-																	inputMode="numeric"
-																	name="weaningAverangeWeight"
-																/>
-															</label>
-															<label>
-																{momID}
-																<input
-																	required
-																	placeholder={momID}
-																	type="number"
-																	inputMode="numeric"
-																	name="weaningMales"
-																/>
-															</label>
-															<label>
-																{dadID}
-																<input
-																	required
-																	placeholder={dadID}
-																	type="number"
-																	inputMode="numeric"
-																	name="weaningFemales"
-																/>
-															</label>
-														</section>
-														<section>
-															<label>
-																{currentAverageWeight}
-																<input
-																	required
-																	placeholder={currentAverangeWeight_p}
-																	type="number"
-																	inputMode="numeric"
-																	name="patumAlive"
-																/>
-															</label>
-														</section>
-													</>
-												),
-										  })
-										: setState({
-												...state,
-												isTransferred: (
-													<label title="id_camada_label">
-														{litterID_l}
-														<select
-															required
-															name="litterID"
-															onChange={(event) => {
-																console.log(litters_);
-																setLitter(event.target.value);
-															}}>
-															<option hidden value="">
-																{litterID_p}
-															</option>
-															{litters_?.map((option_, index) => (
-																<option key={index} value={option_}>
-																	{option_.id}
-																</option>
-															))}
-														</select>
-													</label>
-												),
-										  })
-								}
+								required
+								type="text"
+								placeholder={origin_p}
+								name="origin"
 							/>
-							<span></span>
-						</div>
-					</label>
-					<hr />
-					{state.isTransferred}
-				</section>
+						</label>
+						<label>
+							{transferenceDate}
+							<input required type="date" name="transference_date" />
+						</label>
+						<section>
+							<label>
+								{weaningDate}
+								<input required type="date" name="weaning_date" />
+							</label>
+							<label>
+								{weaningAverageWeight}
+								<input
+									required
+									placeholder={weaningAverangeWeight_p}
+									type="number"
+									inputMode="numeric"
+									name="weaningAverageWeight"
+								/>
+							</label>
+							<label>
+								{momID}
+								<input
+									required
+									placeholder={momID}
+									type="number"
+									inputMode="numeric"
+									name="weaningFemales"
+								/>
+							</label>
+							<label>
+								{dadID}
+								<input
+									required
+									placeholder={dadID}
+									type="number"
+									inputMode="numeric"
+									name="weaningMales"
+								/>
+							</label>
+						</section>
+						<section>
+							<label>
+								{currentAverageWeight}
+								<input
+									required
+									placeholder={currentAverangeWeight_p}
+									type="number"
+									inputMode="numeric"
+									name="currentAverageWeight"
+								/>
+							</label>
+						</section>
+					</section>
+				)}
 				<section>
 					<label>
 						{races}

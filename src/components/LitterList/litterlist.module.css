@@ -1,4 +1,4 @@
-.rabbitList_panel {
+.litterList_panel {
     width: 100%;
     height: 100%;
 
@@ -11,7 +11,7 @@
     --buttonsBorder: rgb(146, 158, 153);
 }
 
-.rabbitList_panel>section {
+.litterList_panel>section {
     width: 75%;
     height: 70%;
 
@@ -29,7 +29,7 @@
     overflow-x: hidden;
 }
 
-.rabbitList_panel>section a {
+.litterList_panel>section a {
     view-timeline-name: --ter;
     view-timeline-axis: block;
     view-timeline: --ter 0.5s ease-in;
@@ -39,7 +39,7 @@
     animation-fill-mode: both;
 }
 
-.rabbitList_panel>figure {
+.litterList_panel>figure {
     position: absolute;
 
     left: 2em;
@@ -58,7 +58,7 @@
 }
 
 @media screen and (width < 769px) {
-    .rabbitList_panel>section {
+    .litterList_panel>section {
         width: 80%;
         height: 70%;
     }
@@ -327,5 +327,147 @@
     to {
         opacity: 1;
         scale: 100%;
+    }
+}
+
+/*
+
+
+    Card
+
+
+
+*/
+
+.littersCard {
+    --coloTitles: rgb(26, 33, 18);
+    --colorSubtitles: white;
+    --colorText: rgb(68, 82, 34);
+    --backIMG: rgb(244, 247, 238);
+    --backgroundPrincipalTable: linear-gradient(-45deg, rgba(135, 166, 59, 0), rgba(169, 140, 102, 0.5));
+    --backgroundPrincipalTableMovil: linear-gradient(0deg, rgba(135, 166, 59, 0), rgba(169, 140, 102, 0.5));
+    --backgroundTables: rgba(169, 140, 102, 0.5);
+    --widthTables: 275px;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    border-bottom: 4px groove var(--coloTitles);
+
+    width: 100%;
+    height: auto;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
+
+    text-align: center;
+
+    view-timeline: block;
+    view-timeline-name: --ter;
+    animation-name: show;
+    animation-range: entry 25% cover 30%;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+.littersCard img {
+    width: 45px;
+    height: 45px;
+
+    background-color: transparent;
+    border-radius: 0;
+}
+
+.littersCard span {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width: var(--widthTables);
+    height: auto;
+
+    border-radius: 0 10px 10px 0;
+    background: var(--backgroundTables);
+    border-left: 4px solid var(--backIMG);
+    margin: 5px;
+    padding: 10px 0;
+
+    overflow: hidden;
+    transform-origin: left;
+
+    animation: expandRight 1s ease-in;
+    overflow: hidden;
+}
+
+.littersCard span section {
+    width: auto;
+
+    background: transparent;
+    padding: 0 1em 0 0.5em;
+
+    border-radius: 0;
+    border-left: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.littersCard span section h3 {
+    width: 40px;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+}
+
+.littersCard span table {
+    width: 175px;
+    height: 100%;
+    background: transparent;
+
+    text-overflow: ellipsis;
+    border-radius: 10px;
+    border-left: 4px solid var(--coloTitles);
+
+    margin-left: 10px;
+    padding: 0.5em 0;
+}
+
+.littersCard span table tr {
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+}
+
+.littersCard span table th {
+    font-size: 10px;
+    width: 75px;
+    text-align: end;
+}
+
+.littersCard span table td {
+    font-size: 12px;
+    padding-left: 1em;
+    width: fit-content;
+    text-align: start;
+}
+
+.littersCard span table tbody :nth-child(3) {
+    margin-bottom: 0;
+}
+
+@keyframes expandRight {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
     }
 }
