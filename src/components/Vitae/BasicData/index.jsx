@@ -27,7 +27,13 @@ export default function BasicData({
 							</tr>
 							<tr>
 								<th>{basicData[4]}</th>
-								<td>{date}</td>
+								<td>
+									{new Date(date.toDate()).toLocaleDateString("es-ES", {
+										year: "numeric",
+										month: "long",
+										day: "numeric",
+									})}
+								</td>
 							</tr>
 							<tr>
 								<th>{basicData[8]}</th>

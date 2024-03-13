@@ -3,7 +3,7 @@ import { reducer_keys } from "../constants/keys";
 const object_reducer = (state, payload) => ({
     [reducer_keys.setUser]: {
         ...state,
-        user: payload,
+        user_: payload,
         loading: false
     },
     [reducer_keys.newEmail]: {
@@ -20,6 +20,10 @@ const object_reducer = (state, payload) => ({
         rabbitsList: payload,
     },
     [reducer_keys.setLitters]: {
+        ...state,
+        litters: payload,
+    },
+    [reducer_keys.setLitterList]: {
         ...state,
         littersList: payload,
     },

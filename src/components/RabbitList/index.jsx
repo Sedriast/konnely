@@ -6,7 +6,7 @@ import st from "./rabbitlist.module.css";
 import { Cards } from "./Cards";
 import { CardsS } from "../Fragments/Skeletons/CardsS";
 
-export function RabbitList({ language }) {
+export function RabbitList({ language, user }) {
 	const { CARDS, FILTERS, BTN_addRabbit } = language;
 	const { setRabbit, rabbits_, setFilter, searchRabbits } = useRabbits();
 	const navigate = useNavigate();
@@ -46,16 +46,19 @@ export function RabbitList({ language }) {
 				searchs={searchRabbits}
 			/>
 			<section>{fillGrid()}</section>
-			<figure title={BTN_addRabbit} tooltip-dir="rigth">
-				<button
-					title={BTN_addRabbit}
-					onClick={() => {
-						setFilter("default");
-						navigate("./addRabbit");
-					}}>
-					{"➕"}
-				</button>
-			</figure>
+
+			{user.rol === "administrador" && (
+				<figure title={BTN_addRabbit} tooltip-dir="rigth">
+					<button
+						title={BTN_addRabbit}
+						onClick={() => {
+							setFilter("default");
+							navigate("./addRabbit");
+						}}>
+						{"➕"}
+					</button>
+				</figure>
+			)}
 		</section>
 	);
 }

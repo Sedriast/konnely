@@ -1,7 +1,7 @@
 import app from '../credentials';
 
-import { getStorage, ref, getDownloadURL, uploadString, deleteObject, uploadBytesResumable } from 'firebase/storage';
-import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc } from 'firebase/firestore';
+import { getStorage, ref, getDownloadURL, uploadString, deleteObject } from 'firebase/storage';
+import { getFirestore, collection, addDoc, doc, updateDoc, deleteDoc, setDoc, Firestore } from 'firebase/firestore';
 import { errorAlert } from '../../useContexts';
 import {
     getAuth,
@@ -16,24 +16,27 @@ const db = getFirestore(app);
 const storage = getStorage(app);
 export const auth = getAuth(app);
 
-/// Function to send a new record of a rabbit to the database
-
-export async function addRabbits(doc) {
+/// Function to send a new record of a rabbit to the database and edit the same
+export async function addUpdateRabbits(doc) {
     try {
-        await addDoc(collection(db, 'bunnies'), doc);
+        await setDoc(doc(db, 'bunnies', doc.id), doc);
     } catch (error) {
         errorAlert(error.code);
     }
 };
 
-/// Function to edit a record of a rabbit to the database
-export async function editRabbits(doc) {
-    try {
-        await updateDoc(doc(db, 'bunnies',), doc);
-    } catch (error) {
-        errorAlert(error.code);
+/// Function to update one document from the database
+export async function updateDataRabbit(rabbit, setRabbit, navigate, rabbits_) {
+    const docRef = Firestore.collection("bunnies").doc(rabbit.id);
+    const doc = await docRef.get();
+    if (doc.exists) {
+        rabbits_.push(doc.data());
+        setRabbit(doc.data());
+        navigate("/vitae");
+    } else {
+        console.log("No such document!");
     }
-};
+}
 
 /// Función para editar el ciclo de vida de un conejo en la base de datos
 

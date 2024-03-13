@@ -1,17 +1,17 @@
+import { RabbitListProvider, useAuth } from "../../../hooks/useContexts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ProtectedRoute } from "../../../hooks/ProtectedRoute";
 import { language_keys } from "../../../constants/keys";
-import { RabbitListProvider, useAuth } from "../../../hooks/useContexts";
 import "../app.module.css";
 
-import { Login } from "../../LRaccount/Login";
-import { RabbitList } from "../../RabbitList";
-import { Register } from "../../LRaccount/Register";
 import { Vitae } from "../../Vitae";
 import { Print } from "../../Print";
-// import { LitterList } from "../../LitterList";
-// import { AddLitter } from "../../Forms/AddLitter";
+import { Login } from "../../LRaccount/Login";
+import { RabbitList } from "../../RabbitList";
+import { LitterList } from "../../LitterList";
+import { AddLitter } from "../../Forms/AddLitter";
 import { AddRabbit } from "../../Forms/AddRabbit";
+import { Register } from "../../LRaccount/Register";
 
 export function UI() {
 	const {
@@ -63,7 +63,10 @@ export function UI() {
 						element={
 							<ProtectedRoute>
 								<RabbitListProvider>
-									<RabbitList language={language[language_keys.RABBITLIST]} />
+									<RabbitList
+										user={user}
+										language={language[language_keys.RABBITLIST]}
+									/>
 								</RabbitListProvider>
 							</ProtectedRoute>
 						}
@@ -105,7 +108,19 @@ export function UI() {
 						}
 					/>
 
-					{/* <Route
+					<Route
+						exact
+						path="/vitae/addLitter"
+						element={
+							<ProtectedRoute>
+								<RabbitListProvider>
+									<AddLitter language={language[language_keys.ADDLITTER]} />
+								</RabbitListProvider>
+							</ProtectedRoute>
+						}
+					/>
+
+					<Route
 						exact
 						path="/litterList"
 						element={
@@ -116,18 +131,6 @@ export function UI() {
 							</ProtectedRoute>
 						}
 					/>
-
-					<Route
-						exact
-						path="/litterList/addLitter"
-						element={
-							<ProtectedRoute>
-								<RabbitListProvider>
-									<AddLitter language={language[language_keys.ADDLITTER]} />
-								</RabbitListProvider>
-							</ProtectedRoute>
-						}
-					/> */}
 				</Routes>
 			</BrowserRouter>
 		</main>

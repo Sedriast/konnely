@@ -5,11 +5,13 @@ import st from "./vitae.module.css";
 import BasicData from "./BasicData";
 import Lifecycle from "./Lifecycle";
 import PictureRaces from "./PictureRaces";
+import Litter from "./Litter";
 
 export function Vitae({ language, user }) {
 	const {
-		buttons: { BTN_back, BTN_print },
+		litterData,
 		labels: { rabbit },
+		buttons: { BTN_back, BTN_print },
 		titles: { race, stages_, basicData, lifecycle, isTransfered },
 	} = language;
 	const {
@@ -21,7 +23,7 @@ export function Vitae({ language, user }) {
 				isAlive,
 				transferred: { origin, status, date, mom_id, dad_id },
 			},
-			lifecycle: { birth, weaning, fattening },
+			lifecycle: { birth, weaning },
 		},
 		litters_,
 	} = useRabbits();
@@ -60,16 +62,7 @@ export function Vitae({ language, user }) {
 					pictureURL={pictureURL}
 				/>
 				<Lifecycle weaning={weaning} lifecycle={lifecycle} />
-				{/* {litter !== "false" && (
-					<Litter
-						litter_={{
-							...litter_,
-							natural: stages_.natural,
-							artificial: stages_.artificial,
-						}}
-						litterData={litters_.find((doc) => doc.id === litter)}
-					/>
-				)} */}
+				<Litter language={litterData} />
 			</section>
 		</>
 	);

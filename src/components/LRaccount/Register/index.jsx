@@ -1,6 +1,6 @@
 import { errorAlert } from "../../../hooks/useContexts";
 import st from "../acountLR.module.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 import { Tutorial } from "./Tutorial";
@@ -25,7 +25,7 @@ export function Register({
 	},
 }) {
 	const [isOpen, setOpen] = useState(true);
-	const { navigate } = useNavigate();
+	const navigate = useNavigate();
 	return (
 		<>
 			{isOpen && (
@@ -33,9 +33,9 @@ export function Register({
 					<Tutorial steps={tutorial} st={st} />
 				</Modal>
 			)}
-			<Link className={st.BTN_back} to="/#">
+			<button className={st.BTN_back} onClick={() => navigate("/#")}>
 				{BTN_back}
-			</Link>
+			</button>
 			<button
 				title={BTN_send}
 				className={st.tutorial}
@@ -50,14 +50,13 @@ export function Register({
 						Swal.fire({
 							title: MGG_success,
 							icon: "success",
-						}).then(() => {
-							navigate("./");
-						});
+						}).then(() => navigate("/#"));
 					});
 				}}>
 				<label>
 					{institutionalUser}
 					<input
+						required
 						type="text"
 						autoComplete="off"
 						name={institutionalUser}
@@ -73,6 +72,7 @@ export function Register({
 				<label>
 					{institutionalID}
 					<input
+						required
 						min="1"
 						type="number"
 						pattern="^[0-9]+"
@@ -81,15 +81,16 @@ export function Register({
 				</label>
 				<label>
 					{name}
-					<input type="text" name={name} />
+					<input required type="text" name={name} />
 				</label>
 				<label>
 					{lastName}
-					<input type="text" name={lastName} />
+					<input required type="text" name={lastName} />
 				</label>
 				<label>
 					{cellphoneNumber}
 					<input
+						required
 						min="1"
 						type="number"
 						pattern="^[0-9]+"
@@ -98,11 +99,11 @@ export function Register({
 				</label>
 				<label>
 					{password}
-					<input autoComplete="off" type="password" name={password} />
+					<input required autoComplete="off" type="password" name={password} />
 				</label>
 				<label>
 					{authPassword}
-					<input autoComplete="off" type="password" name={authPassword} />
+					<input required type="password" name={authPassword} />
 				</label>
 				<button type="submit" title={BTN_send}>
 					{BTN_send}

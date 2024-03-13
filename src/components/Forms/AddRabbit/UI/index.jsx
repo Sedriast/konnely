@@ -7,12 +7,12 @@ import { useNavigate } from "react-router-dom";
 import st from "../addRabbit.module.css";
 
 export function UI({
-	language,
 	litter,
-	submitFN,
 	racesFN,
-	validateIDFN,
 	filterFN,
+	submitFN,
+	language,
+	validateIDFN,
 }) {
 	const [state, setState] = useState({
 		image: null,
@@ -59,7 +59,7 @@ export function UI({
 			<button
 				className="BTN_back"
 				onClick={() => {
-					filterFN("Female");
+					filterFN(["female", ""]);
 					navigate("/rabbitList");
 				}}>
 				{back_b}
@@ -131,6 +131,7 @@ export function UI({
 							type="number"
 							placeholder={rabbitID_p}
 							inputMode="numeric"
+							step="1"
 							onBlur={(event) => validateIDFN(parseFloat(event.target.value))}
 						/>
 					</label>
@@ -193,6 +194,7 @@ export function UI({
 								<input
 									required
 									placeholder={momID}
+									step="1"
 									type="number"
 									inputMode="numeric"
 									name="weaningFemales"
@@ -203,6 +205,7 @@ export function UI({
 								<input
 									required
 									placeholder={dadID}
+									step="1"
 									type="number"
 									inputMode="numeric"
 									name="weaningMales"

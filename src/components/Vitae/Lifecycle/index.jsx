@@ -14,7 +14,13 @@ export default function Lifecycle({ lifecycle, weaning }) {
 						<tr></tr>
 						<tr>
 							<th>{lifecycle[3][0]}</th>
-							<td>{weaning.date}</td>
+							<td>
+								{new Date(weaning.date.toDate()).toLocaleDateString("es-ES", {
+									year: "numeric",
+									month: "long",
+									day: "numeric",
+								})}
+							</td>
 						</tr>
 						<tr>
 							<th>{lifecycle[3][1]}</th>

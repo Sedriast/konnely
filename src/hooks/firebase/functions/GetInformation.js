@@ -86,7 +86,6 @@ export const RealTime = ({ coleccion, parametro, busqueda }) => {
 };
 
 /// function that extract all documents from one collection specified
-
 export const getAllCollection = async (collection_) => {
     const querySnapshot = await getDocs(collection(db, collection_));
     return querySnapshot.docs.map((doc) => doc.data());

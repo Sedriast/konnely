@@ -88,7 +88,7 @@ const es = {
         }
     },
     [language_keys.ADDRABBIT]: {
-        MSG: "¿Desea añadir este conejo?",
+        alert: "¿Desea añadir este conejo?",
         defaultOrigin: "Unidad Agroambiental El Tibar - Ubaté",
         races_: ["Nueva Zelanda", "Chinchilla", "Leonardo de Borgoña", "Californiano", "Azul de Viena", "F1"],
         labels: {
@@ -161,7 +161,10 @@ const es = {
                 artificial: "Inseminación Artificial",
             },
         },
-
+        litterData: {
+            titles: { litters_t: "CAMADAS" },
+            buttons: { record_b: "ver todo", add_b: "añadir" },
+        }
     },
     [language_keys.PRINT]: {
         buttons: {
@@ -200,8 +203,29 @@ const es = {
                 labels: ["monta natural", "inseminación artificial"],
                 titles: ["EDAD DESTETE (meses)", "CRITERIO PARA LA SELECCIÓN", "trasladado desde ", "nacido por "],
             },
-            table_five: {
-                titles: [["FECHA SERVICIO", "MES", "DIA", "AÑO"], "PLACA MACHO", "FECHA DETECCIÓN DE PREÑES", "FECHA POSIBLE PARTO", "FECHA ATENCIÓN PARTO", "FECHA REAL DE PARTO", ["N°. ANIMALES", "V", "M"], " PESO DE NACIMIENTO (gr)", "FECHA DESTETE", ["N°. ANIMALES", "H", "M"], "PESO DESTETE"],
+            litterRecord: {
+                titles: {
+                    palpationDate: "FECHA DE PALPACIÓN",
+                    prepartumDate: "FECHA DE ATENCION AL PARTO",
+                    weaning: {
+                        format_w: ["H", "M"],
+                        date_w: "FECHA DESTETE",
+                        weight_w: "PESO DESTETE",
+                        animals_w: "N°. ANIMALES",
+                    },
+                    ride: {
+                        males: "PLACA MACHO",
+                        date_r: "FECHA MONTA",
+                        format_r: ["MES", "DIA", "AÑO"],
+                    },
+                    partum: {
+                        format_p: ["V", "M"],
+                        date_p: "FECHA DE PARTO",
+                        animals_p: "N°. ANIMALES",
+                        weight_p: "PESO DE NACIMIENTO (gr)",
+                        predictedDate: "FECHA POSIBLE PARTO",
+                    },
+                },
             },
         },
         footer: {

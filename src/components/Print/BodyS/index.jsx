@@ -1,4 +1,4 @@
-import { TableFive } from "./TableFive";
+import { LittersListP } from "./LittersListP";
 import { TableFour } from "./TableFour";
 import { TableOne } from "./TableOne";
 import { TableThree } from "./TableThree";
@@ -10,8 +10,8 @@ export function BodyS({
 	table_one,
 	table_two,
 	table_four,
-	table_five,
 	table_three,
+	litterRecord,
 }) {
 	return (
 		<section className={st.bodyS}>
@@ -22,7 +22,10 @@ export function BodyS({
 				table_three={table_three}
 			/>
 			<TableFour language={language.bodyS.table_four} table_four={table_four} />
-			<TableFive language={language.bodyS.table_five} table_five={table_five} />
+			<LittersListP
+				litterRecord={litterRecord}
+				language={language.bodyS.litterRecord}
+			/>
 		</section>
 	);
 }

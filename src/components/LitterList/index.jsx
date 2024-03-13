@@ -1,15 +1,13 @@
 import { useRabbits } from "../../hooks/useContexts";
 import { SearchFilters } from "./SearchFilters";
-import { useNavigate } from "react-router-dom";
 import st from "./rabbitlist.module.css";
 
 import { Cards } from "./Cards";
 import { CardsS } from "../Fragments/Skeletons/CardsS";
 
 export function LitterList({ language }) {
-	const { CARDS, FILTERS, BTN_addRabbit } = language;
+	const { CARDS, FILTERS } = language;
 	const { setRabbit, rabbits_, setFilter, searchRabbits } = useRabbits();
-	const navigate = useNavigate();
 
 	function fillGrid() {
 		if (rabbits_.length === 0) {
@@ -42,15 +40,10 @@ export function LitterList({ language }) {
 			<SearchFilters
 				st={st}
 				language={FILTERS}
-				searchs={searchRabbits}
 				filterFN={setFilter}
+				searchs={searchRabbits}
 			/>
 			<section>{fillGrid()}</section>
-			<figure title={BTN_addRabbit} tooltip-dir="rigth">
-				<button title={BTN_addRabbit} onClick={() => navigate("./addLitter")}>
-					{"➕"}
-				</button>
-			</figure>
 		</section>
 	);
 }

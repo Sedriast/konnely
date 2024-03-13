@@ -47,7 +47,7 @@ export function yesNotAlert(MSG, FN) {
 		showCancelButton: true,
 		confirmButtonText: "Sí",
 		cancelButtonText: "No",
-	}).then(FN);
+	}).then((tr) => FN(tr));
 }
 
 /********************************************************
@@ -71,7 +71,7 @@ function AuthProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, {
 		theme: 0,
 		email: "",
-		user: null,
+		user_: null,
 		loading: true,
 		picture: picture_,
 	});
@@ -219,7 +219,7 @@ function AuthProvider({ children }) {
 				language,
 				setEmail,
 				forgotPassword,
-				user: state.user,
+				user: state.user_,
 				isEmailRegistered,
 				email: state.email,
 			}}>
@@ -274,8 +274,8 @@ const rabbitDataSkeleton = {
 	userSignature: { name: "admin", uid: "000000000" },
 	states: {
 		transferred: {
-			mom_id: "",
-			dad_id: "",
+			mom_id: 0,
+			dad_id: 0,
 			status: false,
 			origin: "Ubaté",
 			date: "00-00-00",
@@ -285,17 +285,17 @@ const rabbitDataSkeleton = {
 	},
 	lifecycle: {
 		birth: {
-			litter: "000",
+			litter: 0,
 			race: [
-				{ name: "Californiano", percentage: "50" },
-				{ name: "Azul de viena", percentage: "50" },
+				{ name: "Californiano", percentage: 50 },
+				{ name: "Azul de viena", percentage: 50 },
 			],
 		},
 		weaning: {
-			weight: "000",
-			finish: false,
+			weight: 0,
 			date: "00-00-00",
 		},
+		currentWeight: 0,
 	},
 };
 
@@ -310,25 +310,32 @@ const useRabbits = () => {
 function RabbitListProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, {
 		rabbits: [],
+		litters: [],
 		littersList: [],
 		rabbitsList: [],
 		filter: ["female", ""],
 		litter: litterDataSkeleton,
 		rabbit: rabbitDataSkeleton,
 	});
+
 	const setRabbit = (rabbitData) => {
 		dispatch({ type: reducer_keys.setRabbit, payload: rabbitData });
 	};
 	const setRabbits = (rabbits) => {
 		dispatch({ type: reducer_keys.setRabbits, payload: rabbits });
 	};
+	const setLitters = (litters) => {
+		dispatch({ type: reducer_keys.setLitters, payload: litters });
+	};
+
 	const setRabbitsList = (newRabbitsList) => {
 		dispatch({ type: reducer_keys.setRabbitsList, payload: newRabbitsList });
 	};
 
-	const setLitters = (newLitter) => {
-		dispatch({ type: reducer_keys.setLitters, payload: newLitter });
+	const setLitterList = (newLitterList) => {
+		dispatch({ type: reducer_keys.setLitterList, payload: newLitterList });
 	};
+
 	const setFilter = (newFilter) => {
 		dispatch({ type: reducer_keys.setFilter, payload: newFilter });
 	};
@@ -375,18 +382,37 @@ function RabbitListProvider({ children }) {
 		}
 	}
 
+	function litterRecord() {
+		setLitterList(
+			state.litters.filter(
+				(litter) => litter.stages.ride.female === state.rabbit.id
+			)
+		);
+	}
+
+	// this useEffet is used to fetch the data from the database when the app is mounted
 	useEffect(() => {
-		filterRabbits(state.filter);
 		fetchData("rabbits");
 		fetchData("litters");
+	});
+
+	//	this useEffect is used to filter rabbit's litters when the rabbit is changed
+	useEffect(() => {
+		litterRecord();
+		// eslint-disable-next-line
+	}, [state.rabbit]);
+
+	// this useEffect is used to filter the rabbits when the filter is changed and update rabbitsList when the fetched data is finished
+	useEffect(() => {
+		filterRabbits(state.filter);
+		// eslint-disable-next-line
 	}, [state.filter, state.rabbits]);
 
 	return (
 		<RabbitListContext.Provider
 			value={{
-				fetchData,
-				setFilter,
 				setRabbit,
+				setFilter,
 				rabbit: state.rabbit,
 				litters_: state.littersList,
 				rabbits_: state.rabbitsList,

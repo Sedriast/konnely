@@ -1,17 +1,10 @@
 import { errorAlert, useRabbits } from "../../../hooks/useContexts";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import st from "./addLitter.module.css";
 import { Link } from "react-router-dom";
 
 export function AddLitter({ language }) {
 	const { litters_, rabbits_ } = useRabbits();
-	const [stage, setStage] = useState({
-		ride: false,
-		partum: false,
-		weaning: false,
-		palpation: false,
-		prepartum: false,
-	});
 	const {
 		labels: {
 			id,
@@ -87,7 +80,7 @@ export function AddLitter({ language }) {
 
 	return (
 		<>
-			<Link className="BTN_back" to="/litterList">
+			<Link className="BTN_back" to="/vitae">
 				{back}
 			</Link>
 			<form className={st.panelLitter} onSubmit={() => {}}>
@@ -107,270 +100,160 @@ export function AddLitter({ language }) {
 					</label>
 				</section>
 				<div>
-					<label title="rideStage_label">
-						{ride}
-						<div className={st.switch}>
-							<input
-								required
-								type="checkbox"
-								name="observerRide"
-								onChange={(event) =>
-									event.target.checked
-										? setStage({
-												...stage,
-												ride: (
-													<section>
-														<label title="rideDate_label">
-															{date}
-															<input required type="date" name="rideDate" />
-														</label>
-														<label title="rideFemale_label">
-															{female}
-															<input
-																type="number"
-																name="rideFemaleID"
-																placeholder={female}
-																onBlur={(event) => {
-																	validateRabbitID(
-																		event.target.value,
-																		event.target.name
-																	);
-																}}
-															/>
-														</label>
-														<label title="rideMale_label">
-															{male}
-															<input
-																type="number"
-																name="rideMaleID"
-																placeholder={male}
-																onBlur={(event) => {
-																	validateRabbitID(
-																		event.target.value,
-																		event.target.name
-																	);
-																}}
-															/>
-														</label>
-														<label title="rideIsFemale_label">
-															{isFemale}
-															<section className={st.isNatural}>
-																<input
-																	type="radio"
-																	id="natural"
-																	value={true}
-																	name="isNatural"
-																	defaultChecked
-																/>
-																<label htmlFor="natural">{natural}</label>
-																<input
-																	type="radio"
-																	name="isNatural"
-																	value={false}
-																	id="artificial"
-																/>
-																<label htmlFor="artificial">{artificial}</label>
-															</section>
-														</label>
-													</section>
-												),
-										  })
-										: setStage({ ...stage, ride: false })
-								}
-							/>
-							<span></span>
-						</div>
-					</label>
+					<label title="rideStage_label">{ride}</label>
 					<hr />
-					{stage.ride}
+					<section>
+						<label title="rideDate_label">
+							{date}
+							<input required type="date" name="rideDate" />
+						</label>
+						<label title="rideFemale_label">
+							{female}
+							<input
+								type="number"
+								name="rideFemaleID"
+								placeholder={female}
+								onBlur={(event) => {
+									validateRabbitID(event.target.value, event.target.name);
+								}}
+							/>
+						</label>
+						<label title="rideMale_label">
+							{male}
+							<input
+								type="number"
+								name="rideMaleID"
+								placeholder={male}
+								onBlur={(event) => {
+									validateRabbitID(event.target.value, event.target.name);
+								}}
+							/>
+						</label>
+						<label title="rideIsFemale_label">
+							{isFemale}
+							<section className={st.isNatural}>
+								<input
+									type="radio"
+									id="natural"
+									value={true}
+									name="isNatural"
+									defaultChecked
+								/>
+								<label htmlFor="natural">{natural}</label>
+								<input
+									type="radio"
+									name="isNatural"
+									value={false}
+									id="artificial"
+								/>
+								<label htmlFor="artificial">{artificial}</label>
+							</section>
+						</label>
+					</section>
 				</div>
 
 				<div>
-					<label title="palpationStage_label">
-						{palpation}
-						<div className={st.switch}>
-							<input
-								required
-								type="checkbox"
-								name="observerPalpation"
-								onChange={(event) =>
-									event.target.checked
-										? setStage({
-												...stage,
-												palpation: (
-													<section>
-														<label title="palpationDate_label">
-															{date}
-															<input
-																required
-																type="date"
-																name="palpationDate"
-															/>
-														</label>
-													</section>
-												),
-										  })
-										: setStage({ ...stage, palpation: false })
-								}
-							/>
-							<span></span>
-						</div>
-					</label>
+					<label title="palpationStage_label">{palpation}</label>
 					<hr />
-					{stage.palpation}
+					<section>
+						<label title="palpationDate_label">
+							{date}
+							<input required type="date" name="palpationDate" />
+						</label>
+					</section>
 				</div>
 
 				<div>
-					<label title="prepartumStage_label">
-						{prepartum}
-						<div className={st.switch}>
-							<input
-								required
-								type="checkbox"
-								name="observerPrepartum"
-								onChange={(event) =>
-									event.target.checked
-										? setStage({
-												...stage,
-												prepartum: (
-													<section>
-														<label title="prepartumDate_label">
-															{date}
-															<input required type="date" name="prepatumDate" />
-														</label>
-													</section>
-												),
-										  })
-										: setStage({ ...stage, prepartum: false })
-								}
-							/>
-							<span></span>
-						</div>
-					</label>
+					<label title="prepartumStage_label">{prepartum}</label>
 					<hr />
-					{stage.prepartum}
+					<section>
+						<label title="prepartumDate_label">
+							{date}
+							<input required type="date" name="prepatumDate" />
+						</label>
+					</section>
 				</div>
 
 				<div>
-					<label title="partumStage_label">
-						{partum}
-						<div className={st.switch}>
+					<label title="partumStage_label">{partum}</label>
+					<hr />
+					<section>
+						<label title="partumDate_label">
+							{date}
+							<input required type="date" name="patumDate" />
+						</label>
+						<label title="partumAlive_label">
+							{alive}
 							<input
 								required
-								type="checkbox"
-								name="observerPartum"
-								onChange={(event) =>
-									event.target.checked
-										? setStage({
-												...stage,
-												partum: (
-													<section>
-														<label title="partumDate_label">
-															{date}
-															<input required type="date" name="patumDate" />
-														</label>
-														<label title="partumAlive_label">
-															{alive}
-															<input
-																required
-																placeholder={alive}
-																type="number"
-																inputMode="numeric"
-																name="patumAlive"
-															/>
-														</label>
-														<label title="partumDead_label">
-															{dead}
-															<input
-																required
-																placeholder={dead}
-																type="number"
-																inputMode="numeric"
-																name="patumDead"
-															/>
-														</label>
-														<label title="patumHomonogenized_label">
-															{homogenized}
-															<input
-																required
-																placeholder={homogenized}
-																type="number"
-																inputMode="numeric"
-																name="patumHomonogenized"
-															/>
-														</label>
-													</section>
-												),
-										  })
-										: setStage({ ...stage, partum: false })
-								}
+								placeholder={alive}
+								type="number"
+								inputMode="numeric"
+								name="patumAlive"
 							/>
-							<span></span>
-						</div>
-					</label>
-					<hr />
-					{stage.partum}
+						</label>
+						<label title="partumDead_label">
+							{dead}
+							<input
+								required
+								placeholder={dead}
+								type="number"
+								inputMode="numeric"
+								name="patumDead"
+							/>
+						</label>
+						<label title="patumHomonogenized_label">
+							{homogenized}
+							<input
+								required
+								placeholder={homogenized}
+								type="number"
+								inputMode="numeric"
+								name="patumHomonogenized"
+							/>
+						</label>
+					</section>
 				</div>
 
 				<div>
-					<label title="weaningStage_label">
-						{weaning}
-						<div className={st.switch}>
+					<label title="weaningStage_label">{weaning}</label>
+					<hr />
+					<section>
+						<label title="weaningDate_label">
+							{date}
+							<input required type="date" name="patumDate" />
+						</label>
+						<label title="weaningAverangeWeight_label">
+							{averangeWeight}
 							<input
 								required
-								type="checkbox"
-								name="observerWeaning"
-								onChange={(event) =>
-									event.target.checked
-										? setStage({
-												...stage,
-												weaning: (
-													<section>
-														<label title="weaningDate_label">
-															{date}
-															<input required type="date" name="patumDate" />
-														</label>
-														<label title="weaningAverangeWeight_label">
-															{averangeWeight}
-															<input
-																required
-																placeholder={averangeWeight}
-																type="number"
-																inputMode="numeric"
-																name="patumAlive"
-															/>
-														</label>
-														<label title="weaningMales_label">
-															{males}
-															<input
-																required
-																placeholder={males}
-																type="number"
-																inputMode="numeric"
-																name="patumDead"
-															/>
-														</label>
-														<label title="weaningFemales_label">
-															{females}
-															<input
-																required
-																placeholder={females}
-																type="number"
-																inputMode="numeric"
-																name="patumHomonogenized"
-															/>
-														</label>
-													</section>
-												),
-										  })
-										: setStage({ ...stage, weaning: false })
-								}
+								placeholder={averangeWeight}
+								type="number"
+								inputMode="numeric"
+								name="patumAlive"
 							/>
-							<span></span>
-						</div>
-					</label>
-					<hr />
-					{stage.weaning}
+						</label>
+						<label title="weaningMales_label">
+							{males}
+							<input
+								required
+								placeholder={males}
+								type="number"
+								inputMode="numeric"
+								name="patumDead"
+							/>
+						</label>
+						<label title="weaningFemales_label">
+							{females}
+							<input
+								required
+								placeholder={females}
+								type="number"
+								inputMode="numeric"
+								name="patumHomonogenized"
+							/>
+						</label>
+					</section>
 				</div>
 			</form>
 		</>

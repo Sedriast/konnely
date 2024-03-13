@@ -6,13 +6,11 @@ export function Cards({ language, rabbit, setRabbit }) {
 	const navigate = useNavigate();
 	const {
 		id,
-		origin,
 		isFemale,
-		litter,
 		pictureURL,
 		states: {
 			isAlive,
-			transferred: { status, date },
+			transferred: { origin, status, date },
 		},
 		lifecycle: { birth, weaning, fattening },
 	} = rabbit;
@@ -48,7 +46,7 @@ export function Cards({ language, rabbit, setRabbit }) {
 								? stages_.reproductive
 								: !fattening.finish
 								? stages_.fattening
-								: litter !== "false" && isFemale && stages_.litter}
+								: isFemale && stages_.litter}
 						</td>
 					</tr>
 					<tr>
@@ -58,7 +56,13 @@ export function Cards({ language, rabbit, setRabbit }) {
 					{status ? (
 						<tr>
 							<th>{transferenceDate}</th>
-							<td> {date}</td>
+							<td>
+								{new Date(date.toDate()).toLocaleDateString("es-ES", {
+									year: "numeric",
+									month: "long",
+									day: "numeric",
+								})}
+							</td>
 						</tr>
 					) : (
 						<tr>

@@ -20,8 +20,9 @@ const reducer_keys = {
     setFilter: 'SET_FILTER',
     setRabbit: 'SET_RABBIT',
     setRabbits: 'SET_RABBITS',
-    newEmail: 'CURRENT_EMAIL',
     setLitters: 'SET_LITTERS',
+    newEmail: 'CURRENT_EMAIL',
+    setLitterList: 'SET_LITTER_LIST',
     setRabbitsList: 'SET_RABBITS_LIST',
 };
 const filters_keys = {

@@ -10,12 +10,11 @@ export function Print({ language, user }) {
 	const {
 		rabbit: {
 			id,
-			origin,
 			isFemale,
-			status: {
-				transferred: { status, date, mom_id, dad_id },
+			states: {
+				transferred: { origin, status, date, mom_id, dad_id },
 			},
-			lifecycle: { birth, weaning, fattening },
+			lifecycle: { birth, weaning, currentWeight },
 		},
 		litters_,
 	} = useRabbits();
@@ -41,26 +40,26 @@ export function Print({ language, user }) {
 						races: birth.race,
 						isFemale: isFemale,
 						isTransfered: status,
-						BoT_Date: status ? date : birthLitter[0].stages.partum.date,
+						BoT_Date: status ? date : birthLitter[0]?.stages.partum.date,
 					}}
 					table_two={{
-						dad_id: status ? dad_id : birthLitter[0].stages.ride.male,
-						mom_id: status ? mom_id : birthLitter[0].stages.ride.female,
+						dad_id: status ? dad_id : birthLitter[0]?.stages.ride.male,
+						mom_id: status ? mom_id : birthLitter[0]?.stages.ride.female,
 					}}
 					table_three={{
 						weaningWeight: weaning.weight,
-						currentWeight: fattening.weight,
-						birthORTrans: status ? weaning.weight : "00",
+						currentWeight: currentWeight,
+						birthORTrans: status ? weaning.weight : "000",
 					}}
 					table_four={{
 						place: origin,
 						isTransfered: status,
 						weaningAge: "000.000",
-						birthType: birthLitter[0].stages.ride.isNatural
+						birthType: birthLitter[0]?.stages.ride.isNatural
 							? language.bodyS.table_four.labels[0]
 							: language.bodyS.table_four.labels[1],
 					}}
-					table_five={{ litterRecord: litterRecord }}
+					litterRecord={litterRecord}
 				/>
 				<Footer language={language.footer} />
 			</div>
