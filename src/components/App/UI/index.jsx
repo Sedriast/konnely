@@ -110,18 +110,6 @@ export function UI() {
 
 					<Route
 						exact
-						path="/vitae/addLitter"
-						element={
-							<ProtectedRoute>
-								<RabbitListProvider>
-									<AddLitter language={language[language_keys.ADDLITTER]} />
-								</RabbitListProvider>
-							</ProtectedRoute>
-						}
-					/>
-
-					<Route
-						exact
 						path="/litterList"
 						element={
 							<ProtectedRoute>
@@ -129,6 +117,16 @@ export function UI() {
 									<LitterList language={language[language_keys.LITTERLIST]} />
 								</RabbitListProvider>
 							</ProtectedRoute>
+						}
+					/>
+
+					<Route
+						exact
+						path="/"
+						element={
+							<RabbitListProvider>
+								<AddLitter language={language[language_keys.ADDLITTER]} />
+							</RabbitListProvider>
 						}
 					/>
 				</Routes>

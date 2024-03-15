@@ -10,10 +10,12 @@
     border-radius: 10px;
 
     display: grid;
-    grid-template-areas: "a1 a1"
-        "a2 a3"
-        "a4 a5"
-        "a6 a7";
+    grid-template-areas:
+        "a1 a1"
+        "a2 a2"
+        "a3 a4"
+        "a5 a6"
+        "a7 a7";
     grid-column-gap: 1em;
     grid-auto-rows: min-content;
     justify-content: center;
@@ -23,8 +25,47 @@
     overflow-x: hidden;
 }
 
-.panelLitter :first-child {
+.panelLitter :nth-child(1) {
     grid-area: a1;
+}
+
+.panelLitter :nth-child(2) {
+    grid-area: a2;
+}
+
+.panelLitter :nth-child(3) {
+    grid-area: a3;
+}
+
+.panelLitter :nth-child(4) {
+    grid-area: a4;
+}
+
+.panelLitter :nth-child(5) {
+    grid-area: a5;
+}
+
+.panelLitter :nth-child(6) {
+    grid-area: a6;
+}
+
+.panelLitter :nth-child(7) {
+    grid-area: a7;
+}
+
+.panelLitter :nth-child(7)>section>section {
+    display: flex;
+    flex-direction: row;
+}
+
+.panelLitter :nth-child(7)>section>section label {
+    width: fit-content;
+    margin: 0 0.25em;
+    padding: 0;
+}
+
+.panelLitter :nth-child(7)>section>section input {
+    width: 80px;
 }
 
 .panelLitter>div {
@@ -77,6 +118,21 @@
     flex-direction: column;
 }
 
+.panelLitter>section>label {
+    width: 250px;
+    height: 40px;
+
+    box-sizing: border-box;
+
+    border: none;
+    background: white;
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+    text-align: center;
+}
+
 .panelLitter section>label>input {
     width: 250px;
     height: 40px;
@@ -89,6 +145,59 @@
     padding: 0 1em;
     margin-top: 0.5em;
     border-radius: 15px;
+}
+
+.panelLitter>div>section>section>label>select {
+    width: 250px;
+    height: 40px;
+
+    border: none;
+    background: white;
+
+    padding: 0 1em;
+    margin-top: 0.5em;
+    border-radius: 15px;
+}
+
+.panelLitter>div>section>section>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.panelLitter>div>section>section>div> :first-child {
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0.25em 1em;
+
+    background-color: rgb(139, 167, 59);
+}
+
+.panelLitter>div>section>section>div> :last-child {
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    padding: 0.25em 1em;
+
+    background-color: rgb(89, 105, 45);
+}
+
+.panelLitter>section>button {
+    position: fixed;
+
+    width: 150px;
+    height: 40px;
+
+    font-weight: bold;
+    color: white;
+
+    bottom: 1%;
+    right: calc(50% - 75px);
+
+    border-radius: 20px;
+    background: rgb(83, 102, 37);
 }
 
 .isNatural {

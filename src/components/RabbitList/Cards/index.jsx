@@ -14,16 +14,18 @@ export function Cards({ language, rabbit, setRabbit }) {
 		},
 		lifecycle: { birth, weaning, fattening },
 	} = rabbit;
+
 	const { state_, gender_, birthDate_, origin_, stages_, transferenceDate } =
 		language;
 
 	return (
 		<button
 			className={st.cards_panel}
+			type="button"
 			title={id}
 			onClick={() => {
-				setRabbit(rabbit);
-				navigate("/vitae");
+				setRabbit && setRabbit(rabbit);
+				setRabbit && navigate("/vitae");
 			}}>
 			<table>
 				<tbody>
@@ -59,8 +61,8 @@ export function Cards({ language, rabbit, setRabbit }) {
 							<td>
 								{new Date(date.toDate()).toLocaleDateString("es-ES", {
 									year: "numeric",
-									month: "long",
 									day: "numeric",
+									month: "long",
 								})}
 							</td>
 						</tr>

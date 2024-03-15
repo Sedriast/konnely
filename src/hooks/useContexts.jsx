@@ -240,25 +240,30 @@ export { useAuth, AuthProvider };
  *
  *
  ********************************************************/
+const firebaseTimestamp = {
+	toDate: function () {
+		return new Date();
+	},
+};
 
 const litterDataSkeleton = {
 	id: 0,
 	stages: {
-		palpation: {
-			date: "0000-00-00",
-		},
-		partum: { alive: 1, dead: 1, homogenized: 1, date: "0000-00-00" },
-		prepartum: {
-			date: "0000-00-00",
-		},
 		ride: {
-			date: "0000-00-00",
-			female: -3,
-			isNatural: true,
 			male: -2,
+			female: -1,
+			isNatural: true,
+			date_r: firebaseTimestamp,
+		},
+		palpation: {
+			date_pal: firebaseTimestamp,
+		},
+		partum: { alive: 5, dead: 2, homogenized: 1, date_par: firebaseTimestamp },
+		prepartum: {
+			date_pr: firebaseTimestamp,
 		},
 		weaning: {
-			date: "0000-00-00",
+			date_w: firebaseTimestamp,
 			females: 1,
 			males: 1,
 			averageWeight: 100,
@@ -278,24 +283,24 @@ const rabbitDataSkeleton = {
 			dad_id: 0,
 			status: false,
 			origin: "Ubaté",
-			date: "00-00-00",
+			date: firebaseTimestamp,
 		},
-		changeDate: "00-00-00",
+		changeDate: firebaseTimestamp,
 		isAlive: false,
 	},
 	lifecycle: {
 		birth: {
 			litter: 0,
 			race: [
-				{ name: "Californiano", percentage: 50 },
-				{ name: "Azul de viena", percentage: 50 },
+				{ name: "Californiano", value: 20 },
+				{ name: "Azul de viena", value: 80 },
 			],
 		},
 		weaning: {
-			weight: 0,
-			date: "00-00-00",
+			weight: 500,
+			date: firebaseTimestamp,
 		},
-		currentWeight: 0,
+		currentWeight: 100,
 	},
 };
 
@@ -309,21 +314,23 @@ const useRabbits = () => {
 
 function RabbitListProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, {
-		rabbits: [],
-		litters: [],
-		littersList: [],
-		rabbitsList: [],
 		filter: ["female", ""],
 		litter: litterDataSkeleton,
 		rabbit: rabbitDataSkeleton,
+		rabbits: [rabbitDataSkeleton, rabbitDataSkeleton],
+		litters: [litterDataSkeleton, litterDataSkeleton],
+		littersList: [litterDataSkeleton, litterDataSkeleton],
+		rabbitsList: [rabbitDataSkeleton, rabbitDataSkeleton, rabbitDataSkeleton],
 	});
 
 	const setRabbit = (rabbitData) => {
 		dispatch({ type: reducer_keys.setRabbit, payload: rabbitData });
 	};
+
 	const setRabbits = (rabbits) => {
 		dispatch({ type: reducer_keys.setRabbits, payload: rabbits });
 	};
+
 	const setLitters = (litters) => {
 		dispatch({ type: reducer_keys.setLitters, payload: litters });
 	};
@@ -384,13 +391,11 @@ function RabbitListProvider({ children }) {
 
 	function litterRecord() {
 		setLitterList(
-			state.litters.filter(
-				(litter) => litter.stages.ride.female === state.rabbit.id
-			)
+			state.litters.filter((lit) => lit.stages.ride.female === state.rabbit.id)
 		);
 	}
 
-	// this useEffet is used to fetch the data from the database when the app is mounted
+	//this useEffet is used to fetch the data from the database when the app is mounted
 	useEffect(() => {
 		fetchData("rabbits");
 		fetchData("litters");

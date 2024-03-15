@@ -5,6 +5,7 @@
 // import partumI from "../../../constants/assets/logos/partum_13329.svg";
 
 import { useNavigate } from "react-router-dom";
+import { Linear } from "../../Fragments/Stadistics/Linear";
 
 export default function Litter({ language, stadistics }) {
 	const navigae = useNavigate();
@@ -16,11 +17,12 @@ export default function Litter({ language, stadistics }) {
 
 	return (
 		<div>
-			<label>
+			<section>
 				<button onClick={() => navigae("./addLitter")}>{add_b}</button>
-				{litters_t}
+				<h1>{litters_t}</h1>
 				<button onClick={() => navigae("./litterRecord")}>{record_b}</button>
-			</label>
+			</section>
+			<Linear litters={stadistics} />
 		</div>
 	);
 }

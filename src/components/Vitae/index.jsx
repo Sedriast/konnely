@@ -14,6 +14,7 @@ export function Vitae({ language, user }) {
 		buttons: { BTN_back, BTN_print },
 		titles: { race, stages_, basicData, lifecycle, isTransfered },
 	} = language;
+
 	const {
 		rabbit: {
 			id,
@@ -23,7 +24,7 @@ export function Vitae({ language, user }) {
 				isAlive,
 				transferred: { origin, status, date, mom_id, dad_id },
 			},
-			lifecycle: { birth, weaning },
+			lifecycle: { birth, weaning, currentWeight },
 		},
 		litters_,
 	} = useRabbits();
@@ -61,8 +62,12 @@ export function Vitae({ language, user }) {
 					L_rabbit={rabbit}
 					pictureURL={pictureURL}
 				/>
-				<Lifecycle weaning={weaning} lifecycle={lifecycle} />
-				<Litter language={litterData} />
+				<Lifecycle
+					weaning={weaning}
+					lifecycle={lifecycle}
+					currentWeight={currentWeight}
+				/>
+				<Litter language={litterData} stadistics={litters_} />
 			</section>
 		</>
 	);

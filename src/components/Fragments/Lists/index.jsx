@@ -6,7 +6,7 @@ export function Lists({ name, defaultValue, options, placeholder, required }) {
 			</option>
 			{options?.map((option_, index) => (
 				<option key={index} value={option_}>
-					{option_}
+					{option_.id}
 				</option>
 			))}
 		</select>

@@ -17,14 +17,6 @@
 
     padding: 2rem 0;
 
-    display: grid;
-    justify-content: center;
-    align-items: start;
-
-    grid-template-columns: repeat(auto-fill, 280px);
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -182,11 +174,9 @@
 */
 
 .searchFilters {
-    display: flex;
-
     position: fixed;
-
     top: 1em;
+    display: flex;
 }
 
 .searchFilters figure button {
@@ -254,81 +244,6 @@
     }
 }
 
-/*
-
-
-    add Modal
-
-
-
-*/
-
-.addModal {
-    height: fit-content;
-    width: 300px;
-
-    padding: 2em;
-    border-radius: 20px;
-    box-sizing: border-box;
-
-    display: grid;
-    grid-template-areas:
-        "a1 a1"
-        "a2 a3";
-
-    background: linear-gradient(175deg, rgb(144, 197, 170), rgb(45, 110, 83));
-}
-
-.addModal :nth-child(1) {
-    grid-area: a1;
-}
-
-.addModal :nth-child(2) {
-    grid-area: a2;
-}
-
-.addModal :nth-child(3) {
-    grid-area: a3;
-}
-
-.addModal h1 {
-    width: auto;
-    color: white;
-    font-size: 1.5em;
-    margin: 0.5em auto;
-    margin-bottom: 1.5em;
-}
-
-.addModal a {
-    width: auto;
-    height: auto;
-
-    text-align: center;
-    margin: 0.5em auto;
-    padding: 0.5em 1em;
-
-    background: rgb(26, 58, 46);
-
-    color: white;
-    border-radius: 20px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-@keyframes show {
-    from {
-        opacity: 0;
-        scale: 25%;
-    }
-
-    to {
-        opacity: 1;
-        scale: 100%;
-    }
-}
 
 /*
 
