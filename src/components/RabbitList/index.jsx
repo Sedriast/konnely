@@ -47,18 +47,16 @@ export function RabbitList({ language, user }) {
 			/>
 			<section>{fillGrid()}</section>
 
-			{user.rol === "administrador" && (
-				<figure title={BTN_addRabbit} tooltip-dir="rigth">
-					<button
-						title={BTN_addRabbit}
-						onClick={() => {
-							setFilter("default");
-							navigate("./addRabbit");
-						}}>
-						{"➕"}
-					</button>
-				</figure>
-			)}
+			<figure title={BTN_addRabbit} tooltip-dir="rigth">
+				<button
+					title={BTN_addRabbit}
+					onClick={() => {
+						setFilter("default");
+						navigate("./addRabbit");
+					}}>
+					{"➕"}
+				</button>
+			</figure>
 		</section>
 	);
 }

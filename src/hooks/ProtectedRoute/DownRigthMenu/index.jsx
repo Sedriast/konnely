@@ -11,7 +11,7 @@ export function DownRigthMenu() {
 				</button>
 			</figure>
 			<figure name="" title="litters" tooltip-dir="top">
-				<button title="litters" onClick={() => navigate("/litterList")}>
+				<button title="litters" onClick={() => navigate("/litterRecord")}>
 					🍼
 				</button>
 			</figure>

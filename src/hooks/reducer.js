@@ -15,6 +15,10 @@ const object_reducer = (state, payload) => ({
         ...state,
         rabbit: payload,
     },
+    [reducer_keys.setLitter]: {
+        ...state,
+        litter: payload,
+    },
     [reducer_keys.setRabbitsList]: {
         ...state,
         rabbitsList: payload,

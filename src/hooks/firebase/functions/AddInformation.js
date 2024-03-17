@@ -17,9 +17,18 @@ const storage = getStorage(app);
 export const auth = getAuth(app);
 
 /// Function to send a new record of a rabbit to the database and edit the same
-export async function addUpdateRabbits(doc) {
+export async function addUpdateRabbits(docId, docData) {
     try {
-        await setDoc(doc(db, 'bunnies', doc.id), doc);
+        await setDoc(doc(db, 'bunnies', `${docId}`), docData);
+    } catch (error) {
+        errorAlert(error.code);
+    }
+};
+
+/// Function to send a new record of a litter to the database and edit the same
+export async function addUpdateLitters(docId, docData) {
+    try {
+        await setDoc(doc(db, 'litters', `${docId}`), docData);
     } catch (error) {
         errorAlert(error.code);
     }

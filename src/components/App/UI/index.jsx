@@ -1,35 +1,36 @@
 import { RabbitListProvider, useAuth } from "../../../hooks/useContexts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ProtectedRoute } from "../../../hooks/ProtectedRoute";
+//import { ProtectedRoute } from "../../../hooks/ProtectedRoute";
 import { language_keys } from "../../../constants/keys";
 import "../app.module.css";
 
-import { Vitae } from "../../Vitae";
-import { Print } from "../../Print";
-import { Login } from "../../LRaccount/Login";
-import { RabbitList } from "../../RabbitList";
-import { LitterList } from "../../LitterList";
-import { AddLitter } from "../../Forms/AddLitter";
-import { AddRabbit } from "../../Forms/AddRabbit";
-import { Register } from "../../LRaccount/Register";
+// import { Vitae } from "../../Vitae";
+// import { Print } from "../../Print";
+// import { Login } from "../../LRaccount/Login";
+// import { RabbitList } from "../../RabbitList";
+// import { LitterList } from "../../LitterList";
+// import { AddLitter } from "../../Forms/AddLitter";
+// import { AddRabbit } from "../../Forms/AddRabbit";
+// import { Register } from "../../LRaccount/Register";
+import { Litter } from "../../Litter";
 
 export function UI() {
 	const {
-		user,
-		email,
-		login,
-		register,
+		// user,
+		// email,
+		// login,
+		// register,
+		// setEmail,
+		// forgotPassword,
+		// isEmailRegistered,
 		language,
-		setEmail,
-		forgotPassword,
-		isEmailRegistered,
 	} = useAuth();
 
 	return (
 		<main id="lay">
 			<BrowserRouter>
 				<Routes>
-					<Route
+					{/* <Route
 						exact
 						path="/"
 						element={
@@ -110,7 +111,7 @@ export function UI() {
 
 					<Route
 						exact
-						path="/litterList"
+						path="/litterRecord"
 						element={
 							<ProtectedRoute>
 								<RabbitListProvider>
@@ -122,10 +123,25 @@ export function UI() {
 
 					<Route
 						exact
+						path="/vitae/addLitter"
+						element={
+							<ProtectedRoute>
+								<RabbitListProvider>
+									<AddLitter
+										language={language[language_keys.ADDLITTER]}
+										user={user}
+									/>
+								</RabbitListProvider>
+							</ProtectedRoute>
+						}
+					/> */}
+
+					<Route
+						exact
 						path="/"
 						element={
 							<RabbitListProvider>
-								<AddLitter language={language[language_keys.ADDLITTER]} />
+								<Litter language={language[language_keys.LITTER]} />
 							</RabbitListProvider>
 						}
 					/>

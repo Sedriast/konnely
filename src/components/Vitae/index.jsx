@@ -29,7 +29,7 @@ export function Vitae({ language, user }) {
 		litters_,
 	} = useRabbits();
 
-	const birdLitter = litters_.find((doc) => doc.id === birth.litter);
+	const birdLitter = () => litters_.find((doc) => doc.id === birth.litter);
 
 	return (
 		<>

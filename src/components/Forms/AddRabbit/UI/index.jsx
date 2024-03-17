@@ -5,6 +5,7 @@ import { Cards } from "../../../LitterList/Cards";
 import { Racee } from "../../../Fragments/Racee";
 import { useNavigate } from "react-router-dom";
 import st from "../addRabbit.module.css";
+import { filters_keys } from "../../../../constants/keys";
 
 export function UI({
 	litter,
@@ -59,7 +60,7 @@ export function UI({
 			<button
 				className="BTN_back"
 				onClick={() => {
-					filterFN(["female", ""]);
+					filterFN([filters_keys.FEMALE, ""]);
 					navigate("/rabbitList");
 				}}>
 				{back_b}

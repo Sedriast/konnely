@@ -17,7 +17,7 @@ export default function Lifecycle({ lifecycle, weaning, currentWeight }) {
 							<th>{lifecycle[3][0]}</th>
 							<td>
 								{(() => {
-									const date = new Date(weaning.date.toDate());
+									const date = weaning.date.toDate();
 									return `${
 										lifecycle[4][date.getMonth()]
 									} ${date.getDate()}-${date.getFullYear()}`;

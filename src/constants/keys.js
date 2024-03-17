@@ -8,6 +8,7 @@ const language_keys = {
     RABBITLIST: 'rabbitlist_lang',
     LITTERLIST: 'litterlist_lang',
     ADDLITTER: 'addlitter_lang',
+    LITTER: "litters_lang",
 };
 
 const icon_keys = {
@@ -19,6 +20,7 @@ const reducer_keys = {
     setUser: 'SET_USER',
     setFilter: 'SET_FILTER',
     setRabbit: 'SET_RABBIT',
+    setLitter: 'SET_LITTER',
     setRabbits: 'SET_RABBITS',
     setLitters: 'SET_LITTERS',
     newEmail: 'CURRENT_EMAIL',
@@ -30,6 +32,8 @@ const filters_keys = {
     FEMALE: "female",
     MALE: "male",
     SEARCH: "search",
+    UPLOAD_RABBIT: "upload_rabbit",
+    UPLOAD_LITTER: "upload_litter",
 };
 
 export { language_keys, reducer_keys, icon_keys, filters_keys }

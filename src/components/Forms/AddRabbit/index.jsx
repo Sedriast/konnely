@@ -1,19 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import {
-	addUpdateRabbits,
-	updateDataRabbit,
-} from "../../../hooks/firebase/functions/AddInformation";
+import { addUpdateRabbits } from "../../../hooks/firebase/functions/AddInformation";
 import {
 	useAuth,
 	useRabbits,
 	errorAlert,
 	yesNotAlert,
 } from "../../../hooks/useContexts";
+import { Timestamp } from "firebase/firestore";
 
 import { UI } from "./UI";
+import { filters_keys } from "../../../constants/keys";
 
 export function AddRabbit({ language, litter }) {
-	const { rabbits_, setFilter, setRabbit } = useRabbits();
+	const { rabbits_, setFilter } = useRabbits();
 	const navigate = useNavigate();
 	const { user } = useAuth();
 
@@ -65,16 +64,22 @@ export function AddRabbit({ language, litter }) {
 				id: parseInt(elements.id.value),
 				isFemale: gender,
 				pictureURL: image,
-				userSignature: { name: user.displayName, uid: user.uid },
+				userSignature: {
+					name: user.displayName,
+					uid: user.uid,
+					date: Timestamp.fromDate(date),
+				},
 				states: {
 					transferred: {
 						status: litter ? false : true,
 						dad_id: litter ? "none" : parseInt(elements.weaningMales.value),
 						mom_id: litter ? "none" : parseInt(elements.weaningFemales.value),
-						date: litter ? "none" : new Date(elements.transference_date.value),
+						date: litter
+							? "none"
+							: Timestamp.fromDate(new Date(elements.transference_date.value)),
 						origin: litter ? language.defaultOrigin : elements.origin.value,
 					},
-					changeDate: date,
+					changeDate: Timestamp.fromDate(date),
 					isAlive: true,
 				},
 				lifecycle: {
@@ -88,14 +93,17 @@ export function AddRabbit({ language, litter }) {
 							: parseFloat(elements.weaningAverageWeight.value),
 						date: litter
 							? litter.stages.weaning.date
-							: new Date(elements.weaning_date.value),
+							: Timestamp.fromDate(new Date(elements.weaning_date.value)),
 					},
 					currentWeight: parseFloat(elements.currentAverageWeight.value),
 				},
 			};
 			isConfirmed &&
-				(await addUpdateRabbits(rabbit).then(() =>
-					updateDataRabbit(rabbit, setRabbit, navigate, rabbits_)
+				(await addUpdateRabbits(parseInt(elements.id.value), rabbit).then(
+					() => {
+						setFilter([filters_keys.UPLOAD_RABBIT, rabbit]);
+						navigate("/litter");
+					}
 				));
 		});
 	}

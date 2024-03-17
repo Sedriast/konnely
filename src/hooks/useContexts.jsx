@@ -268,7 +268,9 @@ const litterDataSkeleton = {
 			males: 1,
 			averageWeight: 100,
 		},
+		sales: [],
 	},
+	userSignature: { name: "admin", uid: "0000ds0faa0df0a0dfa" },
 };
 
 const rabbitDataSkeleton = {
@@ -286,7 +288,7 @@ const rabbitDataSkeleton = {
 			date: firebaseTimestamp,
 		},
 		changeDate: firebaseTimestamp,
-		isAlive: false,
+		isAlive: true,
 	},
 	lifecycle: {
 		birth: {
@@ -325,6 +327,10 @@ function RabbitListProvider({ children }) {
 
 	const setRabbit = (rabbitData) => {
 		dispatch({ type: reducer_keys.setRabbit, payload: rabbitData });
+	};
+
+	const setLitter = (litter) => {
+		dispatch({ type: reducer_keys.setLitter, payload: litter });
 	};
 
 	const setRabbits = (rabbits) => {
@@ -369,6 +375,14 @@ function RabbitListProvider({ children }) {
 					(rabbit_) => rabbit_.id === filter_[1]
 				);
 				break;
+			case filters_keys.UPLOAD_RABBIT:
+				setRabbits([...state.rabbits, filter_[1]]);
+				filteredList = state.rabbits;
+				break;
+			case filters_keys.UPLOAD_LITTER:
+				setLitters([...state.litters, filter_[1]]);
+				filteredList = state.litters;
+				break;
 			default:
 				filteredList = state.rabbits;
 				break;
@@ -395,11 +409,11 @@ function RabbitListProvider({ children }) {
 		);
 	}
 
-	//this useEffet is used to fetch the data from the database when the app is mounted
-	useEffect(() => {
-		fetchData("rabbits");
-		fetchData("litters");
-	});
+	// //this useEffet is used to fetch the data from the database when the app is mounted
+	// useEffect(() => {
+	// 	fetchData("rabbits");
+	// 	fetchData("litters");
+	// });
 
 	//	this useEffect is used to filter rabbit's litters when the rabbit is changed
 	useEffect(() => {
@@ -417,7 +431,9 @@ function RabbitListProvider({ children }) {
 		<RabbitListContext.Provider
 			value={{
 				setRabbit,
+				setLitter,
 				setFilter,
+				litter: state.litter,
 				rabbit: state.rabbit,
 				litters_: state.littersList,
 				rabbits_: state.rabbitsList,

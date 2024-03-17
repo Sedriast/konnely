@@ -5,7 +5,7 @@ import { Cards } from "../../../RabbitList/Cards";
 import { Lists } from "../../../Fragments/Lists";
 import { Sales } from "../Sales";
 
-export function UI({ language, femaleBunnie, rabbits_, litters_ }) {
+export function UI({ language, rabbits_, submitFN, idCreated, femaleBunnie }) {
 	const [gazapos, setGazapos] = useState(0);
 	const [malesB, setMalesB] = useState([]);
 	const {
@@ -49,11 +49,19 @@ export function UI({ language, femaleBunnie, rabbits_, litters_ }) {
 			<Link className="BTN_back" to="/vitae">
 				{back}
 			</Link>
-			<form className={st.panelLitter} onSubmit={() => {}}>
+			<form
+				className={st.panelLitter}
+				onSubmit={(event) => {
+					event.preventDefault();
+					const typeInput = Array.from(event.target.elements.isNatural).find(
+						(input) => input.checked
+					);
+					submitFN({ elements: event.target.elements, typeInput: typeInput });
+				}}>
 				<section>
 					<label title="id_label">
 						{id}
-						<h2>{litters_.length + 1}</h2>
+						<h2>{idCreated}</h2>
 					</label>
 				</section>
 				<div>
@@ -149,7 +157,7 @@ export function UI({ language, femaleBunnie, rabbits_, litters_ }) {
 					<section>
 						<label title="prepartumDate_label">
 							{date}
-							<input required type="date" name="prepatumDate" />
+							<input required type="date" name="prepartumDate" />
 						</label>
 					</section>
 				</div>
@@ -160,7 +168,7 @@ export function UI({ language, femaleBunnie, rabbits_, litters_ }) {
 					<section>
 						<label title="partumDate_label">
 							{date}
-							<input required type="date" name="patumDate" />
+							<input required type="date" name="partumDate" />
 						</label>
 						<label title="partumAlive_label">
 							{alive}
@@ -201,7 +209,7 @@ export function UI({ language, femaleBunnie, rabbits_, litters_ }) {
 					<section>
 						<label title="weaningDate_label">
 							{date}
-							<input required type="date" name="patumDate" />
+							<input required type="date" name="weaningDate" />
 						</label>
 						<label title="weaningAverangeWeight_label">
 							{averangeWeight}
@@ -210,7 +218,7 @@ export function UI({ language, femaleBunnie, rabbits_, litters_ }) {
 								placeholder={averangeWeight}
 								type="number"
 								inputMode="numeric"
-								name="weaningAverangeWeight"
+								name="weaningAverageWeight"
 							/>
 						</label>
 						<label title="weaningMales_label">

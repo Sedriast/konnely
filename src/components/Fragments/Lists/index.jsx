@@ -5,7 +5,7 @@ export function Lists({ name, defaultValue, options, placeholder, required }) {
 				{placeholder}
 			</option>
 			{options?.map((option_, index) => (
-				<option key={index} value={option_}>
+				<option key={index} value={option_.id}>
 					{option_.id}
 				</option>
 			))}

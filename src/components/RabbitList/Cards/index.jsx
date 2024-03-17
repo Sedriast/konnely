@@ -12,7 +12,7 @@ export function Cards({ language, rabbit, setRabbit }) {
 			isAlive,
 			transferred: { origin, status, date },
 		},
-		lifecycle: { birth, weaning, fattening },
+		lifecycle: { birth },
 	} = rabbit;
 
 	const { state_, gender_, birthDate_, origin_, stages_, transferenceDate } =
@@ -41,15 +41,7 @@ export function Cards({ language, rabbit, setRabbit }) {
 					</tr>
 					<tr>
 						<th>{state_}</th>
-						<td>
-							{!isAlive
-								? stages_.inactive
-								: !weaning.finish
-								? stages_.reproductive
-								: !fattening.finish
-								? stages_.fattening
-								: isFemale && stages_.litter}
-						</td>
+						<td>{!isAlive ? stages_.inactive : isFemale && stages_.litter}</td>
 					</tr>
 					<tr>
 						<th>{gender_[0]}</th>

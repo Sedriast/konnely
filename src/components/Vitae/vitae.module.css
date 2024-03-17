@@ -218,7 +218,7 @@ td {
 .vitae_panel table tbody tr {
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin-bottom: 0.25em;
 
     margin: 0.5em 2em;
@@ -240,7 +240,7 @@ td {
     height: auto;
 
     font-size: 12px;
-    text-align: start;
+    text-align: flex-start;
     color: var(--colorText);
     justify-content: center;
 }

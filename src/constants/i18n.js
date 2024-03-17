@@ -292,52 +292,80 @@ const es = {
                 Pre_reproductive: "Preparandose para reproducción",
             },
         },
-        [language_keys.ERRORS]: {
-            "default": "Se produjo un error interno, intente nuevamente mas tarde",
-            "login-empty-email": "El correo electronico no puede estar vacio",
-            "register-password-mismatch": "Las contraseñas no coinciden",
-            "register-empty-email": "El correo electronico no puede estar vacio",
-            "tittle-permises-denied": "Permisos denegados",
-            "permises-denied": "¡Acceso denegado!. Puede que: 1> No ha verificado su correo electronico, 2> No se ha iniciado sesión por error, 3> Su cuenta fue eliminada por un administrador",
-            "image-invalid": "El archivo seleccionado no es valido, por favor seleccione una imagen",
-            "id-invalid": "El id ingresado no es valido",
-            "id-no-exists": "El id ingresado no existe",
-            "id-already-exists": "El id ingresado ya existe",
-            "auth/user-not-found": "El usuario o la contraseña ingresada no es correcta",
-            "auth/wrong-password": "El usuario o la contraseña ingresada no es correcta",
-            "auth/invalid-email": "El email ingresado no es correcta",
-            "auth/email-already-exists":
-                "El correo electronico ingresado ya está en uso",
-            "auth/too-many-requests":
-                "Existen demasiadas solicitudes desde con este correo, intente realizar la acción mas tarde",
-            "auth/email-already-in-use":
-                "La dirección de correo electrónico ya está en uso por otra cuenta.",
-            "auth/weak-password": "La contraseña debe tener al menos 6 caracteres.",
-            "auth/operation-not-allowed":
-                "La operación no está permitida. Debe habilitar esta opción en la consola de Firebase.",
-            "auth/user-disabled": "El usuario ha sido deshabilitado.",
-            "auth/invalid-credential":
-                "La credencial de autenticación no es válida. El token de acceso puede haber caducado, la credencial puede haber sido revocada o la credencial de autenticación no puede ser usada con este proyecto.",
-            "auth/invalid-verification-code":
-                "El código de verificación no es válido o ha caducado.",
-            "auth/invalid-verification-id": "El ID de verificación no es válido.",
-            "auth/missing-verification-code":
-                "El código de verificación no se ha proporcionado.",
-            "auth/missing-verification-id":
-                "El ID de verificación no se ha proporcionado.",
-            "auth/credential-already-in-use":
-                "Esta credencial ya está asociada con una cuenta de usuario diferente.",
-            "auth/custom-token-mismatch":
-                "El token personalizado no corresponde con la identidad de la cuenta de usuario.",
-            "auth/missing-email": "El correo electrónico no se ha proporcionado.",
-            "auth/missing-password": "La contraseña no se ha proporcionado.",
-            "auth/missing-phone-number":
-                "El número de teléfono no se ha proporcionado.",
-            "not-found": "No se encontró el recurso solicitado",
-            "not-authorized": "No autorizado",
-            "invalid-credentials": "Credenciales inválidas",
-            "invalid-params": "Parámetros inválidos",
+    },
+    [language_keys.LITTER]: {
+        titles: {
+            id_t: "ID. Camada",
+            ride_t: "MONTA",
+            sales_t: "VENTAS",
+            partum_t: "PARTO",
+            stages_t: "ETAPAS",
+            weaning_t: "DESTETE",
+            palpaton_t: "PALPACIÓN",
+            prepartum_t: "PREPARTO",
         },
+        labels: {
+            id_l: "ID. venta",
+            date: "fecha",
+            dead: "muertos",
+            male: "macho",
+            males: "machos",
+            alive: "vivos",
+            female: "hembra",
+            weight: "peso",
+            price_l: "precio",
+            females: "hembras",
+            natural: "NATURAL",
+            artificial: "ARTIFICIAL",
+            homogenized: "HOMOGENEIZADO",
+        },
+        buttons: { back_b: "Atrás", plus_b: "Reemplazo" },
+    },
+    [language_keys.ERRORS]: {
+        "default": "Se produjo un error interno, intente nuevamente mas tarde",
+        "login-empty-email": "El correo electronico no puede estar vacio",
+        "register-password-mismatch": "Las contraseñas no coinciden",
+        "register-empty-email": "El correo electronico no puede estar vacio",
+        "tittle-permises-denied": "Permisos denegados",
+        "permises-denied": "¡Acceso denegado!. Puede que: 1> No ha verificado su correo electronico, 2> No se ha iniciado sesión por error, 3> Su cuenta fue eliminada por un administrador",
+        "image-invalid": "El archivo seleccionado no es valido, por favor seleccione una imagen",
+        "id-invalid": "El id ingresado no es valido",
+        "id-no-exists": "El id ingresado no existe",
+        "id-already-exists": "El id ingresado ya existe",
+        "auth/user-not-found": "El usuario o la contraseña ingresada no es correcta",
+        "auth/wrong-password": "El usuario o la contraseña ingresada no es correcta",
+        "auth/invalid-email": "El email ingresado no es correcta",
+        "auth/email-already-exists":
+            "El correo electronico ingresado ya está en uso",
+        "auth/too-many-requests":
+            "Existen demasiadas solicitudes desde con este correo, intente realizar la acción mas tarde",
+        "auth/email-already-in-use":
+            "La dirección de correo electrónico ya está en uso por otra cuenta.",
+        "auth/weak-password": "La contraseña debe tener al menos 6 caracteres.",
+        "auth/operation-not-allowed":
+            "La operación no está permitida. Debe habilitar esta opción en la consola de Firebase.",
+        "auth/user-disabled": "El usuario ha sido deshabilitado.",
+        "auth/invalid-credential":
+            "La credencial de autenticación no es válida. El token de acceso puede haber caducado, la credencial puede haber sido revocada o la credencial de autenticación no puede ser usada con este proyecto.",
+        "auth/invalid-verification-code":
+            "El código de verificación no es válido o ha caducado.",
+        "auth/invalid-verification-id": "El ID de verificación no es válido.",
+        "auth/missing-verification-code":
+            "El código de verificación no se ha proporcionado.",
+        "auth/missing-verification-id":
+            "El ID de verificación no se ha proporcionado.",
+        "auth/credential-already-in-use":
+            "Esta credencial ya está asociada con una cuenta de usuario diferente.",
+        "auth/custom-token-mismatch":
+            "El token personalizado no corresponde con la identidad de la cuenta de usuario.",
+        "auth/missing-email": "El correo electrónico no se ha proporcionado.",
+        "auth/missing-password": "La contraseña no se ha proporcionado.",
+        "auth/missing-phone-number":
+            "El número de teléfono no se ha proporcionado.",
+        "not-found": "No se encontró el recurso solicitado",
+        "not-authorized": "No autorizado",
+        "invalid-credentials": "Credenciales inválidas",
+        "invalid-params": "Parámetros inválidos",
     },
 };
 

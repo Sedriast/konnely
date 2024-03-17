@@ -1,4 +1,3 @@
-import { Lists } from "../Lists";
 import st from "./race.module.css";
 
 export function Racee({ index, races_ }) {
@@ -23,13 +22,16 @@ export function Racee({ index, races_ }) {
 				max="100"
 				min="1"
 			/>
-			<Lists
-				required
-				name="raceNames"
-				options={races_}
-				placeholder={races_[index]}
-				defaultValue={races_[index]}
-			/>
+			<select required name="raceNames" defaultValue={races_[index]}>
+				<option hidden value="">
+					{races_[index]}
+				</option>
+				{races_?.map((option_, index) => (
+					<option key={index} value={option_}>
+						{option_}
+					</option>
+				))}
+			</select>
 		</section>
 	);
 }

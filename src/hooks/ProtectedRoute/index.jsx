@@ -16,7 +16,7 @@ export function ProtectedRoute({ children }) {
 		<>
 			{children}
 			{(location.pathname === "/rabbitList" ||
-				location.pathname === "/litterList") && <DownRigthMenu />}
+				location.pathname === "/litterRecord") && <DownRigthMenu />}
 		</>
 	);
 }

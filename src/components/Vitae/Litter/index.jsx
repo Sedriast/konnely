@@ -20,7 +20,7 @@ export default function Litter({ language, stadistics }) {
 			<section>
 				<button onClick={() => navigae("./addLitter")}>{add_b}</button>
 				<h1>{litters_t}</h1>
-				<button onClick={() => navigae("./litterRecord")}>{record_b}</button>
+				<button onClick={() => navigae("/litterRecord")}>{record_b}</button>
 			</section>
 			<Linear litters={stadistics} />
 		</div>
