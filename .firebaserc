@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "konnely-e4041"
-  }
+    "default": "konnely-67d6a",
+    "konnely": "konnely-67d6a"
+  },
+  "targets": {},
+  "etags": {}
 }

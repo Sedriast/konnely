@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { useRabbits } from "../../hooks/useContexts";
 import st from "./litter.module.css";
 
@@ -33,19 +34,18 @@ export function Litter({ language }) {
 	} = language;
 	const {
 		id,
-		stages: { ride, palpaton, prepartum, partum, weaning, sales },
+		stages: { ride, palpation, prepartum, partum, weaning, sales },
 	} = litter;
 	return (
 		<>
 			<button className="BTN_back">{back_b}</button>
 			<button className={st.plus}>{plus_b}</button>
-			<section>
-				<h1>{`${id_t}: ${id}`}</h1>
-
-				<hr />
-
-				<h1>{stages_t}</h1>
-
+			<section className={st.litter_panel}>
+				<div>
+					<h1>{`${id_t}: ${id}`}</h1>
+					<hr />
+					<h1>{stages_t}</h1>
+				</div>
 				<span>
 					<h2>{ride_t}</h2>
 					<div>
@@ -55,7 +55,13 @@ export function Litter({ language }) {
 						<h3>{male}</h3>
 					</div>
 					<div>
-						<p>{ride.date_r}</p>
+						<p>
+							{ride.date_r.toDate().toLocaleDateString("es-ES", {
+								day: "2-digit",
+								month: "2-digit",
+								year: "numeric",
+							})}
+						</p>
 						〰〰〰〰〰〰〰〰
 						<p>{ride.female}</p>
 						<p>{ride.male}</p>
@@ -68,7 +74,13 @@ export function Litter({ language }) {
 						<h3>{date}</h3>
 					</div>
 					<div>
-						<p>{palpaton.date_pal}</p>
+						<p>
+							{palpation.date_pal?.toDate().toLocaleDateString("es-ES", {
+								day: "2-digit",
+								month: "2-digit",
+								year: "numeric",
+							})}
+						</p>
 					</div>
 				</span>
 				<span>
@@ -77,7 +89,13 @@ export function Litter({ language }) {
 						<h3>{date}</h3>
 					</div>
 					<div>
-						<p>{prepartum.date_pr}</p>
+						<p>
+							{prepartum?.date_pr.toDate().toLocaleDateString("es-ES", {
+								day: "2-digit",
+								month: "2-digit",
+								year: "numeric",
+							})}
+						</p>
 					</div>
 				</span>
 				<span>
@@ -90,7 +108,13 @@ export function Litter({ language }) {
 						<h3>{homogenized}</h3>
 					</div>
 					<div>
-						<p>{partum.date_par}</p>
+						<p>
+							{partum.date_par.toDate().toLocaleDateString("es-ES", {
+								day: "2-digit",
+								month: "2-digit",
+								year: "numeric",
+							})}
+						</p>
 						〰〰〰〰〰〰〰〰
 						<p>{partum.alive}</p>
 						<p>{partum.dead}</p>
@@ -108,7 +132,13 @@ export function Litter({ language }) {
 						<h3>{weight}</h3>
 					</div>
 					<div>
-						<p>{weaning.date_w}</p>
+						<p>
+							{weaning.date_w.toDate().toLocaleDateString("es-ES", {
+								day: "2-digit",
+								month: "2-digit",
+								year: "numeric",
+							})}
+						</p>
 						〰〰〰〰〰〰〰〰
 						<p>{weaning.deads}</p>
 						<p>{weaning.females}</p>
@@ -118,23 +148,34 @@ export function Litter({ language }) {
 				</span>
 				<span>
 					<h2>{sales_t}</h2>
-					{sales.map((sale) => (
-						<>
-							<div>
-								<h3>{id_l}</h3>
-								<h3>{price_l}</h3>
-								<h3>{weight}</h3>
-								<h3>{date}</h3>
-							</div>
-							<div>
-								<p>{sale.id}</p>
-								<p>{sale.price}</p>
-								<p>{sale.weight}</p>
-								<p>{sale.date}</p>
-							</div>
-							〰〰〰〰〰〰〰〰
-						</>
-					))}
+					<table>
+						<thead>
+							<tr>
+								<th>{id_l}</th>
+								<th>{weight}</th>
+								<th>{price_l}</th>
+								<th>{date}</th>
+							</tr>
+						</thead>
+						<tbody>
+							{sales.map((sale, index) => (
+								<Fragment key={index}>
+									<tr>
+										<td>{sale.id}</td>
+										<td>{sale.weight}</td>
+										<td>{`${sale.price} COP`}</td>
+										<td>
+											{sale.date.toDate().toLocaleDateString("es-ES", {
+												day: "2-digit",
+												month: "2-digit",
+												year: "numeric",
+											})}
+										</td>
+									</tr>
+								</Fragment>
+							))}
+						</tbody>
+					</table>
 				</span>
 			</section>
 		</>

@@ -1,21 +1,25 @@
 {
-    "database": {
-        "rules": "database.rules.json"
-    },
-    "hosting": {
-        "public": "build",
-        "rewrites": [
-            {
-                "source": "**",
-                "destination": "/index.html"
-            }
-        ],
-        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-    },
-    "storage": {
-        "rules": "storage.rules"
-    },
-    "remoteconfig": {
-        "template": "remoteconfig.template.json"
-    }
+  "database": {
+    "rules": "database.rules.json"
+  },
+  "hosting": {
+    "public": "build",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "remoteconfig": {
+    "template": "remoteconfig.template.json"
+  }
 }

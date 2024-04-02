@@ -30,7 +30,7 @@ export function UI() {
 		<main id="lay">
 			<BrowserRouter>
 				<Routes>
-					{/* <Route
+					{/*<Route
 						exact
 						path="/"
 						element={
@@ -134,7 +134,7 @@ export function UI() {
 								</RabbitListProvider>
 							</ProtectedRoute>
 						}
-					/> */}
+					/>*/}
 
 					<Route
 						exact

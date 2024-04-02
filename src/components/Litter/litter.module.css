@@ -1,0 +1,80 @@
+.litter_panel {
+    width: 800px;
+    height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    background-color: #f5f5f5;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.litter_panel>div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.litter_panel>div>h1 {
+    margin: 1em;
+}
+
+.litter_panel>span {
+    width: 300px;
+    height: fit-content;
+
+    background: linear-gradient(#b8a281, #9b7b5b);
+    border-radius: 10px;
+    margin: 0.5em;
+    padding: 1em 0;
+
+    display: grid;
+    grid-template-areas:
+        "a1 a1"
+        "a2 a3"
+        "a4 a4";
+    align-items: center;
+    justify-content: center;
+}
+
+.litter_panel>span> :nth-child(1) {
+    margin-bottom: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: a1;
+}
+
+.litter_panel>span> :nth-child(2) {
+    padding: 0 0.5em;
+    text-align: end;
+
+    grid-area: a2;
+}
+
+.litter_panel>span> :nth-child(3) {
+    grid-area: a3;
+}
+
+.litter_panel>span> :nth-child(4) {
+    margin-top: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: a4;
+}
+
+.litter_panel td,
+th {
+    padding: 0.2em;
+    text-align: center;
+    border: #000000 1px solid;
+}

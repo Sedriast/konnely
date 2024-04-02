@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { errorAlert } from "../../../../hooks/useContexts";
 
 export default function PasswordPanel({
 	st,
@@ -17,6 +18,7 @@ export default function PasswordPanel({
 					response && navigate("./rabbitList");
 				});
 			}}>
+			{errorAlert("NaN")}
 			<h1>{email}</h1>
 			<label>
 				{L_password}

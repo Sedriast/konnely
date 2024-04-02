@@ -263,12 +263,15 @@ const litterDataSkeleton = {
 			date_pr: firebaseTimestamp,
 		},
 		weaning: {
-			date_w: firebaseTimestamp,
-			females: 1,
 			males: 1,
+			females: 1,
 			averageWeight: 100,
+			date_w: firebaseTimestamp,
 		},
-		sales: [],
+		sales: [
+			{ id: 1, price: 150, weight: 100, date: firebaseTimestamp },
+			{ id: 2, price: 150, weight: 100, date: firebaseTimestamp },
+		],
 	},
 	userSignature: { name: "admin", uid: "0000ds0faa0df0a0dfa" },
 };
